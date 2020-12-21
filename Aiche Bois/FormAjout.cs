@@ -90,10 +90,10 @@ namespace Aiche_Bois
         private void Ajout_Load(object sender, EventArgs e)
         {
             txtCmb.Focus();
-            lblEcris.Text = Text = ("ajouter " + Program.btnAddClick).ToUpper();
+            lblEcris.Text = Text = ("ajouter " + Program.btnAddTypeClick).ToUpper();
 
             /*remplir liste on affichage*/
-            remplirListe(Program.btnAddClick);
+            remplirListe(Program.btnAddTypeClick);
         }
 
         private void btnAddLstCmb_Click(object sender, EventArgs e)
@@ -113,7 +113,7 @@ namespace Aiche_Bois
         private void btnSave_Click(object sender, EventArgs e)
         {
             /*suavgarder les donnees dans dataBase*/
-            suavgarderDonnees(Program.btnAddClick.ToUpper());
+            suavgarderDonnees(Program.btnAddTypeClick.ToUpper());
 
             /*fermer la fonetre*/
             Close();
@@ -163,7 +163,7 @@ namespace Aiche_Bois
             lstCmb.Items.RemoveAt(lstCmb.SelectedIndex);
 
             /*supprimer la ligne de dataBase selectionner*/
-            deleteLigneListe(Program.btnAddClick.ToUpper());
+            deleteLigneListe(Program.btnAddTypeClick.ToUpper());
         }
         private void btnBack_Click(object sender, EventArgs e)
         {

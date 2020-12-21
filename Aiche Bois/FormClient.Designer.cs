@@ -91,14 +91,12 @@
             resources.ApplyResources(this.btnSearch, "btnSearch");
             this.btnSearch.BackColor = System.Drawing.Color.White;
             this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.btnSearch.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSearch.IconSize = 30;
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Rotation = 0D;
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // btnDeleteFacture
@@ -106,14 +104,12 @@
             resources.ApplyResources(this.btnDeleteFacture, "btnDeleteFacture");
             this.btnDeleteFacture.BackColor = System.Drawing.Color.White;
             this.btnDeleteFacture.FlatAppearance.BorderSize = 0;
-            this.btnDeleteFacture.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnDeleteFacture.ForeColor = System.Drawing.Color.White;
             this.btnDeleteFacture.IconChar = FontAwesome.Sharp.IconChar.Trash;
             this.btnDeleteFacture.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.btnDeleteFacture.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnDeleteFacture.IconSize = 30;
             this.btnDeleteFacture.Name = "btnDeleteFacture";
-            this.btnDeleteFacture.Rotation = 0D;
             this.btnDeleteFacture.UseVisualStyleBackColor = false;
             this.btnDeleteFacture.Click += new System.EventHandler(this.btnDeleteFacture_Click);
             // 
@@ -122,14 +118,12 @@
             resources.ApplyResources(this.btnEditFacture, "btnEditFacture");
             this.btnEditFacture.BackColor = System.Drawing.Color.White;
             this.btnEditFacture.FlatAppearance.BorderSize = 0;
-            this.btnEditFacture.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnEditFacture.ForeColor = System.Drawing.Color.White;
             this.btnEditFacture.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.btnEditFacture.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.btnEditFacture.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnEditFacture.IconSize = 35;
             this.btnEditFacture.Name = "btnEditFacture";
-            this.btnEditFacture.Rotation = 0D;
             this.btnEditFacture.UseVisualStyleBackColor = false;
             this.btnEditFacture.Click += new System.EventHandler(this.btnEditFacture_Click);
             // 
@@ -138,14 +132,12 @@
             resources.ApplyResources(this.btnAddFacture, "btnAddFacture");
             this.btnAddFacture.BackColor = System.Drawing.Color.White;
             this.btnAddFacture.FlatAppearance.BorderSize = 0;
-            this.btnAddFacture.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnAddFacture.ForeColor = System.Drawing.Color.White;
             this.btnAddFacture.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             this.btnAddFacture.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.btnAddFacture.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddFacture.IconSize = 35;
             this.btnAddFacture.Name = "btnAddFacture";
-            this.btnAddFacture.Rotation = 0D;
             this.btnAddFacture.UseVisualStyleBackColor = false;
             this.btnAddFacture.Click += new System.EventHandler(this.btnAddFacture_Click);
             // 
@@ -154,14 +146,12 @@
             resources.ApplyResources(this.btnPrintFacture, "btnPrintFacture");
             this.btnPrintFacture.BackColor = System.Drawing.Color.White;
             this.btnPrintFacture.FlatAppearance.BorderSize = 0;
-            this.btnPrintFacture.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnPrintFacture.ForeColor = System.Drawing.Color.White;
             this.btnPrintFacture.IconChar = FontAwesome.Sharp.IconChar.Print;
             this.btnPrintFacture.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.btnPrintFacture.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnPrintFacture.IconSize = 30;
             this.btnPrintFacture.Name = "btnPrintFacture";
-            this.btnPrintFacture.Rotation = 0D;
             this.btnPrintFacture.UseVisualStyleBackColor = false;
             this.btnPrintFacture.Click += new System.EventHandler(this.btnPrintFacture_Click);
             // 

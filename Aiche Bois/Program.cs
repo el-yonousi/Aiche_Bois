@@ -11,9 +11,7 @@ namespace Aiche_Bois
         /// </summary>
 
         /*declaration des variables*/
-        public static int idClient = 0;
-        public static int idFacture = 0;
-        public static string btnAddClick;
+        public static string btnAddTypeClick;
         public static List<Client> Clients = new List<Client>();
         public static int indxFacture = 0;
 

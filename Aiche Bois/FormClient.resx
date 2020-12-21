@@ -411,7 +411,7 @@
     <value>btnSearch</value>
   </data>
   <data name="&gt;&gt;btnSearch.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnSearch.Parent" xml:space="preserve">
     <value>tableLayoutPanel2</value>
@@ -444,7 +444,7 @@
     <value>btnDeleteFacture</value>
   </data>
   <data name="&gt;&gt;btnDeleteFacture.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnDeleteFacture.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
@@ -477,7 +477,7 @@
     <value>btnEditFacture</value>
   </data>
   <data name="&gt;&gt;btnEditFacture.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnEditFacture.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
@@ -510,7 +510,7 @@
     <value>btnAddFacture</value>
   </data>
   <data name="&gt;&gt;btnAddFacture.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnAddFacture.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
@@ -540,7 +540,7 @@
     <value>btnPrintFacture</value>
   </data>
   <data name="&gt;&gt;btnPrintFacture.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnPrintFacture.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>

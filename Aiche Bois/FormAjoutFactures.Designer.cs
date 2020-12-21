@@ -147,7 +147,6 @@
             // btnClear
             // 
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnClear.ForeColor = System.Drawing.Color.White;
             this.btnClear.IconChar = FontAwesome.Sharp.IconChar.Backspace;
             this.btnClear.IconColor = System.Drawing.Color.White;
@@ -157,7 +156,6 @@
             this.btnClear.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnClear.Location = new System.Drawing.Point(1164, 655);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Rotation = 0D;
             this.btnClear.Size = new System.Drawing.Size(215, 48);
             this.btnClear.TabIndex = 31;
             this.btnClear.UseVisualStyleBackColor = false;
@@ -166,7 +164,6 @@
             // btnAddFacture
             // 
             this.btnAddFacture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddFacture.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnAddFacture.ForeColor = System.Drawing.Color.White;
             this.btnAddFacture.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             this.btnAddFacture.IconColor = System.Drawing.Color.White;
@@ -176,7 +173,6 @@
             this.btnAddFacture.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnAddFacture.Location = new System.Drawing.Point(878, 655);
             this.btnAddFacture.Name = "btnAddFacture";
-            this.btnAddFacture.Rotation = 0D;
             this.btnAddFacture.Size = new System.Drawing.Size(253, 48);
             this.btnAddFacture.TabIndex = 30;
             this.btnAddFacture.UseVisualStyleBackColor = false;
@@ -237,7 +233,6 @@
             // 
             this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnBack.ForeColor = System.Drawing.Color.White;
             this.btnBack.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleRight;
             this.btnBack.IconColor = System.Drawing.Color.White;
@@ -247,7 +242,6 @@
             this.btnBack.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnBack.Location = new System.Drawing.Point(1164, 815);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Rotation = 0D;
             this.btnBack.Size = new System.Drawing.Size(215, 48);
             this.btnBack.TabIndex = 37;
             this.btnBack.UseVisualStyleBackColor = false;
@@ -445,9 +439,9 @@
             this.lstTypeBois.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.lstTypeBois.FormattingEnabled = true;
             this.lstTypeBois.ItemHeight = 20;
-            this.lstTypeBois.Location = new System.Drawing.Point(15, 311);
+            this.lstTypeBois.Location = new System.Drawing.Point(15, 291);
             this.lstTypeBois.Name = "lstTypeBois";
-            this.lstTypeBois.Size = new System.Drawing.Size(358, 260);
+            this.lstTypeBois.Size = new System.Drawing.Size(358, 280);
             this.lstTypeBois.TabIndex = 5;
             this.lstTypeBois.SelectedIndexChanged += new System.EventHandler(this.lstTypeBois_SelectedIndexChanged);
             // 
@@ -478,7 +472,6 @@
             // btnCmbCategorie
             // 
             this.btnCmbCategorie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCmbCategorie.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnCmbCategorie.ForeColor = System.Drawing.Color.White;
             this.btnCmbCategorie.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             this.btnCmbCategorie.IconColor = System.Drawing.Color.White;
@@ -488,7 +481,6 @@
             this.btnCmbCategorie.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnCmbCategorie.Location = new System.Drawing.Point(336, 161);
             this.btnCmbCategorie.Name = "btnCmbCategorie";
-            this.btnCmbCategorie.Rotation = 0D;
             this.btnCmbCategorie.Size = new System.Drawing.Size(40, 38);
             this.btnCmbCategorie.TabIndex = 3;
             this.btnCmbCategorie.TabStop = false;
@@ -675,7 +667,6 @@
             // 
             this.btnDeleteMesure.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDeleteMesure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteMesure.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnDeleteMesure.ForeColor = System.Drawing.Color.White;
             this.btnDeleteMesure.IconChar = FontAwesome.Sharp.IconChar.Trash;
             this.btnDeleteMesure.IconColor = System.Drawing.Color.White;
@@ -685,7 +676,6 @@
             this.btnDeleteMesure.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnDeleteMesure.Location = new System.Drawing.Point(757, 308);
             this.btnDeleteMesure.Name = "btnDeleteMesure";
-            this.btnDeleteMesure.Rotation = 0D;
             this.btnDeleteMesure.Size = new System.Drawing.Size(78, 33);
             this.btnDeleteMesure.TabIndex = 15;
             this.btnDeleteMesure.TabStop = false;
@@ -696,7 +686,6 @@
             // 
             this.btnAddMesure.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddMesure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddMesure.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnAddMesure.ForeColor = System.Drawing.Color.White;
             this.btnAddMesure.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             this.btnAddMesure.IconColor = System.Drawing.Color.White;
@@ -706,7 +695,6 @@
             this.btnAddMesure.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnAddMesure.Location = new System.Drawing.Point(757, 139);
             this.btnAddMesure.Name = "btnAddMesure";
-            this.btnAddMesure.Rotation = 0D;
             this.btnAddMesure.Size = new System.Drawing.Size(78, 33);
             this.btnAddMesure.TabIndex = 13;
             this.btnAddMesure.UseVisualStyleBackColor = false;
@@ -716,7 +704,6 @@
             // 
             this.btnEditMesure.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnEditMesure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditMesure.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnEditMesure.ForeColor = System.Drawing.Color.White;
             this.btnEditMesure.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.btnEditMesure.IconColor = System.Drawing.Color.White;
@@ -725,7 +712,6 @@
             this.btnEditMesure.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnEditMesure.Location = new System.Drawing.Point(757, 223);
             this.btnEditMesure.Name = "btnEditMesure";
-            this.btnEditMesure.Rotation = 0D;
             this.btnEditMesure.Size = new System.Drawing.Size(78, 33);
             this.btnEditMesure.TabIndex = 14;
             this.btnEditMesure.TabStop = false;
@@ -926,7 +912,6 @@
             // 
             this.btnImportPvc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnImportPvc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImportPvc.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnImportPvc.ForeColor = System.Drawing.Color.White;
             this.btnImportPvc.IconChar = FontAwesome.Sharp.IconChar.FileImport;
             this.btnImportPvc.IconColor = System.Drawing.Color.White;
@@ -936,7 +921,6 @@
             this.btnImportPvc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnImportPvc.Location = new System.Drawing.Point(1301, 251);
             this.btnImportPvc.Name = "btnImportPvc";
-            this.btnImportPvc.Rotation = 0D;
             this.btnImportPvc.Size = new System.Drawing.Size(78, 33);
             this.btnImportPvc.TabIndex = 23;
             this.btnImportPvc.UseVisualStyleBackColor = false;
@@ -960,7 +944,6 @@
             // btncmbNbrCanto
             // 
             this.btncmbNbrCanto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncmbNbrCanto.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btncmbNbrCanto.ForeColor = System.Drawing.Color.White;
             this.btncmbNbrCanto.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             this.btncmbNbrCanto.IconColor = System.Drawing.Color.White;
@@ -970,7 +953,6 @@
             this.btncmbNbrCanto.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btncmbNbrCanto.Location = new System.Drawing.Point(1301, 33);
             this.btncmbNbrCanto.Name = "btncmbNbrCanto";
-            this.btncmbNbrCanto.Rotation = 0D;
             this.btncmbNbrCanto.Size = new System.Drawing.Size(78, 38);
             this.btncmbNbrCanto.TabIndex = 22;
             this.btncmbNbrCanto.TabStop = false;
@@ -1063,7 +1045,6 @@
             // 
             this.btnSavePvc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSavePvc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSavePvc.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnSavePvc.ForeColor = System.Drawing.Color.White;
             this.btnSavePvc.IconChar = FontAwesome.Sharp.IconChar.Save;
             this.btnSavePvc.IconColor = System.Drawing.Color.White;
@@ -1073,7 +1054,6 @@
             this.btnSavePvc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnSavePvc.Location = new System.Drawing.Point(1301, 307);
             this.btnSavePvc.Name = "btnSavePvc";
-            this.btnSavePvc.Rotation = 0D;
             this.btnSavePvc.Size = new System.Drawing.Size(78, 33);
             this.btnSavePvc.TabIndex = 24;
             this.btnSavePvc.UseVisualStyleBackColor = false;
@@ -1083,7 +1063,6 @@
             // 
             this.btnSaveFacture.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSaveFacture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveFacture.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnSaveFacture.ForeColor = System.Drawing.Color.White;
             this.btnSaveFacture.IconChar = FontAwesome.Sharp.IconChar.Save;
             this.btnSaveFacture.IconColor = System.Drawing.Color.White;
@@ -1093,7 +1072,6 @@
             this.btnSaveFacture.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnSaveFacture.Location = new System.Drawing.Point(874, 815);
             this.btnSaveFacture.Name = "btnSaveFacture";
-            this.btnSaveFacture.Rotation = 0D;
             this.btnSaveFacture.Size = new System.Drawing.Size(257, 48);
             this.btnSaveFacture.TabIndex = 36;
             this.btnSaveFacture.UseVisualStyleBackColor = false;
@@ -1207,7 +1185,6 @@
             // 
             this.btnDeleteSeulPVC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDeleteSeulPVC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteSeulPVC.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnDeleteSeulPVC.ForeColor = System.Drawing.Color.White;
             this.btnDeleteSeulPVC.IconChar = FontAwesome.Sharp.IconChar.Trash;
             this.btnDeleteSeulPVC.IconColor = System.Drawing.Color.White;
@@ -1217,7 +1194,6 @@
             this.btnDeleteSeulPVC.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnDeleteSeulPVC.Location = new System.Drawing.Point(1301, 195);
             this.btnDeleteSeulPVC.Name = "btnDeleteSeulPVC";
-            this.btnDeleteSeulPVC.Rotation = 0D;
             this.btnDeleteSeulPVC.Size = new System.Drawing.Size(78, 33);
             this.btnDeleteSeulPVC.TabIndex = 168;
             this.btnDeleteSeulPVC.TabStop = false;
@@ -1228,7 +1204,6 @@
             // 
             this.btnAddSeulPVC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddSeulPVC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddSeulPVC.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnAddSeulPVC.ForeColor = System.Drawing.Color.White;
             this.btnAddSeulPVC.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             this.btnAddSeulPVC.IconColor = System.Drawing.Color.White;
@@ -1238,7 +1213,6 @@
             this.btnAddSeulPVC.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnAddSeulPVC.Location = new System.Drawing.Point(1301, 139);
             this.btnAddSeulPVC.Name = "btnAddSeulPVC";
-            this.btnAddSeulPVC.Rotation = 0D;
             this.btnAddSeulPVC.Size = new System.Drawing.Size(78, 33);
             this.btnAddSeulPVC.TabIndex = 167;
             this.btnAddSeulPVC.UseVisualStyleBackColor = false;

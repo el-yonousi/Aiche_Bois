@@ -148,6 +148,7 @@ namespace Aiche_Bois
                 MessageBox.Show("la list est vide ou Selectionner une ligne", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
             ((Form)(prntPrevDiag)).WindowState = FormWindowState.Maximized;
             if (prntPrevDiag.ShowDialog() == DialogResult.OK)
             {
@@ -320,7 +321,7 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void btnAddFacture_Click(object sender, EventArgs e)
         {
-            FormAjoutFactures ajouterFacture = new FormAjoutFactures();
+            FormAjoutFactures ajouterFacture = new FormAjoutFactures("0000", "add");
             ajouterFacture.ShowDialog();
             remplissageDtGridClient();
         }
@@ -354,7 +355,7 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void btnDeleteFacture_Click(object sender, EventArgs e)
         {
-            if (indxFacture <= -1 || dtGridFacture.Rows.Count <= 0)
+            if (indxFacture <= -1 || dtGridFacture.Rows.Count <= 0 || idClient == null)
             {
                 MessageBox.Show("la list est vide ou Selectionner une ligne", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -391,7 +392,16 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void btnEditFacture_Click(object sender, EventArgs e)
         {
+            if (indxFacture <= -1 || dtGridFacture.Rows.Count <= 0 || idClient == null)
+            {
+                MessageBox.Show("la list est vide ou Selectionner une ligne", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            //send button click name
+            FormAjoutFactures ajoutFactures = new FormAjoutFactures(idClient[1], "edit");
+            ajoutFactures.ShowDialog();
+            remplissageDtGridClient();
         }
     }
 }

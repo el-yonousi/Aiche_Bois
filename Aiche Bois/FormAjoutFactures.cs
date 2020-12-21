@@ -44,14 +44,14 @@ namespace Aiche_Bois
         /// <summary>
         /// c'est variable determiner si le click on button ajouter ou modifier
         /// </summary>
-        private string btnDetermin = "";
-        private int idCLIENT;
-        private int idFACTURE;
-
-        public FormAjoutFactures()
+        private string btnDeterminClick = "";
+        private string idClient = "";
+        public FormAjoutFactures(String idClient, String btnClick)
         {
-
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/factures";
+            /*
+             * difiner la connnection vers la base de donnee
+             */
+            String path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/factures";
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
@@ -59,6 +59,15 @@ namespace Aiche_Bois
 
             connectionClient.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + path + "/aicheBois.accdb";
             connectionType.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + path + "/Type.accdb";
+
+            /*
+             * prendre id a partir de la form presedent
+             */
+            this.idClient = idClient;
+            btnDeterminClick = btnClick;
+            if (btnDeterminClick == "add")
+                btnDeterminClick = "";
+
             InitializeComponent();
         }
 
@@ -232,6 +241,37 @@ namespace Aiche_Bois
             * affihcer on mode desactiver les champs de pvc
             */
             enabledTxtBxPvc(false);
+
+            if (btnDeterminClick == "edit")
+            {
+                try
+                {
+                    connectionClient.Open();
+                    OleDbCommand command = new OleDbCommand
+                    {
+                        Connection = connectionClient,
+                        CommandText = "SELECT * FROM FACTURE WHERE IDCLIENT = " + long.Parse(idClient)
+                    };
+
+                    OleDbDataReader readerClient = command.ExecuteReader();
+                    while (readerClient.Read())
+                    {
+                        //dtDateClient.Value = Convert.ToDateTime(readerClient["dateClient"].ToString());
+                        //txtNomClient.Text = readerClient["nomClient"].ToString();
+                        txtTypeDeBois.Text = readerClient["typeDeBois"].ToString();
+                        txtPrixMetreMesure.Text = readerClient["prixMetres"].ToString();
+                        txtTotalMesure.Text = readerClient["totalMesure"].ToString();
+                        txtPrixTotalMesure.Text = readerClient["prixTotalMesure"].ToString();
+                        txtMetrageDeFeuille.Text = readerClient["metrage"].ToString();
+                        txtCategorie.Text = readerClient["categorie"].ToString();
+                    }
+                    connectionClient.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         /// <summary>
@@ -241,7 +281,7 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void cmbCateogorie_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Program.btnAddClick = cmbTypeDeBois.Text;
+            Program.btnAddTypeClick = cmbTypeDeBois.Text;
             remplirListe(cmbTypeDeBois.Text);
             /*remplirLstTypeBois();*/
             if (lstTypeBois.Items.Count <= 0)
@@ -276,7 +316,7 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void btncmbNbrCanto_Click(object sender, EventArgs e)
         {
-            Program.btnAddClick = "PVC";
+            Program.btnAddTypeClick = "PVC";
 
             /*ouvrier de fenétre*/
             FormAjout ajout = new FormAjout();
@@ -296,13 +336,13 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void btnCmbCategorie_Click(object sender, EventArgs e)
         {
-            Program.btnAddClick = cmbTypeDeBois.Text.ToUpper();
+            Program.btnAddTypeClick = cmbTypeDeBois.Text.ToUpper();
 
             FormAjout ajout = new FormAjout();
             ajout.ShowDialog();
 
             /*remplirLstTypeBois();*/
-            remplirListe(Program.btnAddClick);
+            remplirListe(Program.btnAddTypeClick);
         }
 
         /// <summary>
@@ -811,7 +851,7 @@ namespace Aiche_Bois
 
 
                 factures.Add(facture);
-                btnDetermin = "add";
+                btnDeterminClick = "add";
 
                 MessageBox.Show("facture ajouter avec succes", "Ajouter", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 idFacture();
@@ -1122,13 +1162,14 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void FormAjoutFactures_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (btnDetermin == "add")
+            if (btnDeterminClick == "add")
             {
                 /*clients.Add(new Client(txtNomClient.Text, dtDateClient.Value, checkAvance.Checked, factures.Count, double.Parse(txtMontantTotal.Text), double.Parse(txtAvance.Text), double.Parse(txtRestMontant.Text), factures));*/
                 try
                 {
                     connectionClient.Open();
-
+                    int idCLIENT = 0;
+                    int idFACTURE = 0;
                     OleDbCommand commandClient = new OleDbCommand
                     {
                         Connection = connectionClient,

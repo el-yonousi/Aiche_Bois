@@ -50,7 +50,6 @@ C:\Users\mohamed\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche 
 C:\Users\mohamed\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\bin\Debug\DevExpress.Data.v20.2.xml
 C:\Users\mohamed\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\bin\Debug\DevExpress.Xpo.v20.2.xml
 C:\Users\mohamed\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\obj\Debug\Aiche Bois.csprojAssemblyReference.cache
-D:\Program Files\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\obj\Debug\Aiche Bois.csprojAssemblyReference.cache
 D:\Program Files\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\obj\Debug\Aiche_Bois.FormAjout.resources
 D:\Program Files\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\obj\Debug\Aiche_Bois.FormAjoutFactures.resources
 D:\Program Files\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\obj\Debug\Aiche_Bois.FormAvance.resources
@@ -64,8 +63,5 @@ D:\Program Files\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche 
 D:\Program Files\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\bin\Debug\Aiche Bois.exe
 D:\Program Files\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\bin\Debug\Aiche Bois.pdb
 D:\Program Files\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\bin\Debug\FontAwesome.Sharp.dll
-D:\Program Files\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\bin\Debug\DevExpress.Data.v20.2.xml
-D:\Program Files\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\bin\Debug\DevExpress.Xpo.v20.2.xml
 D:\Program Files\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\obj\Debug\Aiche Bois.csproj.CopyComplete
-D:\Program Files\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\bin\Debug\DevExpress.Data.v20.2.dll
-D:\Program Files\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\bin\Debug\DevExpress.Xpo.v20.2.dll
+D:\Program Files\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\obj\Debug\Aiche Bois.csprojAssemblyReference.cache
