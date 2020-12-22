@@ -231,9 +231,6 @@ namespace Aiche_Bois
             txtPrixAvanceClient.Text = "0.00";
             cmbOrtnPVC.SelectedIndex = 0;
 
-            /*initialise IdFacture, IdClient*/
-            idFacture();
-
             /*remple comboBox PVC*/
             RemplirComboBxPvc();
 
@@ -247,30 +244,110 @@ namespace Aiche_Bois
                 try
                 {
                     connectionClient.Open();
-                    OleDbCommand command = new OleDbCommand
+                    String queryClient = "SELECT * FROM CLIENT WHERE IDCLIENT = " + long.Parse(idClient);
+                    
+
+                    //client
+                    var commandClient = new OleDbCommand
                     {
                         Connection = connectionClient,
-                        CommandText = "SELECT * FROM FACTURE WHERE IDCLIENT = " + long.Parse(idClient)
+                        CommandText = queryClient
                     };
-
-                    OleDbDataReader readerClient = command.ExecuteReader();
+                    OleDbDataReader readerClient = commandClient.ExecuteReader();
                     while (readerClient.Read())
                     {
-                        //dtDateClient.Value = Convert.ToDateTime(readerClient["dateClient"].ToString());
-                        //txtNomClient.Text = readerClient["nomClient"].ToString();
-                        txtTypeDeBois.Text = readerClient["typeDeBois"].ToString();
-                        txtPrixMetreMesure.Text = readerClient["prixMetres"].ToString();
-                        txtTotalMesure.Text = readerClient["totalMesure"].ToString();
-                        txtPrixTotalMesure.Text = readerClient["prixTotalMesure"].ToString();
-                        txtMetrageDeFeuille.Text = readerClient["metrage"].ToString();
-                        txtCategorie.Text = readerClient["categorie"].ToString();
+                        dtDateClient.Value = Convert.ToDateTime(readerClient["dateClient"].ToString());
+                        txtNomClient.Text = readerClient["nomClient"].ToString();
+                        checkAvance.Checked = Convert.ToBoolean(readerClient["chAvance"].ToString());
+                        txtPrixAvanceClient.Text = readerClient["prixTotalAvance"].ToString();
+                        txtPrixRestClient.Text = readerClient["prixTotalRest"].ToString();
+                        txtPrixTotalClient.Text = readerClient["prixTotalClient"].ToString();
                     }
+
+                    //facture
+                    String queryFacture = "SELECT * FROM FACTURE WHERE IDCLIENT = " + long.Parse(idClient);
+                    long idFacture = 0;
+                    String pvc = "";
+                    var commandFacture = new OleDbCommand
+                    {
+                        Connection = connectionClient,
+                        CommandText = queryFacture
+                    };
+                    OleDbDataReader readerFacture = commandFacture.ExecuteReader();
+                    while (readerFacture.Read())
+                    {
+                        idFacture = long.Parse(readerFacture["IDFACTURE"].ToString());
+                        txtTypeDeBois.Text = readerFacture["typeDeBois"].ToString();
+                        txtPrixMetreMesure.Text = readerFacture["prixMetres"].ToString();
+                        txtTotalMesure.Text = readerFacture["totalMesure"].ToString();
+                        txtPrixTotalMesure.Text = readerFacture["prixTotalMesure"].ToString();
+                        txtMetrageDeFeuille.Text = readerFacture["metrage"].ToString();
+                        txtCategorie.Text = readerFacture["categorie"].ToString();
+                        pvc = readerFacture["typePVC"].ToString();
+                        if (pvc != "---")
+                        {
+                            cmbNbrCantoPvc.Text = pvc;
+                            txtTotaleTaillPVC.Text = readerFacture["totalTaillPVC"].ToString();
+                            txtTaillePVC.Text = readerFacture["tailleCanto"].ToString();
+                            txtPrixMetreLPVC.Text = readerFacture["prixMitresLinear"].ToString();
+                            txtPrixTotalPVC.Text = readerFacture["prixTotalPVC"].ToString();
+
+                        }
+                    }
+
+                    //Mesure
+                    String queryMesure = "SELECT * FROM MESURE WHERE IDFACTURE = " + idFacture;
+                    var commandMesure = new OleDbCommand
+                    {
+                        Connection = connectionClient,
+                        CommandText = queryMesure
+                    };
+                    OleDbDataReader readerMesure = commandMesure.ExecuteReader();
+                    while (readerMesure.Read())
+                    {
+                        if (readerMesure["type"].ToString() == "m3")
+                        {
+                            cmbTypeDuMetres.SelectedIndex = 2;
+                            dtGMesure.Rows.Add(readerMesure["quantite"].ToString(),
+                                           readerMesure["largeur"].ToString(),
+                                           readerMesure["longueur"].ToString(),
+                                           readerMesure["eppaiseur"].ToString());
+                        }
+                        else
+                        {
+                            if (readerMesure["type"].ToString() == "feuille")
+                                cmbTypeDuMetres.SelectedIndex = 0;
+                            else
+                                cmbTypeDuMetres.SelectedIndex = 1;
+
+                            dtGMesure.Rows.Add(readerMesure["quantite"].ToString(),
+                                               readerMesure["largeur"].ToString(),
+                                               readerMesure["longueur"].ToString());
+                        }
+                    }
+
+                    //PVC
+                    String queryPVC = "SELECT * FROM PVC WHERE IDFACTURE = " + idFacture;
+                    var commandPvc = new OleDbCommand
+                    {
+                        Connection = connectionClient,
+                        CommandText = queryPVC
+                    };
+                    OleDbDataReader readerPvc = commandPvc.ExecuteReader();
+                    while (readerPvc.Read())
+                    {
+                        
+                    }
+
                     connectionClient.Close();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+                /*initialise IdFacture, IdClient*/
+                idFacture();
             }
         }
 
@@ -529,7 +606,7 @@ namespace Aiche_Bois
             {
                 dtGMesure.Rows.Clear();
                 mesures.Clear();
-                txtTotalMesure.Clear();
+                //txtTotalMesure.Clear();
                 lblTypeDuMetres.Text = "Prix ​​au feuille";
                 lblMesure.Text = "Nombre de Feuilles";
                 lblEpaisseur.Visible = false;

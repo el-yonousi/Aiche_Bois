@@ -143,17 +143,19 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void btnPrintFacture_Click(object sender, EventArgs e)
         {
-            if (indxFacture <= -1 || dtGridFacture.Rows.Count <= 0)
-            {
-                MessageBox.Show("la list est vide ou Selectionner une ligne", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            PrintPdf print = new PrintPdf(idClient[1]);
+            print.ShowDialog();
+            //if (indxFacture <= -1 || dtGridFacture.Rows.Count <= 0)
+            //{
+            //    MessageBox.Show("la list est vide ou Selectionner une ligne", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
 
-            ((Form)(prntPrevDiag)).WindowState = FormWindowState.Maximized;
-            if (prntPrevDiag.ShowDialog() == DialogResult.OK)
-            {
-                prntDoc.Print();
-            }
+            //((Form)(prntPrevDiag)).WindowState = FormWindowState.Maximized;
+            //if (prntPrevDiag.ShowDialog() == DialogResult.OK)
+            //{
+            //    prntDoc.Print();
+            //}
         }
 
         /// <summary>
