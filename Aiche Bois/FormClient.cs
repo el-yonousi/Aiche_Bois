@@ -323,7 +323,7 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void btnAddFacture_Click(object sender, EventArgs e)
         {
-            FormAjoutFactures ajouterFacture = new FormAjoutFactures("0000", "add");
+            FormAjoutFactures ajouterFacture = new FormAjoutFactures("", "");
             ajouterFacture.ShowDialog();
             remplissageDtGridClient();
         }

@@ -21,12 +21,11 @@ namespace Aiche_Bois
         private double prixTotalMesure;
 
         private string typePVC;
+        private bool checkPVC;
         private string tailleCanto;
         private double totalTaillPVC;
         private double prixMitresLinear;
         private double prixTotalPVC;
-
-        private double prixAvance;
 
         /// <summary>
         /// getter and setter for class factur
@@ -41,18 +40,18 @@ namespace Aiche_Bois
         public double TotalTaillPVC { get => totalTaillPVC; set => totalTaillPVC = value; }
         public double PrixMitresLinear { get => prixMitresLinear; set => prixMitresLinear = value; }
         public double PrixTotalPVC { get => prixTotalPVC; set => prixTotalPVC = value; }
-        public double PrixAvance { get => prixAvance; set => prixAvance = value; }
         public double PrixTotalMesure { get => prixTotalMesure; set => prixTotalMesure = value; }
         public List<Mesure> Mesures { get => mesure; set => mesure = value; }
         public int IdClient { get => idClient; set => idClient = value; }
         public string Categorie { get => categorie; set => categorie = value; }
         public List<Pvc> Pvcs { get => pvcs; set => pvcs = value; }
+        public bool CheckPVC { get => checkPVC; set => checkPVC = value; }
 
         public Facture()
         {
         }
 
-        public Facture(int idClient, string typeDeBois, string metrage, string categorie, double prixMetres, double totalMesure, string typePVC, string tailleCanto, double totalTaillPVC, double prixMitresLinear, double prixTotalPVC, double prixAvance, double prixTotalMesure, List<Mesure> mesures, List<Pvc> pvcs)
+        public Facture(int idClient, string typeDeBois, string metrage, string categorie, double prixMetres, double totalMesure, string typePVC, bool checkPVC, string tailleCanto, double totalTaillPVC, double prixMitresLinear, double prixTotalPVC, double prixTotalMesure, List<Mesure> mesures, List<Pvc> pvcs)
         {
             IdClient = idClient;
             TypeDeBois = typeDeBois;
@@ -61,11 +60,11 @@ namespace Aiche_Bois
             Categorie = categorie;
             TotalMesure = totalMesure;
             TypePVC = typePVC;
+            CheckPVC = checkPVC;
             TailleCanto = tailleCanto;
             TotalTaillPVC = totalTaillPVC;
             PrixMitresLinear = prixMitresLinear;
             PrixTotalPVC = prixTotalPVC;
-            PrixAvance = prixAvance;
             PrixTotalMesure = prixTotalMesure;
             Mesures = mesures;
             Pvcs = pvcs;
@@ -79,50 +78,6 @@ namespace Aiche_Bois
                 return false;
             }
             return IDFacture == ((Facture)obj).IDFacture;
-        }
-
-        /// <summary>
-        /// returner la taille total de la mesure
-        /// </summary>
-        /// <returns></returns>
-        public double getMesure()
-        {
-            double totale = 0;
-            foreach (Mesure msr in Mesures)
-            {
-                if (msr.Epaisseur == 0 || double.IsNaN(msr.Epaisseur))
-                {
-                    totale += ((msr.Largeur * Math.Pow(10, -2)) * (msr.Longueur * Math.Pow(10, -2))) * msr.Quantite;
-                }
-                else
-                {
-                    totale += ((msr.Largeur * Math.Pow(10, -2)) * (msr.Longueur * Math.Pow(10, -2)) * (msr.Epaisseur * Math.Pow(10, -2))) * msr.Quantite;
-                }
-            }
-            return totale;
-        }
-
-        /// <summary>
-        /// returner le rest de prix total avance
-        /// </summary>
-        /// <returns></returns>
-        public double getResteFacture()
-        {
-            if (getTotalFacture() - PrixAvance == getTotalFacture())
-            {
-                return 0;
-            }
-
-            return getTotalFacture() - PrixAvance;
-        }
-
-        /// <summary>
-        /// returner le prix de prix total du facture
-        /// </summary>
-        /// <returns></returns>
-        public double getTotalFacture()
-        {
-            return (PrixTotalMesure) + (PrixTotalPVC);
         }
 
         public override int GetHashCode()
