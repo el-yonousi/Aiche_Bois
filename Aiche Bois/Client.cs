@@ -93,27 +93,6 @@ namespace Aiche_Bois
             return obj is Client client && IdClient == client.IdClient;
         }
 
-        public int getNbFacture()
-        {
-            int i = 0;
-            foreach (Facture facture in factureClients)
-            {
-                i += facture.IDFacture;
-            }
-
-            return i;
-        }
-        public double getTotalPrixClient()
-        {
-            double total = 0;
-            foreach (Facture fctr in factureClients)
-            {
-                total += fctr.getTotalFacture();
-            }
-
-            return total;
-        }
-
         public override int GetHashCode()
         {
             return 66531687 + idClient.GetHashCode();

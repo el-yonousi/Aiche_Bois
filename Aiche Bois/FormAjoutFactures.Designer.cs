@@ -114,6 +114,8 @@
             this.btnDeleteSeulPVC = new FontAwesome.Sharp.IconButton();
             this.btnAddSeulPVC = new FontAwesome.Sharp.IconButton();
             this.label24 = new System.Windows.Forms.Label();
+            this.btnPreviuos = new FontAwesome.Sharp.IconButton();
+            this.btnNext = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtGMesure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridPvc)).BeginInit();
             this.SuspendLayout();
@@ -1228,6 +1230,40 @@
             this.label24.TabIndex = 169;
             this.label24.Text = "Orientation";
             // 
+            // btnPreviuos
+            // 
+            this.btnPreviuos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPreviuos.ForeColor = System.Drawing.Color.White;
+            this.btnPreviuos.IconChar = FontAwesome.Sharp.IconChar.StepBackward;
+            this.btnPreviuos.IconColor = System.Drawing.Color.White;
+            this.btnPreviuos.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnPreviuos.IconSize = 30;
+            this.btnPreviuos.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPreviuos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnPreviuos.Location = new System.Drawing.Point(16, 655);
+            this.btnPreviuos.Name = "btnPreviuos";
+            this.btnPreviuos.Size = new System.Drawing.Size(357, 48);
+            this.btnPreviuos.TabIndex = 170;
+            this.btnPreviuos.UseVisualStyleBackColor = false;
+            this.btnPreviuos.Click += new System.EventHandler(this.btnPreviuos_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.ForeColor = System.Drawing.Color.White;
+            this.btnNext.IconChar = FontAwesome.Sharp.IconChar.StepForward;
+            this.btnNext.IconColor = System.Drawing.Color.White;
+            this.btnNext.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnNext.IconSize = 30;
+            this.btnNext.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNext.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnNext.Location = new System.Drawing.Point(423, 655);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(412, 48);
+            this.btnNext.TabIndex = 171;
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
             // FormAjoutFactures
             // 
             this.AcceptButton = this.btnAddFacture;
@@ -1235,6 +1271,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1391, 875);
+            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.btnPreviuos);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.btnDeleteSeulPVC);
             this.Controls.Add(this.btnAddSeulPVC);
@@ -1404,5 +1442,7 @@
         private FontAwesome.Sharp.IconButton btnDeleteSeulPVC;
         private FontAwesome.Sharp.IconButton btnAddSeulPVC;
         private System.Windows.Forms.Label label24;
+        private FontAwesome.Sharp.IconButton btnPreviuos;
+        private FontAwesome.Sharp.IconButton btnNext;
     }
 }

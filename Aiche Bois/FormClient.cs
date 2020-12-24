@@ -143,13 +143,14 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void btnPrintFacture_Click(object sender, EventArgs e)
         {
+            if (indxFacture <= -1 || dtGridFacture.Rows.Count <= 0)
+            {
+                MessageBox.Show("la list est vide ou Selectionner une ligne", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             PrintPdf print = new PrintPdf(idClient[1]);
             print.ShowDialog();
-            //if (indxFacture <= -1 || dtGridFacture.Rows.Count <= 0)
-            //{
-            //    MessageBox.Show("la list est vide ou Selectionner une ligne", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
 
             //((Form)(prntPrevDiag)).WindowState = FormWindowState.Maximized;
             //if (prntPrevDiag.ShowDialog() == DialogResult.OK)
@@ -181,139 +182,139 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void prntDoc_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            Font fontBol = new Font("Nirmala UI", 14, FontStyle.Bold);
-            Font fontReg = new Font("Nirmala UI", 12, FontStyle.Regular);
+            //Font fontBol = new Font("Nirmala UI", 14, FontStyle.Bold);
+            //Font fontReg = new Font("Nirmala UI", 12, FontStyle.Regular);
 
-            string titre = "AICHE BOIS";
-            SizeF fSTitre = e.Graphics.MeasureString(titre, new Font("Nirmala UI", 25, FontStyle.Bold));
+            //string titre = "AICHE BOIS";
+            //SizeF fSTitre = e.Graphics.MeasureString(titre, new Font("Nirmala UI", 25, FontStyle.Bold));
 
-            string idString = "Numéro du Client";
-            SizeF fSIdString = e.Graphics.MeasureString(idString, fontBol);
-            string idFacture = "N" + Program.Clients[indxFacture].IdClient.ToString("D4");
+            //string idString = "Numéro du Client";
+            //SizeF fSIdString = e.Graphics.MeasureString(idString, fontBol);
+            //string idFacture = "N" + Program.Clients[indxFacture].IdClient.ToString("D4");
 
-            float margin = 40;
-            float heightString = fSIdString.Height;
-            float changeHeight = margin + fSTitre.Height + 100;
+            //float margin = 40;
+            //float heightString = fSIdString.Height;
+            //float changeHeight = margin + fSTitre.Height + 100;
 
-            string nomString = "Nom du Client";
-            string nom = Program.Clients[indxFacture].NomClient.ToString().ToUpper();
+            //string nomString = "Nom du Client";
+            //string nom = Program.Clients[indxFacture].NomClient.ToString().ToUpper();
 
-            string date = "Tanger le " + Program.Clients[indxFacture].DateClient.ToString("dd/MM/yyyy");
+            //string date = "Tanger le " + Program.Clients[indxFacture].DateClient.ToString("dd/MM/yyyy");
 
-            string categorie = "Categorie";
+            //string categorie = "Categorie";
 
 
-            string couleurString = "Couleur";
-            string couleur = "*****";
+            //string couleurString = "Couleur";
+            //string couleur = "*****";
 
-            string cantoString = "Type_canto";
-            string nbrCanto = "*****";
+            //string cantoString = "Type_canto";
+            //string nbrCanto = "*****";
 
-            e.Graphics.DrawImage(Properties.Resources.logo, margin, margin, 100, 100);
-            e.Graphics.DrawString(titre, new Font("Nirmala UI", 25, FontStyle.Bold), Brushes.Black, (e.PageBounds.Width - fSTitre.Width) / 2, margin);
-            e.Graphics.DrawImage(Properties.Resources.logo, (e.PageBounds.Width - margin - 100), margin, 100, 100);
+            //e.Graphics.DrawImage(Properties.Resources.logo, margin, margin, 100, 100);
+            //e.Graphics.DrawString(titre, new Font("Nirmala UI", 25, FontStyle.Bold), Brushes.Black, (e.PageBounds.Width - fSTitre.Width) / 2, margin);
+            //e.Graphics.DrawImage(Properties.Resources.logo, (e.PageBounds.Width - margin - 100), margin, 100, 100);
 
-            e.Graphics.DrawString(date, fontBol, Brushes.Black, e.PageBounds.Width - fSTitre.Width - 20, changeHeight);
+            //e.Graphics.DrawString(date, fontBol, Brushes.Black, e.PageBounds.Width - fSTitre.Width - 20, changeHeight);
 
-            e.Graphics.DrawString(idString, fontBol, Brushes.Black, margin, changeHeight);
-            e.Graphics.DrawString(idFacture, fontReg, Brushes.Black, e.MarginBounds.Width / 2, changeHeight);
+            //e.Graphics.DrawString(idString, fontBol, Brushes.Black, margin, changeHeight);
+            //e.Graphics.DrawString(idFacture, fontReg, Brushes.Black, e.MarginBounds.Width / 2, changeHeight);
 
-            changeHeight += heightString;
-            e.Graphics.DrawString(nomString, fontBol, Brushes.Black, margin, changeHeight);
-            e.Graphics.DrawString(nom, fontReg, Brushes.Black, e.MarginBounds.Width / 2, changeHeight);
+            //changeHeight += heightString;
+            //e.Graphics.DrawString(nomString, fontBol, Brushes.Black, margin, changeHeight);
+            //e.Graphics.DrawString(nom, fontReg, Brushes.Black, e.MarginBounds.Width / 2, changeHeight);
 
-            changeHeight += heightString + 20;
-            e.Graphics.DrawString(categorie, fontBol, Brushes.Black, margin, changeHeight);
+            //changeHeight += heightString + 20;
+            //e.Graphics.DrawString(categorie, fontBol, Brushes.Black, margin, changeHeight);
 
-            changeHeight += heightString;
-            e.Graphics.DrawString(couleurString, fontBol, Brushes.Black, margin, changeHeight);
-            e.Graphics.DrawString(couleur, fontReg, Brushes.Black, e.MarginBounds.Width / 2, changeHeight);
+            //changeHeight += heightString;
+            //e.Graphics.DrawString(couleurString, fontBol, Brushes.Black, margin, changeHeight);
+            //e.Graphics.DrawString(couleur, fontReg, Brushes.Black, e.MarginBounds.Width / 2, changeHeight);
 
-            changeHeight += heightString;
-            e.Graphics.DrawString(cantoString, fontBol, Brushes.Black, margin, changeHeight);
-            e.Graphics.DrawString(nbrCanto, fontReg, Brushes.Black, e.MarginBounds.Width / 2, changeHeight);
+            //changeHeight += heightString;
+            //e.Graphics.DrawString(cantoString, fontBol, Brushes.Black, margin, changeHeight);
+            //e.Graphics.DrawString(nbrCanto, fontReg, Brushes.Black, e.MarginBounds.Width / 2, changeHeight);
 
-            /*draw rectangle data*/
-            changeHeight += heightString + 20;
+            ///*draw rectangle data*/
+            //changeHeight += heightString + 20;
 
-            float colHeight = 40;
-            float col1Width = 130;
-            float col2Width = 400 + col1Width;
-            float col3Width = 125 + col2Width;
-            float col4Width = 125 + col3Width;
-            float stringCenter = 5;
-            /*draw Rectangle Facture
-            e.Graphics.DrawRectangle(Pens.Black, margin, changeHeight, e.PageBounds.Width - margin * 2, e.PageBounds.Height - changeHeight - colHeight * 8);
+            //float colHeight = 40;
+            //float col1Width = 130;
+            //float col2Width = 400 + col1Width;
+            //float col3Width = 125 + col2Width;
+            //float col4Width = 125 + col3Width;
+            //float stringCenter = 5;
+            ///*draw Rectangle Facture
+            //e.Graphics.DrawRectangle(Pens.Black, margin, changeHeight, e.PageBounds.Width - margin * 2, e.PageBounds.Height - changeHeight - colHeight * 8);
 
-            /*draw row1*/
-            e.Graphics.DrawLine(Pens.Black, margin, changeHeight + colHeight, e.PageBounds.Width - margin, changeHeight + colHeight);
-            changeHeight += 5;
-            /*draw column 1*/
-            e.Graphics.DrawString("QUANTITE", fontBol, Brushes.Black, margin + 15, changeHeight + stringCenter);
-            e.Graphics.DrawLine(Pens.Black, margin + col1Width, changeHeight, margin + col1Width, changeHeight + colHeight);
+            ///*draw row1*/
+            //e.Graphics.DrawLine(Pens.Black, margin, changeHeight + colHeight, e.PageBounds.Width - margin, changeHeight + colHeight);
+            //changeHeight += 5;
+            ///*draw column 1*/
+            //e.Graphics.DrawString("QUANTITE", fontBol, Brushes.Black, margin + 15, changeHeight + stringCenter);
+            //e.Graphics.DrawLine(Pens.Black, margin + col1Width, changeHeight, margin + col1Width, changeHeight + colHeight);
 
-            /*draw column 2*/
-            SizeF fsDestination = e.Graphics.MeasureString("DESIGNATION", fontBol);
-            e.Graphics.DrawString("DESIGNATION", fontBol, Brushes.Black, (e.PageBounds.Width - margin - col1Width - fsDestination.Width) / 2, changeHeight + stringCenter);
-            e.Graphics.DrawLine(Pens.Black, margin + col2Width, changeHeight, margin + col2Width, changeHeight + colHeight);
-            /*draw column 3*/
+            ///*draw column 2*/
+            //SizeF fsDestination = e.Graphics.MeasureString("DESIGNATION", fontBol);
+            //e.Graphics.DrawString("DESIGNATION", fontBol, Brushes.Black, (e.PageBounds.Width - margin - col1Width - fsDestination.Width) / 2, changeHeight + stringCenter);
+            //e.Graphics.DrawLine(Pens.Black, margin + col2Width, changeHeight, margin + col2Width, changeHeight + colHeight);
+            ///*draw column 3*/
 
-            e.Graphics.DrawString("P . U", fontBol, Brushes.Black, margin * 2 + col2Width - 5, changeHeight + stringCenter);
-            e.Graphics.DrawLine(Pens.Black, margin + col3Width, changeHeight, margin + col3Width, changeHeight + colHeight);
-            /*draw column 4*/
+            //e.Graphics.DrawString("P . U", fontBol, Brushes.Black, margin * 2 + col2Width - 5, changeHeight + stringCenter);
+            //e.Graphics.DrawLine(Pens.Black, margin + col3Width, changeHeight, margin + col3Width, changeHeight + colHeight);
+            ///*draw column 4*/
 
-            e.Graphics.DrawLine(Pens.Black, margin, changeHeight, e.PageBounds.Width - margin, changeHeight);
-            e.Graphics.DrawString("Total", fontBol, Brushes.Black, margin * 2 + col3Width - 10, changeHeight + stringCenter);
+            //e.Graphics.DrawLine(Pens.Black, margin, changeHeight, e.PageBounds.Width - margin, changeHeight);
+            //e.Graphics.DrawString("Total", fontBol, Brushes.Black, margin * 2 + col3Width - 10, changeHeight + stringCenter);
 
-            /*draw row2*/
-            foreach (Client facture in Program.Clients)
-            {
-                e.Graphics.DrawString(facture.PrixTotalClient.ToString("F2"), fontBol, Brushes.Black, margin * 2 + col3Width - 10, changeHeight + colHeight + stringCenter);
-                e.Graphics.DrawString(facture.getNbFacture().ToString(), fontBol, Brushes.Black, margin * 2 + col2Width - 10, changeHeight + colHeight + stringCenter);
-                e.Graphics.DrawString(facture.NomClient, fontBol, Brushes.Black, margin * 2 + col1Width - 10, changeHeight + colHeight + stringCenter);
-                e.Graphics.DrawString(facture.IdClient.ToString("D4"), fontBol, Brushes.Black, margin * 2, changeHeight + colHeight + stringCenter);
-                colHeight += 40;
-                /*draw rows*/
-                e.Graphics.DrawLine(Pens.Black, margin, changeHeight + colHeight, e.PageBounds.Width - margin, changeHeight + colHeight);
-                /*draw column 4*/
-                e.Graphics.DrawLine(Pens.Black, e.PageBounds.Width - margin, changeHeight, e.PageBounds.Width - margin, changeHeight + colHeight);
-                /*draw column 3*/
-                e.Graphics.DrawLine(Pens.Black, margin + col3Width, changeHeight, margin + col3Width, changeHeight + colHeight);
-                /*draw column 2*/
-                e.Graphics.DrawLine(Pens.Black, margin + col2Width, changeHeight, margin + col2Width, changeHeight + colHeight);
-                /*draw column 1*/
-                e.Graphics.DrawLine(Pens.Black, margin + col1Width, changeHeight, margin + col1Width, changeHeight + colHeight);
-                /*draw column 0*/
-                e.Graphics.DrawLine(Pens.Black, margin, changeHeight, margin, changeHeight + colHeight);
-            }
+            ///*draw row2*/
+            //foreach (Client facture in Program.Clients)
+            //{
+            //    e.Graphics.DrawString(facture.PrixTotalClient.ToString("F2"), fontBol, Brushes.Black, margin * 2 + col3Width - 10, changeHeight + colHeight + stringCenter);
+            //    //e.Graphics.DrawString(facture.getNbFacture().ToString(), fontBol, Brushes.Black, margin * 2 + col2Width - 10, changeHeight + colHeight + stringCenter);
+            //    e.Graphics.DrawString(facture.NomClient, fontBol, Brushes.Black, margin * 2 + col1Width - 10, changeHeight + colHeight + stringCenter);
+            //    e.Graphics.DrawString(facture.IdClient.ToString("D4"), fontBol, Brushes.Black, margin * 2, changeHeight + colHeight + stringCenter);
+            //    colHeight += 40;
+            //    /*draw rows*/
+            //    e.Graphics.DrawLine(Pens.Black, margin, changeHeight + colHeight, e.PageBounds.Width - margin, changeHeight + colHeight);
+            //    /*draw column 4*/
+            //    e.Graphics.DrawLine(Pens.Black, e.PageBounds.Width - margin, changeHeight, e.PageBounds.Width - margin, changeHeight + colHeight);
+            //    /*draw column 3*/
+            //    e.Graphics.DrawLine(Pens.Black, margin + col3Width, changeHeight, margin + col3Width, changeHeight + colHeight);
+            //    /*draw column 2*/
+            //    e.Graphics.DrawLine(Pens.Black, margin + col2Width, changeHeight, margin + col2Width, changeHeight + colHeight);
+            //    /*draw column 1*/
+            //    e.Graphics.DrawLine(Pens.Black, margin + col1Width, changeHeight, margin + col1Width, changeHeight + colHeight);
+            //    /*draw column 0*/
+            //    e.Graphics.DrawLine(Pens.Black, margin, changeHeight, margin, changeHeight + colHeight);
+            //}
 
-            /*draw Rectangle Avance*/
-            colHeight += 40;
-            e.Graphics.DrawLine(Pens.Black, margin, changeHeight + colHeight, margin, changeHeight + colHeight + 100);
-            e.Graphics.DrawLine(Pens.Black, margin, changeHeight + colHeight, e.PageBounds.Width - margin, changeHeight + colHeight);
+            ///*draw Rectangle Avance*/
+            //colHeight += 40;
+            //e.Graphics.DrawLine(Pens.Black, margin, changeHeight + colHeight, margin, changeHeight + colHeight + 100);
+            //e.Graphics.DrawLine(Pens.Black, margin, changeHeight + colHeight, e.PageBounds.Width - margin, changeHeight + colHeight);
 
-            e.Graphics.DrawString("DATE", fontBol, Brushes.Black, margin + col1Width, changeHeight + colHeight + stringCenter);
-            e.Graphics.DrawString("AVANCE", fontBol, Brushes.Black, margin * 2 + col2Width - 20, e.PageBounds.Height - (colHeight * 6) - 20);
-            e.Graphics.DrawString("REST", fontBol, Brushes.Black, margin * 2 + col3Width - 10, e.PageBounds.Height - (colHeight * 6) - 20);
-            /*draw row*/
-            e.Graphics.DrawString(Program.Clients[indxFacture].DateClient.ToString("D"), fontReg, Brushes.Black, col1Width, e.PageBounds.Height - (colHeight * 5));
-            e.Graphics.DrawString(Program.Clients[indxFacture].PrixTotalAvance.ToString("F2"), fontReg, Brushes.Black, margin + 5 + col2Width, e.PageBounds.Height - (colHeight * 5));
-            e.Graphics.DrawString(Program.Clients[indxFacture].PrixTotalRest.ToString("F2"), fontReg, Brushes.Black, margin + 5 + col3Width, e.PageBounds.Height - (colHeight * 5));
+            //e.Graphics.DrawString("DATE", fontBol, Brushes.Black, margin + col1Width, changeHeight + colHeight + stringCenter);
+            //e.Graphics.DrawString("AVANCE", fontBol, Brushes.Black, margin * 2 + col2Width - 20, e.PageBounds.Height - (colHeight * 6) - 20);
+            //e.Graphics.DrawString("REST", fontBol, Brushes.Black, margin * 2 + col3Width - 10, e.PageBounds.Height - (colHeight * 6) - 20);
+            ///*draw row*/
+            //e.Graphics.DrawString(Program.Clients[indxFacture].DateClient.ToString("D"), fontReg, Brushes.Black, col1Width, e.PageBounds.Height - (colHeight * 5));
+            //e.Graphics.DrawString(Program.Clients[indxFacture].PrixTotalAvance.ToString("F2"), fontReg, Brushes.Black, margin + 5 + col2Width, e.PageBounds.Height - (colHeight * 5));
+            //e.Graphics.DrawString(Program.Clients[indxFacture].PrixTotalRest.ToString("F2"), fontReg, Brushes.Black, margin + 5 + col3Width, e.PageBounds.Height - (colHeight * 5));
 
-            e.Graphics.DrawLine(Pens.Black, e.PageBounds.Width - margin, changeHeight + colHeight, e.PageBounds.Width - margin, changeHeight + colHeight + 100);
-            colHeight += 100;
-            e.Graphics.DrawLine(Pens.Black, margin, changeHeight + colHeight, e.PageBounds.Width - margin, changeHeight + colHeight);
+            //e.Graphics.DrawLine(Pens.Black, e.PageBounds.Width - margin, changeHeight + colHeight, e.PageBounds.Width - margin, changeHeight + colHeight + 100);
+            //colHeight += 100;
+            //e.Graphics.DrawLine(Pens.Black, margin, changeHeight + colHeight, e.PageBounds.Width - margin, changeHeight + colHeight);
 
-            /*string signature*/
-            string signature1 = "MODE DE PAIMENT";
-            SizeF fsSign1 = e.Graphics.MeasureString(signature1, fontReg);
-            string signature2 = "50% : à la commande\t50% : à la finition";
-            SizeF fsSign2 = e.Graphics.MeasureString(signature2, fontReg);
-            string signature3 = "Validité de l'offre 1 mois";
-            SizeF fsSign3 = e.Graphics.MeasureString(signature3, fontReg);
-            e.Graphics.DrawString(signature1, fontReg, Brushes.Black, (e.PageBounds.Width - fsSign1.Width) / 2, e.PageBounds.Height - 80);
-            e.Graphics.DrawString(signature2, fontReg, Brushes.Black, (e.PageBounds.Width - fsSign2.Width) / 2, e.PageBounds.Height - 60);
-            e.Graphics.DrawString(signature3, fontReg, Brushes.Black, (e.PageBounds.Width - fsSign3.Width) / 2, e.PageBounds.Height - margin);
+            ///*string signature*/
+            //string signature1 = "MODE DE PAIMENT";
+            //SizeF fsSign1 = e.Graphics.MeasureString(signature1, fontReg);
+            //string signature2 = "50% : à la commande\t50% : à la finition";
+            //SizeF fsSign2 = e.Graphics.MeasureString(signature2, fontReg);
+            //string signature3 = "Validité de l'offre 1 mois";
+            //SizeF fsSign3 = e.Graphics.MeasureString(signature3, fontReg);
+            //e.Graphics.DrawString(signature1, fontReg, Brushes.Black, (e.PageBounds.Width - fsSign1.Width) / 2, e.PageBounds.Height - 80);
+            //e.Graphics.DrawString(signature2, fontReg, Brushes.Black, (e.PageBounds.Width - fsSign2.Width) / 2, e.PageBounds.Height - 60);
+            //e.Graphics.DrawString(signature3, fontReg, Brushes.Black, (e.PageBounds.Width - fsSign3.Width) / 2, e.PageBounds.Height - margin);
         }
 
         /// <summary>

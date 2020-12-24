@@ -5,7 +5,7 @@
         /*les attribus*/
         public static int cp = 0;
         private int idMesure;
-        private int idFacture;
+        private long idFacture;
         private string type;
         private double quantite;
         private double largeur;
@@ -41,7 +41,7 @@
         public double Longueur { get => longueur; set => longueur = value; }
         public double Epaisseur { get => epaisseur; set => epaisseur = value; }
         public string Type { get => type; set => type = value; }
-        public int IdFacture { get => idFacture; set => idFacture = value; }
+        public long IdFacture { get => idFacture; set => idFacture = value; }
         public int IdMesure { get => idMesure;}
     }
 }

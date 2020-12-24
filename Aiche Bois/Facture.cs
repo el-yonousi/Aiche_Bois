@@ -10,8 +10,8 @@ namespace Aiche_Bois
         private List<Mesure> mesure = new List<Mesure>();
         private List<Pvc> pvcs = new List<Pvc>();
 
-        private int idFacture;
-        private int idClient;
+        private long idFacture;
+        private long idClient;
         
         private string typeDeBois;
         private string categorie;
@@ -30,7 +30,7 @@ namespace Aiche_Bois
         /// <summary>
         /// getter and setter for class factur
         /// </summary>
-        public int IDFacture { get => idFacture; set => idFacture = value; }
+        public long IDFacture { get => idFacture; set => idFacture = value; }
         public string TypeDeBois { get => typeDeBois; set => typeDeBois = value; }
         public string Metrage { get => metrage; set => metrage = value; }
         public double PrixMetres { get => prixMetres; set => prixMetres = value; }
@@ -42,7 +42,7 @@ namespace Aiche_Bois
         public double PrixTotalPVC { get => prixTotalPVC; set => prixTotalPVC = value; }
         public double PrixTotalMesure { get => prixTotalMesure; set => prixTotalMesure = value; }
         public List<Mesure> Mesures { get => mesure; set => mesure = value; }
-        public int IdClient { get => idClient; set => idClient = value; }
+        public long IdClient { get => idClient; set => idClient = value; }
         public string Categorie { get => categorie; set => categorie = value; }
         public List<Pvc> Pvcs { get => pvcs; set => pvcs = value; }
         public bool CheckPVC { get => checkPVC; set => checkPVC = value; }

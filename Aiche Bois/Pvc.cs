@@ -10,7 +10,7 @@ namespace Aiche_Bois
     {
         /*les attribus*/
         public static int cp = 0;
-        private int idFacture;
+        private long idFacture;
         private int idPvc;
         private string ortn;
         private double qte;
@@ -22,7 +22,7 @@ namespace Aiche_Bois
             idPvc = ++cp;
         }
 
-        public Pvc(string ortn, double qte, double largr, double longr)
+        public Pvc(double qte, double largr, double longr, string ortn)
         {
             idPvc = ++cp;
             Qte = qte;
@@ -36,7 +36,7 @@ namespace Aiche_Bois
         public double Largr { get => largr; set => largr = value; }
         public double Longr { get => longr; set => longr = value; }
         public string Ortn { get => ortn; set => ortn = value; }
-        public int IdFacture { get => idFacture; set => idFacture = value; }
+        public long IdFacture { get => idFacture; set => idFacture = value; }
         public int IdPvc { get => idPvc;}
     }
 }
