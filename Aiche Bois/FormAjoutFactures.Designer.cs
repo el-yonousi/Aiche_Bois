@@ -116,6 +116,9 @@
             this.label24 = new System.Windows.Forms.Label();
             this.btnPreviuos = new FontAwesome.Sharp.IconButton();
             this.btnNext = new FontAwesome.Sharp.IconButton();
+            this.cmbFactureNumero = new System.Windows.Forms.ComboBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.lblFactureNumero = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtGMesure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridPvc)).BeginInit();
             this.SuspendLayout();
@@ -417,7 +420,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(9, 217);
+            this.label4.Location = new System.Drawing.Point(8, 273);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(201, 20);
             this.label4.TabIndex = 109;
@@ -429,7 +432,7 @@
             this.txtSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSearch.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtSearch.Location = new System.Drawing.Point(13, 240);
+            this.txtSearch.Location = new System.Drawing.Point(12, 296);
             this.txtSearch.MaxLength = 30;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(360, 28);
@@ -441,9 +444,9 @@
             this.lstTypeBois.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.lstTypeBois.FormattingEnabled = true;
             this.lstTypeBois.ItemHeight = 20;
-            this.lstTypeBois.Location = new System.Drawing.Point(15, 291);
+            this.lstTypeBois.Location = new System.Drawing.Point(12, 334);
             this.lstTypeBois.Name = "lstTypeBois";
-            this.lstTypeBois.Size = new System.Drawing.Size(358, 280);
+            this.lstTypeBois.Size = new System.Drawing.Size(361, 240);
             this.lstTypeBois.TabIndex = 5;
             this.lstTypeBois.SelectedIndexChanged += new System.EventHandler(this.lstTypeBois_SelectedIndexChanged);
             // 
@@ -454,9 +457,9 @@
             this.dtDateClient.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.dtDateClient.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold);
             this.dtDateClient.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtDateClient.Location = new System.Drawing.Point(13, 34);
+            this.dtDateClient.Location = new System.Drawing.Point(12, 96);
             this.dtDateClient.Name = "dtDateClient";
-            this.dtDateClient.Size = new System.Drawing.Size(361, 32);
+            this.dtDateClient.Size = new System.Drawing.Size(364, 32);
             this.dtDateClient.TabIndex = 0;
             this.dtDateClient.TabStop = false;
             this.dtDateClient.Tag = "Date de la Facture";
@@ -465,7 +468,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(9, 12);
+            this.label2.Location = new System.Drawing.Point(8, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(178, 20);
             this.label2.TabIndex = 103;
@@ -481,7 +484,7 @@
             this.btnCmbCategorie.IconSize = 25;
             this.btnCmbCategorie.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCmbCategorie.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCmbCategorie.Location = new System.Drawing.Point(336, 161);
+            this.btnCmbCategorie.Location = new System.Drawing.Point(335, 223);
             this.btnCmbCategorie.Name = "btnCmbCategorie";
             this.btnCmbCategorie.Size = new System.Drawing.Size(40, 38);
             this.btnCmbCategorie.TabIndex = 3;
@@ -493,7 +496,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(11, 76);
+            this.label3.Location = new System.Drawing.Point(10, 138);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 20);
             this.label3.TabIndex = 104;
@@ -503,7 +506,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label15.Location = new System.Drawing.Point(9, 138);
+            this.label15.Location = new System.Drawing.Point(8, 200);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(98, 20);
             this.label15.TabIndex = 106;
@@ -515,10 +518,10 @@
             this.txtNomClient.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNomClient.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtNomClient.Location = new System.Drawing.Point(15, 99);
+            this.txtNomClient.Location = new System.Drawing.Point(12, 161);
             this.txtNomClient.MaxLength = 30;
             this.txtNomClient.Name = "txtNomClient";
-            this.txtNomClient.Size = new System.Drawing.Size(361, 28);
+            this.txtNomClient.Size = new System.Drawing.Size(363, 28);
             this.txtNomClient.TabIndex = 0;
             this.txtNomClient.Tag = "Nom du Client";
             // 
@@ -533,7 +536,7 @@
             "MDF",
             "LATTE",
             "STD"});
-            this.cmbTypeDeBois.Location = new System.Drawing.Point(13, 161);
+            this.cmbTypeDeBois.Location = new System.Drawing.Point(12, 223);
             this.cmbTypeDeBois.Name = "cmbTypeDeBois";
             this.cmbTypeDeBois.Size = new System.Drawing.Size(317, 38);
             this.cmbTypeDeBois.TabIndex = 2;
@@ -1064,6 +1067,7 @@
             // btnSaveFacture
             // 
             this.btnSaveFacture.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSaveFacture.Enabled = false;
             this.btnSaveFacture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveFacture.ForeColor = System.Drawing.Color.White;
             this.btnSaveFacture.IconChar = FontAwesome.Sharp.IconChar.Save;
@@ -1245,6 +1249,7 @@
             this.btnPreviuos.Size = new System.Drawing.Size(357, 48);
             this.btnPreviuos.TabIndex = 170;
             this.btnPreviuos.UseVisualStyleBackColor = false;
+            this.btnPreviuos.Visible = false;
             this.btnPreviuos.Click += new System.EventHandler(this.btnPreviuos_Click);
             // 
             // btnNext
@@ -1262,7 +1267,44 @@
             this.btnNext.Size = new System.Drawing.Size(412, 48);
             this.btnNext.TabIndex = 171;
             this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Visible = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // cmbFactureNumero
+            // 
+            this.cmbFactureNumero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFactureNumero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbFactureNumero.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFactureNumero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.cmbFactureNumero.FormattingEnabled = true;
+            this.cmbFactureNumero.Location = new System.Drawing.Point(12, 35);
+            this.cmbFactureNumero.Name = "cmbFactureNumero";
+            this.cmbFactureNumero.Size = new System.Drawing.Size(364, 31);
+            this.cmbFactureNumero.TabIndex = 172;
+            this.cmbFactureNumero.Visible = false;
+            this.cmbFactureNumero.SelectedIndexChanged += new System.EventHandler(this.cmbFactureNumero_SelectedIndexChanged);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label25.Location = new System.Drawing.Point(8, 12);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(122, 20);
+            this.label25.TabIndex = 173;
+            this.label25.Text = "Facture Numero";
+            // 
+            // lblFactureNumero
+            // 
+            this.lblFactureNumero.BackColor = System.Drawing.Color.White;
+            this.lblFactureNumero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.lblFactureNumero.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblFactureNumero.Location = new System.Drawing.Point(12, 35);
+            this.lblFactureNumero.Name = "lblFactureNumero";
+            this.lblFactureNumero.Size = new System.Drawing.Size(364, 31);
+            this.lblFactureNumero.TabIndex = 174;
+            this.lblFactureNumero.Text = "Facture Numero";
+            this.lblFactureNumero.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FormAjoutFactures
             // 
@@ -1271,6 +1313,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1391, 875);
+            this.Controls.Add(this.label25);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPreviuos);
             this.Controls.Add(this.label24);
@@ -1345,6 +1388,8 @@
             this.Controls.Add(this.txtPrixAvanceClient);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAddFacture);
+            this.Controls.Add(this.lblFactureNumero);
+            this.Controls.Add(this.cmbFactureNumero);
             this.Font = new System.Drawing.Font("Nirmala UI", 11F, System.Drawing.FontStyle.Bold);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -1444,5 +1489,8 @@
         private System.Windows.Forms.Label label24;
         private FontAwesome.Sharp.IconButton btnPreviuos;
         private FontAwesome.Sharp.IconButton btnNext;
+        private System.Windows.Forms.ComboBox cmbFactureNumero;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label lblFactureNumero;
     }
 }
