@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aiche Bois", "Aiche Bois\Aiche Bois.csproj", "{3040D6A8-D361-456B-9DE4-23D309E4BDE5}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "setup", "setup\setup.vdproj", "{BBD0B003-B077-463B-A980-906F833FCFB7}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{3040D6A8-D361-456B-9DE4-23D309E4BDE5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3040D6A8-D361-456B-9DE4-23D309E4BDE5}.Release|x86.ActiveCfg = Release|x86
 		{3040D6A8-D361-456B-9DE4-23D309E4BDE5}.Release|x86.Build.0 = Release|x86
-		{BBD0B003-B077-463B-A980-906F833FCFB7}.Debug|Any CPU.ActiveCfg = Debug
-		{BBD0B003-B077-463B-A980-906F833FCFB7}.Debug|x86.ActiveCfg = Debug
-		{BBD0B003-B077-463B-A980-906F833FCFB7}.Release|Any CPU.ActiveCfg = Release
-		{BBD0B003-B077-463B-A980-906F833FCFB7}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
