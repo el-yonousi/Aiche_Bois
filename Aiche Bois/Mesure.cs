@@ -17,17 +17,19 @@
             idMesure = ++cp;
         }
 
-        public Mesure(double quantite, double largeur, double longueur, string type)
+        public Mesure(long idFacture, double quantite, double largeur, double longueur, string type)
         {
             idMesure = ++cp;
+            IdFacture = idFacture;
             Quantite = quantite;
             Largeur = largeur;
             Longueur = longueur;
             Type = type;
         }
 
-        public Mesure(double quantite, double largeur, double longueur, double epaisseur, string type)
+        public Mesure(long idFacture, double quantite, double largeur, double longueur, double epaisseur, string type)
         {
+            IdFacture = IdFacture;
             Quantite = quantite;
             Largeur = largeur;
             Longueur = longueur;

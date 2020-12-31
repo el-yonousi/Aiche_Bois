@@ -28,6 +28,7 @@ namespace Aiche_Bois
             OleDbConnection connection = new OleDbConnection();
             connection.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + path + "/aicheBois.accdb";
 
+            //Client
             OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM CLIENT WHERE IDCLIENT = " + long.Parse(idClient), connection);
             DataSet dataSet = new DataSet();
             adapter.Fill(dataSet, "client");
@@ -37,6 +38,18 @@ namespace Aiche_Bois
             report.SetDataSource(dataSet);
             crystalRepClient.ReportSource = report;
             dataSet.Dispose();
+
+            // Facture
+            //OleDbDataAdapter adapterMesure = new OleDbDataAdapter("SELECT * FROM facture WHERE IDCLIENT = " + long.Parse(idClient), connection);
+            //DataSet dataSetMesure = new DataSet();
+            //ReportDocument reportMesure = new ReportDocument();
+            //adapterMesure.Fill(dataSetMesure, "facture");
+            ////report.Load(Application.StartupPath + @"CrystalReport1.rpt");
+            //reportMesure.Load(@"CrystalReportMesure.rpt");
+
+            //reportMesure.SetDataSource(dataSetMesure);
+            //crystalRepClient.ReportSource = reportMesure;
+            //dataSetMesure.Dispose();
             connection.Close();
         }
     }

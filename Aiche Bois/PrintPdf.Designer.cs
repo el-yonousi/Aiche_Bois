@@ -30,7 +30,6 @@ namespace Aiche_Bois
         private void InitializeComponent()
         {
             this.crystalRepClient = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.CrystalReport21 = new Aiche_Bois.CrystalReportClient();
             this.SuspendLayout();
             // 
             // crystalRepClient
@@ -39,6 +38,7 @@ namespace Aiche_Bois
             this.crystalRepClient.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalRepClient.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalRepClient.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalRepClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.crystalRepClient.Location = new System.Drawing.Point(0, 0);
             this.crystalRepClient.Name = "crystalRepClient";
             this.crystalRepClient.Size = new System.Drawing.Size(931, 661);
@@ -49,8 +49,10 @@ namespace Aiche_Bois
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(931, 661);
             this.Controls.Add(this.crystalRepClient);
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "PrintPdf";
             this.Text = "PrintPdf";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -62,6 +64,5 @@ namespace Aiche_Bois
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalRepClient;
-        private CrystalReportClient CrystalReport21;
     }
 }
