@@ -65,6 +65,7 @@
             // txtSearch
             // 
             resources.ApplyResources(this.txtSearch, "txtSearch");
+            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
@@ -74,6 +75,7 @@
             // label4
             // 
             resources.ApplyResources(this.label4, "label4");
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.label4.Name = "label4";
             // 
             // prntDoc
@@ -89,7 +91,7 @@
             // btnSearch
             // 
             resources.ApplyResources(this.btnSearch, "btnSearch");
-            this.btnSearch.BackColor = System.Drawing.Color.White;
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
@@ -102,7 +104,7 @@
             // btnDeleteFacture
             // 
             resources.ApplyResources(this.btnDeleteFacture, "btnDeleteFacture");
-            this.btnDeleteFacture.BackColor = System.Drawing.Color.White;
+            this.btnDeleteFacture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.btnDeleteFacture.FlatAppearance.BorderSize = 0;
             this.btnDeleteFacture.ForeColor = System.Drawing.Color.White;
             this.btnDeleteFacture.IconChar = FontAwesome.Sharp.IconChar.Trash;
@@ -116,7 +118,7 @@
             // btnEditFacture
             // 
             resources.ApplyResources(this.btnEditFacture, "btnEditFacture");
-            this.btnEditFacture.BackColor = System.Drawing.Color.White;
+            this.btnEditFacture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.btnEditFacture.FlatAppearance.BorderSize = 0;
             this.btnEditFacture.ForeColor = System.Drawing.Color.White;
             this.btnEditFacture.IconChar = FontAwesome.Sharp.IconChar.Edit;
@@ -130,7 +132,7 @@
             // btnAddFacture
             // 
             resources.ApplyResources(this.btnAddFacture, "btnAddFacture");
-            this.btnAddFacture.BackColor = System.Drawing.Color.White;
+            this.btnAddFacture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.btnAddFacture.FlatAppearance.BorderSize = 0;
             this.btnAddFacture.ForeColor = System.Drawing.Color.White;
             this.btnAddFacture.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
@@ -144,7 +146,7 @@
             // btnPrintFacture
             // 
             resources.ApplyResources(this.btnPrintFacture, "btnPrintFacture");
-            this.btnPrintFacture.BackColor = System.Drawing.Color.White;
+            this.btnPrintFacture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.btnPrintFacture.FlatAppearance.BorderSize = 0;
             this.btnPrintFacture.ForeColor = System.Drawing.Color.White;
             this.btnPrintFacture.IconChar = FontAwesome.Sharp.IconChar.Print;
@@ -187,7 +189,7 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dtGridFacture.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtGridFacture.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtGridFacture.BackgroundColor = System.Drawing.Color.White;
+            this.dtGridFacture.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.dtGridFacture.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtGridFacture.CausesValidation = false;
             this.dtGridFacture.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -237,10 +239,10 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             this.dtGridFacture.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dtGridFacture.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dtGridFacture.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
-            this.dtGridFacture.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dtGridFacture.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.dtGridFacture.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dtGridFacture.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.dtGridFacture.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.dtGridFacture.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.dtGridFacture.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.dtGridFacture.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtGridFacture.TabStop = false;
             this.dtGridFacture.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridFacture_CellClick);

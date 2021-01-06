@@ -11,13 +11,15 @@
         private double largeur;
         private double longueur;
         private double epaisseur;
+        private string orientation;
 
         /*les constrecteurs*/
-        public Mesure() {
+        public Mesure()
+        {
             idMesure = ++cp;
         }
 
-        public Mesure(long idFacture, double quantite, double largeur, double longueur, string type)
+        public Mesure(long idFacture, double quantite, double largeur, double longueur, string type, string orienatation)
         {
             idMesure = ++cp;
             IdFacture = idFacture;
@@ -25,9 +27,10 @@
             Largeur = largeur;
             Longueur = longueur;
             Type = type;
+            Orientation = orienatation;
         }
 
-        public Mesure(long idFacture, double quantite, double largeur, double longueur, double epaisseur, string type)
+        public Mesure(long idFacture, double quantite, double largeur, double longueur, double epaisseur, string type, string orienatation)
         {
             IdFacture = IdFacture;
             Quantite = quantite;
@@ -35,6 +38,7 @@
             Longueur = longueur;
             Epaisseur = epaisseur;
             Type = type;
+            Orientation = orienatation;
         }
 
         /*les accesseurs*/
@@ -44,6 +48,7 @@
         public double Epaisseur { get => epaisseur; set => epaisseur = value; }
         public string Type { get => type; set => type = value; }
         public long IdFacture { get => idFacture; set => idFacture = value; }
-        public int IdMesure { get => idMesure;}
+        public int IdMesure { get => idMesure; }
+        public string Orientation { get => orientation; set => orientation = value; }
     }
 }

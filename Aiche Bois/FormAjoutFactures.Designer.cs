@@ -60,7 +60,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lstTypeBois = new System.Windows.Forms.ListBox();
-            this.dtDateClient = new System.Windows.Forms.DateTimePicker();
+            this.dtDateFacture = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCmbCategorie = new FontAwesome.Sharp.IconButton();
             this.label3 = new System.Windows.Forms.Label();
@@ -95,7 +95,7 @@
             this.txtTaillePVC = new System.Windows.Forms.TextBox();
             this.btncmbNbrCanto = new FontAwesome.Sharp.IconButton();
             this.label16 = new System.Windows.Forms.Label();
-            this.cmbNbrCantoPvc = new System.Windows.Forms.ComboBox();
+            this.cmbTypePvc = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtTotaleTaillPVC = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -114,11 +114,11 @@
             this.btnDeleteSeulPVC = new FontAwesome.Sharp.IconButton();
             this.btnAddSeulPVC = new FontAwesome.Sharp.IconButton();
             this.label24 = new System.Windows.Forms.Label();
-            this.btnPreviuos = new FontAwesome.Sharp.IconButton();
-            this.btnNext = new FontAwesome.Sharp.IconButton();
-            this.cmbFactureNumero = new System.Windows.Forms.ComboBox();
-            this.label25 = new System.Windows.Forms.Label();
+            this.cmbNumeroFacture = new System.Windows.Forms.ComboBox();
+            this.lblNumeroFacture = new System.Windows.Forms.Label();
             this.lblFactureNumero = new System.Windows.Forms.Label();
+            this.btnPrintFacture = new FontAwesome.Sharp.IconButton();
+            this.btnDeleteFacture = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtGMesure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridPvc)).BeginInit();
             this.SuspendLayout();
@@ -450,19 +450,19 @@
             this.lstTypeBois.TabIndex = 5;
             this.lstTypeBois.SelectedIndexChanged += new System.EventHandler(this.lstTypeBois_SelectedIndexChanged);
             // 
-            // dtDateClient
+            // dtDateFacture
             // 
-            this.dtDateClient.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.dtDateClient.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.dtDateClient.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.dtDateClient.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold);
-            this.dtDateClient.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtDateClient.Location = new System.Drawing.Point(12, 96);
-            this.dtDateClient.Name = "dtDateClient";
-            this.dtDateClient.Size = new System.Drawing.Size(364, 32);
-            this.dtDateClient.TabIndex = 0;
-            this.dtDateClient.TabStop = false;
-            this.dtDateClient.Tag = "Date de la Facture";
+            this.dtDateFacture.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.dtDateFacture.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.dtDateFacture.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.dtDateFacture.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold);
+            this.dtDateFacture.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtDateFacture.Location = new System.Drawing.Point(12, 96);
+            this.dtDateFacture.Name = "dtDateFacture";
+            this.dtDateFacture.Size = new System.Drawing.Size(364, 32);
+            this.dtDateFacture.TabIndex = 0;
+            this.dtDateFacture.TabStop = false;
+            this.dtDateFacture.Tag = "Date de la Facture";
             // 
             // label2
             // 
@@ -470,9 +470,9 @@
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label2.Location = new System.Drawing.Point(8, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(178, 20);
+            this.label2.Size = new System.Drawing.Size(134, 20);
             this.label2.TabIndex = 103;
-            this.label2.Text = "Date de la Facture Client";
+            this.label2.Text = "Date de la Facture";
             // 
             // btnCmbCategorie
             // 
@@ -974,18 +974,18 @@
             this.label16.TabIndex = 144;
             this.label16.Text = "Taille de Canto";
             // 
-            // cmbNbrCantoPvc
+            // cmbTypePvc
             // 
-            this.cmbNbrCantoPvc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbNbrCantoPvc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbNbrCantoPvc.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbNbrCantoPvc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.cmbNbrCantoPvc.FormattingEnabled = true;
-            this.cmbNbrCantoPvc.Location = new System.Drawing.Point(974, 35);
-            this.cmbNbrCantoPvc.Name = "cmbNbrCantoPvc";
-            this.cmbNbrCantoPvc.Size = new System.Drawing.Size(317, 31);
-            this.cmbNbrCantoPvc.TabIndex = 21;
-            this.cmbNbrCantoPvc.SelectedIndexChanged += new System.EventHandler(this.cmbNbrCantoPvc_SelectedIndexChanged);
+            this.cmbTypePvc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTypePvc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbTypePvc.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTypePvc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.cmbTypePvc.FormattingEnabled = true;
+            this.cmbTypePvc.Location = new System.Drawing.Point(974, 35);
+            this.cmbTypePvc.Name = "cmbTypePvc";
+            this.cmbTypePvc.Size = new System.Drawing.Size(317, 31);
+            this.cmbTypePvc.TabIndex = 21;
+            this.cmbTypePvc.SelectedIndexChanged += new System.EventHandler(this.cmbNbrCantoPvc_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -1234,65 +1234,29 @@
             this.label24.TabIndex = 169;
             this.label24.Text = "Orientation";
             // 
-            // btnPreviuos
+            // cmbNumeroFacture
             // 
-            this.btnPreviuos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPreviuos.ForeColor = System.Drawing.Color.White;
-            this.btnPreviuos.IconChar = FontAwesome.Sharp.IconChar.StepBackward;
-            this.btnPreviuos.IconColor = System.Drawing.Color.White;
-            this.btnPreviuos.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnPreviuos.IconSize = 30;
-            this.btnPreviuos.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPreviuos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnPreviuos.Location = new System.Drawing.Point(16, 655);
-            this.btnPreviuos.Name = "btnPreviuos";
-            this.btnPreviuos.Size = new System.Drawing.Size(357, 48);
-            this.btnPreviuos.TabIndex = 170;
-            this.btnPreviuos.UseVisualStyleBackColor = false;
-            this.btnPreviuos.Visible = false;
-            this.btnPreviuos.Click += new System.EventHandler(this.btnPreviuos_Click);
+            this.cmbNumeroFacture.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNumeroFacture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbNumeroFacture.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbNumeroFacture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.cmbNumeroFacture.FormattingEnabled = true;
+            this.cmbNumeroFacture.Location = new System.Drawing.Point(12, 35);
+            this.cmbNumeroFacture.Name = "cmbNumeroFacture";
+            this.cmbNumeroFacture.Size = new System.Drawing.Size(364, 31);
+            this.cmbNumeroFacture.TabIndex = 172;
+            this.cmbNumeroFacture.Visible = false;
+            this.cmbNumeroFacture.SelectedIndexChanged += new System.EventHandler(this.cmbFactureNumero_SelectedIndexChanged);
             // 
-            // btnNext
+            // lblNumeroFacture
             // 
-            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.IconChar = FontAwesome.Sharp.IconChar.StepForward;
-            this.btnNext.IconColor = System.Drawing.Color.White;
-            this.btnNext.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnNext.IconSize = 30;
-            this.btnNext.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnNext.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnNext.Location = new System.Drawing.Point(423, 655);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(412, 48);
-            this.btnNext.TabIndex = 171;
-            this.btnNext.UseVisualStyleBackColor = false;
-            this.btnNext.Visible = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
-            // cmbFactureNumero
-            // 
-            this.cmbFactureNumero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbFactureNumero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbFactureNumero.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbFactureNumero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.cmbFactureNumero.FormattingEnabled = true;
-            this.cmbFactureNumero.Location = new System.Drawing.Point(12, 35);
-            this.cmbFactureNumero.Name = "cmbFactureNumero";
-            this.cmbFactureNumero.Size = new System.Drawing.Size(364, 31);
-            this.cmbFactureNumero.TabIndex = 172;
-            this.cmbFactureNumero.Visible = false;
-            this.cmbFactureNumero.SelectedIndexChanged += new System.EventHandler(this.cmbFactureNumero_SelectedIndexChanged);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label25.Location = new System.Drawing.Point(8, 12);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(122, 20);
-            this.label25.TabIndex = 173;
-            this.label25.Text = "Facture Numero";
+            this.lblNumeroFacture.AutoSize = true;
+            this.lblNumeroFacture.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblNumeroFacture.Location = new System.Drawing.Point(8, 12);
+            this.lblNumeroFacture.Name = "lblNumeroFacture";
+            this.lblNumeroFacture.Size = new System.Drawing.Size(122, 20);
+            this.lblNumeroFacture.TabIndex = 173;
+            this.lblNumeroFacture.Text = "Facture Numero";
             // 
             // lblFactureNumero
             // 
@@ -1306,6 +1270,46 @@
             this.lblFactureNumero.Text = "Facture Numero";
             this.lblFactureNumero.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnPrintFacture
+            // 
+            this.btnPrintFacture.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnPrintFacture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrintFacture.ForeColor = System.Drawing.Color.White;
+            this.btnPrintFacture.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.btnPrintFacture.IconColor = System.Drawing.Color.White;
+            this.btnPrintFacture.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnPrintFacture.IconSize = 25;
+            this.btnPrintFacture.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPrintFacture.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnPrintFacture.Location = new System.Drawing.Point(15, 655);
+            this.btnPrintFacture.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPrintFacture.Name = "btnPrintFacture";
+            this.btnPrintFacture.Size = new System.Drawing.Size(358, 43);
+            this.btnPrintFacture.TabIndex = 260;
+            this.btnPrintFacture.UseVisualStyleBackColor = false;
+            this.btnPrintFacture.Visible = false;
+            this.btnPrintFacture.Click += new System.EventHandler(this.btnPrintFacture_Click);
+            // 
+            // btnDeleteFacture
+            // 
+            this.btnDeleteFacture.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnDeleteFacture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteFacture.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteFacture.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnDeleteFacture.IconColor = System.Drawing.Color.White;
+            this.btnDeleteFacture.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnDeleteFacture.IconSize = 25;
+            this.btnDeleteFacture.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDeleteFacture.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnDeleteFacture.Location = new System.Drawing.Point(423, 655);
+            this.btnDeleteFacture.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDeleteFacture.Name = "btnDeleteFacture";
+            this.btnDeleteFacture.Size = new System.Drawing.Size(412, 43);
+            this.btnDeleteFacture.TabIndex = 259;
+            this.btnDeleteFacture.UseVisualStyleBackColor = false;
+            this.btnDeleteFacture.Visible = false;
+            this.btnDeleteFacture.Click += new System.EventHandler(this.btnDeleteFacture_Click);
+            // 
             // FormAjoutFactures
             // 
             this.AcceptButton = this.btnAddFacture;
@@ -1313,9 +1317,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1391, 875);
-            this.Controls.Add(this.label25);
-            this.Controls.Add(this.btnNext);
-            this.Controls.Add(this.btnPreviuos);
+            this.Controls.Add(this.btnPrintFacture);
+            this.Controls.Add(this.btnDeleteFacture);
+            this.Controls.Add(this.lblNumeroFacture);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.btnDeleteSeulPVC);
             this.Controls.Add(this.btnAddSeulPVC);
@@ -1340,7 +1344,7 @@
             this.Controls.Add(this.txtTaillePVC);
             this.Controls.Add(this.btncmbNbrCanto);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.cmbNbrCantoPvc);
+            this.Controls.Add(this.cmbTypePvc);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtTotaleTaillPVC);
             this.Controls.Add(this.label12);
@@ -1372,7 +1376,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lstTypeBois);
-            this.Controls.Add(this.dtDateClient);
+            this.Controls.Add(this.dtDateFacture);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCmbCategorie);
             this.Controls.Add(this.label3);
@@ -1389,7 +1393,7 @@
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAddFacture);
             this.Controls.Add(this.lblFactureNumero);
-            this.Controls.Add(this.cmbFactureNumero);
+            this.Controls.Add(this.cmbNumeroFacture);
             this.Font = new System.Drawing.Font("Nirmala UI", 11F, System.Drawing.FontStyle.Bold);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -1433,7 +1437,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ListBox lstTypeBois;
-        private System.Windows.Forms.DateTimePicker dtDateClient;
+        private System.Windows.Forms.DateTimePicker dtDateFacture;
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconButton btnCmbCategorie;
         private System.Windows.Forms.Label label3;
@@ -1461,7 +1465,7 @@
         private System.Windows.Forms.TextBox txtTaillePVC;
         private FontAwesome.Sharp.IconButton btncmbNbrCanto;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox cmbNbrCantoPvc;
+        private System.Windows.Forms.ComboBox cmbTypePvc;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtTotaleTaillPVC;
         private System.Windows.Forms.Label label12;
@@ -1487,10 +1491,10 @@
         private FontAwesome.Sharp.IconButton btnDeleteSeulPVC;
         private FontAwesome.Sharp.IconButton btnAddSeulPVC;
         private System.Windows.Forms.Label label24;
-        private FontAwesome.Sharp.IconButton btnPreviuos;
-        private FontAwesome.Sharp.IconButton btnNext;
-        private System.Windows.Forms.ComboBox cmbFactureNumero;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.ComboBox cmbNumeroFacture;
+        private System.Windows.Forms.Label lblNumeroFacture;
         private System.Windows.Forms.Label lblFactureNumero;
+        private FontAwesome.Sharp.IconButton btnPrintFacture;
+        private FontAwesome.Sharp.IconButton btnDeleteFacture;
     }
 }

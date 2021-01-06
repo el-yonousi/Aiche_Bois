@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Aiche_Bois
+﻿namespace Aiche_Bois
 {
     class Pvc
     {
@@ -18,7 +12,8 @@ namespace Aiche_Bois
         private double longr;
 
         /*les constrecteurs*/
-        public Pvc() {
+        public Pvc()
+        {
             idPvc = ++cp;
         }
 
@@ -37,6 +32,6 @@ namespace Aiche_Bois
         public double Longr { get => longr; set => longr = value; }
         public string Ortn { get => ortn; set => ortn = value; }
         public long IdFacture { get => idFacture; set => idFacture = value; }
-        public int IdPvc { get => idPvc;}
+        public int IdPvc { get => idPvc; }
     }
 }

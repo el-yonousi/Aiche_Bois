@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.OleDb;
 using System.Globalization;
 using System.IO;
@@ -85,17 +84,14 @@ namespace Aiche_Bois
             txtTotalMesure.Clear();
             txtPrixTotalMesure.Text = "0.00";
             txtMetrageDeFeuille.Clear();
-            cmbNbrCantoPvc.SelectedItem = null;
+            cmbTypePvc.SelectedItem = null;
             cmbTypeDuMetres.SelectedIndex = 1;
             txtTaillePVC.Clear();
             txtPrixMetreLPVC.Clear();
             txtTotaleTaillPVC.Clear();
             txtPrixTotalPVC.Text = "0.00";
-            if (btnDeterminClick != "edit")
-            {
-                mesures.Clear();
-                pvcs.Clear();
-            }
+            mesures.Clear();
+            pvcs.Clear();
             dtGMesure.Rows.Clear();
             dtGridPvc.Rows.Clear();
             chSeulPVC.Checked = false;
@@ -110,17 +106,35 @@ namespace Aiche_Bois
         private void RemplirDataMesure(List<Mesure> mesures)
         {
             double totale = 0;
-            foreach (Mesure msr in mesures)
+            for (int i = 0; i < dtGMesure.Rows.Count; i++)
             {
-                if (msr.Epaisseur == 0 || double.IsNaN(msr.Epaisseur))
+                if (cmbTypeDuMetres.SelectedIndex == 2)
                 {
-                    totale += ((msr.Largeur * Math.Pow(10, -2)) * (msr.Longueur * Math.Pow(10, -2))) * msr.Quantite;
+                    totale +=
+                        ((Convert.ToDouble(dtGMesure.Rows[i].Cells[1].Value) / 100) *
+                        (Convert.ToDouble(dtGMesure.Rows[i].Cells[2].Value) / 100) *
+                        (Convert.ToDouble(dtGMesure.Rows[i].Cells[3].Value) / 100)) *
+                        Convert.ToDouble(dtGMesure.Rows[i].Cells[0].Value);
                 }
                 else
                 {
-                    totale += ((msr.Largeur * Math.Pow(10, -2)) * (msr.Longueur * Math.Pow(10, -2)) * (msr.Epaisseur * Math.Pow(10, -2))) * msr.Quantite;
+                    totale +=
+                        ((Convert.ToDouble(dtGMesure.Rows[i].Cells[1].Value) / 100) *
+                        (Convert.ToDouble(dtGMesure.Rows[i].Cells[2].Value) / 100)) *
+                        Convert.ToDouble(dtGMesure.Rows[i].Cells[0].Value);
                 }
             }
+            //foreach (Mesure msr in mesures)
+            //{
+            //    if (msr.Epaisseur == 0 || double.IsNaN(msr.Epaisseur))
+            //    {
+            //        totale += ((msr.Largeur * Math.Pow(10, -2)) * (msr.Longueur * Math.Pow(10, -2))) * msr.Quantite;
+            //    }
+            //    else
+            //    {
+            //        totale += ((msr.Largeur * Math.Pow(10, -2)) * (msr.Longueur * Math.Pow(10, -2)) * (msr.Epaisseur * Math.Pow(10, -2))) * msr.Quantite;
+            //    }
+            //}
             if (cmbTypeDuMetres.SelectedIndex != 0)
             {
                 txtTotalMesure.Text = totale.ToString("F2");
@@ -143,7 +157,7 @@ namespace Aiche_Bois
                 OleDbDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    cmbNbrCantoPvc.Items.Add(reader["Libelle"].ToString());
+                    cmbTypePvc.Items.Add(reader["Libelle"].ToString());
                 }
                 connectionType.Close();
             }
@@ -232,7 +246,7 @@ namespace Aiche_Bois
             /*initialise combo box*/
             cmbTypeDuMetres.SelectedIndex = 1;
             cmbTypeDeBois.SelectedIndex = 0;
-            dtDateClient.Value = DateTime.Today;
+            dtDateFacture.Value = DateTime.Today;
             checkAvance.Checked = false;
             txtPrixAvanceClient.Enabled = false;
             txtPrixAvanceClient.Text = "0.00";
@@ -246,41 +260,34 @@ namespace Aiche_Bois
             */
             enabledTxtBxPvc(false);
 
+            // si le click a button modifier
             if (btnDeterminClick == "edit")
             {
                 try
                 {
-                    btnPreviuos.Visible = true;
-                    btnNext.Visible = true;
                     lblFactureNumero.Visible = false;
-                    cmbFactureNumero.Visible = true;
+                    cmbNumeroFacture.Visible = true;
+                    lblFactureNumero.Text = "Selectionner la Facture";
                     btnAddFacture.IconChar = FontAwesome.Sharp.IconChar.Edit;
                     txtNomClient.Enabled = false;
+                    dtDateFacture.Enabled = false;
                     checkAvance.Enabled = false;
                     lstTypeBois.SelectedItem = null;
+                    btnPrintFacture.Visible = true;
+                    btnDeleteFacture.Visible = true;
 
                     connectionClient.Open();
-                    String query = "SELECT * FROM CLIENT WHERE IDCLIENT = " + long.Parse(idClient);
-
-                    //DataTable dataTable = new DataTable();
-                    //dbDataAdapter.Fill(dataTable);
-                    //dtGridFacture.DataSource = dbDataAdapter;
-
-                    //OleDbDataAdapter adapter = new OleDbDataAdapter(query, connectionClient);
-                    //DataSet dataSet = new DataSet();
-                    //adapter.Fill(dataSet, "facture");
-                    //this.Text = dataSet.Tables[0].Rows[1]["nomClient"].ToString();
 
                     //client
                     var commandClient = new OleDbCommand
                     {
                         Connection = connectionClient,
-                        CommandText = query
+                        CommandText = "SELECT nomClient, prixTotalClient, chAvance, prixTotalAvance, prixTotalRest " +
+                        "FROM CLIENT WHERE IDCLIENT = " + long.Parse(idClient)
                     };
                     OleDbDataReader readerClient = commandClient.ExecuteReader();
                     while (readerClient.Read())
                     {
-                        dtDateClient.Value = Convert.ToDateTime(readerClient["dateClient"].ToString());
                         txtNomClient.Text = readerClient["nomClient"].ToString();
                         txtPrixTotalClient.Text = readerClient["prixTotalClient"].ToString();
                         checkAvance.Checked = bool.Parse(readerClient["chAvance"].ToString());
@@ -289,88 +296,15 @@ namespace Aiche_Bois
                     }
 
                     //facture
-                    query = "SELECT * FROM FACTURE WHERE IDCLIENT = " + long.Parse(idClient);
-                    long idFacture = 0;
                     var commandFacture = new OleDbCommand
                     {
                         Connection = connectionClient,
-                        CommandText = query
+                        CommandText = "SELECT idFacture FROM FACTURE WHERE IDCLIENT = " + long.Parse(idClient)
                     };
                     OleDbDataReader readerFacture = commandFacture.ExecuteReader();
                     while (readerFacture.Read())
                     {
-                        idFacture = long.Parse(readerFacture["IDFACTURE"].ToString());
-
-                        // facture
-                        Facture facture = new Facture();
-                        facture.IDFacture = idFacture;
-                        facture.TypePVC = readerFacture["typePVC"].ToString();
-                        facture.TypeDeBois = readerFacture["typeDeBois"].ToString();
-                        facture.Categorie = readerFacture["categorie"].ToString();
-                        facture.Metrage = readerFacture["metrage"].ToString();
-                        facture.PrixMetres = double.Parse(readerFacture["prixMetres"].ToString());
-                        facture.TotalMesure = double.Parse(readerFacture["totalMesure"].ToString());
-                        facture.PrixTotalMesure = double.Parse(readerFacture["prixTotalMesure"].ToString());
-
-                        //Mesure
-                        query = "SELECT * FROM MESURE WHERE IDFACTURE = " + idFacture;
-                        var commandMesure = new OleDbCommand
-                        {
-                            Connection = connectionClient,
-                            CommandText = query
-                        };
-                        OleDbDataReader readerMesure = commandMesure.ExecuteReader();
-                        while (readerMesure.Read())
-                        {
-                            Mesure mesure = new Mesure();
-                            mesure.IdFacture = idFacture;
-                            mesure.Type = readerMesure["type"].ToString();
-                            mesure.Quantite = Convert.ToDouble(readerMesure["quantite"].ToString());
-                            mesure.Largeur = Convert.ToDouble(readerMesure["largeur"].ToString());
-                            mesure.Longueur = Convert.ToDouble(readerMesure["longueur"].ToString());
-
-                            if (readerMesure["type"].ToString() == "m3")
-                                mesure.Epaisseur = Convert.ToDouble(readerMesure["eppaiseur"].ToString());
-
-                            mesures.Add(mesure);
-                        }
-
-                        // pvc
-                        if (facture.TypePVC != "---")
-                        {
-                            facture.TypePVC = readerFacture["typePVC"].ToString();
-                            facture.CheckPVC = bool.Parse(readerFacture["checkPVC"].ToString());
-                            facture.TailleCanto = readerFacture["tailleCanto"].ToString();
-                            facture.TotalTaillPVC = Convert.ToDouble(readerFacture["totalTaillPVC"].ToString());
-                            facture.PrixMitresLinear = Convert.ToDouble(readerFacture["prixMitresLinear"].ToString());
-                            facture.PrixTotalPVC = Convert.ToDouble(readerFacture["prixTotalPVC"].ToString());
-
-                            //Pvc
-                            query = "SELECT * FROM PVC WHERE IDFACTURE = " + idFacture;
-                            var commandPVC = new OleDbCommand
-                            {
-                                Connection = connectionClient,
-                                CommandText = query
-                            };
-                            OleDbDataReader readerPVC = commandPVC.ExecuteReader();
-                            while (readerPVC.Read())
-                            {
-                                Pvc pvc = new Pvc();
-                                pvc.IdFacture = idFacture;
-                                pvc.Qte = Convert.ToDouble(readerPVC["quantite"].ToString());
-                                pvc.Largr = Convert.ToDouble(readerPVC["largeur"].ToString());
-                                pvc.Longr = Convert.ToDouble(readerPVC["longueur"].ToString());
-                                pvc.Ortn = readerPVC["orientation"].ToString();
-                                // add to liste
-                                pvcs.Add(pvc);
-                            }
-                        }
-
-                        facture.Mesures = mesures;
-                        facture.Pvcs = pvcs;
-                        factures.Add(facture);
-                        cmbFactureNumero.Items.Add(facture.IDFacture);
-
+                        cmbNumeroFacture.Items.Add(long.Parse(readerFacture["IDFACTURE"].ToString()));
                     }
                     connectionClient.Close();
                 }
@@ -380,7 +314,11 @@ namespace Aiche_Bois
                 }
 
                 // charger les champs a partir des liste remplir
-                loadDataEdit(0);
+                cmbNumeroFacture.SelectedIndex = 0;
+                // verifier que la liste des facture contient plus d'un un facture
+                if (cmbNumeroFacture.Items.Count <= 1)
+                    btnDeleteFacture.Enabled = false;
+                txtPrixAvanceClient.Enabled = false;
             }
             /*initialise IdFacture, IdClient*/
             idFacture();
@@ -390,81 +328,166 @@ namespace Aiche_Bois
         /// method qui charger la base de donnees
         /// </summary>
         /// <param name="indx"></param>
-        private void loadDataEdit(int indx)
+        private void loadDataEdit(long idFacture)
         {
-            dtGridPvc.Rows.Clear();
-            if (factures[indx].TypePVC != "---")
+            try
             {
-                cmbNbrCantoPvc.Text = factures[indx].TypePVC;
-                chSeulPVC.Checked = factures[indx].CheckPVC;
-                foreach (Pvc p in pvcs)
+                connectionClient.Open();
+                //facture
+                var commandFacture = new OleDbCommand
                 {
-                    if (factures[indx].IDFacture == p.IdFacture)
-                        dtGridPvc.Rows.Add(p.Qte, p.Largr, p.Longr, p.Ortn);
-                }
-                txtTotaleTaillPVC.Text = factures[indx].TotalTaillPVC.ToString();
-                txtTaillePVC.Text = factures[indx].TailleCanto;
-                txtPrixMetreLPVC.Text = factures[indx].PrixMitresLinear.ToString();
-                txtPrixTotalPVC.Text = factures[indx].PrixTotalPVC.ToString();
-            }
-            else
-            {
-                cmbNbrCantoPvc.SelectedItem = null;
-                chSeulPVC.Checked = factures[indx].CheckPVC;
-                dtGridPvc.Rows.Clear();
-                txtTotaleTaillPVC.Clear();
-                txtTaillePVC.Clear();
-                txtPrixMetreLPVC.Clear();
-                txtPrixTotalPVC.Text = "0.00";
-            }
-            //verifier check
-            checkSeulPVC(!chSeulPVC.Checked);
+                    Connection = connectionClient,
+                    CommandText = "SELECT * FROM FACTURE WHERE idFacture = " + idFacture
+                };
+                OleDbDataReader readerFacture = commandFacture.ExecuteReader();
+                while (readerFacture.Read())
+                {
+                    dtDateFacture.Value = Convert.ToDateTime(readerFacture["dtDateFacture"]);
+                    txtTypeDeBois.Text = readerFacture["typeDeBois"].ToString();
+                    txtCategorie.Text = readerFacture["categorie"].ToString();
+                    txtMetrageDeFeuille.Text = readerFacture["metrage"].ToString();
+                    txtPrixMetreMesure.Text = readerFacture["prixMetres"].ToString();
+                    txtTotalMesure.Text = readerFacture["totalMesure"].ToString();
+                    txtPrixTotalMesure.Text = readerFacture["prixTotalMesure"].ToString();
 
-            txtTypeDeBois.Text = factures[indx].TypeDeBois;
-            txtPrixMetreMesure.Text = factures[indx].PrixMetres.ToString();
-            dtGMesure.Rows.Clear();
-            foreach (Mesure msr in mesures)
-            {
-                if (factures[indx].IDFacture == msr.IdFacture)
-                {
-                    if (msr.Type == "m3")
+                    //Mesure
+                    var commandMesure = new OleDbCommand
                     {
-                        cmbTypeDuMetres.SelectedIndex = 2;
-                        dtGMesure.Rows.Add(msr.Quantite, msr.Largeur, msr.Longueur, msr.Epaisseur);
+                        Connection = connectionClient,
+                        CommandText = "SELECT * FROM MESURE WHERE IDFACTURE = " + idFacture
+                    };
+                    OleDbDataReader readerMesure = commandMesure.ExecuteReader();
+                    dtGMesure.Rows.Clear();
+                    while (readerMesure.Read())
+                    {
+                        if (readerMesure["type"].ToString() == "m3")
+                        {
+                            cmbTypeDuMetres.SelectedIndex = 2;
+                            dtGMesure.Rows.Add(
+                            readerMesure["quantite"].ToString(),
+                            readerMesure["largeur"].ToString(),
+                            readerMesure["longueur"].ToString(),
+                            readerMesure["eppaiseur"].ToString());
+                        }
+                        else if (readerMesure["type"].ToString() == "m2")
+                        {
+                            cmbTypeDuMetres.SelectedIndex = 1;
+                            dtGMesure.Rows.Add(
+                            readerMesure["quantite"].ToString(),
+                            readerMesure["largeur"].ToString(),
+                            readerMesure["longueur"].ToString());
+                        }
+                        else
+                        {
+                            cmbTypeDuMetres.SelectedIndex = 0;
+                            dtGMesure.Rows.Add(
+                            readerMesure["quantite"].ToString(),
+                            readerMesure["largeur"].ToString(),
+                            readerMesure["longueur"].ToString());
+                        }
+                    }
+
+                    // pvc
+                    if (readerFacture["typePVC"].ToString() == "---")
+                    {
+                        cmbTypePvc.SelectedItem = null;
+                        chSeulPVC.Checked = false;
+                        dtGridPvc.Rows.Clear();
+                        txtTotaleTaillPVC.Clear();
+                        txtTaillePVC.Clear();
+                        txtPrixMetreLPVC.Clear();
+                        txtPrixTotalPVC.Text = "0.00";
+                        checkSeulPVC(true);
                     }
                     else
                     {
-                        if (msr.Type == "feuille")
-                            cmbTypeDuMetres.SelectedIndex = 0;
-                        else
-                            cmbTypeDuMetres.SelectedIndex = 1;
-                        dtGMesure.Rows.Add(msr.Quantite, msr.Largeur, msr.Longueur);
+                        cmbTypePvc.Text = readerFacture["typePVC"].ToString();
+                        chSeulPVC.Checked = Convert.ToBoolean(readerFacture["checkPVC"].ToString());
+                        txtTaillePVC.Text = readerFacture["tailleCanto"].ToString();
+                        txtTotaleTaillPVC.Text = readerFacture["totalTaillPVC"].ToString();
+                        txtPrixMetreLPVC.Text = readerFacture["prixMitresLinear"].ToString();
+                        txtPrixTotalPVC.Text = readerFacture["prixTotalPVC"].ToString();
+
+                        var commandPVC = new OleDbCommand
+                        {
+                            Connection = connectionClient,
+                            CommandText = "SELECT * FROM PVC WHERE IDFACTURE = " + idFacture
+                        };
+                        OleDbDataReader readerPVC = commandPVC.ExecuteReader();
+                        dtGridPvc.Rows.Clear();
+                        while (readerPVC.Read())
+                        {
+                            dtGridPvc.Rows.Add(
+                                readerPVC["quantite"].ToString(),
+                                readerPVC["largeur"].ToString(),
+                                readerPVC["longueur"].ToString(),
+                                readerPVC["orientation"].ToString());
+                        }
                     }
                 }
+                connectionClient.Close();
             }
-            txtTotalMesure.Text = factures[indx].TotalMesure.ToString();
-            txtPrixTotalMesure.Text = factures[indx].PrixTotalMesure.ToString();
-            txtMetrageDeFeuille.Text = factures[indx].Metrage;
-            txtCategorie.Text = factures[indx].Categorie;
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur:: " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            //dtGridPvc.Rows.Clear();
+            //if (factures[indx].TypePVC != "---")
+            //{
+            //    cmbNbrCantoPvc.Text = factures[indx].TypePVC;
+            //    chSeulPVC.Checked = factures[indx].CheckPVC;
+            //    foreach (Pvc p in pvcs)
+            //    {
+            //        if (factures[indx].IDFacture == p.IdFacture)
+            //            dtGridPvc.Rows.Add(p.Qte, p.Largr, p.Longr, p.Ortn);
+            //    }
+            //    txtTotaleTaillPVC.Text = factures[indx].TotalTaillPVC.ToString();
+            //    txtTaillePVC.Text = factures[indx].TailleCanto;
+            //    txtPrixMetreLPVC.Text = factures[indx].PrixMitresLinear.ToString();
+            //    txtPrixTotalPVC.Text = factures[indx].PrixTotalPVC.ToString();
+            //}
+            //else
+            //{
+            //    cmbNbrCantoPvc.SelectedItem = null;
+            //    chSeulPVC.Checked = factures[indx].CheckPVC;
+            //    dtGridPvc.Rows.Clear();
+            //    txtTotaleTaillPVC.Clear();
+            //    txtTaillePVC.Clear();
+            //    txtPrixMetreLPVC.Clear();
+            //    txtPrixTotalPVC.Text = "0.00";
+            //}
+            ////verifier check
+            //checkSeulPVC(!chSeulPVC.Checked);
 
-            cmbFactureNumero.SelectedIndex = indx;
-        }
+            //dtDateFacture.Value = factures[indx].DateFacture;
+            //txtTypeDeBois.Text = factures[indx].TypeDeBois;
+            //txtPrixMetreMesure.Text = factures[indx].PrixMetres.ToString();
+            //dtGMesure.Rows.Clear();
+            //foreach (Mesure msr in mesures)
+            //{
+            //    if (factures[indx].IDFacture == msr.IdFacture)
+            //    {
+            //        if (msr.Type == "m3")
+            //        {
+            //            cmbTypeDuMetres.SelectedIndex = 2;
+            //            dtGMesure.Rows.Add(msr.Quantite, msr.Largeur, msr.Longueur, msr.Epaisseur);
+            //        }
+            //        else
+            //        {
+            //            if (msr.Type == "feuille")
+            //                cmbTypeDuMetres.SelectedIndex = 0;
+            //            else
+            //                cmbTypeDuMetres.SelectedIndex = 1;
+            //            dtGMesure.Rows.Add(msr.Quantite, msr.Largeur, msr.Longueur);
+            //        }
+            //    }
+            //}
+            //txtTotalMesure.Text = factures[indx].TotalMesure.ToString();
+            //txtPrixTotalMesure.Text = factures[indx].PrixTotalMesure.ToString();
+            //txtMetrageDeFeuille.Text = factures[indx].Metrage;
+            //txtCategorie.Text = factures[indx].Categorie;
 
-        /// <summary>
-        /// c'est le button qui afficher facture avancer
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        int indx = 0;
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-            indx++;
-            if (indx >= factures.Count)
-                indx = 0;
-            else if (indx <= -1)
-                indx = factures.Count - 1;
-
-            loadDataEdit(indx);
+            //cmbFactureNumero.SelectedIndex = indx;
         }
 
         /// <summary>
@@ -472,26 +495,10 @@ namespace Aiche_Bois
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        int indx = 0;
         private void cmbFactureNumero_SelectedIndexChanged(object sender, EventArgs e)
         {
-            indx = cmbFactureNumero.SelectedIndex;
-            loadDataEdit(indx);
-        }
-
-        /// <summary>
-        /// c'est le button qui afficher facture reculer
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnPreviuos_Click(object sender, EventArgs e)
-        {
-            indx--;
-            if (indx >= factures.Count)
-                indx = 0;
-            else if (indx <= -1)
-                indx = factures.Count - 1;
-
-            loadDataEdit(indx);
+            loadDataEdit(long.Parse(cmbNumeroFacture.SelectedItem.ToString()));
         }
 
         /// <summary>
@@ -543,7 +550,7 @@ namespace Aiche_Bois
             ajout.ShowDialog();
 
             /*vider le comboBox PVC*/
-            cmbNbrCantoPvc.Items.Clear();
+            cmbTypePvc.Items.Clear();
 
             /*remplir comboBox par les donneesde dataBase*/
             RemplirComboBxPvc();
@@ -686,7 +693,7 @@ namespace Aiche_Bois
                     txtPrixAvanceClient.Focus();
                     return false;
                 }
-            if (!string.IsNullOrEmpty(cmbNbrCantoPvc.Text))
+            if (!string.IsNullOrEmpty(cmbTypePvc.Text))
             {
                 if (string.IsNullOrEmpty(txtTaillePVC.Text))
                 {
@@ -746,59 +753,59 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void cmbTypeDuMetres_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbTypeDuMetres.SelectedIndex == 0)
+            if (btnDeterminClick != "edit")
             {
-                dtGMesure.Rows.Clear();
-                if (btnDeterminClick != "edit")
-                    mesures.Clear();
-                //txtTotalMesure.Clear();
-                lblTypeDuMetres.Text = "Prix ​​au feuille";
-                lblMesure.Text = "Nombre de Feuilles";
-                lblEpaisseur.Visible = false;
-                txtEpaisseur.Visible = false;
-                if (dtGMesure.ColumnCount > 3)
+                if (cmbTypeDuMetres.SelectedIndex == 0)
                 {
-                    dtGMesure.ColumnCount -= 1;
-                }
+                    dtGMesure.Rows.Clear();
+                    mesures.Clear();
+                    //txtTotalMesure.Clear();
+                    lblTypeDuMetres.Text = "Prix ​​au feuille";
+                    lblMesure.Text = "Nombre de Feuilles";
+                    lblEpaisseur.Visible = false;
+                    txtEpaisseur.Visible = false;
+                    if (dtGMesure.ColumnCount > 3)
+                    {
+                        dtGMesure.ColumnCount -= 1;
+                    }
 
-                txtQuantite.Focus();
-                txtTotalMesure.Enabled = true;
-            }
-            else if (cmbTypeDuMetres.SelectedIndex == 1)
-            {
-                dtGMesure.Rows.Clear();
-                if (btnDeterminClick != "edit")
-                    mesures.Clear();
-                txtTotalMesure.Clear();
-                lblTypeDuMetres.Text = "Prix ​​au mètre carré";
-                lblMesure.Text = "Volume Total de la Mesure de mètre carré";
-                lblEpaisseur.Visible = false;
-                txtEpaisseur.Visible = false;
-                if (dtGMesure.ColumnCount > 3)
-                {
-                    dtGMesure.ColumnCount -= 1;
+                    txtQuantite.Focus();
+                    txtTotalMesure.Enabled = true;
                 }
+                else if (cmbTypeDuMetres.SelectedIndex == 1)
+                {
+                    dtGMesure.Rows.Clear();
+                    mesures.Clear();
+                    txtTotalMesure.Clear();
+                    lblTypeDuMetres.Text = "Prix ​​au mètre carré";
+                    lblMesure.Text = "Volume Total de la Mesure de mètre carré";
+                    lblEpaisseur.Visible = false;
+                    txtEpaisseur.Visible = false;
+                    if (dtGMesure.ColumnCount > 3)
+                    {
+                        dtGMesure.ColumnCount -= 1;
+                    }
 
-                txtQuantite.Focus();
-                txtTotalMesure.Enabled = false;
-            }
-            else
-            {
-                dtGMesure.Rows.Clear();
-                if (btnDeterminClick != "edit")
-                    mesures.Clear();
-                txtTotalMesure.Clear();
-                lblTypeDuMetres.Text = "Prix ​​au mètre cube";
-                lblMesure.Text = "Volume Total de la Mesure de mètre cube";
-                lblEpaisseur.Visible = true;
-                txtEpaisseur.Visible = true;
-                if (dtGMesure.ColumnCount == 3)
-                {
-                    dtGMesure.ColumnCount += 1;
-                    dtGMesure.Columns[3].HeaderText = "Epssr";
+                    txtQuantite.Focus();
+                    txtTotalMesure.Enabled = false;
                 }
-                txtQuantite.Focus();
-                txtTotalMesure.Enabled = false;
+                else
+                {
+                    dtGMesure.Rows.Clear();
+                    mesures.Clear();
+                    txtTotalMesure.Clear();
+                    lblTypeDuMetres.Text = "Prix ​​au mètre cube";
+                    lblMesure.Text = "Volume Total de la Mesure de mètre cube";
+                    lblEpaisseur.Visible = true;
+                    txtEpaisseur.Visible = true;
+                    if (dtGMesure.ColumnCount == 3)
+                    {
+                        dtGMesure.ColumnCount += 1;
+                        dtGMesure.Columns[3].HeaderText = "Epssr";
+                    }
+                    txtQuantite.Focus();
+                    txtTotalMesure.Enabled = false;
+                }
             }
         }
 
@@ -809,73 +816,68 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void btnAddMesure_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtQuantite.Text))
+            //verifier si le champs contain un chifre ou vide 
+            if (string.IsNullOrEmpty(txtQuantite.Text) || double.Parse(txtQuantite.Text) == 0)
             {
-                MessageBox.Show("saisir la valeur de " + txtQuantite.Tag, "attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("n'accept pas 0, saisir la valeur de " + txtQuantite.Tag, "attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtQuantite.Focus();
                 return;
             }
-            if (string.IsNullOrEmpty(txtLargeur.Text))
+            if (string.IsNullOrEmpty(txtLargeur.Text) || double.Parse(txtLargeur.Text) == 0)
             {
-                MessageBox.Show("saisir la valeur de " + txtLargeur.Tag, "attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("n'accept pas 0, saisir la valeur de " + txtLargeur.Tag, "attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtLargeur.Focus();
                 return;
             }
-            if (string.IsNullOrEmpty(txtLongueur.Text))
+            if (string.IsNullOrEmpty(txtLongueur.Text) || double.Parse(txtLongueur.Text) == 0)
             {
-                MessageBox.Show("saisir la valeur de " + txtLongueur.Tag, "attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("n'accept pas 0, saisir la valeur de " + txtLongueur.Tag, "attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtLongueur.Focus();
                 return;
             }
 
-            foreach (Mesure msr1 in mesures)
+
+            for (int i = 0; i < dtGMesure.Rows.Count; i++)
             {
                 if (cmbTypeDuMetres.SelectedIndex == 2)
                 {
-                    if (double.Parse(txtLongueur.Text) == msr1.Longueur && double.Parse(txtLargeur.Text) == msr1.Largeur && double.Parse(txtQuantite.Text) == msr1.Quantite && double.Parse(txtEpaisseur.Text) == msr1.Epaisseur)
+                    if (double.Parse(txtQuantite.Text) == double.Parse(dtGMesure.Rows[i].Cells[0].Value.ToString()) &&
+                        double.Parse(txtLargeur.Text) == double.Parse(dtGMesure.Rows[i].Cells[1].Value.ToString()) &&
+                        double.Parse(txtLongueur.Text) == double.Parse(dtGMesure.Rows[i].Cells[2].Value.ToString()) &&
+                        double.Parse(txtEpaisseur.Text) == double.Parse(dtGMesure.Rows[i].Cells[3].Value.ToString()))
                     {
-                        MessageBox.Show("c'est mesure exist deja");
+                        MessageBox.Show("c'est mesure exist deja", "attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                 }
-                else if (double.Parse(txtLongueur.Text) == msr1.Longueur && double.Parse(txtLargeur.Text) == msr1.Largeur && double.Parse(txtQuantite.Text) == msr1.Quantite)
+                else
                 {
-                    MessageBox.Show("c'est mesure exist deja");
-                    return;
+                    if (double.Parse(txtQuantite.Text) == double.Parse(dtGMesure.Rows[i].Cells[0].Value.ToString()) &&
+                      double.Parse(txtLargeur.Text) == double.Parse(dtGMesure.Rows[i].Cells[1].Value.ToString()) &&
+                      double.Parse(txtLongueur.Text) == double.Parse(dtGMesure.Rows[i].Cells[2].Value.ToString()))
+                    {
+                        MessageBox.Show("c'est mesure exist deja", "attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
                 }
             }
 
             if (cmbTypeDuMetres.SelectedIndex == 2)
             {
-                if (string.IsNullOrEmpty(txtEpaisseur.Text))
+                //verifier si le champs contain un chifre ou vide
+                if (string.IsNullOrEmpty(txtEpaisseur.Text) || double.Parse(txtEpaisseur.Text) == 0)
                 {
-                    MessageBox.Show("saisir la valeur de " + txtEpaisseur.Tag, "attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("n'accept pas 0, saisir la valeur de " + txtEpaisseur.Tag, "attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtEpaisseur.Focus();
                     return;
                 }
-                Mesure mesure = new Mesure
-                {
-                    Quantite = double.Parse(txtQuantite.Text),
-                    Largeur = double.Parse(txtLargeur.Text),
-                    Longueur = double.Parse(txtLongueur.Text),
-                    Epaisseur = double.Parse(txtEpaisseur.Text),
-                    Type = cmbTypeDuMetres.Text
-                };
-                mesures.Add(mesure);
-                dtGMesure.Rows.Add(mesure.Quantite, mesure.Largeur, mesure.Longueur, mesure.Epaisseur);
+
+                dtGMesure.Rows.Add(txtQuantite.Text, txtLargeur.Text, txtLongueur.Text, txtEpaisseur.Text);
                 txtEpaisseur.Clear();
             }
             else
             {
-                Mesure mesure = new Mesure
-                {
-                    Quantite = double.Parse(txtQuantite.Text),
-                    Largeur = double.Parse(txtLargeur.Text),
-                    Longueur = double.Parse(txtLongueur.Text),
-                    Type = cmbTypeDuMetres.Text
-                };
-                mesures.Add(mesure);
-                dtGMesure.Rows.Add(mesure.Quantite, mesure.Largeur, mesure.Longueur);
+                dtGMesure.Rows.Add(txtQuantite.Text, txtLargeur.Text, txtLongueur.Text);
             }
             RemplirDataMesure(mesures);
             txtQuantite.Clear();
@@ -1028,10 +1030,10 @@ namespace Aiche_Bois
             {
                 Facture facture = new Facture();
                 if (btnDeterminClick == "edit")
-                    if (cmbFactureNumero.Text == factures[indx].IDFacture.ToString())
+                    if (cmbNumeroFacture.Text == factures[indx].IDFacture.ToString())
                     {
                         factures.RemoveAt(indx);
-                        facture.IDFacture = long.Parse(cmbFactureNumero.Text);
+                        facture.IDFacture = long.Parse(cmbNumeroFacture.Text);
                         for (int i = 0; i < pvcs.Count; i++)
                         {
                             if (pvcs[i].IdFacture == facture.IDFacture)
@@ -1051,8 +1053,18 @@ namespace Aiche_Bois
                     for (int i = 0; i < dtGMesure.Rows.Count; i++)
                     {
                         if (btnDeterminClick == "edit")
-                            mesures.Add(new Mesure(facture.IDFacture, Convert.ToDouble(dtGMesure.Rows[i].Cells[0].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[1].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[2].Value), cmbTypeDuMetres.Text));
-                        vs.Add(new Mesure(facture.IDFacture, Convert.ToDouble(dtGMesure.Rows[i].Cells[0].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[1].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[2].Value), cmbTypeDuMetres.Text));
+                        {
+                            if (dtGridPvc.Rows.Count > 0)
+                                mesures.Add(new Mesure(facture.IDFacture, Convert.ToDouble(dtGMesure.Rows[i].Cells[0].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[1].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[2].Value), cmbTypeDuMetres.Text, dtGridPvc.Rows[i].Cells[3].Value.ToString()));
+                            else
+                                mesures.Add(new Mesure(facture.IDFacture, Convert.ToDouble(dtGMesure.Rows[i].Cells[0].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[1].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[2].Value), cmbTypeDuMetres.Text, "0"));
+                        }
+
+                        if (dtGridPvc.Rows.Count > 0)
+                            vs.Add(new Mesure(facture.IDFacture, Convert.ToDouble(dtGMesure.Rows[i].Cells[0].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[1].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[2].Value), cmbTypeDuMetres.Text, dtGridPvc.Rows[i].Cells[3].Value.ToString()));
+                        else
+                            vs.Add(new Mesure(facture.IDFacture, Convert.ToDouble(dtGMesure.Rows[i].Cells[0].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[1].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[2].Value), cmbTypeDuMetres.Text, "0"));
+
                     }
                 }
                 else
@@ -1061,12 +1073,21 @@ namespace Aiche_Bois
                     for (int i = 0; i < dtGMesure.Rows.Count; i++)
                     {
                         if (btnDeterminClick == "edit")
-                            mesures.Add(new Mesure(facture.IDFacture, Convert.ToDouble(dtGMesure.Rows[i].Cells[0].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[1].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[2].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[3].Value), cmbTypeDuMetres.Text));
-                        vs.Add(new Mesure(facture.IDFacture, Convert.ToDouble(dtGMesure.Rows[i].Cells[0].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[1].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[2].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[3].Value), cmbTypeDuMetres.Text));
+                        {
+                            if (dtGridPvc.Rows.Count > 0)
+                                mesures.Add(new Mesure(facture.IDFacture, Convert.ToDouble(dtGMesure.Rows[i].Cells[0].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[1].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[2].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[3].Value), cmbTypeDuMetres.Text, dtGridPvc.Rows[i].Cells[3].Value.ToString()));
+                            else
+                                mesures.Add(new Mesure(facture.IDFacture, Convert.ToDouble(dtGMesure.Rows[i].Cells[0].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[1].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[2].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[3].Value), cmbTypeDuMetres.Text, "0"));
+                        }
+                        if (dtGridPvc.Rows.Count > 0)
+                            vs.Add(new Mesure(facture.IDFacture, Convert.ToDouble(dtGMesure.Rows[i].Cells[0].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[1].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[2].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[3].Value), cmbTypeDuMetres.Text, dtGridPvc.Rows[i].Cells[3].Value.ToString()));
+                        else
+                            vs.Add(new Mesure(facture.IDFacture, Convert.ToDouble(dtGMesure.Rows[i].Cells[0].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[1].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[2].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[3].Value), cmbTypeDuMetres.Text, "0"));
                     }
                 }
 
                 facture.Mesures = vs;
+                facture.DateFacture = dtDateFacture.Value;
                 facture.TypeDeBois = txtTypeDeBois.Text;
                 facture.Categorie = txtCategorie.Text;
                 facture.Metrage = txtMetrageDeFeuille.Text;
@@ -1074,7 +1095,7 @@ namespace Aiche_Bois
                 facture.TotalMesure = double.Parse(txtTotalMesure.Text);
                 facture.PrixTotalMesure = double.Parse(txtPrixTotalMesure.Text);
 
-                if (!string.IsNullOrEmpty(cmbNbrCantoPvc.Text))
+                if (!string.IsNullOrEmpty(cmbTypePvc.Text))
                 {
                     List<Pvc> vspvc = new List<Pvc>();
 
@@ -1087,7 +1108,7 @@ namespace Aiche_Bois
                     }
 
                     facture.Pvcs = vspvc;
-                    facture.TypePVC = cmbNbrCantoPvc.Text;
+                    facture.TypePVC = cmbTypePvc.Text;
                     facture.CheckPVC = chSeulPVC.Checked;
                     facture.TailleCanto = txtTaillePVC.Text;
                     facture.PrixMitresLinear = double.Parse(txtPrixMetreLPVC.Text);
@@ -1145,6 +1166,7 @@ namespace Aiche_Bois
         {
             dtGridPvc.Enabled = b;
             btnImportPvc.Enabled = b;
+            btnSavePvc.Enabled = b;
 
             chSeulPVC.Enabled = b;
 
@@ -1194,6 +1216,7 @@ namespace Aiche_Bois
             txtLongueur.Enabled = ft;
             txtEpaisseur.Enabled = ft;
             btnAddMesure.Enabled = ft;
+            btnEditMesure.Enabled = ft;
             btnDeleteMesure.Enabled = ft;
         }
 
@@ -1204,7 +1227,7 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void chSeulPVC_CheckedChanged(object sender, EventArgs e)
         {
-            if (cmbNbrCantoPvc.SelectedIndex > 0)
+            if (!String.IsNullOrEmpty(cmbTypePvc.Text))
             {
                 if (chSeulPVC.Checked)
                 {
@@ -1221,8 +1244,7 @@ namespace Aiche_Bois
                     checkSeulPVC(true);
 
                     dtGMesure.Rows.Clear();
-                    if (btnDeterminClick != "edit")
-                        mesures.Clear();
+                    mesures.Clear();
                     dtGridPvc.Rows.Clear();
                     txtTypeDeBois.Clear();
                     txtPrixMetreMesure.Clear();
@@ -1289,7 +1311,7 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void cmbNbrCantoPvc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbNbrCantoPvc.SelectedIndex < 0)
+            if (cmbTypePvc.SelectedIndex < 0)
             {
                 enabledTxtBxPvc(false);
             }
@@ -1488,7 +1510,6 @@ namespace Aiche_Bois
         {
             if (btnDeterminClick == "add")
             {
-                /*clients.Add(new Client(txtNomClient.Text, dtDateClient.Value, checkAvance.Checked, factures.Count, double.Parse(txtMontantTotal.Text), double.Parse(txtAvance.Text), double.Parse(txtRestMontant.Text), factures));*/
                 try
                 {
                     connectionClient.Open();
@@ -1497,7 +1518,7 @@ namespace Aiche_Bois
                     OleDbCommand commandClient = new OleDbCommand
                     {
                         Connection = connectionClient,
-                        CommandText = "insert into client (nomClient, dateClient, nbFacture, chAvance, prixTotalAvance, prixTotalRest, prixTotalClient) values('" + txtNomClient.Text + "','" + dtDateClient.Value + "','" + factures.Count + "'," + checkAvance.Checked.ToString() + ",'" + Convert.ToDouble(txtPrixAvanceClient.Text) + "','" + Convert.ToDouble(txtPrixRestClient.Text) + "','" + Convert.ToDouble(txtPrixTotalClient.Text) + "')"
+                        CommandText = "insert into client (nomClient, dateClient, chAvance, prixTotalAvance, prixTotalRest, prixTotalClient) values('" + txtNomClient.Text + "','" + DateTime.Today + "'," + checkAvance.Checked.ToString() + ",'" + Convert.ToDouble(txtPrixAvanceClient.Text) + "','" + Convert.ToDouble(txtPrixRestClient.Text) + "','" + Convert.ToDouble(txtPrixTotalClient.Text) + "')"
                     };
                     commandClient.ExecuteNonQuery();
 
@@ -1519,8 +1540,8 @@ namespace Aiche_Bois
                         OleDbCommand commandFacture = new OleDbCommand
                         {
                             Connection = connectionClient,
-                            CommandText = "insert into facture (idClient, typeDeBois, metrage, categorie, totalMesure, prixMetres, typePVC, checkPVC, tailleCanto, totalTaillPVC, prixMitresLinear, prixTotalPVC, prixTotalMesure)" +
-                                          " values ('" + (idCLIENT) + "', '" + fct.TypeDeBois + "', '" + fct.Metrage + "','" + fct.Categorie + "', '" + fct.TotalMesure + "', '" + fct.PrixMetres + "', '" + fct.TypePVC + "', " + fct.CheckPVC.ToString() + ",'" + fct.TailleCanto + "', '"
+                            CommandText = "insert into facture (idClient, dtDateFacture, typeDeBois, metrage, categorie, totalMesure, prixMetres, typePVC, checkPVC, tailleCanto, totalTaillPVC, prixMitresLinear, prixTotalPVC, prixTotalMesure)" +
+                                          " values ('" + (idCLIENT) + "', '" + fct.DateFacture + "', '" + fct.TypeDeBois + "', '" + fct.Metrage + "','" + fct.Categorie + "', '" + fct.TotalMesure + "', '" + fct.PrixMetres + "', '" + fct.TypePVC + "', " + fct.CheckPVC.ToString() + ",'" + fct.TailleCanto + "', '"
                                           + fct.TotalTaillPVC + "', '" + fct.PrixMitresLinear + "', '" + fct.PrixTotalPVC + "', '" + fct.PrixTotalMesure + "')"
                         };
                         commandFacture.ExecuteNonQuery();
@@ -1536,15 +1557,6 @@ namespace Aiche_Bois
                         {
                             idFACTURE = Convert.ToInt32(readerIdFacture["idFacture"]);
                         }
-                        foreach (Mesure msr in fct.Mesures)
-                        {
-                            OleDbCommand commandMesure = new OleDbCommand
-                            {
-                                Connection = connectionClient,
-                                CommandText = "insert into mesure (idFacture, quantite, largeur, longueur, eppaiseur, type) values('" + (idFACTURE) + "','" + msr.Quantite + "','" + msr.Largeur + "','" + msr.Longueur + "','" + msr.Epaisseur + "','" + msr.Type + "')"
-                            };
-                            commandMesure.ExecuteNonQuery();
-                        }
 
                         foreach (Pvc pvc in fct.Pvcs)
                         {
@@ -1554,6 +1566,16 @@ namespace Aiche_Bois
                                 CommandText = "insert into pvc (idFacture, quantite, largeur, longueur, orientation) values('" + idFACTURE + "','" + pvc.Qte + "','" + pvc.Largr + "','" + pvc.Longr + "','" + pvc.Ortn + "')"
                             };
                             commandPvc.ExecuteNonQuery();
+                        }
+
+                        foreach (Mesure msr in fct.Mesures)
+                        {
+                            OleDbCommand commandMesure = new OleDbCommand
+                            {
+                                Connection = connectionClient,
+                                CommandText = "insert into mesure (idFacture, quantite, largeur, longueur, eppaiseur, type, orientation) values('" + (idFACTURE) + "','" + msr.Quantite + "','" + msr.Largeur + "','" + msr.Longueur + "','" + msr.Epaisseur + "','" + msr.Type + "','" + msr.Orientation + "')"
+                            };
+                            commandMesure.ExecuteNonQuery();
                         }
                     }
                     connectionClient.Close();
@@ -1595,7 +1617,7 @@ namespace Aiche_Bois
                 connectionClient.Open();
 
                 /*facture*/
-                if (cmbFactureNumero.Text == factures[indx].IDFacture.ToString())
+                if (cmbNumeroFacture.Text == factures[indx].IDFacture.ToString())
                 {
                     OleDbCommand commandFacture = new OleDbCommand
                     {
@@ -1611,7 +1633,7 @@ namespace Aiche_Bois
 
                     foreach (Mesure msr in factures[indx].Mesures)
                     {
-                        if (msr.IdFacture.ToString() == cmbFactureNumero.Text)
+                        if (msr.IdFacture.ToString() == cmbNumeroFacture.Text)
                         {
                             OleDbCommand commandMesure = new OleDbCommand
                             {
@@ -1626,7 +1648,7 @@ namespace Aiche_Bois
 
                     foreach (Pvc pv in factures[indx].Pvcs)
                     {
-                        if (pv.IdFacture.ToString() == cmbFactureNumero.Text)
+                        if (pv.IdFacture.ToString() == cmbNumeroFacture.Text)
                         {
                             OleDbCommand commandPvc = new OleDbCommand
                             {
@@ -1646,6 +1668,36 @@ namespace Aiche_Bois
             {
                 MessageBox.Show("Erreur:: " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnDeleteFacture_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                connectionClient.Open();
+
+                OleDbCommand commandFacture = new OleDbCommand
+                {
+                    Connection = connectionClient,
+                    CommandText = "DELETE * FROM FACTURE WHERE idFacture = " + cmbNumeroFacture.SelectedItem
+                };
+                commandFacture.ExecuteNonQuery();
+
+                connectionClient.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur:: " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            cmbNumeroFacture.Items.Remove(cmbNumeroFacture.SelectedItem);
+            if (cmbNumeroFacture.Items.Count <= 1)
+                btnDeleteFacture.Enabled = false;
+        }
+
+        private void btnPrintFacture_Click(object sender, EventArgs e)
+        {
+            PrintPdf printPdf = new PrintPdf(cmbNumeroFacture.SelectedItem.ToString());
+            printPdf.ShowDialog();
         }
     }
 }

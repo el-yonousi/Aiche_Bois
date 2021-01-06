@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Aiche_Bois
@@ -12,7 +11,7 @@ namespace Aiche_Bois
 
         /*declaration des variables*/
         public static string btnAddTypeClick;
-        public static List<Client> Clients = new List<Client>();
+        //public static List<Client> Clients = new List<Client>();
         public static int indxFacture = 0;
 
         [STAThread]

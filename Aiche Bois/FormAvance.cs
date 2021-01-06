@@ -1,8 +1,8 @@
 ﻿using System;
-using System.IO;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Aiche_Bois
@@ -171,8 +171,8 @@ namespace Aiche_Bois
                 avance += double.Parse(txtPrixCLient.Text);
                 rest = double.Parse(lblTotalPrixClient.Text) - avance;
 
-                lblAvancePrixClient.Text = avance.ToString();
-                lblRestPrixClient.Text = rest.ToString();
+                lblAvancePrixClient.Text = avance.ToString("F2");
+                lblRestPrixClient.Text = rest.ToString("F2");
 
                 if (double.Parse(lblRestPrixClient.Text) == 0)
                 {

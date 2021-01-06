@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.OleDb;
-using CrystalDecisions.CrystalReports.Engine;
+using System.Windows.Forms;
 
 namespace Aiche_Bois
 {
@@ -28,28 +22,38 @@ namespace Aiche_Bois
             OleDbConnection connection = new OleDbConnection();
             connection.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + path + "/aicheBois.accdb";
 
-            //Client
-            OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM CLIENT WHERE IDCLIENT = " + long.Parse(idClient), connection);
-            DataSet dataSet = new DataSet();
-            adapter.Fill(dataSet, "client");
-            //report.Load(Application.StartupPath + @"CrystalReport1.rpt");
-            report.Load(@"CrystalReportClient.rpt");
+            cmbShoosePrint.SelectedIndex = 0;
 
-            report.SetDataSource(dataSet);
-            crystalRepClient.ReportSource = report;
-            dataSet.Dispose();
+            //Client
+            //OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM CLIENT WHERE IDCLIENT = " + long.Parse(idClient), connection);
+            //DataSet dataSet = new DataSet();
+            //adapter.Fill(dataSet, "client");
+            ////report.Load(Application.StartupPath + @"CrystalReport1.rpt");
+            //report.Load(@"CrystalReportClient.rpt");
+
+            //report.SetDataSource(dataSet);
+            //crystalRepClient.ReportSource = report;
+            //dataSet.Dispose();
 
             // Facture
-            //OleDbDataAdapter adapterMesure = new OleDbDataAdapter("SELECT * FROM facture WHERE IDCLIENT = " + long.Parse(idClient), connection);
+            OleDbDataAdapter adapterMesure = new OleDbDataAdapter("SELECT distinct * FROM facture WHERE IDCLIENT = " + long.Parse(idClient), connection);
+            DataSet dataSetMesure = new DataSet();
+            ReportDocument reportMesure = new ReportDocument();
+            adapterMesure.Fill(dataSetMesure, "facture");
+            //report.Load(Application.StartupPath + @"CrystalReport1.rpt");
+            reportMesure.Load(@"CrystalReportMesure.rpt");
+
+            //// Facture Numero, imprimer seul la facture selectionner
+            //OleDbDataAdapter adapterMesure = new OleDbDataAdapter("select distinct * from facture where idFacture = " + long.Parse(idClient), connection);
             //DataSet dataSetMesure = new DataSet();
             //ReportDocument reportMesure = new ReportDocument();
             //adapterMesure.Fill(dataSetMesure, "facture");
             ////report.Load(Application.StartupPath + @"CrystalReport1.rpt");
-            //reportMesure.Load(@"CrystalReportMesure.rpt");
+            //reportMesure.Load(@cmbShoosePrint.SelectedItem.ToString());
 
-            //reportMesure.SetDataSource(dataSetMesure);
-            //crystalRepClient.ReportSource = reportMesure;
-            //dataSetMesure.Dispose();
+            reportMesure.SetDataSource(dataSetMesure);
+            crystalRepClient.ReportSource = reportMesure;
+            dataSetMesure.Dispose();
             connection.Close();
         }
     }

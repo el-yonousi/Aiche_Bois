@@ -20,6 +20,11 @@ namespace Aiche_Bois
         private String[] idClient;
 
         /// <summary>
+        /// stocker les client a liste des clients
+        /// </summary>
+        private List<Client> clients = new List<Client>();
+
+        /// <summary>
         /// c'est le design du formulaire et l'initialisation de connecter a la base de donnees
         /// </summary>
         public FormClient()
@@ -43,12 +48,17 @@ namespace Aiche_Bois
             try
             {
                 connectionClient.Open();
-                Program.Clients.Clear();
+                clients.Clear();
 
                 OleDbCommand commandClient = new OleDbCommand
                 {
                     Connection = connectionClient,
-                    CommandText = "select * from client order by idClient"
+                    CommandText = "select count(idFacture) AS nbFacture, c.nomClient, dateClient, c.chAvance, c.prixTotalAvance, c.prixTotalRest, c.prixTotalClient, c.idClient " + 
+                    "from client c " +
+                    "inner join facture f " +
+                    "on f.idClient = c.idClient " +
+                    "group by nomClient, dateClient, chAvance, prixTotalAvance, prixTotalRest, prixTotalClient, c.idClient " +
+                    "order by c.idClient desc"
                 };
 
                 //OleDbDataAdapter dbDataAdapter = new OleDbDataAdapter(commandClient);
@@ -72,17 +82,18 @@ namespace Aiche_Bois
                     };
 
                     /*remplir a la liste client*/
-                    Program.Clients.Add(client);
+                    clients.Add(client);
                 }
                 connectionClient.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erreur:: " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                FormMessage message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                return;
             }
 
             dtGridFacture.Rows.Clear();
-            foreach (Client ct in Program.Clients)
+            foreach (Client ct in clients)
             {
                 dtGridFacture.Rows.Add("N" + ct.IdClient.ToString("D4"), ct.NomClient, ct.DateClient.ToString("dd/MM/yyyy"), ct.NbFacture, "", ct.CheckAvance, ct.PrixTotalAvance.ToString("F2"), ct.PrixTotalRest.ToString("F2"), ct.PrixTotalClient.ToString("F2"));
             }
@@ -130,7 +141,8 @@ namespace Aiche_Bois
         {
             if (dtGridFacture.Rows.Count <= 0)
             {
-                MessageBox.Show("selectionner une ligne s'il vous plait");
+                var message = new FormMessage("selectionner une ligne s'il vous plait", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message.ShowDialog();
                 return;
             }
             indxFacture = dtGridFacture.CurrentRow.Index;
@@ -143,9 +155,10 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void btnPrintFacture_Click(object sender, EventArgs e)
         {
-            if (indxFacture <= -1 || dtGridFacture.Rows.Count <= 0)
+            if (indxFacture <= -1 || dtGridFacture.Rows.Count <= 0 || idClient == null)
             {
-                MessageBox.Show("la list est vide ou Selectionner une ligne", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                var message = new FormMessage("selectionner une ligne s'il vous plait", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message.ShowDialog();
                 return;
             }
 
@@ -167,12 +180,15 @@ namespace Aiche_Bois
         private int indxFacture;
         private void dtGridFacture_DoubleClick(object sender, EventArgs e)
         {
-            if (dtGridFacture.Rows.Count <= 0)
+            if (indxFacture <= -1 || dtGridFacture.Rows.Count <= 0 || idClient == null)
             {
-                MessageBox.Show("selectionner une ligne s'il vous plait");
+                FormMessage message = new FormMessage("la list est vide ou Selectionner une ligne", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
                 return;
             }
             indxFacture = dtGridFacture.CurrentRow.Index;
+            FormAjoutFactures formShow = new FormAjoutFactures(idClient[1], "edit");
+            formShow.ShowDialog();
+            remplissageDtGridClient();
         }
 
         /// <summary>
@@ -339,7 +355,7 @@ namespace Aiche_Bois
             if (!string.IsNullOrEmpty(txtSearch.Text))
             {
                 dtGridFacture.Rows.Clear();
-                foreach (Client ct in Program.Clients)
+                foreach (Client ct in clients)
                 {
                     String id = "N" + ct.IdClient.ToString("D4");
                     String dt = ct.DateClient.ToString("dd/MM/yyyy");
@@ -360,32 +376,40 @@ namespace Aiche_Bois
         {
             if (indxFacture <= -1 || dtGridFacture.Rows.Count <= 0 || idClient == null)
             {
-                MessageBox.Show("la list est vide ou Selectionner une ligne", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                FormMessage mge = new FormMessage("la list est vide ou Selectionner une ligne", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                mge.ShowDialog();
                 return;
             }
 
-            try
+            FormMessage message = new FormMessage("voulez vous vraiment supprimer c'est client", "Attention", true, true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+            
+            DialogResult dialog = message.ShowDialog();
+
+            if (DialogResult.Yes == dialog)
             {
-                connectionClient.Open();
-                OleDbCommand commandDelete = new OleDbCommand
+                try
                 {
-                    Connection = connectionClient,
-                    CommandText = "delete * from client where idClient = " + Convert.ToInt64(idClient[1])
-                };
+                    connectionClient.Open();
+                    OleDbCommand commandDelete = new OleDbCommand
+                    {
+                        Connection = connectionClient,
+                        CommandText = "delete * from client where idClient = " + Convert.ToInt64(idClient[1])
+                    };
 
-                commandDelete.ExecuteNonQuery();
-                connectionClient.Close();
-                MessageBox.Show("le client " + "N" + idClient + " est supprimer avec success", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                    commandDelete.ExecuteNonQuery();
+                    connectionClient.Close();
+                }
+                catch (Exception ex)
+                {
+                    FormMessage mg = new FormMessage("Error: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.RadiationAlt);
+                    mg.ShowDialog();
+                }
 
-            /*
-             * refrecher les donness du client
-             */
-            remplissageDtGridClient();
+                /*
+                 * refrecher les donness du client
+                 */
+                remplissageDtGridClient();
+            }
         }
 
         /// <summary>
@@ -397,7 +421,8 @@ namespace Aiche_Bois
         {
             if (indxFacture <= -1 || dtGridFacture.Rows.Count <= 0 || idClient == null)
             {
-                MessageBox.Show("la list est vide ou Selectionner une ligne", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                FormMessage message = new FormMessage("la list est vide ou Selectionner une ligne", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message.ShowDialog();
                 return;
             }
 
