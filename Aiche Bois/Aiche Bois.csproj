@@ -91,6 +91,12 @@
       <DependentUpon>CrystalReportMesure.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrystalReportPvc.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportPvc.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FormAjout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,10 @@
     <EmbeddedResource Include="CrystalReportMesure.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportMesure.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportPvc.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportPvc.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAjout.resx">
       <DependentUpon>FormAjout.cs</DependentUpon>

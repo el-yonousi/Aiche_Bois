@@ -162,7 +162,7 @@ namespace Aiche_Bois
                 return;
             }
 
-            PrintPdf print = new PrintPdf(idClient[1]);
+            PrintPdf print = new PrintPdf(idClient[1], "null", "btnPrintClient", false);
             print.ShowDialog();
 
             //((Form)(prntPrevDiag)).WindowState = FormWindowState.Maximized;

@@ -1696,7 +1696,7 @@ namespace Aiche_Bois
 
         private void btnPrintFacture_Click(object sender, EventArgs e)
         {
-            PrintPdf printPdf = new PrintPdf(cmbNumeroFacture.SelectedItem.ToString());
+            PrintPdf printPdf = new PrintPdf(idClient, cmbNumeroFacture.SelectedItem.ToString(), "btnPrintFacture", chSeulPVC.Checked);
             printPdf.ShowDialog();
         }
     }
