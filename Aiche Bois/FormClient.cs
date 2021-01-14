@@ -53,11 +53,13 @@ namespace Aiche_Bois
                 OleDbCommand commandClient = new OleDbCommand
                 {
                     Connection = connectionClient,
-                    CommandText = "select count(idFacture) AS nbFacture, c.nomClient, dateClient, c.chAvance, c.prixTotalAvance, c.prixTotalRest, c.prixTotalClient, c.idClient " + 
+                    CommandText =
+                    "select count(idFacture) AS nbFacture, (sum(f.prixtotalmesure) + sum(prixtotalpvc)) as total, " +
+                    "c.nomClient, dateClient, avance, c.prixTotalAvance, rest, c.idClient " +
                     "from client c " +
                     "inner join facture f " +
                     "on f.idClient = c.idClient " +
-                    "group by nomClient, dateClient, chAvance, prixTotalAvance, prixTotalRest, prixTotalClient, c.idClient " +
+                    "group by nomClient, dateClient, avance, prixTotalAvance, rest, c.idClient " +
                     "order by c.idClient desc"
                 };
 
@@ -75,10 +77,10 @@ namespace Aiche_Bois
                         NomClient = readerClient["nomClient"].ToString(),
                         DateClient = Convert.ToDateTime(readerClient["dateClient"]),
                         NbFacture = Convert.ToInt32(readerClient["nbFacture"]),
-                        CheckAvance = Convert.ToBoolean(readerClient["chAvance"]),
+                        CheckAvance = Convert.ToBoolean(readerClient["avance"]),
                         PrixTotalAvance = Convert.ToDouble(readerClient["prixTotalAvance"]),
-                        PrixTotalRest = Convert.ToDouble(readerClient["prixTotalRest"]),
-                        PrixTotalClient = Convert.ToDouble(readerClient["prixTotalClient"])
+                        PrixTotalRest = Convert.ToDouble(readerClient["rest"]),
+                        PrixTotalClient = Convert.ToDouble(readerClient["total"])
                     };
 
                     /*remplir a la liste client*/

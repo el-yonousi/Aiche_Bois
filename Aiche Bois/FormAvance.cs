@@ -73,7 +73,13 @@ namespace Aiche_Bois
                 OleDbCommand command = new OleDbCommand
                 {
                     Connection = connection,
-                    CommandText = "SELECT * from client where idClient = " + idClient
+                    CommandText = "SELECT c.idClient, nomClient, dateClient, avance, prixTotalAvance, " +
+                    "rest, (sum(prixtotalMesure) + sum(prixtotalPvc)) as total " +
+                    "from client c " +
+                    "inner join facture f " +
+                    "on c.idClient = f.idClient " +
+                    "where c.idClient = " + idClient +
+                    " group by c.idClient, nomClient, dateClient, avance, prixTotalAvance, rest"
                 };
 
                 OleDbDataReader readerClient = command.ExecuteReader();
@@ -82,10 +88,10 @@ namespace Aiche_Bois
                     lblIDClient.Text = "N" + Convert.ToInt32(readerClient["idClient"]).ToString("D4");
                     lblNomClient.Text = readerClient["nomClient"].ToString();
                     lblDateClient.Text = Convert.ToDateTime(readerClient["dateClient"]).ToString("d");
-                    checkAvance = Convert.ToBoolean((readerClient["chAvance"]).ToString());
+                    checkAvance = Convert.ToBoolean((readerClient["avance"]).ToString());
                     lblAvancePrixClient.Text = Convert.ToDouble(readerClient["prixTotalAvance"]).ToString("F2");
-                    lblRestPrixClient.Text = Convert.ToDouble(readerClient["prixTotalRest"]).ToString("F2");
-                    lblTotalPrixClient.Text = Convert.ToDouble(readerClient["prixTotalClient"]).ToString("F2");
+                    lblRestPrixClient.Text = Convert.ToDouble(readerClient["Rest"]).ToString("F2");
+                    lblTotalPrixClient.Text = Convert.ToDouble(readerClient["total"]).ToString("F2");
                 }
 
                 connection.Close();
@@ -185,7 +191,7 @@ namespace Aiche_Bois
                 OleDbCommand command = new OleDbCommand
                 {
                     Connection = connection,
-                    CommandText = "UPDATE client SET prixTotalRest = " + rest + ", prixTotalAvance = " + avance + ", chAvance = " + checkAvance.ToString() + " where idClient = " + idClient
+                    CommandText = "UPDATE client SET prixTotalAvance = " + avance + ", chAvance = " + checkAvance.ToString() + " where idClient = " + idClient
                 };
 
                 command.ExecuteNonQuery();
