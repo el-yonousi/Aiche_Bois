@@ -119,6 +119,7 @@
             this.lblFactureNumero = new System.Windows.Forms.Label();
             this.btnPrintFacture = new FontAwesome.Sharp.IconButton();
             this.btnDeleteFacture = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtGMesure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridPvc)).BeginInit();
             this.SuspendLayout();
@@ -579,9 +580,9 @@
             this.dtGMesure.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtGMesure.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtGMesure.BackgroundColor = System.Drawing.Color.White;
-            this.dtGMesure.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtGMesure.CausesValidation = false;
             this.dtGMesure.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dtGMesure.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dtGMesure.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
@@ -621,6 +622,7 @@
             this.dtGMesure.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dtGMesure.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtGMesure.Size = new System.Drawing.Size(313, 202);
+            this.dtGMesure.StandardTab = true;
             this.dtGMesure.TabIndex = 16;
             this.dtGMesure.TabStop = false;
             // 
@@ -679,7 +681,7 @@
             this.btnDeleteMesure.IconSize = 25;
             this.btnDeleteMesure.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnDeleteMesure.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnDeleteMesure.Location = new System.Drawing.Point(757, 308);
+            this.btnDeleteMesure.Location = new System.Drawing.Point(757, 251);
             this.btnDeleteMesure.Name = "btnDeleteMesure";
             this.btnDeleteMesure.Size = new System.Drawing.Size(78, 33);
             this.btnDeleteMesure.TabIndex = 15;
@@ -715,7 +717,7 @@
             this.btnEditMesure.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnEditMesure.IconSize = 25;
             this.btnEditMesure.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnEditMesure.Location = new System.Drawing.Point(757, 223);
+            this.btnEditMesure.Location = new System.Drawing.Point(757, 195);
             this.btnEditMesure.Name = "btnEditMesure";
             this.btnEditMesure.Size = new System.Drawing.Size(78, 33);
             this.btnEditMesure.TabIndex = 14;
@@ -1118,6 +1120,7 @@
             this.txtLargPVC.TabIndex = 161;
             this.txtLargPVC.Tag = "Largeur PVC";
             this.txtLargPVC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtLargPVC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantite_KeyPress);
             // 
             // label22
             // 
@@ -1142,6 +1145,7 @@
             this.txtQtePVC.TabIndex = 160;
             this.txtQtePVC.Tag = "Quantite PVC";
             this.txtQtePVC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtQtePVC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantite_KeyPress);
             // 
             // label23
             // 
@@ -1166,6 +1170,7 @@
             this.txtLongPVC.TabIndex = 162;
             this.txtLongPVC.Tag = "Longueur PVC";
             this.txtLongPVC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtLongPVC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantite_KeyPress);
             // 
             // cmbOrtnPVC
             // 
@@ -1310,6 +1315,23 @@
             this.btnDeleteFacture.Visible = false;
             this.btnDeleteFacture.Click += new System.EventHandler(this.btnDeleteFacture_Click);
             // 
+            // iconButton1
+            // 
+            this.iconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Download;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.iconButton1.IconSize = 25;
+            this.iconButton1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.iconButton1.Location = new System.Drawing.Point(757, 307);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(78, 33);
+            this.iconButton1.TabIndex = 261;
+            this.iconButton1.TabStop = false;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            // 
             // FormAjoutFactures
             // 
             this.AcceptButton = this.btnAddFacture;
@@ -1317,6 +1339,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1391, 875);
+            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.btnPrintFacture);
             this.Controls.Add(this.btnDeleteFacture);
             this.Controls.Add(this.lblNumeroFacture);
@@ -1446,7 +1469,6 @@
         private System.Windows.Forms.ComboBox cmbTypeDeBois;
         private System.Windows.Forms.Label lblEpaisseur;
         private System.Windows.Forms.TextBox txtEpaisseur;
-        private System.Windows.Forms.DataGridView dtGMesure;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtLargeur;
         private FontAwesome.Sharp.IconButton btnDeleteMesure;
@@ -1496,5 +1518,7 @@
         private System.Windows.Forms.Label lblFactureNumero;
         private FontAwesome.Sharp.IconButton btnPrintFacture;
         private FontAwesome.Sharp.IconButton btnDeleteFacture;
+        private System.Windows.Forms.DataGridView dtGMesure;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

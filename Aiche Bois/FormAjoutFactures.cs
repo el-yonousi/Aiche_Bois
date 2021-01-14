@@ -103,7 +103,7 @@ namespace Aiche_Bois
         /// method qui calcul data grid view mesure
         /// </summary>
         /// <param name="mesures"></param>
-        private void RemplirDataMesure(List<Mesure> mesures)
+        private void RemplirDataMesure()
         {
             double totale = 0;
             for (int i = 0; i < dtGMesure.Rows.Count; i++)
@@ -879,7 +879,7 @@ namespace Aiche_Bois
             {
                 dtGMesure.Rows.Add(txtQuantite.Text, txtLargeur.Text, txtLongueur.Text);
             }
-            RemplirDataMesure(mesures);
+            RemplirDataMesure();
             txtQuantite.Clear();
             txtLargeur.Clear();
             txtLongueur.Clear();
@@ -938,7 +938,7 @@ namespace Aiche_Bois
                     dtGMesure.Rows.Add(msr.Quantite, msr.Largeur, msr.Longueur);
                 }
             }
-            RemplirDataMesure(mesures);
+            RemplirDataMesure();
             MessageBox.Show("modifier avec succes", "Modifier", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -955,28 +955,9 @@ namespace Aiche_Bois
                 return;
             }
 
-            int indx = dtGMesure.CurrentRow.Index;
-            for (int i = 0; i < mesures.Count; i++)
-            {
-                if (mesures[indx] == mesures[i])
-                {
-                    mesures.RemoveAt(i);
-                }
-            }
+            dtGMesure.Rows.RemoveAt(dtGMesure.CurrentRow.Index);
 
-            dtGMesure.Rows.Clear();
-            foreach (Mesure msr in mesures)
-            {
-                if (cmbTypeDuMetres.SelectedIndex == 2)
-                {
-                    dtGMesure.Rows.Add(msr.Quantite, msr.Largeur, msr.Longueur, msr.Epaisseur);
-                }
-                else
-                {
-                    dtGMesure.Rows.Add(msr.Quantite, msr.Largeur, msr.Longueur);
-                }
-            }
-            RemplirDataMesure(mesures);
+            RemplirDataMesure();
             MessageBox.Show("supprimer avec succes", "Supprimer", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
