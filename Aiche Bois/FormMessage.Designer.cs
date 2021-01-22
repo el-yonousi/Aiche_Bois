@@ -101,9 +101,9 @@ namespace Aiche_Bois
             // 
             this.iconCharMessage.BackColor = System.Drawing.Color.Transparent;
             this.iconCharMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.iconCharMessage.IconChar = FontAwesome.Sharp.IconChar.NetworkWired;
+            this.iconCharMessage.IconChar = FontAwesome.Sharp.IconChar.ThumbsUp;
             this.iconCharMessage.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.iconCharMessage.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconCharMessage.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconCharMessage.IconSize = 135;
             this.iconCharMessage.Location = new System.Drawing.Point(12, 75);
             this.iconCharMessage.Name = "iconCharMessage";

@@ -10,6 +10,11 @@ namespace Aiche_Bois
     public partial class FormAvance : Form
     {
         /// <summary>
+        /// this is a message custom box
+        /// </summary>
+        FormMessage message;
+
+        /// <summary>
         /// c'est l'access a extereiur Client data base
         /// </summary>
         private readonly OleDbConnection connection = new OleDbConnection();
@@ -23,12 +28,6 @@ namespace Aiche_Bois
         /// c'est le variable pour verifier le check box
         /// </summary>
         bool checkAvance;
-
-        /// <summary>
-        /// c'est variables pour prendre les valeur des champs
-        /// </summary>
-        double avance = 0;
-        double rest = 0;
 
         /// <summary>
         /// c'est formulaire de traitment
@@ -73,13 +72,8 @@ namespace Aiche_Bois
                 OleDbCommand command = new OleDbCommand
                 {
                     Connection = connection,
-                    CommandText = "SELECT c.idClient, nomClient, dateClient, avance, prixTotalAvance, " +
-                    "rest, (sum(prixtotalMesure) + sum(prixtotalPvc)) as total " +
-                    "from client c " +
-                    "inner join facture f " +
-                    "on c.idClient = f.idClient " +
-                    "where c.idClient = " + idClient +
-                    " group by c.idClient, nomClient, dateClient, avance, prixTotalAvance, rest"
+                    CommandText =
+                    "select * from query where idClient = " + idClient
                 };
 
                 OleDbDataReader readerClient = command.ExecuteReader();
@@ -88,9 +82,9 @@ namespace Aiche_Bois
                     lblIDClient.Text = "N" + Convert.ToInt32(readerClient["idClient"]).ToString("D4");
                     lblNomClient.Text = readerClient["nomClient"].ToString();
                     lblDateClient.Text = Convert.ToDateTime(readerClient["dateClient"]).ToString("d");
-                    checkAvance = Convert.ToBoolean((readerClient["avance"]).ToString());
+                    checkAvance = Convert.ToBoolean((readerClient["cavance"]).ToString());
                     lblAvancePrixClient.Text = Convert.ToDouble(readerClient["prixTotalAvance"]).ToString("F2");
-                    lblRestPrixClient.Text = Convert.ToDouble(readerClient["Rest"]).ToString("F2");
+                    lblRestPrixClient.Text = Convert.ToDouble(readerClient["rest"]).ToString("F2");
                     lblTotalPrixClient.Text = Convert.ToDouble(readerClient["total"]).ToString("F2");
                 }
 
@@ -98,7 +92,8 @@ namespace Aiche_Bois
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error:: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                message = new FormMessage("Error:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.ExclamationCircle);
+                message.ShowDialog();
             }
         }
 
@@ -142,7 +137,7 @@ namespace Aiche_Bois
             /*
              * check if item checked
              */
-            if (!checkAvance)
+            if (checkAvance)
             {
                 method_checkavance();
                 return;
@@ -158,7 +153,8 @@ namespace Aiche_Bois
         {
             if (double.Parse(txtPrixCLient.Text) > double.Parse(lblRestPrixClient.Text))
             {
-                MessageBox.Show("Le Prix ​​à payer est plus grand a le reste", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                message = new FormMessage("Le Prix ​​à payer est plus grand a le reste", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message.ShowDialog();
                 txtPrixCLient.Clear();
                 txtPrixCLient.Focus();
                 return;
@@ -171,41 +167,44 @@ namespace Aiche_Bois
             {
                 connection.Open();
 
-                avance = double.Parse(lblAvancePrixClient.Text);
-                rest = double.Parse(lblRestPrixClient.Text);
+                //avance = double.Parse(lblAvancePrixClient.Text);
+                //rest = double.Parse(lblRestPrixClient.Text);
 
-                avance += double.Parse(txtPrixCLient.Text);
-                rest = double.Parse(lblTotalPrixClient.Text) - avance;
+                //avance += double.Parse(txtPrixCLient.Text);
+                //rest = double.Parse(lblTotalPrixClient.Text) - avance;
 
-                lblAvancePrixClient.Text = avance.ToString("F2");
-                lblRestPrixClient.Text = rest.ToString("F2");
-
-                if (double.Parse(lblRestPrixClient.Text) == 0)
-                {
-                    checkAvance = false;
-                    rest = 0;
-                    avance = 0;
-                    method_checkavance();
-                }
+                //lblAvancePrixClient.Text = avance.ToString("F2");
+                //lblRestPrixClient.Text = rest.ToString("F2");
 
                 OleDbCommand command = new OleDbCommand
                 {
                     Connection = connection,
-                    CommandText = "UPDATE client SET prixTotalAvance = " + avance + ", chAvance = " + checkAvance.ToString() + " where idClient = " + idClient
+                    CommandText = "UPDATE client SET prixTotalAvance = prixTotalAvance + " + double.Parse(txtPrixCLient.Text) + " where idClient = " + idClient
                 };
 
                 command.ExecuteNonQuery();
 
-                MessageBox.Show("Le montant a été ajouté à la facture du client", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                message = new FormMessage("Le montant a été ajouté à la facture du client", "Succès", true, FontAwesome.Sharp.IconChar.ThumbsUp);
+                message.ShowDialog();
 
                 txtPrixCLient.Clear();
                 txtPrixCLient.Focus();
 
                 connection.Close();
+
+                // call function to full a fields
+                remplirData();
+
+                if (double.Parse(lblRestPrixClient.Text) == 0)
+                {
+                    method_checkavance();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error:: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                message = new FormMessage("Error:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.ExclamationCircle);
+                message.ShowDialog();
             }
 
         }

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Data.OleDb;
 using System.Globalization;
 using System.IO;
+using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Aiche_Bois
 {
     public partial class FormAjoutFactures : Form
     {
-        /*Declaration des variables*/
-
         /// <summary>
         /// c'est l'access a extereiur Client data base
         /// </summary>
@@ -46,6 +46,11 @@ namespace Aiche_Bois
         /// </summary>
         private String btnDeterminClick = "";
         private String idClient = "";
+
+        /// <summary>
+        /// this instance from form message to show message error
+        /// </summary>
+        private FormMessage message;
 
         public FormAjoutFactures(String idClient, String btnClick)
         {
@@ -276,23 +281,25 @@ namespace Aiche_Bois
                     btnPrintFacture.Visible = true;
                     btnDeleteFacture.Visible = true;
 
+                    // change event for btn save
+                    btnAddFacture.Click -= new EventHandler(this.btnSave_Click);
+                    btnAddFacture.Click += new EventHandler(this.btnEditFacture_Click);
+
                     connectionClient.Open();
 
                     //client
                     var commandClient = new OleDbCommand
                     {
                         Connection = connectionClient,
-                        CommandText = "SELECT nomClient, prixTotalClient, chAvance, prixTotalAvance, prixTotalRest " +
-                        "FROM CLIENT WHERE IDCLIENT = " + long.Parse(idClient)
+                        CommandText = "SELECT * FROM QUERY WHERE IDCLIENT = " + long.Parse(idClient)
                     };
                     OleDbDataReader readerClient = commandClient.ExecuteReader();
                     while (readerClient.Read())
                     {
                         txtNomClient.Text = readerClient["nomClient"].ToString();
-                        txtPrixTotalClient.Text = readerClient["prixTotalClient"].ToString();
-                        checkAvance.Checked = bool.Parse(readerClient["chAvance"].ToString());
+                        txtPrixTotalClient.Text = readerClient["total"].ToString();
                         txtPrixAvanceClient.Text = readerClient["prixTotalAvance"].ToString();
-                        txtPrixRestClient.Text = readerClient["prixTotalRest"].ToString();
+                        txtPrixRestClient.Text = readerClient["rest"].ToString();
                     }
 
                     //facture
@@ -304,6 +311,7 @@ namespace Aiche_Bois
                     OleDbDataReader readerFacture = commandFacture.ExecuteReader();
                     while (readerFacture.Read())
                     {
+                        // get list of factures
                         cmbNumeroFacture.Items.Add(long.Parse(readerFacture["IDFACTURE"].ToString()));
                     }
                     connectionClient.Close();
@@ -313,12 +321,14 @@ namespace Aiche_Bois
                     MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                // charger les champs a partir des liste remplir
+                //desactiver le champ de pre avance
+                txtPrixAvanceClient.Enabled = false;
+
+                // select the first item on list
                 cmbNumeroFacture.SelectedIndex = 0;
                 // verifier que la liste des facture contient plus d'un un facture
-                if (cmbNumeroFacture.Items.Count <= 1)
-                    btnDeleteFacture.Enabled = false;
-                txtPrixAvanceClient.Enabled = false;
+                //if (cmbNumeroFacture.Items.Count <= 1)
+                //    btnDeleteFacture.Enabled = false;
             }
             /*initialise IdFacture, IdClient*/
             idFacture();
@@ -357,6 +367,7 @@ namespace Aiche_Bois
                         CommandText = "SELECT * FROM MESURE WHERE IDFACTURE = " + idFacture
                     };
                     OleDbDataReader readerMesure = commandMesure.ExecuteReader();
+                    // clear data grid mesure
                     dtGMesure.Rows.Clear();
                     while (readerMesure.Read())
                     {
@@ -1001,6 +1012,118 @@ namespace Aiche_Bois
         }
 
         /// <summary>
+        /// this button delete facture from database by idFacture
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDeleteFacture_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                connectionClient.Open();
+
+                OleDbCommand commandFacture = new OleDbCommand
+                {
+                    Connection = connectionClient,
+                    CommandText = "DELETE * FROM FACTURE WHERE idFacture = " + cmbNumeroFacture.SelectedItem
+                };
+                commandFacture.ExecuteNonQuery();
+
+                connectionClient.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur:: " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            cmbNumeroFacture.Items.Remove(cmbNumeroFacture.SelectedItem);
+            if (cmbNumeroFacture.Items.Count <= 1)
+                btnDeleteFacture.Enabled = false;
+        }
+
+        /// <summary>
+        /// this button print facture by id
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnPrintFacture_Click(object sender, EventArgs e)
+        {
+            PrintPdf printPdf = new PrintPdf(idClient, cmbNumeroFacture.SelectedItem.ToString(), "btnPrintFacture", chSeulPVC.Checked);
+            printPdf.ShowDialog();
+        }
+
+        /// <summary>
+        /// this button export dataMesure as csv
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnExportCsv_Click(object sender, EventArgs e)
+        {
+            if (dtGMesure.Rows.Count > 0)
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "CSV (*.csv)|*.csv";
+                sfd.FileName = "Mesure.csv";
+                bool fileError = false;
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    if (File.Exists(sfd.FileName))
+                    {
+                        try
+                        {
+                            File.Delete(sfd.FileName);
+                        }
+                        catch (IOException ex)
+                        {
+                            fileError = true;
+                            MessageBox.Show("It wasn't possible to write the data to the disk." + ex.Message);
+                        }
+                    }
+                    if (!fileError)
+                    {
+                        try
+                        {
+                            int columnCount = dtGMesure.Columns.Count;
+                            string columnNames = "";
+                            string[] outputCsv = new string[dtGMesure.Rows.Count + 1];
+                            for (int i = 0; i < columnCount; i++)
+                            {
+                                columnNames += dtGMesure.Columns[i].HeaderText.ToString() + ",";
+                            }
+                            outputCsv[0] += columnNames;
+
+                            for (int i = 1; (i - 1) < dtGMesure.Rows.Count; i++)
+                            {
+                                for (int j = 0; j < columnCount; j++)
+                                {
+                                    outputCsv[i] += dtGMesure.Rows[i - 1].Cells[j].Value.ToString() + ",";
+                                }
+                            }
+
+                            File.WriteAllLines(sfd.FileName, outputCsv, Encoding.UTF8);
+                            message = new FormMessage("Données exportées avec succès !!!", "Succès !!!", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                            message.ShowDialog();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error :" + ex.Message);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                message = new FormMessage("Spécifiez une ligne !!!", "Warning", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message.ShowDialog();
+            }
+        }
+
+        private void btnEditFacture_Click(object sender, EventArgs e)
+        {
+            message = new FormMessage("yes, go a head", true);
+            message.ShowDialog();
+        }
+
+        /// <summary>
         /// c'est le button de click pour ajouter des text box et datagrids a les listes
         /// </summary>
         /// <param name="sender"></param>
@@ -1460,7 +1583,7 @@ namespace Aiche_Bois
             avance = double.Parse(txtPrixAvanceClient.Text);
 
 
-            if (avance >= total)
+            if (avance > total)
             {
                 MessageBox.Show("le prix d'avance est grand a prix total", "Attension", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtPrixAvanceClient.Text = "0.00";
@@ -1499,7 +1622,9 @@ namespace Aiche_Bois
                     OleDbCommand commandClient = new OleDbCommand
                     {
                         Connection = connectionClient,
-                        CommandText = "insert into client (nomClient, dateClient, chAvance, prixTotalAvance, prixTotalRest, prixTotalClient) values('" + txtNomClient.Text + "','" + DateTime.Today + "'," + checkAvance.Checked.ToString() + ",'" + Convert.ToDouble(txtPrixAvanceClient.Text) + "','" + Convert.ToDouble(txtPrixRestClient.Text) + "','" + Convert.ToDouble(txtPrixTotalClient.Text) + "')"
+                        CommandText = "insert into client (nomClient, dateClient, prixTotalAvance) " +
+                        "values('" + txtNomClient.Text + "', '" + DateTime.Today + "', '" +
+                        Convert.ToDouble(txtPrixAvanceClient.Text) + "')"
                     };
                     commandClient.ExecuteNonQuery();
 
@@ -1521,9 +1646,15 @@ namespace Aiche_Bois
                         OleDbCommand commandFacture = new OleDbCommand
                         {
                             Connection = connectionClient,
-                            CommandText = "insert into facture (idClient, dtDateFacture, typeDeBois, metrage, categorie, totalMesure, prixMetres, typePVC, checkPVC, tailleCanto, totalTaillPVC, prixMitresLinear, prixTotalPVC, prixTotalMesure)" +
-                                          " values ('" + (idCLIENT) + "', '" + fct.DateFacture + "', '" + fct.TypeDeBois + "', '" + fct.Metrage + "','" + fct.Categorie + "', '" + fct.TotalMesure + "', '" + fct.PrixMetres + "', '" + fct.TypePVC + "', " + fct.CheckPVC.ToString() + ",'" + fct.TailleCanto + "', '"
-                                          + fct.TotalTaillPVC + "', '" + fct.PrixMitresLinear + "', '" + fct.PrixTotalPVC + "', '" + fct.PrixTotalMesure + "')"
+                            CommandText = "insert into facture (idClient, dtDateFacture, typeDeBois, " +
+                            "metrage, categorie, totalMesure, prixMetres, typePVC, checkPVC, tailleCanto, " +
+                            "totalTaillPVC, prixMitresLinear, prixTotalPVC, prixTotalMesure) " +
+                                          "values ('" + (idCLIENT) + "', '" + fct.DateFacture + "', '" +
+                                          fct.TypeDeBois + "', '" + fct.Metrage + "','" + fct.Categorie + "', '" +
+                                          fct.TotalMesure + "', '" + fct.PrixMetres + "', '" + fct.TypePVC + "', " +
+                                          fct.CheckPVC.ToString() + ", '" + fct.TailleCanto + "', '" +
+                                          fct.TotalTaillPVC + "', '" + fct.PrixMitresLinear + "', '" +
+                                          fct.PrixTotalPVC + "', '" + fct.PrixTotalMesure + "')"
                         };
                         commandFacture.ExecuteNonQuery();
 
@@ -1649,36 +1780,6 @@ namespace Aiche_Bois
             {
                 MessageBox.Show("Erreur:: " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void btnDeleteFacture_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                connectionClient.Open();
-
-                OleDbCommand commandFacture = new OleDbCommand
-                {
-                    Connection = connectionClient,
-                    CommandText = "DELETE * FROM FACTURE WHERE idFacture = " + cmbNumeroFacture.SelectedItem
-                };
-                commandFacture.ExecuteNonQuery();
-
-                connectionClient.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erreur:: " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            cmbNumeroFacture.Items.Remove(cmbNumeroFacture.SelectedItem);
-            if (cmbNumeroFacture.Items.Count <= 1)
-                btnDeleteFacture.Enabled = false;
-        }
-
-        private void btnPrintFacture_Click(object sender, EventArgs e)
-        {
-            PrintPdf printPdf = new PrintPdf(idClient, cmbNumeroFacture.SelectedItem.ToString(), "btnPrintFacture", chSeulPVC.Checked);
-            printPdf.ShowDialog();
         }
     }
 }

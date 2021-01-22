@@ -119,7 +119,7 @@
             this.lblFactureNumero = new System.Windows.Forms.Label();
             this.btnPrintFacture = new FontAwesome.Sharp.IconButton();
             this.btnDeleteFacture = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnExportCsv = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtGMesure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridPvc)).BeginInit();
             this.SuspendLayout();
@@ -1315,22 +1315,23 @@
             this.btnDeleteFacture.Visible = false;
             this.btnDeleteFacture.Click += new System.EventHandler(this.btnDeleteFacture_Click);
             // 
-            // iconButton1
+            // btnExportCsv
             // 
-            this.iconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Download;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconButton1.IconSize = 25;
-            this.iconButton1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.iconButton1.Location = new System.Drawing.Point(757, 307);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(78, 33);
-            this.iconButton1.TabIndex = 261;
-            this.iconButton1.TabStop = false;
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.btnExportCsv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExportCsv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportCsv.ForeColor = System.Drawing.Color.White;
+            this.btnExportCsv.IconChar = FontAwesome.Sharp.IconChar.Download;
+            this.btnExportCsv.IconColor = System.Drawing.Color.White;
+            this.btnExportCsv.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnExportCsv.IconSize = 25;
+            this.btnExportCsv.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnExportCsv.Location = new System.Drawing.Point(757, 307);
+            this.btnExportCsv.Name = "btnExportCsv";
+            this.btnExportCsv.Size = new System.Drawing.Size(78, 33);
+            this.btnExportCsv.TabIndex = 261;
+            this.btnExportCsv.TabStop = false;
+            this.btnExportCsv.UseVisualStyleBackColor = false;
+            this.btnExportCsv.Click += new System.EventHandler(this.btnExportCsv_Click);
             // 
             // FormAjoutFactures
             // 
@@ -1339,7 +1340,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1391, 875);
-            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.btnExportCsv);
             this.Controls.Add(this.btnPrintFacture);
             this.Controls.Add(this.btnDeleteFacture);
             this.Controls.Add(this.lblNumeroFacture);
@@ -1519,6 +1520,6 @@
         private FontAwesome.Sharp.IconButton btnPrintFacture;
         private FontAwesome.Sharp.IconButton btnDeleteFacture;
         private System.Windows.Forms.DataGridView dtGMesure;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnExportCsv;
     }
 }

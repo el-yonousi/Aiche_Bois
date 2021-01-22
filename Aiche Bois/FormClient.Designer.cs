@@ -36,8 +36,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.prntDoc = new System.Drawing.Printing.PrintDocument();
-            this.prntPrevDiag = new System.Windows.Forms.PrintPreviewDialog();
             this.btnSearch = new FontAwesome.Sharp.IconButton();
             this.btnDeleteFacture = new FontAwesome.Sharp.IconButton();
             this.btnEditFacture = new FontAwesome.Sharp.IconButton();
@@ -77,16 +75,6 @@
             resources.ApplyResources(this.label4, "label4");
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.label4.Name = "label4";
-            // 
-            // prntDoc
-            // 
-            this.prntDoc.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.prntDoc_PrintPage);
-            // 
-            // prntPrevDiag
-            // 
-            resources.ApplyResources(this.prntPrevDiag, "prntPrevDiag");
-            this.prntPrevDiag.Document = this.prntDoc;
-            this.prntPrevDiag.Name = "prntPrevDiag";
             // 
             // btnSearch
             // 
@@ -350,8 +338,6 @@
         private FontAwesome.Sharp.IconButton btnEditFacture;
         private FontAwesome.Sharp.IconButton btnDeleteFacture;
         private FontAwesome.Sharp.IconButton btnSearch;
-        private System.Drawing.Printing.PrintDocument prntDoc;
-        private System.Windows.Forms.PrintPreviewDialog prntPrevDiag;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;

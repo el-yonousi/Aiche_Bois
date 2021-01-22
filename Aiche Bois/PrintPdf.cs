@@ -124,7 +124,7 @@ namespace Aiche_Bois
                             btnCorrespondFacture.Visible = false;
 
                             //طباعة صفحة العميل، كل الفواتر
-                            OleDbDataAdapter adapterClient = new OleDbDataAdapter("select distinct * from client where idClient = " + long.Parse(idClient), connection);
+                            OleDbDataAdapter adapterClient = new OleDbDataAdapter("select distinct * from [client Query] where idClient = " + long.Parse(idClient), connection);
                             ReportDocument reportClient = new ReportDocument();
                             DataSet dataSetClient = new DataSet();
                             adapterClient.Fill(dataSetClient, "client");
@@ -139,7 +139,7 @@ namespace Aiche_Bois
                             btnCorrespondFacture.Visible = false;
 
                             //طباعة صفحة القياسات من خلال زر نافدذة العميل
-                            OleDbDataAdapter adapterFacturesMesure = new OleDbDataAdapter("SELECT distinct * FROM facture WHERE IDCLIENT = " + long.Parse(idClient), connection);
+                            OleDbDataAdapter adapterFacturesMesure = new OleDbDataAdapter("SELECT distinct * FROM QUERY WHERE IDCLIENT = " + long.Parse(idClient), connection);
                             ReportDocument reportFacturesMesure = new ReportDocument();
                             DataSet dataSetFactures = new DataSet();
                             adapterFacturesMesure.Fill(dataSetFactures, "facture");
@@ -153,7 +153,7 @@ namespace Aiche_Bois
                             btnCorrespondFacture.Visible = true;
 
                             //طباعة صفحة العميل، من خلال رقم الفاتورة المحددة
-                            OleDbDataAdapter adapterClientFacture = new OleDbDataAdapter("select distinct * from facture  where idFacture = " + long.Parse(cmbShoosePrint.Text), connection);
+                            OleDbDataAdapter adapterClientFacture = new OleDbDataAdapter("select distinct * from [client Query]  where idFacture = " + long.Parse(cmbShoosePrint.Text), connection);
                             ReportDocument reportClientFacture = new ReportDocument();
                             DataSet dataSetClientFacture = new DataSet();
                             adapterClientFacture.Fill(dataSetClientFacture, "facture");

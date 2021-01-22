@@ -173,4 +173,5 @@ C:\Users\mohamed\Downloads\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.csproj.Cop
 C:\Users\mohamed\Downloads\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.exe
 C:\Users\mohamed\Downloads\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.pdb
 C:\Users\mohamed\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\obj\Debug\Aiche_Bois.FormMessage.resources
+C:\Users\mohamed\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\obj\Debug\Aiche Bois.csproj.ResolveComReference.cache
 C:\Users\mohamed\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\obj\Debug\Aiche Bois.csprojAssemblyReference.cache
