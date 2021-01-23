@@ -1105,7 +1105,8 @@ namespace Aiche_Bois
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Error :" + ex.Message);
+                            message = new FormMessage("Error :" + ex.Message, "Erreur", true);
+                            message.ShowDialog();
                         }
                     }
                 }
@@ -1119,8 +1120,77 @@ namespace Aiche_Bois
 
         private void btnEditFacture_Click(object sender, EventArgs e)
         {
-            message = new FormMessage("yes, go a head", true);
-            message.ShowDialog();
+            try
+            {
+                connectionClient.Open();
+
+                var commandF = new OleDbCommand
+                {
+                    Connection = connectionClient,
+                    CommandText = "UPDATE facture SET typeDeBois = '" + txtTypeDeBois.Text + "'" +
+                        ", metrage = '" + txtMetrageDeFeuille.Text + "'" +
+                        ", categorie = '" + txtCategorie.Text + "'" +
+                        ", totalMesure = " + double.Parse(txtTotalMesure.Text) +
+                        ", prixMetres = " + double.Parse(txtPrixMetreMesure.Text) +
+                        ", typePVC = '" + cmbTypePvc.Text + "'" +
+                        ", checkPVC = " + chSeulPVC.Checked + 
+                        ", tailleCanto = " + double.Parse(txtTaillePVC.Text) + 
+                        ", totalTaillPVC = " + double.Parse(txtTotaleTaillPVC.Text) +
+                        ", prixMitresLinear = " + double.Parse(txtPrixMetreLPVC.Text) +
+                        ", prixTotalPVC = " + double.Parse(txtPrixTotalPVC.Text) +
+                        ", prixTotalMesure = " + double.Parse(txtPrixTotalMesure.Text) +
+                        //" where idClient = " + idClient +
+                        " and idFacture = " + long.Parse(cmbNumeroFacture.Text)
+                };
+                commandF.ExecuteNonQuery();
+
+                if (!chSeulPVC.Checked)
+                {
+                    for (int i = 0; i < dtGMesure.Rows.Count; i++)
+                    {
+                        OleDbCommand commandM = new OleDbCommand();
+                        commandM.Connection = connectionClient;
+                        commandM.CommandText = "UPDATE mesure SET quantite = " + double.Parse(dtGMesure.Rows[i].Cells[0].Value.ToString()) +
+                                ", largeur = " + double.Parse(dtGMesure.Rows[i].Cells[1].Value.ToString()) +
+                                ", longueur = " + double.Parse(dtGMesure.Rows[i].Cells[2].Value.ToString()) +
+                                ", type = '" + cmbTypeDuMetres.Text + "'" +
+                                cmbTypeDuMetres.Text == " m3 " ? ", eppaiseur = " + double.Parse(dtGMesure.Rows[i].Cells[3].Value.ToString()) : ", eppaiseur = " + 0 +
+                                ", orientation = '" + dtGridPvc.Rows[i].Cells[3].Value.ToString() + "'" +
+                                " WHERE idFacture = " + long.Parse(cmbNumeroFacture.Text);
+
+
+                        commandM.ExecuteNonQuery();
+                    }
+                }
+
+                if (!String.IsNullOrEmpty(cmbTypePvc.Text))
+                {
+                    for (int i = 0; i < dtGridPvc.Rows.Count; i++)
+                    {
+                        OleDbCommand commandP = new OleDbCommand();
+                        commandP.Connection = connectionClient;
+                        commandP.CommandText = "UPDATE pvc SET quantite = " + double.Parse(dtGridPvc.Rows[i].Cells[0].Value.ToString()) +
+                                ", largeur = " + double.Parse(dtGridPvc.Rows[i].Cells[1].Value.ToString()) +
+                                ", longueur = " + double.Parse(dtGridPvc.Rows[i].Cells[2].Value.ToString()) +
+                                ", orientation = '" + dtGridPvc.Rows[i].Cells[3].Value.ToString() + "'" +
+                                " WHERE idFacture = " + long.Parse(cmbNumeroFacture.Text);
+
+
+                        commandP.ExecuteNonQuery();
+                    }
+                }
+
+                message = new FormMessage("Modifier Avec Succès", "Succès", true);
+                message.ShowDialog();
+
+                connectionClient.Close();
+            }
+            catch (Exception ex)
+            {
+                message = new FormMessage("Erreur: " + ex.Message, "Erreur", true);
+                message.ShowDialog();
+                connectionClient.Close();
+            }
         }
 
         /// <summary>
@@ -1133,37 +1203,12 @@ namespace Aiche_Bois
             if (checkIsNullOrEmpty())
             {
                 Facture facture = new Facture();
-                if (btnDeterminClick == "edit")
-                    if (cmbNumeroFacture.Text == factures[indx].IDFacture.ToString())
-                    {
-                        factures.RemoveAt(indx);
-                        facture.IDFacture = long.Parse(cmbNumeroFacture.Text);
-                        for (int i = 0; i < pvcs.Count; i++)
-                        {
-                            if (pvcs[i].IdFacture == facture.IDFacture)
-                                pvcs.RemoveAt(i);
-                        }
-
-                        for (int i = 0; i < mesures.Count; i++)
-                        {
-                            if (mesures[i].IdFacture == facture.IDFacture)
-                                mesures.RemoveAt(i);
-                        }
-                    }
-
+                
                 List<Mesure> vs = new List<Mesure>();
                 if (cmbTypeDuMetres.SelectedIndex != 2)
                 {
                     for (int i = 0; i < dtGMesure.Rows.Count; i++)
                     {
-                        if (btnDeterminClick == "edit")
-                        {
-                            if (dtGridPvc.Rows.Count > 0)
-                                mesures.Add(new Mesure(facture.IDFacture, Convert.ToDouble(dtGMesure.Rows[i].Cells[0].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[1].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[2].Value), cmbTypeDuMetres.Text, dtGridPvc.Rows[i].Cells[3].Value.ToString()));
-                            else
-                                mesures.Add(new Mesure(facture.IDFacture, Convert.ToDouble(dtGMesure.Rows[i].Cells[0].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[1].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[2].Value), cmbTypeDuMetres.Text, "0"));
-                        }
-
                         if (dtGridPvc.Rows.Count > 0)
                             vs.Add(new Mesure(facture.IDFacture, Convert.ToDouble(dtGMesure.Rows[i].Cells[0].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[1].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[2].Value), cmbTypeDuMetres.Text, dtGridPvc.Rows[i].Cells[3].Value.ToString()));
                         else
@@ -1176,13 +1221,6 @@ namespace Aiche_Bois
                     //vs.Clear();
                     for (int i = 0; i < dtGMesure.Rows.Count; i++)
                     {
-                        if (btnDeterminClick == "edit")
-                        {
-                            if (dtGridPvc.Rows.Count > 0)
-                                mesures.Add(new Mesure(facture.IDFacture, Convert.ToDouble(dtGMesure.Rows[i].Cells[0].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[1].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[2].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[3].Value), cmbTypeDuMetres.Text, dtGridPvc.Rows[i].Cells[3].Value.ToString()));
-                            else
-                                mesures.Add(new Mesure(facture.IDFacture, Convert.ToDouble(dtGMesure.Rows[i].Cells[0].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[1].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[2].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[3].Value), cmbTypeDuMetres.Text, "0"));
-                        }
                         if (dtGridPvc.Rows.Count > 0)
                             vs.Add(new Mesure(facture.IDFacture, Convert.ToDouble(dtGMesure.Rows[i].Cells[0].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[1].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[2].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[3].Value), cmbTypeDuMetres.Text, dtGridPvc.Rows[i].Cells[3].Value.ToString()));
                         else
@@ -1230,8 +1268,8 @@ namespace Aiche_Bois
                 }
 
                 factures.Add(facture);
-                if (btnDeterminClick != "edit")
-                    btnDeterminClick = "add";
+                
+                btnDeterminClick = "add";
 
                 MessageBox.Show("facture ajouter avec succes", "Ajouter", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 idFacture();
@@ -1249,10 +1287,6 @@ namespace Aiche_Bois
                 // vider les champs
                 ViderTxtBox();
                 btnSaveFacture.Enabled = true;
-
-                // suauvgarder les donnees modifier dans la base de donnees
-                if (btnDeterminClick == "edit")
-                    saveEditData();
             }
         }
 
@@ -1697,88 +1731,6 @@ namespace Aiche_Bois
                 {
                     MessageBox.Show("Erreur:: " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            else if (btnDeterminClick == "edit")
-            {
-                try
-                {
-                    connectionClient.Open();
-                    OleDbCommand commandClient = new OleDbCommand
-                    {
-                        Connection = connectionClient,
-                        CommandText = "UPDATE CLIENT SET prixTotalRest = " + txtPrixRestClient.Text +
-                        " , prixTotalClient = " + txtPrixTotalClient.Text + " WHERE idClient = " + long.Parse(idClient)
-                    };
-                    commandClient.ExecuteNonQuery();
-                    connectionClient.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erreur:: " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        /// <summary>
-        /// c'est method enregestrer les donnees a modifier vers la base de donnees
-        /// </summary>
-        private void saveEditData()
-        {
-            try
-            {
-                connectionClient.Open();
-
-                /*facture*/
-                if (cmbNumeroFacture.Text == factures[indx].IDFacture.ToString())
-                {
-                    OleDbCommand commandFacture = new OleDbCommand
-                    {
-                        Connection = connectionClient,
-                        CommandText = "UPDATE FACTURE SET typeDeBois = '" + factures[indx].TypeDeBois + "', metrage = '" + factures[indx].Metrage +
-                        "', categorie = '" + factures[indx].Categorie + "', totalMesure = " + factures[indx].TotalMesure + ", prixMetres = " + factures[indx].PrixMetres +
-                        ", typePVC = '" + factures[indx].TypePVC + "', checkPVC = " + factures[indx].CheckPVC.ToString() + ", tailleCanto = " + factures[indx].TailleCanto +
-                        ", totalTaillPVC = " + factures[indx].TotalTaillPVC + ", prixMitresLinear = " + factures[indx].PrixMitresLinear + ", prixTotalPVC = " + factures[indx].PrixTotalPVC +
-                        ", prixTotalMesure = " + factures[indx].PrixTotalMesure + " WHERE idFacture = " + factures[indx].IDFacture
-                    };
-                    commandFacture.ExecuteNonQuery();
-
-
-                    foreach (Mesure msr in factures[indx].Mesures)
-                    {
-                        if (msr.IdFacture.ToString() == cmbNumeroFacture.Text)
-                        {
-                            OleDbCommand commandMesure = new OleDbCommand
-                            {
-                                Connection = connectionClient,
-                                CommandText = "UPDATE MESURE SET quantite = " + msr.Quantite + ", largeur = " + msr.Largeur +
-                                ", longueur = " + msr.Longueur + ", eppaiseur = " + msr.Epaisseur + ", type = " + msr.Type +
-                                " WHERE IDFACTURE = " + msr.IdFacture
-                            };
-                            commandMesure.ExecuteNonQuery();
-                        }
-                    }
-
-                    foreach (Pvc pv in factures[indx].Pvcs)
-                    {
-                        if (pv.IdFacture.ToString() == cmbNumeroFacture.Text)
-                        {
-                            OleDbCommand commandPvc = new OleDbCommand
-                            {
-                                Connection = connectionClient,
-                                CommandText = "UPDATE PVC SET quantite = " + pv.Qte + ", largeur = " + pv.Largr +
-                                ", longueur = " + pv.Longr + ", orientation = " + pv.Ortn + " WHERE IDFACTURE = " + pv.IdFacture
-                            };
-                            commandPvc.ExecuteNonQuery();
-                        }
-                    }
-                    loadDataEdit(indx);
-                }
-                connectionClient.Close();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erreur:: " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
