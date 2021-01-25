@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Aiche Bois.exe" size="1339904">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Aiche Bois.exe" size="1338368">
       <assemblyIdentity name="Aiche Bois" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>d+aWkGegvxmfP6VgwcikEHW0QgjVd31wM7eD6rPX/9g=</dsig:DigestValue>
+        <dsig:DigestValue>csoIzVhec/y8PLAK4aJo0rcajt5P/XBTB5bxiFDC2LU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -149,13 +149,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Aiche Bois.exe.config" size="1647">
+  <file name="Aiche Bois.exe.config" size="1659">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>LpcKpV18OxqVuAseyfewbaybZC0tBN3qAloUZKwh2Lo=</dsig:DigestValue>
+      <dsig:DigestValue>Pl/8XCreWoQ11E1sSf1WsyF+PBR+8yXQxxVuuIyZlqc=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Aiche Bois.ico" size="157882">

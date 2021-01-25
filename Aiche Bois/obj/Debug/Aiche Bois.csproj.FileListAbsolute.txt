@@ -168,4 +168,122 @@ C:\Users\mohamed\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche 
 C:\Users\mohamed\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\obj\Debug\Aiche Bois.TrustInfo.xml
 C:\Users\mohamed\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\bin\Debug\log4net.dll
 C:\Users\mohamed\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\bin\Debug\log4net.xml
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\Aiche Bois.exe.config
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\Aiche Bois.exe.manifest
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\Aiche Bois.application
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\Aiche Bois.exe
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\Aiche Bois.pdb
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\AxShockwaveFlashObjects.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\CrystalDecisions.ReportSource.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\CrystalDecisions.Shared.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\CrystalDecisions.Windows.Forms.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\FontAwesome.Sharp.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\log4net.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\log4net.xml
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\cs\CrystalDecisions.CrystalReports.Engine.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\da\CrystalDecisions.CrystalReports.Engine.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\de\CrystalDecisions.CrystalReports.Engine.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\en\CrystalDecisions.CrystalReports.Engine.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\es\CrystalDecisions.CrystalReports.Engine.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\fi\CrystalDecisions.CrystalReports.Engine.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\fr\CrystalDecisions.CrystalReports.Engine.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\hu\CrystalDecisions.CrystalReports.Engine.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\it\CrystalDecisions.CrystalReports.Engine.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\ja\CrystalDecisions.CrystalReports.Engine.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\ko\CrystalDecisions.CrystalReports.Engine.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\nb-NO\CrystalDecisions.CrystalReports.Engine.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\nl\CrystalDecisions.CrystalReports.Engine.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\pl\CrystalDecisions.CrystalReports.Engine.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\pt\CrystalDecisions.CrystalReports.Engine.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\ru\CrystalDecisions.CrystalReports.Engine.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\sk\CrystalDecisions.CrystalReports.Engine.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\sv\CrystalDecisions.CrystalReports.Engine.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\th\CrystalDecisions.CrystalReports.Engine.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\tr\CrystalDecisions.CrystalReports.Engine.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\zh-CHS\CrystalDecisions.CrystalReports.Engine.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\zh-CHT\CrystalDecisions.CrystalReports.Engine.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\cs\CrystalDecisions.ReportSource.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\da\CrystalDecisions.ReportSource.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\de\CrystalDecisions.ReportSource.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\es\CrystalDecisions.ReportSource.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\fi\CrystalDecisions.ReportSource.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\fr\CrystalDecisions.ReportSource.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\hu\CrystalDecisions.ReportSource.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\it\CrystalDecisions.ReportSource.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\ja\CrystalDecisions.ReportSource.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\ko\CrystalDecisions.ReportSource.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\nb-NO\CrystalDecisions.ReportSource.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\nl\CrystalDecisions.ReportSource.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\pl\CrystalDecisions.ReportSource.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\pt\CrystalDecisions.ReportSource.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\ru\CrystalDecisions.ReportSource.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\sk\CrystalDecisions.ReportSource.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\sv\CrystalDecisions.ReportSource.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\th\CrystalDecisions.ReportSource.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\tr\CrystalDecisions.ReportSource.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\zh-CHS\CrystalDecisions.ReportSource.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\zh-CHT\CrystalDecisions.ReportSource.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\cs\CrystalDecisions.Shared.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\da\CrystalDecisions.Shared.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\de\CrystalDecisions.Shared.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\en\CrystalDecisions.Shared.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\es\CrystalDecisions.Shared.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\fi\CrystalDecisions.Shared.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\fr\CrystalDecisions.Shared.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\hu\CrystalDecisions.Shared.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\it\CrystalDecisions.Shared.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\ja\CrystalDecisions.Shared.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\ko\CrystalDecisions.Shared.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\nb-NO\CrystalDecisions.Shared.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\nl\CrystalDecisions.Shared.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\pl\CrystalDecisions.Shared.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\pt\CrystalDecisions.Shared.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\ru\CrystalDecisions.Shared.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\sk\CrystalDecisions.Shared.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\sv\CrystalDecisions.Shared.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\th\CrystalDecisions.Shared.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\tr\CrystalDecisions.Shared.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\zh-CHS\CrystalDecisions.Shared.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\zh-CHT\CrystalDecisions.Shared.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\cs\CrystalDecisions.Windows.Forms.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\da\CrystalDecisions.Windows.Forms.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\de\CrystalDecisions.Windows.Forms.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\en\CrystalDecisions.Windows.Forms.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\es\CrystalDecisions.Windows.Forms.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\fi\CrystalDecisions.Windows.Forms.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\fr\CrystalDecisions.Windows.Forms.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\hu\CrystalDecisions.Windows.Forms.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\it\CrystalDecisions.Windows.Forms.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\ja\CrystalDecisions.Windows.Forms.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\ko\CrystalDecisions.Windows.Forms.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\nb-NO\CrystalDecisions.Windows.Forms.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\nl\CrystalDecisions.Windows.Forms.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\pl\CrystalDecisions.Windows.Forms.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\pt\CrystalDecisions.Windows.Forms.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\ru\CrystalDecisions.Windows.Forms.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\sk\CrystalDecisions.Windows.Forms.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\sv\CrystalDecisions.Windows.Forms.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\th\CrystalDecisions.Windows.Forms.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\tr\CrystalDecisions.Windows.Forms.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\zh-CHS\CrystalDecisions.Windows.Forms.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\bin\Debug\zh-CHT\CrystalDecisions.Windows.Forms.resources.dll
+E:\Setup\Aiche-Bois-main\Aiche Bois\obj\Debug\Aiche Bois.csprojAssemblyReference.cache
+E:\Setup\Aiche-Bois-main\Aiche Bois\obj\Debug\Aiche Bois.csproj.ResolveComReference.cache
+E:\Setup\Aiche-Bois-main\Aiche Bois\obj\Debug\Aiche_Bois.FormAjout.resources
+E:\Setup\Aiche-Bois-main\Aiche Bois\obj\Debug\Aiche_Bois.FormAjoutFactures.resources
+E:\Setup\Aiche-Bois-main\Aiche Bois\obj\Debug\Aiche_Bois.FormAvance.resources
+E:\Setup\Aiche-Bois-main\Aiche Bois\obj\Debug\Aiche_Bois.FormClient.resources
+E:\Setup\Aiche-Bois-main\Aiche Bois\obj\Debug\Aiche_Bois.FormMessage.resources
+E:\Setup\Aiche-Bois-main\Aiche Bois\obj\Debug\Aiche_Bois.PrintPdf.resources
+E:\Setup\Aiche-Bois-main\Aiche Bois\obj\Debug\Aiche_Bois.Properties.Resources.resources
+E:\Setup\Aiche-Bois-main\Aiche Bois\obj\Debug\Aiche Bois.csproj.GenerateResource.cache
+E:\Setup\Aiche-Bois-main\Aiche Bois\obj\Debug\Aiche Bois.csproj.CoreCompileInputs.cache
+E:\Setup\Aiche-Bois-main\Aiche Bois\obj\Debug\Aiche Bois.TrustInfo.xml
+E:\Setup\Aiche-Bois-main\Aiche Bois\obj\Debug\Aiche Bois.exe.manifest
+E:\Setup\Aiche-Bois-main\Aiche Bois\obj\Debug\Aiche Bois.application
+E:\Setup\Aiche-Bois-main\Aiche Bois\obj\Debug\Aiche Bois.csproj.CopyComplete
+E:\Setup\Aiche-Bois-main\Aiche Bois\obj\Debug\Aiche Bois.exe
+E:\Setup\Aiche-Bois-main\Aiche Bois\obj\Debug\Aiche Bois.pdb
 C:\Users\mohamed\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\obj\Debug\Aiche Bois.csprojAssemblyReference.cache

@@ -850,7 +850,8 @@ namespace Aiche_Bois
                       double.Parse(txtLargeur.Text) == double.Parse(dtGMesure.Rows[i].Cells[1].Value.ToString()) &&
                       double.Parse(txtLongueur.Text) == double.Parse(dtGMesure.Rows[i].Cells[2].Value.ToString()))
                     {
-                        MessageBox.Show("c'est mesure exist deja", "attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        message = new FormMessage("c'est mesure exist deja", "Attention !!!", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                        message.ShowDialog();
                         return;
                     }
                 }
@@ -861,7 +862,8 @@ namespace Aiche_Bois
                 //verifier si le champs contain un chifre ou vide
                 if (string.IsNullOrEmpty(txtEpaisseur.Text) || double.Parse(txtEpaisseur.Text) == 0)
                 {
-                    MessageBox.Show("n'accept pas 0, saisir la valeur de " + txtEpaisseur.Tag, "attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    message = new FormMessage("n'accept pas 0, saisir la valeur de " + txtEpaisseur.Tag, "Attention !!!", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                    message.ShowDialog();
                     txtEpaisseur.Focus();
                     return;
                 }
@@ -889,14 +891,16 @@ namespace Aiche_Bois
         {
             if (dtGMesure.SelectedRows.Count <= 0)
             {
-                MessageBox.Show("selectionnes une ligne pour supprimer");
+                message = new FormMessage("selectionnes une ligne pour supprimer", "Attention !!!", true, FontAwesome.Sharp.IconChar.ExclamationCircle);
+                message.ShowDialog();
                 return;
             }
 
             dtGMesure.Rows.RemoveAt(dtGMesure.CurrentRow.Index);
 
             RemplirDataMesure();
-            MessageBox.Show("supprimer avec succes", "Supprimer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            message = new FormMessage("supprimer avec succes", "Supprimer !!!", true, FontAwesome.Sharp.IconChar.CheckCircle);
+            message.ShowDialog();
         }
 
         /// <summary>
@@ -908,7 +912,8 @@ namespace Aiche_Bois
         {
             if (dtGMesure.SelectedRows.Count < 0)
             {
-                MessageBox.Show("la liste est vide");
+                message = new FormMessage("la liste est vide", "Attention !!!", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message.ShowDialog();
                 return;
             }
 
@@ -949,7 +954,7 @@ namespace Aiche_Bois
             {
                 if (cmbNumeroFacture.Items.Count <= 0)
                 {
-                    message = new FormMessage("le client a aucun facture", "Succès !!!", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                    message = new FormMessage("le client a aucun facture", "Erreur !!!", true, FontAwesome.Sharp.IconChar.ExclamationCircle);
                     message.ShowDialog();
                     return;
                 }
@@ -966,11 +971,11 @@ namespace Aiche_Bois
             }
             catch (Exception ex)
             {
-                message = new FormMessage("Erreur:: " + ex.Message, "Succès !!!", true, FontAwesome.Sharp.IconChar.ExclamationCircle);
+                message = new FormMessage("Erreur:: " + ex.Message, "Erreur !!!", true, FontAwesome.Sharp.IconChar.ExclamationCircle);
                 message.ShowDialog();
             }
             cmbNumeroFacture.Items.Remove(cmbNumeroFacture.SelectedItem);
-            message = new FormMessage("La facture a été supprimée avec succès", "Succès !!!", true, FontAwesome.Sharp.IconChar.ThumbsUp);
+            message = new FormMessage("La facture a été supprimée avec succès", "Succès !!!", true, FontAwesome.Sharp.IconChar.CheckCircle);
             message.ShowDialog();
 
             if (cmbNumeroFacture.Items.Count >= 1)
@@ -1015,7 +1020,8 @@ namespace Aiche_Bois
                         catch (IOException ex)
                         {
                             fileError = true;
-                            MessageBox.Show("It wasn't possible to write the data to the disk." + ex.Message);
+                            message = new FormMessage("It wasn't possible to write the data to the disk" + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.ExclamationCircle);
+                            message.ShowDialog();
                         }
                     }
                     if (!fileError)
@@ -1040,12 +1046,12 @@ namespace Aiche_Bois
                             }
 
                             File.WriteAllLines(sfd.FileName, outputCsv, Encoding.UTF8);
-                            message = new FormMessage("Données exportées avec succès !!!", "Succès !!!", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                            message = new FormMessage("Données exportées avec succès !!!", "Succès !!!", true, FontAwesome.Sharp.IconChar.CheckCircle);
                             message.ShowDialog();
                         }
                         catch (Exception ex)
                         {
-                            message = new FormMessage("Error :" + ex.Message, "Erreur", true);
+                            message = new FormMessage("Error :" + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.ExclamationCircle);
                             message.ShowDialog();
                         }
                     }
@@ -1053,7 +1059,7 @@ namespace Aiche_Bois
             }
             else
             {
-                message = new FormMessage("Spécifiez une ligne !!!", "Warning", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message = new FormMessage("Spécifiez une ligne !!!", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
                 message.ShowDialog();
             }
         }
@@ -1129,7 +1135,7 @@ namespace Aiche_Bois
                         }
                     }
 
-                    message = new FormMessage("Modifier Avec Succès", "Succès", true, FontAwesome.Sharp.IconChar.ExclamationCircle);
+                    message = new FormMessage("Modifier Avec Succès", "Succès", true, FontAwesome.Sharp.IconChar.CheckCircle);
                     message.ShowDialog();
 
                     connectionClient.Close();
@@ -1216,7 +1222,10 @@ namespace Aiche_Bois
 
                 btnDeterminClick = "add";
 
-                MessageBox.Show("facture ajouter avec succes", "Ajouter", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                message = new FormMessage("facture ajouter avec succès", "Succès", true, FontAwesome.Sharp.IconChar.CheckCircle);
+                message.ShowDialog();
+
+                // miss a jour l'id
                 idFacture();
 
                 if (!String.IsNullOrEmpty(txtPrixTotalPVC.Text))
@@ -1280,19 +1289,22 @@ namespace Aiche_Bois
         {
             if (String.IsNullOrEmpty(txtQtePVC.Text))
             {
-                MessageBox.Show(txtQtePVC.Tag + " est vide", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                message = new FormMessage(txtQtePVC.Tag + " est vide", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message.ShowDialog();
                 txtQtePVC.Focus();
                 return;
             }
             if (String.IsNullOrEmpty(txtLargPVC.Text))
             {
-                MessageBox.Show(txtLargPVC.Tag + " est vide", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                message = new FormMessage(txtLargPVC.Tag + " est vide", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message.ShowDialog();
                 txtLargPVC.Focus();
                 return;
             }
             if (String.IsNullOrEmpty(txtLongPVC.Text))
             {
-                MessageBox.Show(txtLongPVC.Tag + " est vide", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                message = new FormMessage(txtLongPVC.Tag + " est vide", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message.ShowDialog();
                 txtLongPVC.Focus();
                 return;
             }
@@ -1304,7 +1316,8 @@ namespace Aiche_Bois
                     dtGridPvc.Rows[i].Cells[2].Value.ToString() == txtLongPVC.Text &&
                     dtGridPvc.Rows[i].Cells[3].Value.ToString() == cmbOrtnPVC.Text)
                 {
-                    MessageBox.Show("les valeur est le meme deja saisir", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    message = new FormMessage("les valeur est le meme deja saisir", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                    message.ShowDialog();
                     txtQtePVC.Focus();
                     return;
                 }
@@ -1356,7 +1369,8 @@ namespace Aiche_Bois
         {
             if (dtGridPvc.Rows.Count == 0)
             {
-                MessageBox.Show("Importer les valeurs des mesures", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                message = new FormMessage("Importer les valeurs des mesures", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message.ShowDialog();
                 return;
             }
 
@@ -1439,7 +1453,8 @@ namespace Aiche_Bois
         {
             if (dtGridPvc.SelectedRows.Count <= 0)
             {
-                MessageBox.Show("selectionnes une ligne pour supprimer");
+                message = new FormMessage("selectionnes une ligne pour supprimer", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message.ShowDialog();
                 return;
             }
 
@@ -1610,7 +1625,8 @@ namespace Aiche_Bois
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Erreur:: " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.ExclamationCircle);
+                    message.ShowDialog();
                 }
             }
         }
