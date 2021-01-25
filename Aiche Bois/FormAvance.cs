@@ -44,16 +44,16 @@ namespace Aiche_Bois
             /*
              * get database path
              */
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/factures";
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
+            //string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/factures";
+            //if (!Directory.Exists(path))
+            //{
+            //    Directory.CreateDirectory(path);
+            //}
 
             /*
              * set database connection
              */
-            connection.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + path + "/aicheBois.accdb";
+            connection.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = aicheBois.accdb";
 
             InitializeComponent();
         }

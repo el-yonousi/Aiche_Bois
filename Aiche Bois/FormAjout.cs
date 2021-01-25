@@ -13,13 +13,13 @@ namespace Aiche_Bois
         private readonly List<string> getLstCmbList = new List<string>();
         public FormAjout()
         {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/factures";
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
+            //string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/factures";
+            //if (!Directory.Exists(path))
+            //{
+            //    Directory.CreateDirectory(path);
+            //}
 
-            connection.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + path + "/Type.accdb";
+            connection.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = Type.accdb";
             InitializeComponent();
         }
 

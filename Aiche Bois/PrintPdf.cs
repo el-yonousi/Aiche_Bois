@@ -13,27 +13,27 @@ namespace Aiche_Bois
         OleDbConnection connection = new OleDbConnection();
 
         /// <summary>
-        /// رقم معرف العميل
+        /// Customer ID number
         /// </summary>
         String idClient;
 
         /// <summary>
-        /// رقم معرف الفاتورة
+        /// Invoice ID number
         /// </summary>
         String idFacture;
 
         /// <summary>
-        /// تحديد الزر المضغوط
+        /// Select the push button
         /// </summary>
         String btnClick;
 
         /// <summary>
-        /// تحقق من PVC
+        /// Check the PVC
         /// </summary>
         bool btnCheck;
 
         /// <summary>
-        /// صفة التصميم
+        /// Design page
         /// </summary>
         /// <param name="idClient"></param>
         /// <param name="idFacture"></param>
@@ -45,20 +45,20 @@ namespace Aiche_Bois
             this.btnClick = btn;
             this.btnCheck = check;
 
-            //تحقق من الملف
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/factures";
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
+            // Check the file
+            //string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/factures";
+            //if (!Directory.Exists(path))
+            //{
+            //    Directory.CreateDirectory(path);
+            //}
 
-            connection.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + path + "/aicheBois.accdb";
+            connection.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = aicheBois.accdb";
 
             InitializeComponent();
         }
 
         /// <summary>
-        /// عند تحميل الصفحة
+        /// When the page loads
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -86,26 +86,26 @@ namespace Aiche_Bois
             catch (Exception ex)
             {
                 FormMessage message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message.ShowDialog();
                 return;
             }
 
             //إضافة عنصر في قائمة المعرفات
             cmbShoosePrint.Items.Add("Toutes Les Mesures");
+            cmbShoosePrint.Items.Add("Toutes Les factures");
 
             if (btnClick == "btnPrintFacture")
             {
                 cmbShoosePrint.SelectedItem = idFacture;
-                btnCorrespondFacture.Visible = false;
             }
             else
             {
-                cmbShoosePrint.Items.Add("Toutes Les factures");
                 cmbShoosePrint.SelectedItem = "Toutes Les factures";
             }
         }
 
         /// <summary>
-        /// حدف تحديد العناصر في قائمة معرفات الفاتورة
+        /// Delete the selection of items in the Invoice knowledge list
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -116,100 +116,57 @@ namespace Aiche_Bois
                 connection.Open();
 
                 //تحديد الطباعة حسب الزر المضغوط
-                switch (btnClick)
+
+                if (cmbShoosePrint.Text == "Toutes Les factures")
                 {
-                    case "btnPrintClient":
-                        if (cmbShoosePrint.Text == "Toutes Les factures")
-                        {
-                            btnCorrespondFacture.Visible = false;
+                    btnCorrespondFacture.Visible = false;
 
-                            //طباعة صفحة العميل، كل الفواتر
-                            OleDbDataAdapter adapterClient = new OleDbDataAdapter("select distinct * from [client Query] where idClient = " + long.Parse(idClient), connection);
-                            ReportDocument reportClient = new ReportDocument();
-                            DataSet dataSetClient = new DataSet();
-                            adapterClient.Fill(dataSetClient, "client");
-                            //report.Load(Application.StartupPath + @"CrystalReport1.rpt");
-                            reportClient.Load(@"CrystalReportClient.rpt");
-                            reportClient.SetDataSource(dataSetClient);
-                            crystalRepClient.ReportSource = reportClient;
-                            dataSetClient.Dispose();
-                        }
-                        else if (cmbShoosePrint.Text == "Toutes Les Mesures")
-                        {
-                            btnCorrespondFacture.Visible = false;
-
-                            //طباعة صفحة القياسات من خلال زر نافدذة العميل
-                            OleDbDataAdapter adapterFacturesMesure = new OleDbDataAdapter("SELECT distinct * FROM QUERY WHERE IDCLIENT = " + long.Parse(idClient), connection);
-                            ReportDocument reportFacturesMesure = new ReportDocument();
-                            DataSet dataSetFactures = new DataSet();
-                            adapterFacturesMesure.Fill(dataSetFactures, "facture");
-                            reportFacturesMesure.Load(@"CrystalReportMesure.rpt");
-                            reportFacturesMesure.SetDataSource(dataSetFactures);
-                            crystalRepClient.ReportSource = reportFacturesMesure;
-                            dataSetFactures.Dispose();
-                        }
-                        else
-                        {
-                            btnCorrespondFacture.Visible = true;
-
-                            //طباعة صفحة العميل، من خلال رقم الفاتورة المحددة
-                            OleDbDataAdapter adapterClientFacture = new OleDbDataAdapter("select distinct * from [client Query]  where idFacture = " + long.Parse(cmbShoosePrint.Text), connection);
-                            ReportDocument reportClientFacture = new ReportDocument();
-                            DataSet dataSetClientFacture = new DataSet();
-                            adapterClientFacture.Fill(dataSetClientFacture, "facture");
-                            reportClientFacture.Load(@"CrystalReportClient.rpt");
-                            reportClientFacture.SetDataSource(dataSetClientFacture);
-                            crystalRepClient.ReportSource = reportClientFacture;
-                            dataSetClientFacture.Dispose();
-                        }
-                        break;
-                    case "btnPrintFacture":
-                        if (cmbShoosePrint.Text == "Toutes Les Mesures")
-                        {
-                            //طباعة كل القياسات
-                            OleDbDataAdapter adapterFactures = new OleDbDataAdapter("SELECT distinct * FROM facture WHERE IDCLIENT = " + long.Parse(idClient), connection);
-                            ReportDocument reportFactures = new ReportDocument();
-                            DataSet dataSetFactures = new DataSet();
-                            adapterFactures.Fill(dataSetFactures, "facture");
-                            reportFactures.Load(@"CrystalReportMesure.rpt");
-                            reportFactures.SetDataSource(dataSetFactures);
-                            crystalRepClient.ReportSource = reportFactures;
-                            dataSetFactures.Dispose();
-                        }
-                        else
-                        {
-                            if (!btnCheck)
-                            {
-                                // طباعة القياسات من خلال رقم الفاتورة
-                                OleDbDataAdapter adapterMesure = new OleDbDataAdapter("SELECT distinct * FROM facture WHERE idFacture = " + long.Parse(cmbShoosePrint.Text), connection);
-                                ReportDocument reportMesure = new ReportDocument();
-                                DataSet dataSetMesure = new DataSet();
-                                adapterMesure.Fill(dataSetMesure, "facture");
-                                reportMesure.Load(@"CrystalReportMesure.rpt");
-                                reportMesure.SetDataSource(dataSetMesure);
-                                crystalRepClient.ReportSource = reportMesure;
-                                dataSetMesure.Dispose();
-                            }
-                            else
-                            {
-                                // طباعة ا من خلال رقم الفاتورة
-                                OleDbDataAdapter adapterPvc = new OleDbDataAdapter("SELECT distinct * FROM facture WHERE idFacture = " + long.Parse(cmbShoosePrint.Text), connection);
-                                ReportDocument reportPvc = new ReportDocument();
-                                DataSet dataSetPvc = new DataSet();
-                                adapterPvc.Fill(dataSetPvc, "facture");
-                                reportPvc.Load(@"CrystalReportPvc.rpt");
-                                reportPvc.SetDataSource(dataSetPvc);
-                                crystalRepClient.ReportSource = reportPvc;
-                                dataSetPvc.Dispose();
-                            }
-                        }
-                        break;
+                    //طباعة صفحة العميل، كل الفواتر
+                    OleDbDataAdapter adapterClient = new OleDbDataAdapter("select distinct * from client where idClient = " + long.Parse(idClient), connection);
+                    ReportDocument reportClient = new ReportDocument();
+                    DataSet dataSetClient = new DataSet();
+                    adapterClient.Fill(dataSetClient, "client");
+                    //report.Load(Application.StartupPath + @"CrystalReport1.rpt");
+                    reportClient.Load(@"CrystalReportClient.rpt");
+                    reportClient.SetDataSource(dataSetClient);
+                    crystalRepClient.ReportSource = reportClient;
+                    dataSetClient.Dispose();
                 }
+                else if (cmbShoosePrint.Text == "Toutes Les Mesures")
+                {
+                    btnCorrespondFacture.Visible = false;
+
+                    //طباعة صفحة القياسات من خلال زر نافدذة العميل
+                    OleDbDataAdapter adapterFacturesMesure = new OleDbDataAdapter("SELECT distinct * FROM facture WHERE IDCLIENT = " + long.Parse(idClient), connection);
+                    ReportDocument reportFacturesMesure = new ReportDocument();
+                    DataSet dataSetFactures = new DataSet();
+                    adapterFacturesMesure.Fill(dataSetFactures, "facture");
+                    reportFacturesMesure.Load(@"CrystalReportMesure.rpt");
+                    reportFacturesMesure.SetDataSource(dataSetFactures);
+                    crystalRepClient.ReportSource = reportFacturesMesure;
+                    dataSetFactures.Dispose();
+                }
+                else
+                {
+                    btnCorrespondFacture.Visible = true;
+
+                    //طباعة صفحة العميل، من خلال رقم الفاتورة المحددة
+                    OleDbDataAdapter adapterClientFacture = new OleDbDataAdapter("select distinct * from facture  where idFacture = " + long.Parse(cmbShoosePrint.Text), connection);
+                    ReportDocument reportClientFacture = new ReportDocument();
+                    DataSet dataSetClientFacture = new DataSet();
+                    adapterClientFacture.Fill(dataSetClientFacture, "facture");
+                    reportClientFacture.Load(@"CrystalReportClient.rpt");
+                    reportClientFacture.SetDataSource(dataSetClientFacture);
+                    crystalRepClient.ReportSource = reportClientFacture;
+                    dataSetClientFacture.Dispose();
+                }
+
                 connection.Close();
             }
             catch (Exception ex)
             {
                 FormMessage message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message.ShowDialog();
                 return;
             }
         }
@@ -219,21 +176,47 @@ namespace Aiche_Bois
             try
             {
                 connection.Open();
-                // طباعة القياسات من خلال رقم الفاتورة
-                OleDbDataAdapter adapterMesure = new OleDbDataAdapter("SELECT distinct * FROM facture WHERE idFacture = " + long.Parse(cmbShoosePrint.Text), connection);
-                ReportDocument reportMesure = new ReportDocument();
-                DataSet dataSetMesure = new DataSet();
-                adapterMesure.Fill(dataSetMesure, "facture");
-                reportMesure.Load(@"CrystalReportMesure.rpt");
-                reportMesure.SetDataSource(dataSetMesure);
-                crystalRepClient.ReportSource = reportMesure;
-                dataSetMesure.Dispose();
+
+                OleDbCommand command = new OleDbCommand();
+                command.Connection = connection;
+                command.CommandText = "SELECT checkPVC FROM facture Where idFacture = " + long.Parse(cmbShoosePrint.SelectedItem.ToString());// + " and idClient = " + long.Parse(idClient);
+                OleDbDataReader readerIdClient = command.ExecuteReader();
+                while (readerIdClient.Read())
+                {
+                    btnCheck = Convert.ToBoolean(readerIdClient["checkPVC"].ToString());
+                }
+
+                if (!btnCheck)
+                {
+                    // طباعة القياسات من خلال رقم الفاتورة
+                    OleDbDataAdapter adapterMesure = new OleDbDataAdapter("SELECT distinct * FROM facture WHERE idFacture = " + long.Parse(cmbShoosePrint.Text), connection);
+                    ReportDocument reportMesure = new ReportDocument();
+                    DataSet dataSetMesure = new DataSet();
+                    adapterMesure.Fill(dataSetMesure, "facture");
+                    reportMesure.Load(@"CrystalReportMesure.rpt");
+                    reportMesure.SetDataSource(dataSetMesure);
+                    crystalRepClient.ReportSource = reportMesure;
+                    dataSetMesure.Dispose();
+                }
+                else
+                {
+                    // طباعة ا من خلال رقم الفاتورة
+                    OleDbDataAdapter adapterPvc = new OleDbDataAdapter("SELECT distinct * FROM facture WHERE idFacture = " + long.Parse(cmbShoosePrint.Text), connection);
+                    ReportDocument reportPvc = new ReportDocument();
+                    DataSet dataSetPvc = new DataSet();
+                    adapterPvc.Fill(dataSetPvc, "facture");
+                    reportPvc.Load(@"CrystalReportPvc.rpt");
+                    reportPvc.SetDataSource(dataSetPvc);
+                    crystalRepClient.ReportSource = reportPvc;
+                    dataSetPvc.Dispose();
+                }
 
                 connection.Close();
             }
             catch (Exception ex)
             {
                 FormMessage message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message.ShowDialog();
                 return;
             }
         }

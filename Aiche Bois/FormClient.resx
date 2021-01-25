@@ -469,7 +469,7 @@
     <value>True</value>
   </metadata>
   <data name="Column6.HeaderText" xml:space="preserve">
-    <value>Avance</value>
+    <value>A Payé</value>
   </data>
   <data name="Column6.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
