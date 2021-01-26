@@ -57,13 +57,13 @@ namespace Aiche_Bois
             /*
              * difiner la connnection vers la base de donnee
              */
-            //String path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/factures";
-            //if (!Directory.Exists(path))
-            //{
-            //    Directory.CreateDirectory(path);
-            //}
+            String path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/factures";
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
 
-            connectionClient.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = aicheBois.accdb";
+            connectionClient.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + path + "/aicheBois.accdb";
             connectionType.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = Type.accdb";
 
             /*
