@@ -41,7 +41,6 @@ namespace Aiche_Bois
             // crystalRepClient
             // 
             this.crystalRepClient.ActiveViewIndex = -1;
-            this.crystalRepClient.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalRepClient.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalRepClient.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalRepClient.Font = new System.Drawing.Font("Nirmala UI", 8.25F);
@@ -58,12 +57,12 @@ namespace Aiche_Bois
             this.cmbShoosePrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.cmbShoosePrint.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbShoosePrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbShoosePrint.Font = new System.Drawing.Font("Nirmala UI", 16F, System.Drawing.FontStyle.Bold);
+            this.cmbShoosePrint.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold);
             this.cmbShoosePrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.cmbShoosePrint.FormattingEnabled = true;
-            this.cmbShoosePrint.Location = new System.Drawing.Point(262, 41);
+            this.cmbShoosePrint.Location = new System.Drawing.Point(262, 57);
             this.cmbShoosePrint.Name = "cmbShoosePrint";
-            this.cmbShoosePrint.Size = new System.Drawing.Size(666, 38);
+            this.cmbShoosePrint.Size = new System.Drawing.Size(666, 25);
             this.cmbShoosePrint.TabIndex = 1;
             this.cmbShoosePrint.SelectedIndexChanged += new System.EventHandler(this.cmbShoosePrint_SelectedIndexChanged);
             // 
@@ -74,11 +73,11 @@ namespace Aiche_Bois
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.label1.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.label1.Location = new System.Drawing.Point(262, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(666, 29);
+            this.label1.Size = new System.Drawing.Size(666, 49);
             this.label1.TabIndex = 2;
             this.label1.Text = "Choisissez la facture à imprimer";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -96,7 +95,7 @@ namespace Aiche_Bois
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(931, 91);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
@@ -105,11 +104,12 @@ namespace Aiche_Bois
             this.btnCorrespondFacture.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCorrespondFacture.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCorrespondFacture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCorrespondFacture.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold);
-            this.btnCorrespondFacture.Location = new System.Drawing.Point(3, 32);
+            this.btnCorrespondFacture.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnCorrespondFacture.Location = new System.Drawing.Point(3, 52);
             this.btnCorrespondFacture.Name = "btnCorrespondFacture";
-            this.btnCorrespondFacture.Size = new System.Drawing.Size(253, 56);
+            this.btnCorrespondFacture.Size = new System.Drawing.Size(253, 36);
             this.btnCorrespondFacture.TabIndex = 5;
             this.btnCorrespondFacture.Text = "Mesures correspondant au numéro de facture";
             this.btnCorrespondFacture.UseVisualStyleBackColor = true;

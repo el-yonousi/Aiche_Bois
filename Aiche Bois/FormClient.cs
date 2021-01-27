@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
-using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -9,6 +8,10 @@ namespace Aiche_Bois
 {
     public partial class FormClient : Form
     {
+        /// <summary>
+        /// this form show message informations
+        /// </summary>
+        FormMessage message;
         /// <summary>
         /// c'est l'access a extereiur Client data base
         /// </summary>
@@ -29,13 +32,7 @@ namespace Aiche_Bois
         /// </summary>
         public FormClient()
         {
-            //string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/factures";
-            //if (!Directory.Exists(path))
-            //{
-            //    Directory.CreateDirectory(path);
-            //}
-
-            connectionClient.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = aicheBois.accdb";
+            connectionClient.ConnectionString = Program.Path;
 
             InitializeComponent();
         }
@@ -49,7 +46,7 @@ namespace Aiche_Bois
             {
                 connectionClient.Open();
                 clients.Clear();
-
+                
                 OleDbCommand commandClient = new OleDbCommand
                 {
                     Connection = connectionClient,
@@ -57,7 +54,7 @@ namespace Aiche_Bois
                     "SELECT count(idFacture) AS nbFacture, " +
                     "(sum(f.prixtotalmesure) + sum(prixtotalpvc)) AS total, " +
                     "IIF((sum(f.prixtotalmesure) + sum(prixtotalpvc)) = prixTotalAvance, 0, (sum(f.prixtotalmesure) + sum(prixtotalpvc)) - prixTotalAvance) AS rest, " +
-                    "IIF((sum(f.prixtotalmesure) + sum(prixtotalpvc)) = prixTotalAvance, 'true', 'false') AS cavance, " +
+                    "IIF(ROUND((sum(f.prixtotalmesure) + sum(prixtotalpvc)), 2) = ROUND((prixTotalAvance), 2), 'true', 'false') AS cavance, " +
                     "c.nomClient, " +
                     "dateClient, " +
                     "c.prixTotalAvance, " +
@@ -70,39 +67,40 @@ namespace Aiche_Bois
                     "ORDER BY c.idClient DESC;"
                 };
 
-            //OleDbDataAdapter dbDataAdapter = new OleDbDataAdapter(commandClient);
-            //DataTable dataTable = new DataTable();
-            //dbDataAdapter.Fill(dataTable);
-            //dtGridFacture.DataSource = dbDataAdapter;
+                //OleDbDataAdapter dbDataAdapter = new OleDbDataAdapter(commandClient);
+                //DataTable dataTable = new DataTable();
+                //dbDataAdapter.Fill(dataTable);
+                //dtGridFacture.DataSource = dbDataAdapter;
 
-            OleDbDataReader readerClient = commandClient.ExecuteReader();
-            while (readerClient.Read())
-            {
-                Client client = new Client
+                OleDbDataReader readerClient = commandClient.ExecuteReader();
+                while (readerClient.Read())
                 {
-                    IdClient = Convert.ToInt32(readerClient["idClient"]),
-                    NomClient = readerClient["nomClient"].ToString(),
-                    DateClient = Convert.ToDateTime(readerClient["dateClient"]),
-                    NbFacture = Convert.ToInt32(readerClient["nbFacture"]),
-                    CheckAvance = Convert.ToBoolean(readerClient["cavance"]),
-                    PrixTotalAvance = Convert.ToDouble(readerClient["prixTotalAvance"]),
-                    PrixTotalRest = Convert.ToDouble(readerClient["rest"]),
-                    PrixTotalClient = Convert.ToDouble(readerClient["total"])
-                };
+                    Client client = new Client
+                    {
+                        IdClient = Convert.ToInt32(readerClient["idClient"]),
+                        NomClient = readerClient["nomClient"].ToString(),
+                        DateClient = Convert.ToDateTime(readerClient["dateClient"]),
+                        NbFacture = Convert.ToInt32(readerClient["nbFacture"]),
+                        CheckAvance = Convert.ToBoolean(readerClient["cavance"]),
+                        PrixTotalAvance = Convert.ToDouble(readerClient["prixTotalAvance"]),
+                        PrixTotalRest = Convert.ToDouble(readerClient["rest"]),
+                        PrixTotalClient = Convert.ToDouble(readerClient["total"])
+                    };
 
-                /*remplir a la liste client*/
-                clients.Add(client);
+                    /*remplir a la liste client*/
+                    clients.Add(client);
+                }
+                connectionClient.Close();
             }
-            connectionClient.Close();
-        }
             catch (Exception ex)
             {
-                FormMessage message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
-        message.ShowDialog();
+                message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.Ban);
+                message.ShowDialog();
+                connectionClient.Close();
                 return;
             }
 
-    dtGridFacture.Rows.Clear();
+            dtGridFacture.Rows.Clear();
             foreach (Client ct in clients)
             {
                 dtGridFacture.Rows.Add("N" + ct.IdClient.ToString("D4"),
@@ -120,194 +118,249 @@ namespace Aiche_Bois
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
-{
-    /*remplissage data grid view*/
-    remplissageDtGridClient();
-}
-
-/// <summary>
-/// c'est event traitment du button click id pour envoyer ca a l'autre formulaire
-/// </summary>
-/// <param name="sender"></param>
-/// <param name="e"></param>
-private void dtGridFacture_CellClick(object sender, DataGridViewCellEventArgs e)
-{
-    if (dtGridFacture.Rows.Count <= 0 || e.RowIndex < 0)
-        return;
-
-    idClient = dtGridFacture.Rows[e.RowIndex].Cells[0].Value.ToString().Split('N');
-
-    if (e.ColumnIndex == 4 && e.RowIndex < dtGridFacture.Rows.Count)
-    {
-        Program.indxFacture = dtGridFacture.Rows[e.RowIndex].Index;
-
-        FormAvance avance = new FormAvance(idClient[1]);
-        avance.ShowDialog();
-        remplissageDtGridClient();
-    }
-}
-
-/// <summary>
-/// c'est event prendre l'index de la ligne selectionnes
-/// </summary>
-/// <param name="sender"></param>
-/// <param name="e"></param>
-private void dtGridFacture_SelectionChanged(object sender, EventArgs e)
-{
-    if (dtGridFacture.Rows.Count <= 0)
-    {
-        var message = new FormMessage("selectionner une ligne s'il vous plait", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
-        message.ShowDialog();
-        return;
-    }
-    indxFacture = dtGridFacture.CurrentRow.Index;
-}
-
-/// <summary>
-/// c'est button pour imprimer les factures
-/// </summary>
-/// <param name="sender"></param>
-/// <param name="e"></param>
-private void btnPrintFacture_Click(object sender, EventArgs e)
-{
-    if (indxFacture <= -1 || dtGridFacture.Rows.Count <= 0 || idClient == null)
-    {
-        var message = new FormMessage("selectionner une ligne s'il vous plait", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
-        message.ShowDialog();
-        return;
-    }
-
-    PrintPdf print = new PrintPdf(idClient[1], "null", "btnPrintClient", false);
-    print.ShowDialog();
-}
-
-/// <summary>
-/// c'est event pour prendre l'index de la ligne
-/// </summary>
-/// <param name="sender"></param>
-/// <param name="e"></param>
-private int indxFacture;
-private void dtGridFacture_DoubleClick(object sender, EventArgs e)
-{
-    if (indxFacture <= -1 || dtGridFacture.Rows.Count <= 0 || idClient == null)
-    {
-        FormMessage message = new FormMessage("la list est vide ou Selectionner une ligne", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
-        return;
-    }
-    indxFacture = dtGridFacture.CurrentRow.Index;
-    FormAjoutFactures formShow = new FormAjoutFactures(idClient[1], "edit");
-    formShow.ShowDialog();
-    remplissageDtGridClient();
-}
-
-/// <summary>
-/// c'est button afficher la formulaire pour ajouter des factures
-/// </summary>
-/// <param name="sender"></param>
-/// <param name="e"></param>
-private void btnAddFacture_Click(object sender, EventArgs e)
-{
-    FormAjoutFactures ajouterFacture = new FormAjoutFactures("", "");
-    ajouterFacture.ShowDialog();
-    remplissageDtGridClient();
-}
-
-/// <summary>
-/// c'est event chercher a client a partir du date, nom ou id client
-/// </summary>
-/// <param name="sender"></param>
-/// <param name="e"></param>
-private void txtSearch_TextChanged(object sender, EventArgs e)
-{
-    if (!string.IsNullOrEmpty(txtSearch.Text))
-    {
-        dtGridFacture.Rows.Clear();
-        foreach (Client ct in clients)
         {
-            String id = "N" + ct.IdClient.ToString("D4");
-            String dt = ct.DateClient.ToString("dd/MM/yyyy");
-            if (ct.NomClient.Contains(value: txtSearch.Text.ToUpper()) ||
-                id.Contains(value: txtSearch.Text) ||
-                dt.Contains(value: txtSearch.Text))
-                dtGridFacture.Rows.Add(id,
-                    ct.NomClient,
-                    dt, ct.NbFacture,
-                    "",
-                    ct.CheckAvance,
-                    ct.PrixTotalAvance.ToString("F2"),
-                    ct.PrixTotalRest.ToString("F2"),
-                    ct.PrixTotalClient.ToString("F2"));
+            /*remplissage data grid view*/
+            remplissageDtGridClient();
         }
-    }
-    else
-        remplissageDtGridClient();
-}
 
-/// <summary>
-/// c'est button supprimer client a partir de la ligne selectionnees
-/// </summary>
-/// <param name="sender"></param>
-/// <param name="e"></param>
-private void btnDeleteFacture_Click(object sender, EventArgs e)
-{
-    if (indxFacture <= -1 ||
-        dtGridFacture.Rows.Count <= 0 ||
-        idClient == null)
-    {
-        FormMessage mge = new FormMessage("la list est vide ou Selectionner une ligne", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
-        mge.ShowDialog();
-        return;
-    }
-
-    FormMessage message = new FormMessage("voulez vous vraiment supprimer c'est client", "Attention", true, true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
-
-    DialogResult dialog = message.ShowDialog();
-
-    if (DialogResult.Yes == dialog)
-    {
-        try
+        /// <summary>
+        /// c'est event traitment du button click id pour envoyer ca a l'autre formulaire
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dtGridFacture_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            connectionClient.Open();
-            OleDbCommand commandDelete = new OleDbCommand
+            if (dtGridFacture.Rows.Count <= 0 || e.RowIndex < 0)
+                return;
+
+            idClient = dtGridFacture.Rows[e.RowIndex].Cells[0].Value.ToString().Split('N');
+
+            if (e.ColumnIndex == 4 && e.RowIndex < dtGridFacture.Rows.Count)
             {
-                Connection = connectionClient,
-                CommandText = "delete * from client where idClient = " + Convert.ToInt64(idClient[1])
-            };
+                Program.indxFacture = dtGridFacture.Rows[e.RowIndex].Index;
 
-            commandDelete.ExecuteNonQuery();
-            connectionClient.Close();
+                FormAvance avance = new FormAvance(idClient[1]);
+                avance.ShowDialog();
+                remplissageDtGridClient();
+            }
         }
-        catch (Exception ex)
+
+        /// <summary>
+        /// c'est event prendre l'index de la ligne selectionnes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dtGridFacture_SelectionChanged(object sender, EventArgs e)
         {
-            FormMessage mg = new FormMessage("Error: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.RadiationAlt);
-            mg.ShowDialog();
+            if (dtGridFacture.Rows.Count <= 0)
+            {
+                message = new FormMessage("selectionner une ligne s'il vous plait", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message.ShowDialog();
+                return;
+            }
+            indxFacture = dtGridFacture.CurrentRow.Index;
         }
 
-        /*
-         * refrecher les donness du client
-         */
-        remplissageDtGridClient();
-    }
-}
+        /// <summary>
+        /// c'est button pour imprimer les factures
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnPrintFacture_Click(object sender, EventArgs e)
+        {
+            if (indxFacture <= -1 || dtGridFacture.Rows.Count <= 0 || idClient == null)
+            {
+                message = new FormMessage("selectionner une ligne s'il vous plait", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message.ShowDialog();
+                return;
+            }
 
-/// <summary>
-/// c'est le button qui modifier les factures du client
-/// </summary>
-/// <param name="sender"></param>
-/// <param name="e"></param>
-private void btnEditFacture_Click(object sender, EventArgs e)
-{
-    if (indxFacture <= -1 || dtGridFacture.Rows.Count <= 0 || idClient == null)
-    {
-        FormMessage message = new FormMessage("la list est vide ou Selectionner une ligne", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
-        message.ShowDialog();
-        return;
-    }
+            PrintPdf print = new PrintPdf(idClient[1], "null", "btnPrintClient", false);
+            print.ShowDialog();
+        }
 
-    //send button click name
-    FormAjoutFactures ajoutFactures = new FormAjoutFactures(idClient[1], "edit");
-    ajoutFactures.ShowDialog();
-    remplissageDtGridClient();
-}
+        /// <summary>
+        /// c'est event pour prendre l'index de la ligne
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private int indxFacture;
+        private void dtGridFacture_DoubleClick(object sender, EventArgs e)
+        {
+            if (indxFacture <= -1 || dtGridFacture.Rows.Count <= 0 || idClient == null)
+            {
+                message = new FormMessage("la list est vide ou Selectionner une ligne", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message.ShowDialog();
+                return;
+            }
+            indxFacture = dtGridFacture.CurrentRow.Index;
+            FormAjoutFactures formShow = new FormAjoutFactures(idClient[1], "edit");
+            formShow.ShowDialog();
+            remplissageDtGridClient();
+        }
+
+        /// <summary>
+        /// c'est button afficher la formulaire pour ajouter des factures
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAddFacture_Click(object sender, EventArgs e)
+        {
+            FormAjoutFactures ajouterFacture = new FormAjoutFactures("", "");
+            ajouterFacture.ShowDialog();
+            remplissageDtGridClient();
+        }
+
+        /// <summary>
+        /// c'est event chercher a client a partir du date, nom ou id client
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtSearch.Text))
+            {
+                dtGridFacture.Rows.Clear();
+                foreach (Client ct in clients)
+                {
+                    String id = "N" + ct.IdClient.ToString("D4");
+                    String dt = ct.DateClient.ToString("dd/MM/yyyy");
+                    if (ct.NomClient.Contains(value: txtSearch.Text.ToUpper()) ||
+                        id.Contains(value: txtSearch.Text) ||
+                        dt.Contains(value: txtSearch.Text))
+                        dtGridFacture.Rows.Add(id,
+                            ct.NomClient,
+                            dt, ct.NbFacture,
+                            "",
+                            ct.CheckAvance,
+                            ct.PrixTotalAvance.ToString("F2"),
+                            ct.PrixTotalRest.ToString("F2"),
+                            ct.PrixTotalClient.ToString("F2"));
+                }
+            }
+            else
+                remplissageDtGridClient();
+        }
+
+        /// <summary>
+        /// c'est button supprimer client a partir de la ligne selectionnees
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDeleteFacture_Click(object sender, EventArgs e)
+        {
+            if (indxFacture <= -1 ||
+                dtGridFacture.Rows.Count <= 0 ||
+                idClient == null)
+            {
+                message = new FormMessage("la list est vide ou Selectionner une ligne", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message.ShowDialog();
+                return;
+            }
+
+            message = new FormMessage("voulez vous vraiment supprimer c'est client", "Attention", true, true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+
+            if (DialogResult.Yes == message.ShowDialog())
+            {
+                try
+                {
+                    connectionClient.Open();
+                    OleDbCommand commandDelete = new OleDbCommand
+                    {
+                        Connection = connectionClient,
+                        CommandText = "delete * from client where idClient = " + long.Parse(idClient[1])
+                    };
+                    commandDelete.ExecuteNonQuery();
+
+                    connectionClient.Close();
+                    message = new FormMessage("le Client a ete Supprimé avec Succès", "Succès", true, FontAwesome.Sharp.IconChar.CheckCircle);
+                    message.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                    message = new FormMessage("Error: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.Ban);
+                    message.ShowDialog();
+                }
+
+                /*
+                 * refrecher les donness du client
+                 */
+                remplissageDtGridClient();
+            }
+        }
+
+        /// <summary>
+        /// c'est le button qui modifier les factures du client
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEditFacture_Click(object sender, EventArgs e)
+        {
+            if (indxFacture <= -1 || dtGridFacture.Rows.Count <= 0 || idClient == null)
+            {
+                message = new FormMessage("la list est vide ou Selectionner une ligne", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message.ShowDialog();
+                return;
+            }
+
+            //send button click name
+            FormAjoutFactures ajoutFactures = new FormAjoutFactures(idClient[1], "edit");
+            ajoutFactures.ShowDialog();
+            remplissageDtGridClient();
+        }
+
+        /// <summary>
+        /// closing the application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FormClient_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnResult_Click(object sender, EventArgs e)
+        {
+            double a = 0;
+            double b = 0;
+            double c = 0;
+            foreach (DataGridViewRow row in dtGridFacture.Rows)
+            {
+                if (row.Cells[6].Value == null)
+                {
+                    break;
+                }
+
+                a += double.Parse(row.Cells[6].Value.ToString());
+                b += double.Parse(row.Cells[7].Value.ToString());
+                c += double.Parse(row.Cells[8].Value.ToString());
+            }
+
+            SaveFileDialog save = new SaveFileDialog();
+            String path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/aiche bois/";
+            save.InitialDirectory = path;
+            save.FileName = "information";
+            save.Title = "Information sur les montants totaux de la société Aiche Bois";
+            save.DefaultExt = "txt";
+            save.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            save.FilterIndex = 1;
+            
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                TextWriter txt = new StreamWriter(save.FileName);
+
+                String t = "******" + save.Title + "******\n\n" +
+                    "======= Date: " + DateTime.Today.ToString("dddd-MMMM-yyyy") + " =======\n\n" +
+                    "==========================================================================\n" + 
+                    "======= Total de Prix Payée pour tous les clients: " + a + " dh =======\n" +
+                    "======= Reste total pour tous les clients: " + b + " dh =======\n" +
+                    "======= Montant Total pour Tous les Clients: " + c + " dh =======";
+                txt.Write(t);
+                txt.Close();
+
+                FileInfo fileInfo = new FileInfo(save.FileName);
+                fileInfo.IsReadOnly = true;
+            }
+        }
     }
 }

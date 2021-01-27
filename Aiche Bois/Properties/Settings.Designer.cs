@@ -26,7 +26,8 @@ namespace Aiche_Bois.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=aicheBois.accdb\";Jet OLEDB:Database Passwor" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\"C:\\Users\\Mohamed\\OneDrive - OFPPT\\" +
+            "TDI201C2020-2021\\Projects\\Aiche Bois\\aicheBois.accdb\";Jet OLEDB:Database Passwor" +
             "d=aichebois")]
         public string aicheBoisConnectionString {
             get {

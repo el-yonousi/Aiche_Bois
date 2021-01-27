@@ -65,9 +65,9 @@
             // btnAddLstCmb
             // 
             this.btnAddLstCmb.BackColor = System.Drawing.Color.White;
+            this.btnAddLstCmb.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddLstCmb.FlatAppearance.BorderSize = 0;
             this.btnAddLstCmb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddLstCmb.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnAddLstCmb.ForeColor = System.Drawing.Color.White;
             this.btnAddLstCmb.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             this.btnAddLstCmb.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
@@ -76,7 +76,6 @@
             this.btnAddLstCmb.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAddLstCmb.Location = new System.Drawing.Point(605, 32);
             this.btnAddLstCmb.Name = "btnAddLstCmb";
-            this.btnAddLstCmb.Rotation = 0D;
             this.btnAddLstCmb.Size = new System.Drawing.Size(40, 36);
             this.btnAddLstCmb.TabIndex = 1;
             this.btnAddLstCmb.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -87,9 +86,9 @@
             // 
             this.btnDeleteMesure.BackColor = System.Drawing.Color.White;
             this.btnDeleteMesure.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDeleteMesure.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteMesure.FlatAppearance.BorderSize = 0;
             this.btnDeleteMesure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteMesure.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnDeleteMesure.ForeColor = System.Drawing.Color.White;
             this.btnDeleteMesure.IconChar = FontAwesome.Sharp.IconChar.Trash;
             this.btnDeleteMesure.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
@@ -98,7 +97,6 @@
             this.btnDeleteMesure.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnDeleteMesure.Location = new System.Drawing.Point(230, 578);
             this.btnDeleteMesure.Name = "btnDeleteMesure";
-            this.btnDeleteMesure.Rotation = 0D;
             this.btnDeleteMesure.Size = new System.Drawing.Size(193, 36);
             this.btnDeleteMesure.TabIndex = 3;
             this.btnDeleteMesure.UseVisualStyleBackColor = false;
@@ -107,10 +105,10 @@
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.Color.White;
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnBack.ForeColor = System.Drawing.Color.White;
             this.btnBack.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleRight;
             this.btnBack.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
@@ -119,7 +117,6 @@
             this.btnBack.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnBack.Location = new System.Drawing.Point(451, 578);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Rotation = 0D;
             this.btnBack.Size = new System.Drawing.Size(193, 36);
             this.btnBack.TabIndex = 4;
             this.btnBack.UseVisualStyleBackColor = false;
@@ -128,9 +125,9 @@
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.White;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.IconChar = FontAwesome.Sharp.IconChar.Save;
             this.btnSave.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
@@ -139,7 +136,6 @@
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSave.Location = new System.Drawing.Point(9, 578);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Rotation = 0D;
             this.btnSave.Size = new System.Drawing.Size(193, 36);
             this.btnSave.TabIndex = 2;
             this.btnSave.UseVisualStyleBackColor = false;
@@ -179,6 +175,7 @@
             this.Name = "FormAjout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ajout";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormAjout_FormClosing);
             this.Load += new System.EventHandler(this.Ajout_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

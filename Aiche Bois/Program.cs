@@ -14,12 +14,17 @@ namespace Aiche_Bois
         //public static List<Client> Clients = new List<Client>();
         public static int indxFacture = 0;
 
+        //public password for databse access
+        public static string Path;
+        public static string PathType;
+        //public static System.Drawing.Color Color;
+
         [STAThread]
         private static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormClient());
+            Application.Run(new User());
         }
     }
 }

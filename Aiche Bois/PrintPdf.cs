@@ -52,7 +52,7 @@ namespace Aiche_Bois
             //    Directory.CreateDirectory(path);
             //}
 
-            connection.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = aicheBois.accdb";
+            connection.ConnectionString = Program.Path;
 
             InitializeComponent();
         }
@@ -87,6 +87,7 @@ namespace Aiche_Bois
             {
                 FormMessage message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
                 message.ShowDialog();
+                connection.Close();
                 return;
             }
 
@@ -167,6 +168,7 @@ namespace Aiche_Bois
             {
                 FormMessage message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
                 message.ShowDialog();
+                connection.Close();
                 return;
             }
         }
@@ -217,6 +219,7 @@ namespace Aiche_Bois
             {
                 FormMessage message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
                 message.ShowDialog();
+                connection.Close();
                 return;
             }
         }

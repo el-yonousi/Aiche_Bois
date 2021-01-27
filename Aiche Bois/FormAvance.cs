@@ -41,19 +41,11 @@ namespace Aiche_Bois
 
             this.idClient = Convert.ToInt64(idClient);
 
-            /*
-             * get database path
-             */
-            //string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/factures";
-            //if (!Directory.Exists(path))
-            //{
-            //    Directory.CreateDirectory(path);
-            //}
 
             /*
              * set database connection
              */
-            connection.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = aicheBois.accdb";
+            connection.ConnectionString = Program.Path;
 
             InitializeComponent();
         }
@@ -92,8 +84,9 @@ namespace Aiche_Bois
             }
             catch (Exception ex)
             {
-                message = new FormMessage("Error:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.ExclamationCircle);
+                message = new FormMessage("Error:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.Ban);
                 message.ShowDialog();
+                connection.Close();
             }
         }
 
@@ -167,15 +160,6 @@ namespace Aiche_Bois
             {
                 connection.Open();
 
-                //avance = double.Parse(lblAvancePrixClient.Text);
-                //rest = double.Parse(lblRestPrixClient.Text);
-
-                //avance += double.Parse(txtPrixCLient.Text);
-                //rest = double.Parse(lblTotalPrixClient.Text) - avance;
-
-                //lblAvancePrixClient.Text = avance.ToString("F2");
-                //lblRestPrixClient.Text = rest.ToString("F2");
-
                 OleDbCommand command = new OleDbCommand
                 {
                     Connection = connection,
@@ -184,13 +168,14 @@ namespace Aiche_Bois
 
                 command.ExecuteNonQuery();
 
-                message = new FormMessage("Le montant a été ajouté à la facture du client", "Succès", true, FontAwesome.Sharp.IconChar.ThumbsUp);
+                message = new FormMessage("Le montant a été ajouté à la facture du client", "Succès", true, FontAwesome.Sharp.IconChar.CheckCircle);
                 message.ShowDialog();
 
                 txtPrixCLient.Clear();
                 txtPrixCLient.Focus();
 
                 connection.Close();
+                
 
                 // call function to full a fields
                 remplirData();
@@ -202,9 +187,9 @@ namespace Aiche_Bois
             }
             catch (Exception ex)
             {
-
-                message = new FormMessage("Error:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.ExclamationCircle);
+                message = new FormMessage("Error:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.Ban);
                 message.ShowDialog();
+                connection.Close();
             }
 
         }

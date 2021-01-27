@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
-using System.IO;
 using System.Windows.Forms;
 
 namespace Aiche_Bois
@@ -10,16 +9,16 @@ namespace Aiche_Bois
     {
         /*decalaration des variables*/
         private readonly OleDbConnection connection = new OleDbConnection();
+
+        /// <summary>
+        /// Pour stocker des articles
+        /// </summary>
         private readonly List<string> getLstCmbList = new List<string>();
+        FormMessage message;
+        bool check = false;
         public FormAjout()
         {
-            //string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/factures";
-            //if (!Directory.Exists(path))
-            //{
-            //    Directory.CreateDirectory(path);
-            //}
-
-            connection.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = Type.accdb";
+            connection.ConnectionString = Program.PathType;
             InitializeComponent();
         }
 
@@ -55,11 +54,12 @@ namespace Aiche_Bois
                     commandInsert.ExecuteNonQuery();
                 }
                 connection.Close();
-                MessageBox.Show("succes", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erreur:: " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.Ban);
+                message.ShowDialog();
+                connection.Close();
             }
         }
 
@@ -84,7 +84,9 @@ namespace Aiche_Bois
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erreur:: " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.Ban);
+                message.ShowDialog();
+                connection.Close();
             }
         }
         private void Ajout_Load(object sender, EventArgs e)
@@ -98,9 +100,11 @@ namespace Aiche_Bois
 
         private void btnAddLstCmb_Click(object sender, EventArgs e)
         {
+            check = true;
             if (String.IsNullOrEmpty(txtCmb.Text) || String.IsNullOrWhiteSpace(txtCmb.Text))
             {
-                MessageBox.Show("le format du text et incorrect ou text est vide", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                message = new FormMessage("la format du text et incorrect ou text est vide", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message.ShowDialog();
                 txtCmb.Focus();
                 return;
             }
@@ -114,7 +118,8 @@ namespace Aiche_Bois
         {
             /*suavgarder les donnees dans dataBase*/
             suavgarderDonnees(Program.btnAddTypeClick.ToUpper());
-
+            message = new FormMessage("Ajouté Avec Succès", "Succès", true, FontAwesome.Sharp.IconChar.CheckCircle);
+            message.ShowDialog();
             /*fermer la fonetre*/
             Close();
 
@@ -139,23 +144,28 @@ namespace Aiche_Bois
 
                 /*fermer la connection a database*/
                 connection.Close();
-                MessageBox.Show("supprimer avec succes", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                message = new FormMessage("Supprimer avec succès", "Succès", true, FontAwesome.Sharp.IconChar.CheckCircle);
+                message.ShowDialog();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erreur:: " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.Ban);
+                message.ShowDialog();
+                connection.Close();
             }
         }
         private void btnDeleteMesure_Click(object sender, EventArgs e)
         {
             if (lstCmb.Items.Count <= 0)
             {
-                MessageBox.Show("la liste est vide:: ajouter des items");
+                message = new FormMessage("la liste est vide:: ajouter des items", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message.ShowDialog();
                 return;
             }
             if (lstCmb.SelectedIndex == -1)
             {
-                MessageBox.Show("s'il vous plait selection une ligne a la litse");
+                message = new FormMessage("s'il vous plaît sélectionner une ligne à la liste", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message.ShowDialog();
                 return;
             }
 
@@ -176,6 +186,19 @@ namespace Aiche_Bois
                 this.AcceptButton = btnSave;
             else
                 this.AcceptButton = btnAddLstCmb;
+        }
+
+        private void FormAjout_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (check)
+            {
+                message = new FormMessage("il ya des enregistrement n'est pas sauvegardé, voulez vous sauvegarder ou n", "Question", true, true, FontAwesome.Sharp.IconChar.Question);
+                if (DialogResult.Yes == message.ShowDialog())
+                {
+                    /*suavgarder les donnees dans dataBase*/
+                    suavgarderDonnees(Program.btnAddTypeClick.ToUpper());
+                }
+            }
         }
     }
 }

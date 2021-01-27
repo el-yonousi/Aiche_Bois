@@ -37,16 +37,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAjoutFactures));
             this.btnSaveFacture = new FontAwesome.Sharp.IconButton();
             this.btnBack = new FontAwesome.Sharp.IconButton();
-            this.txtPrixRestClient = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.txtPrixAvanceClient = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.checkAvance = new System.Windows.Forms.CheckBox();
-            this.txtPrixTotalClient = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.btnPrintFacture = new FontAwesome.Sharp.IconButton();
             this.lblNumeroFacture = new System.Windows.Forms.Label();
-            this.txtTypeDeBois = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -70,7 +66,6 @@
             this.btnAddMesure = new FontAwesome.Sharp.IconButton();
             this.txtCategorie = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtPrixTotalMesure = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtMetrageDeFeuille = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -90,7 +85,6 @@
             this.cmbOrientationPvc = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.label17 = new System.Windows.Forms.Label();
             this.txtPrixMetreLPVC = new System.Windows.Forms.TextBox();
-            this.txtPrixTotalPVC = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnImportPvc = new FontAwesome.Sharp.IconButton();
             this.txtTaillePVC = new System.Windows.Forms.TextBox();
@@ -98,7 +92,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.cmbTypePvc = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtTotaleTaillPVC = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnAddFacture = new FontAwesome.Sharp.IconButton();
             this.btnClear = new FontAwesome.Sharp.IconButton();
@@ -118,6 +111,13 @@
             this.txtEpaisseur = new System.Windows.Forms.TextBox();
             this.txtLongueur = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.txtTypeDeBois = new System.Windows.Forms.Label();
+            this.txtPrixTotalClient = new System.Windows.Forms.Label();
+            this.txtPrixAvanceClient = new System.Windows.Forms.TextBox();
+            this.txtPrixRestClient = new System.Windows.Forms.Label();
+            this.txtPrixTotalMesure = new System.Windows.Forms.Label();
+            this.txtTotaleTaillPVC = new System.Windows.Forms.Label();
+            this.txtPrixTotalPVC = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtGMesure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridPvc)).BeginInit();
             this.SuspendLayout();
@@ -125,6 +125,7 @@
             // btnSaveFacture
             // 
             this.btnSaveFacture.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSaveFacture.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSaveFacture.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSaveFacture.Enabled = false;
             this.btnSaveFacture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -135,17 +136,17 @@
             this.btnSaveFacture.IconSize = 25;
             this.btnSaveFacture.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSaveFacture.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnSaveFacture.Location = new System.Drawing.Point(12, 644);
+            this.btnSaveFacture.Location = new System.Drawing.Point(423, 641);
             this.btnSaveFacture.Name = "btnSaveFacture";
-            this.btnSaveFacture.Size = new System.Drawing.Size(446, 35);
-            this.btnSaveFacture.TabIndex = 268;
+            this.btnSaveFacture.Size = new System.Drawing.Size(391, 35);
+            this.btnSaveFacture.TabIndex = 28;
             this.btnSaveFacture.UseVisualStyleBackColor = false;
             this.btnSaveFacture.Click += new System.EventHandler(this.btnSaveFacture_Click);
             // 
             // btnBack
             // 
             this.btnBack.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.ForeColor = System.Drawing.Color.White;
             this.btnBack.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleRight;
@@ -154,28 +155,12 @@
             this.btnBack.IconSize = 25;
             this.btnBack.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBack.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnBack.Location = new System.Drawing.Point(462, 644);
+            this.btnBack.Location = new System.Drawing.Point(838, 641);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(443, 35);
-            this.btnBack.TabIndex = 269;
+            this.btnBack.Size = new System.Drawing.Size(391, 35);
+            this.btnBack.TabIndex = 29;
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
-            // 
-            // txtPrixRestClient
-            // 
-            this.txtPrixRestClient.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPrixRestClient.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPrixRestClient.Enabled = false;
-            this.txtPrixRestClient.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrixRestClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtPrixRestClient.Location = new System.Drawing.Point(597, 609);
-            this.txtPrixRestClient.MaxLength = 255;
-            this.txtPrixRestClient.Name = "txtPrixRestClient";
-            this.txtPrixRestClient.Size = new System.Drawing.Size(308, 28);
-            this.txtPrixRestClient.TabIndex = 272;
-            this.txtPrixRestClient.Text = "0.00";
-            this.txtPrixRestClient.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPrixRestClient.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantite_KeyPress);
             // 
             // label19
             // 
@@ -183,29 +168,12 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label19.Location = new System.Drawing.Point(593, 593);
+            this.label19.Location = new System.Drawing.Point(836, 584);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(92, 13);
             this.label19.TabIndex = 276;
             this.label19.Text = "Montant restant";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtPrixAvanceClient
-            // 
-            this.txtPrixAvanceClient.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPrixAvanceClient.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPrixAvanceClient.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrixAvanceClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtPrixAvanceClient.Location = new System.Drawing.Point(308, 609);
-            this.txtPrixAvanceClient.MaxLength = 255;
-            this.txtPrixAvanceClient.Name = "txtPrixAvanceClient";
-            this.txtPrixAvanceClient.ShortcutsEnabled = false;
-            this.txtPrixAvanceClient.Size = new System.Drawing.Size(267, 28);
-            this.txtPrixAvanceClient.TabIndex = 273;
-            this.txtPrixAvanceClient.Text = "0.00";
-            this.txtPrixAvanceClient.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPrixAvanceClient.TextChanged += new System.EventHandler(this.txtPrixRestClient_TextChanged);
-            this.txtPrixAvanceClient.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantite_KeyPress);
             // 
             // label6
             // 
@@ -213,7 +181,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(305, 593);
+            this.label6.Location = new System.Drawing.Point(439, 584);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(114, 13);
             this.label6.TabIndex = 274;
@@ -224,33 +192,17 @@
             // 
             this.checkAvance.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkAvance.AutoSize = true;
+            this.checkAvance.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkAvance.FlatAppearance.BorderSize = 0;
             this.checkAvance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkAvance.Font = new System.Drawing.Font("Nirmala UI", 30F, System.Drawing.FontStyle.Bold);
-            this.checkAvance.Location = new System.Drawing.Point(290, 618);
+            this.checkAvance.Location = new System.Drawing.Point(424, 610);
             this.checkAvance.Name = "checkAvance";
             this.checkAvance.Size = new System.Drawing.Size(12, 11);
-            this.checkAvance.TabIndex = 271;
+            this.checkAvance.TabIndex = 27;
             this.checkAvance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkAvance.UseVisualStyleBackColor = true;
             this.checkAvance.CheckStateChanged += new System.EventHandler(this.checkAvance_CheckedChanged);
-            // 
-            // txtPrixTotalClient
-            // 
-            this.txtPrixTotalClient.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPrixTotalClient.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPrixTotalClient.Enabled = false;
-            this.txtPrixTotalClient.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrixTotalClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtPrixTotalClient.Location = new System.Drawing.Point(12, 609);
-            this.txtPrixTotalClient.MaxLength = 255;
-            this.txtPrixTotalClient.Name = "txtPrixTotalClient";
-            this.txtPrixTotalClient.Size = new System.Drawing.Size(257, 28);
-            this.txtPrixTotalClient.TabIndex = 270;
-            this.txtPrixTotalClient.Text = "0.00";
-            this.txtPrixTotalClient.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPrixTotalClient.TextChanged += new System.EventHandler(this.txtPrixRestClient_TextChanged);
-            this.txtPrixTotalClient.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantite_KeyPress);
             // 
             // label18
             // 
@@ -258,7 +210,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label18.Location = new System.Drawing.Point(9, 593);
+            this.label18.Location = new System.Drawing.Point(9, 585);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(80, 13);
             this.label18.TabIndex = 275;
@@ -268,6 +220,7 @@
             // btnPrintFacture
             // 
             this.btnPrintFacture.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPrintFacture.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrintFacture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrintFacture.ForeColor = System.Drawing.Color.White;
             this.btnPrintFacture.IconChar = FontAwesome.Sharp.IconChar.Print;
@@ -276,11 +229,11 @@
             this.btnPrintFacture.IconSize = 25;
             this.btnPrintFacture.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPrintFacture.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnPrintFacture.Location = new System.Drawing.Point(12, 535);
+            this.btnPrintFacture.Location = new System.Drawing.Point(12, 527);
             this.btnPrintFacture.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnPrintFacture.Name = "btnPrintFacture";
-            this.btnPrintFacture.Size = new System.Drawing.Size(257, 41);
-            this.btnPrintFacture.TabIndex = 292;
+            this.btnPrintFacture.Size = new System.Drawing.Size(389, 41);
+            this.btnPrintFacture.TabIndex = 31;
             this.btnPrintFacture.UseVisualStyleBackColor = false;
             this.btnPrintFacture.Visible = false;
             this.btnPrintFacture.Click += new System.EventHandler(this.btnPrintFacture_Click);
@@ -291,26 +244,12 @@
             this.lblNumeroFacture.AutoSize = true;
             this.lblNumeroFacture.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Bold);
             this.lblNumeroFacture.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblNumeroFacture.Location = new System.Drawing.Point(9, 14);
+            this.lblNumeroFacture.Location = new System.Drawing.Point(9, 6);
             this.lblNumeroFacture.Name = "lblNumeroFacture";
             this.lblNumeroFacture.Size = new System.Drawing.Size(91, 13);
             this.lblNumeroFacture.TabIndex = 290;
             this.lblNumeroFacture.Text = "Facture Numero";
             this.lblNumeroFacture.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtTypeDeBois
-            // 
-            this.txtTypeDeBois.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTypeDeBois.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTypeDeBois.Enabled = false;
-            this.txtTypeDeBois.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTypeDeBois.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtTypeDeBois.Location = new System.Drawing.Point(12, 500);
-            this.txtTypeDeBois.MaxLength = 255;
-            this.txtTypeDeBois.Name = "txtTypeDeBois";
-            this.txtTypeDeBois.Size = new System.Drawing.Size(257, 28);
-            this.txtTypeDeBois.TabIndex = 281;
-            this.txtTypeDeBois.Tag = "Type du Bois";
             // 
             // label5
             // 
@@ -318,7 +257,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(9, 484);
+            this.label5.Location = new System.Drawing.Point(9, 476);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 13);
             this.label5.TabIndex = 288;
@@ -331,7 +270,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(9, 235);
+            this.label4.Location = new System.Drawing.Point(9, 227);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(151, 13);
             this.label4.TabIndex = 287;
@@ -345,10 +284,10 @@
             this.txtSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSearch.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtSearch.Location = new System.Drawing.Point(12, 251);
+            this.txtSearch.Location = new System.Drawing.Point(12, 243);
             this.txtSearch.MaxLength = 30;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(259, 28);
+            this.txtSearch.Size = new System.Drawing.Size(389, 28);
             this.txtSearch.TabIndex = 279;
             this.txtSearch.TextChanged += new System.EventHandler(this.TxtSearch_TextChanged);
             // 
@@ -359,10 +298,10 @@
             this.lstTypeBois.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.lstTypeBois.FormattingEnabled = true;
             this.lstTypeBois.ItemHeight = 20;
-            this.lstTypeBois.Location = new System.Drawing.Point(12, 293);
+            this.lstTypeBois.Location = new System.Drawing.Point(12, 285);
             this.lstTypeBois.Name = "lstTypeBois";
-            this.lstTypeBois.Size = new System.Drawing.Size(260, 180);
-            this.lstTypeBois.TabIndex = 280;
+            this.lstTypeBois.Size = new System.Drawing.Size(389, 180);
+            this.lstTypeBois.TabIndex = 3;
             this.lstTypeBois.SelectedIndexChanged += new System.EventHandler(this.lstTypeBois_SelectedIndexChanged);
             // 
             // dtDateFacture
@@ -373,9 +312,9 @@
             this.dtDateFacture.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.dtDateFacture.Font = new System.Drawing.Font("Nirmala UI", 11F, System.Drawing.FontStyle.Bold);
             this.dtDateFacture.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtDateFacture.Location = new System.Drawing.Point(12, 87);
+            this.dtDateFacture.Location = new System.Drawing.Point(12, 79);
             this.dtDateFacture.Name = "dtDateFacture";
-            this.dtDateFacture.Size = new System.Drawing.Size(260, 27);
+            this.dtDateFacture.Size = new System.Drawing.Size(389, 27);
             this.dtDateFacture.TabIndex = 282;
             this.dtDateFacture.TabStop = false;
             this.dtDateFacture.Tag = "Date de la Facture";
@@ -386,7 +325,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Bold);
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(9, 71);
+            this.label2.Location = new System.Drawing.Point(9, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 13);
             this.label2.TabIndex = 284;
@@ -396,6 +335,7 @@
             // btnCmbCategorie
             // 
             this.btnCmbCategorie.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCmbCategorie.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCmbCategorie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCmbCategorie.ForeColor = System.Drawing.Color.White;
             this.btnCmbCategorie.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
@@ -403,10 +343,10 @@
             this.btnCmbCategorie.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCmbCategorie.IconSize = 25;
             this.btnCmbCategorie.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCmbCategorie.Location = new System.Drawing.Point(235, 195);
+            this.btnCmbCategorie.Location = new System.Drawing.Point(323, 186);
             this.btnCmbCategorie.Name = "btnCmbCategorie";
-            this.btnCmbCategorie.Size = new System.Drawing.Size(37, 31);
-            this.btnCmbCategorie.TabIndex = 283;
+            this.btnCmbCategorie.Size = new System.Drawing.Size(78, 33);
+            this.btnCmbCategorie.TabIndex = 32;
             this.btnCmbCategorie.TabStop = false;
             this.btnCmbCategorie.UseVisualStyleBackColor = false;
             this.btnCmbCategorie.Click += new System.EventHandler(this.btnCmbCategorie_Click);
@@ -417,7 +357,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Bold);
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(9, 126);
+            this.label3.Location = new System.Drawing.Point(9, 118);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 13);
             this.label3.TabIndex = 285;
@@ -430,7 +370,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label15.Location = new System.Drawing.Point(9, 179);
+            this.label15.Location = new System.Drawing.Point(9, 171);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(73, 13);
             this.label15.TabIndex = 286;
@@ -444,16 +384,17 @@
             this.txtNomClient.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNomClient.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtNomClient.Location = new System.Drawing.Point(12, 142);
+            this.txtNomClient.Location = new System.Drawing.Point(12, 134);
             this.txtNomClient.MaxLength = 30;
             this.txtNomClient.Name = "txtNomClient";
-            this.txtNomClient.Size = new System.Drawing.Size(259, 28);
-            this.txtNomClient.TabIndex = 277;
+            this.txtNomClient.Size = new System.Drawing.Size(389, 28);
+            this.txtNomClient.TabIndex = 0;
             this.txtNomClient.Tag = "Nom du Client";
             // 
             // cmbTypeDeBois
             // 
             this.cmbTypeDeBois.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbTypeDeBois.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbTypeDeBois.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTypeDeBois.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbTypeDeBois.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold);
@@ -463,10 +404,10 @@
             "MDF",
             "LATTE",
             "STD"});
-            this.cmbTypeDeBois.Location = new System.Drawing.Point(12, 195);
+            this.cmbTypeDeBois.Location = new System.Drawing.Point(12, 187);
             this.cmbTypeDeBois.Name = "cmbTypeDeBois";
-            this.cmbTypeDeBois.Size = new System.Drawing.Size(217, 31);
-            this.cmbTypeDeBois.TabIndex = 278;
+            this.cmbTypeDeBois.Size = new System.Drawing.Size(305, 31);
+            this.cmbTypeDeBois.TabIndex = 2;
             this.cmbTypeDeBois.SelectedIndexChanged += new System.EventHandler(this.cmbCateogorie_SelectedIndexChanged);
             // 
             // lblFactureNumero
@@ -476,9 +417,9 @@
             this.lblFactureNumero.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Bold);
             this.lblFactureNumero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.lblFactureNumero.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblFactureNumero.Location = new System.Drawing.Point(12, 30);
+            this.lblFactureNumero.Location = new System.Drawing.Point(12, 22);
             this.lblFactureNumero.Name = "lblFactureNumero";
-            this.lblFactureNumero.Size = new System.Drawing.Size(260, 31);
+            this.lblFactureNumero.Size = new System.Drawing.Size(389, 31);
             this.lblFactureNumero.TabIndex = 291;
             this.lblFactureNumero.Text = "Facture Numero";
             this.lblFactureNumero.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -491,7 +432,7 @@
             this.cmbNumeroFacture.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbNumeroFacture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.cmbNumeroFacture.FormattingEnabled = true;
-            this.cmbNumeroFacture.Location = new System.Drawing.Point(12, 30);
+            this.cmbNumeroFacture.Location = new System.Drawing.Point(12, 22);
             this.cmbNumeroFacture.Name = "cmbNumeroFacture";
             this.cmbNumeroFacture.Size = new System.Drawing.Size(260, 31);
             this.cmbNumeroFacture.TabIndex = 289;
@@ -502,6 +443,7 @@
             // 
             this.btnExportCsv.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnExportCsv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExportCsv.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExportCsv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportCsv.ForeColor = System.Drawing.Color.White;
             this.btnExportCsv.IconChar = FontAwesome.Sharp.IconChar.Download;
@@ -509,10 +451,10 @@
             this.btnExportCsv.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnExportCsv.IconSize = 25;
             this.btnExportCsv.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnExportCsv.Location = new System.Drawing.Point(530, 295);
+            this.btnExportCsv.Location = new System.Drawing.Point(736, 286);
             this.btnExportCsv.Name = "btnExportCsv";
-            this.btnExportCsv.Size = new System.Drawing.Size(44, 33);
-            this.btnExportCsv.TabIndex = 297;
+            this.btnExportCsv.Size = new System.Drawing.Size(78, 33);
+            this.btnExportCsv.TabIndex = 12;
             this.btnExportCsv.TabStop = false;
             this.btnExportCsv.UseVisualStyleBackColor = false;
             this.btnExportCsv.Click += new System.EventHandler(this.btnExportCsv_Click);
@@ -520,6 +462,7 @@
             // btnDeleteFacture
             // 
             this.btnDeleteFacture.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDeleteFacture.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteFacture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteFacture.ForeColor = System.Drawing.Color.White;
             this.btnDeleteFacture.IconChar = FontAwesome.Sharp.IconChar.Trash;
@@ -528,11 +471,11 @@
             this.btnDeleteFacture.IconSize = 25;
             this.btnDeleteFacture.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDeleteFacture.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnDeleteFacture.Location = new System.Drawing.Point(291, 535);
+            this.btnDeleteFacture.Location = new System.Drawing.Point(425, 527);
             this.btnDeleteFacture.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDeleteFacture.Name = "btnDeleteFacture";
-            this.btnDeleteFacture.Size = new System.Drawing.Size(284, 41);
-            this.btnDeleteFacture.TabIndex = 308;
+            this.btnDeleteFacture.Size = new System.Drawing.Size(389, 41);
+            this.btnDeleteFacture.TabIndex = 30;
             this.btnDeleteFacture.UseVisualStyleBackColor = false;
             this.btnDeleteFacture.Visible = false;
             this.btnDeleteFacture.Click += new System.EventHandler(this.btnDeleteFacture_Click);
@@ -569,7 +512,7 @@
             this.dtGMesure.EnableHeadersVisualStyles = false;
             this.dtGMesure.GridColor = System.Drawing.Color.White;
             this.dtGMesure.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtGMesure.Location = new System.Drawing.Point(290, 127);
+            this.dtGMesure.Location = new System.Drawing.Point(424, 118);
             this.dtGMesure.MultiSelect = false;
             this.dtGMesure.Name = "dtGMesure";
             this.dtGMesure.ReadOnly = true;
@@ -590,7 +533,7 @@
             this.dtGMesure.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.dtGMesure.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dtGMesure.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtGMesure.Size = new System.Drawing.Size(234, 201);
+            this.dtGMesure.Size = new System.Drawing.Size(306, 201);
             this.dtGMesure.StandardTab = true;
             this.dtGMesure.TabIndex = 302;
             this.dtGMesure.TabStop = false;
@@ -618,6 +561,7 @@
             // 
             this.btnDeleteMesure.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDeleteMesure.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDeleteMesure.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteMesure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteMesure.ForeColor = System.Drawing.Color.White;
             this.btnDeleteMesure.IconChar = FontAwesome.Sharp.IconChar.Trash;
@@ -626,10 +570,10 @@
             this.btnDeleteMesure.IconSize = 25;
             this.btnDeleteMesure.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnDeleteMesure.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnDeleteMesure.Location = new System.Drawing.Point(530, 211);
+            this.btnDeleteMesure.Location = new System.Drawing.Point(736, 202);
             this.btnDeleteMesure.Name = "btnDeleteMesure";
-            this.btnDeleteMesure.Size = new System.Drawing.Size(44, 33);
-            this.btnDeleteMesure.TabIndex = 296;
+            this.btnDeleteMesure.Size = new System.Drawing.Size(78, 33);
+            this.btnDeleteMesure.TabIndex = 11;
             this.btnDeleteMesure.TabStop = false;
             this.btnDeleteMesure.UseVisualStyleBackColor = false;
             this.btnDeleteMesure.Click += new System.EventHandler(this.btnDeleteMesure_Click);
@@ -638,6 +582,7 @@
             // 
             this.btnAddMesure.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAddMesure.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddMesure.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddMesure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddMesure.ForeColor = System.Drawing.Color.White;
             this.btnAddMesure.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
@@ -646,10 +591,10 @@
             this.btnAddMesure.IconSize = 25;
             this.btnAddMesure.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAddMesure.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAddMesure.Location = new System.Drawing.Point(530, 127);
+            this.btnAddMesure.Location = new System.Drawing.Point(736, 118);
             this.btnAddMesure.Name = "btnAddMesure";
-            this.btnAddMesure.Size = new System.Drawing.Size(44, 33);
-            this.btnAddMesure.TabIndex = 295;
+            this.btnAddMesure.Size = new System.Drawing.Size(78, 33);
+            this.btnAddMesure.TabIndex = 10;
             this.btnAddMesure.UseVisualStyleBackColor = false;
             this.btnAddMesure.Click += new System.EventHandler(this.btnAddMesure_Click);
             // 
@@ -660,10 +605,10 @@
             this.txtCategorie.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCategorie.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCategorie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtCategorie.Location = new System.Drawing.Point(291, 499);
+            this.txtCategorie.Location = new System.Drawing.Point(425, 492);
             this.txtCategorie.MaxLength = 255;
             this.txtCategorie.Name = "txtCategorie";
-            this.txtCategorie.Size = new System.Drawing.Size(284, 28);
+            this.txtCategorie.Size = new System.Drawing.Size(389, 28);
             this.txtCategorie.TabIndex = 301;
             this.txtCategorie.Tag = "la categorie";
             // 
@@ -673,29 +618,12 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label13.Location = new System.Drawing.Point(288, 483);
+            this.label13.Location = new System.Drawing.Point(422, 474);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(57, 13);
             this.label13.TabIndex = 307;
             this.label13.Text = "Categorie";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtPrixTotalMesure
-            // 
-            this.txtPrixTotalMesure.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPrixTotalMesure.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPrixTotalMesure.Enabled = false;
-            this.txtPrixTotalMesure.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrixTotalMesure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtPrixTotalMesure.Location = new System.Drawing.Point(290, 402);
-            this.txtPrixTotalMesure.MaxLength = 255;
-            this.txtPrixTotalMesure.Name = "txtPrixTotalMesure";
-            this.txtPrixTotalMesure.Size = new System.Drawing.Size(284, 28);
-            this.txtPrixTotalMesure.TabIndex = 299;
-            this.txtPrixTotalMesure.Tag = "Prix Total des Mesures";
-            this.txtPrixTotalMesure.Text = "0.00";
-            this.txtPrixTotalMesure.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPrixTotalMesure.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantite_KeyPress);
             // 
             // label11
             // 
@@ -703,7 +631,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label11.Location = new System.Drawing.Point(288, 386);
+            this.label11.Location = new System.Drawing.Point(422, 377);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(123, 13);
             this.label11.TabIndex = 306;
@@ -717,10 +645,10 @@
             this.txtMetrageDeFeuille.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtMetrageDeFeuille.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMetrageDeFeuille.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtMetrageDeFeuille.Location = new System.Drawing.Point(291, 452);
+            this.txtMetrageDeFeuille.Location = new System.Drawing.Point(425, 443);
             this.txtMetrageDeFeuille.MaxLength = 255;
             this.txtMetrageDeFeuille.Name = "txtMetrageDeFeuille";
-            this.txtMetrageDeFeuille.Size = new System.Drawing.Size(284, 28);
+            this.txtMetrageDeFeuille.Size = new System.Drawing.Size(389, 28);
             this.txtMetrageDeFeuille.TabIndex = 300;
             this.txtMetrageDeFeuille.Tag = "Métrage de Feuille";
             // 
@@ -730,7 +658,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label20.Location = new System.Drawing.Point(288, 436);
+            this.label20.Location = new System.Drawing.Point(422, 427);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(102, 13);
             this.label20.TabIndex = 305;
@@ -740,6 +668,7 @@
             // cmbTypeDuMetres
             // 
             this.cmbTypeDuMetres.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbTypeDuMetres.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbTypeDuMetres.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTypeDuMetres.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbTypeDuMetres.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold);
@@ -749,10 +678,10 @@
             "feuille",
             "m2",
             "m3"});
-            this.cmbTypeDuMetres.Location = new System.Drawing.Point(497, 29);
+            this.cmbTypeDuMetres.Location = new System.Drawing.Point(736, 20);
             this.cmbTypeDuMetres.Name = "cmbTypeDuMetres";
             this.cmbTypeDuMetres.Size = new System.Drawing.Size(78, 33);
-            this.cmbTypeDuMetres.TabIndex = 294;
+            this.cmbTypeDuMetres.TabIndex = 5;
             this.cmbTypeDuMetres.SelectedIndexChanged += new System.EventHandler(this.cmbTypeDuMetres_SelectedIndexChanged);
             // 
             // txtPrixMetreMesure
@@ -761,12 +690,12 @@
             this.txtPrixMetreMesure.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrixMetreMesure.Font = new System.Drawing.Font("Nirmala UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrixMetreMesure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtPrixMetreMesure.Location = new System.Drawing.Point(290, 30);
+            this.txtPrixMetreMesure.Location = new System.Drawing.Point(424, 21);
             this.txtPrixMetreMesure.MaxLength = 10;
             this.txtPrixMetreMesure.Name = "txtPrixMetreMesure";
             this.txtPrixMetreMesure.ShortcutsEnabled = false;
-            this.txtPrixMetreMesure.Size = new System.Drawing.Size(201, 31);
-            this.txtPrixMetreMesure.TabIndex = 293;
+            this.txtPrixMetreMesure.Size = new System.Drawing.Size(306, 31);
+            this.txtPrixMetreMesure.TabIndex = 4;
             this.txtPrixMetreMesure.Tag = "Prix au Metre Carré";
             this.txtPrixMetreMesure.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrixMetreMesure.TextChanged += new System.EventHandler(this.txtPrixMetreMesure_TextChanged);
@@ -778,12 +707,12 @@
             this.txtTotalMesure.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTotalMesure.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalMesure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtTotalMesure.Location = new System.Drawing.Point(291, 349);
+            this.txtTotalMesure.Location = new System.Drawing.Point(425, 340);
             this.txtTotalMesure.MaxLength = 255;
             this.txtTotalMesure.Name = "txtTotalMesure";
             this.txtTotalMesure.ShortcutsEnabled = false;
-            this.txtTotalMesure.Size = new System.Drawing.Size(284, 28);
-            this.txtTotalMesure.TabIndex = 298;
+            this.txtTotalMesure.Size = new System.Drawing.Size(389, 28);
+            this.txtTotalMesure.TabIndex = 13;
             this.txtTotalMesure.Tag = "Volume Total de la Mesure";
             this.txtTotalMesure.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTotalMesure.TextChanged += new System.EventHandler(this.txtPrixMetreMesure_TextChanged);
@@ -795,7 +724,7 @@
             this.lblMesure.AutoSize = true;
             this.lblMesure.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMesure.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblMesure.Location = new System.Drawing.Point(288, 333);
+            this.lblMesure.Location = new System.Drawing.Point(422, 324);
             this.lblMesure.Name = "lblMesure";
             this.lblMesure.Size = new System.Drawing.Size(221, 13);
             this.lblMesure.TabIndex = 304;
@@ -808,7 +737,7 @@
             this.lblTypeDuMetres.AutoSize = true;
             this.lblTypeDuMetres.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Bold);
             this.lblTypeDuMetres.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblTypeDuMetres.Location = new System.Drawing.Point(286, 14);
+            this.lblTypeDuMetres.Location = new System.Drawing.Point(421, 5);
             this.lblTypeDuMetres.Name = "lblTypeDuMetres";
             this.lblTypeDuMetres.Size = new System.Drawing.Size(104, 13);
             this.lblTypeDuMetres.TabIndex = 303;
@@ -819,6 +748,7 @@
             // 
             this.btnDeleteSeulPVC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDeleteSeulPVC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDeleteSeulPVC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteSeulPVC.Enabled = false;
             this.btnDeleteSeulPVC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteSeulPVC.ForeColor = System.Drawing.Color.White;
@@ -828,10 +758,10 @@
             this.btnDeleteSeulPVC.IconSize = 25;
             this.btnDeleteSeulPVC.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnDeleteSeulPVC.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnDeleteSeulPVC.Location = new System.Drawing.Point(843, 183);
+            this.btnDeleteSeulPVC.Location = new System.Drawing.Point(1151, 171);
             this.btnDeleteSeulPVC.Name = "btnDeleteSeulPVC";
-            this.btnDeleteSeulPVC.Size = new System.Drawing.Size(60, 33);
-            this.btnDeleteSeulPVC.TabIndex = 313;
+            this.btnDeleteSeulPVC.Size = new System.Drawing.Size(78, 33);
+            this.btnDeleteSeulPVC.TabIndex = 20;
             this.btnDeleteSeulPVC.TabStop = false;
             this.btnDeleteSeulPVC.UseVisualStyleBackColor = false;
             this.btnDeleteSeulPVC.Click += new System.EventHandler(this.btnDeleteSeulPVC_Click);
@@ -840,6 +770,7 @@
             // 
             this.btnAddSeulPVC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAddSeulPVC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddSeulPVC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddSeulPVC.Enabled = false;
             this.btnAddSeulPVC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddSeulPVC.ForeColor = System.Drawing.Color.White;
@@ -849,10 +780,10 @@
             this.btnAddSeulPVC.IconSize = 25;
             this.btnAddSeulPVC.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAddSeulPVC.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAddSeulPVC.Location = new System.Drawing.Point(843, 127);
+            this.btnAddSeulPVC.Location = new System.Drawing.Point(1151, 115);
             this.btnAddSeulPVC.Name = "btnAddSeulPVC";
-            this.btnAddSeulPVC.Size = new System.Drawing.Size(60, 33);
-            this.btnAddSeulPVC.TabIndex = 312;
+            this.btnAddSeulPVC.Size = new System.Drawing.Size(78, 33);
+            this.btnAddSeulPVC.TabIndex = 19;
             this.btnAddSeulPVC.UseVisualStyleBackColor = false;
             this.btnAddSeulPVC.Click += new System.EventHandler(this.btnAddSeulPVC_Click);
             // 
@@ -860,12 +791,13 @@
             // 
             this.chSeulPVC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chSeulPVC.AutoSize = true;
+            this.chSeulPVC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chSeulPVC.Enabled = false;
             this.chSeulPVC.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Bold);
-            this.chSeulPVC.Location = new System.Drawing.Point(597, 37);
+            this.chSeulPVC.Location = new System.Drawing.Point(840, 28);
             this.chSeulPVC.Name = "chSeulPVC";
             this.chSeulPVC.Size = new System.Drawing.Size(72, 17);
-            this.chSeulPVC.TabIndex = 311;
+            this.chSeulPVC.TabIndex = 34;
             this.chSeulPVC.Text = "Seul PVC";
             this.chSeulPVC.UseVisualStyleBackColor = true;
             this.chSeulPVC.CheckedChanged += new System.EventHandler(this.chSeulPVC_CheckedChanged);
@@ -874,6 +806,7 @@
             // 
             this.btnSavePvc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSavePvc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSavePvc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSavePvc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSavePvc.ForeColor = System.Drawing.Color.White;
             this.btnSavePvc.IconChar = FontAwesome.Sharp.IconChar.Save;
@@ -882,10 +815,10 @@
             this.btnSavePvc.IconSize = 25;
             this.btnSavePvc.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSavePvc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnSavePvc.Location = new System.Drawing.Point(843, 295);
+            this.btnSavePvc.Location = new System.Drawing.Point(1151, 283);
             this.btnSavePvc.Name = "btnSavePvc";
-            this.btnSavePvc.Size = new System.Drawing.Size(60, 33);
-            this.btnSavePvc.TabIndex = 315;
+            this.btnSavePvc.Size = new System.Drawing.Size(78, 33);
+            this.btnSavePvc.TabIndex = 22;
             this.btnSavePvc.UseVisualStyleBackColor = false;
             this.btnSavePvc.Click += new System.EventHandler(this.btnAddPvc_Click);
             // 
@@ -921,7 +854,7 @@
             this.dtGridPvc.EnableHeadersVisualStyles = false;
             this.dtGridPvc.GridColor = System.Drawing.Color.White;
             this.dtGridPvc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtGridPvc.Location = new System.Drawing.Point(597, 127);
+            this.dtGridPvc.Location = new System.Drawing.Point(840, 118);
             this.dtGridPvc.MultiSelect = false;
             this.dtGridPvc.Name = "dtGridPvc";
             this.dtGridPvc.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -941,7 +874,7 @@
             this.dtGridPvc.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.dtGridPvc.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dtGridPvc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtGridPvc.Size = new System.Drawing.Size(240, 201);
+            this.dtGridPvc.Size = new System.Drawing.Size(305, 201);
             this.dtGridPvc.TabIndex = 316;
             this.dtGridPvc.TabStop = false;
             // 
@@ -985,7 +918,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Bold);
             this.label17.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label17.Location = new System.Drawing.Point(594, 484);
+            this.label17.Location = new System.Drawing.Point(837, 475);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(95, 13);
             this.label17.TabIndex = 326;
@@ -998,32 +931,16 @@
             this.txtPrixMetreLPVC.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrixMetreLPVC.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrixMetreLPVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtPrixMetreLPVC.Location = new System.Drawing.Point(597, 452);
+            this.txtPrixMetreLPVC.Location = new System.Drawing.Point(840, 443);
             this.txtPrixMetreLPVC.MaxLength = 255;
             this.txtPrixMetreLPVC.Name = "txtPrixMetreLPVC";
             this.txtPrixMetreLPVC.ShortcutsEnabled = false;
-            this.txtPrixMetreLPVC.Size = new System.Drawing.Size(306, 27);
-            this.txtPrixMetreLPVC.TabIndex = 319;
+            this.txtPrixMetreLPVC.Size = new System.Drawing.Size(389, 27);
+            this.txtPrixMetreLPVC.TabIndex = 24;
             this.txtPrixMetreLPVC.Tag = "Prix de metres linear PVC";
             this.txtPrixMetreLPVC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrixMetreLPVC.TextChanged += new System.EventHandler(this.txtPrixMetreLPVC_TextChanged);
             this.txtPrixMetreLPVC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantite_KeyPress);
-            // 
-            // txtPrixTotalPVC
-            // 
-            this.txtPrixTotalPVC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPrixTotalPVC.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPrixTotalPVC.Enabled = false;
-            this.txtPrixTotalPVC.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrixTotalPVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtPrixTotalPVC.Location = new System.Drawing.Point(597, 500);
-            this.txtPrixTotalPVC.MaxLength = 255;
-            this.txtPrixTotalPVC.Name = "txtPrixTotalPVC";
-            this.txtPrixTotalPVC.Size = new System.Drawing.Size(308, 27);
-            this.txtPrixTotalPVC.TabIndex = 320;
-            this.txtPrixTotalPVC.Text = "0.00";
-            this.txtPrixTotalPVC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPrixTotalPVC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantite_KeyPress);
             // 
             // label7
             // 
@@ -1031,7 +948,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Bold);
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(672, 16);
+            this.label7.Location = new System.Drawing.Point(910, 6);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 13);
             this.label7.TabIndex = 322;
@@ -1042,6 +959,7 @@
             // 
             this.btnImportPvc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnImportPvc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnImportPvc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnImportPvc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImportPvc.ForeColor = System.Drawing.Color.White;
             this.btnImportPvc.IconChar = FontAwesome.Sharp.IconChar.FileImport;
@@ -1050,10 +968,10 @@
             this.btnImportPvc.IconSize = 25;
             this.btnImportPvc.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnImportPvc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnImportPvc.Location = new System.Drawing.Point(843, 239);
+            this.btnImportPvc.Location = new System.Drawing.Point(1151, 227);
             this.btnImportPvc.Name = "btnImportPvc";
-            this.btnImportPvc.Size = new System.Drawing.Size(60, 33);
-            this.btnImportPvc.TabIndex = 314;
+            this.btnImportPvc.Size = new System.Drawing.Size(78, 33);
+            this.btnImportPvc.TabIndex = 21;
             this.btnImportPvc.UseVisualStyleBackColor = false;
             this.btnImportPvc.Click += new System.EventHandler(this.btnImportPvc_Click);
             // 
@@ -1063,12 +981,12 @@
             this.txtTaillePVC.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTaillePVC.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTaillePVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtTaillePVC.Location = new System.Drawing.Point(597, 407);
+            this.txtTaillePVC.Location = new System.Drawing.Point(840, 398);
             this.txtTaillePVC.MaxLength = 255;
             this.txtTaillePVC.Name = "txtTaillePVC";
             this.txtTaillePVC.ShortcutsEnabled = false;
-            this.txtTaillePVC.Size = new System.Drawing.Size(306, 27);
-            this.txtTaillePVC.TabIndex = 318;
+            this.txtTaillePVC.Size = new System.Drawing.Size(389, 27);
+            this.txtTaillePVC.TabIndex = 23;
             this.txtTaillePVC.Tag = "taille de canto";
             this.txtTaillePVC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTaillePVC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantite_KeyPress);
@@ -1076,6 +994,7 @@
             // btncmbNbrCanto
             // 
             this.btncmbNbrCanto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btncmbNbrCanto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncmbNbrCanto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncmbNbrCanto.ForeColor = System.Drawing.Color.White;
             this.btncmbNbrCanto.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
@@ -1083,10 +1002,10 @@
             this.btncmbNbrCanto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btncmbNbrCanto.IconSize = 25;
             this.btncmbNbrCanto.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btncmbNbrCanto.Location = new System.Drawing.Point(843, 31);
+            this.btncmbNbrCanto.Location = new System.Drawing.Point(1151, 20);
             this.btncmbNbrCanto.Name = "btncmbNbrCanto";
-            this.btncmbNbrCanto.Size = new System.Drawing.Size(55, 29);
-            this.btncmbNbrCanto.TabIndex = 321;
+            this.btncmbNbrCanto.Size = new System.Drawing.Size(78, 33);
+            this.btncmbNbrCanto.TabIndex = 33;
             this.btncmbNbrCanto.TabStop = false;
             this.btncmbNbrCanto.UseVisualStyleBackColor = false;
             this.btncmbNbrCanto.Click += new System.EventHandler(this.btncmbNbrCanto_Click);
@@ -1097,7 +1016,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Bold);
             this.label16.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label16.Location = new System.Drawing.Point(594, 390);
+            this.label16.Location = new System.Drawing.Point(837, 381);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(83, 13);
             this.label16.TabIndex = 325;
@@ -1107,15 +1026,16 @@
             // cmbTypePvc
             // 
             this.cmbTypePvc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbTypePvc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbTypePvc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTypePvc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbTypePvc.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTypePvc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.cmbTypePvc.FormattingEnabled = true;
-            this.cmbTypePvc.Location = new System.Drawing.Point(675, 30);
+            this.cmbTypePvc.Location = new System.Drawing.Point(913, 21);
             this.cmbTypePvc.Name = "cmbTypePvc";
-            this.cmbTypePvc.Size = new System.Drawing.Size(161, 31);
-            this.cmbTypePvc.TabIndex = 310;
+            this.cmbTypePvc.Size = new System.Drawing.Size(232, 31);
+            this.cmbTypePvc.TabIndex = 14;
             this.cmbTypePvc.SelectedIndexChanged += new System.EventHandler(this.cmbNbrCantoPvc_SelectedIndexChanged);
             // 
             // label14
@@ -1124,30 +1044,12 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Bold);
             this.label14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label14.Location = new System.Drawing.Point(594, 436);
+            this.label14.Location = new System.Drawing.Point(837, 427);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(146, 13);
             this.label14.TabIndex = 324;
             this.label14.Text = "Prix de 1 metres linear PVC";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtTotaleTaillPVC
-            // 
-            this.txtTotaleTaillPVC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTotaleTaillPVC.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTotaleTaillPVC.Enabled = false;
-            this.txtTotaleTaillPVC.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotaleTaillPVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtTotaleTaillPVC.Location = new System.Drawing.Point(597, 357);
-            this.txtTotaleTaillPVC.MaxLength = 255;
-            this.txtTotaleTaillPVC.Name = "txtTotaleTaillPVC";
-            this.txtTotaleTaillPVC.ShortcutsEnabled = false;
-            this.txtTotaleTaillPVC.Size = new System.Drawing.Size(306, 27);
-            this.txtTotaleTaillPVC.TabIndex = 317;
-            this.txtTotaleTaillPVC.Tag = "Taille Totale de PVC";
-            this.txtTotaleTaillPVC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTotaleTaillPVC.TextChanged += new System.EventHandler(this.txtPrixMetreLPVC_TextChanged);
-            this.txtTotaleTaillPVC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantite_KeyPress);
             // 
             // label12
             // 
@@ -1155,7 +1057,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Bold);
             this.label12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label12.Location = new System.Drawing.Point(594, 340);
+            this.label12.Location = new System.Drawing.Point(837, 331);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(106, 13);
             this.label12.TabIndex = 323;
@@ -1165,6 +1067,7 @@
             // btnAddFacture
             // 
             this.btnAddFacture.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddFacture.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddFacture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddFacture.ForeColor = System.Drawing.Color.White;
             this.btnAddFacture.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
@@ -1173,16 +1076,17 @@
             this.btnAddFacture.IconSize = 30;
             this.btnAddFacture.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAddFacture.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAddFacture.Location = new System.Drawing.Point(597, 535);
+            this.btnAddFacture.Location = new System.Drawing.Point(840, 527);
             this.btnAddFacture.Name = "btnAddFacture";
-            this.btnAddFacture.Size = new System.Drawing.Size(144, 41);
-            this.btnAddFacture.TabIndex = 328;
+            this.btnAddFacture.Size = new System.Drawing.Size(186, 41);
+            this.btnAddFacture.TabIndex = 26;
             this.btnAddFacture.UseVisualStyleBackColor = false;
             this.btnAddFacture.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClear
             // 
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.ForeColor = System.Drawing.Color.White;
             this.btnClear.IconChar = FontAwesome.Sharp.IconChar.Backspace;
@@ -1191,10 +1095,10 @@
             this.btnClear.IconSize = 30;
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnClear.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnClear.Location = new System.Drawing.Point(761, 535);
+            this.btnClear.Location = new System.Drawing.Point(1043, 527);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(144, 41);
-            this.btnClear.TabIndex = 329;
+            this.btnClear.Size = new System.Drawing.Size(186, 41);
+            this.btnClear.TabIndex = 27;
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -1204,7 +1108,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Bold);
             this.label22.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label22.Location = new System.Drawing.Point(593, 74);
+            this.label22.Location = new System.Drawing.Point(835, 65);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(52, 13);
             this.label22.TabIndex = 336;
@@ -1217,7 +1121,7 @@
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Bold);
             this.label24.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label24.Location = new System.Drawing.Point(783, 74);
+            this.label24.Location = new System.Drawing.Point(1148, 64);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(66, 13);
             this.label24.TabIndex = 337;
@@ -1231,12 +1135,12 @@
             this.txtQtePVC.Enabled = false;
             this.txtQtePVC.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQtePVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtQtePVC.Location = new System.Drawing.Point(597, 90);
+            this.txtQtePVC.Location = new System.Drawing.Point(839, 81);
             this.txtQtePVC.MaxLength = 10;
             this.txtQtePVC.Name = "txtQtePVC";
             this.txtQtePVC.ShortcutsEnabled = false;
-            this.txtQtePVC.Size = new System.Drawing.Size(48, 28);
-            this.txtQtePVC.TabIndex = 330;
+            this.txtQtePVC.Size = new System.Drawing.Size(91, 28);
+            this.txtQtePVC.TabIndex = 15;
             this.txtQtePVC.Tag = "Quantite PVC";
             this.txtQtePVC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtQtePVC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantite_KeyPress);
@@ -1248,12 +1152,12 @@
             this.txtLargPVC.Enabled = false;
             this.txtLargPVC.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLargPVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtLargPVC.Location = new System.Drawing.Point(660, 90);
+            this.txtLargPVC.Location = new System.Drawing.Point(946, 81);
             this.txtLargPVC.MaxLength = 10;
             this.txtLargPVC.Name = "txtLargPVC";
             this.txtLargPVC.ShortcutsEnabled = false;
-            this.txtLargPVC.Size = new System.Drawing.Size(48, 28);
-            this.txtLargPVC.TabIndex = 331;
+            this.txtLargPVC.Size = new System.Drawing.Size(91, 28);
+            this.txtLargPVC.TabIndex = 16;
             this.txtLargPVC.Tag = "Largeur PVC";
             this.txtLargPVC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtLargPVC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantite_KeyPress);
@@ -1265,12 +1169,12 @@
             this.txtLongPVC.Enabled = false;
             this.txtLongPVC.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLongPVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtLongPVC.Location = new System.Drawing.Point(723, 90);
+            this.txtLongPVC.Location = new System.Drawing.Point(1053, 81);
             this.txtLongPVC.MaxLength = 10;
             this.txtLongPVC.Name = "txtLongPVC";
             this.txtLongPVC.ShortcutsEnabled = false;
-            this.txtLongPVC.Size = new System.Drawing.Size(48, 28);
-            this.txtLongPVC.TabIndex = 332;
+            this.txtLongPVC.Size = new System.Drawing.Size(91, 28);
+            this.txtLongPVC.TabIndex = 17;
             this.txtLongPVC.Tag = "Longueur PVC";
             this.txtLongPVC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtLongPVC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantite_KeyPress);
@@ -1281,7 +1185,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Bold);
             this.label23.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label23.Location = new System.Drawing.Point(720, 74);
+            this.label23.Location = new System.Drawing.Point(1050, 65);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(58, 13);
             this.label23.TabIndex = 335;
@@ -1294,7 +1198,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Bold);
             this.label21.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label21.Location = new System.Drawing.Point(657, 74);
+            this.label21.Location = new System.Drawing.Point(943, 64);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(47, 13);
             this.label21.TabIndex = 334;
@@ -1304,6 +1208,7 @@
             // cmbOrtnPVC
             // 
             this.cmbOrtnPVC.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbOrtnPVC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbOrtnPVC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbOrtnPVC.Enabled = false;
             this.cmbOrtnPVC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1317,10 +1222,10 @@
             "h*2",
             "v*2",
             "4"});
-            this.cmbOrtnPVC.Location = new System.Drawing.Point(786, 90);
+            this.cmbOrtnPVC.Location = new System.Drawing.Point(1151, 80);
             this.cmbOrtnPVC.Name = "cmbOrtnPVC";
-            this.cmbOrtnPVC.Size = new System.Drawing.Size(50, 29);
-            this.cmbOrtnPVC.TabIndex = 333;
+            this.cmbOrtnPVC.Size = new System.Drawing.Size(78, 29);
+            this.cmbOrtnPVC.TabIndex = 18;
             this.cmbOrtnPVC.Tag = "Orientation PVC";
             this.cmbOrtnPVC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantite_KeyPress);
             // 
@@ -1330,7 +1235,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label10.Location = new System.Drawing.Point(287, 74);
+            this.label10.Location = new System.Drawing.Point(421, 64);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(52, 13);
             this.label10.TabIndex = 344;
@@ -1343,12 +1248,12 @@
             this.txtQuantite.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtQuantite.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuantite.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtQuantite.Location = new System.Drawing.Point(290, 90);
+            this.txtQuantite.Location = new System.Drawing.Point(424, 81);
             this.txtQuantite.MaxLength = 10;
             this.txtQuantite.Name = "txtQuantite";
             this.txtQuantite.ShortcutsEnabled = false;
-            this.txtQuantite.Size = new System.Drawing.Size(57, 28);
-            this.txtQuantite.TabIndex = 338;
+            this.txtQuantite.Size = new System.Drawing.Size(91, 28);
+            this.txtQuantite.TabIndex = 6;
             this.txtQuantite.Tag = "Quantite";
             this.txtQuantite.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtQuantite.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantite_KeyPress);
@@ -1359,12 +1264,12 @@
             this.txtLargeur.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLargeur.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLargeur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtLargeur.Location = new System.Drawing.Point(365, 90);
+            this.txtLargeur.Location = new System.Drawing.Point(530, 81);
             this.txtLargeur.MaxLength = 10;
             this.txtLargeur.Name = "txtLargeur";
             this.txtLargeur.ShortcutsEnabled = false;
-            this.txtLargeur.Size = new System.Drawing.Size(57, 28);
-            this.txtLargeur.TabIndex = 339;
+            this.txtLargeur.Size = new System.Drawing.Size(91, 28);
+            this.txtLargeur.TabIndex = 7;
             this.txtLargeur.Tag = "largeur";
             this.txtLargeur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtLargeur.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantite_KeyPress);
@@ -1375,7 +1280,7 @@
             this.lblEpaisseur.AutoSize = true;
             this.lblEpaisseur.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEpaisseur.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblEpaisseur.Location = new System.Drawing.Point(512, 74);
+            this.lblEpaisseur.Location = new System.Drawing.Point(733, 65);
             this.lblEpaisseur.Name = "lblEpaisseur";
             this.lblEpaisseur.Size = new System.Drawing.Size(56, 13);
             this.lblEpaisseur.TabIndex = 345;
@@ -1389,7 +1294,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(362, 74);
+            this.label8.Location = new System.Drawing.Point(527, 65);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(47, 13);
             this.label8.TabIndex = 342;
@@ -1402,12 +1307,12 @@
             this.txtEpaisseur.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEpaisseur.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEpaisseur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtEpaisseur.Location = new System.Drawing.Point(515, 90);
+            this.txtEpaisseur.Location = new System.Drawing.Point(736, 81);
             this.txtEpaisseur.MaxLength = 10;
             this.txtEpaisseur.Name = "txtEpaisseur";
             this.txtEpaisseur.ShortcutsEnabled = false;
-            this.txtEpaisseur.Size = new System.Drawing.Size(60, 28);
-            this.txtEpaisseur.TabIndex = 341;
+            this.txtEpaisseur.Size = new System.Drawing.Size(78, 28);
+            this.txtEpaisseur.TabIndex = 9;
             this.txtEpaisseur.Tag = "epaisseur";
             this.txtEpaisseur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtEpaisseur.Visible = false;
@@ -1419,12 +1324,12 @@
             this.txtLongueur.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLongueur.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLongueur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtLongueur.Location = new System.Drawing.Point(440, 90);
+            this.txtLongueur.Location = new System.Drawing.Point(639, 81);
             this.txtLongueur.MaxLength = 10;
             this.txtLongueur.Name = "txtLongueur";
             this.txtLongueur.ShortcutsEnabled = false;
-            this.txtLongueur.Size = new System.Drawing.Size(57, 28);
-            this.txtLongueur.TabIndex = 340;
+            this.txtLongueur.Size = new System.Drawing.Size(91, 28);
+            this.txtLongueur.TabIndex = 8;
             this.txtLongueur.Tag = "longueur";
             this.txtLongueur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtLongueur.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantite_KeyPress);
@@ -1435,19 +1340,114 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label9.Location = new System.Drawing.Point(437, 74);
+            this.label9.Location = new System.Drawing.Point(636, 64);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 13);
             this.label9.TabIndex = 343;
             this.label9.Text = "Longueur";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // txtTypeDeBois
+            // 
+            this.txtTypeDeBois.BackColor = System.Drawing.Color.White;
+            this.txtTypeDeBois.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtTypeDeBois.Location = new System.Drawing.Point(12, 492);
+            this.txtTypeDeBois.Name = "txtTypeDeBois";
+            this.txtTypeDeBois.Size = new System.Drawing.Size(389, 28);
+            this.txtTypeDeBois.TabIndex = 346;
+            this.txtTypeDeBois.Tag = "Type Du Bois";
+            this.txtTypeDeBois.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtPrixTotalClient
+            // 
+            this.txtPrixTotalClient.BackColor = System.Drawing.Color.White;
+            this.txtPrixTotalClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtPrixTotalClient.Location = new System.Drawing.Point(12, 601);
+            this.txtPrixTotalClient.Name = "txtPrixTotalClient";
+            this.txtPrixTotalClient.Size = new System.Drawing.Size(389, 28);
+            this.txtPrixTotalClient.TabIndex = 347;
+            this.txtPrixTotalClient.Tag = "Montant Total";
+            this.txtPrixTotalClient.Text = "0.00";
+            this.txtPrixTotalClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtPrixAvanceClient
+            // 
+            this.txtPrixAvanceClient.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPrixAvanceClient.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPrixAvanceClient.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrixAvanceClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtPrixAvanceClient.Location = new System.Drawing.Point(442, 601);
+            this.txtPrixAvanceClient.MaxLength = 255;
+            this.txtPrixAvanceClient.Name = "txtPrixAvanceClient";
+            this.txtPrixAvanceClient.ShortcutsEnabled = false;
+            this.txtPrixAvanceClient.Size = new System.Drawing.Size(372, 28);
+            this.txtPrixAvanceClient.TabIndex = 273;
+            this.txtPrixAvanceClient.Tag = "Montant de l\'Avance";
+            this.txtPrixAvanceClient.Text = "0.00";
+            this.txtPrixAvanceClient.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPrixAvanceClient.TextChanged += new System.EventHandler(this.txtPrixRestClient_TextChanged);
+            this.txtPrixAvanceClient.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantite_KeyPress);
+            // 
+            // txtPrixRestClient
+            // 
+            this.txtPrixRestClient.BackColor = System.Drawing.Color.White;
+            this.txtPrixRestClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtPrixRestClient.Location = new System.Drawing.Point(840, 600);
+            this.txtPrixRestClient.Name = "txtPrixRestClient";
+            this.txtPrixRestClient.Size = new System.Drawing.Size(389, 28);
+            this.txtPrixRestClient.TabIndex = 348;
+            this.txtPrixRestClient.Tag = "Montant Restant";
+            this.txtPrixRestClient.Text = "0.00";
+            this.txtPrixRestClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtPrixTotalMesure
+            // 
+            this.txtPrixTotalMesure.BackColor = System.Drawing.Color.White;
+            this.txtPrixTotalMesure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtPrixTotalMesure.Location = new System.Drawing.Point(425, 393);
+            this.txtPrixTotalMesure.Name = "txtPrixTotalMesure";
+            this.txtPrixTotalMesure.Size = new System.Drawing.Size(389, 28);
+            this.txtPrixTotalMesure.TabIndex = 350;
+            this.txtPrixTotalMesure.Tag = "Prix Total des Mesures";
+            this.txtPrixTotalMesure.Text = "0.00";
+            this.txtPrixTotalMesure.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtTotaleTaillPVC
+            // 
+            this.txtTotaleTaillPVC.BackColor = System.Drawing.Color.White;
+            this.txtTotaleTaillPVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtTotaleTaillPVC.Location = new System.Drawing.Point(840, 347);
+            this.txtTotaleTaillPVC.Name = "txtTotaleTaillPVC";
+            this.txtTotaleTaillPVC.Size = new System.Drawing.Size(389, 28);
+            this.txtTotaleTaillPVC.TabIndex = 351;
+            this.txtTotaleTaillPVC.Tag = "Taille Totale de PVC";
+            this.txtTotaleTaillPVC.Text = "0.00";
+            this.txtTotaleTaillPVC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtTotaleTaillPVC.TextChanged += new System.EventHandler(this.txtPrixMetreLPVC_TextChanged);
+            // 
+            // txtPrixTotalPVC
+            // 
+            this.txtPrixTotalPVC.BackColor = System.Drawing.Color.White;
+            this.txtPrixTotalPVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtPrixTotalPVC.Location = new System.Drawing.Point(840, 492);
+            this.txtPrixTotalPVC.Name = "txtPrixTotalPVC";
+            this.txtPrixTotalPVC.Size = new System.Drawing.Size(389, 28);
+            this.txtPrixTotalPVC.TabIndex = 349;
+            this.txtPrixTotalPVC.Tag = "Prix Total du PVC";
+            this.txtPrixTotalPVC.Text = "0.00";
+            this.txtPrixTotalPVC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormAjoutFactures
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(914, 688);
+            this.ClientSize = new System.Drawing.Size(1241, 688);
+            this.Controls.Add(this.txtTotaleTaillPVC);
+            this.Controls.Add(this.txtPrixTotalMesure);
+            this.Controls.Add(this.txtPrixTotalPVC);
+            this.Controls.Add(this.txtPrixRestClient);
+            this.Controls.Add(this.txtPrixTotalClient);
+            this.Controls.Add(this.txtTypeDeBois);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtQuantite);
             this.Controls.Add(this.txtLargeur);
@@ -1473,7 +1473,6 @@
             this.Controls.Add(this.dtGridPvc);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.txtPrixMetreLPVC);
-            this.Controls.Add(this.txtPrixTotalPVC);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnImportPvc);
             this.Controls.Add(this.txtTaillePVC);
@@ -1481,7 +1480,6 @@
             this.Controls.Add(this.label16);
             this.Controls.Add(this.cmbTypePvc);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.txtTotaleTaillPVC);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btnExportCsv);
             this.Controls.Add(this.btnDeleteFacture);
@@ -1490,7 +1488,6 @@
             this.Controls.Add(this.btnAddMesure);
             this.Controls.Add(this.txtCategorie);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.txtPrixTotalMesure);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtMetrageDeFeuille);
             this.Controls.Add(this.label20);
@@ -1501,7 +1498,6 @@
             this.Controls.Add(this.lblTypeDuMetres);
             this.Controls.Add(this.btnPrintFacture);
             this.Controls.Add(this.lblNumeroFacture);
-            this.Controls.Add(this.txtTypeDeBois);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtSearch);
@@ -1515,12 +1511,10 @@
             this.Controls.Add(this.cmbTypeDeBois);
             this.Controls.Add(this.lblFactureNumero);
             this.Controls.Add(this.cmbNumeroFacture);
-            this.Controls.Add(this.txtPrixRestClient);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.txtPrixAvanceClient);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.checkAvance);
-            this.Controls.Add(this.txtPrixTotalClient);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.btnSaveFacture);
             this.Controls.Add(this.btnBack);
@@ -1532,6 +1526,7 @@
             this.MaximizeBox = false;
             this.Name = "FormAjoutFactures";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Factures Du Client";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormAjoutFactures_FormClosing);
             this.Load += new System.EventHandler(this.AjouterFacture_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtGMesure)).EndInit();
@@ -1545,16 +1540,12 @@
 
         private FontAwesome.Sharp.IconButton btnSaveFacture;
         private FontAwesome.Sharp.IconButton btnBack;
-        private System.Windows.Forms.TextBox txtPrixRestClient;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox txtPrixAvanceClient;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox checkAvance;
-        private System.Windows.Forms.TextBox txtPrixTotalClient;
         private System.Windows.Forms.Label label18;
         private FontAwesome.Sharp.IconButton btnPrintFacture;
         private System.Windows.Forms.Label lblNumeroFacture;
-        private System.Windows.Forms.TextBox txtTypeDeBois;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSearch;
@@ -1578,7 +1569,6 @@
         private FontAwesome.Sharp.IconButton btnAddMesure;
         private System.Windows.Forms.TextBox txtCategorie;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtPrixTotalMesure;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtMetrageDeFeuille;
         private System.Windows.Forms.Label label20;
@@ -1598,7 +1588,6 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn cmbOrientationPvc;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtPrixMetreLPVC;
-        private System.Windows.Forms.TextBox txtPrixTotalPVC;
         private System.Windows.Forms.Label label7;
         private FontAwesome.Sharp.IconButton btnImportPvc;
         private System.Windows.Forms.TextBox txtTaillePVC;
@@ -1606,7 +1595,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox cmbTypePvc;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtTotaleTaillPVC;
         private System.Windows.Forms.Label label12;
         private FontAwesome.Sharp.IconButton btnAddFacture;
         private FontAwesome.Sharp.IconButton btnClear;
@@ -1626,5 +1614,12 @@
         private System.Windows.Forms.TextBox txtEpaisseur;
         private System.Windows.Forms.TextBox txtLongueur;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label txtTypeDeBois;
+        private System.Windows.Forms.Label txtPrixTotalClient;
+        private System.Windows.Forms.TextBox txtPrixAvanceClient;
+        private System.Windows.Forms.Label txtPrixRestClient;
+        private System.Windows.Forms.Label txtPrixTotalMesure;
+        private System.Windows.Forms.Label txtTotaleTaillPVC;
+        private System.Windows.Forms.Label txtPrixTotalPVC;
     }
 }

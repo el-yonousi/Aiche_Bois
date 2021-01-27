@@ -21,7 +21,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_0B193FBF9C2545879421B1C0EC6264F1"
+        "MsmKey" = "8:_1177AA9848834861A91A618F83848CFF"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -33,19 +33,19 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_45688E2850204C069C1B8F63E4B44A8B"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4C0C6ED9A9764728AA25B09F3857C7F5"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_61A3EECFC27441129434F497C1F0ABE1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_61E55FA3E797492C87CED522C1515567"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_69DA6FB89EBC4E3F9C22D33B31043D04"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -75,20 +75,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_78BA0111AD4E4C169476D9BC425174D2"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_84C0D3CBAE6994E346049E468721A940"
         "OwnerKey" = "8:_93EAC8BC2F8470C66D1842D83854BEE6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_8B52CB2E11874A18BA62B5DCE2E7DC39"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -105,19 +93,31 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_BA42DA5D062043418A60CB639D235533"
+        "MsmKey" = "8:_BF6E231313764E29AC0F9E65E9A40172"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_ED8E22B8FFE94BC08FDDCA737F6FF30B"
+        "MsmKey" = "8:_CE5D160AA92F45D6BBDDC646AF038E1B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_F44ACE5E8FE440099BD6DBA5578BCE90"
+        "MsmKey" = "8:_DA5871103EC5498CB9FCAB5251F54C68"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DE1E3550A7CE4654A7308A30E8573352"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F13E71CC7B544604990E7EE857C71B53"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -301,10 +301,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0B193FBF9C2545879421B1C0EC6264F1"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1177AA9848834861A91A618F83848CFF"
             {
-            "SourcePath" = "8:..\\..\\..\\..\\..\\Documents\\factures\\aicheBois.accdb"
-            "TargetName" = "8:aicheBois.accdb"
+            "SourcePath" = "8:..\\Aiche Bois\\bin\\Debug\\CrystalReportClient.cs"
+            "TargetName" = "8:CrystalReportClient.cs"
             "Tag" = "8:"
             "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
             "Condition" = "8:"
@@ -341,10 +341,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_45688E2850204C069C1B8F63E4B44A8B"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_61E55FA3E797492C87CED522C1515567"
             {
-            "SourcePath" = "8:..\\..\\..\\..\\..\\Documents\\factures\\Type.accdb"
-            "TargetName" = "8:Type.accdb"
+            "SourcePath" = "8:..\\Aiche Bois\\bin\\Debug\\CrystalReportMesure.rpt"
+            "TargetName" = "8:CrystalReportMesure.rpt"
             "Tag" = "8:"
             "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
             "Condition" = "8:"
@@ -361,9 +361,9 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4C0C6ED9A9764728AA25B09F3857C7F5"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_69DA6FB89EBC4E3F9C22D33B31043D04"
             {
-            "SourcePath" = "8:..\\Aiche Bois\\CrystalReportClient.rpt"
+            "SourcePath" = "8:..\\Aiche Bois\\bin\\Debug\\CrystalReportClient.rpt"
             "TargetName" = "8:CrystalReportClient.rpt"
             "Tag" = "8:"
             "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
@@ -505,26 +505,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_78BA0111AD4E4C169476D9BC425174D2"
-            {
-            "SourcePath" = "8:..\\Aiche Bois\\CrystalReportMesure.rpt"
-            "TargetName" = "8:CrystalReportMesure.rpt"
-            "Tag" = "8:"
-            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_84C0D3CBAE6994E346049E468721A940"
             {
             "AssemblyRegister" = "3:1"
@@ -554,26 +534,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8B52CB2E11874A18BA62B5DCE2E7DC39"
-            {
-            "SourcePath" = "8:..\\Aiche Bois\\CrystalReportMesure.cs"
-            "TargetName" = "8:CrystalReportMesure.cs"
-            "Tag" = "8:"
-            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_93EAC8BC2F8470C66D1842D83854BEE6"
@@ -627,29 +587,9 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BA42DA5D062043418A60CB639D235533"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BF6E231313764E29AC0F9E65E9A40172"
             {
-            "SourcePath" = "8:..\\Aiche Bois\\CrystalReportClient.cs"
-            "TargetName" = "8:CrystalReportClient.cs"
-            "Tag" = "8:"
-            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_ED8E22B8FFE94BC08FDDCA737F6FF30B"
-            {
-            "SourcePath" = "8:..\\Aiche Bois\\CrystalReportPvc.cs"
+            "SourcePath" = "8:..\\Aiche Bois\\bin\\Debug\\CrystalReportPvc.cs"
             "TargetName" = "8:CrystalReportPvc.cs"
             "Tag" = "8:"
             "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
@@ -667,9 +607,69 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F44ACE5E8FE440099BD6DBA5578BCE90"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CE5D160AA92F45D6BBDDC646AF038E1B"
             {
-            "SourcePath" = "8:..\\Aiche Bois\\CrystalReportPvc.rpt"
+            "SourcePath" = "8:..\\Aiche Bois\\aicheBois.accdb"
+            "TargetName" = "8:aicheBois.accdb"
+            "Tag" = "8:"
+            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DA5871103EC5498CB9FCAB5251F54C68"
+            {
+            "SourcePath" = "8:..\\Aiche Bois\\type.accdb"
+            "TargetName" = "8:type.accdb"
+            "Tag" = "8:"
+            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DE1E3550A7CE4654A7308A30E8573352"
+            {
+            "SourcePath" = "8:..\\Aiche Bois\\bin\\Debug\\CrystalReportMesure.cs"
+            "TargetName" = "8:CrystalReportMesure.cs"
+            "Tag" = "8:"
+            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F13E71CC7B544604990E7EE857C71B53"
+            {
+            "SourcePath" = "8:..\\Aiche Bois\\bin\\Debug\\CrystalReportPvc.rpt"
             "TargetName" = "8:CrystalReportPvc.rpt"
             "Tag" = "8:"
             "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
@@ -785,15 +785,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Aiche Bois"
-        "ProductCode" = "8:{48826E71-AEA4-4960-9E88-65E87A241660}"
-        "PackageCode" = "8:{2FD10BE3-478C-4205-B384-474E0893D85A}"
+        "ProductCode" = "8:{DF78426A-2922-4613-86AC-14925FEBDA14}"
+        "PackageCode" = "8:{0F9691E3-C82A-4B63-A3F8-4ABC19DB1298}"
         "UpgradeCode" = "8:{EA318BA0-5A86-4AA4-906B-70486C2C22D5}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.2.1"
+        "ProductVersion" = "8:1.2.2"
         "Manufacturer" = "8:EL YONOUSI"
         "ARPHELPTELEPHONE" = "8:+212603476173"
         "ARPHELPLINK" = "8:https://wa.me/212603476173"
@@ -802,7 +802,7 @@
         "ARPCONTACT" = "8:Aiche Bois"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:Aiche Bois Company"
-        "ARPURLINFOABOUT" = "8:"
+        "ARPURLINFOABOUT" = "8:https://el-yonousi.github.io/about-me/"
         "ARPPRODUCTICON" = "8:_F7724BD62C494C9A9838902BDC0B3B39"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"

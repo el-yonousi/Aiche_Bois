@@ -52,6 +52,23 @@ namespace Aiche_Bois
 
         private void FormShowFacture_Load(object sender, EventArgs e)
         {
+            if (icon == FontAwesome.Sharp.IconChar.Ban)
+            {
+                iconCharMessage.IconColor = System.Drawing.Color.FromArgb(217, 15, 70);
+            }
+            else if (icon == FontAwesome.Sharp.IconChar.ExclamationTriangle)
+            {
+                iconCharMessage.IconColor = System.Drawing.Color.FromArgb(240, 205, 01);
+            }
+            else if (icon == FontAwesome.Sharp.IconChar.CheckCircle)
+            {
+                iconCharMessage.IconColor = System.Drawing.Color.FromArgb(11, 244, 132);
+            }
+            else
+            {
+                iconCharMessage.IconColor = System.Drawing.Color.White;
+            }
+
             lblShowMessage.Text = Message;
             this.Text = Title;
             btnOK.Visible = OK;

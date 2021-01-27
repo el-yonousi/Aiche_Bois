@@ -52,19 +52,18 @@ namespace Aiche_Bois
         /// </summary>
         private FormMessage message;
 
+        /// <summary>
+        /// verify les donnée si enregistre ou non
+        /// </summary>
+        bool verifyForm = false;
+
         public FormAjoutFactures(String idClient, String btnClick)
         {
             /*
              * difiner la connnection vers la base de donnee
              */
-            String path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/factures";
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
-
-            connectionClient.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + path + "/aicheBois.accdb";
-            connectionType.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = Type.accdb";
+            connectionClient.ConnectionString = Program.Path;
+            connectionType.ConnectionString = Program.PathType;
 
             /*
              * prendre id a partir de la form presedent
@@ -81,7 +80,7 @@ namespace Aiche_Bois
         private void ViderTxtBox()
         {
             /*vider les objet*/
-            txtTypeDeBois.Clear();
+            txtTypeDeBois.Text = "";
             txtQuantite.Clear();
             txtLargeur.Clear();
             txtLongueur.Clear();
@@ -93,7 +92,7 @@ namespace Aiche_Bois
             cmbTypeDuMetres.SelectedIndex = 1;
             txtTaillePVC.Clear();
             txtPrixMetreLPVC.Clear();
-            txtTotaleTaillPVC.Clear();
+            txtTotaleTaillPVC.Text = "";
             txtPrixTotalPVC.Text = "0.00";
             mesures.Clear();
             pvcs.Clear();
@@ -158,7 +157,9 @@ namespace Aiche_Bois
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erreur:: " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.Ban);
+                message.ShowDialog();
+                connectionType.Close();
             }
         }
 
@@ -186,7 +187,9 @@ namespace Aiche_Bois
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erreur:: " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.Ban);
+                message.ShowDialog();
+                connectionType.Close();
             }
         }
 
@@ -216,7 +219,9 @@ namespace Aiche_Bois
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erreur:: " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.Ban);
+                message.ShowDialog();
+                connectionType.Close();
             }
             return vs;
         }
@@ -275,22 +280,8 @@ namespace Aiche_Bois
                     txtPrixAvanceClient.TextChanged -= new EventHandler(this.txtPrixRestClient_TextChanged);
                     txtPrixTotalClient.TextChanged -= new EventHandler(this.txtPrixRestClient_TextChanged);
 
+                    // opne connection
                     connectionClient.Open();
-
-                    //client
-                    var commandClient = new OleDbCommand
-                    {
-                        Connection = connectionClient,
-                        CommandText = "SELECT * FROM QUERY WHERE IDCLIENT = " + long.Parse(idClient)
-                    };
-                    OleDbDataReader readerClient = commandClient.ExecuteReader();
-                    while (readerClient.Read())
-                    {
-                        txtNomClient.Text = readerClient["nomClient"].ToString();
-                        txtPrixTotalClient.Text = readerClient["total"].ToString();
-                        txtPrixAvanceClient.Text = readerClient["prixTotalAvance"].ToString();
-                        txtPrixRestClient.Text = readerClient["rest"].ToString();
-                    }
 
                     //facture
                     var commandFacture = new OleDbCommand
@@ -308,7 +299,9 @@ namespace Aiche_Bois
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.Ban);
+                    message.ShowDialog();
+                    connectionClient.Close();
                 }
 
                 //desactiver le champ de pre avance
@@ -334,6 +327,29 @@ namespace Aiche_Bois
             try
             {
                 connectionClient.Open();
+
+                //client
+                var commandClient = new OleDbCommand
+                {
+                    Connection = connectionClient,
+                    CommandText = 
+                    "SELECT count(idFacture) AS nbFacture, " +
+                    "(sum(f.prixtotalmesure) + sum(prixtotalpvc)) AS total, " +
+                    "IIF((sum(f.prixtotalmesure) + sum(prixtotalpvc)) = prixTotalAvance, 0, (sum(f.prixtotalmesure) + sum(prixtotalpvc)) - prixTotalAvance) AS rest, " +
+                    "IIF(ROUND((sum(f.prixtotalmesure) + sum(prixtotalpvc)), 2) = ROUND((prixTotalAvance), 2), 'true', 'false') AS cavance, " +
+                    "c.nomClient, dateClient, c.prixTotalAvance, c.idClient " +
+                    "FROM client AS c INNER JOIN facture AS f ON f.idClient = c.idClient " +
+                    "WHERE c.idClient = " + long.Parse(idClient) + 
+                    " GROUP BY nomClient, dateClient, prixTotalAvance, c.idClient"
+                };
+                OleDbDataReader readerClient = commandClient.ExecuteReader();
+                while (readerClient.Read())
+                {
+                    txtNomClient.Text = readerClient["nomClient"].ToString();
+                    txtPrixTotalClient.Text = readerClient["total"].ToString();
+                    txtPrixAvanceClient.Text = readerClient["prixTotalAvance"].ToString();
+                    txtPrixRestClient.Text = readerClient["rest"].ToString();
+                }
 
                 String pvc = "";
 
@@ -444,6 +460,7 @@ namespace Aiche_Bois
             {
                 message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.ExclamationCircle);
                 message.ShowDialog();
+                connectionClient.Close();
             }
         }
 
@@ -469,7 +486,7 @@ namespace Aiche_Bois
             /*remplirLstTypeBois();*/
             if (lstTypeBois.Items.Count <= 0)
             {
-                txtTypeDeBois.Clear();
+                txtTypeDeBois.Text = "";
                 return;
             }
             lstTypeBois.SelectedIndex = 0;
@@ -485,7 +502,7 @@ namespace Aiche_Bois
         {
             if (lstTypeBois.Items.Count <= 0 || lstTypeBois.SelectedIndex == -1)
             {
-                txtTypeDeBois.Clear();
+                txtTypeDeBois.Text = "";
                 return;
             }
             txtTypeDeBois.Text = lstTypeBois.SelectedItem.ToString();
@@ -575,8 +592,21 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void BtnBack_Click(object sender, EventArgs e)
         {
-            btnDeterminClick = "";
-            Close();
+            if (verifyForm)
+            {
+                message = new FormMessage("Les données n'ont pas été enregistrées.\nCliquez sur le button d'enregestrer les factures\nVoulez-vous vraiment َQuitter?", "Question", true, true, FontAwesome.Sharp.IconChar.Question);
+                if (DialogResult.Yes == message.ShowDialog())
+                {
+                    btnDeterminClick = "";
+                    Close();
+                    return;
+                }
+            }
+            else
+            {
+                btnDeterminClick = "";
+                Close();
+            }
         }
 
         /// <summary>
@@ -742,6 +772,8 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void cmbTypeDuMetres_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txtTotalMesure.Enabled = false;
+
             if (cmbTypeDuMetres.SelectedIndex == 0)
             {
                 if (btnDeterminClick != "edit")
@@ -757,7 +789,6 @@ namespace Aiche_Bois
                 {
                     dtGMesure.ColumnCount -= 1;
                 }
-                txtQuantite.Focus();
                 txtTotalMesure.Enabled = true;
             }
             else if (cmbTypeDuMetres.SelectedIndex == 1)
@@ -776,8 +807,6 @@ namespace Aiche_Bois
                 {
                     dtGMesure.ColumnCount -= 1;
                 }
-                txtQuantite.Focus();
-                txtTotalMesure.Enabled = false;
             }
             else
             {
@@ -798,9 +827,8 @@ namespace Aiche_Bois
                     dtGMesure.ColumnCount += 1;
                     dtGMesure.Columns[3].HeaderText = "Epssr";
                 }
-                txtQuantite.Focus();
-                txtTotalMesure.Enabled = false;
             }
+            txtQuantite.Focus();
         }
 
         /// <summary>
@@ -954,11 +982,28 @@ namespace Aiche_Bois
             {
                 if (cmbNumeroFacture.Items.Count <= 0)
                 {
-                    message = new FormMessage("le client a aucun facture", "Erreur !!!", true, FontAwesome.Sharp.IconChar.ExclamationCircle);
+                    message = new FormMessage("le client a aucun facture", "Erreur !!!", true, FontAwesome.Sharp.IconChar.Ban);
                     message.ShowDialog();
                     return;
                 }
+                message = new FormMessage("Voulez-vous vraiment supprimer cette facture", "Question", true, true, FontAwesome.Sharp.IconChar.Question);
+
+                if (message.ShowDialog() == DialogResult.No)
+                    return;
+
                 connectionClient.Open();
+
+                double result = double.Parse(txtPrixTotalMesure.Text) + double.Parse(txtPrixTotalPVC.Text);
+
+                if (result >= double.Parse(txtPrixAvanceClient.Text))
+                {
+                    result = 0;
+                }
+
+                if (result >= double.Parse(txtPrixRestClient.Text))
+                {
+                    result -= double.Parse(txtPrixRestClient.Text);
+                }
 
                 OleDbCommand commandFacture = new OleDbCommand
                 {
@@ -967,22 +1012,30 @@ namespace Aiche_Bois
                 };
                 commandFacture.ExecuteNonQuery();
 
+                OleDbCommand commandFt = new OleDbCommand
+                {
+                    Connection = connectionClient,
+                    CommandText = "UPDATE client SET prixTotalAvance = prixTotalAvance - " + result + " WHERE idClient = " + long.Parse(idClient)
+                };
+                commandFt.ExecuteNonQuery();
+
                 connectionClient.Close();
+
+                cmbNumeroFacture.Items.Remove(cmbNumeroFacture.SelectedItem);
+                message = new FormMessage("La facture a été supprimée avec succès", "Succès !!!", true, FontAwesome.Sharp.IconChar.CheckCircle);
+                message.ShowDialog();
+
+                if (cmbNumeroFacture.Items.Count >= 1)
+                    cmbNumeroFacture.SelectedIndex = 0;
+                else
+                    ViderTxtBox();
             }
             catch (Exception ex)
             {
                 message = new FormMessage("Erreur:: " + ex.Message, "Erreur !!!", true, FontAwesome.Sharp.IconChar.ExclamationCircle);
                 message.ShowDialog();
+                connectionClient.Close();
             }
-            cmbNumeroFacture.Items.Remove(cmbNumeroFacture.SelectedItem);
-            message = new FormMessage("La facture a été supprimée avec succès", "Succès !!!", true, FontAwesome.Sharp.IconChar.CheckCircle);
-            message.ShowDialog();
-
-            if (cmbNumeroFacture.Items.Count >= 1)
-                cmbNumeroFacture.SelectedIndex = 0;
-            else
-                ViderTxtBox();
-
         }
 
         /// <summary>
@@ -992,6 +1045,8 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void btnPrintFacture_Click(object sender, EventArgs e)
         {
+            if (cmbNumeroFacture.Items.Count == 0)
+                return;
             PrintPdf printPdf = new PrintPdf(idClient, cmbNumeroFacture.SelectedItem.ToString(), "btnPrintFacture", chSeulPVC.Checked);
             printPdf.ShowDialog();
         }
@@ -1240,6 +1295,7 @@ namespace Aiche_Bois
 
                 // vider les champs
                 ViderTxtBox();
+                verifyForm = true;
                 btnSaveFacture.Enabled = true;
             }
         }
@@ -1358,7 +1414,7 @@ namespace Aiche_Bois
                     dtGMesure.Rows[i].Cells[0].Value,
                     dtGMesure.Rows[i].Cells[1].Value,
                     dtGMesure.Rows[i].Cells[2].Value);
-                txtTotaleTaillPVC.Clear();
+                txtTotaleTaillPVC.Text = "";
             }
         }
 
@@ -1516,7 +1572,8 @@ namespace Aiche_Bois
 
             if (avance > total)
             {
-                MessageBox.Show("le prix d'avance est grand a prix total", "Attension", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                message = new FormMessage("le prix d'avance est grand que le prix total", "Attension", true, FontAwesome.Sharp.IconChar.ExclamationCircle);
+                message.ShowDialog();
                 txtPrixAvanceClient.Text = "0.00";
                 txtPrixRestClient.Text = "0.00";
                 checkAvance.Checked = false;
@@ -1533,6 +1590,9 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void btnSaveFacture_Click(object sender, EventArgs e)
         {
+            verifyForm = false;
+            message = new FormMessage("Les données ont été enregistrées", "Succés", true, FontAwesome.Sharp.IconChar.CheckCircle);
+            message.ShowDialog();
             this.Close();
         }
 
@@ -1625,8 +1685,9 @@ namespace Aiche_Bois
                 }
                 catch (Exception ex)
                 {
-                    message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.ExclamationCircle);
+                    message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.Ban);
                     message.ShowDialog();
+                    connectionClient.Close();
                 }
             }
         }
@@ -1648,60 +1709,154 @@ namespace Aiche_Bois
                 if (checkIsNullOrEmpty())
                 {
                     connectionClient.Open();
-                    var mnd = new OleDbCommand
+
+                    if (chSeulPVC.Checked && cmbTypePvc.SelectedItem != null)
                     {
-                        Connection = connectionClient,
-                        CommandText =  "insert into facture (idClient, dtDateFacture, typeDeBois, " +
+                        var mnd1 = new OleDbCommand
+                        {
+                            Connection = connectionClient,
+                            CommandText = "insert into facture (idClient, dtDateFacture, typeDeBois, " +
                             "metrage, categorie, totalMesure, prixMetres, typePVC, checkPVC, tailleCanto, " +
                             "totalTaillPVC, prixMitresLinear, prixTotalPVC, prixTotalMesure) " +
                                           "values ('" + long.Parse(idClient) + "', '" + DateTime.Today + "', '" +
-                                          txtTypeDeBois.Text + "', '" + txtMetrageDeFeuille.Text + "','" + txtCategorie.Text + "', '" +
-                                          double.Parse(txtTotalMesure.Text) + "', '" + double.Parse(txtPrixMetreMesure.Text) + "', '" + 
+                                          "---" + "', '" + "---" + "','" + "---" + "', '" +
+                                          0.0 + "', '" + 0.0 + "', '" +
                                           cmbTypePvc.Text + "', " + chSeulPVC.Checked + ", '" + double.Parse(txtTaillePVC.Text) + "', '" +
-                                          double.Parse(txtPrixTotalPVC.Text) + "', '" + double.Parse(txtPrixMetreLPVC.Text) + "', '" +
-                                          double.Parse(txtPrixTotalPVC.Text) + "', '" + double.Parse(txtPrixTotalMesure.Text) + "')"
-                    };
-                    mnd.ExecuteNonQuery();
+                                          double.Parse(txtTotaleTaillPVC.Text) + "', '" + double.Parse(txtPrixMetreLPVC.Text) + "', '" +
+                                          double.Parse(txtPrixTotalPVC.Text) + "', '" + 0.0 + "')"
+                        };
+                        mnd1.ExecuteNonQuery();
 
-                    long idF = 0;
-                    /*get idClient from database*/
-                    OleDbCommand commandIdFacture = new OleDbCommand
-                    {
-                        Connection = connectionClient,
-                        CommandText = "select top 1 idFacture from facture order by idFacture desc"
-                    };
-                    OleDbDataReader readerIdFacture = commandIdFacture.ExecuteReader();
-                    while (readerIdFacture.Read())
-                    {
-                        idF = Convert.ToInt64(readerIdFacture["idFacture"]);
-                    }
-
-                    if (!chSeulPVC.Checked && dtGMesure.Rows.Count > 0)
-                    {
-                        for (int i = 0; i < dtGMesure.Rows.Count; i++)
+                        long idFS = 0;
+                        /*get idClient from database*/
+                        OleDbCommand commF = new OleDbCommand
                         {
-                            OleDbCommand commandM = new OleDbCommand();
-                            commandM.Connection = connectionClient;
-                            commandM.CommandText = "INSERT INTO mesure(idFacture, quantite, largeur, longueur, eppaiseur, type, orientation)  " +
-                                "VALUES('" + idF + "','" +
-                                double.Parse(dtGMesure.Rows[i].Cells[0].Value.ToString()) + "','" +
-                                double.Parse(dtGMesure.Rows[i].Cells[1].Value.ToString()) + "','" +
-                                double.Parse(dtGMesure.Rows[i].Cells[2].Value.ToString()) + "','" +
-                                (cmbTypeDuMetres.Text == "m3" ? double.Parse(dtGMesure.Rows[i].Cells[3].Value.ToString()) : 0) + "','" +
-                                cmbTypeDuMetres.Text + "','" +
-                                ((dtGridPvc.Rows.Count <= 0) ? "0" : dtGridPvc.Rows[i].Cells[3].Value.ToString()) + "')";
-                            commandM.ExecuteNonQuery();
+                            Connection = connectionClient,
+                            CommandText = "select top 1 idFacture from facture order by idFacture desc"
+                        };
+                        OleDbDataReader readF = commF.ExecuteReader();
+                        while (readF.Read())
+                        {
+                            idFS = Convert.ToInt64(readF["idFacture"]);
                         }
-                    }
 
-                    if (!String.IsNullOrEmpty(cmbTypePvc.Text))
-                    {
                         for (int i = 0; i < dtGridPvc.Rows.Count; i++)
                         {
                             OleDbCommand commandP = new OleDbCommand();
                             commandP.Connection = connectionClient;
                             commandP.CommandText = "INSERT INTO pvc (idFacture, quantite, largeur, longueur, orientation) " +
-                                "values('" + idF + "','" +
+                                "values('" + idFS + "','" +
+                                double.Parse(dtGridPvc.Rows[i].Cells[0].Value.ToString()) + "','" +
+                                double.Parse(dtGridPvc.Rows[i].Cells[1].Value.ToString()) + "','" +
+                                double.Parse(dtGridPvc.Rows[i].Cells[2].Value.ToString()) + "','" +
+                                dtGridPvc.Rows[i].Cells[3].Value.ToString() + "')";
+                            commandP.ExecuteNonQuery();
+                        }
+                    }
+                    else if (cmbTypePvc.SelectedItem == null)
+                    {
+                        var mnd = new OleDbCommand
+                        {
+                            Connection = connectionClient,
+                            CommandText = "insert into facture (idClient, dtDateFacture, typeDeBois, " +
+                            "metrage, categorie, totalMesure, prixMetres, typePVC, checkPVC, tailleCanto, " +
+                            "totalTaillPVC, prixMitresLinear, prixTotalPVC, prixTotalMesure) " +
+                                          "values ('" + long.Parse(idClient) + "', '" + DateTime.Today + "', '" +
+                                          txtTypeDeBois.Text + "', '" + txtMetrageDeFeuille.Text + "','" + txtCategorie.Text + "', '" +
+                                          double.Parse(txtTotalMesure.Text) + "', '" + double.Parse(txtPrixMetreMesure.Text) + "', '" +
+                                          "---" + "', " + chSeulPVC.Checked + ", '" + 0.0 + "', '" +
+                                          0.0 + "', '" + 0.0 + "', '" +
+                                          0.0 + "', '" + double.Parse(txtPrixTotalMesure.Text) + "')"
+                        };
+                        mnd.ExecuteNonQuery();
+
+                        long idFM = 0;
+                        /*get idClient from database*/
+                        OleDbCommand commandIdFacture = new OleDbCommand
+                        {
+                            Connection = connectionClient,
+                            CommandText = "select top 1 idFacture from facture order by idFacture desc"
+                        };
+                        OleDbDataReader readerIdFacture = commandIdFacture.ExecuteReader();
+                        while (readerIdFacture.Read())
+                        {
+                            idFM = Convert.ToInt64(readerIdFacture["idFacture"]);
+                        }
+
+                        // mesure
+                        if (!chSeulPVC.Checked && dtGMesure.Rows.Count > 0)
+                        {
+                            for (int i = 0; i < dtGMesure.Rows.Count; i++)
+                            {
+                                OleDbCommand commandM = new OleDbCommand();
+                                commandM.Connection = connectionClient;
+                                commandM.CommandText = "INSERT INTO mesure(idFacture, quantite, largeur, longueur, eppaiseur, type, orientation)  " +
+                                    "VALUES('" + idFM + "','" +
+                                    double.Parse(dtGMesure.Rows[i].Cells[0].Value.ToString()) + "','" +
+                                    double.Parse(dtGMesure.Rows[i].Cells[1].Value.ToString()) + "','" +
+                                    double.Parse(dtGMesure.Rows[i].Cells[2].Value.ToString()) + "','" +
+                                    (cmbTypeDuMetres.Text == "m3" ? double.Parse(dtGMesure.Rows[i].Cells[3].Value.ToString()) : 0) + "','" +
+                                    cmbTypeDuMetres.Text + "','" +
+                                    ((dtGridPvc.Rows.Count <= 0) ? "0" : dtGridPvc.Rows[i].Cells[3].Value.ToString()) + "')";
+                                commandM.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        var mnd = new OleDbCommand
+                        {
+                            Connection = connectionClient,
+                            CommandText = "insert into facture (idClient, dtDateFacture, typeDeBois, " +
+                            "metrage, categorie, totalMesure, prixMetres, typePVC, checkPVC, tailleCanto, " +
+                            "totalTaillPVC, prixMitresLinear, prixTotalPVC, prixTotalMesure) " +
+                                          "values ('" + long.Parse(idClient) + "', '" + DateTime.Today + "', '" +
+                                          txtTypeDeBois.Text + "', '" + txtMetrageDeFeuille.Text + "','" + txtCategorie.Text + "', '" +
+                                          double.Parse(txtTotalMesure.Text) + "', '" + double.Parse(txtPrixMetreMesure.Text) + "', '" +
+                                          cmbTypePvc.Text + "', " + chSeulPVC.Checked + ", '" + double.Parse(txtTaillePVC.Text) + "', '" +
+                                          double.Parse(txtTotaleTaillPVC.Text) + "', '" + double.Parse(txtPrixMetreLPVC.Text) + "', '" +
+                                          double.Parse(txtPrixTotalPVC.Text) + "', '" + double.Parse(txtPrixTotalMesure.Text) + "')"
+                        };
+                        mnd.ExecuteNonQuery();
+
+                        long idFMS = 0;
+                        /*get idClient from database*/
+                        OleDbCommand commandIdFacture = new OleDbCommand
+                        {
+                            Connection = connectionClient,
+                            CommandText = "select top 1 idFacture from facture order by idFacture desc"
+                        };
+                        OleDbDataReader readerIdFacture = commandIdFacture.ExecuteReader();
+                        while (readerIdFacture.Read())
+                        {
+                            idFMS = Convert.ToInt64(readerIdFacture["idFacture"]);
+                        }
+
+                        // mesure
+                        if (!chSeulPVC.Checked && dtGMesure.Rows.Count > 0)
+                        {
+                            for (int i = 0; i < dtGMesure.Rows.Count; i++)
+                            {
+                                OleDbCommand commandM = new OleDbCommand();
+                                commandM.Connection = connectionClient;
+                                commandM.CommandText = "INSERT INTO mesure(idFacture, quantite, largeur, longueur, eppaiseur, type, orientation)  " +
+                                    "VALUES('" + idFMS + "','" +
+                                    double.Parse(dtGMesure.Rows[i].Cells[0].Value.ToString()) + "','" +
+                                    double.Parse(dtGMesure.Rows[i].Cells[1].Value.ToString()) + "','" +
+                                    double.Parse(dtGMesure.Rows[i].Cells[2].Value.ToString()) + "','" +
+                                    (cmbTypeDuMetres.Text == "m3" ? double.Parse(dtGMesure.Rows[i].Cells[3].Value.ToString()) : 0) + "','" +
+                                    cmbTypeDuMetres.Text + "','" +
+                                    ((dtGridPvc.Rows.Count <= 0) ? "0" : dtGridPvc.Rows[i].Cells[3].Value.ToString()) + "')";
+                                commandM.ExecuteNonQuery();
+                            }
+                        }
+
+                        for (int i = 0; i < dtGridPvc.Rows.Count; i++)
+                        {
+                            OleDbCommand commandP = new OleDbCommand();
+                            commandP.Connection = connectionClient;
+                            commandP.CommandText = "INSERT INTO pvc (idFacture, quantite, largeur, longueur, orientation) " +
+                                "values('" + idFMS + "','" +
                                 double.Parse(dtGridPvc.Rows[i].Cells[0].Value.ToString()) + "','" +
                                 double.Parse(dtGridPvc.Rows[i].Cells[1].Value.ToString()) + "','" +
                                 double.Parse(dtGridPvc.Rows[i].Cells[2].Value.ToString()) + "','" +
@@ -1727,17 +1882,17 @@ namespace Aiche_Bois
                     connectionClient.Close();
 
                     btnClear.IconChar = FontAwesome.Sharp.IconChar.Backspace;
-                    cmbNumeroFacture.SelectedItem = cmbNumeroFacture.TabIndex;
+                    cmbNumeroFacture.SelectedItem = 0;
                     btnAddFacture.IconChar = FontAwesome.Sharp.IconChar.Edit;
                     btnAddFacture.Click -= new EventHandler(this.AddFactureClient_Click);
                     btnAddFacture.Click += new EventHandler(this.btnEditFacture_Click);
-                    message = new FormMessage("Ajouté Avec Succès", "Succès", true, FontAwesome.Sharp.IconChar.ThumbsUp);
+                    message = new FormMessage("Ajouté Avec Succès", "Succès", true, FontAwesome.Sharp.IconChar.CheckCircle);
                     message.ShowDialog();
                 }
             }
             catch (Exception ex)
             {
-                message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.ExclamationCircle);
+                message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.Ban);
                 message.ShowDialog();
                 connectionClient.Close();
             }

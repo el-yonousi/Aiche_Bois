@@ -36,13 +36,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnSearch = new FontAwesome.Sharp.IconButton();
-            this.btnDeleteFacture = new FontAwesome.Sharp.IconButton();
-            this.btnEditFacture = new FontAwesome.Sharp.IconButton();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddFacture = new FontAwesome.Sharp.IconButton();
             this.btnPrintFacture = new FontAwesome.Sharp.IconButton();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnEditFacture = new FontAwesome.Sharp.IconButton();
+            this.btnDeleteFacture = new FontAwesome.Sharp.IconButton();
+            this.btnResult = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnSearch = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dtGridFacture = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,51 +77,21 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.label4.Name = "label4";
             // 
-            // btnSearch
+            // tableLayoutPanel1
             // 
-            resources.ApplyResources(this.btnSearch, "btnSearch");
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnSearch.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSearch.IconSize = 30;
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            // 
-            // btnDeleteFacture
-            // 
-            resources.ApplyResources(this.btnDeleteFacture, "btnDeleteFacture");
-            this.btnDeleteFacture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.btnDeleteFacture.FlatAppearance.BorderSize = 0;
-            this.btnDeleteFacture.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteFacture.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.btnDeleteFacture.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.btnDeleteFacture.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnDeleteFacture.IconSize = 30;
-            this.btnDeleteFacture.Name = "btnDeleteFacture";
-            this.btnDeleteFacture.UseVisualStyleBackColor = false;
-            this.btnDeleteFacture.Click += new System.EventHandler(this.btnDeleteFacture_Click);
-            // 
-            // btnEditFacture
-            // 
-            resources.ApplyResources(this.btnEditFacture, "btnEditFacture");
-            this.btnEditFacture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.btnEditFacture.FlatAppearance.BorderSize = 0;
-            this.btnEditFacture.ForeColor = System.Drawing.Color.White;
-            this.btnEditFacture.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.btnEditFacture.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.btnEditFacture.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnEditFacture.IconSize = 35;
-            this.btnEditFacture.Name = "btnEditFacture";
-            this.btnEditFacture.UseVisualStyleBackColor = false;
-            this.btnEditFacture.Click += new System.EventHandler(this.btnEditFacture_Click);
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.btnAddFacture, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnPrintFacture, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnEditFacture, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnDeleteFacture, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnResult, 4, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // btnAddFacture
             // 
             resources.ApplyResources(this.btnAddFacture, "btnAddFacture");
             this.btnAddFacture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnAddFacture.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddFacture.FlatAppearance.BorderSize = 0;
             this.btnAddFacture.ForeColor = System.Drawing.Color.White;
             this.btnAddFacture.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
@@ -135,6 +106,7 @@
             // 
             resources.ApplyResources(this.btnPrintFacture, "btnPrintFacture");
             this.btnPrintFacture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnPrintFacture.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrintFacture.FlatAppearance.BorderSize = 0;
             this.btnPrintFacture.ForeColor = System.Drawing.Color.White;
             this.btnPrintFacture.IconChar = FontAwesome.Sharp.IconChar.Print;
@@ -145,14 +117,50 @@
             this.btnPrintFacture.UseVisualStyleBackColor = false;
             this.btnPrintFacture.Click += new System.EventHandler(this.btnPrintFacture_Click);
             // 
-            // tableLayoutPanel1
+            // btnEditFacture
             // 
-            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.btnAddFacture, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnPrintFacture, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnEditFacture, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnDeleteFacture, 2, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            resources.ApplyResources(this.btnEditFacture, "btnEditFacture");
+            this.btnEditFacture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnEditFacture.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditFacture.FlatAppearance.BorderSize = 0;
+            this.btnEditFacture.ForeColor = System.Drawing.Color.White;
+            this.btnEditFacture.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.btnEditFacture.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.btnEditFacture.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnEditFacture.IconSize = 35;
+            this.btnEditFacture.Name = "btnEditFacture";
+            this.btnEditFacture.UseVisualStyleBackColor = false;
+            this.btnEditFacture.Click += new System.EventHandler(this.btnEditFacture_Click);
+            // 
+            // btnDeleteFacture
+            // 
+            resources.ApplyResources(this.btnDeleteFacture, "btnDeleteFacture");
+            this.btnDeleteFacture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnDeleteFacture.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteFacture.FlatAppearance.BorderSize = 0;
+            this.btnDeleteFacture.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteFacture.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnDeleteFacture.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.btnDeleteFacture.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnDeleteFacture.IconSize = 30;
+            this.btnDeleteFacture.Name = "btnDeleteFacture";
+            this.btnDeleteFacture.UseVisualStyleBackColor = false;
+            this.btnDeleteFacture.Click += new System.EventHandler(this.btnDeleteFacture_Click);
+            // 
+            // btnResult
+            // 
+            resources.ApplyResources(this.btnResult, "btnResult");
+            this.btnResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnResult.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnResult.FlatAppearance.BorderSize = 0;
+            this.btnResult.ForeColor = System.Drawing.Color.White;
+            this.btnResult.IconChar = FontAwesome.Sharp.IconChar.Poll;
+            this.btnResult.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.btnResult.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnResult.IconSize = 30;
+            this.btnResult.Name = "btnResult";
+            this.btnResult.UseVisualStyleBackColor = false;
+            this.btnResult.Click += new System.EventHandler(this.btnResult_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -160,6 +168,19 @@
             this.tableLayoutPanel2.Controls.Add(this.txtSearch, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnSearch, 1, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            // 
+            // btnSearch
+            // 
+            resources.ApplyResources(this.btnSearch, "btnSearch");
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnSearch.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSearch.IconSize = 30;
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel3
             // 
@@ -175,6 +196,7 @@
             this.dtGridFacture.AllowUserToResizeColumns = false;
             this.dtGridFacture.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
             this.dtGridFacture.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtGridFacture.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtGridFacture.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
@@ -186,6 +208,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -212,6 +235,7 @@
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(1);
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -319,6 +343,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormClient";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormClient_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -351,6 +376,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private FontAwesome.Sharp.IconButton btnResult;
     }
 }
 
