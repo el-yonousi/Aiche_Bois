@@ -1258,7 +1258,7 @@ namespace Aiche_Bois
                     facture.Pvcs = vspvc;
                     facture.TypePVC = cmbTypePvc.Text;
                     facture.CheckPVC = chSeulPVC.Checked;
-                    facture.TailleCanto = txtTaillePVC.Text;
+                    facture.TailleCanto = double.Parse(txtTaillePVC.Text);
                     facture.PrixMitresLinear = double.Parse(txtPrixMetreLPVC.Text);
                     facture.TotalTaillPVC = double.Parse(txtTotaleTaillPVC.Text);
                     facture.PrixTotalPVC = double.Parse(txtPrixTotalPVC.Text);
@@ -1267,7 +1267,7 @@ namespace Aiche_Bois
                 {
                     facture.TypePVC = "---";
                     facture.CheckPVC = chSeulPVC.Checked;
-                    facture.TailleCanto = "0.0";
+                    facture.TailleCanto = 0.0;
                     facture.PrixMitresLinear = 0.0;
                     facture.TotalTaillPVC = 0.0;
                     facture.PrixTotalPVC = 0.0;

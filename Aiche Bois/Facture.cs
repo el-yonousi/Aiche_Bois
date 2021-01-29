@@ -23,7 +23,7 @@ namespace Aiche_Bois
 
         private string typePVC;
         private bool checkPVC;
-        private string tailleCanto;
+        private double tailleCanto;
         private double totalTaillPVC;
         private double prixMitresLinear;
         private double prixTotalPVC;
@@ -37,7 +37,7 @@ namespace Aiche_Bois
         public double PrixMetres { get => prixMetres; set => prixMetres = value; }
         public double TotalMesure { get => totalMesure; set => totalMesure = value; }
         public string TypePVC { get => typePVC; set => typePVC = value; }
-        public string TailleCanto { get => tailleCanto; set => tailleCanto = value; }
+        public double TailleCanto { get => tailleCanto; set => tailleCanto = value; }
         public double TotalTaillPVC { get => totalTaillPVC; set => totalTaillPVC = value; }
         public double PrixMitresLinear { get => prixMitresLinear; set => prixMitresLinear = value; }
         public double PrixTotalPVC { get => prixTotalPVC; set => prixTotalPVC = value; }
@@ -53,7 +53,7 @@ namespace Aiche_Bois
         {
         }
 
-        public Facture(int idClient, DateTime dateFacture, string typeDeBois, string metrage, string categorie, double prixMetres, double totalMesure, string typePVC, bool checkPVC, string tailleCanto, double totalTaillPVC, double prixMitresLinear, double prixTotalPVC, double prixTotalMesure, List<Mesure> mesures, List<Pvc> pvcs)
+        public Facture(int idClient, DateTime dateFacture, string typeDeBois, string metrage, string categorie, double prixMetres, double totalMesure, string typePVC, bool checkPVC, double tailleCanto, double totalTaillPVC, double prixMitresLinear, double prixTotalPVC, double prixTotalMesure, List<Mesure> mesures, List<Pvc> pvcs)
         {
             DateFacture = dateFacture;
             IdClient = idClient;

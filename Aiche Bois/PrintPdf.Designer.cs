@@ -30,26 +30,15 @@ namespace Aiche_Bois
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrintPdf));
-            this.crystalRepClient = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.cmbShoosePrint = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCorrespondFacture = new System.Windows.Forms.Button();
+            this.prt = new System.Windows.Forms.PrintPreviewControl();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // crystalRepClient
-            // 
-            this.crystalRepClient.ActiveViewIndex = -1;
-            this.crystalRepClient.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalRepClient.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalRepClient.Font = new System.Drawing.Font("Nirmala UI", 8.25F);
-            this.crystalRepClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.crystalRepClient.Location = new System.Drawing.Point(0, 91);
-            this.crystalRepClient.Name = "crystalRepClient";
-            this.crystalRepClient.Size = new System.Drawing.Size(931, 570);
-            this.crystalRepClient.TabIndex = 0;
-            this.crystalRepClient.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // cmbShoosePrint
             // 
@@ -60,7 +49,7 @@ namespace Aiche_Bois
             this.cmbShoosePrint.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold);
             this.cmbShoosePrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.cmbShoosePrint.FormattingEnabled = true;
-            this.cmbShoosePrint.Location = new System.Drawing.Point(262, 57);
+            this.cmbShoosePrint.Location = new System.Drawing.Point(262, 100);
             this.cmbShoosePrint.Name = "cmbShoosePrint";
             this.cmbShoosePrint.Size = new System.Drawing.Size(666, 25);
             this.cmbShoosePrint.TabIndex = 1;
@@ -77,7 +66,7 @@ namespace Aiche_Bois
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.label1.Location = new System.Drawing.Point(262, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(666, 49);
+            this.label1.Size = new System.Drawing.Size(666, 92);
             this.label1.TabIndex = 2;
             this.label1.Text = "Choisissez la facture à imprimer";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -90,13 +79,12 @@ namespace Aiche_Bois
             this.tableLayoutPanel1.Controls.Add(this.btnCorrespondFacture, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.cmbShoosePrint, 1, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(931, 91);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(931, 134);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // btnCorrespondFacture
@@ -107,7 +95,7 @@ namespace Aiche_Bois
             this.btnCorrespondFacture.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCorrespondFacture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCorrespondFacture.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnCorrespondFacture.Location = new System.Drawing.Point(3, 52);
+            this.btnCorrespondFacture.Location = new System.Drawing.Point(3, 95);
             this.btnCorrespondFacture.Name = "btnCorrespondFacture";
             this.btnCorrespondFacture.Size = new System.Drawing.Size(253, 36);
             this.btnCorrespondFacture.TabIndex = 5;
@@ -115,13 +103,32 @@ namespace Aiche_Bois
             this.btnCorrespondFacture.UseVisualStyleBackColor = true;
             this.btnCorrespondFacture.Click += new System.EventHandler(this.btnCorrespondFacture_Click);
             // 
+            // prt
+            // 
+            this.prt.Cursor = System.Windows.Forms.Cursors.Default;
+            this.prt.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.prt.Location = new System.Drawing.Point(0, 175);
+            this.prt.Name = "prt";
+            this.prt.Size = new System.Drawing.Size(931, 486);
+            this.prt.TabIndex = 5;
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
             // PrintPdf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(931, 661);
-            this.Controls.Add(this.crystalRepClient);
+            this.Controls.Add(this.prt);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Nirmala UI", 8.25F);
             this.ForeColor = System.Drawing.Color.White;
@@ -137,11 +144,12 @@ namespace Aiche_Bois
         }
 
         #endregion
-
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalRepClient;
         private System.Windows.Forms.ComboBox cmbShoosePrint;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnCorrespondFacture;
+        private System.Windows.Forms.PrintPreviewControl prt;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

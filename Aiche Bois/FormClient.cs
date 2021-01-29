@@ -1,8 +1,12 @@
-﻿using System;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.text.html.simpleparser;
+using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
 using System.IO;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Aiche_Bois
 {
@@ -46,7 +50,7 @@ namespace Aiche_Bois
             {
                 connectionClient.Open();
                 clients.Clear();
-                
+
                 OleDbCommand commandClient = new OleDbCommand
                 {
                     Connection = connectionClient,
@@ -166,6 +170,7 @@ namespace Aiche_Bois
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        [Obsolete]
         private void btnPrintFacture_Click(object sender, EventArgs e)
         {
             if (indxFacture <= -1 || dtGridFacture.Rows.Count <= 0 || idClient == null)
@@ -174,9 +179,97 @@ namespace Aiche_Bois
                 message.ShowDialog();
                 return;
             }
-
+            //pvc_mesure(idClient[1], indxFacture);
             PrintPdf print = new PrintPdf(idClient[1], "null", "btnPrintClient", false);
             print.ShowDialog();
+        }
+
+        /// <summary>
+        /// this method create pdf by id
+        /// </summary>
+        /// <param name="idClient"></param>
+        /// <param name="idFacture"></param>
+        [Obsolete]
+        private void pvc_mesure(String idClient, long idFacture)
+        {
+
+            Document pdfDoc = new Document(PageSize.A4);
+
+            iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(Properties.Resources.logo, System.Drawing.Imaging.ImageFormat.Png);
+
+            String path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\aiche bois\\";
+            String file = "facture.pdf";
+
+            FileStream os = new FileStream(path + file, FileMode.Create);
+            using (os)
+            {
+
+                PdfWriter pdfWriter = PdfWriter.GetInstance(pdfDoc, os);
+                pdfDoc.Open();
+                String typeBois = "";
+                string nom = "";
+                //String mes = "";
+
+                for (int i = 0; i < clients.Count; i++)
+                {
+                    nom = clients[i].NomClient;
+                    typeBois += @"<tr><td align='center' colSpan='5'>" + $"{clients[i].PrixTotalRest}" + @"</td></tr>";
+                    typeBois +=
+                    @"<td align ='center'> " + $"{clients[i].IdClient}" + @"</td>
+                                    <td align ='center'> " + $"{clients[i].NbFacture}" + @"</td>
+                                    <td align ='center'> " + $"{clients[i].NomClient}" + @"</td>
+                                    <td align ='center'> " + $"{ clients[i].PrixTotalClient}" + @"</td>
+                               <tr >
+                                    <td align ='center'> " + $"{clients[i]}" + @"</td>
+                                 </tr > ";
+                }
+                string strHTML = @"<!DOCTYPE html>  
+                        <html xmlns='http://www.w3.org/1999/xhtml'>  
+                        <head>  
+                            <title></title>  
+                        </head>  
+                        <body>  
+                              
+                             <table border='1' width ='100%' height ='100%'>
+                                <!-- header -->
+                                <tr style='font-weight: bold;'>  
+                                    <td align='center'>Aiche Bois</td>
+                                    <td rowSpan='2' align='center' style='font-size: 15pt;'>Etat Mesure</td>
+                                    <td rowSpan='2' align='center'>Tanger le</td>           
+                               </tr>
+                               <tr>
+                                    <td align='center'>Nom du Client</td>
+                               </tr>
+                                <
+                               <tr>  
+                                    <td align='center'>" + $"{nom}" + @"</td>  
+                                    <td align='center'>" + String.Format("N{0:D4}", idClient) + @"</td>              
+                                    <td align='center'>" + DateTime.Today.ToString("dd-MMMM-yyyy") + @"</td>              
+                               </tr>
+                        </table>
+                        <br>
+                        <table border='1' width ='100%' height ='100%'>
+                                <!-- Quantite -->
+                               <tr>  
+                                    <td align='center' style='font-weight: bold; color: #7BA63C;'>Quantite</td>  
+                                    <td align='center' style='font-weight: bold; color: #7BA63C;' colSpan='3'>" + "Mesure/Pvc" + @"</td>
+                                    <td align='center' style='font-weight: bold; color: #7BA63C;'>Nbr_Canto</td>
+                               </tr>
+                               <!-- Couleur -->
+
+                               " + $"{typeBois}" + @"
+                            </table>
+                        </body>  
+                        </html>";
+                HTMLWorker htmlWorker = new HTMLWorker(pdfDoc);
+                htmlWorker.Parse(new StringReader(strHTML));
+                pdfWriter.CloseStream = false;
+                pdfDoc.Close();
+                // to open pdf dynamique
+                System.Diagnostics.Process.Start(path + file);
+                var strArr = new string[4] { "one", "Two", "Three", "Four" };
+                Console.WriteLine($"Hello, {idClient}! Today is {DateTime.Today}, it's {DateTime.Today:HH:mm} now.");
+            }
         }
 
         /// <summary>
@@ -344,14 +437,14 @@ namespace Aiche_Bois
             save.DefaultExt = "txt";
             save.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
             save.FilterIndex = 1;
-            
+
             if (save.ShowDialog() == DialogResult.OK)
             {
                 TextWriter txt = new StreamWriter(save.FileName);
 
                 String t = "******" + save.Title + "******\n\n" +
                     "======= Date: " + DateTime.Today.ToString("dddd-MMMM-yyyy") + " =======\n\n" +
-                    "==========================================================================\n" + 
+                    "==========================================================================\n" +
                     "======= Total de Prix Payée pour tous les clients: " + a + " dh =======\n" +
                     "======= Reste total pour tous les clients: " + b + " dh =======\n" +
                     "======= Montant Total pour Tous les Clients: " + c + " dh =======";
