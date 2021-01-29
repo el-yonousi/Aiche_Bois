@@ -15,13 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_080EB82E0FDF93C7809E6DF313C92C2F"
-        "OwnerKey" = "8:_61A3EECFC27441129434F497C1F0ABE1"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_1177AA9848834861A91A618F83848CFF"
+        "MsmKey" = "8:_1F809A840B8849BAAAF1C2D4DC204B85"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -33,26 +27,26 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_3A5C9545B3CA7490E7C7C478DC4AA440"
+        "OwnerKey" = "8:_61A3EECFC27441129434F497C1F0ABE1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_431307833C2A8652D83A1E74FF4394FD"
+        "OwnerKey" = "8:_61A3EECFC27441129434F497C1F0ABE1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_431307833C2A8652D83A1E74FF4394FD"
+        "OwnerKey" = "8:_72AE689E2F12C3ED52D3213619BF5BEB"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_61A3EECFC27441129434F497C1F0ABE1"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_61E55FA3E797492C87CED522C1515567"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_69DA6FB89EBC4E3F9C22D33B31043D04"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_6C050371D1560577FC40724F5BD7FC91"
-        "OwnerKey" = "8:_61A3EECFC27441129434F497C1F0ABE1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -69,31 +63,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_766B4ED3F87BD902DB35849241485FC5"
-        "OwnerKey" = "8:_84C0D3CBAE6994E346049E468721A940"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_84C0D3CBAE6994E346049E468721A940"
-        "OwnerKey" = "8:_93EAC8BC2F8470C66D1842D83854BEE6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_93EAC8BC2F8470C66D1842D83854BEE6"
+        "MsmKey" = "8:_72AE689E2F12C3ED52D3213619BF5BEB"
         "OwnerKey" = "8:_61A3EECFC27441129434F497C1F0ABE1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_9F3752D98EBAE69BF135CBEECCF8C336"
-        "OwnerKey" = "8:_84C0D3CBAE6994E346049E468721A940"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_BF6E231313764E29AC0F9E65E9A40172"
+        "MsmKey" = "8:_AFCB5F214A3B40B4808B70E41E73994E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -111,20 +87,20 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_DE1E3550A7CE4654A7308A30E8573352"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F13E71CC7B544604990E7EE857C71B53"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_F7724BD62C494C9A9838902BDC0B3B39"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FECD9B86ABE87D983408F514F321F690"
+        "OwnerKey" = "8:_61A3EECFC27441129434F497C1F0ABE1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FECD9B86ABE87D983408F514F321F690"
+        "OwnerKey" = "8:_431307833C2A8652D83A1E74FF4394FD"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -136,13 +112,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_080EB82E0FDF93C7809E6DF313C92C2F"
+        "OwnerKey" = "8:_72AE689E2F12C3ED52D3213619BF5BEB"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_6C050371D1560577FC40724F5BD7FC91"
+        "OwnerKey" = "8:_431307833C2A8652D83A1E74FF4394FD"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -154,25 +130,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_93EAC8BC2F8470C66D1842D83854BEE6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_84C0D3CBAE6994E346049E468721A940"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_766B4ED3F87BD902DB35849241485FC5"
+        "OwnerKey" = "8:_FECD9B86ABE87D983408F514F321F690"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_6F0971610E2B16ADCDC1D617E7C04EC6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_3A5C9545B3CA7490E7C7C478DC4AA440"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -270,43 +240,12 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_080EB82E0FDF93C7809E6DF313C92C2F"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1F809A840B8849BAAAF1C2D4DC204B85"
             {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64"
-                "ScatterAssemblies"
-                {
-                    "_080EB82E0FDF93C7809E6DF313C92C2F"
-                    {
-                    "Name" = "8:log4net.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:log4net.dll"
-            "TargetName" = "8:"
+            "SourcePath" = "8:..\\Aiche Bois\\bin\\Debug\\Resources\\sub-header.jpg"
+            "TargetName" = "8:sub-header.jpg"
             "Tag" = "8:"
-            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1177AA9848834861A91A618F83848CFF"
-            {
-            "SourcePath" = "8:..\\Aiche Bois\\bin\\Debug\\CrystalReportClient.cs"
-            "TargetName" = "8:CrystalReportClient.cs"
-            "Tag" = "8:"
-            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
+            "Folder" = "8:_B411AE2776704EC585A3B29AEB2D6365"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -341,60 +280,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_61E55FA3E797492C87CED522C1515567"
-            {
-            "SourcePath" = "8:..\\Aiche Bois\\bin\\Debug\\CrystalReportMesure.rpt"
-            "TargetName" = "8:CrystalReportMesure.rpt"
-            "Tag" = "8:"
-            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_69DA6FB89EBC4E3F9C22D33B31043D04"
-            {
-            "SourcePath" = "8:..\\Aiche Bois\\bin\\Debug\\CrystalReportClient.rpt"
-            "TargetName" = "8:CrystalReportClient.rpt"
-            "Tag" = "8:"
-            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6C050371D1560577FC40724F5BD7FC91"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3A5C9545B3CA7490E7C7C478DC4AA440"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:System.ComponentModel, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                 "ScatterAssemblies"
                 {
-                    "_6C050371D1560577FC40724F5BD7FC91"
+                    "_3A5C9545B3CA7490E7C7C478DC4AA440"
                     {
-                    "Name" = "8:log4net.dll"
+                    "Name" = "8:System.ComponentModel.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:log4net.dll"
+            "SourcePath" = "8:System.ComponentModel.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
@@ -408,7 +307,38 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:TRUE"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_431307833C2A8652D83A1E74FF4394FD"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_431307833C2A8652D83A1E74FF4394FD"
+                    {
+                    "Name" = "8:itextsharp.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:itextsharp.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
@@ -474,82 +404,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_766B4ED3F87BD902DB35849241485FC5"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-                "ScatterAssemblies"
-                {
-                    "_766B4ED3F87BD902DB35849241485FC5"
-                    {
-                    "Name" = "8:stdole.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:stdole.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_84C0D3CBAE6994E346049E468721A940"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:ShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_84C0D3CBAE6994E346049E468721A940"
-                    {
-                    "Name" = "8:ShockwaveFlashObjects.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:ShockwaveFlashObjects.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_93EAC8BC2F8470C66D1842D83854BEE6"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_72AE689E2F12C3ED52D3213619BF5BEB"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:itextsharp.xmlworker, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_93EAC8BC2F8470C66D1842D83854BEE6"
+                    "_72AE689E2F12C3ED52D3213619BF5BEB"
                     {
-                    "Name" = "8:AxShockwaveFlashObjects.dll"
+                    "Name" = "8:itextsharp.xmlworker.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:AxShockwaveFlashObjects.dll"
+            "SourcePath" = "8:itextsharp.xmlworker.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
@@ -567,32 +435,12 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9F3752D98EBAE69BF135CBEECCF8C336"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AFCB5F214A3B40B4808B70E41E73994E"
             {
-            "SourcePath" = "8:Flash.ocx"
-            "TargetName" = "8:Flash.ocx"
+            "SourcePath" = "8:..\\Aiche Bois\\bin\\Debug\\Resources\\header.jpg"
+            "TargetName" = "8:header.jpg"
             "Tag" = "8:"
-            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BF6E231313764E29AC0F9E65E9A40172"
-            {
-            "SourcePath" = "8:..\\Aiche Bois\\bin\\Debug\\CrystalReportPvc.cs"
-            "TargetName" = "8:CrystalReportPvc.cs"
-            "Tag" = "8:"
-            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
+            "Folder" = "8:_B411AE2776704EC585A3B29AEB2D6365"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -647,46 +495,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DE1E3550A7CE4654A7308A30E8573352"
-            {
-            "SourcePath" = "8:..\\Aiche Bois\\bin\\Debug\\CrystalReportMesure.cs"
-            "TargetName" = "8:CrystalReportMesure.cs"
-            "Tag" = "8:"
-            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F13E71CC7B544604990E7EE857C71B53"
-            {
-            "SourcePath" = "8:..\\Aiche Bois\\bin\\Debug\\CrystalReportPvc.rpt"
-            "TargetName" = "8:CrystalReportPvc.rpt"
-            "Tag" = "8:"
-            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F7724BD62C494C9A9838902BDC0B3B39"
             {
             "SourcePath" = "8:..\\..\\..\\..\\..\\OneDrive\\Works\\Aiche Bois\\Aiche Bois.ico"
@@ -705,6 +513,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FECD9B86ABE87D983408F514F321F690"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942"
+                "ScatterAssemblies"
+                {
+                    "_FECD9B86ABE87D983408F514F321F690"
+                    {
+                    "Name" = "8:BouncyCastle.Crypto.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:BouncyCastle.Crypto.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
         }
@@ -756,6 +595,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_B411AE2776704EC585A3B29AEB2D6365"
+                    {
+                    "Name" = "8:Resources"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_BE75E527752F4BDCB177AFBCE63F5238"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_FA1F847B83B94062AEB82FBF906AF2F3"

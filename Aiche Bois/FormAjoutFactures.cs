@@ -1000,10 +1000,10 @@ namespace Aiche_Bois
                     result = 0;
                 }
 
-                if (result >= double.Parse(txtPrixRestClient.Text))
-                {
-                    result -= double.Parse(txtPrixRestClient.Text);
-                }
+                //if (result >= double.Parse(txtPrixRestClient.Text))
+                //{
+                //    result -= double.Parse(txtPrixRestClient.Text);
+                //}
 
                 OleDbCommand commandFacture = new OleDbCommand
                 {

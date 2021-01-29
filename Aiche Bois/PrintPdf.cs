@@ -1,11 +1,12 @@
-﻿using CrystalDecisions.CrystalReports.Engine;
-using iTextSharp.text;
+﻿using iTextSharp.text;
 using iTextSharp.text.html.simpleparser;
 using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
+using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -49,6 +50,12 @@ namespace Aiche_Bois
         FormMessage message;
 
         /// <summary>
+        /// this is a path to save factures
+        /// </summary>
+        String path = "";
+        String file = "";
+
+        /// <summary>
         /// Design page
         /// </summary>
         /// <param name="idClient"></param>
@@ -63,6 +70,13 @@ namespace Aiche_Bois
 
             // set connetion initialise
             connection.ConnectionString = Program.Path;
+
+            path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\aiche bois\\les factures\\";
+            // If directory does not exist, don't even try   
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
 
             InitializeComponent();
         }
@@ -191,6 +205,9 @@ namespace Aiche_Bois
 
                     factures.Add(facture);
                 }
+
+                file = $"{clients[0].NomClient + String.Format("-N{0:D4}", idClient.ToString())}.pdf";
+
                 connection.Close();
             }
             catch (Exception ex)
@@ -210,25 +227,20 @@ namespace Aiche_Bois
         [Obsolete]
         private void client(long idFacture)
         {
-            //طباعة صفحة العميل، كل الفواتر
-
-
             Document pdfDoc = new Document(PageSize.A4);
-
-            String path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\aiche bois\\";
-            String file = "facture.pdf";
 
             FileStream os = new FileStream(path + file, FileMode.Create);
             using (os)
             {
-
                 PdfWriter pdfWriter = PdfWriter.GetInstance(pdfDoc, os);
                 pdfDoc.Open();
                 PdfPTable tab1 = new PdfPTable(1);
-                tab1.SpacingAfter = 20;
-                iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(Properties.Resources.logo, System.Drawing.Imaging.ImageFormat.Png);
+                iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(@"Resources\\header.jpg");
                 tab1.WidthPercentage = 100;
-                PdfPCell cel1 = new PdfPCell(image, false);
+                PdfPCell cel1 = new PdfPCell(image, true);
+                cel1.BorderColor = iTextSharp.text.BaseColor.WHITE;
+                
+                tab1.SpacingAfter = 20;
                 tab1.AddCell(cel1);
                 pdfDoc.Add(tab1);
 
@@ -386,20 +398,18 @@ namespace Aiche_Bois
 
             Document pdfDoc = new Document(PageSize.A4);
 
-            String path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\aiche bois\\";
-            String file = "facture.pdf";
-
             FileStream os = new FileStream(path + file, FileMode.Create);
             using (os)
             {
-
                 PdfWriter pdfWriter = PdfWriter.GetInstance(pdfDoc, os);
                 pdfDoc.Open();
                 PdfPTable tab1 = new PdfPTable(1);
-                tab1.SpacingAfter = 20;
-                iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(Properties.Resources.logo, System.Drawing.Imaging.ImageFormat.Png);
+                iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(@"Resources\\header.jpg");
                 tab1.WidthPercentage = 100;
-                PdfPCell cel1 = new PdfPCell(image, false);
+                PdfPCell cel1 = new PdfPCell(image, true);
+                cel1.BorderColor = iTextSharp.text.BaseColor.WHITE;
+
+                tab1.SpacingAfter = 20;
                 tab1.AddCell(cel1);
                 pdfDoc.Add(tab1);
 
@@ -520,7 +530,7 @@ namespace Aiche_Bois
                 	<!-- this is footer page -->
                 	<br>
                 	<div style='font-weight: initial; font-size: 8pt;'>
-                        <p>Numéro de téléphone: +212 55 5555 555</p>
+                        <p>Numéro de téléphone: +212 700 48 31 86</p>
                         <p>Adresse: Tanger 90060, Maroc</p>
                 		<p>
                 			MODE DE PAIMENT: 50% à la commande, 50% à la finition (Validité de l'offre 1 mois)
@@ -530,8 +540,9 @@ namespace Aiche_Bois
                 </html>";
                 HTMLWorker htmlWorker = new HTMLWorker(pdfDoc);
                 htmlWorker.Parse(new StringReader(strHTML));
-                pdfWriter.CloseStream = false;
+                pdfWriter.CloseStream = true;
                 pdfDoc.Close();
+
                 // to open pdf dynamique
                 System.Diagnostics.Process.Start(path + file);
             }
@@ -547,9 +558,6 @@ namespace Aiche_Bois
         {
             Document pdfDoc = new Document(PageSize.A4);
 
-            String path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\aiche bois\\";
-            String file = "facture.pdf";
-
             FileStream os = new FileStream(path + file, FileMode.Create);
             using (os)
             {
@@ -557,9 +565,12 @@ namespace Aiche_Bois
                 PdfWriter pdfWriter = PdfWriter.GetInstance(pdfDoc, os);
                 pdfDoc.Open();
                 PdfPTable tab1 = new PdfPTable(1);
-                iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(Properties.Resources.logo, System.Drawing.Imaging.ImageFormat.Png);
+                iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(@"Resources\\sub-header.jpg");
                 tab1.WidthPercentage = 100;
-                PdfPCell cel1 = new PdfPCell(image, false);
+                PdfPCell cel1 = new PdfPCell(image, true);
+                cel1.BorderColor = iTextSharp.text.BaseColor.WHITE;
+
+                tab1.SpacingAfter = 20;
                 tab1.AddCell(cel1);
                 pdfDoc.Add(tab1);
 
@@ -690,17 +701,10 @@ namespace Aiche_Bois
         /// <summary>
         /// print all mesure
         /// </summary>
-        /// <param name="idClient"></param>
-        /// <param name="idFacture"></param>
         [Obsolete]
         private void pvc_mesure()
         {
             Document pdfDoc = new Document(PageSize.A4);
-
-
-
-            String path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\aiche bois\\";
-            String file = "facture.pdf";
 
             FileStream os = new FileStream(path + file, FileMode.Create);
             using (os)
@@ -709,9 +713,12 @@ namespace Aiche_Bois
                 PdfWriter pdfWriter = PdfWriter.GetInstance(pdfDoc, os);
                 pdfDoc.Open();
                 PdfPTable tab1 = new PdfPTable(1);
-                iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(Properties.Resources.logo, System.Drawing.Imaging.ImageFormat.Png);
+                iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(@"Resources\\sub-header.jpg");
                 tab1.WidthPercentage = 100;
-                PdfPCell cel1 = new PdfPCell(image, false);
+                PdfPCell cel1 = new PdfPCell(image, true);
+                cel1.BorderColor = iTextSharp.text.BaseColor.WHITE;
+
+                tab1.SpacingAfter = 20;
                 tab1.AddCell(cel1);
                 pdfDoc.Add(tab1);
 
@@ -827,7 +834,8 @@ namespace Aiche_Bois
                 while (readerIdFacture.Read())
                 {
                     //تسجيل المعرفات في القائمة
-                    cmbShoosePrint.Items.Add(readerIdFacture["idFacture"].ToString());
+                    lstFacture.Items.Add(readerIdFacture["idFacture"].ToString());
+                    lstMesure.Items.Add(readerIdFacture["idFacture"].ToString());
                 }
                 connection.Close();
             }
@@ -840,70 +848,60 @@ namespace Aiche_Bois
             }
 
             //إضافة عنصر في قائمة المعرفات
-            cmbShoosePrint.Items.Add("Toutes Les Mesures");
-            cmbShoosePrint.Items.Add("Toutes Les factures");
+            lstFacture.Items.Add("Toutes Les factures");
+            lstMesure.Items.Add("Toutes Les Mesures");
 
             if (btnClick == "btnPrintFacture")
             {
-                cmbShoosePrint.SelectedItem = idFacture;
+                lstFacture.SelectedItem = idFacture;
             }
             else
             {
-                cmbShoosePrint.SelectedItem = "Toutes Les factures";
+                lstFacture.SelectedItem = "Toutes Les factures";
             }
         }
 
-        /// <summary>
-        /// Delete the selection of items in the Invoice knowledge list
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         [Obsolete]
-        private void cmbShoosePrint_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnPrint_Click(object sender, EventArgs e)
         {
             try
             {
                 //    //تحديد الطباعة حسب الزر المضغوط
-
-                if (cmbShoosePrint.Text == "Toutes Les factures")
+                if (lstFacture.SelectedIndex > -1 && !lstFacture.SelectedItem.Equals("aucune"))
                 {
-                    btnCorrespondFacture.Visible = false;
-                    ////طباعة صفحة العميل، كل الفواتر
-                    client();
+                    if (lstFacture.SelectedItem.Equals("Toutes Les factures"))
+                    {
+                        ////طباعة صفحة العميل، كل الفواتر
+                        file = $"Factures-{clients[0].NomClient + String.Format("-N{0:D4}", idClient)}.pdf";
+                        client();
+                    }
+                    else
+                    {
+                        btnPrint.Visible = true;
+                        file = $"{clients[0].NomClient + String.Format("-N{0:D4}-Facture-Numero-{1}", idClient, lstFacture.SelectedItem)}.pdf";
+                        //طباعة صفحة العميل، من خلال رقم الفاتورة المحددة
+                        client(long.Parse(lstFacture.SelectedItem.ToString()));
+
+                    }
                 }
-                else if (cmbShoosePrint.Text == "Toutes Les Mesures")
+                if (lstMesure.SelectedIndex > -1 && !lstMesure.SelectedItem.Equals("aucune"))
                 {
-                    btnCorrespondFacture.Visible = false;
+                    if (lstMesure.Text == "Toutes Les Mesures")
+                    {
+                        file = $"Mesures-{clients[0].NomClient + String.Format("-N{0:D4}", idClient)}.pdf";
 
-                    //طباعة صفحة القياسات من خلال زر نافدذة العميل
-                    pvc_mesure();
+                        //طباعة صفحة القياسات من خلال زر نافدذة العميل
+                        pvc_mesure();
+                    }
+                    else
+                    {
+                        file = $"{clients[0].NomClient + String.Format("-N{0:D4}-Facture-Numero-{1}", idClient, lstMesure.SelectedItem)}.pdf";
+
+                        // طباعة القياسات من خلال رقم الفاتورة
+                        pvc_mesure(long.Parse(lstMesure.Text));
+                    }
                 }
-                else
-                {
-                    btnCorrespondFacture.Visible = true;
-
-                    //طباعة صفحة العميل، من خلال رقم الفاتورة المحددة
-                    client(long.Parse(cmbShoosePrint.Text));
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-                FormMessage message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
-                message.ShowDialog();
-                return;
-            }
-        }
-
-        [Obsolete]
-        private void btnCorrespondFacture_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                // طباعة القياسات من خلال رقم الفاتورة
-                pvc_mesure(long.Parse(cmbShoosePrint.Text));
             }
             catch (Exception ex)
             {
