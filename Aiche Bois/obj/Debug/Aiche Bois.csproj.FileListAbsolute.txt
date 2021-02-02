@@ -284,3 +284,31 @@ C:\Users\mohamed\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche 
 C:\Users\mohamed\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\obj\Debug\Aiche Bois.exe
 C:\Users\mohamed\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\obj\Debug\Aiche Bois.pdb
 C:\Users\mohamed\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\obj\Debug\Aiche Bois.csprojAssemblyReference.cache
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\bin\Debug\Aiche Bois.exe.config
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\bin\Debug\Aiche Bois.exe.manifest
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\bin\Debug\Aiche Bois.application
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\bin\Debug\Aiche Bois.exe
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\bin\Debug\Aiche Bois.pdb
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\bin\Debug\itextsharp.dll
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\bin\Debug\itextsharp.xmlworker.dll
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\bin\Debug\itextsharp.xml
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.csprojAssemblyReference.cache
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.csproj.ResolveComReference.cache
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche_Bois.FormAjout.resources
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche_Bois.FormAjoutFactures.resources
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche_Bois.FormAvance.resources
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche_Bois.FormClient.resources
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche_Bois.FormMessage.resources
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche_Bois.PrintPdf.resources
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche_Bois.Properties.Resources.resources
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche_Bois.User.resources
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.csproj.GenerateResource.cache
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.csproj.CoreCompileInputs.cache
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.TrustInfo.xml
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.exe.manifest
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.application
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.csproj.CopyComplete
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.exe
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.pdb
