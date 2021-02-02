@@ -17,7 +17,7 @@ namespace Aiche_Bois
         private string fileName = "aicheBois.accdb";
         private string fileNameType = "type.accdb";
         private string sourcePath = Application.StartupPath;
-        private string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\aiche bois";
+        private string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\aiche bois\\base donnée";
         public User()
         {
             // Use Path class to manipulate file and directory paths.

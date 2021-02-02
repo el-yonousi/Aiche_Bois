@@ -126,14 +126,17 @@
     <value>Nirmala UI, 19pt, style=Bold</value>
   </data>
   <data name="txtSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+    <value>4, 4</value>
+  </data>
+  <data name="txtSearch.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtSearch.MaxLength" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
   <data name="txtSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1270, 34</value>
+    <value>1552, 43</value>
   </data>
   <data name="txtSearch.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -162,8 +165,11 @@
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 20</value>
+    <value>101, 25</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -184,7 +190,7 @@
     <value>3</value>
   </data>
   <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="btnAddFacture.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -199,10 +205,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnAddFacture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+    <value>4, 4</value>
+  </data>
+  <data name="btnAddFacture.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnAddFacture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 35</value>
+    <value>398, 39</value>
   </data>
   <data name="btnAddFacture.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -219,69 +228,6 @@
   <data name="&gt;&gt;btnAddFacture.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="btnPrintFacture.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="btnPrintFacture.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnPrintFacture.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnPrintFacture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>879, 3</value>
-  </data>
-  <data name="btnPrintFacture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 35</value>
-  </data>
-  <data name="btnPrintFacture.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;btnPrintFacture.Name" xml:space="preserve">
-    <value>btnPrintFacture</value>
-  </data>
-  <data name="&gt;&gt;btnPrintFacture.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnPrintFacture.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;btnPrintFacture.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnEditFacture.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="btnEditFacture.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="btnEditFacture.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnEditFacture.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnEditFacture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>295, 3</value>
-  </data>
-  <data name="btnEditFacture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 35</value>
-  </data>
-  <data name="btnEditFacture.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btnEditFacture.Name" xml:space="preserve">
-    <value>btnEditFacture</value>
-  </data>
-  <data name="&gt;&gt;btnEditFacture.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnEditFacture.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;btnEditFacture.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="btnDeleteFacture.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -295,10 +241,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnDeleteFacture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>587, 3</value>
+    <value>410, 4</value>
+  </data>
+  <data name="btnDeleteFacture.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnDeleteFacture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 35</value>
+    <value>398, 39</value>
   </data>
   <data name="btnDeleteFacture.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -313,7 +262,40 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;btnDeleteFacture.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
+  </data>
+  <data name="btnPrintFacture.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="btnPrintFacture.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnPrintFacture.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnPrintFacture.Location" type="System.Drawing.Point, System.Drawing">
+    <value>816, 4</value>
+  </data>
+  <data name="btnPrintFacture.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="btnPrintFacture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>398, 39</value>
+  </data>
+  <data name="btnPrintFacture.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;btnPrintFacture.Name" xml:space="preserve">
+    <value>btnPrintFacture</value>
+  </data>
+  <data name="&gt;&gt;btnPrintFacture.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnPrintFacture.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;btnPrintFacture.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="btnResult.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -325,10 +307,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1171, 3</value>
+    <value>1222, 4</value>
+  </data>
+  <data name="btnResult.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 35</value>
+    <value>400, 39</value>
   </data>
   <data name="btnResult.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -343,19 +328,22 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;btnResult.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 714</value>
+    <value>0, 897</value>
+  </data>
+  <data name="tableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1330, 41</value>
+    <value>1626, 47</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>55</value>
@@ -373,7 +361,7 @@
     <value>2</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnAddFacture" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnPrintFacture" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="btnEditFacture" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="btnDeleteFacture" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="btnResult" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,22,Percent,22,Percent,22,Percent,22,Percent,12" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnAddFacture" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnDeleteFacture" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="btnPrintFacture" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="btnResult" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,22,Percent,22,Percent,22,Percent,22" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tableLayoutPanel2.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
@@ -394,10 +382,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1279, 3</value>
+    <value>1564, 4</value>
+  </data>
+  <data name="btnSearch.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 33</value>
+    <value>58, 41</value>
   </data>
   <data name="btnSearch.TabIndex" type="System.Int32, mscorlib">
     <value>54</value>
@@ -418,13 +409,16 @@
     <value>Top</value>
   </data>
   <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 20</value>
+    <value>0, 25</value>
+  </data>
+  <data name="tableLayoutPanel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="tableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1330, 39</value>
+    <value>1626, 49</value>
   </data>
   <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>56</value>
@@ -442,7 +436,7 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="txtSearch" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnSearch" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,96,Percent,4" /&gt;&lt;Rows Styles="Percent,100,Absolute,39" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="txtSearch" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnSearch" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,96,Percent,4" /&gt;&lt;Rows Styles="Percent,100,Absolute,49" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tableLayoutPanel3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -490,7 +484,7 @@
     <value>True</value>
   </metadata>
   <data name="Column5.HeaderText" xml:space="preserve">
-    <value>Vérifier</value>
+    <value />
   </data>
   <data name="Column5.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
@@ -510,11 +504,17 @@
   <data name="Column8.HeaderText" xml:space="preserve">
     <value>Prix ​​payé</value>
   </data>
+  <data name="Column8.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
   <metadata name="Column9.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="Column9.HeaderText" xml:space="preserve">
     <value>Prix Rest</value>
+  </data>
+  <data name="Column9.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <metadata name="Column7.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -525,6 +525,15 @@
   <data name="Column7.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
+  <metadata name="Column10.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Column10.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column10.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
   <data name="dtGridFacture.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -532,13 +541,16 @@
     <value>NoControl</value>
   </data>
   <data name="dtGridFacture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+    <value>4, 4</value>
+  </data>
+  <data name="dtGridFacture.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="dtGridFacture.RowHeadersWidth" type="System.Int32, mscorlib">
     <value>51</value>
   </data>
   <data name="dtGridFacture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1324, 649</value>
+    <value>1618, 811</value>
   </data>
   <data name="dtGridFacture.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -556,13 +568,16 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 59</value>
+    <value>0, 74</value>
+  </data>
+  <data name="tableLayoutPanel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="tableLayoutPanel3.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="tableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1330, 655</value>
+    <value>1626, 819</value>
   </data>
   <data name="tableLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>57</value>
@@ -586,7 +601,7 @@
     <value>17, 17</value>
   </metadata>
   <metadata name="printDocument1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>136, 17</value>
+    <value>158, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -595,10 +610,10 @@
     <value>25</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>9, 20</value>
+    <value>11, 25</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1330, 755</value>
+    <value>1626, 944</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Nirmala UI, 11.25pt, style=Bold</value>
@@ -3240,7 +3255,7 @@
 </value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
+    <value>5, 6, 5, 6</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -3301,6 +3316,12 @@
   </data>
   <data name="&gt;&gt;Column7.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Column10.Name" xml:space="preserve">
+    <value>Column10</value>
+  </data>
+  <data name="&gt;&gt;Column10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;printDialog1.Name" xml:space="preserve">
     <value>printDialog1</value>

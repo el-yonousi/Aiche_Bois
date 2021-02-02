@@ -170,7 +170,7 @@
             this.label19.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label19.Location = new System.Drawing.Point(836, 584);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(92, 13);
+            this.label19.Size = new System.Drawing.Size(115, 19);
             this.label19.TabIndex = 276;
             this.label19.Text = "Montant restant";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -183,7 +183,7 @@
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label6.Location = new System.Drawing.Point(439, 584);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 13);
+            this.label6.Size = new System.Drawing.Size(145, 19);
             this.label6.TabIndex = 274;
             this.label6.Text = "Montant de l\'avance";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -198,7 +198,7 @@
             this.checkAvance.Font = new System.Drawing.Font("Nirmala UI", 30F, System.Drawing.FontStyle.Bold);
             this.checkAvance.Location = new System.Drawing.Point(424, 610);
             this.checkAvance.Name = "checkAvance";
-            this.checkAvance.Size = new System.Drawing.Size(12, 11);
+            this.checkAvance.Size = new System.Drawing.Size(14, 13);
             this.checkAvance.TabIndex = 27;
             this.checkAvance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkAvance.UseVisualStyleBackColor = true;
@@ -212,7 +212,7 @@
             this.label18.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label18.Location = new System.Drawing.Point(9, 585);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(80, 13);
+            this.label18.Size = new System.Drawing.Size(100, 19);
             this.label18.TabIndex = 275;
             this.label18.Text = "Montant total";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -246,7 +246,7 @@
             this.lblNumeroFacture.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblNumeroFacture.Location = new System.Drawing.Point(9, 6);
             this.lblNumeroFacture.Name = "lblNumeroFacture";
-            this.lblNumeroFacture.Size = new System.Drawing.Size(91, 13);
+            this.lblNumeroFacture.Size = new System.Drawing.Size(116, 19);
             this.lblNumeroFacture.TabIndex = 290;
             this.lblNumeroFacture.Text = "Facture Numero";
             this.lblNumeroFacture.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -259,7 +259,7 @@
             this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label5.Location = new System.Drawing.Point(9, 476);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 13);
+            this.label5.Size = new System.Drawing.Size(94, 19);
             this.label5.TabIndex = 288;
             this.label5.Text = "Type du bois";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -272,7 +272,7 @@
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label4.Location = new System.Drawing.Point(9, 227);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(151, 13);
+            this.label4.Size = new System.Drawing.Size(195, 19);
             this.label4.TabIndex = 287;
             this.label4.Text = "Selectionner le type du bois";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -287,7 +287,7 @@
             this.txtSearch.Location = new System.Drawing.Point(12, 243);
             this.txtSearch.MaxLength = 30;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(389, 28);
+            this.txtSearch.Size = new System.Drawing.Size(389, 35);
             this.txtSearch.TabIndex = 279;
             this.txtSearch.TextChanged += new System.EventHandler(this.TxtSearch_TextChanged);
             // 
@@ -297,10 +297,10 @@
             this.lstTypeBois.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lstTypeBois.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.lstTypeBois.FormattingEnabled = true;
-            this.lstTypeBois.ItemHeight = 20;
+            this.lstTypeBois.ItemHeight = 25;
             this.lstTypeBois.Location = new System.Drawing.Point(12, 285);
             this.lstTypeBois.Name = "lstTypeBois";
-            this.lstTypeBois.Size = new System.Drawing.Size(389, 180);
+            this.lstTypeBois.Size = new System.Drawing.Size(389, 175);
             this.lstTypeBois.TabIndex = 3;
             this.lstTypeBois.SelectedIndexChanged += new System.EventHandler(this.lstTypeBois_SelectedIndexChanged);
             // 
@@ -314,7 +314,7 @@
             this.dtDateFacture.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtDateFacture.Location = new System.Drawing.Point(12, 79);
             this.dtDateFacture.Name = "dtDateFacture";
-            this.dtDateFacture.Size = new System.Drawing.Size(389, 27);
+            this.dtDateFacture.Size = new System.Drawing.Size(389, 32);
             this.dtDateFacture.TabIndex = 282;
             this.dtDateFacture.TabStop = false;
             this.dtDateFacture.Tag = "Date de la Facture";
@@ -327,7 +327,7 @@
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label2.Location = new System.Drawing.Point(9, 63);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 13);
+            this.label2.Size = new System.Drawing.Size(129, 19);
             this.label2.TabIndex = 284;
             this.label2.Text = "Date de la Facture";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -345,7 +345,7 @@
             this.btnCmbCategorie.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnCmbCategorie.Location = new System.Drawing.Point(323, 186);
             this.btnCmbCategorie.Name = "btnCmbCategorie";
-            this.btnCmbCategorie.Size = new System.Drawing.Size(78, 33);
+            this.btnCmbCategorie.Size = new System.Drawing.Size(78, 39);
             this.btnCmbCategorie.TabIndex = 32;
             this.btnCmbCategorie.TabStop = false;
             this.btnCmbCategorie.UseVisualStyleBackColor = false;
@@ -359,7 +359,7 @@
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label3.Location = new System.Drawing.Point(9, 118);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 13);
+            this.label3.Size = new System.Drawing.Size(103, 19);
             this.label3.TabIndex = 285;
             this.label3.Text = "Nom du client";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -372,7 +372,7 @@
             this.label15.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label15.Location = new System.Drawing.Point(9, 171);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(73, 13);
+            this.label15.Size = new System.Drawing.Size(94, 19);
             this.label15.TabIndex = 286;
             this.label15.Text = "Type du Bois";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -387,7 +387,7 @@
             this.txtNomClient.Location = new System.Drawing.Point(12, 134);
             this.txtNomClient.MaxLength = 30;
             this.txtNomClient.Name = "txtNomClient";
-            this.txtNomClient.Size = new System.Drawing.Size(389, 28);
+            this.txtNomClient.Size = new System.Drawing.Size(389, 35);
             this.txtNomClient.TabIndex = 0;
             this.txtNomClient.Tag = "Nom du Client";
             // 
@@ -403,10 +403,11 @@
             this.cmbTypeDeBois.Items.AddRange(new object[] {
             "MDF",
             "LATTE",
-            "STD"});
+            "STD",
+            "BOIS_DIVERS"});
             this.cmbTypeDeBois.Location = new System.Drawing.Point(12, 187);
             this.cmbTypeDeBois.Name = "cmbTypeDeBois";
-            this.cmbTypeDeBois.Size = new System.Drawing.Size(305, 31);
+            this.cmbTypeDeBois.Size = new System.Drawing.Size(305, 38);
             this.cmbTypeDeBois.TabIndex = 2;
             this.cmbTypeDeBois.SelectedIndexChanged += new System.EventHandler(this.cmbCateogorie_SelectedIndexChanged);
             // 
@@ -427,6 +428,7 @@
             // cmbNumeroFacture
             // 
             this.cmbNumeroFacture.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbNumeroFacture.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbNumeroFacture.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNumeroFacture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbNumeroFacture.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -434,7 +436,7 @@
             this.cmbNumeroFacture.FormattingEnabled = true;
             this.cmbNumeroFacture.Location = new System.Drawing.Point(12, 22);
             this.cmbNumeroFacture.Name = "cmbNumeroFacture";
-            this.cmbNumeroFacture.Size = new System.Drawing.Size(260, 31);
+            this.cmbNumeroFacture.Size = new System.Drawing.Size(389, 38);
             this.cmbNumeroFacture.TabIndex = 289;
             this.cmbNumeroFacture.Visible = false;
             this.cmbNumeroFacture.SelectedIndexChanged += new System.EventHandler(this.cmbFactureNumero_SelectedIndexChanged);
@@ -518,6 +520,7 @@
             this.dtGMesure.ReadOnly = true;
             this.dtGMesure.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dtGMesure.RowHeadersVisible = false;
+            this.dtGMesure.RowHeadersWidth = 51;
             this.dtGMesure.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -541,6 +544,7 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "Qté";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
@@ -548,12 +552,14 @@
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn2.HeaderText = "Largr";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.HeaderText = "Longr";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
@@ -608,7 +614,7 @@
             this.txtCategorie.Location = new System.Drawing.Point(425, 492);
             this.txtCategorie.MaxLength = 255;
             this.txtCategorie.Name = "txtCategorie";
-            this.txtCategorie.Size = new System.Drawing.Size(389, 28);
+            this.txtCategorie.Size = new System.Drawing.Size(389, 35);
             this.txtCategorie.TabIndex = 301;
             this.txtCategorie.Tag = "la categorie";
             // 
@@ -620,7 +626,7 @@
             this.label13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label13.Location = new System.Drawing.Point(422, 474);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(57, 13);
+            this.label13.Size = new System.Drawing.Size(75, 19);
             this.label13.TabIndex = 307;
             this.label13.Text = "Categorie";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -633,7 +639,7 @@
             this.label11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label11.Location = new System.Drawing.Point(422, 377);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(123, 13);
+            this.label11.Size = new System.Drawing.Size(159, 19);
             this.label11.TabIndex = 306;
             this.label11.Text = "Prix ​​Total des Mesures";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -648,7 +654,7 @@
             this.txtMetrageDeFeuille.Location = new System.Drawing.Point(425, 443);
             this.txtMetrageDeFeuille.MaxLength = 255;
             this.txtMetrageDeFeuille.Name = "txtMetrageDeFeuille";
-            this.txtMetrageDeFeuille.Size = new System.Drawing.Size(389, 28);
+            this.txtMetrageDeFeuille.Size = new System.Drawing.Size(389, 35);
             this.txtMetrageDeFeuille.TabIndex = 300;
             this.txtMetrageDeFeuille.Tag = "Métrage de Feuille";
             // 
@@ -660,7 +666,7 @@
             this.label20.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label20.Location = new System.Drawing.Point(422, 427);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(102, 13);
+            this.label20.Size = new System.Drawing.Size(132, 19);
             this.label20.TabIndex = 305;
             this.label20.Text = "Métrage de feuille";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -676,11 +682,12 @@
             this.cmbTypeDuMetres.FormattingEnabled = true;
             this.cmbTypeDuMetres.Items.AddRange(new object[] {
             "feuille",
+            "m",
             "m2",
             "m3"});
             this.cmbTypeDuMetres.Location = new System.Drawing.Point(736, 20);
             this.cmbTypeDuMetres.Name = "cmbTypeDuMetres";
-            this.cmbTypeDuMetres.Size = new System.Drawing.Size(78, 33);
+            this.cmbTypeDuMetres.Size = new System.Drawing.Size(78, 39);
             this.cmbTypeDuMetres.TabIndex = 5;
             this.cmbTypeDuMetres.SelectedIndexChanged += new System.EventHandler(this.cmbTypeDuMetres_SelectedIndexChanged);
             // 
@@ -694,7 +701,7 @@
             this.txtPrixMetreMesure.MaxLength = 10;
             this.txtPrixMetreMesure.Name = "txtPrixMetreMesure";
             this.txtPrixMetreMesure.ShortcutsEnabled = false;
-            this.txtPrixMetreMesure.Size = new System.Drawing.Size(306, 31);
+            this.txtPrixMetreMesure.Size = new System.Drawing.Size(306, 38);
             this.txtPrixMetreMesure.TabIndex = 4;
             this.txtPrixMetreMesure.Tag = "Prix au Metre Carré";
             this.txtPrixMetreMesure.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -711,7 +718,7 @@
             this.txtTotalMesure.MaxLength = 255;
             this.txtTotalMesure.Name = "txtTotalMesure";
             this.txtTotalMesure.ShortcutsEnabled = false;
-            this.txtTotalMesure.Size = new System.Drawing.Size(389, 28);
+            this.txtTotalMesure.Size = new System.Drawing.Size(389, 35);
             this.txtTotalMesure.TabIndex = 13;
             this.txtTotalMesure.Tag = "Volume Total de la Mesure";
             this.txtTotalMesure.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -726,7 +733,7 @@
             this.lblMesure.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblMesure.Location = new System.Drawing.Point(422, 324);
             this.lblMesure.Name = "lblMesure";
-            this.lblMesure.Size = new System.Drawing.Size(221, 13);
+            this.lblMesure.Size = new System.Drawing.Size(290, 19);
             this.lblMesure.TabIndex = 304;
             this.lblMesure.Text = "Volume Total de la Mesure de mètre carré";
             this.lblMesure.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -739,7 +746,7 @@
             this.lblTypeDuMetres.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblTypeDuMetres.Location = new System.Drawing.Point(421, 5);
             this.lblTypeDuMetres.Name = "lblTypeDuMetres";
-            this.lblTypeDuMetres.Size = new System.Drawing.Size(104, 13);
+            this.lblTypeDuMetres.Size = new System.Drawing.Size(139, 19);
             this.lblTypeDuMetres.TabIndex = 303;
             this.lblTypeDuMetres.Text = "Prix ​​au mètre carré";
             this.lblTypeDuMetres.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -796,7 +803,7 @@
             this.chSeulPVC.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Bold);
             this.chSeulPVC.Location = new System.Drawing.Point(840, 28);
             this.chSeulPVC.Name = "chSeulPVC";
-            this.chSeulPVC.Size = new System.Drawing.Size(72, 17);
+            this.chSeulPVC.Size = new System.Drawing.Size(90, 23);
             this.chSeulPVC.TabIndex = 34;
             this.chSeulPVC.Text = "Seul PVC";
             this.chSeulPVC.UseVisualStyleBackColor = true;
@@ -859,6 +866,7 @@
             this.dtGridPvc.Name = "dtGridPvc";
             this.dtGridPvc.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dtGridPvc.RowHeadersVisible = false;
+            this.dtGridPvc.RowHeadersWidth = 51;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -882,23 +890,25 @@
             // 
             this.dataGridViewTextBoxColumn4.HeaderText = "Qté";
             this.dataGridViewTextBoxColumn4.MaxInputLength = 3;
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn5.HeaderText = "Largr";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.HeaderText = "Longr";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
             // cmbOrientationPvc
             // 
             this.cmbOrientationPvc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cmbOrientationPvc.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.cmbOrientationPvc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbOrientationPvc.HeaderText = "Ortn";
             this.cmbOrientationPvc.Items.AddRange(new object[] {
@@ -908,6 +918,7 @@
             "h*2",
             "v*2",
             "4"});
+            this.cmbOrientationPvc.MinimumWidth = 6;
             this.cmbOrientationPvc.Name = "cmbOrientationPvc";
             this.cmbOrientationPvc.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.cmbOrientationPvc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -920,7 +931,7 @@
             this.label17.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label17.Location = new System.Drawing.Point(837, 475);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(95, 13);
+            this.label17.Size = new System.Drawing.Size(123, 19);
             this.label17.TabIndex = 326;
             this.label17.Text = "Prix ​​total du PVC";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -935,7 +946,7 @@
             this.txtPrixMetreLPVC.MaxLength = 255;
             this.txtPrixMetreLPVC.Name = "txtPrixMetreLPVC";
             this.txtPrixMetreLPVC.ShortcutsEnabled = false;
-            this.txtPrixMetreLPVC.Size = new System.Drawing.Size(389, 27);
+            this.txtPrixMetreLPVC.Size = new System.Drawing.Size(389, 34);
             this.txtPrixMetreLPVC.TabIndex = 24;
             this.txtPrixMetreLPVC.Tag = "Prix de metres linear PVC";
             this.txtPrixMetreLPVC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -950,7 +961,7 @@
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label7.Location = new System.Drawing.Point(910, 6);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 13);
+            this.label7.Size = new System.Drawing.Size(93, 19);
             this.label7.TabIndex = 322;
             this.label7.Text = "Type du PVC";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -985,7 +996,7 @@
             this.txtTaillePVC.MaxLength = 255;
             this.txtTaillePVC.Name = "txtTaillePVC";
             this.txtTaillePVC.ShortcutsEnabled = false;
-            this.txtTaillePVC.Size = new System.Drawing.Size(389, 27);
+            this.txtTaillePVC.Size = new System.Drawing.Size(389, 34);
             this.txtTaillePVC.TabIndex = 23;
             this.txtTaillePVC.Tag = "taille de canto";
             this.txtTaillePVC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1018,7 +1029,7 @@
             this.label16.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label16.Location = new System.Drawing.Point(837, 381);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(83, 13);
+            this.label16.Size = new System.Drawing.Size(108, 19);
             this.label16.TabIndex = 325;
             this.label16.Text = "Taille de Canto";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1034,7 +1045,7 @@
             this.cmbTypePvc.FormattingEnabled = true;
             this.cmbTypePvc.Location = new System.Drawing.Point(913, 21);
             this.cmbTypePvc.Name = "cmbTypePvc";
-            this.cmbTypePvc.Size = new System.Drawing.Size(232, 31);
+            this.cmbTypePvc.Size = new System.Drawing.Size(232, 38);
             this.cmbTypePvc.TabIndex = 14;
             this.cmbTypePvc.SelectedIndexChanged += new System.EventHandler(this.cmbNbrCantoPvc_SelectedIndexChanged);
             // 
@@ -1046,7 +1057,7 @@
             this.label14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label14.Location = new System.Drawing.Point(837, 427);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(146, 13);
+            this.label14.Size = new System.Drawing.Size(192, 19);
             this.label14.TabIndex = 324;
             this.label14.Text = "Prix de 1 metres linear PVC";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1059,7 +1070,7 @@
             this.label12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label12.Location = new System.Drawing.Point(837, 331);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(106, 13);
+            this.label12.Size = new System.Drawing.Size(139, 19);
             this.label12.TabIndex = 323;
             this.label12.Text = "Taille totale de PVC";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1110,7 +1121,7 @@
             this.label22.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label22.Location = new System.Drawing.Point(835, 65);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(52, 13);
+            this.label22.Size = new System.Drawing.Size(66, 19);
             this.label22.TabIndex = 336;
             this.label22.Text = "Quantité";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1123,7 +1134,7 @@
             this.label24.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label24.Location = new System.Drawing.Point(1148, 64);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(66, 13);
+            this.label24.Size = new System.Drawing.Size(85, 19);
             this.label24.TabIndex = 337;
             this.label24.Text = "Orientation";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1139,7 +1150,7 @@
             this.txtQtePVC.MaxLength = 10;
             this.txtQtePVC.Name = "txtQtePVC";
             this.txtQtePVC.ShortcutsEnabled = false;
-            this.txtQtePVC.Size = new System.Drawing.Size(91, 28);
+            this.txtQtePVC.Size = new System.Drawing.Size(91, 35);
             this.txtQtePVC.TabIndex = 15;
             this.txtQtePVC.Tag = "Quantite PVC";
             this.txtQtePVC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1156,7 +1167,7 @@
             this.txtLargPVC.MaxLength = 10;
             this.txtLargPVC.Name = "txtLargPVC";
             this.txtLargPVC.ShortcutsEnabled = false;
-            this.txtLargPVC.Size = new System.Drawing.Size(91, 28);
+            this.txtLargPVC.Size = new System.Drawing.Size(91, 35);
             this.txtLargPVC.TabIndex = 16;
             this.txtLargPVC.Tag = "Largeur PVC";
             this.txtLargPVC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1173,7 +1184,7 @@
             this.txtLongPVC.MaxLength = 10;
             this.txtLongPVC.Name = "txtLongPVC";
             this.txtLongPVC.ShortcutsEnabled = false;
-            this.txtLongPVC.Size = new System.Drawing.Size(91, 28);
+            this.txtLongPVC.Size = new System.Drawing.Size(91, 35);
             this.txtLongPVC.TabIndex = 17;
             this.txtLongPVC.Tag = "Longueur PVC";
             this.txtLongPVC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1187,7 +1198,7 @@
             this.label23.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label23.Location = new System.Drawing.Point(1050, 65);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(58, 13);
+            this.label23.Size = new System.Drawing.Size(72, 19);
             this.label23.TabIndex = 335;
             this.label23.Text = "Longueur";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1200,7 +1211,7 @@
             this.label21.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label21.Location = new System.Drawing.Point(943, 64);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(47, 13);
+            this.label21.Size = new System.Drawing.Size(61, 19);
             this.label21.TabIndex = 334;
             this.label21.Text = "Largeur";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1224,7 +1235,7 @@
             "4"});
             this.cmbOrtnPVC.Location = new System.Drawing.Point(1151, 80);
             this.cmbOrtnPVC.Name = "cmbOrtnPVC";
-            this.cmbOrtnPVC.Size = new System.Drawing.Size(78, 29);
+            this.cmbOrtnPVC.Size = new System.Drawing.Size(78, 36);
             this.cmbOrtnPVC.TabIndex = 18;
             this.cmbOrtnPVC.Tag = "Orientation PVC";
             this.cmbOrtnPVC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantite_KeyPress);
@@ -1237,7 +1248,7 @@
             this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label10.Location = new System.Drawing.Point(421, 64);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 13);
+            this.label10.Size = new System.Drawing.Size(66, 19);
             this.label10.TabIndex = 344;
             this.label10.Text = "Quantité";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1252,7 +1263,7 @@
             this.txtQuantite.MaxLength = 10;
             this.txtQuantite.Name = "txtQuantite";
             this.txtQuantite.ShortcutsEnabled = false;
-            this.txtQuantite.Size = new System.Drawing.Size(91, 28);
+            this.txtQuantite.Size = new System.Drawing.Size(91, 35);
             this.txtQuantite.TabIndex = 6;
             this.txtQuantite.Tag = "Quantite";
             this.txtQuantite.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1268,7 +1279,7 @@
             this.txtLargeur.MaxLength = 10;
             this.txtLargeur.Name = "txtLargeur";
             this.txtLargeur.ShortcutsEnabled = false;
-            this.txtLargeur.Size = new System.Drawing.Size(91, 28);
+            this.txtLargeur.Size = new System.Drawing.Size(91, 35);
             this.txtLargeur.TabIndex = 7;
             this.txtLargeur.Tag = "largeur";
             this.txtLargeur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1282,7 +1293,7 @@
             this.lblEpaisseur.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblEpaisseur.Location = new System.Drawing.Point(733, 65);
             this.lblEpaisseur.Name = "lblEpaisseur";
-            this.lblEpaisseur.Size = new System.Drawing.Size(56, 13);
+            this.lblEpaisseur.Size = new System.Drawing.Size(72, 19);
             this.lblEpaisseur.TabIndex = 345;
             this.lblEpaisseur.Text = "épaisseur";
             this.lblEpaisseur.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1296,7 +1307,7 @@
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label8.Location = new System.Drawing.Point(527, 65);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 13);
+            this.label8.Size = new System.Drawing.Size(61, 19);
             this.label8.TabIndex = 342;
             this.label8.Text = "Largeur";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1311,7 +1322,7 @@
             this.txtEpaisseur.MaxLength = 10;
             this.txtEpaisseur.Name = "txtEpaisseur";
             this.txtEpaisseur.ShortcutsEnabled = false;
-            this.txtEpaisseur.Size = new System.Drawing.Size(78, 28);
+            this.txtEpaisseur.Size = new System.Drawing.Size(78, 35);
             this.txtEpaisseur.TabIndex = 9;
             this.txtEpaisseur.Tag = "epaisseur";
             this.txtEpaisseur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1328,7 +1339,7 @@
             this.txtLongueur.MaxLength = 10;
             this.txtLongueur.Name = "txtLongueur";
             this.txtLongueur.ShortcutsEnabled = false;
-            this.txtLongueur.Size = new System.Drawing.Size(91, 28);
+            this.txtLongueur.Size = new System.Drawing.Size(91, 35);
             this.txtLongueur.TabIndex = 8;
             this.txtLongueur.Tag = "longueur";
             this.txtLongueur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1342,7 +1353,7 @@
             this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label9.Location = new System.Drawing.Point(636, 64);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(58, 13);
+            this.label9.Size = new System.Drawing.Size(72, 19);
             this.label9.TabIndex = 343;
             this.label9.Text = "Longueur";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1380,7 +1391,7 @@
             this.txtPrixAvanceClient.MaxLength = 255;
             this.txtPrixAvanceClient.Name = "txtPrixAvanceClient";
             this.txtPrixAvanceClient.ShortcutsEnabled = false;
-            this.txtPrixAvanceClient.Size = new System.Drawing.Size(372, 28);
+            this.txtPrixAvanceClient.Size = new System.Drawing.Size(372, 35);
             this.txtPrixAvanceClient.TabIndex = 273;
             this.txtPrixAvanceClient.Tag = "Montant de l\'Avance";
             this.txtPrixAvanceClient.Text = "0.00";
@@ -1582,10 +1593,6 @@
         private System.Windows.Forms.CheckBox chSeulPVC;
         private FontAwesome.Sharp.IconButton btnSavePvc;
         private System.Windows.Forms.DataGridView dtGridPvc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewComboBoxColumn cmbOrientationPvc;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtPrixMetreLPVC;
         private System.Windows.Forms.Label label7;
@@ -1621,5 +1628,9 @@
         private System.Windows.Forms.Label txtPrixTotalMesure;
         private System.Windows.Forms.Label txtTotaleTaillPVC;
         private System.Windows.Forms.Label txtPrixTotalPVC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewComboBoxColumn cmbOrientationPvc;
     }
 }

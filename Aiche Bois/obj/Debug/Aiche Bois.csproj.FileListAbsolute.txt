@@ -283,3 +283,4 @@ C:\Users\mohamed\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche 
 C:\Users\mohamed\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\obj\Debug\Aiche Bois.csproj.CopyComplete
 C:\Users\mohamed\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\obj\Debug\Aiche Bois.exe
 C:\Users\mohamed\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\obj\Debug\Aiche Bois.pdb
+C:\Users\mohamed\OneDrive - OFPPT\TDI201 2020-2021\My Projects\Aiche Bois\Aiche Bois\obj\Debug\Aiche Bois.csprojAssemblyReference.cache

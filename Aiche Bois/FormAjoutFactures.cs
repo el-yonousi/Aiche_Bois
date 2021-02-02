@@ -244,7 +244,7 @@ namespace Aiche_Bois
         private void AjouterFacture_Load(object sender, EventArgs e)
         {
             /*initialise combo box*/
-            cmbTypeDuMetres.SelectedIndex = 1;
+            cmbTypeDuMetres.SelectedIndex = 2;
             cmbTypeDeBois.SelectedIndex = 0;
             dtDateFacture.Value = DateTime.Today;
             checkAvance.Checked = false;
@@ -332,14 +332,14 @@ namespace Aiche_Bois
                 var commandClient = new OleDbCommand
                 {
                     Connection = connectionClient,
-                    CommandText = 
+                    CommandText =
                     "SELECT count(idFacture) AS nbFacture, " +
                     "(sum(f.prixtotalmesure) + sum(prixtotalpvc)) AS total, " +
                     "IIF((sum(f.prixtotalmesure) + sum(prixtotalpvc)) = prixTotalAvance, 0, (sum(f.prixtotalmesure) + sum(prixtotalpvc)) - prixTotalAvance) AS rest, " +
                     "IIF(ROUND((sum(f.prixtotalmesure) + sum(prixtotalpvc)), 2) = ROUND((prixTotalAvance), 2), 'true', 'false') AS cavance, " +
                     "c.nomClient, dateClient, c.prixTotalAvance, c.idClient " +
                     "FROM client AS c INNER JOIN facture AS f ON f.idClient = c.idClient " +
-                    "WHERE c.idClient = " + long.Parse(idClient) + 
+                    "WHERE c.idClient = " + long.Parse(idClient) +
                     " GROUP BY nomClient, dateClient, prixTotalAvance, c.idClient"
                 };
                 OleDbDataReader readerClient = commandClient.ExecuteReader();
@@ -766,6 +766,14 @@ namespace Aiche_Bois
         }
 
         /// <summary>
+        /// this method disable/enable mesures
+        /// </summary>
+        /// <param name="b"></param>
+        private void enabledMesure(bool b)
+        {
+            txtQuantite.Enabled = txtLargeur.Enabled = txtLongueur.Enabled = txtEpaisseur.Enabled = b;
+        }
+        /// <summary>
         /// c'est la selection pour choisier le type de bois
         /// </summary>
         /// <param name="sender"></param>
@@ -789,9 +797,30 @@ namespace Aiche_Bois
                 {
                     dtGMesure.ColumnCount -= 1;
                 }
+                enabledMesure(true);
                 txtTotalMesure.Enabled = true;
+                txtTotalMesure.Focus();
             }
             else if (cmbTypeDuMetres.SelectedIndex == 1)
+            {
+                if (btnDeterminClick != "edit")
+                {
+                    dtGMesure.Rows.Clear();
+                    mesures.Clear();
+                }
+                lblTypeDuMetres.Text = "Prix ​​au Mètres Linéaires";
+                lblMesure.Text = "Taille en mètres linéaires";
+                lblEpaisseur.Visible = false;
+                txtEpaisseur.Visible = false;
+                if (dtGMesure.ColumnCount > 3)
+                {
+                    dtGMesure.ColumnCount -= 1;
+                }
+                enabledMesure(false);
+                txtTotalMesure.Enabled = true;
+                txtTotalMesure.Focus();
+            }
+            else if (cmbTypeDuMetres.SelectedIndex == 2)
             {
                 if (btnDeterminClick != "edit")
                 {
@@ -807,6 +836,7 @@ namespace Aiche_Bois
                 {
                     dtGMesure.ColumnCount -= 1;
                 }
+                enabledMesure(true);
             }
             else
             {
@@ -827,6 +857,7 @@ namespace Aiche_Bois
                     dtGMesure.ColumnCount += 1;
                     dtGMesure.Columns[3].HeaderText = "Epssr";
                 }
+                enabledMesure(true);
             }
             txtQuantite.Focus();
         }
@@ -1025,10 +1056,11 @@ namespace Aiche_Bois
                 message = new FormMessage("La facture a été supprimée avec succès", "Succès !!!", true, FontAwesome.Sharp.IconChar.CheckCircle);
                 message.ShowDialog();
 
-                if (cmbNumeroFacture.Items.Count >= 1)
+                if (cmbNumeroFacture.Items.Count >= 0)
                     cmbNumeroFacture.SelectedIndex = 0;
                 else
                     ViderTxtBox();
+                connectionClient.Close();
             }
             catch (Exception ex)
             {
@@ -1114,8 +1146,9 @@ namespace Aiche_Bois
             }
             else
             {
-                message = new FormMessage("Spécifiez une ligne !!!", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message = new FormMessage("La List est vide", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
                 message.ShowDialog();
+                return;
             }
         }
 
@@ -1219,21 +1252,25 @@ namespace Aiche_Bois
                 Facture facture = new Facture();
 
                 List<Mesure> vs = new List<Mesure>();
-                if (cmbTypeDuMetres.SelectedIndex != 2)
+                if (cmbTypeDuMetres.SelectedIndex == 0 || cmbTypeDuMetres.SelectedIndex == 2)
                 {
                     for (int i = 0; i < dtGMesure.Rows.Count; i++)
                     {
                         vs.Add(new Mesure(facture.IDFacture, Convert.ToDouble(dtGMesure.Rows[i].Cells[0].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[1].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[2].Value), cmbTypeDuMetres.Text, dtGridPvc.Rows.Count > 0 ? dtGridPvc.Rows[i].Cells[3].Value.ToString() : "0"));
                     }
                 }
-                else
+                else if (cmbTypeDuMetres.SelectedIndex == 3)
                 {
                     for (int i = 0; i < dtGMesure.Rows.Count; i++)
                     {
                         vs.Add(new Mesure(facture.IDFacture, Convert.ToDouble(dtGMesure.Rows[i].Cells[0].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[1].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[2].Value), Convert.ToDouble(dtGMesure.Rows[i].Cells[3].Value), cmbTypeDuMetres.Text, dtGridPvc.Rows.Count > 0 ? dtGridPvc.Rows[i].Cells[3].Value.ToString() : "0"));
                     }
                 }
-
+                if (cmbTypeDuMetres.SelectedIndex == 1)
+                {
+                    facture.TotalMesure = double.Parse(txtTotalMesure.Text);
+                    facture.PrixTotalMesure = double.Parse(txtPrixTotalMesure.Text);
+                }
                 facture.Mesures = vs;
                 facture.DateFacture = dtDateFacture.Value;
                 facture.TypeDeBois = txtTypeDeBois.Text;
@@ -1591,8 +1628,6 @@ namespace Aiche_Bois
         private void btnSaveFacture_Click(object sender, EventArgs e)
         {
             verifyForm = false;
-            message = new FormMessage("Les données ont été enregistrées", "Succés", true, FontAwesome.Sharp.IconChar.CheckCircle);
-            message.ShowDialog();
             this.Close();
         }
 
@@ -1682,6 +1717,8 @@ namespace Aiche_Bois
                         }
                     }
                     connectionClient.Close();
+                    message = new FormMessage("Les données ont été enregistrées", "Succés", true, FontAwesome.Sharp.IconChar.CheckCircle);
+                    message.ShowDialog();
                 }
                 catch (Exception ex)
                 {
