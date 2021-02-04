@@ -103,7 +103,7 @@ namespace Aiche_Bois
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Aiche_Bois.Properties.Resources.logo;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(137, 22);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(186, 138);

@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Aiche Bois.exe" size="1335296">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Aiche Bois.exe" size="1657344">
       <assemblyIdentity name="Aiche Bois" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>0MILNaNnzwsjLIRp+23lRBHng8Y6Ca4fS2MH91cLdEo=</dsig:DigestValue>
+        <dsig:DigestValue>uub6mNBsX7JNyPMMn8nTbNSt7kjfbMxhbwJSURTDP54=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -110,31 +110,13 @@
       <dsig:DigestValue>kPJyV73f7y19NTk+Cs5CIROLrKlwqm8IiBDVLtNmlRs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Aiche Bois.ico" size="157882">
+  <file name="bin\Debug\Resources\Aiche Bois.ico" size="157882">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>dTD5bkG2I4NdsZWl9JKhxY8UsASzdwyOZ2NebaRaHxo=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Resources\header.jpg" size="14438">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>T/jBhXjqdLGeFFvM0204GuovtO+5AHpdqtLmuYZYW7c=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Resources\sub-header.jpg" size="9595">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>M11Zw4oiS2P6Ql8gJ7bwM67AfBNBGmET+2GyXfP8rYo=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

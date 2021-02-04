@@ -231,9 +231,8 @@ namespace Aiche_Bois
         /// </summary>
         private void idFacture()
         {
-            lblFactureNumero.Text = "Facture Numéro: " + (factures.Count + 1).ToString("D2");
+            cmbNumeroFacture.Text = "Facture Numéro: " + (factures.Count + 1).ToString("D2");
         }
-
         /*final des methods*/
 
         /// <summary>
@@ -260,9 +259,9 @@ namespace Aiche_Bois
             {
                 try
                 {
-                    lblFactureNumero.Visible = false;
+                    cmbNumeroFacture.DropDownStyle = ComboBoxStyle.DropDownList;
                     cmbNumeroFacture.Visible = true;
-                    lblFactureNumero.Text = "Selectionner la Facture";
+                    lblNumeroFacture.Text = "Selectionner la Facture";
                     btnAddFacture.IconChar = FontAwesome.Sharp.IconChar.Edit;
                     btnClear.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
 
@@ -888,7 +887,6 @@ namespace Aiche_Bois
                 txtLongueur.Focus();
                 return;
             }
-
 
             for (int i = 0; i < dtGMesure.Rows.Count; i++)
             {

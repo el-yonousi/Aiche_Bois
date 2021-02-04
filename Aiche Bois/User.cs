@@ -16,37 +16,40 @@ namespace Aiche_Bois
     {
         private string fileName = "aicheBois.accdb";
         private string fileNameType = "type.accdb";
-        private string sourcePath = Application.StartupPath;
+        private string sourcePath = Application.StartupPath + "\\Resources\\";
         private string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\aiche bois\\base donnée";
         public User()
         {
-            // Use Path class to manipulate file and directory paths.
-            string destFile = Path.Combine(targetPath, fileName);
-
-            if (!Directory.Exists(targetPath))
+            if (System.Diagnostics.Process.GetProcessesByName("aiche bois").Length > 0)
             {
-                string[] files = Directory.GetFiles(sourcePath);
-                Directory.CreateDirectory(targetPath);
+                // Use Path class to manipulate file and directory paths.
+                string destFile = Path.Combine(targetPath, fileName);
 
-                //// Copy the files and overwrite destination files if they already exist.
-                foreach (string s in files)
+                if (!Directory.Exists(targetPath))
                 {
-                    // Use static Path methods to extract only the file name from the path.
-                    fileName = Path.GetFileName(s);
-                    if (fileName == "aicheBois.accdb")
+                    string[] files = Directory.GetFiles(sourcePath);
+                    Directory.CreateDirectory(targetPath);
+
+                    //// Copy the files and overwrite destination files if they already exist.
+                    foreach (string s in files)
                     {
-                        destFile = Path.Combine(targetPath, fileName);
-                        File.Copy(s, destFile, true);
-                    }
-                    if (fileName == fileNameType)
-                    {
-                        destFile = Path.Combine(targetPath, fileNameType);
-                        File.Copy(s, destFile, true);
+                        // Use static Path methods to extract only the file name from the path.
+                        fileName = Path.GetFileName(s);
+                        if (fileName == "aicheBois.accdb")
+                        {
+                            destFile = Path.Combine(targetPath, fileName);
+                            File.Copy(s, destFile, true);
+                        }
+                        if (fileName == fileNameType)
+                        {
+                            destFile = Path.Combine(targetPath, fileNameType);
+                            File.Copy(s, destFile, true);
+                        }
                     }
                 }
-            }
 
-            InitializeComponent();
+                InitializeComponent();
+            }
         }
 
         /// <summary>

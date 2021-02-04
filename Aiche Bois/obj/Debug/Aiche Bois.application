@@ -14,14 +14,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Aiche Bois.exe.manifest" size="8463">
+    <dependentAssembly dependencyType="install" codebase="Aiche Bois.exe.manifest" size="7682">
       <assemblyIdentity name="Aiche Bois.exe" version="1.1.1.12" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TkDwCwJqudX4bP5X4rECxbOIGwyz5iRvxQKR+XO3rEw=</dsig:DigestValue>
+        <dsig:DigestValue>5FYHVwxxpQ5ZWYPtuRnGQOVtlr9/ibdzg/Do+Rbdiv4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

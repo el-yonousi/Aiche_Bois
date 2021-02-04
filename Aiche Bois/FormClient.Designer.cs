@@ -29,22 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClient));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAddFacture = new FontAwesome.Sharp.IconButton();
-            this.btnDeleteFacture = new FontAwesome.Sharp.IconButton();
-            this.btnPrintFacture = new FontAwesome.Sharp.IconButton();
-            this.btnResult = new FontAwesome.Sharp.IconButton();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnSearch = new FontAwesome.Sharp.IconButton();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.t_home = new System.Windows.Forms.TableLayoutPanel();
             this.dtGridFacture = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,124 +54,164 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
+            this.Column11 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.t_side_bar = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btn_home = new FontAwesome.Sharp.IconButton();
+            this.btnAddClient = new FontAwesome.Sharp.IconButton();
+            this.btnEdit = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.btnPrintFacture = new FontAwesome.Sharp.IconButton();
+            this.btnResult = new FontAwesome.Sharp.IconButton();
+            this.p_home = new System.Windows.Forms.Panel();
+            this.t_header = new System.Windows.Forms.TableLayoutPanel();
+            this.btnExit = new FontAwesome.Sharp.IconButton();
+            this.btnMaximize = new FontAwesome.Sharp.IconButton();
+            this.btnMinimize = new FontAwesome.Sharp.IconButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.p_Add_Edit = new System.Windows.Forms.Panel();
+            this.t_add_edit = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblNumeroFacture = new System.Windows.Forms.Label();
+            this.cmbNumeroFacture = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtDateFacture = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtNomClient = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnCmbCategorie = new FontAwesome.Sharp.IconButton();
+            this.cmbTypeDeBois = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSearchFacture = new System.Windows.Forms.TextBox();
+            this.lstTypeBois = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtTypeDeBois = new System.Windows.Forms.Label();
+            this.btnImprimerFacture = new FontAwesome.Sharp.IconButton();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnClear = new FontAwesome.Sharp.IconButton();
+            this.btnAddFacture = new FontAwesome.Sharp.IconButton();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAddSeulPVC = new FontAwesome.Sharp.IconButton();
+            this.btnDeleteSeulPVC = new FontAwesome.Sharp.IconButton();
+            this.btnImportPvc = new FontAwesome.Sharp.IconButton();
+            this.btnSavePvc = new FontAwesome.Sharp.IconButton();
+            this.dtGridPvc = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbOrientationPvc = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtQtePVC = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtLargPVC = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtLongPVC = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.cmbOrtnPVC = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.btncmbNbrCanto = new FontAwesome.Sharp.IconButton();
+            this.cmbTypePvc = new System.Windows.Forms.ComboBox();
+            this.chSeulPVC = new System.Windows.Forms.CheckBox();
+            this.txtPrixTotalPVC = new System.Windows.Forms.Label();
+            this.txtTotaleTaillPVC = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtPrixMetreLPVC = new System.Windows.Forms.TextBox();
+            this.txtTaillePVC = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAddMesure = new FontAwesome.Sharp.IconButton();
+            this.btnDeleteMesure = new FontAwesome.Sharp.IconButton();
+            this.btnExportCsv = new FontAwesome.Sharp.IconButton();
+            this.dtGMesure = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtQuantite = new System.Windows.Forms.TextBox();
+            this.txtLargeur = new System.Windows.Forms.TextBox();
+            this.txtLongueur = new System.Windows.Forms.TextBox();
+            this.txtEpaisseur = new System.Windows.Forms.TextBox();
+            this.lblEpaisseur = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmbTypeDuMetres = new System.Windows.Forms.ComboBox();
+            this.txtPrixMetreMesure = new System.Windows.Forms.TextBox();
+            this.lblMesure = new System.Windows.Forms.Label();
+            this.txtTotalMesure = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtMetrageDeFeuille = new System.Windows.Forms.TextBox();
+            this.btnDeleteFacture = new FontAwesome.Sharp.IconButton();
+            this.lblTypeDuMetres = new System.Windows.Forms.Label();
+            this.txtCategorie = new System.Windows.Forms.TextBox();
+            this.txtPrixTotalMesure = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtPrixRestClient = new System.Windows.Forms.Label();
+            this.btnSaveFacture = new FontAwesome.Sharp.IconButton();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.checkAvance = new System.Windows.Forms.CheckBox();
+            this.txtPrixAvanceClient = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtPrixTotalClient = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.t_home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridFacture)).BeginInit();
+            this.t_side_bar.SuspendLayout();
+            this.p_home.SuspendLayout();
+            this.t_header.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.p_Add_Edit.SuspendLayout();
+            this.t_add_edit.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel12.SuspendLayout();
+            this.tableLayoutPanel16.SuspendLayout();
+            this.tableLayoutPanel13.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridPvc)).BeginInit();
+            this.tableLayoutPanel14.SuspendLayout();
+            this.tableLayoutPanel15.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGMesure)).BeginInit();
+            this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtSearch
             // 
-            resources.ApplyResources(this.txtSearch, "txtSearch");
+            this.txtSearch.AcceptsReturn = true;
+            this.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.txtSearch.CausesValidation = false;
+            resources.ApplyResources(this.txtSearch, "txtSearch");
+            this.txtSearch.ForeColor = System.Drawing.Color.Silver;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // label4
+            // t_home
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.label4.Name = "label4";
-            // 
-            // tableLayoutPanel1
-            // 
-            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.btnAddFacture, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnDeleteFacture, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnPrintFacture, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnResult, 3, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            // 
-            // btnAddFacture
-            // 
-            resources.ApplyResources(this.btnAddFacture, "btnAddFacture");
-            this.btnAddFacture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.btnAddFacture.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddFacture.FlatAppearance.BorderSize = 0;
-            this.btnAddFacture.ForeColor = System.Drawing.Color.White;
-            this.btnAddFacture.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnAddFacture.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.btnAddFacture.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAddFacture.IconSize = 35;
-            this.btnAddFacture.Name = "btnAddFacture";
-            this.btnAddFacture.UseVisualStyleBackColor = false;
-            this.btnAddFacture.Click += new System.EventHandler(this.btnAddFacture_Click);
-            // 
-            // btnDeleteFacture
-            // 
-            resources.ApplyResources(this.btnDeleteFacture, "btnDeleteFacture");
-            this.btnDeleteFacture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.btnDeleteFacture.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteFacture.FlatAppearance.BorderSize = 0;
-            this.btnDeleteFacture.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteFacture.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.btnDeleteFacture.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.btnDeleteFacture.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnDeleteFacture.IconSize = 30;
-            this.btnDeleteFacture.Name = "btnDeleteFacture";
-            this.btnDeleteFacture.UseVisualStyleBackColor = false;
-            this.btnDeleteFacture.Click += new System.EventHandler(this.btnDeleteFacture_Click);
-            // 
-            // btnPrintFacture
-            // 
-            resources.ApplyResources(this.btnPrintFacture, "btnPrintFacture");
-            this.btnPrintFacture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.btnPrintFacture.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrintFacture.FlatAppearance.BorderSize = 0;
-            this.btnPrintFacture.ForeColor = System.Drawing.Color.White;
-            this.btnPrintFacture.IconChar = FontAwesome.Sharp.IconChar.Print;
-            this.btnPrintFacture.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.btnPrintFacture.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnPrintFacture.IconSize = 30;
-            this.btnPrintFacture.Name = "btnPrintFacture";
-            this.btnPrintFacture.UseVisualStyleBackColor = false;
-            this.btnPrintFacture.Click += new System.EventHandler(this.btnPrintFacture_Click);
-            // 
-            // btnResult
-            // 
-            resources.ApplyResources(this.btnResult, "btnResult");
-            this.btnResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.btnResult.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnResult.FlatAppearance.BorderSize = 0;
-            this.btnResult.ForeColor = System.Drawing.Color.White;
-            this.btnResult.IconChar = FontAwesome.Sharp.IconChar.Poll;
-            this.btnResult.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.btnResult.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnResult.IconSize = 30;
-            this.btnResult.Name = "btnResult";
-            this.btnResult.UseVisualStyleBackColor = false;
-            this.btnResult.Click += new System.EventHandler(this.btnResult_Click);
-            // 
-            // tableLayoutPanel2
-            // 
-            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
-            this.tableLayoutPanel2.Controls.Add(this.txtSearch, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnSearch, 1, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            // 
-            // btnSearch
-            // 
-            resources.ApplyResources(this.btnSearch, "btnSearch");
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnSearch.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSearch.IconSize = 30;
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            // 
-            // tableLayoutPanel3
-            // 
-            resources.ApplyResources(this.tableLayoutPanel3, "tableLayoutPanel3");
-            this.tableLayoutPanel3.Controls.Add(this.dtGridFacture, 0, 0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            resources.ApplyResources(this.t_home, "t_home");
+            this.t_home.Controls.Add(this.txtSearch, 0, 0);
+            this.t_home.Controls.Add(this.dtGridFacture, 0, 1);
+            this.t_home.Name = "t_home";
             // 
             // dtGridFacture
             // 
@@ -182,24 +220,24 @@
             this.dtGridFacture.AllowUserToOrderColumns = true;
             this.dtGridFacture.AllowUserToResizeColumns = false;
             this.dtGridFacture.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
-            this.dtGridFacture.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(1);
+            this.dtGridFacture.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dtGridFacture.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtGridFacture.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.dtGridFacture.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtGridFacture.CausesValidation = false;
             this.dtGridFacture.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dtGridFacture.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtGridFacture.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(8);
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridFacture.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dtGridFacture.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGridFacture.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -211,7 +249,8 @@
             this.Column8,
             this.Column9,
             this.Column7,
-            this.Column10});
+            this.Column10,
+            this.Column11});
             resources.ApplyResources(this.dtGridFacture, "dtGridFacture");
             this.dtGridFacture.EnableHeadersVisualStyles = false;
             this.dtGridFacture.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
@@ -219,25 +258,25 @@
             this.dtGridFacture.Name = "dtGridFacture";
             this.dtGridFacture.ReadOnly = true;
             this.dtGridFacture.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtGridFacture.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridFacture.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dtGridFacture.RowHeadersVisible = false;
             this.dtGridFacture.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(187)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dtGridFacture.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Ubuntu", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(187)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
+            this.dtGridFacture.RowsDefaultCellStyle = dataGridViewCellStyle18;
             this.dtGridFacture.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dtGridFacture.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.dtGridFacture.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
@@ -281,10 +320,10 @@
             // 
             // Column5
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(187)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(187)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle15;
             this.Column5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             resources.ApplyResources(this.Column5, "Column5");
             this.Column5.Name = "Column5";
@@ -323,11 +362,11 @@
             // Column10
             // 
             this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Nirmala UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.Column10.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Nirmala UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.Column10.DefaultCellStyle = dataGridViewCellStyle16;
             this.Column10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             resources.ApplyResources(this.Column10, "Column10");
             this.Column10.Name = "Column10";
@@ -335,51 +374,1248 @@
             this.Column10.Text = "Modifier";
             this.Column10.UseColumnTextForButtonValue = true;
             // 
-            // printDialog1
+            // Column11
             // 
-            this.printDialog1.Document = this.printDocument1;
-            this.printDialog1.UseEXDialog = true;
+            this.Column11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.Column11, "Column11");
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            this.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column11.Text = "Supprimer";
+            this.Column11.UseColumnTextForButtonValue = true;
+            // 
+            // t_side_bar
+            // 
+            this.t_side_bar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            resources.ApplyResources(this.t_side_bar, "t_side_bar");
+            this.t_side_bar.Controls.Add(this.label4, 0, 0);
+            this.t_side_bar.Controls.Add(this.btn_home, 0, 1);
+            this.t_side_bar.Controls.Add(this.btnAddClient, 0, 2);
+            this.t_side_bar.Controls.Add(this.btnEdit, 0, 3);
+            this.t_side_bar.Controls.Add(this.iconButton2, 0, 4);
+            this.t_side_bar.Controls.Add(this.btnPrintFacture, 0, 5);
+            this.t_side_bar.Controls.Add(this.btnResult, 0, 6);
+            this.t_side_bar.Name = "t_side_bar";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.label4.Name = "label4";
+            // 
+            // btn_home
+            // 
+            resources.ApplyResources(this.btn_home, "btn_home");
+            this.btn_home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btn_home.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_home.FlatAppearance.BorderSize = 0;
+            this.btn_home.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btn_home.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.btn_home.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.btn_home.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_home.IconSize = 35;
+            this.btn_home.Name = "btn_home";
+            this.btn_home.UseVisualStyleBackColor = false;
+            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
+            // 
+            // btnAddClient
+            // 
+            resources.ApplyResources(this.btnAddClient, "btnAddClient");
+            this.btnAddClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnAddClient.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddClient.FlatAppearance.BorderSize = 0;
+            this.btnAddClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnAddClient.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnAddClient.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.btnAddClient.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAddClient.IconSize = 35;
+            this.btnAddClient.Name = "btnAddClient";
+            this.btnAddClient.UseVisualStyleBackColor = false;
+            this.btnAddClient.Click += new System.EventHandler(this.btnAddFacture_Click);
+            // 
+            // btnEdit
+            // 
+            resources.ApplyResources(this.btnEdit, "btnEdit");
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnEdit.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.btnEdit.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.btnEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEdit.IconSize = 30;
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // iconButton2
+            // 
+            resources.ApplyResources(this.iconButton2, "iconButton2");
+            this.iconButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.iconButton2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 30;
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.UseVisualStyleBackColor = false;
+            // 
+            // btnPrintFacture
+            // 
+            resources.ApplyResources(this.btnPrintFacture, "btnPrintFacture");
+            this.btnPrintFacture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnPrintFacture.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrintFacture.FlatAppearance.BorderSize = 0;
+            this.btnPrintFacture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnPrintFacture.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.btnPrintFacture.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.btnPrintFacture.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnPrintFacture.IconSize = 30;
+            this.btnPrintFacture.Name = "btnPrintFacture";
+            this.btnPrintFacture.UseVisualStyleBackColor = false;
+            this.btnPrintFacture.Click += new System.EventHandler(this.btnPrintFacture_Click);
+            // 
+            // btnResult
+            // 
+            resources.ApplyResources(this.btnResult, "btnResult");
+            this.btnResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnResult.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnResult.FlatAppearance.BorderSize = 0;
+            this.btnResult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnResult.IconChar = FontAwesome.Sharp.IconChar.Poll;
+            this.btnResult.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.btnResult.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnResult.IconSize = 30;
+            this.btnResult.Name = "btnResult";
+            this.btnResult.UseVisualStyleBackColor = false;
+            this.btnResult.Click += new System.EventHandler(this.btnResult_Click);
+            // 
+            // p_home
+            // 
+            this.p_home.Controls.Add(this.t_home);
+            resources.ApplyResources(this.p_home, "p_home");
+            this.p_home.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.p_home.Name = "p_home";
+            // 
+            // t_header
+            // 
+            this.t_header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            resources.ApplyResources(this.t_header, "t_header");
+            this.t_header.Controls.Add(this.btnExit, 3, 0);
+            this.t_header.Controls.Add(this.btnMaximize, 2, 0);
+            this.t_header.Controls.Add(this.btnMinimize, 1, 0);
+            this.t_header.Controls.Add(this.pictureBox1, 0, 0);
+            this.t_header.Name = "t_header";
+            this.t_header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tableLayoutPanel1_MouseDown);
+            // 
+            // btnExit
+            // 
+            resources.ApplyResources(this.btnExit, "btnExit");
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnExit.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExit.IconSize = 25;
+            this.btnExit.Name = "btnExit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnMaximize
+            // 
+            resources.ApplyResources(this.btnMaximize, "btnMaximize");
+            this.btnMaximize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaximize.FlatAppearance.BorderSize = 0;
+            this.btnMaximize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnMaximize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnMaximize.ForeColor = System.Drawing.Color.White;
+            this.btnMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.btnMaximize.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.btnMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMaximize.IconSize = 25;
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.UseVisualStyleBackColor = false;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            // 
+            // btnMinimize
+            // 
+            resources.ApplyResources(this.btnMinimize, "btnMinimize");
+            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnMinimize.ForeColor = System.Drawing.Color.White;
+            this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimize.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinimize.IconSize = 25;
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
+            // p_Add_Edit
+            // 
+            this.p_Add_Edit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.p_Add_Edit.Controls.Add(this.t_add_edit);
+            this.p_Add_Edit.Controls.Add(this.tableLayoutPanel1);
+            resources.ApplyResources(this.p_Add_Edit, "p_Add_Edit");
+            this.p_Add_Edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.p_Add_Edit.Name = "p_Add_Edit";
+            // 
+            // t_add_edit
+            // 
+            this.t_add_edit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            resources.ApplyResources(this.t_add_edit, "t_add_edit");
+            this.t_add_edit.Controls.Add(this.tableLayoutPanel3, 0, 0);
+            this.t_add_edit.Controls.Add(this.tableLayoutPanel12, 2, 0);
+            this.t_add_edit.Controls.Add(this.tableLayoutPanel5, 1, 0);
+            this.t_add_edit.Name = "t_add_edit";
+            // 
+            // tableLayoutPanel3
+            // 
+            resources.ApplyResources(this.tableLayoutPanel3, "tableLayoutPanel3");
+            this.tableLayoutPanel3.Controls.Add(this.lblNumeroFacture, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.cmbNumeroFacture, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label2, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.dtDateFacture, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.label3, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.txtNomClient, 0, 5);
+            this.tableLayoutPanel3.Controls.Add(this.label15, 0, 6);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 7);
+            this.tableLayoutPanel3.Controls.Add(this.label1, 0, 8);
+            this.tableLayoutPanel3.Controls.Add(this.txtSearchFacture, 0, 9);
+            this.tableLayoutPanel3.Controls.Add(this.lstTypeBois, 0, 10);
+            this.tableLayoutPanel3.Controls.Add(this.label5, 0, 11);
+            this.tableLayoutPanel3.Controls.Add(this.txtTypeDeBois, 0, 12);
+            this.tableLayoutPanel3.Controls.Add(this.btnImprimerFacture, 0, 13);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            // 
+            // lblNumeroFacture
+            // 
+            resources.ApplyResources(this.lblNumeroFacture, "lblNumeroFacture");
+            this.lblNumeroFacture.Name = "lblNumeroFacture";
+            // 
+            // cmbNumeroFacture
+            // 
+            resources.ApplyResources(this.cmbNumeroFacture, "cmbNumeroFacture");
+            this.cmbNumeroFacture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.cmbNumeroFacture.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbNumeroFacture.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cmbNumeroFacture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.cmbNumeroFacture.FormattingEnabled = true;
+            this.cmbNumeroFacture.Name = "cmbNumeroFacture";
+            this.cmbNumeroFacture.SelectedIndexChanged += new System.EventHandler(this.cmbNumeroFacture_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // dtDateFacture
+            // 
+            resources.ApplyResources(this.dtDateFacture, "dtDateFacture");
+            this.dtDateFacture.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.dtDateFacture.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.dtDateFacture.CalendarTitleBackColor = System.Drawing.Color.DarkRed;
+            this.dtDateFacture.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.dtDateFacture.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.dtDateFacture.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtDateFacture.Name = "dtDateFacture";
+            this.dtDateFacture.TabStop = false;
+            this.dtDateFacture.Tag = "Date de la Facture";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
+            // txtNomClient
+            // 
+            resources.ApplyResources(this.txtNomClient, "txtNomClient");
+            this.txtNomClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.txtNomClient.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNomClient.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNomClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtNomClient.Name = "txtNomClient";
+            this.txtNomClient.Tag = "Nom du Client";
+            // 
+            // label15
+            // 
+            resources.ApplyResources(this.label15, "label15");
+            this.label15.Name = "label15";
+            // 
+            // tableLayoutPanel4
+            // 
+            resources.ApplyResources(this.tableLayoutPanel4, "tableLayoutPanel4");
+            this.tableLayoutPanel4.Controls.Add(this.btnCmbCategorie, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.cmbTypeDeBois, 0, 0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            // 
+            // btnCmbCategorie
+            // 
+            resources.ApplyResources(this.btnCmbCategorie, "btnCmbCategorie");
+            this.btnCmbCategorie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnCmbCategorie.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCmbCategorie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnCmbCategorie.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnCmbCategorie.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnCmbCategorie.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCmbCategorie.IconSize = 25;
+            this.btnCmbCategorie.Name = "btnCmbCategorie";
+            this.btnCmbCategorie.TabStop = false;
+            this.btnCmbCategorie.UseVisualStyleBackColor = false;
+            this.btnCmbCategorie.Click += new System.EventHandler(this.btnCmbCategorie_Click);
+            // 
+            // cmbTypeDeBois
+            // 
+            resources.ApplyResources(this.cmbTypeDeBois, "cmbTypeDeBois");
+            this.cmbTypeDeBois.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.cmbTypeDeBois.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbTypeDeBois.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTypeDeBois.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.cmbTypeDeBois.FormattingEnabled = true;
+            this.cmbTypeDeBois.Items.AddRange(new object[] {
+            resources.GetString("cmbTypeDeBois.Items"),
+            resources.GetString("cmbTypeDeBois.Items1"),
+            resources.GetString("cmbTypeDeBois.Items2"),
+            resources.GetString("cmbTypeDeBois.Items3")});
+            this.cmbTypeDeBois.Name = "cmbTypeDeBois";
+            this.cmbTypeDeBois.SelectedIndexChanged += new System.EventHandler(this.cmbTypeDeBois_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // txtSearchFacture
+            // 
+            resources.ApplyResources(this.txtSearchFacture, "txtSearchFacture");
+            this.txtSearchFacture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.txtSearchFacture.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSearchFacture.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtSearchFacture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtSearchFacture.Name = "txtSearchFacture";
+            this.txtSearchFacture.TextChanged += new System.EventHandler(this.txtSearchFacture_TextChanged);
+            // 
+            // lstTypeBois
+            // 
+            this.lstTypeBois.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.lstTypeBois.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.lstTypeBois, "lstTypeBois");
+            this.lstTypeBois.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.lstTypeBois.FormattingEnabled = true;
+            this.lstTypeBois.Name = "lstTypeBois";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
+            // 
+            // txtTypeDeBois
+            // 
+            resources.ApplyResources(this.txtTypeDeBois, "txtTypeDeBois");
+            this.txtTypeDeBois.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.txtTypeDeBois.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtTypeDeBois.Name = "txtTypeDeBois";
+            this.txtTypeDeBois.Tag = "Type Du Bois";
+            // 
+            // btnImprimerFacture
+            // 
+            this.btnImprimerFacture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnImprimerFacture.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btnImprimerFacture, "btnImprimerFacture");
+            this.btnImprimerFacture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnImprimerFacture.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.btnImprimerFacture.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnImprimerFacture.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnImprimerFacture.IconSize = 25;
+            this.btnImprimerFacture.Name = "btnImprimerFacture";
+            this.btnImprimerFacture.UseVisualStyleBackColor = false;
+            // 
+            // tableLayoutPanel12
+            // 
+            this.tableLayoutPanel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            resources.ApplyResources(this.tableLayoutPanel12, "tableLayoutPanel12");
+            this.tableLayoutPanel12.Controls.Add(this.tableLayoutPanel16, 0, 12);
+            this.tableLayoutPanel12.Controls.Add(this.tableLayoutPanel13, 0, 3);
+            this.tableLayoutPanel12.Controls.Add(this.tableLayoutPanel14, 0, 2);
+            this.tableLayoutPanel12.Controls.Add(this.tableLayoutPanel15, 0, 1);
+            this.tableLayoutPanel12.Controls.Add(this.txtPrixTotalPVC, 0, 11);
+            this.tableLayoutPanel12.Controls.Add(this.txtTotaleTaillPVC, 0, 5);
+            this.tableLayoutPanel12.Controls.Add(this.label12, 0, 4);
+            this.tableLayoutPanel12.Controls.Add(this.label17, 0, 10);
+            this.tableLayoutPanel12.Controls.Add(this.label16, 0, 6);
+            this.tableLayoutPanel12.Controls.Add(this.txtPrixMetreLPVC, 0, 9);
+            this.tableLayoutPanel12.Controls.Add(this.txtTaillePVC, 0, 7);
+            this.tableLayoutPanel12.Controls.Add(this.label14, 0, 8);
+            this.tableLayoutPanel12.Controls.Add(this.label7, 0, 0);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            // 
+            // tableLayoutPanel16
+            // 
+            resources.ApplyResources(this.tableLayoutPanel16, "tableLayoutPanel16");
+            this.tableLayoutPanel16.Controls.Add(this.btnClear, 1, 0);
+            this.tableLayoutPanel16.Controls.Add(this.btnAddFacture, 0, 0);
+            this.tableLayoutPanel16.Name = "tableLayoutPanel16";
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btnClear, "btnClear");
+            this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnClear.IconChar = FontAwesome.Sharp.IconChar.Backspace;
+            this.btnClear.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnClear.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnClear.IconSize = 30;
+            this.btnClear.Name = "btnClear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            // 
+            // btnAddFacture
+            // 
+            this.btnAddFacture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnAddFacture.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btnAddFacture, "btnAddFacture");
+            this.btnAddFacture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnAddFacture.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnAddFacture.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnAddFacture.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnAddFacture.IconSize = 30;
+            this.btnAddFacture.Name = "btnAddFacture";
+            this.btnAddFacture.UseVisualStyleBackColor = false;
+            // 
+            // tableLayoutPanel13
+            // 
+            resources.ApplyResources(this.tableLayoutPanel13, "tableLayoutPanel13");
+            this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel8, 1, 0);
+            this.tableLayoutPanel13.Controls.Add(this.dtGridPvc, 0, 0);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            // 
+            // tableLayoutPanel8
+            // 
+            resources.ApplyResources(this.tableLayoutPanel8, "tableLayoutPanel8");
+            this.tableLayoutPanel8.Controls.Add(this.btnAddSeulPVC, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.btnDeleteSeulPVC, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.btnImportPvc, 0, 2);
+            this.tableLayoutPanel8.Controls.Add(this.btnSavePvc, 0, 3);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            // 
+            // btnAddSeulPVC
+            // 
+            resources.ApplyResources(this.btnAddSeulPVC, "btnAddSeulPVC");
+            this.btnAddSeulPVC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnAddSeulPVC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddSeulPVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnAddSeulPVC.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnAddSeulPVC.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnAddSeulPVC.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAddSeulPVC.IconSize = 25;
+            this.btnAddSeulPVC.Name = "btnAddSeulPVC";
+            this.btnAddSeulPVC.UseVisualStyleBackColor = false;
+            // 
+            // btnDeleteSeulPVC
+            // 
+            resources.ApplyResources(this.btnDeleteSeulPVC, "btnDeleteSeulPVC");
+            this.btnDeleteSeulPVC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnDeleteSeulPVC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteSeulPVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnDeleteSeulPVC.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnDeleteSeulPVC.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnDeleteSeulPVC.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnDeleteSeulPVC.IconSize = 25;
+            this.btnDeleteSeulPVC.Name = "btnDeleteSeulPVC";
+            this.btnDeleteSeulPVC.TabStop = false;
+            this.btnDeleteSeulPVC.UseVisualStyleBackColor = false;
+            // 
+            // btnImportPvc
+            // 
+            resources.ApplyResources(this.btnImportPvc, "btnImportPvc");
+            this.btnImportPvc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnImportPvc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImportPvc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnImportPvc.IconChar = FontAwesome.Sharp.IconChar.FileImport;
+            this.btnImportPvc.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnImportPvc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnImportPvc.IconSize = 25;
+            this.btnImportPvc.Name = "btnImportPvc";
+            this.btnImportPvc.UseVisualStyleBackColor = false;
+            // 
+            // btnSavePvc
+            // 
+            resources.ApplyResources(this.btnSavePvc, "btnSavePvc");
+            this.btnSavePvc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnSavePvc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSavePvc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnSavePvc.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btnSavePvc.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnSavePvc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSavePvc.IconSize = 25;
+            this.btnSavePvc.Name = "btnSavePvc";
+            this.btnSavePvc.UseVisualStyleBackColor = false;
+            // 
+            // dtGridPvc
+            // 
+            this.dtGridPvc.AllowUserToAddRows = false;
+            this.dtGridPvc.AllowUserToDeleteRows = false;
+            this.dtGridPvc.AllowUserToResizeColumns = false;
+            this.dtGridPvc.AllowUserToResizeRows = false;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
+            this.dtGridPvc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            this.dtGridPvc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtGridPvc.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.dtGridPvc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtGridPvc.CausesValidation = false;
+            this.dtGridPvc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dtGridPvc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridPvc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            this.dtGridPvc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGridPvc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.cmbOrientationPvc});
+            resources.ApplyResources(this.dtGridPvc, "dtGridPvc");
+            this.dtGridPvc.EnableHeadersVisualStyles = false;
+            this.dtGridPvc.GridColor = System.Drawing.Color.White;
+            this.dtGridPvc.MultiSelect = false;
+            this.dtGridPvc.Name = "dtGridPvc";
+            this.dtGridPvc.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dtGridPvc.RowHeadersVisible = false;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(187)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle21.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(187)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
+            this.dtGridPvc.RowsDefaultCellStyle = dataGridViewCellStyle21;
+            this.dtGridPvc.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dtGridPvc.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.dtGridPvc.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtGridPvc.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dtGridPvc.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.dtGridPvc.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dtGridPvc.RowTemplate.Height = 30;
+            this.dtGridPvc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtGridPvc.TabStop = false;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            resources.ApplyResources(this.dataGridViewTextBoxColumn4, "dataGridViewTextBoxColumn4");
+            this.dataGridViewTextBoxColumn4.MaxInputLength = 3;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.dataGridViewTextBoxColumn5, "dataGridViewTextBoxColumn5");
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            resources.ApplyResources(this.dataGridViewTextBoxColumn6, "dataGridViewTextBoxColumn6");
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // cmbOrientationPvc
+            // 
+            this.cmbOrientationPvc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cmbOrientationPvc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.cmbOrientationPvc, "cmbOrientationPvc");
+            this.cmbOrientationPvc.Items.AddRange(new object[] {
+            "0",
+            "h*1",
+            "v*1",
+            "h*2",
+            "v*2",
+            "4"});
+            this.cmbOrientationPvc.Name = "cmbOrientationPvc";
+            this.cmbOrientationPvc.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cmbOrientationPvc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // tableLayoutPanel14
+            // 
+            resources.ApplyResources(this.tableLayoutPanel14, "tableLayoutPanel14");
+            this.tableLayoutPanel14.Controls.Add(this.label22, 0, 0);
+            this.tableLayoutPanel14.Controls.Add(this.txtQtePVC, 0, 1);
+            this.tableLayoutPanel14.Controls.Add(this.label21, 1, 0);
+            this.tableLayoutPanel14.Controls.Add(this.txtLargPVC, 1, 1);
+            this.tableLayoutPanel14.Controls.Add(this.label23, 2, 0);
+            this.tableLayoutPanel14.Controls.Add(this.txtLongPVC, 2, 1);
+            this.tableLayoutPanel14.Controls.Add(this.label24, 3, 0);
+            this.tableLayoutPanel14.Controls.Add(this.cmbOrtnPVC, 3, 1);
+            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
+            // 
+            // label22
+            // 
+            resources.ApplyResources(this.label22, "label22");
+            this.label22.Name = "label22";
+            // 
+            // txtQtePVC
+            // 
+            resources.ApplyResources(this.txtQtePVC, "txtQtePVC");
+            this.txtQtePVC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.txtQtePVC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtQtePVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtQtePVC.Name = "txtQtePVC";
+            this.txtQtePVC.ShortcutsEnabled = false;
+            this.txtQtePVC.Tag = "Quantite PVC";
+            // 
+            // label21
+            // 
+            resources.ApplyResources(this.label21, "label21");
+            this.label21.Name = "label21";
+            // 
+            // txtLargPVC
+            // 
+            resources.ApplyResources(this.txtLargPVC, "txtLargPVC");
+            this.txtLargPVC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.txtLargPVC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLargPVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtLargPVC.Name = "txtLargPVC";
+            this.txtLargPVC.ShortcutsEnabled = false;
+            this.txtLargPVC.Tag = "Largeur PVC";
+            // 
+            // label23
+            // 
+            resources.ApplyResources(this.label23, "label23");
+            this.label23.Name = "label23";
+            // 
+            // txtLongPVC
+            // 
+            resources.ApplyResources(this.txtLongPVC, "txtLongPVC");
+            this.txtLongPVC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.txtLongPVC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLongPVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtLongPVC.Name = "txtLongPVC";
+            this.txtLongPVC.ShortcutsEnabled = false;
+            this.txtLongPVC.Tag = "Longueur PVC";
+            // 
+            // label24
+            // 
+            resources.ApplyResources(this.label24, "label24");
+            this.label24.Name = "label24";
+            // 
+            // cmbOrtnPVC
+            // 
+            resources.ApplyResources(this.cmbOrtnPVC, "cmbOrtnPVC");
+            this.cmbOrtnPVC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.cmbOrtnPVC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbOrtnPVC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOrtnPVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.cmbOrtnPVC.FormattingEnabled = true;
+            this.cmbOrtnPVC.Items.AddRange(new object[] {
+            resources.GetString("cmbOrtnPVC.Items"),
+            resources.GetString("cmbOrtnPVC.Items1"),
+            resources.GetString("cmbOrtnPVC.Items2"),
+            resources.GetString("cmbOrtnPVC.Items3"),
+            resources.GetString("cmbOrtnPVC.Items4"),
+            resources.GetString("cmbOrtnPVC.Items5")});
+            this.cmbOrtnPVC.Name = "cmbOrtnPVC";
+            this.cmbOrtnPVC.Tag = "Orientation PVC";
+            // 
+            // tableLayoutPanel15
+            // 
+            resources.ApplyResources(this.tableLayoutPanel15, "tableLayoutPanel15");
+            this.tableLayoutPanel15.Controls.Add(this.btncmbNbrCanto, 2, 0);
+            this.tableLayoutPanel15.Controls.Add(this.cmbTypePvc, 1, 0);
+            this.tableLayoutPanel15.Controls.Add(this.chSeulPVC, 0, 0);
+            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            // 
+            // btncmbNbrCanto
+            // 
+            resources.ApplyResources(this.btncmbNbrCanto, "btncmbNbrCanto");
+            this.btncmbNbrCanto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btncmbNbrCanto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btncmbNbrCanto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btncmbNbrCanto.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btncmbNbrCanto.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btncmbNbrCanto.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btncmbNbrCanto.IconSize = 25;
+            this.btncmbNbrCanto.Name = "btncmbNbrCanto";
+            this.btncmbNbrCanto.TabStop = false;
+            this.btncmbNbrCanto.UseVisualStyleBackColor = false;
+            // 
+            // cmbTypePvc
+            // 
+            resources.ApplyResources(this.cmbTypePvc, "cmbTypePvc");
+            this.cmbTypePvc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.cmbTypePvc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbTypePvc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTypePvc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.cmbTypePvc.FormattingEnabled = true;
+            this.cmbTypePvc.Name = "cmbTypePvc";
+            // 
+            // chSeulPVC
+            // 
+            resources.ApplyResources(this.chSeulPVC, "chSeulPVC");
+            this.chSeulPVC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chSeulPVC.Name = "chSeulPVC";
+            this.chSeulPVC.UseVisualStyleBackColor = true;
+            // 
+            // txtPrixTotalPVC
+            // 
+            resources.ApplyResources(this.txtPrixTotalPVC, "txtPrixTotalPVC");
+            this.txtPrixTotalPVC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.txtPrixTotalPVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtPrixTotalPVC.Name = "txtPrixTotalPVC";
+            this.txtPrixTotalPVC.Tag = "Prix Total du PVC";
+            // 
+            // txtTotaleTaillPVC
+            // 
+            resources.ApplyResources(this.txtTotaleTaillPVC, "txtTotaleTaillPVC");
+            this.txtTotaleTaillPVC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.txtTotaleTaillPVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtTotaleTaillPVC.Name = "txtTotaleTaillPVC";
+            this.txtTotaleTaillPVC.Tag = "Taille Totale de PVC";
+            // 
+            // label12
+            // 
+            resources.ApplyResources(this.label12, "label12");
+            this.label12.Name = "label12";
+            // 
+            // label17
+            // 
+            resources.ApplyResources(this.label17, "label17");
+            this.label17.Name = "label17";
+            // 
+            // label16
+            // 
+            resources.ApplyResources(this.label16, "label16");
+            this.label16.Name = "label16";
+            // 
+            // txtPrixMetreLPVC
+            // 
+            resources.ApplyResources(this.txtPrixMetreLPVC, "txtPrixMetreLPVC");
+            this.txtPrixMetreLPVC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.txtPrixMetreLPVC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPrixMetreLPVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtPrixMetreLPVC.Name = "txtPrixMetreLPVC";
+            this.txtPrixMetreLPVC.ShortcutsEnabled = false;
+            this.txtPrixMetreLPVC.Tag = "Prix de metres linear PVC";
+            // 
+            // txtTaillePVC
+            // 
+            resources.ApplyResources(this.txtTaillePVC, "txtTaillePVC");
+            this.txtTaillePVC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.txtTaillePVC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTaillePVC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtTaillePVC.Name = "txtTaillePVC";
+            this.txtTaillePVC.ShortcutsEnabled = false;
+            this.txtTaillePVC.Tag = "taille de canto";
+            // 
+            // label14
+            // 
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.Name = "label14";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
+            // 
+            // tableLayoutPanel5
+            // 
+            resources.ApplyResources(this.tableLayoutPanel5, "tableLayoutPanel5");
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel10, 0, 3);
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel7, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.lblMesure, 0, 4);
+            this.tableLayoutPanel5.Controls.Add(this.txtTotalMesure, 0, 5);
+            this.tableLayoutPanel5.Controls.Add(this.label20, 0, 8);
+            this.tableLayoutPanel5.Controls.Add(this.txtMetrageDeFeuille, 0, 9);
+            this.tableLayoutPanel5.Controls.Add(this.btnDeleteFacture, 0, 12);
+            this.tableLayoutPanel5.Controls.Add(this.lblTypeDuMetres, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.txtCategorie, 0, 7);
+            this.tableLayoutPanel5.Controls.Add(this.txtPrixTotalMesure, 0, 11);
+            this.tableLayoutPanel5.Controls.Add(this.label13, 0, 6);
+            this.tableLayoutPanel5.Controls.Add(this.label11, 0, 10);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            // 
+            // tableLayoutPanel10
+            // 
+            resources.ApplyResources(this.tableLayoutPanel10, "tableLayoutPanel10");
+            this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel9, 1, 0);
+            this.tableLayoutPanel10.Controls.Add(this.dtGMesure, 0, 0);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            // 
+            // tableLayoutPanel9
+            // 
+            resources.ApplyResources(this.tableLayoutPanel9, "tableLayoutPanel9");
+            this.tableLayoutPanel9.Controls.Add(this.btnAddMesure, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.btnDeleteMesure, 0, 1);
+            this.tableLayoutPanel9.Controls.Add(this.btnExportCsv, 0, 2);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            // 
+            // btnAddMesure
+            // 
+            resources.ApplyResources(this.btnAddMesure, "btnAddMesure");
+            this.btnAddMesure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnAddMesure.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddMesure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnAddMesure.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnAddMesure.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnAddMesure.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAddMesure.IconSize = 25;
+            this.btnAddMesure.Name = "btnAddMesure";
+            this.btnAddMesure.UseVisualStyleBackColor = false;
+            // 
+            // btnDeleteMesure
+            // 
+            resources.ApplyResources(this.btnDeleteMesure, "btnDeleteMesure");
+            this.btnDeleteMesure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnDeleteMesure.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteMesure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnDeleteMesure.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnDeleteMesure.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnDeleteMesure.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnDeleteMesure.IconSize = 25;
+            this.btnDeleteMesure.Name = "btnDeleteMesure";
+            this.btnDeleteMesure.TabStop = false;
+            this.btnDeleteMesure.UseVisualStyleBackColor = false;
+            // 
+            // btnExportCsv
+            // 
+            resources.ApplyResources(this.btnExportCsv, "btnExportCsv");
+            this.btnExportCsv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnExportCsv.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportCsv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnExportCsv.IconChar = FontAwesome.Sharp.IconChar.Download;
+            this.btnExportCsv.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnExportCsv.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnExportCsv.IconSize = 25;
+            this.btnExportCsv.Name = "btnExportCsv";
+            this.btnExportCsv.TabStop = false;
+            this.btnExportCsv.UseVisualStyleBackColor = false;
+            // 
+            // dtGMesure
+            // 
+            this.dtGMesure.AllowUserToAddRows = false;
+            this.dtGMesure.AllowUserToDeleteRows = false;
+            this.dtGMesure.AllowUserToResizeColumns = false;
+            this.dtGMesure.AllowUserToResizeRows = false;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
+            this.dtGMesure.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            this.dtGMesure.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtGMesure.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.dtGMesure.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtGMesure.CausesValidation = false;
+            this.dtGMesure.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dtGMesure.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.dtGMesure.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle23.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGMesure.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            this.dtGMesure.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGMesure.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            resources.ApplyResources(this.dtGMesure, "dtGMesure");
+            this.dtGMesure.EnableHeadersVisualStyles = false;
+            this.dtGMesure.GridColor = System.Drawing.Color.White;
+            this.dtGMesure.MultiSelect = false;
+            this.dtGMesure.Name = "dtGMesure";
+            this.dtGMesure.ReadOnly = true;
+            this.dtGMesure.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dtGMesure.RowHeadersVisible = false;
+            this.dtGMesure.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(187)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle24.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(187)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
+            this.dtGMesure.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            this.dtGMesure.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dtGMesure.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.dtGMesure.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dtGMesure.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.dtGMesure.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dtGMesure.RowTemplate.Height = 30;
+            this.dtGMesure.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtGMesure.StandardTab = true;
+            this.dtGMesure.TabStop = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            resources.ApplyResources(this.dataGridViewTextBoxColumn1, "dataGridViewTextBoxColumn1");
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.dataGridViewTextBoxColumn2, "dataGridViewTextBoxColumn2");
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // tableLayoutPanel6
+            // 
+            resources.ApplyResources(this.tableLayoutPanel6, "tableLayoutPanel6");
+            this.tableLayoutPanel6.Controls.Add(this.label10, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.txtQuantite, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.txtLargeur, 1, 1);
+            this.tableLayoutPanel6.Controls.Add(this.txtLongueur, 2, 1);
+            this.tableLayoutPanel6.Controls.Add(this.txtEpaisseur, 3, 1);
+            this.tableLayoutPanel6.Controls.Add(this.lblEpaisseur, 3, 0);
+            this.tableLayoutPanel6.Controls.Add(this.label9, 2, 0);
+            this.tableLayoutPanel6.Controls.Add(this.label8, 1, 0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
+            // 
+            // txtQuantite
+            // 
+            resources.ApplyResources(this.txtQuantite, "txtQuantite");
+            this.txtQuantite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.txtQuantite.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtQuantite.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtQuantite.Name = "txtQuantite";
+            this.txtQuantite.ShortcutsEnabled = false;
+            this.txtQuantite.Tag = "Quantite";
+            // 
+            // txtLargeur
+            // 
+            resources.ApplyResources(this.txtLargeur, "txtLargeur");
+            this.txtLargeur.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.txtLargeur.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLargeur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtLargeur.Name = "txtLargeur";
+            this.txtLargeur.ShortcutsEnabled = false;
+            this.txtLargeur.Tag = "largeur";
+            // 
+            // txtLongueur
+            // 
+            resources.ApplyResources(this.txtLongueur, "txtLongueur");
+            this.txtLongueur.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.txtLongueur.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLongueur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtLongueur.Name = "txtLongueur";
+            this.txtLongueur.ShortcutsEnabled = false;
+            this.txtLongueur.Tag = "longueur";
+            // 
+            // txtEpaisseur
+            // 
+            resources.ApplyResources(this.txtEpaisseur, "txtEpaisseur");
+            this.txtEpaisseur.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.txtEpaisseur.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEpaisseur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtEpaisseur.Name = "txtEpaisseur";
+            this.txtEpaisseur.ShortcutsEnabled = false;
+            this.txtEpaisseur.Tag = "epaisseur";
+            // 
+            // lblEpaisseur
+            // 
+            resources.ApplyResources(this.lblEpaisseur, "lblEpaisseur");
+            this.lblEpaisseur.Name = "lblEpaisseur";
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.Name = "label9";
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
+            // 
+            // tableLayoutPanel7
+            // 
+            resources.ApplyResources(this.tableLayoutPanel7, "tableLayoutPanel7");
+            this.tableLayoutPanel7.Controls.Add(this.cmbTypeDuMetres, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.txtPrixMetreMesure, 0, 0);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            // 
+            // cmbTypeDuMetres
+            // 
+            resources.ApplyResources(this.cmbTypeDuMetres, "cmbTypeDuMetres");
+            this.cmbTypeDuMetres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.cmbTypeDuMetres.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbTypeDuMetres.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTypeDuMetres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.cmbTypeDuMetres.FormattingEnabled = true;
+            this.cmbTypeDuMetres.Items.AddRange(new object[] {
+            resources.GetString("cmbTypeDuMetres.Items"),
+            resources.GetString("cmbTypeDuMetres.Items1"),
+            resources.GetString("cmbTypeDuMetres.Items2"),
+            resources.GetString("cmbTypeDuMetres.Items3")});
+            this.cmbTypeDuMetres.Name = "cmbTypeDuMetres";
+            // 
+            // txtPrixMetreMesure
+            // 
+            resources.ApplyResources(this.txtPrixMetreMesure, "txtPrixMetreMesure");
+            this.txtPrixMetreMesure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.txtPrixMetreMesure.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPrixMetreMesure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtPrixMetreMesure.Name = "txtPrixMetreMesure";
+            this.txtPrixMetreMesure.ShortcutsEnabled = false;
+            this.txtPrixMetreMesure.Tag = "Prix au Metre Carré";
+            // 
+            // lblMesure
+            // 
+            resources.ApplyResources(this.lblMesure, "lblMesure");
+            this.lblMesure.Name = "lblMesure";
+            // 
+            // txtTotalMesure
+            // 
+            resources.ApplyResources(this.txtTotalMesure, "txtTotalMesure");
+            this.txtTotalMesure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.txtTotalMesure.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTotalMesure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtTotalMesure.Name = "txtTotalMesure";
+            this.txtTotalMesure.ShortcutsEnabled = false;
+            this.txtTotalMesure.Tag = "Volume Total de la Mesure";
+            // 
+            // label20
+            // 
+            resources.ApplyResources(this.label20, "label20");
+            this.label20.Name = "label20";
+            // 
+            // txtMetrageDeFeuille
+            // 
+            resources.ApplyResources(this.txtMetrageDeFeuille, "txtMetrageDeFeuille");
+            this.txtMetrageDeFeuille.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.txtMetrageDeFeuille.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMetrageDeFeuille.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtMetrageDeFeuille.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtMetrageDeFeuille.Name = "txtMetrageDeFeuille";
+            this.txtMetrageDeFeuille.Tag = "Métrage de Feuille";
+            // 
+            // btnDeleteFacture
+            // 
+            this.btnDeleteFacture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnDeleteFacture.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btnDeleteFacture, "btnDeleteFacture");
+            this.btnDeleteFacture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnDeleteFacture.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnDeleteFacture.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnDeleteFacture.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnDeleteFacture.IconSize = 25;
+            this.btnDeleteFacture.Name = "btnDeleteFacture";
+            this.btnDeleteFacture.UseVisualStyleBackColor = false;
+            // 
+            // lblTypeDuMetres
+            // 
+            resources.ApplyResources(this.lblTypeDuMetres, "lblTypeDuMetres");
+            this.lblTypeDuMetres.Name = "lblTypeDuMetres";
+            // 
+            // txtCategorie
+            // 
+            resources.ApplyResources(this.txtCategorie, "txtCategorie");
+            this.txtCategorie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.txtCategorie.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCategorie.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCategorie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtCategorie.Name = "txtCategorie";
+            this.txtCategorie.Tag = "la categorie";
+            // 
+            // txtPrixTotalMesure
+            // 
+            this.txtPrixTotalMesure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            resources.ApplyResources(this.txtPrixTotalMesure, "txtPrixTotalMesure");
+            this.txtPrixTotalMesure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtPrixTotalMesure.Name = "txtPrixTotalMesure";
+            this.txtPrixTotalMesure.Tag = "Prix Total des Mesures";
+            // 
+            // label13
+            // 
+            resources.ApplyResources(this.label13, "label13");
+            this.label13.Name = "label13";
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.label19, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtPrixRestClient, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnSaveFacture, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel11, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtPrixTotalClient, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label18, 0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // label19
+            // 
+            resources.ApplyResources(this.label19, "label19");
+            this.label19.Name = "label19";
+            // 
+            // txtPrixRestClient
+            // 
+            this.txtPrixRestClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            resources.ApplyResources(this.txtPrixRestClient, "txtPrixRestClient");
+            this.txtPrixRestClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.txtPrixRestClient.Name = "txtPrixRestClient";
+            this.txtPrixRestClient.Tag = "Montant Restant";
+            // 
+            // btnSaveFacture
+            // 
+            this.btnSaveFacture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnSaveFacture.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveFacture.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.btnSaveFacture, "btnSaveFacture");
+            this.btnSaveFacture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnSaveFacture.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btnSaveFacture.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnSaveFacture.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnSaveFacture.IconSize = 25;
+            this.btnSaveFacture.Name = "btnSaveFacture";
+            this.btnSaveFacture.UseVisualStyleBackColor = false;
+            // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.tableLayoutPanel11, "tableLayoutPanel11");
+            this.tableLayoutPanel11.Controls.Add(this.checkAvance, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.txtPrixAvanceClient, 1, 0);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            // 
+            // checkAvance
+            // 
+            resources.ApplyResources(this.checkAvance, "checkAvance");
+            this.checkAvance.BackColor = System.Drawing.Color.Transparent;
+            this.checkAvance.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkAvance.FlatAppearance.BorderSize = 0;
+            this.checkAvance.Name = "checkAvance";
+            this.checkAvance.UseVisualStyleBackColor = false;
+            // 
+            // txtPrixAvanceClient
+            // 
+            resources.ApplyResources(this.txtPrixAvanceClient, "txtPrixAvanceClient");
+            this.txtPrixAvanceClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.txtPrixAvanceClient.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPrixAvanceClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.txtPrixAvanceClient.Name = "txtPrixAvanceClient";
+            this.txtPrixAvanceClient.ShortcutsEnabled = false;
+            this.txtPrixAvanceClient.Tag = "Montant de l\'Avance";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.Name = "label6";
+            // 
+            // txtPrixTotalClient
+            // 
+            this.txtPrixTotalClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            resources.ApplyResources(this.txtPrixTotalClient, "txtPrixTotalClient");
+            this.txtPrixTotalClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.txtPrixTotalClient.Name = "txtPrixTotalClient";
+            this.txtPrixTotalClient.Tag = "Montant Total";
+            // 
+            // label18
+            // 
+            resources.ApplyResources(this.label18, "label18");
+            this.label18.Name = "label18";
             // 
             // FormClient
             // 
-            this.AcceptButton = this.btnAddFacture;
+            this.AcceptButton = this.btnAddClient;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.Controls.Add(this.tableLayoutPanel2);
-            this.Controls.Add(this.tableLayoutPanel3);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.p_Add_Edit);
+            this.Controls.Add(this.p_home);
+            this.Controls.Add(this.t_side_bar);
+            this.Controls.Add(this.t_header);
             this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormClient";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormClient_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
+            this.t_home.ResumeLayout(false);
+            this.t_home.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridFacture)).EndInit();
+            this.t_side_bar.ResumeLayout(false);
+            this.p_home.ResumeLayout(false);
+            this.t_header.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.p_Add_Edit.ResumeLayout(false);
+            this.t_add_edit.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel12.ResumeLayout(false);
+            this.tableLayoutPanel12.PerformLayout();
+            this.tableLayoutPanel16.ResumeLayout(false);
+            this.tableLayoutPanel13.ResumeLayout(false);
+            this.tableLayoutPanel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridPvc)).EndInit();
+            this.tableLayoutPanel14.ResumeLayout(false);
+            this.tableLayoutPanel14.PerformLayout();
+            this.tableLayoutPanel15.ResumeLayout(false);
+            this.tableLayoutPanel15.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtGMesure)).EndInit();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel11.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Label label4;
         private FontAwesome.Sharp.IconButton btnPrintFacture;
-        private FontAwesome.Sharp.IconButton btnAddFacture;
-        private FontAwesome.Sharp.IconButton btnDeleteFacture;
-        private FontAwesome.Sharp.IconButton btnSearch;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.DataGridView dtGridFacture;
+        private FontAwesome.Sharp.IconButton btnAddClient;
+        private System.Windows.Forms.TableLayoutPanel t_home;
+        private System.Windows.Forms.TableLayoutPanel t_side_bar;
+        private System.Windows.Forms.Label label4;
         private FontAwesome.Sharp.IconButton btnResult;
-        private System.Windows.Forms.PrintDialog printDialog1;
-        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.Panel p_home;
+        private System.Windows.Forms.DataGridView dtGridFacture;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -390,6 +1626,113 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewButtonColumn Column10;
+        private System.Windows.Forms.DataGridViewButtonColumn Column11;
+        private System.Windows.Forms.TableLayoutPanel t_header;
+        private FontAwesome.Sharp.IconButton btnExit;
+        private FontAwesome.Sharp.IconButton btnMaximize;
+        private FontAwesome.Sharp.IconButton btnMinimize;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private FontAwesome.Sharp.IconButton btnEdit;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton btn_home;
+        private System.Windows.Forms.Panel p_Add_Edit;
+        private System.Windows.Forms.TableLayoutPanel t_add_edit;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Label lblNumeroFacture;
+        private System.Windows.Forms.ComboBox cmbNumeroFacture;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtDateFacture;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtNomClient;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private FontAwesome.Sharp.IconButton btnCmbCategorie;
+        private System.Windows.Forms.ComboBox cmbTypeDeBois;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtSearchFacture;
+        private System.Windows.Forms.ListBox lstTypeBois;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label txtTypeDeBois;
+        private FontAwesome.Sharp.IconButton btnImprimerFacture;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
+        private FontAwesome.Sharp.IconButton btnClear;
+        private FontAwesome.Sharp.IconButton btnAddFacture;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private FontAwesome.Sharp.IconButton btnAddSeulPVC;
+        private FontAwesome.Sharp.IconButton btnDeleteSeulPVC;
+        private FontAwesome.Sharp.IconButton btnImportPvc;
+        private FontAwesome.Sharp.IconButton btnSavePvc;
+        private System.Windows.Forms.DataGridView dtGridPvc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewComboBoxColumn cmbOrientationPvc;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox txtQtePVC;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtLargPVC;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox txtLongPVC;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.ComboBox cmbOrtnPVC;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
+        private FontAwesome.Sharp.IconButton btncmbNbrCanto;
+        private System.Windows.Forms.ComboBox cmbTypePvc;
+        private System.Windows.Forms.CheckBox chSeulPVC;
+        private System.Windows.Forms.Label txtPrixTotalPVC;
+        private System.Windows.Forms.Label txtTotaleTaillPVC;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtPrixMetreLPVC;
+        private System.Windows.Forms.TextBox txtTaillePVC;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        private FontAwesome.Sharp.IconButton btnAddMesure;
+        private FontAwesome.Sharp.IconButton btnDeleteMesure;
+        private FontAwesome.Sharp.IconButton btnExportCsv;
+        private System.Windows.Forms.DataGridView dtGMesure;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtQuantite;
+        private System.Windows.Forms.TextBox txtLargeur;
+        private System.Windows.Forms.TextBox txtLongueur;
+        private System.Windows.Forms.TextBox txtEpaisseur;
+        private System.Windows.Forms.Label lblEpaisseur;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.ComboBox cmbTypeDuMetres;
+        private System.Windows.Forms.TextBox txtPrixMetreMesure;
+        private System.Windows.Forms.Label lblMesure;
+        private System.Windows.Forms.TextBox txtTotalMesure;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtMetrageDeFeuille;
+        private FontAwesome.Sharp.IconButton btnDeleteFacture;
+        private System.Windows.Forms.Label lblTypeDuMetres;
+        private System.Windows.Forms.TextBox txtCategorie;
+        private System.Windows.Forms.Label txtPrixTotalMesure;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label txtPrixRestClient;
+        private FontAwesome.Sharp.IconButton btnSaveFacture;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        private System.Windows.Forms.CheckBox checkAvance;
+        private System.Windows.Forms.TextBox txtPrixAvanceClient;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label txtPrixTotalClient;
+        private System.Windows.Forms.Label label18;
     }
 }
 

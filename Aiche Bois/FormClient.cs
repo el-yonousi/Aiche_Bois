@@ -6,23 +6,66 @@ using System.Collections.Generic;
 using System.Data.OleDb;
 using System.IO;
 using System.Windows.Forms;
-using System.Diagnostics;
 using System.Data;
-using System.Windows.Forms.DataVisualization.Charting;
-using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace Aiche_Bois
 {
     public partial class FormClient : Form
     {
-        /// <summary>
-        /// this form show message informations
-        /// </summary>
-        FormMessage message;
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg,
+        int wparam, int lparam);
+
+        /*
+         * ================ Panel Add ================
+         */
         /// <summary>
         /// c'est l'access a extereiur Client data base
         /// </summary>
         private readonly OleDbConnection connectionClient = new OleDbConnection();
+
+        /// <summary>
+        /// c'est l'access a extereiur type data base
+        /// </summary>
+        private readonly OleDbConnection connectionType = new OleDbConnection();
+
+        /// <summary>
+        /// c'est la list qui stocker les donnes de Mesure
+        /// </summary>
+        private readonly List<Mesure> mesures = new List<Mesure>();
+
+        /// <summary>
+        /// c'est la list qui stocker les donnes de Pvc
+        /// </summary>
+        private readonly List<Pvc> pvcs = new List<Pvc>();
+
+        /// <summary>
+        /// c'est la list qui stocker les donnes de Facture
+        /// </summary>
+        private readonly List<Facture> factures = new List<Facture>();
+
+        /// <summary>
+        /// c'est la list qui stocker les donnes de Client
+        /// </summary>
+        private readonly List<Client> clients = new List<Client>();
+
+        /// <summary>
+        /// c'est variable determiner si le click on button ajouter ou modifier
+        /// </summary>
+        private String btnDeterminClick = "";
+
+        /// <summary>
+        /// this instance from form message to show message error
+        /// </summary>
+        private FormMessage message;
+
+        /// <summary>
+        /// verify les donnée si enregistre ou non
+        /// </summary>
+        bool verifyForm = false;
 
         /// <summary>
         /// prendre id client de data grid a partir de ligne selecionnees
@@ -32,8 +75,248 @@ namespace Aiche_Bois
         /// <summary>
         /// stocker les client a liste des clients
         /// </summary>
-        private List<Client> clients = new List<Client>();
         DataTable tb = new DataTable();
+
+        /*
+         * =========================== Panel Add Edit Method ===========================
+         */
+        /// <summary>
+        /// method qui charger la base de donnees
+        /// </summary>
+        /// <param name="idFacture"></param>
+        private void loadDataEdit(long idFacture)
+        {
+            try
+            {
+                connectionClient.Open();
+
+                //client
+                var commandClient = new OleDbCommand
+                {
+                    Connection = connectionClient,
+                    CommandText =
+                    "SELECT count(idFacture) AS nbFacture, " +
+                    "(sum(f.prixtotalmesure) + sum(prixtotalpvc)) AS total, " +
+                    "IIF((sum(f.prixtotalmesure) + sum(prixtotalpvc)) = prixTotalAvance, 0, (sum(f.prixtotalmesure) + sum(prixtotalpvc)) - prixTotalAvance) AS rest, " +
+                    "IIF(ROUND((sum(f.prixtotalmesure) + sum(prixtotalpvc)), 2) = ROUND((prixTotalAvance), 2), 'true', 'false') AS cavance, " +
+                    "c.nomClient, dateClient, c.prixTotalAvance, c.idClient " +
+                    "FROM client AS c INNER JOIN facture AS f ON f.idClient = c.idClient " +
+                    "WHERE c.idClient = " + long.Parse(idClient[1]) +
+                    " GROUP BY nomClient, dateClient, prixTotalAvance, c.idClient"
+                };
+                OleDbDataReader readerClient = commandClient.ExecuteReader();
+                while (readerClient.Read())
+                {
+                    txtNomClient.Text = readerClient["nomClient"].ToString();
+                    txtPrixTotalClient.Text = readerClient["total"].ToString();
+                    txtPrixAvanceClient.Text = readerClient["prixTotalAvance"].ToString();
+                    txtPrixRestClient.Text = readerClient["rest"].ToString();
+                }
+
+                String pvc = "";
+
+                //facture
+                var commandFacture = new OleDbCommand
+                {
+                    Connection = connectionClient,
+                    CommandText = "SELECT * FROM FACTURE WHERE idFacture = " + idFacture
+                };
+                OleDbDataReader readerFacture = commandFacture.ExecuteReader();
+                while (readerFacture.Read())
+                {
+                    dtDateFacture.Value = Convert.ToDateTime(readerFacture["dtDateFacture"]);
+
+                    chSeulPVC.Checked = Convert.ToBoolean(readerFacture["checkPVC"].ToString());
+
+
+                    if (!chSeulPVC.Checked)
+                    {
+                        txtTypeDeBois.Text = readerFacture["typeDeBois"].ToString();
+                        txtCategorie.Text = readerFacture["categorie"].ToString();
+                        txtMetrageDeFeuille.Text = readerFacture["metrage"].ToString();
+                        txtPrixMetreMesure.Text = readerFacture["prixMetres"].ToString();
+                        txtTotalMesure.Text = readerFacture["totalMesure"].ToString();
+                        txtPrixTotalMesure.Text = readerFacture["prixTotalMesure"].ToString();
+                    }
+
+                    //pvc
+                    pvc = readerFacture["typePVC"].ToString();
+                    cmbTypePvc.SelectedItem = (pvc == "---" ? null : readerFacture["typePVC"].ToString());
+                    txtTaillePVC.Text = readerFacture["tailleCanto"].ToString();
+                    txtTotaleTaillPVC.Text = readerFacture["totalTaillPVC"].ToString();
+                    txtPrixMetreLPVC.Text = readerFacture["prixMitresLinear"].ToString();
+                    txtPrixTotalPVC.Text = readerFacture["prixTotalPVC"].ToString();
+                }
+
+
+                //Mesure
+                if (!chSeulPVC.Checked)
+                {
+                    var commandMesure = new OleDbCommand
+                    {
+                        Connection = connectionClient,
+                        CommandText = "SELECT * FROM MESURE WHERE IDFACTURE = " + idFacture
+                    };
+                    OleDbDataReader readerMesure = commandMesure.ExecuteReader();
+                    // clear data grid mesure
+                    dtGMesure.Rows.Clear();
+                    while (readerMesure.Read())
+                    {
+                        if (readerMesure["type"].ToString() == "m3")
+                        {
+                            cmbTypeDuMetres.SelectedIndex = 2;
+                            dtGMesure.Rows.Add(
+                            readerMesure["quantite"].ToString(),
+                            readerMesure["largeur"].ToString(),
+                            readerMesure["longueur"].ToString(),
+                            readerMesure["eppaiseur"].ToString());
+                        }
+                        else if (readerMesure["type"].ToString() == "m2")
+                        {
+                            cmbTypeDuMetres.SelectedIndex = 1;
+                            dtGMesure.Rows.Add(
+                            readerMesure["quantite"].ToString(),
+                            readerMesure["largeur"].ToString(),
+                            readerMesure["longueur"].ToString());
+                        }
+                        else
+                        {
+                            cmbTypeDuMetres.SelectedIndex = 0;
+                            dtGMesure.Rows.Add(
+                            readerMesure["quantite"].ToString(),
+                            readerMesure["largeur"].ToString(),
+                            readerMesure["longueur"].ToString());
+                        }
+                    }
+                }
+
+                // pvc
+                if (pvc != "---")
+                {
+                    var commandPVC = new OleDbCommand
+                    {
+                        Connection = connectionClient,
+                        CommandText = "SELECT * FROM PVC WHERE IDFACTURE = " + idFacture
+                    };
+                    OleDbDataReader readerPVC = commandPVC.ExecuteReader();
+                    dtGridPvc.Rows.Clear();
+                    while (readerPVC.Read())
+                    {
+                        dtGridPvc.Rows.Add(
+                            readerPVC["quantite"].ToString(),
+                            readerPVC["largeur"].ToString(),
+                            readerPVC["longueur"].ToString(),
+                            readerPVC["orientation"].ToString());
+                    }
+                }
+                else
+                {
+                    dtGridPvc.Rows.Clear();
+                }
+
+                checkSeulPVC(chSeulPVC.Checked);
+
+                connectionClient.Close();
+            }
+            catch (Exception ex)
+            {
+                message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.ExclamationCircle);
+                message.ShowDialog();
+                connectionClient.Close();
+            }
+        }
+
+        /// <summary>
+        /// c'est method pour activer ou desactiver les champs
+        /// </summary>
+        /// <param name="ft"></param>
+        private void checkSeulPVC(bool ft)
+        {
+            txtPrixMetreMesure.Enabled = txtMetrageDeFeuille.Enabled = txtCategorie.Enabled = cmbTypeDuMetres.Enabled =
+            btnCmbCategorie.Enabled = cmbTypeDeBois.Enabled = txtSearch.Enabled = lstTypeBois.Enabled =
+            txtQuantite.Enabled = txtLargeur.Enabled = txtLongueur.Enabled = txtEpaisseur.Enabled =
+            btnAddMesure.Enabled = btnDeleteMesure.Enabled = btnExportCsv.Enabled =
+            btnImportPvc.Enabled = btnSavePvc.Enabled = !ft;
+
+            btnAddSeulPVC.Enabled = btnDeleteSeulPVC.Enabled = txtQtePVC.Enabled = txtLargPVC.Enabled =
+            txtLongPVC.Enabled = cmbOrtnPVC.Enabled = ft;
+
+            if (ft)
+            {
+                txtTypeDeBois.Text = "---";
+                txtPrixMetreMesure.Text = "0.00";
+                txtTotalMesure.Text = "0.00";
+                txtPrixTotalMesure.Text = "0.00";
+                txtMetrageDeFeuille.Text = "---";
+                txtCategorie.Text = "---";
+            }
+        }
+
+        /// <summary>
+        /// remplir listeBox MDF, LATTE, STD de dataBase
+        /// </summary>
+        /// <param name="typeBois"></param>
+        private void remplirListe(string typeBois)
+        {
+            lstTypeBois.Items.Clear();
+            try
+            {
+                connectionType.Open();
+                OleDbCommand command = new OleDbCommand
+                {
+                    Connection = connectionType,
+                    CommandText = "select * from " + typeBois
+                };
+                OleDbDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    lstTypeBois.Items.Add(reader["Libelle"].ToString());
+                }
+                connectionType.Close();
+            }
+            catch (Exception ex)
+            {
+                message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.Ban);
+                message.ShowDialog();
+                connectionType.Close();
+            }
+        }
+
+        /// <summary>
+        /// remplir listeBox MDF, LATTE, STD de dataBase
+        /// </summary>
+        /// <param name="typeBois"></param>
+        /// <returns></returns>
+        private List<string> remplirRechercheListe(string typeBois)
+        {
+            List<string> vs = new List<string>();
+            lstTypeBois.Items.Clear();
+            try
+            {
+                connectionType.Open();
+                OleDbCommand command = new OleDbCommand
+                {
+                    Connection = connectionType,
+                    CommandText = "select * from " + typeBois
+                };
+                OleDbDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    vs.Add(reader["Libelle"].ToString());
+                }
+                connectionType.Close();
+            }
+            catch (Exception ex)
+            {
+                message = new FormMessage("Erreur:: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.Ban);
+                message.ShowDialog();
+                connectionType.Close();
+            }
+            return vs;
+        }
+        /*
+         * =========================== End Panel Add Edit Method ===========================
+         */
 
         /// <summary>
         /// c'est le design du formulaire et l'initialisation de connecter a la base de donnees
@@ -41,6 +324,7 @@ namespace Aiche_Bois
         public FormClient()
         {
             connectionClient.ConnectionString = Program.Path;
+            connectionType.ConnectionString = Program.PathType;
 
             InitializeComponent();
         }
@@ -78,10 +362,9 @@ namespace Aiche_Bois
                     "ORDER BY c.idClient DESC;"
                 };
 
-
                 tb.Load(commandClient.ExecuteReader());
 
-                //dtGridFacture.DataSource = tb;
+                connectionClient.Close();
 
                 for (int i = 0; i < tb.Rows.Count; i++)
                 {
@@ -97,49 +380,7 @@ namespace Aiche_Bois
                         tb.Rows[i][7].ToString(),
                         "");
                 }
-
-
-                //for (int i = 0; i < tb.Rows.Count; i++)
-                //{
-                //    Client client = new Client
-                //    {
-                //        NbFacture = Convert.ToInt32(tb.Rows[i][0]),
-                //        PrixTotalClient = Convert.ToDouble(tb.Rows[i][1]),
-                //        PrixTotalRest = Convert.ToDouble(tb.Rows[i][2]),
-                //        CheckAvance = Convert.ToBoolean(tb.Rows[i][3]),
-                //        NomClient = tb.Rows[i][4].ToString(),
-                //        DateClient = Convert.ToDateTime(tb.Rows[i][5]),
-                //        PrixTotalAvance = Convert.ToDouble(tb.Rows[i][6]),
-                //        IdClient = Convert.ToInt32(tb.Rows[i][7]),
-                //    };
-                //    clients.Add(client);
-                //}
-
-
-                //OleDbDataAdapter dbDataAdapter = new OleDbDataAdapter(commandClient);
-                //DataTable dataTable = new DataTable();
-                //dbDataAdapter.Fill(dataTable);
-                //dtGridFacture.DataSource = dbDataAdapter;
-
-                //OleDbDataReader readerClient = commandClient.ExecuteReader();
-                //while (readerClient.Read())
-                //{
-                //    Client client = new Client
-                //    {
-                //        IdClient = Convert.ToInt32(readerClient["idClient"]),
-                //        NomClient = readerClient["nomClient"].ToString(),
-                //        DateClient = Convert.ToDateTime(readerClient["dateClient"]),
-                //        NbFacture = Convert.ToInt32(readerClient["nbFacture"]),
-                //        CheckAvance = Convert.ToBoolean(readerClient["cavance"]),
-                //        PrixTotalAvance = Convert.ToDouble(readerClient["prixTotalAvance"]),
-                //        PrixTotalRest = Convert.ToDouble(readerClient["rest"]),
-                //        PrixTotalClient = Convert.ToDouble(readerClient["total"])
-                //    };
-
-                //    /*remplir a la liste client*/
-                //    clients.Add(client);
-                //}
-                connectionClient.Close();
+                dtGridFacture.Rows[0].Selected = false;
             }
             catch (Exception ex)
             {
@@ -148,17 +389,6 @@ namespace Aiche_Bois
                 connectionClient.Close();
                 return;
             }
-
-            //dtGridFacture.Rows.Clear();
-            //foreach (Client ct in clients)
-            //{
-            //    dtGridFacture.Rows.Add("N" + ct.IdClient.ToString("D4"),
-            //        ct.NomClient, ct.DateClient.ToString("dd/MM/yyyy"),
-            //        ct.NbFacture, "", ct.CheckAvance,
-            //        ct.PrixTotalAvance.ToString("F2"),
-            //        ct.PrixTotalRest.ToString("F2"),
-            //        ct.PrixTotalClient.ToString("F2"));
-            //}
         }
 
         /// <summary>
@@ -181,7 +411,7 @@ namespace Aiche_Bois
         {
             if (dtGridFacture.Rows.Count <= 0 || e.RowIndex < 0)
                 return;
-            
+
             idClient = dtGridFacture.Rows[e.RowIndex].Cells[0].Value.ToString().Split('N');
 
             if (e.ColumnIndex == 4 && e.RowIndex < dtGridFacture.Rows.Count)
@@ -198,8 +428,39 @@ namespace Aiche_Bois
                 ajoutFactures.ShowDialog();
                 remplissageDtGridClient();
             }
+            if (e.ColumnIndex == 10 && e.RowIndex < dtGridFacture.Rows.Count)
+            {
+                message = new FormMessage("Voulez-vous vraiment supprimer définitivement " + $"{dtGridFacture.CurrentRow.Cells[1].Value}" + " de la liste?", "Attention", true, true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
 
-            
+                if (DialogResult.Yes == message.ShowDialog())
+                {
+                    try
+                    {
+                        connectionClient.Open();
+                        OleDbCommand commandDelete = new OleDbCommand
+                        {
+                            Connection = connectionClient,
+                            CommandText = "delete * from client where idClient = " + long.Parse(idClient[1])
+                        };
+                        commandDelete.ExecuteNonQuery();
+
+                        connectionClient.Close();
+                        message = new FormMessage("le Client a ete Supprimé avec Succès", "Succès", true, FontAwesome.Sharp.IconChar.CheckCircle);
+                        message.ShowDialog();
+                    }
+                    catch (Exception ex)
+                    {
+                        message = new FormMessage("Error: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.Ban);
+                        message.ShowDialog();
+                        connectionClient.Close();
+                    }
+
+                    /*
+                     * refrecher les donness du client
+                     */
+                    remplissageDtGridClient();
+                }
+            }
         }
 
         /// <summary>
@@ -238,92 +499,6 @@ namespace Aiche_Bois
         }
 
         /// <summary>
-        /// this method create pdf by id
-        /// </summary>
-        /// <param name="idClient"></param>
-        /// <param name="idFacture"></param>
-        [Obsolete]
-        private void pvc_mesure(String idClient, long idFacture)
-        {
-
-            Document pdfDoc = new Document(PageSize.A4);
-
-            iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(Properties.Resources.logo, System.Drawing.Imaging.ImageFormat.Png);
-
-            String path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\aiche bois\\";
-            String file = "facture.pdf";
-
-            FileStream os = new FileStream(path + file, FileMode.Create);
-            using (os)
-            {
-
-                PdfWriter pdfWriter = PdfWriter.GetInstance(pdfDoc, os);
-                pdfDoc.Open();
-                String typeBois = "";
-                string nom = "";
-                //String mes = "";
-
-                for (int i = 0; i < clients.Count; i++)
-                {
-                    nom = clients[i].NomClient;
-                    typeBois += @"<tr><td align='center' colSpan='5'>" + $"{clients[i].PrixTotalRest}" + @"</td></tr>";
-                    typeBois +=
-                    @"<td align ='center'> " + $"{clients[i].IdClient}" + @"</td>
-                                    <td align ='center'> " + $"{clients[i].NbFacture}" + @"</td>
-                                    <td align ='center'> " + $"{clients[i].NomClient}" + @"</td>
-                                    <td align ='center'> " + $"{ clients[i].PrixTotalClient}" + @"</td>
-                               <tr >
-                                    <td align ='center'> " + $"{clients[i]}" + @"</td>
-                                 </tr > ";
-                }
-                string strHTML = @"<!DOCTYPE html>  
-                        <html xmlns='http://www.w3.org/1999/xhtml'>  
-                        <head>  
-                            <title></title>  
-                        </head>  
-                        <body>  
-                              
-                             <table border='1' width ='100%' height ='100%'>
-                                <!-- header -->
-                                <tr style='font-weight: bold;'>  
-                                    <td align='center'>Aiche Bois</td>
-                                    <td rowSpan='2' align='center' style='font-size: 15pt;'>Etat Mesure</td>
-                                    <td rowSpan='2' align='center'>Tanger le</td>           
-                               </tr>
-                               <tr>
-                                    <td align='center'>Nom du Client</td>
-                               </tr>
-                                <
-                               <tr>  
-                                    <td align='center'>" + $"{nom}" + @"</td>  
-                                    <td align='center'>" + String.Format("N{0:D4}", idClient) + @"</td>              
-                                    <td align='center'>" + DateTime.Today.ToString("dd-MMMM-yyyy") + @"</td>              
-                               </tr>
-                        </table>
-                        <br>
-                        <table border='1' width ='100%' height ='100%'>
-                                <!-- Quantite -->
-                               <tr>  
-                                    <td align='center' style='font-weight: bold; color: #7BA63C;'>Quantite</td>  
-                                    <td align='center' style='font-weight: bold; color: #7BA63C;' colSpan='3'>" + "Mesure/Pvc" + @"</td>
-                                    <td align='center' style='font-weight: bold; color: #7BA63C;'>Nbr_Canto</td>
-                               </tr>
-                               <!-- Couleur -->
-
-                               " + $"{typeBois}" + @"
-                            </table>
-                        </body>  
-                        </html>";
-                HTMLWorker htmlWorker = new HTMLWorker(pdfDoc);
-                htmlWorker.Parse(new StringReader(strHTML));
-                pdfWriter.CloseStream = false;
-                pdfDoc.Close();
-                // to open pdf dynamique
-                System.Diagnostics.Process.Start(path + file);
-            }
-        }
-
-        /// <summary>
         /// c'est event pour prendre l'index de la ligne
         /// </summary>
         /// <param name="sender"></param>
@@ -344,94 +519,39 @@ namespace Aiche_Bois
         }
 
         /// <summary>
-        /// c'est button afficher la formulaire pour ajouter des factures
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnAddFacture_Click(object sender, EventArgs e)
-        {
-            FormAjoutFactures ajouterFacture = new FormAjoutFactures("", "");
-            ajouterFacture.ShowDialog();
-            remplissageDtGridClient();
-        }
-
-        /// <summary>
         /// c'est event chercher a client a partir du date, nom ou id client
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtSearch.Text))
+            if (txtSearch.Text != "Rechercher le client par nom, identifiant ou date".ToLower())
             {
-                dtGridFacture.Rows.Clear();
-                for (int i = 0; i < tb.Rows.Count; i++)
+                //txtSearch.CharacterCasing = CharacterCasing.Upper;
+                if (!string.IsNullOrEmpty(txtSearch.Text))
                 {
-                    String id = String.Format("N{0:D4}", long.Parse(tb.Rows[i][0].ToString()));
-                    String dt = String.Format("{0:dd/MM/yyyy}", tb.Rows[i][2].ToString());
-                    if (tb.Rows[i][1].ToString().Contains(value: txtSearch.Text.ToUpper()) ||
-                        id.Contains(value: txtSearch.Text) ||
-                        dt.Contains(value: txtSearch.Text))
-                        dtGridFacture.Rows.Add(
-                        String.Format("N{0:D4}", long.Parse(tb.Rows[i][0].ToString())),
-                        tb.Rows[i][1].ToString(),
-                        String.Format("{0:dd/MM/yyyy}", tb.Rows[i][2].ToString()),
-                        tb.Rows[i][3].ToString(),
-                        "",
-                        tb.Rows[i][4].ToString(),
-                        tb.Rows[i][5].ToString(),
-                        tb.Rows[i][6].ToString(),
-                        tb.Rows[i][7].ToString());
-                }
-            }
-            else
-                remplissageDtGridClient();
-        }
-
-        /// <summary>
-        /// c'est button supprimer client a partir de la ligne selectionnees
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnDeleteFacture_Click(object sender, EventArgs e)
-        {
-            if (indxFacture <= -1 ||
-                dtGridFacture.Rows.Count <= 0 ||
-                idClient == null)
-            {
-                message = new FormMessage("la list est vide ou Selectionner une ligne", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
-                message.ShowDialog();
-                return;
-            }
-
-            message = new FormMessage("voulez vous vraiment supprimer c'est client", "Attention", true, true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
-
-            if (DialogResult.Yes == message.ShowDialog())
-            {
-                try
-                {
-                    connectionClient.Open();
-                    OleDbCommand commandDelete = new OleDbCommand
+                    dtGridFacture.Rows.Clear();
+                    for (int i = 0; i < tb.Rows.Count; i++)
                     {
-                        Connection = connectionClient,
-                        CommandText = "delete * from client where idClient = " + long.Parse(idClient[1])
-                    };
-                    commandDelete.ExecuteNonQuery();
-
-                    connectionClient.Close();
-                    message = new FormMessage("le Client a ete Supprimé avec Succès", "Succès", true, FontAwesome.Sharp.IconChar.CheckCircle);
-                    message.ShowDialog();
+                        String id = String.Format("N{0:D4}", long.Parse(tb.Rows[i][0].ToString()));
+                        String dt = String.Format("{0:dd/MM/yyyy}", tb.Rows[i][2].ToString());
+                        if (tb.Rows[i][1].ToString().Contains(value: txtSearch.Text.ToUpper()) ||
+                            id.Contains(value: txtSearch.Text) ||
+                            dt.Contains(value: txtSearch.Text))
+                            dtGridFacture.Rows.Add(
+                            String.Format("N{0:D4}", long.Parse(tb.Rows[i][0].ToString())),
+                            tb.Rows[i][1].ToString(),
+                            String.Format("{0:dd/MM/yyyy}", tb.Rows[i][2].ToString()),
+                            tb.Rows[i][3].ToString(),
+                            "",
+                            tb.Rows[i][4].ToString(),
+                            tb.Rows[i][5].ToString(),
+                            tb.Rows[i][6].ToString(),
+                            tb.Rows[i][7].ToString());
+                    }
                 }
-                catch (Exception ex)
-                {
-                    message = new FormMessage("Error: " + ex.Message, "Erreur", true, FontAwesome.Sharp.IconChar.Ban);
-                    message.ShowDialog();
-                }
-
-                /*
-                 * refrecher les donness du client
-                 */
-                remplissageDtGridClient();
+                else
+                    remplissageDtGridClient();
             }
         }
 
@@ -707,6 +827,147 @@ namespace Aiche_Bois
             {
                 dtGridFacture.Rows[e.RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(255, 244, 228);
                 dtGridFacture.Rows[e.RowIndex].DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(47, 47, 47);
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMaximize_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+                this.WindowState = FormWindowState.Normal;
+            else
+                this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void tableLayoutPanel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture(); /*function*/
+            SendMessage(this.Handle, 0x112, 0xf012, 0);  /*function*/
+        }
+
+        /// <summary>
+        /// home pannel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_home_Click(object sender, EventArgs e)
+        {
+            //U_Add_Edit uc = new U_Add_Edit("", "");
+            //uc.Dock = DockStyle.Fill;
+            //uc.Visible = false;
+            //p_home.Controls.Add(uc);
+            p_Add_Edit.Visible = false;
+            t_home.Visible = true;
+        }
+
+        /// <summary>
+        /// this is button edit
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (indxFacture <= -1 || dtGridFacture.Rows.Count <= 0 || idClient == null)
+            {
+                message = new FormMessage("selectionner une ligne s'il vous plait", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                message.ShowDialog();
+                return;
+            }
+
+            //send button click name
+            t_home.Visible = false;
+            p_Add_Edit.Visible = true;
+            
+            //remplissageDtGridClient();
+        }
+
+        /// <summary>
+        /// c'est button afficher la formulaire pour ajouter des factures
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAddFacture_Click(object sender, EventArgs e)
+        {
+            //send button click name
+            t_home.Visible = false;
+            p_Add_Edit.Visible = true;
+            //remplissageDtGridClient();
+        }
+        /**
+         * ======================== Panel Add ========================
+         */
+        private void cmbNumeroFacture_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            loadDataEdit(long.Parse(cmbNumeroFacture.SelectedItem.ToString()));
+        }
+
+        private void cmbTypeDeBois_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Program.btnAddTypeClick = cmbTypeDeBois.Text;
+            remplirListe(cmbTypeDeBois.Text);
+            /*remplirLstTypeBois();*/
+            if (lstTypeBois.Items.Count <= 0)
+            {
+                txtTypeDeBois.Text = "";
+                return;
+            }
+            lstTypeBois.SelectedIndex = 0;
+            txtTypeDeBois.Text = lstTypeBois.SelectedItem.ToString();
+        }
+
+        private void btnCmbCategorie_Click(object sender, EventArgs e)
+        {
+            Program.btnAddTypeClick = cmbTypeDeBois.Text.ToUpper();
+
+            FormAjout ajout = new FormAjout();
+            ajout.ShowDialog();
+
+            /*remplirLstTypeBois();*/
+            remplirListe(Program.btnAddTypeClick);
+        }
+
+        private void txtSearchFacture_TextChanged(object sender, EventArgs e)
+        {
+            /*si le textBox est vide, remlir tous les items*/
+            if (string.IsNullOrEmpty(txtSearch.Text))
+            {
+                List<string> list = remplirRechercheListe(cmbTypeDeBois.Text);
+                for (int i = 0; i < list.Count; i++)
+                {
+                    string st1 = list[i];
+                    lstTypeBois.Items.Add(st1);
+                }
+            }
+            else
+            {
+                List<string> vs1 = new List<string>();
+                foreach (string st2 in remplirRechercheListe(cmbTypeDeBois.Text))
+                {
+                    if (st2.Contains(txtSearch.Text.ToUpper()))
+                    {
+                        vs1.Add(st2);
+                    }
+                }
+
+                lstTypeBois.Items.Clear();
+                foreach (string st3 in vs1)
+                {
+                    lstTypeBois.Items.Add(st3);
+                }
+            }
+            /*selectionner le premiere ligne*/
+            if (lstTypeBois.Items.Count != 0)
+            {
+                lstTypeBois.SelectedIndex = 0;
             }
         }
     }
