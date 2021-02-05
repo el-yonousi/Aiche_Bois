@@ -47,7 +47,7 @@ namespace Aiche_Bois
             this.btnConnect.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConnect.DialogResult = System.Windows.Forms.DialogResult.Yes;
             this.btnConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConnect.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConnect.Font = new System.Drawing.Font("Ubuntu", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnect.ForeColor = System.Drawing.Color.Transparent;
             this.btnConnect.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnConnect.IconColor = System.Drawing.Color.Black;
@@ -66,7 +66,7 @@ namespace Aiche_Bois
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Ubuntu", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnCancel.IconColor = System.Drawing.Color.Black;
@@ -82,12 +82,12 @@ namespace Aiche_Bois
             // 
             // txtPassWord
             // 
-            this.txtPassWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassWord.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassWord.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPassWord.Font = new System.Drawing.Font("Ubuntu", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassWord.Location = new System.Drawing.Point(41, 310);
             this.txtPassWord.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassWord.Name = "txtPassWord";
-            this.txtPassWord.Size = new System.Drawing.Size(384, 27);
+            this.txtPassWord.Size = new System.Drawing.Size(384, 32);
             this.txtPassWord.TabIndex = 0;
             this.txtPassWord.UseSystemPasswordChar = true;
             this.txtPassWord.TextChanged += new System.EventHandler(this.txtPassWord_TextChanged);
@@ -95,9 +95,10 @@ namespace Aiche_Bois
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Ubuntu", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(36, 265);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 25);
+            this.label1.Size = new System.Drawing.Size(218, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "Entrer le Mot de Passe";
             // 
@@ -114,9 +115,10 @@ namespace Aiche_Bois
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(184, 162);
+            this.label2.Font = new System.Drawing.Font("Ubuntu", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(177, 162);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 25);
+            this.label2.Size = new System.Drawing.Size(106, 25);
             this.label2.TabIndex = 6;
             this.label2.Text = "Aiche Bois";
             // 
@@ -133,15 +135,15 @@ namespace Aiche_Bois
             // showPassWord
             // 
             this.showPassWord.BackColor = System.Drawing.Color.White;
-            this.showPassWord.FlatAppearance.BorderSize = 0;
+            this.showPassWord.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.showPassWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.showPassWord.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
             this.showPassWord.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.showPassWord.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.showPassWord.IconSize = 25;
-            this.showPassWord.Location = new System.Drawing.Point(391, 310);
+            this.showPassWord.Location = new System.Drawing.Point(383, 310);
             this.showPassWord.Name = "showPassWord";
-            this.showPassWord.Size = new System.Drawing.Size(34, 27);
+            this.showPassWord.Size = new System.Drawing.Size(42, 32);
             this.showPassWord.TabIndex = 8;
             this.showPassWord.UseVisualStyleBackColor = false;
             this.showPassWord.Click += new System.EventHandler(this.showPassWord_Click);

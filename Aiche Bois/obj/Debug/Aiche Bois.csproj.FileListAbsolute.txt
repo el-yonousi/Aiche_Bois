@@ -8,10 +8,8 @@ C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\bin\Debug\FontA
 C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\bin\Debug\itextsharp.dll
 C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\bin\Debug\itextsharp.xmlworker.dll
 C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\bin\Debug\itextsharp.xml
-C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.csprojAssemblyReference.cache
 C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.csproj.ResolveComReference.cache
 C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche_Bois.FormAjout.resources
-C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche_Bois.FormAjoutFactures.resources
 C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche_Bois.FormAvance.resources
 C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche_Bois.FormClient.resources
 C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche_Bois.FormMessage.resources
@@ -54,3 +52,4 @@ C:\Users\mohamed\Documents\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.csproj.Cop
 C:\Users\mohamed\Documents\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.exe
 C:\Users\mohamed\Documents\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.pdb
 C:\Users\mohamed\Documents\Aiche-Bois\Aiche Bois\obj\Debug\Aiche_Bois.U_Add_Edit.resources
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.csprojAssemblyReference.cache

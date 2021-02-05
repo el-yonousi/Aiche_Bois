@@ -148,23 +148,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
-    <Compile Include="U_Add_Edit.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="U_Add_Edit.Designer.cs">
-      <DependentUpon>U_Add_Edit.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormAjout.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAjout.Designer.cs">
       <DependentUpon>FormAjout.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormAjoutFactures.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormAjoutFactures.Designer.cs">
-      <DependentUpon>FormAjoutFactures.cs</DependentUpon>
     </Compile>
     <Compile Include="FormAvance.cs">
       <SubType>Form</SubType>
@@ -206,14 +194,8 @@
     <Compile Include="User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="U_Add_Edit.resx">
-      <DependentUpon>U_Add_Edit.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormAjout.resx">
       <DependentUpon>FormAjout.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormAjoutFactures.resx">
-      <DependentUpon>FormAjoutFactures.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAvance.resx">
       <DependentUpon>FormAvance.cs</DependentUpon>

@@ -44,9 +44,9 @@ namespace Aiche_Bois
             this.btnOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOK.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOK.Font = new System.Drawing.Font("Ubuntu", 14F, System.Drawing.FontStyle.Bold);
             this.btnOK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.btnOK.Location = new System.Drawing.Point(386, 281);
+            this.btnOK.Location = new System.Drawing.Point(371, 256);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(207, 43);
             this.btnOK.TabIndex = 262;
@@ -60,9 +60,9 @@ namespace Aiche_Bois
             this.btnNo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNo.DialogResult = System.Windows.Forms.DialogResult.No;
             this.btnNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNo.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNo.Font = new System.Drawing.Font("Ubuntu", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.btnNo.Location = new System.Drawing.Point(386, 281);
+            this.btnNo.Location = new System.Drawing.Point(371, 256);
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(207, 43);
             this.btnNo.TabIndex = 263;
@@ -76,9 +76,9 @@ namespace Aiche_Bois
             this.btnYes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnYes.DialogResult = System.Windows.Forms.DialogResult.Yes;
             this.btnYes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnYes.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnYes.Font = new System.Drawing.Font("Ubuntu", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnYes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.btnYes.Location = new System.Drawing.Point(150, 281);
+            this.btnYes.Location = new System.Drawing.Point(155, 256);
             this.btnYes.Name = "btnYes";
             this.btnYes.Size = new System.Drawing.Size(202, 43);
             this.btnYes.TabIndex = 264;
@@ -94,7 +94,7 @@ namespace Aiche_Bois
             this.iconCharMessage.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.iconCharMessage.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconCharMessage.IconSize = 62;
-            this.iconCharMessage.Location = new System.Drawing.Point(23, 139);
+            this.iconCharMessage.Location = new System.Drawing.Point(23, 120);
             this.iconCharMessage.Name = "iconCharMessage";
             this.iconCharMessage.Size = new System.Drawing.Size(62, 70);
             this.iconCharMessage.TabIndex = 265;
@@ -105,12 +105,12 @@ namespace Aiche_Bois
             // 
             this.lblShowMessage.BackColor = System.Drawing.Color.Transparent;
             this.lblShowMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblShowMessage.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowMessage.Font = new System.Drawing.Font("Ubuntu", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShowMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.lblShowMessage.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblShowMessage.Location = new System.Drawing.Point(150, 25);
             this.lblShowMessage.Name = "lblShowMessage";
-            this.lblShowMessage.Size = new System.Drawing.Size(443, 221);
+            this.lblShowMessage.Size = new System.Drawing.Size(428, 202);
             this.lblShowMessage.TabIndex = 217;
             this.lblShowMessage.Text = "Nom du client";
             this.lblShowMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -120,7 +120,7 @@ namespace Aiche_Bois
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.ClientSize = new System.Drawing.Size(621, 348);
+            this.ClientSize = new System.Drawing.Size(587, 311);
             this.Controls.Add(this.iconCharMessage);
             this.Controls.Add(this.btnYes);
             this.Controls.Add(this.btnNo);

@@ -176,9 +176,7 @@ namespace Aiche_Bois
                             Quantite = double.Parse(readerMesure["quantite"].ToString()),
                             Largeur = double.Parse(readerMesure["largeur"].ToString()),
                             Longueur = double.Parse(readerMesure["longueur"].ToString()),
-                            Epaisseur = double.Parse(readerMesure["eppaiseur"].ToString()),
-                            Type = readerMesure["type"].ToString(),
-                            Orientation = readerMesure["orientation"].ToString()
+                            Epaisseur = double.Parse(readerMesure["eppaiseur"].ToString())
                         };
                         mesures.Add(mesure);
                     }
@@ -597,7 +595,7 @@ namespace Aiche_Bois
                     {
                         if (mesures[i].IdFacture == idFacture)
                         {
-                            switch (mesures[i].Orientation)
+                            switch (pvcs.Count > 0 ? pvcs[i].Ortn : "0")
                             {
                                 case "0": symbole = $"0"; break;
                                 case "h*1": symbole = $"___"; break;
@@ -607,7 +605,7 @@ namespace Aiche_Bois
                                 case "4": symbole = $"[]"; break;
                             }
 
-                            if (mesures[i].Type != "m3")
+                            if (factures[index].TypeMetres != "m3")
                             {
                                 typeBois +=
                                @"<tr>
@@ -735,7 +733,7 @@ namespace Aiche_Bois
                     {
                         if (mesures[i].IdFacture == f.IDFacture)
                         {
-                            switch (mesures[i].Orientation)
+                            switch (pvcs.Count > 0 ? pvcs[i].Ortn : "0")
                             {
                                 case "0": symbole = $"0"; break;
                                 case "h*1": symbole = $"___"; break;
@@ -745,7 +743,7 @@ namespace Aiche_Bois
                                 case "4": symbole = $"[]"; break;
                             }
 
-                            if (mesures[i].Type != "m3")
+                            if (f.TypeMetres != "m3")
                             {
                                 typeBois +=
                                @"<tr>

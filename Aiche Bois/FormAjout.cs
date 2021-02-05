@@ -120,6 +120,7 @@ namespace Aiche_Bois
             suavgarderDonnees(Program.btnAddTypeClick.ToUpper());
             message = new FormMessage("Ajouté Avec Succès", "Succès", true, FontAwesome.Sharp.IconChar.CheckCircle);
             message.ShowDialog();
+            check = false;
             /*fermer la fonetre*/
             Close();
 

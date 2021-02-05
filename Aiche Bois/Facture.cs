@@ -18,6 +18,7 @@ namespace Aiche_Bois
         private string categorie;
         private string metrage;
         private double prixMetres;
+        private String typeMetres;
         private double totalMesure;
         private double prixTotalMesure;
 
@@ -48,6 +49,7 @@ namespace Aiche_Bois
         public List<Pvc> Pvcs { get => pvcs; set => pvcs = value; }
         public bool CheckPVC { get => checkPVC; set => checkPVC = value; }
         public DateTime DateFacture { get => dateFacture; set => dateFacture = value; }
+        public String TypeMetres { get => typeMetres; set => typeMetres = value; }
 
         public Facture()
         {
