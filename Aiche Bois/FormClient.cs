@@ -9,6 +9,7 @@ using System.Globalization;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Windows.Media;
 
 namespace Aiche_Bois
 {
@@ -85,7 +86,7 @@ namespace Aiche_Bois
             try
             {
                 connectionClient.Open();
-
+                ViderTxtBox();
                 //client
                 var commandClient = new OleDbCommand
                 {
@@ -507,6 +508,7 @@ namespace Aiche_Bois
         /// </summary>
         private void RemplirComboBxPvc()
         {
+            cmbTypePvc.Items.Clear();
             try
             {
                 connectionType.Open();
@@ -782,10 +784,10 @@ namespace Aiche_Bois
             btnAddFacture.Click -= new EventHandler(this.btnEditFacture_Click);
 
             //pvc_mesure(idClient[1], indxFacture);
-            PrintPdf print = new PrintPdf(idClient[1], "null", "btnPrintClient", false);
+            FormPrint print = new FormPrint(idClient[1], "null", "btnPrintClient", false);
             print.ShowDialog();
 
-            idClient.Initialize();
+            idClient = null;
         }
 
         /// <summary>
@@ -1314,11 +1316,6 @@ namespace Aiche_Bois
             // select the first item on list
             if (cmbNumeroFacture.Items.Count > 0)
                 cmbNumeroFacture.SelectedIndex = 0;
-
-            // verifier que la liste des facture contient plus d'un un facture
-            if (cmbNumeroFacture.Items.Count <= 1)
-                btnDeleteFacture.Enabled = false;
-
 
             //visible panel and bring to frot
             p_home.SendToBack();
@@ -2184,6 +2181,15 @@ namespace Aiche_Bois
                     message.ShowDialog();
                     return;
                 }
+
+                // verifier que la liste des facture contient plus d'un un facture
+                if (cmbNumeroFacture.Items.Count <= 1)
+                {
+                    message = new FormMessage("Vous ne pouvez pas supprimer cette facture car le client n'a qu'une seule facture, vous devez supprimer le client.", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                    message.ShowDialog();
+                    return;
+                }
+
                 message = new FormMessage("Voulez-vous vraiment supprimer cette facture", "Question", true, true, FontAwesome.Sharp.IconChar.Question);
 
                 if (message.ShowDialog() == DialogResult.No)
@@ -2241,7 +2247,7 @@ namespace Aiche_Bois
         {
             if (cmbNumeroFacture.Items.Count == 0)
                 return;
-            PrintPdf printPdf = new PrintPdf(idClient[1], cmbNumeroFacture.SelectedItem.ToString(), "btnPrintFacture", chSeulPVC.Checked);
+            FormPrint printPdf = new FormPrint(idClient[1], cmbNumeroFacture.SelectedItem.ToString(), "btnPrintFacture", chSeulPVC.Checked);
             printPdf.ShowDialog();
         }
 
@@ -2370,12 +2376,13 @@ namespace Aiche_Bois
                     connectionClient.Close();
                 }
 
-                idClient.Initialize();
-
                 /*
                  * refrecher les donness du client
                  */
                 remplissageDtGridClient();
+
+                // initialize idClient
+                idClient = null;
             }
         }
     }

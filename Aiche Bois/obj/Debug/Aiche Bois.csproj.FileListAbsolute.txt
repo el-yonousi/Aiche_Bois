@@ -13,9 +13,7 @@ C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche
 C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche_Bois.FormAvance.resources
 C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche_Bois.FormClient.resources
 C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche_Bois.FormMessage.resources
-C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche_Bois.PrintPdf.resources
 C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche_Bois.Properties.Resources.resources
-C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche_Bois.User.resources
 C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.csproj.GenerateResource.cache
 C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.csproj.CoreCompileInputs.cache
 C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.TrustInfo.xml
@@ -53,3 +51,5 @@ C:\Users\mohamed\Documents\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.exe
 C:\Users\mohamed\Documents\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.pdb
 C:\Users\mohamed\Documents\Aiche-Bois\Aiche Bois\obj\Debug\Aiche_Bois.U_Add_Edit.resources
 C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.csprojAssemblyReference.cache
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche_Bois.FormPrint.resources
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche_Bois.FormUser.resources

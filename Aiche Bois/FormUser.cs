@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace Aiche_Bois
 {
-    public partial class User : Form
+    public partial class FormUser : Form
     {
         private string fileName = "aicheBois.accdb";
         private string fileNameType = "type.accdb";
         private string sourcePath = Application.StartupPath + "\\Resources\\";
         private string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\aiche bois\\base donnée";
-        public User()
+        public FormUser()
         {
             if (System.Diagnostics.Process.GetProcessesByName("aiche bois").Length > 0)
             {

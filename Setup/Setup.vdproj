@@ -15,14 +15,14 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_1A79F9F91914429C888A6BACA14F8610"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_1A06C5D929C98CF228213B4D4B31D31E"
+        "OwnerKey" = "8:_61A3EECFC27441129434F497C1F0ABE1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_1C732A1F4A444F93854463FBBF16EC24"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_1A06C5D929C98CF228213B4D4B31D31E"
+        "OwnerKey" = "8:_CA499ADF4F2327CC83C024149CA2F7DD"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -39,18 +39,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_41C3EAA60997E32BD04EDC9D99646F11"
-        "OwnerKey" = "8:_61A3EECFC27441129434F497C1F0ABE1"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_41C3EAA60997E32BD04EDC9D99646F11"
-        "OwnerKey" = "8:_905E24FF203210F43D05007141B8B2AF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_49BBF68B40654262A6A2515A756F0600"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -63,20 +51,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_5FFF68A40C1F4E4994BC886419BB07F8"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_61A3EECFC27441129434F497C1F0ABE1"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_61EF57002856134EDB213DD3988850A8"
-        "OwnerKey" = "8:_61A3EECFC27441129434F497C1F0ABE1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -87,8 +63,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_6FBA8C4EFA0F4B7FA36AC50A2EDFFEC7"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_7331AA3CB1E9B8B15BB7086ABE706623"
+        "OwnerKey" = "8:_61A3EECFC27441129434F497C1F0ABE1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -99,8 +75,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_77438795D7F945EDB4FCECA92144040A"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_7B24E530ED6EF7453B1FC8B95A220A84"
+        "OwnerKey" = "8:_61A3EECFC27441129434F497C1F0ABE1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -111,20 +87,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_8D878B8A8CC74D209578DF1A3966066F"
+        "MsmKey" = "8:_9AC08C71E3F742AABD1BC6CFA1B3202F"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_905E24FF203210F43D05007141B8B2AF"
-        "OwnerKey" = "8:_61A3EECFC27441129434F497C1F0ABE1"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_905E24FF203210F43D05007141B8B2AF"
-        "OwnerKey" = "8:_AC46704371B4A857F1C7A0E198AFFE87"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -135,38 +99,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_A1F1845DC75444D6B54FD99FCCE8DA20"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_AC46704371B4A857F1C7A0E198AFFE87"
+        "MsmKey" = "8:_CA499ADF4F2327CC83C024149CA2F7DD"
         "OwnerKey" = "8:_61A3EECFC27441129434F497C1F0ABE1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_BBD6FC0961794640BEECF627647394D3"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C2FE0C5EEE5B4DC590F047147A02093C"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C3FBA92E09994148881379AF8AD88599"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DD3F907732AC4D8CACF2F45AE32B637E"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_CA499ADF4F2327CC83C024149CA2F7DD"
+        "OwnerKey" = "8:_7B24E530ED6EF7453B1FC8B95A220A84"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -177,24 +117,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_F3CC2B929F39424599751AB94760520B"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F73459A64A954CF78E1D510D0E17D5A3"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F737DC729CF049C3877B8E744016D8B8"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_61A3EECFC27441129434F497C1F0ABE1"
         "MsmSig" = "8:_UNDEFINED"
@@ -202,25 +124,25 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AC46704371B4A857F1C7A0E198AFFE87"
+        "OwnerKey" = "8:_7B24E530ED6EF7453B1FC8B95A220A84"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_905E24FF203210F43D05007141B8B2AF"
+        "OwnerKey" = "8:_CA499ADF4F2327CC83C024149CA2F7DD"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_61EF57002856134EDB213DD3988850A8"
+        "OwnerKey" = "8:_7331AA3CB1E9B8B15BB7086ABE706623"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_41C3EAA60997E32BD04EDC9D99646F11"
+        "OwnerKey" = "8:_1A06C5D929C98CF228213B4D4B31D31E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -330,12 +252,23 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1A79F9F91914429C888A6BACA14F8610"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1A06C5D929C98CF228213B4D4B31D31E"
             {
-            "SourcePath" = "8:..\\..\\..\\OneDrive - OFPPT\\Tools\\ubuntu-font-family-0.83\\ubuntu-font-family-0.83\\Ubuntu-MI.ttf"
-            "TargetName" = "8:Ubuntu-MI.ttf"
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942"
+                "ScatterAssemblies"
+                {
+                    "_1A06C5D929C98CF228213B4D4B31D31E"
+                    {
+                    "Name" = "8:BouncyCastle.Crypto.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:BouncyCastle.Crypto.dll"
+            "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_C4B2E654ADB540A5B6828DD5347A99CC"
+            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -345,29 +278,9 @@
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
-            "Register" = "3:5"
+            "Register" = "3:1"
             "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1C732A1F4A444F93854463FBBF16EC24"
-            {
-            "SourcePath" = "8:..\\..\\..\\OneDrive - OFPPT\\Tools\\ubuntu-font-family-0.83\\ubuntu-font-family-0.83\\Ubuntu-LI.ttf"
-            "TargetName" = "8:Ubuntu-LI.ttf"
-            "Tag" = "8:"
-            "Folder" = "8:_C4B2E654ADB540A5B6828DD5347A99CC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:5"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_216CAB430E6845C28660755E1D59A1B6"
@@ -404,37 +317,6 @@
                     }
                 }
             "SourcePath" = "8:System.ComponentModel.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_41C3EAA60997E32BD04EDC9D99646F11"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942"
-                "ScatterAssemblies"
-                {
-                    "_41C3EAA60997E32BD04EDC9D99646F11"
-                    {
-                    "Name" = "8:BouncyCastle.Crypto.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:BouncyCastle.Crypto.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
@@ -492,57 +374,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5FFF68A40C1F4E4994BC886419BB07F8"
-            {
-            "SourcePath" = "8:..\\..\\..\\OneDrive - OFPPT\\Tools\\ubuntu-font-family-0.83\\ubuntu-font-family-0.83\\UbuntuMono-R.ttf"
-            "TargetName" = "8:UbuntuMono-R.ttf"
-            "Tag" = "8:"
-            "Folder" = "8:_C4B2E654ADB540A5B6828DD5347A99CC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:5"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_61EF57002856134EDB213DD3988850A8"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_61EF57002856134EDB213DD3988850A8"
-                    {
-                    "Name" = "8:FontAwesome.Sharp.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:FontAwesome.Sharp.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6F0971610E2B16ADCDC1D617E7C04EC6"
             {
             "AssemblyRegister" = "3:1"
@@ -574,12 +405,23 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6FBA8C4EFA0F4B7FA36AC50A2EDFFEC7"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7331AA3CB1E9B8B15BB7086ABE706623"
             {
-            "SourcePath" = "8:..\\..\\..\\OneDrive - OFPPT\\Tools\\ubuntu-font-family-0.83\\ubuntu-font-family-0.83\\UbuntuMono-RI.ttf"
-            "TargetName" = "8:UbuntuMono-RI.ttf"
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_7331AA3CB1E9B8B15BB7086ABE706623"
+                    {
+                    "Name" = "8:FontAwesome.Sharp.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:FontAwesome.Sharp.dll"
+            "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_C4B2E654ADB540A5B6828DD5347A99CC"
+            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -589,9 +431,9 @@
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
-            "Register" = "3:5"
+            "Register" = "3:1"
             "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_738F12FAAEEC4F758C68F2E63B3B9800"
@@ -614,145 +456,14 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_77438795D7F945EDB4FCECA92144040A"
-            {
-            "SourcePath" = "8:..\\..\\..\\OneDrive - OFPPT\\Tools\\ubuntu-font-family-0.83\\ubuntu-font-family-0.83\\Ubuntu-BI.ttf"
-            "TargetName" = "8:Ubuntu-BI.ttf"
-            "Tag" = "8:"
-            "Folder" = "8:_C4B2E654ADB540A5B6828DD5347A99CC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:5"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_82103759FF0843FD8F7D0590EBFBB8AC"
-            {
-            "SourcePath" = "8:..\\Aiche Bois\\bin\\Debug\\Resources\\logo.png"
-            "TargetName" = "8:logo.png"
-            "Tag" = "8:"
-            "Folder" = "8:_B411AE2776704EC585A3B29AEB2D6365"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8D878B8A8CC74D209578DF1A3966066F"
-            {
-            "SourcePath" = "8:..\\..\\..\\OneDrive - OFPPT\\Tools\\ubuntu-font-family-0.83\\ubuntu-font-family-0.83\\Ubuntu-R.ttf"
-            "TargetName" = "8:Ubuntu-R.ttf"
-            "Tag" = "8:"
-            "Folder" = "8:_C4B2E654ADB540A5B6828DD5347A99CC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:5"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_905E24FF203210F43D05007141B8B2AF"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_905E24FF203210F43D05007141B8B2AF"
-                    {
-                    "Name" = "8:itextsharp.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:itextsharp.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9D9D3198C4E34CD5B8272C1BC872BA86"
-            {
-            "SourcePath" = "8:..\\Aiche Bois\\bin\\Debug\\Resources\\aicheBois.accdb"
-            "TargetName" = "8:aicheBois.accdb"
-            "Tag" = "8:"
-            "Folder" = "8:_B411AE2776704EC585A3B29AEB2D6365"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A1F1845DC75444D6B54FD99FCCE8DA20"
-            {
-            "SourcePath" = "8:..\\..\\..\\OneDrive - OFPPT\\Tools\\ubuntu-font-family-0.83\\ubuntu-font-family-0.83\\Ubuntu-C.ttf"
-            "TargetName" = "8:Ubuntu-C.ttf"
-            "Tag" = "8:"
-            "Folder" = "8:_C4B2E654ADB540A5B6828DD5347A99CC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:5"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_AC46704371B4A857F1C7A0E198AFFE87"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7B24E530ED6EF7453B1FC8B95A220A84"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:itextsharp.xmlworker, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_AC46704371B4A857F1C7A0E198AFFE87"
+                    "_7B24E530ED6EF7453B1FC8B95A220A84"
                     {
                     "Name" = "8:itextsharp.xmlworker.dll"
                     "Attributes" = "3:512"
@@ -776,10 +487,30 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BBD6FC0961794640BEECF627647394D3"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_82103759FF0843FD8F7D0590EBFBB8AC"
             {
-            "SourcePath" = "8:..\\..\\..\\OneDrive - OFPPT\\Tools\\ubuntu-font-family-0.83\\ubuntu-font-family-0.83\\Ubuntu-Th.ttf"
-            "TargetName" = "8:Ubuntu-Th.ttf"
+            "SourcePath" = "8:..\\Aiche Bois\\bin\\Debug\\Resources\\logo.png"
+            "TargetName" = "8:logo.png"
+            "Tag" = "8:"
+            "Folder" = "8:_B411AE2776704EC585A3B29AEB2D6365"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9AC08C71E3F742AABD1BC6CFA1B3202F"
+            {
+            "SourcePath" = "8:..\\..\\..\\Tools\\ubuntu-font-family-0.83\\ubuntu-font-family-0.83\\Ubuntu-B.ttf"
+            "TargetName" = "8:Ubuntu-B.ttf"
             "Tag" = "8:"
             "Folder" = "8:_C4B2E654ADB540A5B6828DD5347A99CC"
             "Condition" = "8:"
@@ -796,12 +527,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C2FE0C5EEE5B4DC590F047147A02093C"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9D9D3198C4E34CD5B8272C1BC872BA86"
             {
-            "SourcePath" = "8:..\\..\\..\\OneDrive - OFPPT\\Tools\\ubuntu-font-family-0.83\\ubuntu-font-family-0.83\\Ubuntu-M.ttf"
-            "TargetName" = "8:Ubuntu-M.ttf"
+            "SourcePath" = "8:..\\Aiche Bois\\bin\\Debug\\Resources\\aicheBois.accdb"
+            "TargetName" = "8:aicheBois.accdb"
             "Tag" = "8:"
-            "Folder" = "8:_C4B2E654ADB540A5B6828DD5347A99CC"
+            "Folder" = "8:_B411AE2776704EC585A3B29AEB2D6365"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -811,17 +542,28 @@
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
-            "Register" = "3:5"
+            "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C3FBA92E09994148881379AF8AD88599"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CA499ADF4F2327CC83C024149CA2F7DD"
             {
-            "SourcePath" = "8:..\\..\\..\\OneDrive - OFPPT\\Tools\\ubuntu-font-family-0.83\\ubuntu-font-family-0.83\\Ubuntu-L.ttf"
-            "TargetName" = "8:Ubuntu-L.ttf"
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_CA499ADF4F2327CC83C024149CA2F7DD"
+                    {
+                    "Name" = "8:itextsharp.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:itextsharp.dll"
+            "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_C4B2E654ADB540A5B6828DD5347A99CC"
+            "Folder" = "8:_D864E424AEEC40398C95657CCCC58BED"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -831,29 +573,9 @@
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
-            "Register" = "3:5"
+            "Register" = "3:1"
             "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DD3F907732AC4D8CACF2F45AE32B637E"
-            {
-            "SourcePath" = "8:..\\..\\..\\OneDrive - OFPPT\\Tools\\ubuntu-font-family-0.83\\ubuntu-font-family-0.83\\Ubuntu-RI.ttf"
-            "TargetName" = "8:Ubuntu-RI.ttf"
-            "Tag" = "8:"
-            "Folder" = "8:_C4B2E654ADB540A5B6828DD5347A99CC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:5"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EBF0E2E5183B4EB7914914F93CC879F8"
@@ -872,66 +594,6 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F3CC2B929F39424599751AB94760520B"
-            {
-            "SourcePath" = "8:..\\..\\..\\OneDrive - OFPPT\\Tools\\ubuntu-font-family-0.83\\ubuntu-font-family-0.83\\Ubuntu-B.ttf"
-            "TargetName" = "8:Ubuntu-B.ttf"
-            "Tag" = "8:"
-            "Folder" = "8:_C4B2E654ADB540A5B6828DD5347A99CC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:5"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F73459A64A954CF78E1D510D0E17D5A3"
-            {
-            "SourcePath" = "8:..\\..\\..\\OneDrive - OFPPT\\Tools\\ubuntu-font-family-0.83\\ubuntu-font-family-0.83\\UbuntuMono-BI.ttf"
-            "TargetName" = "8:UbuntuMono-BI.ttf"
-            "Tag" = "8:"
-            "Folder" = "8:_C4B2E654ADB540A5B6828DD5347A99CC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:5"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F737DC729CF049C3877B8E744016D8B8"
-            {
-            "SourcePath" = "8:..\\..\\..\\OneDrive - OFPPT\\Tools\\ubuntu-font-family-0.83\\ubuntu-font-family-0.83\\UbuntuMono-B.ttf"
-            "TargetName" = "8:UbuntuMono-B.ttf"
-            "Tag" = "8:"
-            "Folder" = "8:_C4B2E654ADB540A5B6828DD5347A99CC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:5"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"

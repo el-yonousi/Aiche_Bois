@@ -1,7 +1,7 @@
 ﻿
 namespace Aiche_Bois
 {
-    partial class PrintPdf
+    partial class FormPrint
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Aiche_Bois
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrintPdf));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrint));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lstFacture = new System.Windows.Forms.ListBox();

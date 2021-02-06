@@ -1,7 +1,7 @@
 ﻿
 namespace Aiche_Bois
 {
-    partial class User
+    partial class FormUser
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Aiche_Bois
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUser));
             this.btnConnect = new FontAwesome.Sharp.IconButton();
             this.btnCancel = new FontAwesome.Sharp.IconButton();
             this.txtPassWord = new System.Windows.Forms.TextBox();

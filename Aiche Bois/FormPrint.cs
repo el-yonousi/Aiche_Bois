@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Aiche_Bois
 {
-    public partial class PrintPdf : Form
+    public partial class FormPrint : Form
     {
         OleDbConnection connection = new OleDbConnection();
 
@@ -61,7 +61,7 @@ namespace Aiche_Bois
         /// <param name="idClient"></param>
         /// <param name="idFacture"></param>
         /// <param name="btn"></param>
-        public PrintPdf(String idClient, String idFacture, String btn, bool check)
+        public FormPrint(String idClient, String idFacture, String btn, bool check)
         {
             this.idClient = idClient;
             this.idFacture = idFacture;
