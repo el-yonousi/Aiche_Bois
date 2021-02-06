@@ -76,11 +76,10 @@ namespace Aiche_Bois
             this.lstFacture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.lstFacture.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lstFacture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstFacture.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.lstFacture.Font = new System.Drawing.Font("Ubuntu", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstFacture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.lstFacture.FormattingEnabled = true;
-            this.lstFacture.ItemHeight = 35;
+            this.lstFacture.ItemHeight = 27;
             this.lstFacture.Items.AddRange(new object[] {
             "aucune"});
             this.lstFacture.Location = new System.Drawing.Point(268, 39);
@@ -88,7 +87,6 @@ namespace Aiche_Bois
             this.lstFacture.Name = "lstFacture";
             this.lstFacture.Size = new System.Drawing.Size(264, 356);
             this.lstFacture.TabIndex = 17;
-            this.lstFacture.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lstMesure_DrawItem);
             // 
             // btnPrint
             // 
@@ -127,11 +125,10 @@ namespace Aiche_Bois
             this.lstMesure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.lstMesure.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lstMesure.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstMesure.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.lstMesure.Font = new System.Drawing.Font("Ubuntu", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstMesure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.lstMesure.FormattingEnabled = true;
-            this.lstMesure.ItemHeight = 35;
+            this.lstMesure.ItemHeight = 27;
             this.lstMesure.Items.AddRange(new object[] {
             "aucune"});
             this.lstMesure.Location = new System.Drawing.Point(0, 39);
@@ -139,7 +136,6 @@ namespace Aiche_Bois
             this.lstMesure.Name = "lstMesure";
             this.lstMesure.Size = new System.Drawing.Size(264, 356);
             this.lstMesure.TabIndex = 16;
-            this.lstMesure.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lstMesure_DrawItem);
             // 
             // t_Print
             // 
@@ -179,7 +175,7 @@ namespace Aiche_Bois
             this.tableLayoutPanel1.Size = new System.Drawing.Size(538, 483);
             this.tableLayoutPanel1.TabIndex = 24;
             // 
-            // PrintPdf
+            // FormPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -191,7 +187,7 @@ namespace Aiche_Bois
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "PrintPdf";
+            this.Name = "FormPrint";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PrintPdf";
             this.Load += new System.EventHandler(this.PrintPdf_Load);

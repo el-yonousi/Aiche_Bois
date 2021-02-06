@@ -55,7 +55,7 @@ namespace Aiche_Bois
             this.btnConnect.Location = new System.Drawing.Point(41, 410);
             this.btnConnect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(136, 41);
+            this.btnConnect.Size = new System.Drawing.Size(157, 41);
             this.btnConnect.TabIndex = 1;
             this.btnConnect.Text = "Connexion";
             this.btnConnect.UseVisualStyleBackColor = true;
@@ -71,10 +71,10 @@ namespace Aiche_Bois
             this.btnCancel.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnCancel.IconColor = System.Drawing.Color.Black;
             this.btnCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancel.Location = new System.Drawing.Point(289, 410);
+            this.btnCancel.Location = new System.Drawing.Point(268, 410);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(136, 41);
+            this.btnCancel.Size = new System.Drawing.Size(157, 41);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Annuler";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -168,7 +168,7 @@ namespace Aiche_Bois
             this.DarkLight.UseVisualStyleBackColor = false;
             this.DarkLight.Visible = false;
             // 
-            // User
+            // FormUser
             // 
             this.AcceptButton = this.btnConnect;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
@@ -190,7 +190,7 @@ namespace Aiche_Bois
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.Name = "User";
+            this.Name = "FormUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aiche Bois";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

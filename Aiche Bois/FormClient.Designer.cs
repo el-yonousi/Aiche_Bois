@@ -70,22 +70,22 @@
             this.p_Add_Edit = new System.Windows.Forms.Panel();
             this.t_add_edit = new System.Windows.Forms.TableLayoutPanel();
             this.t_facture_numero = new System.Windows.Forms.TableLayoutPanel();
-            this.lblNumeroFacture = new System.Windows.Forms.Label();
             this.cmbNumeroFacture = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.dtDateFacture = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtNomClient = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCmbCategorie = new FontAwesome.Sharp.IconButton();
             this.cmbTypeDeBois = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtSearchFacture = new System.Windows.Forms.TextBox();
             this.lstTypeBois = new System.Windows.Forms.ListBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtTypeDeBois = new System.Windows.Forms.Label();
             this.btnImprimerFacture = new FontAwesome.Sharp.IconButton();
+            this.lblNumeroFacture = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.t_pvc = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.btnClear = new FontAwesome.Sharp.IconButton();
@@ -102,25 +102,25 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbOrientationPvc = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
-            this.label22 = new System.Windows.Forms.Label();
             this.txtQtePVC = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
             this.txtLargPVC = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
             this.txtLongPVC = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
             this.cmbOrtnPVC = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.btncmbNbrCanto = new FontAwesome.Sharp.IconButton();
             this.cmbTypePvc = new System.Windows.Forms.ComboBox();
             this.chSeulPVC = new System.Windows.Forms.CheckBox();
             this.txtPrixTotalPVC = new System.Windows.Forms.Label();
             this.txtTotaleTaillPVC = new System.Windows.Forms.Label();
+            this.txtPrixMetreLPVC = new System.Windows.Forms.TextBox();
+            this.txtTaillePVC = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.txtPrixMetreLPVC = new System.Windows.Forms.TextBox();
-            this.txtTaillePVC = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.t_mesure = new System.Windows.Forms.TableLayoutPanel();
@@ -134,37 +134,37 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.label10 = new System.Windows.Forms.Label();
             this.txtQuantite = new System.Windows.Forms.TextBox();
             this.txtLargeur = new System.Windows.Forms.TextBox();
             this.txtLongueur = new System.Windows.Forms.TextBox();
             this.txtEpaisseur = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.lblEpaisseur = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.cmbTypeDuMetres = new System.Windows.Forms.ComboBox();
             this.txtPrixMetreMesure = new System.Windows.Forms.TextBox();
+            this.btnDeleteFacture = new FontAwesome.Sharp.IconButton();
+            this.txtCategorie = new System.Windows.Forms.TextBox();
+            this.txtPrixTotalMesure = new System.Windows.Forms.Label();
             this.lblMesure = new System.Windows.Forms.Label();
             this.txtTotalMesure = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.txtMetrageDeFeuille = new System.Windows.Forms.TextBox();
-            this.btnDeleteFacture = new FontAwesome.Sharp.IconButton();
             this.lblTypeDuMetres = new System.Windows.Forms.Label();
-            this.txtCategorie = new System.Windows.Forms.TextBox();
-            this.txtPrixTotalMesure = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddNewFacture = new FontAwesome.Sharp.IconButton();
-            this.label19 = new System.Windows.Forms.Label();
             this.txtPrixRestClient = new System.Windows.Forms.Label();
             this.btnSaveClient = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.checkAvance = new System.Windows.Forms.CheckBox();
             this.txtPrixAvanceClient = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtPrixTotalClient = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.t_home.SuspendLayout();
@@ -204,6 +204,7 @@
             resources.ApplyResources(this.txtSearch, "txtSearch");
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.txtSearch.Name = "txtSearch";
+            this.txtSearch.TabStop = false;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // t_home
@@ -388,6 +389,7 @@
             this.btn_home.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_home.IconSize = 35;
             this.btn_home.Name = "btn_home";
+            this.btn_home.TabStop = false;
             this.btn_home.UseVisualStyleBackColor = false;
             this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
@@ -404,6 +406,7 @@
             this.btnAddClient.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddClient.IconSize = 35;
             this.btnAddClient.Name = "btnAddClient";
+            this.btnAddClient.TabStop = false;
             this.btnAddClient.UseVisualStyleBackColor = false;
             this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
             // 
@@ -420,6 +423,7 @@
             this.btnEditClient.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditClient.IconSize = 30;
             this.btnEditClient.Name = "btnEditClient";
+            this.btnEditClient.TabStop = false;
             this.btnEditClient.UseVisualStyleBackColor = false;
             this.btnEditClient.Click += new System.EventHandler(this.btnEdit_Click);
             // 
@@ -436,6 +440,7 @@
             this.btnDeleteClient.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDeleteClient.IconSize = 30;
             this.btnDeleteClient.Name = "btnDeleteClient";
+            this.btnDeleteClient.TabStop = false;
             this.btnDeleteClient.UseVisualStyleBackColor = false;
             this.btnDeleteClient.Click += new System.EventHandler(this.btnDeleteClient_Click);
             // 
@@ -452,6 +457,7 @@
             this.btnPrintClient.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnPrintClient.IconSize = 30;
             this.btnPrintClient.Name = "btnPrintClient";
+            this.btnPrintClient.TabStop = false;
             this.btnPrintClient.UseVisualStyleBackColor = false;
             this.btnPrintClient.Click += new System.EventHandler(this.btnPrintFacture_Click);
             // 
@@ -468,6 +474,7 @@
             this.btnResultClient.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnResultClient.IconSize = 30;
             this.btnResultClient.Name = "btnResultClient";
+            this.btnResultClient.TabStop = false;
             this.btnResultClient.UseVisualStyleBackColor = false;
             this.btnResultClient.Click += new System.EventHandler(this.btnResult_Click);
             // 
@@ -567,26 +574,21 @@
             // t_facture_numero
             // 
             resources.ApplyResources(this.t_facture_numero, "t_facture_numero");
-            this.t_facture_numero.Controls.Add(this.lblNumeroFacture, 0, 0);
             this.t_facture_numero.Controls.Add(this.cmbNumeroFacture, 0, 1);
-            this.t_facture_numero.Controls.Add(this.label2, 0, 2);
             this.t_facture_numero.Controls.Add(this.dtDateFacture, 0, 3);
-            this.t_facture_numero.Controls.Add(this.label3, 0, 4);
             this.t_facture_numero.Controls.Add(this.txtNomClient, 0, 5);
-            this.t_facture_numero.Controls.Add(this.label15, 0, 6);
             this.t_facture_numero.Controls.Add(this.tableLayoutPanel4, 0, 7);
-            this.t_facture_numero.Controls.Add(this.label1, 0, 8);
             this.t_facture_numero.Controls.Add(this.txtSearchFacture, 0, 9);
             this.t_facture_numero.Controls.Add(this.lstTypeBois, 0, 10);
-            this.t_facture_numero.Controls.Add(this.label5, 0, 11);
             this.t_facture_numero.Controls.Add(this.txtTypeDeBois, 0, 12);
             this.t_facture_numero.Controls.Add(this.btnImprimerFacture, 0, 13);
+            this.t_facture_numero.Controls.Add(this.lblNumeroFacture, 0, 0);
+            this.t_facture_numero.Controls.Add(this.label2, 0, 2);
+            this.t_facture_numero.Controls.Add(this.label3, 0, 4);
+            this.t_facture_numero.Controls.Add(this.label15, 0, 6);
+            this.t_facture_numero.Controls.Add(this.label1, 0, 8);
+            this.t_facture_numero.Controls.Add(this.label5, 0, 11);
             this.t_facture_numero.Name = "t_facture_numero";
-            // 
-            // lblNumeroFacture
-            // 
-            resources.ApplyResources(this.lblNumeroFacture, "lblNumeroFacture");
-            this.lblNumeroFacture.Name = "lblNumeroFacture";
             // 
             // cmbNumeroFacture
             // 
@@ -597,12 +599,8 @@
             this.cmbNumeroFacture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.cmbNumeroFacture.FormattingEnabled = true;
             this.cmbNumeroFacture.Name = "cmbNumeroFacture";
+            this.cmbNumeroFacture.TabStop = false;
             this.cmbNumeroFacture.SelectedIndexChanged += new System.EventHandler(this.cmbNumeroFacture_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
             // 
             // dtDateFacture
             // 
@@ -617,11 +615,6 @@
             this.dtDateFacture.TabStop = false;
             this.dtDateFacture.Tag = "Date de la Facture";
             // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
-            // 
             // txtNomClient
             // 
             resources.ApplyResources(this.txtNomClient, "txtNomClient");
@@ -633,11 +626,6 @@
             this.txtNomClient.Tag = "Nom du Client";
             this.txtNomClient.Enter += new System.EventHandler(this.txtNomClient_Enter);
             this.txtNomClient.Leave += new System.EventHandler(this.txtNomClient_Leave);
-            // 
-            // label15
-            // 
-            resources.ApplyResources(this.label15, "label15");
-            this.label15.Name = "label15";
             // 
             // tableLayoutPanel4
             // 
@@ -677,11 +665,6 @@
             this.cmbTypeDeBois.Name = "cmbTypeDeBois";
             this.cmbTypeDeBois.SelectedIndexChanged += new System.EventHandler(this.cmbTypeDeBois_SelectedIndexChanged);
             // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
             // txtSearchFacture
             // 
             resources.ApplyResources(this.txtSearchFacture, "txtSearchFacture");
@@ -703,11 +686,6 @@
             this.lstTypeBois.FormattingEnabled = true;
             this.lstTypeBois.Name = "lstTypeBois";
             this.lstTypeBois.SelectedIndexChanged += new System.EventHandler(this.lstTypeBois_SelectedIndexChanged);
-            // 
-            // label5
-            // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
             // 
             // txtTypeDeBois
             // 
@@ -733,6 +711,36 @@
             this.btnImprimerFacture.UseVisualStyleBackColor = false;
             this.btnImprimerFacture.Click += new System.EventHandler(this.btnImprimerFacture_Click);
             // 
+            // lblNumeroFacture
+            // 
+            resources.ApplyResources(this.lblNumeroFacture, "lblNumeroFacture");
+            this.lblNumeroFacture.Name = "lblNumeroFacture";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
+            // label15
+            // 
+            resources.ApplyResources(this.label15, "label15");
+            this.label15.Name = "label15";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
+            // 
             // t_pvc
             // 
             this.t_pvc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
@@ -743,11 +751,11 @@
             this.t_pvc.Controls.Add(this.tableLayoutPanel15, 0, 1);
             this.t_pvc.Controls.Add(this.txtPrixTotalPVC, 0, 11);
             this.t_pvc.Controls.Add(this.txtTotaleTaillPVC, 0, 5);
+            this.t_pvc.Controls.Add(this.txtPrixMetreLPVC, 0, 9);
+            this.t_pvc.Controls.Add(this.txtTaillePVC, 0, 7);
             this.t_pvc.Controls.Add(this.label12, 0, 4);
             this.t_pvc.Controls.Add(this.label17, 0, 10);
             this.t_pvc.Controls.Add(this.label16, 0, 6);
-            this.t_pvc.Controls.Add(this.txtPrixMetreLPVC, 0, 9);
-            this.t_pvc.Controls.Add(this.txtTaillePVC, 0, 7);
             this.t_pvc.Controls.Add(this.label14, 0, 8);
             this.t_pvc.Controls.Add(this.label7, 0, 0);
             this.t_pvc.Name = "t_pvc";
@@ -954,20 +962,15 @@
             // tableLayoutPanel14
             // 
             resources.ApplyResources(this.tableLayoutPanel14, "tableLayoutPanel14");
-            this.tableLayoutPanel14.Controls.Add(this.label22, 0, 0);
             this.tableLayoutPanel14.Controls.Add(this.txtQtePVC, 0, 1);
-            this.tableLayoutPanel14.Controls.Add(this.label21, 1, 0);
             this.tableLayoutPanel14.Controls.Add(this.txtLargPVC, 1, 1);
-            this.tableLayoutPanel14.Controls.Add(this.label23, 2, 0);
             this.tableLayoutPanel14.Controls.Add(this.txtLongPVC, 2, 1);
-            this.tableLayoutPanel14.Controls.Add(this.label24, 3, 0);
             this.tableLayoutPanel14.Controls.Add(this.cmbOrtnPVC, 3, 1);
+            this.tableLayoutPanel14.Controls.Add(this.label22, 0, 0);
+            this.tableLayoutPanel14.Controls.Add(this.label21, 1, 0);
+            this.tableLayoutPanel14.Controls.Add(this.label23, 2, 0);
+            this.tableLayoutPanel14.Controls.Add(this.label24, 3, 0);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
-            // 
-            // label22
-            // 
-            resources.ApplyResources(this.label22, "label22");
-            this.label22.Name = "label22";
             // 
             // txtQtePVC
             // 
@@ -982,11 +985,6 @@
             this.txtQtePVC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrixMetreMesure_KeyPress);
             this.txtQtePVC.Leave += new System.EventHandler(this.txtNomClient_Leave);
             // 
-            // label21
-            // 
-            resources.ApplyResources(this.label21, "label21");
-            this.label21.Name = "label21";
-            // 
             // txtLargPVC
             // 
             resources.ApplyResources(this.txtLargPVC, "txtLargPVC");
@@ -1000,11 +998,6 @@
             this.txtLargPVC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrixMetreMesure_KeyPress);
             this.txtLargPVC.Leave += new System.EventHandler(this.txtNomClient_Leave);
             // 
-            // label23
-            // 
-            resources.ApplyResources(this.label23, "label23");
-            this.label23.Name = "label23";
-            // 
             // txtLongPVC
             // 
             resources.ApplyResources(this.txtLongPVC, "txtLongPVC");
@@ -1017,11 +1010,6 @@
             this.txtLongPVC.Enter += new System.EventHandler(this.txtNomClient_Enter);
             this.txtLongPVC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrixMetreMesure_KeyPress);
             this.txtLongPVC.Leave += new System.EventHandler(this.txtNomClient_Leave);
-            // 
-            // label24
-            // 
-            resources.ApplyResources(this.label24, "label24");
-            this.label24.Name = "label24";
             // 
             // cmbOrtnPVC
             // 
@@ -1040,6 +1028,26 @@
             resources.GetString("cmbOrtnPVC.Items5")});
             this.cmbOrtnPVC.Name = "cmbOrtnPVC";
             this.cmbOrtnPVC.Tag = "Orientation PVC";
+            // 
+            // label22
+            // 
+            resources.ApplyResources(this.label22, "label22");
+            this.label22.Name = "label22";
+            // 
+            // label21
+            // 
+            resources.ApplyResources(this.label21, "label21");
+            this.label21.Name = "label21";
+            // 
+            // label23
+            // 
+            resources.ApplyResources(this.label23, "label23");
+            this.label23.Name = "label23";
+            // 
+            // label24
+            // 
+            resources.ApplyResources(this.label24, "label24");
+            this.label24.Name = "label24";
             // 
             // tableLayoutPanel15
             // 
@@ -1100,21 +1108,6 @@
             this.txtTotaleTaillPVC.Tag = "Taille Totale de PVC";
             this.txtTotaleTaillPVC.TextChanged += new System.EventHandler(this.txtPrixMetreLPVC_TextChanged);
             // 
-            // label12
-            // 
-            resources.ApplyResources(this.label12, "label12");
-            this.label12.Name = "label12";
-            // 
-            // label17
-            // 
-            resources.ApplyResources(this.label17, "label17");
-            this.label17.Name = "label17";
-            // 
-            // label16
-            // 
-            resources.ApplyResources(this.label16, "label16");
-            this.label16.Name = "label16";
-            // 
             // txtPrixMetreLPVC
             // 
             resources.ApplyResources(this.txtPrixMetreLPVC, "txtPrixMetreLPVC");
@@ -1142,6 +1135,21 @@
             this.txtTaillePVC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrixMetreMesure_KeyPress);
             this.txtTaillePVC.Leave += new System.EventHandler(this.txtNomClient_Leave);
             // 
+            // label12
+            // 
+            resources.ApplyResources(this.label12, "label12");
+            this.label12.Name = "label12";
+            // 
+            // label17
+            // 
+            resources.ApplyResources(this.label17, "label17");
+            this.label17.Name = "label17";
+            // 
+            // label16
+            // 
+            resources.ApplyResources(this.label16, "label16");
+            this.label16.Name = "label16";
+            // 
             // label14
             // 
             resources.ApplyResources(this.label14, "label14");
@@ -1158,14 +1166,14 @@
             this.t_mesure.Controls.Add(this.tableLayoutPanel10, 0, 3);
             this.t_mesure.Controls.Add(this.tableLayoutPanel6, 0, 2);
             this.t_mesure.Controls.Add(this.tableLayoutPanel7, 0, 1);
+            this.t_mesure.Controls.Add(this.btnDeleteFacture, 0, 12);
+            this.t_mesure.Controls.Add(this.txtCategorie, 0, 7);
+            this.t_mesure.Controls.Add(this.txtPrixTotalMesure, 0, 11);
             this.t_mesure.Controls.Add(this.lblMesure, 0, 4);
             this.t_mesure.Controls.Add(this.txtTotalMesure, 0, 5);
             this.t_mesure.Controls.Add(this.label20, 0, 8);
             this.t_mesure.Controls.Add(this.txtMetrageDeFeuille, 0, 9);
-            this.t_mesure.Controls.Add(this.btnDeleteFacture, 0, 12);
             this.t_mesure.Controls.Add(this.lblTypeDuMetres, 0, 0);
-            this.t_mesure.Controls.Add(this.txtCategorie, 0, 7);
-            this.t_mesure.Controls.Add(this.txtPrixTotalMesure, 0, 11);
             this.t_mesure.Controls.Add(this.label13, 0, 6);
             this.t_mesure.Controls.Add(this.label11, 0, 10);
             this.t_mesure.Name = "t_mesure";
@@ -1210,7 +1218,6 @@
             this.btnDeleteMesure.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnDeleteMesure.IconSize = 25;
             this.btnDeleteMesure.Name = "btnDeleteMesure";
-            this.btnDeleteMesure.TabStop = false;
             this.btnDeleteMesure.UseVisualStyleBackColor = false;
             this.btnDeleteMesure.Click += new System.EventHandler(this.btnDeleteMesure_Click);
             // 
@@ -1225,7 +1232,6 @@
             this.btnExportCsv.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnExportCsv.IconSize = 25;
             this.btnExportCsv.Name = "btnExportCsv";
-            this.btnExportCsv.TabStop = false;
             this.btnExportCsv.UseVisualStyleBackColor = false;
             this.btnExportCsv.Click += new System.EventHandler(this.btnExportCsv_Click);
             // 
@@ -1308,20 +1314,15 @@
             // tableLayoutPanel6
             // 
             resources.ApplyResources(this.tableLayoutPanel6, "tableLayoutPanel6");
-            this.tableLayoutPanel6.Controls.Add(this.label10, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.txtQuantite, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.txtLargeur, 1, 1);
             this.tableLayoutPanel6.Controls.Add(this.txtLongueur, 2, 1);
             this.tableLayoutPanel6.Controls.Add(this.txtEpaisseur, 3, 1);
+            this.tableLayoutPanel6.Controls.Add(this.label10, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.lblEpaisseur, 3, 0);
             this.tableLayoutPanel6.Controls.Add(this.label9, 2, 0);
             this.tableLayoutPanel6.Controls.Add(this.label8, 1, 0);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            // 
-            // label10
-            // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.Name = "label10";
             // 
             // txtQuantite
             // 
@@ -1375,6 +1376,11 @@
             this.txtEpaisseur.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrixMetreMesure_KeyPress);
             this.txtEpaisseur.Leave += new System.EventHandler(this.txtNomClient_Leave);
             // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
+            // 
             // lblEpaisseur
             // 
             resources.ApplyResources(this.lblEpaisseur, "lblEpaisseur");
@@ -1427,6 +1433,42 @@
             this.txtPrixMetreMesure.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrixMetreMesure_KeyPress);
             this.txtPrixMetreMesure.Leave += new System.EventHandler(this.txtNomClient_Leave);
             // 
+            // btnDeleteFacture
+            // 
+            this.btnDeleteFacture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnDeleteFacture.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btnDeleteFacture, "btnDeleteFacture");
+            this.btnDeleteFacture.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnDeleteFacture.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.btnDeleteFacture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnDeleteFacture.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnDeleteFacture.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.btnDeleteFacture.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnDeleteFacture.IconSize = 25;
+            this.btnDeleteFacture.Name = "btnDeleteFacture";
+            this.btnDeleteFacture.UseVisualStyleBackColor = false;
+            this.btnDeleteFacture.Click += new System.EventHandler(this.btnDeleteFacture_Click);
+            // 
+            // txtCategorie
+            // 
+            resources.ApplyResources(this.txtCategorie, "txtCategorie");
+            this.txtCategorie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.txtCategorie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCategorie.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCategorie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtCategorie.Name = "txtCategorie";
+            this.txtCategorie.Tag = "la categorie";
+            this.txtCategorie.Enter += new System.EventHandler(this.txtNomClient_Enter);
+            this.txtCategorie.Leave += new System.EventHandler(this.txtNomClient_Leave);
+            // 
+            // txtPrixTotalMesure
+            // 
+            this.txtPrixTotalMesure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            resources.ApplyResources(this.txtPrixTotalMesure, "txtPrixTotalMesure");
+            this.txtPrixTotalMesure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.txtPrixTotalMesure.Name = "txtPrixTotalMesure";
+            this.txtPrixTotalMesure.Tag = "Prix Total des Mesures";
+            // 
             // lblMesure
             // 
             resources.ApplyResources(this.lblMesure, "lblMesure");
@@ -1464,46 +1506,10 @@
             this.txtMetrageDeFeuille.Enter += new System.EventHandler(this.txtNomClient_Enter);
             this.txtMetrageDeFeuille.Leave += new System.EventHandler(this.txtNomClient_Leave);
             // 
-            // btnDeleteFacture
-            // 
-            this.btnDeleteFacture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.btnDeleteFacture.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.btnDeleteFacture, "btnDeleteFacture");
-            this.btnDeleteFacture.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.btnDeleteFacture.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.btnDeleteFacture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.btnDeleteFacture.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.btnDeleteFacture.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.btnDeleteFacture.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnDeleteFacture.IconSize = 25;
-            this.btnDeleteFacture.Name = "btnDeleteFacture";
-            this.btnDeleteFacture.UseVisualStyleBackColor = false;
-            this.btnDeleteFacture.Click += new System.EventHandler(this.btnDeleteFacture_Click);
-            // 
             // lblTypeDuMetres
             // 
             resources.ApplyResources(this.lblTypeDuMetres, "lblTypeDuMetres");
             this.lblTypeDuMetres.Name = "lblTypeDuMetres";
-            // 
-            // txtCategorie
-            // 
-            resources.ApplyResources(this.txtCategorie, "txtCategorie");
-            this.txtCategorie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.txtCategorie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCategorie.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCategorie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtCategorie.Name = "txtCategorie";
-            this.txtCategorie.Tag = "la categorie";
-            this.txtCategorie.Enter += new System.EventHandler(this.txtNomClient_Enter);
-            this.txtCategorie.Leave += new System.EventHandler(this.txtNomClient_Leave);
-            // 
-            // txtPrixTotalMesure
-            // 
-            this.txtPrixTotalMesure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            resources.ApplyResources(this.txtPrixTotalMesure, "txtPrixTotalMesure");
-            this.txtPrixTotalMesure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.txtPrixTotalMesure.Name = "txtPrixTotalMesure";
-            this.txtPrixTotalMesure.Tag = "Prix Total des Mesures";
             // 
             // label13
             // 
@@ -1520,12 +1526,12 @@
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
             this.tableLayoutPanel1.Controls.Add(this.btnAddNewFacture, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label19, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtPrixRestClient, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnSaveClient, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel11, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtPrixTotalClient, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label19, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label18, 0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
@@ -1547,11 +1553,6 @@
             this.btnAddNewFacture.Click += new System.EventHandler(this.btnAddNewFacture_Click);
             this.btnAddNewFacture.MouseLeave += new System.EventHandler(this.btnSaveFacture_MouseLeave);
             this.btnAddNewFacture.MouseHover += new System.EventHandler(this.btnSaveFacture_MouseHover);
-            // 
-            // label19
-            // 
-            resources.ApplyResources(this.label19, "label19");
-            this.label19.Name = "label19";
             // 
             // txtPrixRestClient
             // 
@@ -1612,11 +1613,6 @@
             this.txtPrixAvanceClient.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrixMetreMesure_KeyPress);
             this.txtPrixAvanceClient.Leave += new System.EventHandler(this.txtNomClient_Leave);
             // 
-            // label6
-            // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.Name = "label6";
-            // 
             // txtPrixTotalClient
             // 
             this.txtPrixTotalClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
@@ -1624,6 +1620,16 @@
             this.txtPrixTotalClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.txtPrixTotalClient.Name = "txtPrixTotalClient";
             this.txtPrixTotalClient.Tag = "Montant Total";
+            // 
+            // label19
+            // 
+            resources.ApplyResources(this.label19, "label19");
+            this.label19.Name = "label19";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.Name = "label6";
             // 
             // label18
             // 
@@ -1633,9 +1639,9 @@
             // FormClient
             // 
             this.AcceptButton = this.btnAddClient;
-            resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            resources.ApplyResources(this, "$this");
             this.Controls.Add(this.p_Add_Edit);
             this.Controls.Add(this.p_home);
             this.Controls.Add(this.t_side_bar);

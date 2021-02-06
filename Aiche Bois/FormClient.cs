@@ -15,6 +15,9 @@ namespace Aiche_Bois
 {
     public partial class FormClient : Form
     {
+        /// <summary>
+        /// this code form move panel
+        /// </summary>
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -273,6 +276,7 @@ namespace Aiche_Bois
                 {
                     lstTypeBois.Items.Add(tb_Type.Rows[i][0].ToString());
                 }
+                lstTypeBois.SelectedIndex = lstTypeBois.Items.Count - 1;
 
             }
             catch (Exception ex)
@@ -777,17 +781,15 @@ namespace Aiche_Bois
                 return;
             }
 
-            txtPrixAvanceClient.TextChanged -= new EventHandler(this.txtPrixRestClient_TextChanged);
-            txtPrixTotalClient.TextChanged -= new EventHandler(this.txtPrixRestClient_TextChanged);
-
-            btnAddFacture.Click -= new EventHandler(this.AddFactureClient_Click);
-            btnAddFacture.Click -= new EventHandler(this.btnEditFacture_Click);
-
             //pvc_mesure(idClient[1], indxFacture);
             FormPrint print = new FormPrint(idClient[1], "null", "btnPrintClient", false);
             print.ShowDialog();
 
+            // initilize id client
             idClient = null;
+
+            // remove select row
+            dtGridClient.Rows[dtGridClient.CurrentRow.Index].Selected = false;
         }
 
         /// <summary>
@@ -829,7 +831,7 @@ namespace Aiche_Bois
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnEditFacture_Click(object sender, EventArgs e)
+        private void e_Edit_Factures_Click(object sender, EventArgs e)
         {
             if (checkIsNullOrEmpty())
             {
@@ -924,7 +926,16 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void FormClient_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            if (verifyForm)
+            {
+                message = new FormMessage("Vous avez des données non enregistrées, si vous souhaitez les enregistrer, cliquez sur le bouton Sauvgarder les factures", "Attention", true, true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                if (DialogResult.Yes == message.ShowDialog())
+                {
+                    btnSaveClient.PerformClick();
+                    Application.Exit();
+                }
+                else Application.Exit();
+            }
         }
 
         [Obsolete]
@@ -1203,11 +1214,24 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void btn_home_Click(object sender, EventArgs e)
         {
+            if (verifyForm)
+            {
+                message = new FormMessage("Vous avez des données non enregistrées, si vous souhaitez les enregistrer, cliquez sur le bouton Sauvgarder les factures", "Attention", true, true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                if (DialogResult.Yes == message.ShowDialog())
+                {
+                    btnSaveClient.PerformClick();
+                    verifyForm = false;
+                }
+                else
+                {
+                    factures.Clear();
+                }
+            }
+
+            // initilize idClient
             idClient = null;
-            //U_Add_Edit uc = new U_Add_Edit("", "");
-            //uc.Dock = DockStyle.Fill;
-            //uc.Visible = false;
-            //p_home.Controls.Add(uc);
+            
+            // refrech main datagrid
             remplissageDtGridClient();
 
             //visible panel and bring to frot
@@ -1216,12 +1240,16 @@ namespace Aiche_Bois
             btnEditClient.Enabled = true;
             btnPrintClient.Enabled = true;
 
+            // remove event for button save facture
+            btnAddFacture.Click -= new EventHandler(this.e_Add_New_Facture_Client_Click);
+            btnAddFacture.Click -= new EventHandler(this.e_Edit_Factures_Click);
+            btnAddFacture.Click -= new EventHandler(this.e_Add_New_Client_Click);
+
+            // change event for text changed on this texts boxes
             txtPrixAvanceClient.TextChanged -= new EventHandler(this.txtPrixRestClient_TextChanged);
             txtPrixTotalClient.TextChanged -= new EventHandler(this.txtPrixRestClient_TextChanged);
 
-            btnAddFacture.Click -= new EventHandler(this.AddFactureClient_Click);
-            btnAddFacture.Click -= new EventHandler(this.btnEditFacture_Click);
-
+            // bring home panel
             p_Add_Edit.SendToBack();
             p_home.BringToFront();
 
@@ -1280,9 +1308,11 @@ namespace Aiche_Bois
                 txtPrixAvanceClient.Enabled = false;
 
                 // change event for btn save
-                btnAddFacture.Click -= new EventHandler(this.btnAddFacture_Click);
-                btnAddFacture.Click += new EventHandler(this.btnEditFacture_Click);
+                btnAddFacture.Click -= new EventHandler(this.e_Add_New_Facture_Client_Click);
+                btnAddFacture.Click -= new EventHandler(this.e_Add_New_Client_Click);
+                btnAddFacture.Click += new EventHandler(this.e_Edit_Factures_Click);
 
+                // change event for text changed on this texts boxes
                 txtPrixAvanceClient.TextChanged -= new EventHandler(this.txtPrixRestClient_TextChanged);
                 txtPrixTotalClient.TextChanged -= new EventHandler(this.txtPrixRestClient_TextChanged);
 
@@ -1320,8 +1350,6 @@ namespace Aiche_Bois
             //visible panel and bring to frot
             p_home.SendToBack();
             p_Add_Edit.BringToFront();
-
-            idClient.Initialize();
         }
 
         /// <summary>
@@ -1353,6 +1381,7 @@ namespace Aiche_Bois
             checkAvance.Enabled = true;
             txtPrixAvanceClient.Enabled = false;
             cmbOrtnPVC.SelectedIndex = 0;
+            lstTypeBois.SelectedIndex = lstTypeBois.Items.Count > 0 ? lstTypeBois.SelectedIndex = 0 : lstTypeBois.SelectedIndex = -1;
 
             // invisible button delete and print facture
             btnImprimerFacture.Visible = false;
@@ -1374,15 +1403,27 @@ namespace Aiche_Bois
             btnAddFacture.Text = "Ajouter";
 
             // change event for btn save
-            btnAddFacture.Click -= new EventHandler(this.btnEditFacture_Click);
-            btnAddFacture.Click += new EventHandler(this.btnAddFacture_Click);
+            btnAddFacture.Click -= new EventHandler(this.e_Add_New_Facture_Client_Click);
+            btnAddFacture.Click -= new EventHandler(this.e_Edit_Factures_Click);
+            btnAddFacture.Click += new EventHandler(this.e_Add_New_Client_Click);
 
+            // change event for text changed on this texts boxes
             txtPrixAvanceClient.TextChanged += new EventHandler(this.txtPrixRestClient_TextChanged);
             txtPrixTotalClient.TextChanged += new EventHandler(this.txtPrixRestClient_TextChanged);
 
             //visible panel and bring to frot
             p_home.SendToBack();
             p_Add_Edit.BringToFront();
+
+            txtNomClient.TabIndex = 0;
+            lstTypeBois.TabIndex = 1;
+            txtPrixMetreMesure.TabIndex = 2;
+            cmbTypeDuMetres.TabIndex = 3;
+            txtQuantite.TabIndex = 4;
+            txtLargeur.TabIndex = 5;
+            txtLongueur.TabIndex = 6;
+            txtEpaisseur.TabIndex = 7;
+            btnAddMesure.TabIndex = 8;
         }
         /**
          * ======================== Panel Add ========================
@@ -1850,7 +1891,7 @@ namespace Aiche_Bois
             txtPrixTotalPVC.Text = prix_mettres_pvc.ToString("F2");
         }
 
-        private void btnAddFacture_Click(object sender, EventArgs e)
+        private void e_Add_New_Client_Click(object sender, EventArgs e)
         {
             if (checkIsNullOrEmpty())
             {
@@ -1923,6 +1964,7 @@ namespace Aiche_Bois
 
                 // vider les champs
                 ViderTxtBox();
+
                 verifyForm = true;
                 btnSaveClient.Enabled = true;
             }
@@ -1935,9 +1977,15 @@ namespace Aiche_Bois
             cmbNumeroFacture.Enabled = false;
             btnAddFacture.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             btnAddFacture.Text = "Ajouter";
+
             // change event for btn save
-            btnAddFacture.Click -= new EventHandler(this.btnEditFacture_Click);
-            btnAddFacture.Click += new EventHandler(this.AddFactureClient_Click);
+            btnAddFacture.Click -= new EventHandler(this.e_Add_New_Client_Click);
+            btnAddFacture.Click -= new EventHandler(this.e_Edit_Factures_Click);
+            btnAddFacture.Click += new EventHandler(this.e_Add_New_Facture_Client_Click);
+
+            // change event for text changed on this texts boxes
+            txtPrixAvanceClient.TextChanged += new EventHandler(this.txtPrixRestClient_TextChanged);
+            txtPrixTotalClient.TextChanged += new EventHandler(this.txtPrixRestClient_TextChanged);
         }
 
         /// <summary>
@@ -1971,7 +2019,7 @@ namespace Aiche_Bois
 
         }
 
-        private void AddFactureClient_Click(object sender, EventArgs e)
+        private void e_Add_New_Facture_Client_Click(object sender, EventArgs e)
         {
             try
             {
@@ -2152,8 +2200,16 @@ namespace Aiche_Bois
                     cmbNumeroFacture.SelectedIndex = cmbNumeroFacture.Items.Count - 1;
                     btnAddFacture.IconChar = FontAwesome.Sharp.IconChar.Edit;
                     btnAddFacture.Text = "Modifier";
-                    btnAddFacture.Click -= new EventHandler(this.AddFactureClient_Click);
-                    btnAddFacture.Click += new EventHandler(this.btnEditFacture_Click);
+
+                    // change event for btn save
+                    btnAddFacture.Click -= new EventHandler(this.e_Add_New_Facture_Client_Click);
+                    btnAddFacture.Click -= new EventHandler(this.e_Add_New_Client_Click);
+                    btnAddFacture.Click += new EventHandler(this.e_Edit_Factures_Click);
+
+                    // change event for text changed on this texts boxes
+                    txtPrixAvanceClient.TextChanged += new EventHandler(this.txtPrixRestClient_TextChanged);
+                    txtPrixTotalClient.TextChanged += new EventHandler(this.txtPrixRestClient_TextChanged);
+
                     message = new FormMessage("Ajouté Avec Succès", "Succès", true, FontAwesome.Sharp.IconChar.CheckCircle);
                     message.ShowDialog();
                 }
@@ -2345,12 +2401,6 @@ namespace Aiche_Bois
                 return;
             }
 
-            txtPrixAvanceClient.TextChanged -= new EventHandler(this.txtPrixRestClient_TextChanged);
-            txtPrixTotalClient.TextChanged -= new EventHandler(this.txtPrixRestClient_TextChanged);
-
-            btnAddFacture.Click -= new EventHandler(this.AddFactureClient_Click);
-            btnAddFacture.Click -= new EventHandler(this.btnEditFacture_Click);
-
             message = new FormMessage("Voulez-vous vraiment supprimer définitivement " + $"{dtGridClient.CurrentRow.Cells[1].Value}" + " de la liste?", "Attention", true, true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
 
             if (DialogResult.Yes == message.ShowDialog())
@@ -2383,6 +2433,9 @@ namespace Aiche_Bois
 
                 // initialize idClient
                 idClient = null;
+
+                // remove select row
+                dtGridClient.Rows[dtGridClient.CurrentRow.Index].Selected = false;
             }
         }
     }

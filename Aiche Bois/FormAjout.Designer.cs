@@ -154,13 +154,13 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.CancelButton = this.btnBack;
             this.ClientSize = new System.Drawing.Size(656, 626);
-            this.Controls.Add(this.lblEcris);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnDeleteMesure);
             this.Controls.Add(this.btnAddLstCmb);
             this.Controls.Add(this.txtCmb);
             this.Controls.Add(this.lstCmb);
+            this.Controls.Add(this.lblEcris);
             this.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
