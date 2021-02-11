@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Data.OleDb;
-using System.Drawing;
 using System.Globalization;
-using System.IO;
 using System.Windows.Forms;
 
 namespace Aiche_Bois
@@ -91,31 +89,6 @@ namespace Aiche_Bois
         }
 
         /// <summary>
-        /// l'initialisitaion des champs
-        /// </summary>
-        private void method_checkavance()
-        {
-            lblav.Visible = false;
-            lblAvancePrixClient.Visible = false;
-            lblRestPrixClient.Width = 444;
-            txtPrixCLient.Enabled = false;
-            txtPrixCLient.Text = "0";
-            lblAvancePrixClient.Enabled = false;
-            lblAvancePrixClient.Text = "0";
-            lblRestPrixClient.Enabled = false;
-            lblRestPrixClient.Text = "0";
-            txtPrixCLient.Enabled = false;
-            txtPrixCLient.Text = "0";
-            txtPrixCLient.Visible = false;
-            /*btnAnnuler.Visible = false;*/
-            /*btnConfirm.Text = "OK";*/
-            /*btnConfirm.Width = 444;*/
-            btnConfirm.Enabled = false;
-            lblPPr.Text = "Le montant a été entièrement payé";
-            lblPPr.TextAlign = ContentAlignment.MiddleCenter;
-        }
-
-        /// <summary>
         /// on affiche la formulaire
         /// </summary>
         /// <param name="sender"></param>
@@ -127,14 +100,6 @@ namespace Aiche_Bois
              */
             remplirData();
             btnConfirm.Enabled = false;
-            /*
-             * check if item checked
-             */
-            if (checkAvance)
-            {
-                method_checkavance();
-                return;
-            }
         }
 
         /// <summary>
@@ -144,15 +109,6 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (double.Parse(txtPrixCLient.Text) > double.Parse(lblRestPrixClient.Text))
-            {
-                message = new FormMessage("Le Prix ​​à payer est plus grand a le reste", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
-                message.ShowDialog();
-                txtPrixCLient.Clear();
-                txtPrixCLient.Focus();
-                return;
-            }
-
             /**
              * updating database id
              */
@@ -160,30 +116,57 @@ namespace Aiche_Bois
             {
                 connection.Open();
 
-                OleDbCommand command = new OleDbCommand
+                if (ckMines.Checked)
                 {
-                    Connection = connection,
-                    CommandText = "UPDATE client SET prixTotalAvance = prixTotalAvance + " + double.Parse(txtPrixCLient.Text) + " where idClient = " + idClient
-                };
+                    if (double.Parse(txtMines.Text) > double.Parse(lblAvancePrixClient.Text))
+                    {
+                        message = new FormMessage("le montant doit etre moins à montant payée", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                        message.ShowDialog();
+                        txtMines.Clear();
+                        txtMines.Focus();
+                        connection.Close();
+                        return;
+                    }
+                    OleDbCommand command = new OleDbCommand
+                    {
+                        Connection = connection,
+                        CommandText = "UPDATE client SET prixTotalAvance = prixTotalAvance - " + double.Parse(txtMines.Text) + " where idClient = " + idClient
+                    };
+                    command.ExecuteNonQuery();
+                    txtMines.Clear();
+                    txtMines.Focus();
 
-                command.ExecuteNonQuery();
+                    connection.Close();
+                }
+                else
+                {
+                    if (double.Parse(txtPrixCLient.Text) > double.Parse(lblRestPrixClient.Text))
+                    {
+                        message = new FormMessage("le Prix ​​à payer est plus grand a le reste", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                        message.ShowDialog();
+                        txtPrixCLient.Clear();
+                        txtPrixCLient.Focus();
+                        connection.Close();
+                        return;
+                    }
 
-                message = new FormMessage("Le montant a été ajouté à la facture du client", "Succès", true, FontAwesome.Sharp.IconChar.CheckCircle);
+                    OleDbCommand command = new OleDbCommand
+                    {
+                        Connection = connection,
+                        CommandText = "UPDATE client SET prixTotalAvance = prixTotalAvance + " + double.Parse(txtPrixCLient.Text) + " where idClient = " + idClient
+                    };
+                    command.ExecuteNonQuery();
+                    txtPrixCLient.Clear();
+                    txtPrixCLient.Focus();
+
+                    connection.Close();
+                }
+
+                message = new FormMessage("le montant a été modifié avec succès", "Succès", true, FontAwesome.Sharp.IconChar.CheckCircle);
                 message.ShowDialog();
-
-                txtPrixCLient.Clear();
-                txtPrixCLient.Focus();
-
-                connection.Close();
                 
-
                 // call function to full a fields
                 remplirData();
-
-                if (double.Parse(lblRestPrixClient.Text) == 0)
-                {
-                    method_checkavance();
-                }
             }
             catch (Exception ex)
             {
@@ -225,10 +208,29 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void txtPrix_TextChanged(object sender, EventArgs e)
         {
-            if (txtPrixCLient.TextLength > 0)
-                btnConfirm.Enabled = true;
-            else
-                btnConfirm.Enabled = false;
+            if (!ckMines.Checked)
+            {
+                if (txtPrixCLient.TextLength > 0)
+                    btnConfirm.Enabled = true;
+                else
+                    btnConfirm.Enabled = false;
+            }
+        }
+
+        /// <summary>
+        /// verify field text if not empty
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtMines_TextChanged(object sender, EventArgs e)
+        {
+            if (ckMines.Checked)
+            {
+                if (txtMines.TextLength > 0)
+                    btnConfirm.Enabled = true;
+                else
+                    btnConfirm.Enabled = false;
+            }
         }
 
         /// <summary>
@@ -239,6 +241,24 @@ namespace Aiche_Bois
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void ckMines_CheckedChanged(object sender, EventArgs e)
+        {
+            txtMines.Enabled = ckMines.Checked;
+            txtPrixCLient.Enabled = !ckMines.Checked;
+        }
+
+        private void txtMines_Enter(object sender, EventArgs e)
+        {
+            ((TextBox)sender).BackColor = System.Drawing.Color.FromArgb(47, 47, 47);
+            ((TextBox)sender).ForeColor = System.Drawing.Color.FromArgb(255, 170, 0);
+        }
+
+        private void txtMines_Leave(object sender, EventArgs e)
+        {
+            ((TextBox)sender).BackColor = System.Drawing.Color.FromArgb(255, 244, 228);
+            ((TextBox)sender).ForeColor = System.Drawing.Color.FromArgb(47, 47, 47);
         }
     }
 }

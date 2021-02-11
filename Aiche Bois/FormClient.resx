@@ -141,6 +141,12 @@
   <data name="txtSearch.TabIndex" type="System.Int32, mscorlib">
     <value>56</value>
   </data>
+  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 3</value>
+  </metadata>
+  <data name="txtSearch.ToolTip" xml:space="preserve">
+    <value>Ici, vous pouvez rechercher le client par numéro, date et nom</value>
+  </data>
   <data name="&gt;&gt;txtSearch.Name" xml:space="preserve">
     <value>txtSearch</value>
   </data>
@@ -257,6 +263,9 @@
   </data>
   <data name="dtGridClient.TabIndex" type="System.Int32, mscorlib">
     <value>80</value>
+  </data>
+  <data name="dtGridClient.ToolTip" xml:space="preserve">
+    <value>Ceci est une liste de tous les clients</value>
   </data>
   <data name="&gt;&gt;dtGridClient.Name" xml:space="preserve">
     <value>dtGridClient</value>
@@ -375,6 +384,9 @@
   <data name="btn_home.Text" xml:space="preserve">
     <value>Accueil</value>
   </data>
+  <data name="btn_home.ToolTip" xml:space="preserve">
+    <value>Ce bouton vous amène à la page d'accueil</value>
+  </data>
   <data name="&gt;&gt;btn_home.Name" xml:space="preserve">
     <value>btn_home</value>
   </data>
@@ -417,6 +429,9 @@
   <data name="btnAddClient.Text" xml:space="preserve">
     <value>Ajouter</value>
   </data>
+  <data name="btnAddClient.ToolTip" xml:space="preserve">
+    <value>Ce bouton vous amène à la page d'ajout d'un client</value>
+  </data>
   <data name="&gt;&gt;btnAddClient.Name" xml:space="preserve">
     <value>btnAddClient</value>
   </data>
@@ -455,6 +470,9 @@
   </data>
   <data name="btnEditClient.Text" xml:space="preserve">
     <value>Modifier</value>
+  </data>
+  <data name="btnEditClient.ToolTip" xml:space="preserve">
+    <value>Ce bouton vous amène à la page de facturation client</value>
   </data>
   <data name="&gt;&gt;btnEditClient.Name" xml:space="preserve">
     <value>btnEditClient</value>
@@ -495,6 +513,9 @@
   <data name="btnDeleteClient.Text" xml:space="preserve">
     <value>Supprimer</value>
   </data>
+  <data name="btnDeleteClient.ToolTip" xml:space="preserve">
+    <value>Ce bouton supprime un client par le numéro de client</value>
+  </data>
   <data name="&gt;&gt;btnDeleteClient.Name" xml:space="preserve">
     <value>btnDeleteClient</value>
   </data>
@@ -534,6 +555,9 @@
   <data name="btnPrintClient.Text" xml:space="preserve">
     <value>Imprimer</value>
   </data>
+  <data name="btnPrintClient.ToolTip" xml:space="preserve">
+    <value>Ce bouton imprime les factures client avec le numéro client</value>
+  </data>
   <data name="&gt;&gt;btnPrintClient.Name" xml:space="preserve">
     <value>btnPrintClient</value>
   </data>
@@ -572,6 +596,9 @@
   </data>
   <data name="btnResultClient.Text" xml:space="preserve">
     <value>Statistique</value>
+  </data>
+  <data name="btnResultClient.ToolTip" xml:space="preserve">
+    <value>Ce bouton imprime toutes les statistiques annuelles</value>
   </data>
   <data name="&gt;&gt;btnResultClient.Name" xml:space="preserve">
     <value>btnResultClient</value>
@@ -666,6 +693,9 @@
   <data name="btnExit.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
+  <data name="btnExit.ToolTip" xml:space="preserve">
+    <value>Ce bouton permet de fermer le programme</value>
+  </data>
   <data name="&gt;&gt;btnExit.Name" xml:space="preserve">
     <value>btnExit</value>
   </data>
@@ -699,6 +729,9 @@
   <data name="btnMaximize.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
+  <data name="btnMaximize.ToolTip" xml:space="preserve">
+    <value>Ce bouton agrandit la page du programme</value>
+  </data>
   <data name="&gt;&gt;btnMaximize.Name" xml:space="preserve">
     <value>btnMaximize</value>
   </data>
@@ -731,6 +764,9 @@
   </data>
   <data name="btnMinimize.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
+  </data>
+  <data name="btnMinimize.ToolTip" xml:space="preserve">
+    <value>Ce bouton masque la page du programme</value>
   </data>
   <data name="&gt;&gt;btnMinimize.Name" xml:space="preserve">
     <value>btnMinimize</value>
@@ -1472,6 +1508,9 @@
   <data name="cmbNumeroFacture.TabIndex" type="System.Int32, mscorlib">
     <value>89</value>
   </data>
+  <data name="cmbNumeroFacture.ToolTip" xml:space="preserve">
+    <value>Ce texte représente le numéro de facture</value>
+  </data>
   <data name="&gt;&gt;cmbNumeroFacture.Name" xml:space="preserve">
     <value>cmbNumeroFacture</value>
   </data>
@@ -1505,6 +1544,9 @@
   <data name="dtDateFacture.TabIndex" type="System.Int32, mscorlib">
     <value>100</value>
   </data>
+  <data name="dtDateFacture.ToolTip" xml:space="preserve">
+    <value>La date d'aujourd'hui est téléchargée automatiquement</value>
+  </data>
   <data name="&gt;&gt;dtDateFacture.Name" xml:space="preserve">
     <value>dtDateFacture</value>
   </data>
@@ -1537,6 +1579,9 @@
   </data>
   <data name="txtNomClient.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="txtNomClient.ToolTip" xml:space="preserve">
+    <value>Ici, vous devez écrire le nom du client</value>
   </data>
   <data name="&gt;&gt;txtNomClient.Name" xml:space="preserve">
     <value>txtNomClient</value>
@@ -1576,6 +1621,9 @@
   </data>
   <data name="btnCmbCategorie.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
+  </data>
+  <data name="btnCmbCategorie.ToolTip" xml:space="preserve">
+    <value>Ce bouton sert à ajouter des essences de bois</value>
   </data>
   <data name="&gt;&gt;btnCmbCategorie.Name" xml:space="preserve">
     <value>btnCmbCategorie</value>
@@ -1621,6 +1669,9 @@
   </data>
   <data name="cmbTypeDeBois.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="cmbTypeDeBois.ToolTip" xml:space="preserve">
+    <value>Voici une liste de tous les types de bois</value>
   </data>
   <data name="&gt;&gt;cmbTypeDeBois.Name" xml:space="preserve">
     <value>cmbTypeDeBois</value>
@@ -1688,6 +1739,9 @@
   <data name="txtSearchFacture.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
+  <data name="txtSearchFacture.ToolTip" xml:space="preserve">
+    <value>Ici vous pouvez rechercher des essences de bois</value>
+  </data>
   <data name="&gt;&gt;txtSearchFacture.Name" xml:space="preserve">
     <value>txtSearchFacture</value>
   </data>
@@ -1720,6 +1774,9 @@
   </data>
   <data name="lstTypeBois.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="lstTypeBois.ToolTip" xml:space="preserve">
+    <value>Ceci est une liste d'essences de bois</value>
   </data>
   <data name="&gt;&gt;lstTypeBois.Name" xml:space="preserve">
     <value>lstTypeBois</value>
@@ -1756,6 +1813,9 @@
   </data>
   <data name="txtTypeDeBois.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
+  </data>
+  <data name="txtTypeDeBois.ToolTip" xml:space="preserve">
+    <value>Ici, le type de bois est sélectionné dans la liste</value>
   </data>
   <data name="&gt;&gt;txtTypeDeBois.Name" xml:space="preserve">
     <value>txtTypeDeBois</value>
@@ -1798,6 +1858,9 @@
   </data>
   <data name="btnImprimerFacture.Text" xml:space="preserve">
     <value>Imprimez facture</value>
+  </data>
+  <data name="btnImprimerFacture.ToolTip" xml:space="preserve">
+    <value>Ce bouton sert à imprimer une facture spécifique</value>
   </data>
   <data name="&gt;&gt;btnImprimerFacture.Name" xml:space="preserve">
     <value>btnImprimerFacture</value>
@@ -2124,7 +2187,7 @@
     <value>2, 0, 0, 0</value>
   </data>
   <data name="btnClear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 44</value>
+    <value>178, 49</value>
   </data>
   <data name="btnClear.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -2166,7 +2229,7 @@
     <value>0, 0, 2, 0</value>
   </data>
   <data name="btnAddFacture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 44</value>
+    <value>177, 49</value>
   </data>
   <data name="btnAddFacture.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
@@ -2190,7 +2253,7 @@
     <value>Fill</value>
   </data>
   <data name="tableLayoutPanel16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 543</value>
+    <value>0, 538</value>
   </data>
   <data name="tableLayoutPanel16.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 0</value>
@@ -2199,7 +2262,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 44</value>
+    <value>359, 49</value>
   </data>
   <data name="tableLayoutPanel16.TabIndex" type="System.Int32, mscorlib">
     <value>433</value>
@@ -2286,7 +2349,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnDeleteSeulPVC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 81</value>
+    <value>0, 61</value>
   </data>
   <data name="btnDeleteSeulPVC.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -2325,7 +2388,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnImportPvc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 145</value>
+    <value>0, 112</value>
   </data>
   <data name="btnImportPvc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -2364,7 +2427,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnSavePvc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 228</value>
+    <value>0, 174</value>
   </data>
   <data name="btnSavePvc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -2400,7 +2463,7 @@
     <value>4</value>
   </data>
   <data name="tableLayoutPanel8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 258</value>
+    <value>63, 204</value>
   </data>
   <data name="tableLayoutPanel8.TabIndex" type="System.Int32, mscorlib">
     <value>431</value>
@@ -2472,7 +2535,7 @@
     <value>51</value>
   </data>
   <data name="dtGridPvc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>293, 258</value>
+    <value>293, 204</value>
   </data>
   <data name="dtGridPvc.TabIndex" type="System.Int32, mscorlib">
     <value>408</value>
@@ -2493,7 +2556,7 @@
     <value>Fill</value>
   </data>
   <data name="tableLayoutPanel13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 98</value>
+    <value>0, 115</value>
   </data>
   <data name="tableLayoutPanel13.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -2502,7 +2565,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 258</value>
+    <value>359, 204</value>
   </data>
   <data name="tableLayoutPanel13.TabIndex" type="System.Int32, mscorlib">
     <value>433</value>
@@ -2555,6 +2618,9 @@
   <data name="txtQtePVC.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
+  <data name="txtQtePVC.ToolTip" xml:space="preserve">
+    <value>Ce champ sert à saisir la quantité</value>
+  </data>
   <data name="&gt;&gt;txtQtePVC.Name" xml:space="preserve">
     <value>txtQtePVC</value>
   </data>
@@ -2593,6 +2659,9 @@
   </data>
   <data name="txtLargPVC.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
+  </data>
+  <data name="txtLargPVC.ToolTip" xml:space="preserve">
+    <value>Ce champ est une entrée largeur</value>
   </data>
   <data name="&gt;&gt;txtLargPVC.Name" xml:space="preserve">
     <value>txtLargPVC</value>
@@ -2633,6 +2702,9 @@
   <data name="txtLongPVC.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
+  <data name="txtLongPVC.ToolTip" xml:space="preserve">
+    <value>Ce champ est une entrée longueur</value>
+  </data>
   <data name="&gt;&gt;txtLongPVC.Name" xml:space="preserve">
     <value>txtLongPVC</value>
   </data>
@@ -2664,16 +2736,25 @@
     <value>h*1</value>
   </data>
   <data name="cmbOrtnPVC.Items2" xml:space="preserve">
-    <value>v*1</value>
+    <value>h*2</value>
   </data>
   <data name="cmbOrtnPVC.Items3" xml:space="preserve">
-    <value>h*2</value>
+    <value>v*1</value>
   </data>
   <data name="cmbOrtnPVC.Items4" xml:space="preserve">
     <value>v*2</value>
   </data>
   <data name="cmbOrtnPVC.Items5" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="cmbOrtnPVC.Items6" xml:space="preserve">
+    <value>h*1+v*2</value>
+  </data>
+  <data name="cmbOrtnPVC.Items7" xml:space="preserve">
+    <value>h*2+v*1</value>
+  </data>
+  <data name="cmbOrtnPVC.Items8" xml:space="preserve">
+    <value>h*1+v*1</value>
   </data>
   <data name="cmbOrtnPVC.Location" type="System.Drawing.Point, System.Drawing">
     <value>267, 21</value>
@@ -2686,6 +2767,9 @@
   </data>
   <data name="cmbOrtnPVC.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
+  </data>
+  <data name="cmbOrtnPVC.ToolTip" xml:space="preserve">
+    <value>Ces brasses contiennent les orientations de mesure</value>
   </data>
   <data name="&gt;&gt;cmbOrtnPVC.Name" xml:space="preserve">
     <value>cmbOrtnPVC</value>
@@ -2868,7 +2952,7 @@
     <value>7</value>
   </data>
   <data name="tableLayoutPanel14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 46</value>
+    <value>0, 58</value>
   </data>
   <data name="tableLayoutPanel14.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -2913,7 +2997,7 @@
     <value>NoControl</value>
   </data>
   <data name="btncmbNbrCanto.Location" type="System.Drawing.Point, System.Drawing">
-    <value>304, 1</value>
+    <value>304, 3</value>
   </data>
   <data name="btncmbNbrCanto.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -2991,7 +3075,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="chSeulPVC.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 29</value>
+    <value>85, 34</value>
   </data>
   <data name="chSeulPVC.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -3015,7 +3099,7 @@
     <value>Fill</value>
   </data>
   <data name="tableLayoutPanel15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 17</value>
+    <value>0, 20</value>
   </data>
   <data name="tableLayoutPanel15.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3024,7 +3108,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 29</value>
+    <value>359, 34</value>
   </data>
   <data name="tableLayoutPanel15.TabIndex" type="System.Int32, mscorlib">
     <value>434</value>
@@ -3054,13 +3138,13 @@
     <value>NoControl</value>
   </data>
   <data name="txtPrixTotalPVC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 511</value>
+    <value>0, 501</value>
   </data>
   <data name="txtPrixTotalPVC.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="txtPrixTotalPVC.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 29</value>
+    <value>359, 34</value>
   </data>
   <data name="txtPrixTotalPVC.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -3093,13 +3177,13 @@
     <value>NoControl</value>
   </data>
   <data name="txtTotaleTaillPVC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 373</value>
+    <value>0, 339</value>
   </data>
   <data name="txtTotaleTaillPVC.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="txtTotaleTaillPVC.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 29</value>
+    <value>359, 34</value>
   </data>
   <data name="txtTotaleTaillPVC.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -3129,7 +3213,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="txtPrixMetreLPVC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 465</value>
+    <value>0, 447</value>
   </data>
   <data name="txtPrixMetreLPVC.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3165,7 +3249,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="txtTaillePVC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 419</value>
+    <value>0, 393</value>
   </data>
   <data name="txtTaillePVC.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3207,13 +3291,13 @@
     <value>NoControl</value>
   </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 356</value>
+    <value>0, 321</value>
   </data>
   <data name="label12.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 17</value>
+    <value>138, 18</value>
   </data>
   <data name="label12.TabIndex" type="System.Int32, mscorlib">
     <value>410</value>
@@ -3249,13 +3333,13 @@
     <value>NoControl</value>
   </data>
   <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 494</value>
+    <value>0, 483</value>
   </data>
   <data name="label17.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 17</value>
+    <value>122, 18</value>
   </data>
   <data name="label17.TabIndex" type="System.Int32, mscorlib">
     <value>413</value>
@@ -3291,13 +3375,13 @@
     <value>NoControl</value>
   </data>
   <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 402</value>
+    <value>0, 375</value>
   </data>
   <data name="label16.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 17</value>
+    <value>106, 18</value>
   </data>
   <data name="label16.TabIndex" type="System.Int32, mscorlib">
     <value>412</value>
@@ -3333,13 +3417,13 @@
     <value>NoControl</value>
   </data>
   <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 448</value>
+    <value>0, 429</value>
   </data>
   <data name="label14.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 17</value>
+    <value>187, 18</value>
   </data>
   <data name="label14.TabIndex" type="System.Int32, mscorlib">
     <value>411</value>
@@ -3375,13 +3459,13 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>0, 2</value>
   </data>
   <data name="label7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 17</value>
+    <value>87, 18</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>409</value>
@@ -3435,7 +3519,7 @@
     <value>1</value>
   </data>
   <data name="t_pvc.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanel16" Row="12" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel13" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel14" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel15" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtPrixTotalPVC" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtTotaleTaillPVC" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtPrixMetreLPVC" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtTaillePVC" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label12" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label17" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label16" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label14" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label7" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,3.004247,Percent,4.999782,Percent,8.999607,Percent,43.99807,Percent,2.999869,Percent,4.999782,Percent,2.999869,Percent,4.999782,Percent,2.999869,Percent,4.999782,Percent,2.999869,Percent,4.999782,Percent,6.999693" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanel16" Row="12" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel13" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel14" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel15" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtPrixTotalPVC" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtTotaleTaillPVC" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtPrixMetreLPVC" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtTaillePVC" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label12" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label17" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label16" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label14" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label7" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,3.493232,Percent,5.81357,Percent,10.46442,Percent,34.88294,Percent,3.488142,Percent,5.81357,Percent,3.488142,Percent,5.81357,Percent,3.488142,Percent,5.81357,Percent,3.488142,Percent,5.81357,Percent,8.138995" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="t_mesure.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3501,7 +3585,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnDeleteMesure.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 112</value>
+    <value>0, 78</value>
   </data>
   <data name="btnDeleteMesure.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3540,7 +3624,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnExportCsv.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 225</value>
+    <value>0, 157</value>
   </data>
   <data name="btnExportCsv.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3576,7 +3660,7 @@
     <value>3</value>
   </data>
   <data name="tableLayoutPanel9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 258</value>
+    <value>63, 190</value>
   </data>
   <data name="tableLayoutPanel9.TabIndex" type="System.Int32, mscorlib">
     <value>432</value>
@@ -3639,7 +3723,7 @@
     <value>51</value>
   </data>
   <data name="dtGMesure.Size" type="System.Drawing.Size, System.Drawing">
-    <value>293, 258</value>
+    <value>293, 190</value>
   </data>
   <data name="dtGMesure.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -3660,7 +3744,7 @@
     <value>Fill</value>
   </data>
   <data name="tableLayoutPanel10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 98</value>
+    <value>0, 119</value>
   </data>
   <data name="tableLayoutPanel10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3669,7 +3753,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 258</value>
+    <value>359, 190</value>
   </data>
   <data name="tableLayoutPanel10.TabIndex" type="System.Int32, mscorlib">
     <value>433</value>
@@ -3699,7 +3783,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="txtQuantite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 20</value>
+    <value>0, 26</value>
   </data>
   <data name="txtQuantite.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 3, 0</value>
@@ -3715,6 +3799,9 @@
   </data>
   <data name="txtQuantite.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
+  </data>
+  <data name="txtQuantite.ToolTip" xml:space="preserve">
+    <value>Ce champ sert à saisir la quantité</value>
   </data>
   <data name="&gt;&gt;txtQuantite.Name" xml:space="preserve">
     <value>txtQuantite</value>
@@ -3735,7 +3822,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="txtLargeur.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 20</value>
+    <value>89, 26</value>
   </data>
   <data name="txtLargeur.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 3, 0</value>
@@ -3751,6 +3838,9 @@
   </data>
   <data name="txtLargeur.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
+  </data>
+  <data name="txtLargeur.ToolTip" xml:space="preserve">
+    <value>Ce champ est une entrée largeur</value>
   </data>
   <data name="&gt;&gt;txtLargeur.Name" xml:space="preserve">
     <value>txtLargeur</value>
@@ -3771,7 +3861,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="txtLongueur.Location" type="System.Drawing.Point, System.Drawing">
-    <value>178, 20</value>
+    <value>178, 26</value>
   </data>
   <data name="txtLongueur.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 3, 0</value>
@@ -3787,6 +3877,9 @@
   </data>
   <data name="txtLongueur.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
+  </data>
+  <data name="txtLongueur.ToolTip" xml:space="preserve">
+    <value>Ce champ est une entrée longueur</value>
   </data>
   <data name="&gt;&gt;txtLongueur.Name" xml:space="preserve">
     <value>txtLongueur</value>
@@ -3807,7 +3900,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="txtEpaisseur.Location" type="System.Drawing.Point, System.Drawing">
-    <value>267, 20</value>
+    <value>267, 26</value>
   </data>
   <data name="txtEpaisseur.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3823,6 +3916,9 @@
   </data>
   <data name="txtEpaisseur.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
+  </data>
+  <data name="txtEpaisseur.ToolTip" xml:space="preserve">
+    <value>Ce champ est une entrée epaisseur</value>
   </data>
   <data name="&gt;&gt;txtEpaisseur.Name" xml:space="preserve">
     <value>txtEpaisseur</value>
@@ -3849,7 +3945,7 @@
     <value>NoControl</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 2</value>
+    <value>0, 6</value>
   </data>
   <data name="label10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3891,7 +3987,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblEpaisseur.Location" type="System.Drawing.Point, System.Drawing">
-    <value>267, 2</value>
+    <value>267, 6</value>
   </data>
   <data name="lblEpaisseur.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3933,7 +4029,7 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>178, 2</value>
+    <value>178, 6</value>
   </data>
   <data name="label9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3975,7 +4071,7 @@
     <value>NoControl</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 2</value>
+    <value>89, 6</value>
   </data>
   <data name="label8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -4008,7 +4104,7 @@
     <value>Fill</value>
   </data>
   <data name="tableLayoutPanel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 46</value>
+    <value>0, 56</value>
   </data>
   <data name="tableLayoutPanel6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -4017,7 +4113,7 @@
     <value>2</value>
   </data>
   <data name="tableLayoutPanel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 52</value>
+    <value>359, 63</value>
   </data>
   <data name="tableLayoutPanel6.TabIndex" type="System.Int32, mscorlib">
     <value>430</value>
@@ -4073,6 +4169,9 @@
   <data name="cmbTypeDuMetres.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
+  <data name="cmbTypeDuMetres.ToolTip" xml:space="preserve">
+    <value>Ici, vous pouvez choisir entre les tailles</value>
+  </data>
   <data name="&gt;&gt;cmbTypeDuMetres.Name" xml:space="preserve">
     <value>cmbTypeDuMetres</value>
   </data>
@@ -4109,6 +4208,9 @@
   <data name="txtPrixMetreMesure.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
+  <data name="txtPrixMetreMesure.ToolTip" xml:space="preserve">
+    <value>Ce champ sert à saisir le prix par mètre, mètre carré, papier et mètre cube</value>
+  </data>
   <data name="&gt;&gt;txtPrixMetreMesure.Name" xml:space="preserve">
     <value>txtPrixMetreMesure</value>
   </data>
@@ -4125,7 +4227,7 @@
     <value>Fill</value>
   </data>
   <data name="tableLayoutPanel7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 17</value>
+    <value>0, 21</value>
   </data>
   <data name="tableLayoutPanel7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -4134,7 +4236,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 29</value>
+    <value>359, 35</value>
   </data>
   <data name="tableLayoutPanel7.TabIndex" type="System.Int32, mscorlib">
     <value>430</value>
@@ -4170,13 +4272,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnDeleteFacture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 543</value>
+    <value>0, 536</value>
   </data>
   <data name="btnDeleteFacture.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 0, 0</value>
   </data>
   <data name="btnDeleteFacture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 44</value>
+    <value>359, 51</value>
   </data>
   <data name="btnDeleteFacture.TabIndex" type="System.Int32, mscorlib">
     <value>39</value>
@@ -4203,7 +4305,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="txtCategorie.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 419</value>
+    <value>0, 386</value>
   </data>
   <data name="txtCategorie.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -4239,13 +4341,13 @@
     <value>NoControl</value>
   </data>
   <data name="txtPrixTotalMesure.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 511</value>
+    <value>0, 498</value>
   </data>
   <data name="txtPrixTotalMesure.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="txtPrixTotalMesure.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 29</value>
+    <value>359, 35</value>
   </data>
   <data name="txtPrixTotalMesure.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -4281,13 +4383,13 @@
     <value>NoControl</value>
   </data>
   <data name="lblMesure.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 356</value>
+    <value>0, 312</value>
   </data>
   <data name="lblMesure.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="lblMesure.Size" type="System.Drawing.Size, System.Drawing">
-    <value>283, 17</value>
+    <value>283, 18</value>
   </data>
   <data name="lblMesure.TabIndex" type="System.Int32, mscorlib">
     <value>404</value>
@@ -4317,7 +4419,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="txtTotalMesure.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 373</value>
+    <value>0, 330</value>
   </data>
   <data name="txtTotalMesure.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -4359,13 +4461,13 @@
     <value>NoControl</value>
   </data>
   <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 448</value>
+    <value>0, 424</value>
   </data>
   <data name="label20.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 17</value>
+    <value>130, 18</value>
   </data>
   <data name="label20.TabIndex" type="System.Int32, mscorlib">
     <value>405</value>
@@ -4395,7 +4497,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="txtMetrageDeFeuille.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 465</value>
+    <value>0, 442</value>
   </data>
   <data name="txtMetrageDeFeuille.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -4434,13 +4536,13 @@
     <value>NoControl</value>
   </data>
   <data name="lblTypeDuMetres.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>0, 3</value>
   </data>
   <data name="lblTypeDuMetres.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="lblTypeDuMetres.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 17</value>
+    <value>136, 18</value>
   </data>
   <data name="lblTypeDuMetres.TabIndex" type="System.Int32, mscorlib">
     <value>403</value>
@@ -4476,13 +4578,13 @@
     <value>NoControl</value>
   </data>
   <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 402</value>
+    <value>0, 368</value>
   </data>
   <data name="label13.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 17</value>
+    <value>75, 18</value>
   </data>
   <data name="label13.TabIndex" type="System.Int32, mscorlib">
     <value>407</value>
@@ -4518,13 +4620,13 @@
     <value>NoControl</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 494</value>
+    <value>0, 478</value>
   </data>
   <data name="label11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 17</value>
+    <value>169, 20</value>
   </data>
   <data name="label11.TabIndex" type="System.Int32, mscorlib">
     <value>406</value>
@@ -4578,7 +4680,7 @@
     <value>2</value>
   </data>
   <data name="t_mesure.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanel10" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel6" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel7" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnDeleteFacture" Row="12" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtCategorie" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtPrixTotalMesure" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblMesure" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtTotalMesure" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label20" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtMetrageDeFeuille" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblTypeDuMetres" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label13" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label11" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,3,Percent,5,Percent,9,Percent,44,Percent,3,Percent,5,Percent,3,Percent,5,Percent,3,Percent,5,Percent,3,Percent,5,Percent,7" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanel10" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel6" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel7" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnDeleteFacture" Row="12" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtCategorie" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtPrixTotalMesure" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblMesure" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtTotalMesure" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label20" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtMetrageDeFeuille" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblTypeDuMetres" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label13" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label11" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,3.619691,Percent,6.032818,Percent,10.85907,Percent,32.43243,Percent,3.619691,Percent,6.032818,Percent,3.619691,Percent,6.032818,Percent,3.619691,Percent,6.032818,Percent,3.619691,Percent,6.032818,Percent,8.445945" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="t_add_edit.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -4649,11 +4751,8 @@
   <data name="btnAddNewFacture.Text" xml:space="preserve">
     <value>Ajouter Nouvelle Facture</value>
   </data>
-  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 3</value>
-  </metadata>
   <data name="btnAddNewFacture.ToolTip" xml:space="preserve">
-    <value>c'est button enregistrer les factures de client</value>
+    <value>Ce bouton permet d'ajouter une nouvelle facture à un client existant</value>
   </data>
   <data name="&gt;&gt;btnAddNewFacture.Name" xml:space="preserve">
     <value>btnAddNewFacture</value>
@@ -4897,6 +4996,9 @@
   </data>
   <data name="txtPrixTotalClient.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
+  </data>
+  <data name="txtPrixTotalClient.ToolTip" xml:space="preserve">
+    <value>Prix ​​total du client</value>
   </data>
   <data name="&gt;&gt;txtPrixTotalClient.Name" xml:space="preserve">
     <value>txtPrixTotalClient</value>

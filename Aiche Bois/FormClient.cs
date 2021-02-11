@@ -378,9 +378,22 @@ namespace Aiche_Bois
                     case "v*2":
                         total += (lar / 100) * 0 * qt + (lon / 100) * 2 * qt;
                         break;
-                    /*horizontal = 2, vertical = 0*/
+                    /*horizontal = 2, vertical = 2*/
                     case "4":
                         total += (lar / 100) * 2 * qt + (lon / 100) * 2 * qt;
+                        break;
+
+                    /*horizontal = 1, vertical = 2*/
+                    case "h*1+v*2":
+                        total += (lar / 100) * 1 * qt + (lon / 100) * 2 * qt;
+                        break;
+                    /*horizontal = 2, vertical = 1*/
+                    case "h*2+v*1":
+                        total += (lar / 100) * 2 * qt + (lon / 100) * 1 * qt;
+                        break;
+                    /*horizontal = 1, vertical = 1*/
+                    case "h*1+v*1":
+                        total += (lar / 100) * 1 * qt + (lon / 100) * 1 * qt;
                         break;
                 }
             }
@@ -1230,7 +1243,7 @@ namespace Aiche_Bois
 
             // initilize idClient
             idClient = null;
-            
+
             // refrech main datagrid
             remplissageDtGridClient();
 
@@ -1506,6 +1519,7 @@ namespace Aiche_Bois
                 return;
 
             txtPrixTotalMesure.Text = (double.Parse(txtPrixMetreMesure.Text) * double.Parse(txtTotalMesure.Text)).ToString("F2");
+            this.AcceptButton = btnAddFacture;
         }
 
         private void txtPrixMetreMesure_KeyPress(object sender, KeyPressEventArgs e)
@@ -1534,12 +1548,7 @@ namespace Aiche_Bois
             btnDeleteMesure.Enabled = true;
             btnExportCsv.Enabled = true;
 
-            txtMetrageDeFeuille.Enabled = txtCategorie.Enabled = cmbTypePvc.Enabled = btncmbNbrCanto.Enabled =
-                btnCmbCategorie.Enabled = cmbTypeDeBois.Enabled = txtSearch.Enabled = lstTypeBois.Enabled = true;
-
-            //txtTypeDeBois.Text = "";
-            //txtMetrageDeFeuille.Clear();
-            //txtCategorie.Clear();
+            cmbTypePvc.Enabled = btncmbNbrCanto.Enabled = true;
 
             if (cmbTypeDuMetres.SelectedItem.Equals("feuille"))
             {
@@ -1567,13 +1576,9 @@ namespace Aiche_Bois
                 }
                 enabledMesure(false);
 
-                txtMetrageDeFeuille.Enabled = txtCategorie.Enabled = cmbTypePvc.Enabled = btncmbNbrCanto.Enabled =
-                btnCmbCategorie.Enabled = cmbTypeDeBois.Enabled = txtSearch.Enabled = lstTypeBois.Enabled = false;
+                cmbTypePvc.Enabled = btncmbNbrCanto.Enabled = false;
 
-                txtTypeDeBois.Text = "---m---";
-                txtMetrageDeFeuille.Text = "---m---";
-                txtCategorie.Text = "---m---";
-
+                dtGMesure.Rows.Clear();
                 btnAddMesure.Enabled = false;
                 btnDeleteMesure.Enabled = false;
                 btnExportCsv.Enabled = false;
@@ -1877,11 +1882,6 @@ namespace Aiche_Bois
             btnSaveCalculPvc();
         }
 
-        private void txtTotaleTaillPVC_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtPrixMetreLPVC_TextChanged(object sender, EventArgs e)
         {
             double prix_mettres_pvc = 0;
@@ -1889,6 +1889,7 @@ namespace Aiche_Bois
                 return;
             prix_mettres_pvc = double.Parse(txtPrixMetreLPVC.Text) * double.Parse(txtTotaleTaillPVC.Text);
             txtPrixTotalPVC.Text = prix_mettres_pvc.ToString("F2");
+            this.AcceptButton = btnAddFacture;
         }
 
         private void e_Add_New_Client_Click(object sender, EventArgs e)
@@ -2253,31 +2254,12 @@ namespace Aiche_Bois
 
                 connectionClient.Open();
 
-                double result = double.Parse(txtPrixTotalMesure.Text) + double.Parse(txtPrixTotalPVC.Text);
-
-                if (result >= double.Parse(txtPrixAvanceClient.Text))
-                {
-                    result = 0;
-                }
-
-                //if (result >= double.Parse(txtPrixRestClient.Text))
-                //{
-                //    result -= double.Parse(txtPrixRestClient.Text);
-                //}
-
                 OleDbCommand commandFacture = new OleDbCommand
                 {
                     Connection = connectionClient,
-                    CommandText = "DELETE * FROM FACTURE WHERE idFacture = " + cmbNumeroFacture.SelectedItem
+                    CommandText = "DELETE * FROM FACTURE WHERE idFacture = " + cmbNumeroFacture.SelectedItem + "and idClient = " + long.Parse(idClient[1])
                 };
                 commandFacture.ExecuteNonQuery();
-
-                OleDbCommand commandFt = new OleDbCommand
-                {
-                    Connection = connectionClient,
-                    CommandText = "UPDATE client SET prixTotalAvance = prixTotalAvance - " + result + " WHERE idClient = " + long.Parse(idClient[1])
-                };
-                commandFt.ExecuteNonQuery();
 
                 connectionClient.Close();
 
@@ -2330,6 +2312,8 @@ namespace Aiche_Bois
             }
             else
                 txtPrixRestClient.Text = (total - avance).ToString("F2");
+
+            this.AcceptButton = btnSaveClient;
         }
 
         private void checkAvance_CheckedChanged(object sender, EventArgs e)
@@ -2437,6 +2421,21 @@ namespace Aiche_Bois
                 // remove select row
                 dtGridClient.Rows[dtGridClient.CurrentRow.Index].Selected = false;
             }
+        }
+
+        private void txtQuantite_TextChanged(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnAddMesure;
+        }
+
+        private void txtCategorie_TextChanged(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnAddFacture;
+        }
+
+        private void txtQtePVC_TextChanged(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnAddSeulPVC;
         }
     }
 }

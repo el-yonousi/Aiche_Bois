@@ -45,21 +45,26 @@
             this.lblRestPrixClient = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNomClient = new System.Windows.Forms.Label();
+            this.txtMines = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ckMines = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtPrixCLient
             // 
             this.txtPrixCLient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.txtPrixCLient.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPrixCLient.Font = new System.Drawing.Font("Ubuntu", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrixCLient.Font = new System.Drawing.Font("Ubuntu", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrixCLient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.txtPrixCLient.Location = new System.Drawing.Point(11, 316);
+            this.txtPrixCLient.Location = new System.Drawing.Point(12, 406);
             this.txtPrixCLient.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPrixCLient.Name = "txtPrixCLient";
-            this.txtPrixCLient.Size = new System.Drawing.Size(445, 26);
+            this.txtPrixCLient.Size = new System.Drawing.Size(506, 35);
             this.txtPrixCLient.TabIndex = 0;
             this.txtPrixCLient.TextChanged += new System.EventHandler(this.txtPrix_TextChanged);
+            this.txtPrixCLient.Enter += new System.EventHandler(this.txtMines_Enter);
             this.txtPrixCLient.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrix_KeyPress);
+            this.txtPrixCLient.Leave += new System.EventHandler(this.txtMines_Leave);
             // 
             // lblIDClient
             // 
@@ -88,7 +93,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Ubuntu", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.label3.Location = new System.Drawing.Point(237, 9);
+            this.label3.Location = new System.Drawing.Point(282, 11);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(152, 21);
             this.label3.TabIndex = 53;
@@ -99,9 +104,9 @@
             this.lblDateClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.lblDateClient.Font = new System.Drawing.Font("Ubuntu", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.lblDateClient.Location = new System.Drawing.Point(241, 32);
+            this.lblDateClient.Location = new System.Drawing.Point(286, 32);
             this.lblDateClient.Name = "lblDateClient";
-            this.lblDateClient.Size = new System.Drawing.Size(215, 37);
+            this.lblDateClient.Size = new System.Drawing.Size(232, 37);
             this.lblDateClient.TabIndex = 52;
             this.lblDateClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -110,7 +115,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Ubuntu", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.label5.Location = new System.Drawing.Point(236, 104);
+            this.label5.Location = new System.Drawing.Point(282, 105);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(163, 21);
             this.label5.TabIndex = 55;
@@ -121,9 +126,9 @@
             this.lblTotalPrixClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.lblTotalPrixClient.Font = new System.Drawing.Font("Ubuntu", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalPrixClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.lblTotalPrixClient.Location = new System.Drawing.Point(241, 126);
+            this.lblTotalPrixClient.Location = new System.Drawing.Point(286, 126);
             this.lblTotalPrixClient.Name = "lblTotalPrixClient";
-            this.lblTotalPrixClient.Size = new System.Drawing.Size(215, 37);
+            this.lblTotalPrixClient.Size = new System.Drawing.Size(232, 37);
             this.lblTotalPrixClient.TabIndex = 54;
             this.lblTotalPrixClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -132,7 +137,7 @@
             this.lblPPr.AutoSize = true;
             this.lblPPr.Font = new System.Drawing.Font("Ubuntu", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPPr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.lblPPr.Location = new System.Drawing.Point(7, 293);
+            this.lblPPr.Location = new System.Drawing.Point(7, 381);
             this.lblPPr.Name = "lblPPr";
             this.lblPPr.Size = new System.Drawing.Size(98, 21);
             this.lblPPr.TabIndex = 56;
@@ -145,9 +150,9 @@
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Ubuntu", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.btnConfirm.Location = new System.Drawing.Point(11, 376);
+            this.btnConfirm.Location = new System.Drawing.Point(10, 498);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(216, 44);
+            this.btnConfirm.Size = new System.Drawing.Size(232, 44);
             this.btnConfirm.TabIndex = 1;
             this.btnConfirm.Text = "Confimer";
             this.btnConfirm.UseVisualStyleBackColor = false;
@@ -161,9 +166,9 @@
             this.btnAnnuler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnnuler.Font = new System.Drawing.Font("Ubuntu", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnnuler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.btnAnnuler.Location = new System.Drawing.Point(241, 376);
+            this.btnAnnuler.Location = new System.Drawing.Point(286, 498);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(216, 44);
+            this.btnAnnuler.Size = new System.Drawing.Size(232, 44);
             this.btnAnnuler.TabIndex = 2;
             this.btnAnnuler.Text = "OK";
             this.btnAnnuler.UseVisualStyleBackColor = false;
@@ -174,7 +179,7 @@
             this.lblav.AutoSize = true;
             this.lblav.Font = new System.Drawing.Font("Ubuntu", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblav.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.lblav.Location = new System.Drawing.Point(236, 197);
+            this.lblav.Location = new System.Drawing.Point(282, 199);
             this.lblav.Name = "lblav";
             this.lblav.Size = new System.Drawing.Size(89, 21);
             this.lblav.TabIndex = 60;
@@ -185,9 +190,9 @@
             this.lblAvancePrixClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.lblAvancePrixClient.Font = new System.Drawing.Font("Ubuntu", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAvancePrixClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.lblAvancePrixClient.Location = new System.Drawing.Point(241, 220);
+            this.lblAvancePrixClient.Location = new System.Drawing.Point(286, 220);
             this.lblAvancePrixClient.Name = "lblAvancePrixClient";
-            this.lblAvancePrixClient.Size = new System.Drawing.Size(215, 37);
+            this.lblAvancePrixClient.Size = new System.Drawing.Size(232, 37);
             this.lblAvancePrixClient.TabIndex = 59;
             this.lblAvancePrixClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -209,7 +214,7 @@
             this.lblRestPrixClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.lblRestPrixClient.Location = new System.Drawing.Point(11, 220);
             this.lblRestPrixClient.Name = "lblRestPrixClient";
-            this.lblRestPrixClient.Size = new System.Drawing.Size(216, 37);
+            this.lblRestPrixClient.Size = new System.Drawing.Size(232, 37);
             this.lblRestPrixClient.TabIndex = 61;
             this.lblRestPrixClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -235,6 +240,43 @@
             this.lblNomClient.TabIndex = 63;
             this.lblNomClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txtMines
+            // 
+            this.txtMines.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.txtMines.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMines.Enabled = false;
+            this.txtMines.Font = new System.Drawing.Font("Ubuntu", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMines.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.txtMines.Location = new System.Drawing.Point(33, 314);
+            this.txtMines.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMines.Name = "txtMines";
+            this.txtMines.Size = new System.Drawing.Size(485, 35);
+            this.txtMines.TabIndex = 65;
+            this.txtMines.TextChanged += new System.EventHandler(this.txtMines_TextChanged);
+            this.txtMines.Enter += new System.EventHandler(this.txtMines_Enter);
+            this.txtMines.Leave += new System.EventHandler(this.txtMines_Leave);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Ubuntu", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.label4.Location = new System.Drawing.Point(7, 285);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(182, 21);
+            this.label4.TabIndex = 66;
+            this.label4.Text = "Moins le montant payé";
+            // 
+            // ckMines
+            // 
+            this.ckMines.AutoSize = true;
+            this.ckMines.Location = new System.Drawing.Point(11, 325);
+            this.ckMines.Name = "ckMines";
+            this.ckMines.Size = new System.Drawing.Size(15, 14);
+            this.ckMines.TabIndex = 67;
+            this.ckMines.UseVisualStyleBackColor = true;
+            this.ckMines.CheckedChanged += new System.EventHandler(this.ckMines_CheckedChanged);
+            // 
             // FormAvance
             // 
             this.AcceptButton = this.btnConfirm;
@@ -242,7 +284,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.CancelButton = this.btnAnnuler;
-            this.ClientSize = new System.Drawing.Size(468, 431);
+            this.ClientSize = new System.Drawing.Size(530, 555);
+            this.Controls.Add(this.ckMines);
+            this.Controls.Add(this.txtMines);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblNomClient);
             this.Controls.Add(this.lblRestPrixClient);
             this.Controls.Add(this.lblAvancePrixClient);
@@ -290,5 +335,8 @@
         private System.Windows.Forms.Label lblRestPrixClient;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNomClient;
+        private System.Windows.Forms.TextBox txtMines;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox ckMines;
     }
 }

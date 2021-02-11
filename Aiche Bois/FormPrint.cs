@@ -603,6 +603,9 @@ namespace Aiche_Bois
                                 case "h*2": symbole = $"==="; break;
                                 case "v*2": symbole = $"| |"; break;
                                 case "4": symbole = $"[]"; break;
+                                case "h*1+v*2": symbole = $"|___|"; break;
+                                case "h*2+v*1": symbole = $"===|"; break;
+                                case "h*1+v*1": symbole = $"___|"; break;
                             }
 
                             if (factures[index].TypeMetres != "m3")
@@ -646,6 +649,9 @@ namespace Aiche_Bois
                                 case "h*2": symbole = $"==="; break;
                                 case "v*2": symbole = $"| |"; break;
                                 case "4": symbole = $"[]"; break;
+                                case "h*1+v*2": symbole = $"|___|"; break;
+                                case "h*2+v*1": symbole = $"===|"; break;
+                                case "h*1+v*1": symbole = $"___|"; break;
                             }
                             typeBois +=
                            @"<tr>
@@ -741,6 +747,9 @@ namespace Aiche_Bois
                                 case "h*2": symbole = $"==="; break;
                                 case "v*2": symbole = $"| |"; break;
                                 case "4": symbole = $"[]"; break;
+                                case "h*1+v*2": symbole = $"|___|"; break;
+                                case "h*2+v*1": symbole = $"===|"; break;
+                                case "h*1+v*1": symbole = $"___|"; break;
                             }
 
                             if (f.TypeMetres != "m3")

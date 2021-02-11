@@ -205,6 +205,7 @@
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.TabStop = false;
+            this.toolTip.SetToolTip(this.txtSearch, resources.GetString("txtSearch.ToolTip"));
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // t_home
@@ -285,6 +286,7 @@
             this.dtGridClient.RowTemplate.Height = 40;
             this.dtGridClient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtGridClient.TabStop = false;
+            this.toolTip.SetToolTip(this.dtGridClient, resources.GetString("dtGridClient.ToolTip"));
             this.dtGridClient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridFacture_CellClick);
             this.dtGridClient.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridFacture_CellMouseLeave);
             this.dtGridClient.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtGridFacture_CellMouseMove);
@@ -390,6 +392,7 @@
             this.btn_home.IconSize = 35;
             this.btn_home.Name = "btn_home";
             this.btn_home.TabStop = false;
+            this.toolTip.SetToolTip(this.btn_home, resources.GetString("btn_home.ToolTip"));
             this.btn_home.UseVisualStyleBackColor = false;
             this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
@@ -407,6 +410,7 @@
             this.btnAddClient.IconSize = 35;
             this.btnAddClient.Name = "btnAddClient";
             this.btnAddClient.TabStop = false;
+            this.toolTip.SetToolTip(this.btnAddClient, resources.GetString("btnAddClient.ToolTip"));
             this.btnAddClient.UseVisualStyleBackColor = false;
             this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
             // 
@@ -424,6 +428,7 @@
             this.btnEditClient.IconSize = 30;
             this.btnEditClient.Name = "btnEditClient";
             this.btnEditClient.TabStop = false;
+            this.toolTip.SetToolTip(this.btnEditClient, resources.GetString("btnEditClient.ToolTip"));
             this.btnEditClient.UseVisualStyleBackColor = false;
             this.btnEditClient.Click += new System.EventHandler(this.btnEdit_Click);
             // 
@@ -441,6 +446,7 @@
             this.btnDeleteClient.IconSize = 30;
             this.btnDeleteClient.Name = "btnDeleteClient";
             this.btnDeleteClient.TabStop = false;
+            this.toolTip.SetToolTip(this.btnDeleteClient, resources.GetString("btnDeleteClient.ToolTip"));
             this.btnDeleteClient.UseVisualStyleBackColor = false;
             this.btnDeleteClient.Click += new System.EventHandler(this.btnDeleteClient_Click);
             // 
@@ -458,6 +464,7 @@
             this.btnPrintClient.IconSize = 30;
             this.btnPrintClient.Name = "btnPrintClient";
             this.btnPrintClient.TabStop = false;
+            this.toolTip.SetToolTip(this.btnPrintClient, resources.GetString("btnPrintClient.ToolTip"));
             this.btnPrintClient.UseVisualStyleBackColor = false;
             this.btnPrintClient.Click += new System.EventHandler(this.btnPrintFacture_Click);
             // 
@@ -475,6 +482,7 @@
             this.btnResultClient.IconSize = 30;
             this.btnResultClient.Name = "btnResultClient";
             this.btnResultClient.TabStop = false;
+            this.toolTip.SetToolTip(this.btnResultClient, resources.GetString("btnResultClient.ToolTip"));
             this.btnResultClient.UseVisualStyleBackColor = false;
             this.btnResultClient.Click += new System.EventHandler(this.btnResult_Click);
             // 
@@ -510,6 +518,7 @@
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 25;
             this.btnExit.Name = "btnExit";
+            this.toolTip.SetToolTip(this.btnExit, resources.GetString("btnExit.ToolTip"));
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -527,6 +536,7 @@
             this.btnMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMaximize.IconSize = 25;
             this.btnMaximize.Name = "btnMaximize";
+            this.toolTip.SetToolTip(this.btnMaximize, resources.GetString("btnMaximize.ToolTip"));
             this.btnMaximize.UseVisualStyleBackColor = false;
             this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
             // 
@@ -544,6 +554,7 @@
             this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimize.IconSize = 25;
             this.btnMinimize.Name = "btnMinimize";
+            this.toolTip.SetToolTip(this.btnMinimize, resources.GetString("btnMinimize.ToolTip"));
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
@@ -600,6 +611,7 @@
             this.cmbNumeroFacture.FormattingEnabled = true;
             this.cmbNumeroFacture.Name = "cmbNumeroFacture";
             this.cmbNumeroFacture.TabStop = false;
+            this.toolTip.SetToolTip(this.cmbNumeroFacture, resources.GetString("cmbNumeroFacture.ToolTip"));
             this.cmbNumeroFacture.SelectedIndexChanged += new System.EventHandler(this.cmbNumeroFacture_SelectedIndexChanged);
             // 
             // dtDateFacture
@@ -614,6 +626,7 @@
             this.dtDateFacture.Name = "dtDateFacture";
             this.dtDateFacture.TabStop = false;
             this.dtDateFacture.Tag = "Date de la Facture";
+            this.toolTip.SetToolTip(this.dtDateFacture, resources.GetString("dtDateFacture.ToolTip"));
             // 
             // txtNomClient
             // 
@@ -624,6 +637,8 @@
             this.txtNomClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.txtNomClient.Name = "txtNomClient";
             this.txtNomClient.Tag = "Nom du Client";
+            this.toolTip.SetToolTip(this.txtNomClient, resources.GetString("txtNomClient.ToolTip"));
+            this.txtNomClient.TextChanged += new System.EventHandler(this.txtCategorie_TextChanged);
             this.txtNomClient.Enter += new System.EventHandler(this.txtNomClient_Enter);
             this.txtNomClient.Leave += new System.EventHandler(this.txtNomClient_Leave);
             // 
@@ -646,6 +661,7 @@
             this.btnCmbCategorie.IconSize = 25;
             this.btnCmbCategorie.Name = "btnCmbCategorie";
             this.btnCmbCategorie.TabStop = false;
+            this.toolTip.SetToolTip(this.btnCmbCategorie, resources.GetString("btnCmbCategorie.ToolTip"));
             this.btnCmbCategorie.UseVisualStyleBackColor = false;
             this.btnCmbCategorie.Click += new System.EventHandler(this.btnCmbCategorie_Click);
             // 
@@ -663,6 +679,7 @@
             resources.GetString("cmbTypeDeBois.Items2"),
             resources.GetString("cmbTypeDeBois.Items3")});
             this.cmbTypeDeBois.Name = "cmbTypeDeBois";
+            this.toolTip.SetToolTip(this.cmbTypeDeBois, resources.GetString("cmbTypeDeBois.ToolTip"));
             this.cmbTypeDeBois.SelectedIndexChanged += new System.EventHandler(this.cmbTypeDeBois_SelectedIndexChanged);
             // 
             // txtSearchFacture
@@ -673,6 +690,7 @@
             this.txtSearchFacture.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSearchFacture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.txtSearchFacture.Name = "txtSearchFacture";
+            this.toolTip.SetToolTip(this.txtSearchFacture, resources.GetString("txtSearchFacture.ToolTip"));
             this.txtSearchFacture.TextChanged += new System.EventHandler(this.txtSearchFacture_TextChanged);
             this.txtSearchFacture.Enter += new System.EventHandler(this.txtNomClient_Enter);
             this.txtSearchFacture.Leave += new System.EventHandler(this.txtNomClient_Leave);
@@ -685,6 +703,7 @@
             this.lstTypeBois.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.lstTypeBois.FormattingEnabled = true;
             this.lstTypeBois.Name = "lstTypeBois";
+            this.toolTip.SetToolTip(this.lstTypeBois, resources.GetString("lstTypeBois.ToolTip"));
             this.lstTypeBois.SelectedIndexChanged += new System.EventHandler(this.lstTypeBois_SelectedIndexChanged);
             // 
             // txtTypeDeBois
@@ -694,6 +713,7 @@
             this.txtTypeDeBois.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.txtTypeDeBois.Name = "txtTypeDeBois";
             this.txtTypeDeBois.Tag = "Type Du Bois";
+            this.toolTip.SetToolTip(this.txtTypeDeBois, resources.GetString("txtTypeDeBois.ToolTip"));
             // 
             // btnImprimerFacture
             // 
@@ -708,6 +728,7 @@
             this.btnImprimerFacture.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnImprimerFacture.IconSize = 25;
             this.btnImprimerFacture.Name = "btnImprimerFacture";
+            this.toolTip.SetToolTip(this.btnImprimerFacture, resources.GetString("btnImprimerFacture.ToolTip"));
             this.btnImprimerFacture.UseVisualStyleBackColor = false;
             this.btnImprimerFacture.Click += new System.EventHandler(this.btnImprimerFacture_Click);
             // 
@@ -951,10 +972,13 @@
             this.cmbOrientationPvc.Items.AddRange(new object[] {
             "0",
             "h*1",
-            "v*1",
             "h*2",
+            "v*1",
             "v*2",
-            "4"});
+            "4",
+            "h*1+v*2",
+            "h*2+v*1",
+            "h*1+v*1"});
             this.cmbOrientationPvc.Name = "cmbOrientationPvc";
             this.cmbOrientationPvc.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.cmbOrientationPvc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -981,6 +1005,8 @@
             this.txtQtePVC.Name = "txtQtePVC";
             this.txtQtePVC.ShortcutsEnabled = false;
             this.txtQtePVC.Tag = "Quantite PVC";
+            this.toolTip.SetToolTip(this.txtQtePVC, resources.GetString("txtQtePVC.ToolTip"));
+            this.txtQtePVC.TextChanged += new System.EventHandler(this.txtQtePVC_TextChanged);
             this.txtQtePVC.Enter += new System.EventHandler(this.txtNomClient_Enter);
             this.txtQtePVC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrixMetreMesure_KeyPress);
             this.txtQtePVC.Leave += new System.EventHandler(this.txtNomClient_Leave);
@@ -994,6 +1020,8 @@
             this.txtLargPVC.Name = "txtLargPVC";
             this.txtLargPVC.ShortcutsEnabled = false;
             this.txtLargPVC.Tag = "Largeur PVC";
+            this.toolTip.SetToolTip(this.txtLargPVC, resources.GetString("txtLargPVC.ToolTip"));
+            this.txtLargPVC.TextChanged += new System.EventHandler(this.txtQtePVC_TextChanged);
             this.txtLargPVC.Enter += new System.EventHandler(this.txtNomClient_Enter);
             this.txtLargPVC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrixMetreMesure_KeyPress);
             this.txtLargPVC.Leave += new System.EventHandler(this.txtNomClient_Leave);
@@ -1007,6 +1035,8 @@
             this.txtLongPVC.Name = "txtLongPVC";
             this.txtLongPVC.ShortcutsEnabled = false;
             this.txtLongPVC.Tag = "Longueur PVC";
+            this.toolTip.SetToolTip(this.txtLongPVC, resources.GetString("txtLongPVC.ToolTip"));
+            this.txtLongPVC.TextChanged += new System.EventHandler(this.txtQtePVC_TextChanged);
             this.txtLongPVC.Enter += new System.EventHandler(this.txtNomClient_Enter);
             this.txtLongPVC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrixMetreMesure_KeyPress);
             this.txtLongPVC.Leave += new System.EventHandler(this.txtNomClient_Leave);
@@ -1025,9 +1055,13 @@
             resources.GetString("cmbOrtnPVC.Items2"),
             resources.GetString("cmbOrtnPVC.Items3"),
             resources.GetString("cmbOrtnPVC.Items4"),
-            resources.GetString("cmbOrtnPVC.Items5")});
+            resources.GetString("cmbOrtnPVC.Items5"),
+            resources.GetString("cmbOrtnPVC.Items6"),
+            resources.GetString("cmbOrtnPVC.Items7"),
+            resources.GetString("cmbOrtnPVC.Items8")});
             this.cmbOrtnPVC.Name = "cmbOrtnPVC";
             this.cmbOrtnPVC.Tag = "Orientation PVC";
+            this.toolTip.SetToolTip(this.cmbOrtnPVC, resources.GetString("cmbOrtnPVC.ToolTip"));
             // 
             // label22
             // 
@@ -1131,6 +1165,7 @@
             this.txtTaillePVC.Name = "txtTaillePVC";
             this.txtTaillePVC.ShortcutsEnabled = false;
             this.txtTaillePVC.Tag = "taille de canto";
+            this.txtTaillePVC.TextChanged += new System.EventHandler(this.txtCategorie_TextChanged);
             this.txtTaillePVC.Enter += new System.EventHandler(this.txtNomClient_Enter);
             this.txtTaillePVC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrixMetreMesure_KeyPress);
             this.txtTaillePVC.Leave += new System.EventHandler(this.txtNomClient_Leave);
@@ -1333,6 +1368,8 @@
             this.txtQuantite.Name = "txtQuantite";
             this.txtQuantite.ShortcutsEnabled = false;
             this.txtQuantite.Tag = "Quantite";
+            this.toolTip.SetToolTip(this.txtQuantite, resources.GetString("txtQuantite.ToolTip"));
+            this.txtQuantite.TextChanged += new System.EventHandler(this.txtQuantite_TextChanged);
             this.txtQuantite.Enter += new System.EventHandler(this.txtNomClient_Enter);
             this.txtQuantite.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrixMetreMesure_KeyPress);
             this.txtQuantite.Leave += new System.EventHandler(this.txtNomClient_Leave);
@@ -1346,6 +1383,8 @@
             this.txtLargeur.Name = "txtLargeur";
             this.txtLargeur.ShortcutsEnabled = false;
             this.txtLargeur.Tag = "largeur";
+            this.toolTip.SetToolTip(this.txtLargeur, resources.GetString("txtLargeur.ToolTip"));
+            this.txtLargeur.TextChanged += new System.EventHandler(this.txtQuantite_TextChanged);
             this.txtLargeur.Enter += new System.EventHandler(this.txtNomClient_Enter);
             this.txtLargeur.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrixMetreMesure_KeyPress);
             this.txtLargeur.Leave += new System.EventHandler(this.txtNomClient_Leave);
@@ -1359,6 +1398,8 @@
             this.txtLongueur.Name = "txtLongueur";
             this.txtLongueur.ShortcutsEnabled = false;
             this.txtLongueur.Tag = "longueur";
+            this.toolTip.SetToolTip(this.txtLongueur, resources.GetString("txtLongueur.ToolTip"));
+            this.txtLongueur.TextChanged += new System.EventHandler(this.txtQuantite_TextChanged);
             this.txtLongueur.Enter += new System.EventHandler(this.txtNomClient_Enter);
             this.txtLongueur.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrixMetreMesure_KeyPress);
             this.txtLongueur.Leave += new System.EventHandler(this.txtNomClient_Leave);
@@ -1372,6 +1413,8 @@
             this.txtEpaisseur.Name = "txtEpaisseur";
             this.txtEpaisseur.ShortcutsEnabled = false;
             this.txtEpaisseur.Tag = "epaisseur";
+            this.toolTip.SetToolTip(this.txtEpaisseur, resources.GetString("txtEpaisseur.ToolTip"));
+            this.txtEpaisseur.TextChanged += new System.EventHandler(this.txtQuantite_TextChanged);
             this.txtEpaisseur.Enter += new System.EventHandler(this.txtNomClient_Enter);
             this.txtEpaisseur.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrixMetreMesure_KeyPress);
             this.txtEpaisseur.Leave += new System.EventHandler(this.txtNomClient_Leave);
@@ -1417,6 +1460,7 @@
             resources.GetString("cmbTypeDuMetres.Items2"),
             resources.GetString("cmbTypeDuMetres.Items3")});
             this.cmbTypeDuMetres.Name = "cmbTypeDuMetres";
+            this.toolTip.SetToolTip(this.cmbTypeDuMetres, resources.GetString("cmbTypeDuMetres.ToolTip"));
             this.cmbTypeDuMetres.SelectedIndexChanged += new System.EventHandler(this.cmbTypeDuMetres_SelectedIndexChanged);
             // 
             // txtPrixMetreMesure
@@ -1428,6 +1472,7 @@
             this.txtPrixMetreMesure.Name = "txtPrixMetreMesure";
             this.txtPrixMetreMesure.ShortcutsEnabled = false;
             this.txtPrixMetreMesure.Tag = "Prix au Metre Carré";
+            this.toolTip.SetToolTip(this.txtPrixMetreMesure, resources.GetString("txtPrixMetreMesure.ToolTip"));
             this.txtPrixMetreMesure.TextChanged += new System.EventHandler(this.txtPrixMetreMesure_TextChanged);
             this.txtPrixMetreMesure.Enter += new System.EventHandler(this.txtNomClient_Enter);
             this.txtPrixMetreMesure.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrixMetreMesure_KeyPress);
@@ -1458,6 +1503,7 @@
             this.txtCategorie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.txtCategorie.Name = "txtCategorie";
             this.txtCategorie.Tag = "la categorie";
+            this.txtCategorie.TextChanged += new System.EventHandler(this.txtCategorie_TextChanged);
             this.txtCategorie.Enter += new System.EventHandler(this.txtNomClient_Enter);
             this.txtCategorie.Leave += new System.EventHandler(this.txtNomClient_Leave);
             // 
@@ -1503,6 +1549,7 @@
             this.txtMetrageDeFeuille.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.txtMetrageDeFeuille.Name = "txtMetrageDeFeuille";
             this.txtMetrageDeFeuille.Tag = "Métrage de Feuille";
+            this.txtMetrageDeFeuille.TextChanged += new System.EventHandler(this.txtCategorie_TextChanged);
             this.txtMetrageDeFeuille.Enter += new System.EventHandler(this.txtNomClient_Enter);
             this.txtMetrageDeFeuille.Leave += new System.EventHandler(this.txtNomClient_Leave);
             // 
@@ -1620,6 +1667,7 @@
             this.txtPrixTotalClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.txtPrixTotalClient.Name = "txtPrixTotalClient";
             this.txtPrixTotalClient.Tag = "Montant Total";
+            this.toolTip.SetToolTip(this.txtPrixTotalClient, resources.GetString("txtPrixTotalClient.ToolTip"));
             // 
             // label19
             // 
@@ -1739,10 +1787,6 @@
         private FontAwesome.Sharp.IconButton btnImportPvc;
         private FontAwesome.Sharp.IconButton btnSavePvc;
         private System.Windows.Forms.DataGridView dtGridPvc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewComboBoxColumn cmbOrientationPvc;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtQtePVC;
@@ -1818,6 +1862,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewComboBoxColumn cmbOrientationPvc;
     }
 }
 
