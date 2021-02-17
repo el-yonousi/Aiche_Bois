@@ -149,6 +149,7 @@ namespace Aiche_Bois
                     facture.DateFacture = DateTime.Parse(readerFacture["dtdateFacture"].ToString());
                     facture.TypeDeBois = readerFacture["typeDeBois"].ToString();
                     facture.Metrage = readerFacture["metrage"].ToString();
+                    facture.TypeMetres = readerFacture["typeMetres"].ToString();
                     facture.PrixMetres = double.Parse(readerFacture["prixMetres"].ToString());
                     facture.Categorie = readerFacture["categorie"].ToString();
                     facture.TotalMesure = double.Parse(readerFacture["totalMesure"].ToString());
@@ -237,7 +238,7 @@ namespace Aiche_Bois
                 tab1.WidthPercentage = 100;
                 PdfPCell cel1 = new PdfPCell(image, true);
                 cel1.BorderColor = iTextSharp.text.BaseColor.WHITE;
-                
+
                 tab1.SpacingAfter = 20;
                 tab1.AddCell(cel1);
                 pdfDoc.Add(tab1);
@@ -326,7 +327,7 @@ namespace Aiche_Bois
                 	<table border='1' align='center' width ='100%' height ='100%'>
                 		<!-- this is a header for main -->
                 		<thead>
-                			<tr align='center' style='color: #7BA63C; padding: 5px; text-align: center; font-weight: bold;'>
+                			<tr align='center' style='color: #92C119; padding: 5px; text-align: center; font-weight: bold;'>
                 				<td>Quantite</td>
                 				<td>Designation</td>
                 				<td>P.U</td>
@@ -488,7 +489,7 @@ namespace Aiche_Bois
                 	<table border='1' align='center' width ='100%' height ='100%'>
                 		<!-- this is a header for main -->
                 		<thead>
-                			<tr align='center' style='color: #7BA63C; padding: 5px; text-align: center; font-weight: bold;'>
+                			<tr align='center' style='color: #92C119; padding: 5px; text-align: center; font-weight: bold;'>
                 				<td>Quantite</td>
                 				<td>Designation</td>
                 				<td>P.U</td>
@@ -528,8 +529,12 @@ namespace Aiche_Bois
                 	<!-- this is footer page -->
                 	<br>
                 	<div style='font-weight: initial; font-size: 8pt;'>
-                        <p>Numéro de téléphone: +212 700 48 31 86</p>
-                        <p>Adresse: Tanger 90060, Maroc</p>
+                        <p>R-C: 10621</p>
+                        <p>PAENTE: 57141491</p>
+                        <p>CNSS: 242976</p>
+                        <p>IF: 04902447</p>
+                        <p>Numéro de téléphone: 07 00 483 186 - 06 67 819 521</p>
+                        <p>SIEGE SOCIAL: 16 AVENUE MOULAY ALI CHERIF BENI MAKADA, TANGER, Maroc</p>
                 		<p>
                 			MODE DE PAIMENT: 50% à la commande, 50% à la finition (Validité de l'offre 1 mois)
                 		</p>
@@ -589,8 +594,14 @@ namespace Aiche_Bois
                 if (!c_seul)
                 {
                     type = "Mesure";
-                    if (factures[index].TypeDeBois != "---")
-                        typeBois += @"<tr><td align='center' colSpan='5'>" + $"{factures[index].TypeDeBois}" + @"</td></tr>";
+                    if (factures[index].TypeMetres == "m")
+                    {
+                        typeBois += @"<tr>
+                                            <td align='center' colSpan='3'>" + $"{factures[index].TypeDeBois}" + @"</td>
+                                            <td align='center' colSpan='2'>" + $"{factures[index].TotalMesure}" + @"</td>
+                                      </tr>";
+                    }
+                    else typeBois += @"<tr><td align='center' colSpan='5'>" + $"{factures[index].TypeDeBois}" + @"</td></tr>";
                     for (int i = 0; i < mesures.Count; i++)
                     {
                         if (mesures[i].IdFacture == idFacture)
@@ -682,9 +693,9 @@ namespace Aiche_Bois
                         <table border='1' width ='100%' height ='100%'>
                                 <!-- Quantite -->
                                <tr>  
-                                    <td align='center' style='font-weight: bold; color: #7BA63C;'>Quantite</td>  
-                                    <td align='center' style='font-weight: bold; color: #7BA63C;' colSpan='3'>" + $"{type}" + @"</td>
-                                    <td align='center' style='font-weight: bold; color: #7BA63C;'>Nbr_Canto</td>
+                                    <td align='center' style='font-weight: bold; color: #92C119;'>Quantite</td>  
+                                    <td align='center' style='font-weight: bold; color: #92C119;' colSpan='3'>" + $"{type}" + @"</td>
+                                    <td align='center' style='font-weight: bold; color: #92C119;'>Nbr_Canto</td>
                                </tr>
                                <!-- this is a query -->
 
@@ -729,11 +740,15 @@ namespace Aiche_Bois
                 String typeBois = "";
                 String type = "";
                 String symbole = "";
-
                 foreach (Facture f in factures)
                 {
                     type = "Mesure";
-                    if (f.TypeDeBois != "---")
+                    if (f.TypeMetres == "m")
+                        typeBois += @"<tr>
+                                            <td align='center' colSpan='3'>" + $"{f.TypeDeBois}" + @"</td>
+                                            <td align='center' colSpan='2'>" + $"{f.TotalMesure}" + @"</td>
+                                      </tr>";
+                    if (f.TypeMetres != "m" && !f.CheckPVC)
                         typeBois += @"<tr><td align='center' colSpan='5'>" + $"{f.TypeDeBois}" + @"</td></tr>";
                     for (int i = 0; i < mesures.Count; i++)
                     {
@@ -775,6 +790,8 @@ namespace Aiche_Bois
                             }
                         }
                     }
+                    if (f.TypePVC != "---" && !f.CheckPVC)
+                        typeBois += @"<tr><td align='center' colSpan='5'>" + $"{f.TypePVC}" + @"</td></tr>";
                 }
                 string strHTML = @"<!DOCTYPE html>  
                         <html xmlns='http://www.w3.org/1999/xhtml'>  
@@ -794,9 +811,9 @@ namespace Aiche_Bois
                         <table border='1' width ='100%' height ='100%'>
                                 <!-- Quantite -->
                                <tr>  
-                                    <td align='center' style='font-weight: bold; color: #7BA63C;'>Quantite</td>  
-                                    <td align='center' style='font-weight: bold; color: #7BA63C;' colSpan='3'>" + $"{type}" + @"</td>
-                                    <td align='center' style='font-weight: bold; color: #7BA63C;'>Nbr_Canto</td>
+                                    <td align='center' style='font-weight: bold; color: #92C119;'>Quantite</td>  
+                                    <td align='center' style='font-weight: bold; color: #92C119;' colSpan='3'>" + $"{type}" + @"</td>
+                                    <td align='center' style='font-weight: bold; color: #92C119;'>Nbr_Canto</td>
                                </tr>
                                <!-- this is a query -->
 
@@ -916,31 +933,5 @@ namespace Aiche_Bois
                 return;
             }
         }
-
-        /// <summary>
-        /// this is selected style
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        //private void lstMesure_DrawItem(object sender, DrawItemEventArgs e)
-        //{
-        //    if (e.Index < 0) return;
-        //    //if the item state is selected them change the back color 
-        //    if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
-        //        e = new DrawItemEventArgs(e.Graphics,
-        //                                  e.Font,
-        //                                  e.Bounds,
-        //                                  e.Index,
-        //                                  e.State ^ DrawItemState.Selected,
-        //                                  e.ForeColor,
-        //                                  Color.FromArgb(255, 170, 0));//Choose the color
-
-        //    // Draw the background of the ListBox control for each item.
-        //    e.DrawBackground();
-        //    // Draw the current item text
-        //    e.Graphics.DrawString(lstMesure.Items[e.Index].ToString(), e.Font, Brushes.Black, e.Bounds, StringFormat.GenericDefault);
-        //    // If the ListBox has focus, draw a focus rectangle around the selected item.
-        //    e.DrawFocusRectangle();
-        //}
     }
 }

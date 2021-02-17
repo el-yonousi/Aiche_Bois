@@ -45,9 +45,9 @@
             this.lstCmb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.lstCmb.FormattingEnabled = true;
             this.lstCmb.ItemHeight = 20;
-            this.lstCmb.Location = new System.Drawing.Point(9, 83);
+            this.lstCmb.Location = new System.Drawing.Point(10, 82);
             this.lstCmb.Name = "lstCmb";
-            this.lstCmb.Size = new System.Drawing.Size(636, 462);
+            this.lstCmb.Size = new System.Drawing.Size(511, 422);
             this.lstCmb.TabIndex = 1;
             this.lstCmb.TabStop = false;
             // 
@@ -58,9 +58,9 @@
             this.txtCmb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCmb.Font = new System.Drawing.Font("Nirmala UI", 19F, System.Drawing.FontStyle.Bold);
             this.txtCmb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.txtCmb.Location = new System.Drawing.Point(9, 33);
+            this.txtCmb.Location = new System.Drawing.Point(10, 32);
             this.txtCmb.Name = "txtCmb";
-            this.txtCmb.Size = new System.Drawing.Size(590, 41);
+            this.txtCmb.Size = new System.Drawing.Size(465, 41);
             this.txtCmb.TabIndex = 0;
             this.txtCmb.TextChanged += new System.EventHandler(this.txtCmb_TextChanged);
             // 
@@ -75,7 +75,7 @@
             this.btnAddLstCmb.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddLstCmb.IconSize = 35;
             this.btnAddLstCmb.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAddLstCmb.Location = new System.Drawing.Point(605, 33);
+            this.btnAddLstCmb.Location = new System.Drawing.Point(481, 32);
             this.btnAddLstCmb.Name = "btnAddLstCmb";
             this.btnAddLstCmb.Size = new System.Drawing.Size(40, 41);
             this.btnAddLstCmb.TabIndex = 1;
@@ -94,9 +94,9 @@
             this.btnDeleteMesure.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.btnDeleteMesure.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnDeleteMesure.IconSize = 30;
-            this.btnDeleteMesure.Location = new System.Drawing.Point(230, 569);
+            this.btnDeleteMesure.Location = new System.Drawing.Point(196, 510);
             this.btnDeleteMesure.Name = "btnDeleteMesure";
-            this.btnDeleteMesure.Size = new System.Drawing.Size(193, 45);
+            this.btnDeleteMesure.Size = new System.Drawing.Size(139, 45);
             this.btnDeleteMesure.TabIndex = 3;
             this.btnDeleteMesure.UseVisualStyleBackColor = false;
             this.btnDeleteMesure.Click += new System.EventHandler(this.btnDeleteMesure_Click);
@@ -112,9 +112,9 @@
             this.btnBack.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.btnBack.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnBack.IconSize = 30;
-            this.btnBack.Location = new System.Drawing.Point(451, 569);
+            this.btnBack.Location = new System.Drawing.Point(382, 510);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(193, 45);
+            this.btnBack.Size = new System.Drawing.Size(139, 45);
             this.btnBack.TabIndex = 4;
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -129,9 +129,9 @@
             this.btnSave.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.btnSave.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnSave.IconSize = 30;
-            this.btnSave.Location = new System.Drawing.Point(9, 569);
+            this.btnSave.Location = new System.Drawing.Point(10, 510);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(193, 45);
+            this.btnSave.Size = new System.Drawing.Size(139, 45);
             this.btnSave.TabIndex = 2;
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -140,9 +140,9 @@
             // 
             this.lblEcris.AutoSize = true;
             this.lblEcris.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.lblEcris.Location = new System.Drawing.Point(5, 10);
+            this.lblEcris.Location = new System.Drawing.Point(8, 9);
             this.lblEcris.Name = "lblEcris";
-            this.lblEcris.Size = new System.Drawing.Size(66, 20);
+            this.lblEcris.Size = new System.Drawing.Size(69, 20);
             this.lblEcris.TabIndex = 44;
             this.lblEcris.Text = "Saiser le";
             // 
@@ -153,7 +153,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.CancelButton = this.btnBack;
-            this.ClientSize = new System.Drawing.Size(656, 626);
+            this.ClientSize = new System.Drawing.Size(530, 565);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnDeleteMesure);
@@ -161,7 +161,7 @@
             this.Controls.Add(this.txtCmb);
             this.Controls.Add(this.lstCmb);
             this.Controls.Add(this.lblEcris);
-            this.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.Font = new System.Drawing.Font("Ubuntu", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

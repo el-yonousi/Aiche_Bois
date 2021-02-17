@@ -142,6 +142,7 @@ namespace Aiche_Bois
 
                     //pvc
                     pvc = readerFacture["typePVC"].ToString();
+                    txtTypeDeBois.Text = readerFacture["typeDeBois"].ToString();
                     cmbTypePvc.SelectedItem = (pvc == "---" ? null : readerFacture["typePVC"].ToString());
                     txtTaillePVC.Text = readerFacture["tailleCanto"].ToString();
                     txtTotaleTaillPVC.Text = readerFacture["totalTaillPVC"].ToString();
@@ -229,18 +230,16 @@ namespace Aiche_Bois
         /// <param name="ft"></param>
         private void checkSeulPVC(bool ft)
         {
-            txtPrixMetreMesure.Enabled = txtMetrageDeFeuille.Enabled = txtCategorie.Enabled = cmbTypeDuMetres.Enabled =
-            btnCmbCategorie.Enabled = cmbTypeDeBois.Enabled = txtSearch.Enabled = lstTypeBois.Enabled =
-            txtQuantite.Enabled = txtLargeur.Enabled = txtLongueur.Enabled = txtEpaisseur.Enabled =
-            btnAddMesure.Enabled = btnDeleteMesure.Enabled = btnExportCsv.Enabled =
-            btnImportPvc.Enabled = btnSavePvc.Enabled = !ft;
+            txtPrixMetreMesure.Enabled = txtMetrageDeFeuille.Enabled = txtCategorie.Enabled =
+            txtSearch.Enabled = txtQuantite.Enabled = txtLargeur.Enabled = txtLongueur.Enabled = 
+            txtEpaisseur.Enabled = btnAddMesure.Enabled = btnDeleteMesure.Enabled = btnExportCsv.Enabled =
+            btnImportPvc.Enabled = !ft;
 
             btnAddSeulPVC.Enabled = btnDeleteSeulPVC.Enabled = txtQtePVC.Enabled = txtLargPVC.Enabled =
             txtLongPVC.Enabled = cmbOrtnPVC.Enabled = ft;
 
             if (ft)
             {
-                txtTypeDeBois.Text = "---";
                 txtPrixMetreMesure.Text = "0.00";
                 txtTotalMesure.Text = "0.00";
                 txtPrixTotalMesure.Text = "0.00";
@@ -1428,15 +1427,12 @@ namespace Aiche_Bois
             p_home.SendToBack();
             p_Add_Edit.BringToFront();
 
+            txtNomClient.Focus();
             txtNomClient.TabIndex = 0;
-            lstTypeBois.TabIndex = 1;
-            txtPrixMetreMesure.TabIndex = 2;
-            cmbTypeDuMetres.TabIndex = 3;
-            txtQuantite.TabIndex = 4;
-            txtLargeur.TabIndex = 5;
-            txtLongueur.TabIndex = 6;
-            txtEpaisseur.TabIndex = 7;
-            btnAddMesure.TabIndex = 8;
+            cmbTypeDeBois.TabIndex = 1;
+            txtPrixMetreMesure.TabIndex = 3;
+            cmbTypeDuMetres.TabIndex = 4;
+            txtQuantite.TabIndex = 5;
         }
         /**
          * ======================== Panel Add ========================
@@ -1471,29 +1467,37 @@ namespace Aiche_Bois
             remplirListe(Program.btnAddTypeClick);
         }
 
-        private void txtSearchFacture_TextChanged(object sender, EventArgs e)
+        /// <summary>
+        /// search for type bois by clicking enter from keybord
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtSearchFacture_KeyUp(object sender, KeyEventArgs e)
         {
-            /*si le textBox est vide, remplir tous les items*/
-            if (string.IsNullOrEmpty(txtSearchFacture.Text))
+            if (e.KeyValue == 13)
             {
-                remplirListe(cmbTypeDeBois.Text);
-            }
-            else
-            {
-                lstTypeBois.Items.Clear();
-                for (int i = 0; i < tb_Type.Rows.Count; i++)
+                /*si le textBox est vide, remplir tous les items*/
+                if (string.IsNullOrEmpty(txtSearchFacture.Text))
                 {
-                    if (tb_Type.Rows[i][0].ToString().Contains(txtSearchFacture.Text.ToUpper()))
+                    remplirListe(cmbTypeDeBois.Text);
+                }
+                else
+                {
+                    lstTypeBois.Items.Clear();
+                    for (int i = 0; i < tb_Type.Rows.Count; i++)
                     {
-                        lstTypeBois.Items.Add(tb_Type.Rows[i][0].ToString());
+                        if (tb_Type.Rows[i][0].ToString().Contains(txtSearchFacture.Text.ToUpper()))
+                        {
+                            lstTypeBois.Items.Add(tb_Type.Rows[i][0].ToString());
+                        }
                     }
                 }
-            }
 
-            /*selectionner le premiere ligne*/
-            if (lstTypeBois.Items.Count != 0)
-            {
-                lstTypeBois.SelectedIndex = 0;
+                /*selectionner le premiere ligne*/
+                if (lstTypeBois.Items.Count != 0)
+                {
+                    lstTypeBois.SelectedIndex = 0;
+                }
             }
         }
 
@@ -1519,7 +1523,6 @@ namespace Aiche_Bois
                 return;
 
             txtPrixTotalMesure.Text = (double.Parse(txtPrixMetreMesure.Text) * double.Parse(txtTotalMesure.Text)).ToString("F2");
-            this.AcceptButton = btnAddFacture;
         }
 
         private void txtPrixMetreMesure_KeyPress(object sender, KeyPressEventArgs e)
@@ -1889,7 +1892,6 @@ namespace Aiche_Bois
                 return;
             prix_mettres_pvc = double.Parse(txtPrixMetreLPVC.Text) * double.Parse(txtTotaleTaillPVC.Text);
             txtPrixTotalPVC.Text = prix_mettres_pvc.ToString("F2");
-            this.AcceptButton = btnAddFacture;
         }
 
         private void e_Add_New_Client_Click(object sender, EventArgs e)
@@ -2037,7 +2039,7 @@ namespace Aiche_Bois
                             "metrage, categorie, totalMesure, typeMetres, prixMetres, typePVC, checkPVC, tailleCanto, " +
                             "totalTaillPVC, prixMitresLinear, prixTotalPVC, prixTotalMesure) " +
                                           "values ('" + long.Parse(idClient[1]) + "', '" + DateTime.Today + "', '" +
-                                          "---" + "', '" + "---" + "','" + "---" + "', '" +
+                                          txtTypeDeBois.Text + "', '" + "---" + "','" + "---" + "', '" +
                                           0.0 + "', '" + cmbTypeDuMetres.SelectedItem.ToString() + "','" + 0.0 + "', '" +
                                           cmbTypePvc.Text + "', " + chSeulPVC.Checked + ", '" + double.Parse(txtTaillePVC.Text) + "', '" +
                                           double.Parse(txtTotaleTaillPVC.Text) + "', '" + double.Parse(txtPrixMetreLPVC.Text) + "', '" +
@@ -2312,8 +2314,6 @@ namespace Aiche_Bois
             }
             else
                 txtPrixRestClient.Text = (total - avance).ToString("F2");
-
-            this.AcceptButton = btnSaveClient;
         }
 
         private void checkAvance_CheckedChanged(object sender, EventArgs e)
@@ -2423,19 +2423,16 @@ namespace Aiche_Bois
             }
         }
 
-        private void txtQuantite_TextChanged(object sender, EventArgs e)
+        private void txtQuantite_KeyUp(object sender, KeyEventArgs e)
         {
-            this.AcceptButton = btnAddMesure;
+            if (e.KeyValue == 13)
+                btnAddMesure.PerformClick();
         }
 
-        private void txtCategorie_TextChanged(object sender, EventArgs e)
+        private void txtQtePVC_KeyUp(object sender, KeyEventArgs e)
         {
-            this.AcceptButton = btnAddFacture;
-        }
-
-        private void txtQtePVC_TextChanged(object sender, EventArgs e)
-        {
-            this.AcceptButton = btnAddSeulPVC;
+            if (e.KeyValue == 13)
+                btnAddSeulPVC.PerformClick();
         }
     }
 }
