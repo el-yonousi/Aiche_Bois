@@ -46,6 +46,8 @@ namespace Aiche_Bois
                             File.Copy(s, destFile, true);
                         }
                     }
+                    Application.Restart();
+                    Environment.Exit(0);
                 }
 
                 InitializeComponent();

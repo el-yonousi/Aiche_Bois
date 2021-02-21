@@ -29,6 +29,7 @@ namespace Aiche_Bois
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUser));
             this.btnConnect = new FontAwesome.Sharp.IconButton();
             this.btnCancel = new FontAwesome.Sharp.IconButton();
@@ -38,6 +39,7 @@ namespace Aiche_Bois
             this.label2 = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
             this.showPassWord = new FontAwesome.Sharp.IconButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +59,7 @@ namespace Aiche_Bois
             this.btnConnect.Size = new System.Drawing.Size(174, 37);
             this.btnConnect.TabIndex = 1;
             this.btnConnect.Text = "Connexion";
+            this.toolTip1.SetToolTip(this.btnConnect, "Un bouton pour se connecter à l\'application, si le mot de passe est correct");
             this.btnConnect.UseVisualStyleBackColor = true;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
@@ -76,6 +79,7 @@ namespace Aiche_Bois
             this.btnCancel.Size = new System.Drawing.Size(174, 37);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Annuler";
+            this.toolTip1.SetToolTip(this.btnCancel, "le bouton annuler");
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -88,6 +92,7 @@ namespace Aiche_Bois
             this.txtPassWord.Name = "txtPassWord";
             this.txtPassWord.Size = new System.Drawing.Size(391, 32);
             this.txtPassWord.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.txtPassWord, "Le champ qui veut entrer le mot de passe de la base de données");
             this.txtPassWord.UseSystemPasswordChar = true;
             this.txtPassWord.TextChanged += new System.EventHandler(this.txtPassWord_TextChanged);
             // 
@@ -104,7 +109,7 @@ namespace Aiche_Bois
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(118, 34);
+            this.pictureBox1.Location = new System.Drawing.Point(118, 23);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(207, 126);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -144,6 +149,7 @@ namespace Aiche_Bois
             this.showPassWord.Name = "showPassWord";
             this.showPassWord.Size = new System.Drawing.Size(47, 32);
             this.showPassWord.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.showPassWord, "si veux masquer/afficher le mote de passe");
             this.showPassWord.UseVisualStyleBackColor = false;
             this.showPassWord.Click += new System.EventHandler(this.showPassWord_Click);
             // 
@@ -186,5 +192,6 @@ namespace Aiche_Bois
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblError;
         private FontAwesome.Sharp.IconButton showPassWord;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

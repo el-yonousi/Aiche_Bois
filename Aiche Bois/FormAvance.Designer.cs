@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAvance));
             this.txtPrixCLient = new System.Windows.Forms.TextBox();
             this.lblIDClient = new System.Windows.Forms.Label();
@@ -48,6 +49,7 @@
             this.txtMines = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.ckMines = new System.Windows.Forms.CheckBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // txtPrixCLient
@@ -61,6 +63,7 @@
             this.txtPrixCLient.Name = "txtPrixCLient";
             this.txtPrixCLient.Size = new System.Drawing.Size(506, 35);
             this.txtPrixCLient.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.txtPrixCLient, "le champ qui veut saisir le prix d\'avance a client");
             this.txtPrixCLient.TextChanged += new System.EventHandler(this.txtPrix_TextChanged);
             this.txtPrixCLient.Enter += new System.EventHandler(this.txtMines_Enter);
             this.txtPrixCLient.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrix_KeyPress);
@@ -76,6 +79,7 @@
             this.lblIDClient.Size = new System.Drawing.Size(216, 37);
             this.lblIDClient.TabIndex = 50;
             this.lblIDClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblIDClient, "le Numéro  de client");
             // 
             // label2
             // 
@@ -84,9 +88,9 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.label2.Location = new System.Drawing.Point(7, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 21);
+            this.label2.Size = new System.Drawing.Size(140, 21);
             this.label2.TabIndex = 51;
-            this.label2.Text = "Numéro du Facture";
+            this.label2.Text = "Numéro du Client";
             // 
             // label3
             // 
@@ -95,9 +99,9 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.label3.Location = new System.Drawing.Point(282, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(152, 21);
+            this.label3.Size = new System.Drawing.Size(139, 21);
             this.label3.TabIndex = 53;
-            this.label3.Text = "La Date du Facture";
+            this.label3.Text = "La Date du Client";
             // 
             // lblDateClient
             // 
@@ -109,6 +113,7 @@
             this.lblDateClient.Size = new System.Drawing.Size(232, 37);
             this.lblDateClient.TabIndex = 52;
             this.lblDateClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblDateClient, "la date de client");
             // 
             // label5
             // 
@@ -131,6 +136,7 @@
             this.lblTotalPrixClient.Size = new System.Drawing.Size(232, 37);
             this.lblTotalPrixClient.TabIndex = 54;
             this.lblTotalPrixClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblTotalPrixClient, "prixe total du client");
             // 
             // lblPPr
             // 
@@ -154,7 +160,8 @@
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(232, 44);
             this.btnConfirm.TabIndex = 1;
-            this.btnConfirm.Text = "Confimer";
+            this.btnConfirm.Text = "SAUVEGARDER";
+            this.toolTip1.SetToolTip(this.btnConfirm, "sauvegarder le prix à la base de donnée");
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
@@ -170,7 +177,8 @@
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(232, 44);
             this.btnAnnuler.TabIndex = 2;
-            this.btnAnnuler.Text = "OK";
+            this.btnAnnuler.Text = "RETOUR";
+            this.toolTip1.SetToolTip(this.btnAnnuler, "retournez à la page précédente");
             this.btnAnnuler.UseVisualStyleBackColor = false;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
@@ -195,6 +203,7 @@
             this.lblAvancePrixClient.Size = new System.Drawing.Size(232, 37);
             this.lblAvancePrixClient.TabIndex = 59;
             this.lblAvancePrixClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblAvancePrixClient, "prix paye de client");
             // 
             // label10
             // 
@@ -217,6 +226,7 @@
             this.lblRestPrixClient.Size = new System.Drawing.Size(232, 37);
             this.lblRestPrixClient.TabIndex = 61;
             this.lblRestPrixClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblRestPrixClient, "prix non paye de client");
             // 
             // label1
             // 
@@ -239,6 +249,7 @@
             this.lblNomClient.Size = new System.Drawing.Size(216, 37);
             this.lblNomClient.TabIndex = 63;
             this.lblNomClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lblNomClient, "le nom du client");
             // 
             // txtMines
             // 
@@ -252,6 +263,7 @@
             this.txtMines.Name = "txtMines";
             this.txtMines.Size = new System.Drawing.Size(485, 35);
             this.txtMines.TabIndex = 65;
+            this.toolTip1.SetToolTip(this.txtMines, "le champ qui veut saisir le prix de réduire à client");
             this.txtMines.TextChanged += new System.EventHandler(this.txtMines_TextChanged);
             this.txtMines.Enter += new System.EventHandler(this.txtMines_Enter);
             this.txtMines.Leave += new System.EventHandler(this.txtMines_Leave);
@@ -274,6 +286,7 @@
             this.ckMines.Name = "ckMines";
             this.ckMines.Size = new System.Drawing.Size(15, 14);
             this.ckMines.TabIndex = 67;
+            this.toolTip1.SetToolTip(this.ckMines, "bouton pour activer le champs");
             this.ckMines.UseVisualStyleBackColor = true;
             this.ckMines.CheckedChanged += new System.EventHandler(this.ckMines_CheckedChanged);
             // 
@@ -338,5 +351,6 @@
         private System.Windows.Forms.TextBox txtMines;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox ckMines;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

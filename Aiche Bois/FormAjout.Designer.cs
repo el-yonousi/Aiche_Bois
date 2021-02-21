@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAjout));
             this.lstCmb = new System.Windows.Forms.ListBox();
             this.txtCmb = new System.Windows.Forms.TextBox();
@@ -36,6 +37,7 @@
             this.btnBack = new FontAwesome.Sharp.IconButton();
             this.btnSave = new FontAwesome.Sharp.IconButton();
             this.lblEcris = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // lstCmb
@@ -50,6 +52,7 @@
             this.lstCmb.Size = new System.Drawing.Size(511, 422);
             this.lstCmb.TabIndex = 1;
             this.lstCmb.TabStop = false;
+            this.toolTip1.SetToolTip(this.lstCmb, "la liste des types");
             // 
             // txtCmb
             // 
@@ -62,6 +65,7 @@
             this.txtCmb.Name = "txtCmb";
             this.txtCmb.Size = new System.Drawing.Size(465, 41);
             this.txtCmb.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.txtCmb, "Saisir le type");
             this.txtCmb.TextChanged += new System.EventHandler(this.txtCmb_TextChanged);
             // 
             // btnAddLstCmb
@@ -80,6 +84,7 @@
             this.btnAddLstCmb.Size = new System.Drawing.Size(40, 41);
             this.btnAddLstCmb.TabIndex = 1;
             this.btnAddLstCmb.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.btnAddLstCmb, "Ajouter à la liste");
             this.btnAddLstCmb.UseVisualStyleBackColor = false;
             this.btnAddLstCmb.Click += new System.EventHandler(this.btnAddLstCmb_Click);
             // 
@@ -98,6 +103,7 @@
             this.btnDeleteMesure.Name = "btnDeleteMesure";
             this.btnDeleteMesure.Size = new System.Drawing.Size(139, 45);
             this.btnDeleteMesure.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.btnDeleteMesure, "Supprimer de la base de données");
             this.btnDeleteMesure.UseVisualStyleBackColor = false;
             this.btnDeleteMesure.Click += new System.EventHandler(this.btnDeleteMesure_Click);
             // 
@@ -116,6 +122,7 @@
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(139, 45);
             this.btnBack.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.btnBack, "Annuler");
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -133,6 +140,8 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(139, 45);
             this.btnSave.TabIndex = 2;
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.toolTip1.SetToolTip(this.btnSave, "Enregistrer vers la base de données");
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -186,5 +195,6 @@
         private FontAwesome.Sharp.IconButton btnBack;
         private FontAwesome.Sharp.IconButton btnSave;
         private System.Windows.Forms.Label lblEcris;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

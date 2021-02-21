@@ -252,8 +252,7 @@ namespace Aiche_Bois
                         index = i;
                         break;
                     }
-
-                if (factures[index].TypeDeBois != "---")
+                if (!factures[index].CheckPVC)
                 {
                     str +=
                         @"<tr align='center'>
@@ -266,9 +265,28 @@ namespace Aiche_Bois
                 				<td>" + $"{factures[index].Metrage}" + @"</td>
                 			</tr>";
                 };
+
                 if (factures[index].TypePVC != "---")
                 {
-                    str += @"
+                    if (factures[index].CheckPVC)
+                    {
+                        str += @"
+                            <tr align='center'>
+                				<td rowSpan='3'>" + $"{factures[index].TotalTaillPVC}" + @"</td>
+                				<td>" + $"{factures[index].TypeDeBois}" + @"</td>
+                				<td rowSpan='3'>" + $"{factures[index].PrixMitresLinear}" + @"</td>
+                				<td rowSpan='3'>" + $"{factures[index].PrixTotalPVC}" + @"</td>
+                			</tr>
+                			<tr align='center'>
+                				<td>" + $"{factures[index].TypePVC}" + @"</td>
+                			</tr>
+                			<tr align='center'>
+                				<td>" + $"{factures[index].TailleCanto}" + @"</td>
+                			</tr>";
+                    }
+                    else
+                    {
+                        str += @"
                             <tr align='center'>
                 				<td rowSpan='2'>" + $"{factures[index].TotalTaillPVC}" + @"</td>
                 				<td>" + $"{factures[index].TypePVC}" + @"</td>
@@ -278,7 +296,8 @@ namespace Aiche_Bois
                 			<tr align='center'>
                 				<td>" + $"{factures[index].TailleCanto}" + @"</td>
                 			</tr>";
-                }
+                    };
+                };
 
                 str += @"
                         <tr>
@@ -418,7 +437,7 @@ namespace Aiche_Bois
                 String typePvc = "";
                 foreach (Facture f in factures)
                 {
-                    if (f.TypeDeBois != "---")
+                    if (!f.CheckPVC)
                     {
                         typeBois = f.TypeDeBois + "/..";
                         str +=
@@ -431,11 +450,30 @@ namespace Aiche_Bois
                 			<tr align='center'>
                 				<td>" + $"{f.Metrage}" + @"</td>
                 			</tr>";
-                    };
+                    }
+
                     if (f.TypePVC != "---")
                     {
-                        typePvc = f.TypePVC + "/..";
-                        str += @"
+                        if (f.CheckPVC)
+                        {
+                            str += @"
+                            <tr align='center'>
+                				<td rowSpan='3'>" + $"{f.TotalTaillPVC}" + @"</td>
+                				<td>" + $"{f.TypeDeBois}" + @"</td>
+                				<td rowSpan='3'>" + $"{f.PrixMitresLinear}" + @"</td>
+                				<td rowSpan='3'>" + $"{f.PrixTotalPVC}" + @"</td>
+                			</tr>
+                			<tr align='center'>
+                				<td>" + $"{f.TypePVC}" + @"</td>
+                			</tr>
+                			<tr align='center'>
+                				<td>" + $"{f.TailleCanto}" + @"</td>
+                			</tr>";
+                        }
+                        else
+                        {
+                            typePvc = f.TypePVC + "/..";
+                            str += @"
                             <tr align='center'>
                 				<td rowSpan='2'>" + $"{f.TotalTaillPVC}" + @"</td>
                 				<td>" + $"{f.TypePVC}" + @"</td>
@@ -445,6 +483,7 @@ namespace Aiche_Bois
                 			<tr align='center'>
                 				<td>" + $"{f.TailleCanto}" + @"</td>
                 			</tr>";
+                        }
                     }
                 }
 
@@ -478,7 +517,7 @@ namespace Aiche_Bois
                 			<td align='left'>Couleur</td>  
                 			<td colspan=2>" + $"{typeBois}" + @"</td>              
                 		</tr>
-                		<!-- Couleur -->
+                		<!-- Couleur canto -->
                 		<tr>  
                 			<td align='left'>Type Canto</td>  
                 			<td colspan=2>" + $"{typePvc}" + @"</td>              
@@ -580,7 +619,7 @@ namespace Aiche_Bois
                 String typeBois = "";
                 String type = "";
                 String symbole = "";
-
+                String orientation = "";
                 int index = 0;
                 for (int i = 0; i < factures.Count; i++)
                     if (factures[i].IDFacture == idFacture)
@@ -602,11 +641,30 @@ namespace Aiche_Bois
                                       </tr>";
                     }
                     else typeBois += @"<tr><td align='center' colSpan='5'>" + $"{factures[index].TypeDeBois}" + @"</td></tr>";
-                    for (int i = 0; i < mesures.Count; i++)
+                    foreach (Mesure msr in mesures)
                     {
-                        if (mesures[i].IdFacture == idFacture)
+                        if (msr.IdFacture == idFacture)
                         {
-                            switch (pvcs.Count > 0 ? pvcs[i].Ortn : "0")
+                            if (pvcs.Count > 0)
+                            {
+                                foreach (Pvc pvc in pvcs)
+                                {
+                                    if (pvc.IdFacture == idFacture)
+                                    {
+                                        if (msr.Quantite == pvc.Qte &&
+                                            msr.Largeur == pvc.Largr &&
+                                            msr.Longueur == pvc.Longr)
+                                        {
+                                            orientation = pvc.Ortn;
+                                            break;
+                                        }
+                                    }
+                                    else orientation = "0";
+                                }
+                            }
+                            else orientation = "0";
+
+                            switch (orientation)
                             {
                                 case "0": symbole = $"0"; break;
                                 case "h*1": symbole = $"___"; break;
@@ -623,9 +681,9 @@ namespace Aiche_Bois
                             {
                                 typeBois +=
                                @"<tr>
-                                    <td align = 'center'>" + $"{mesures[i].Quantite}" + @"</td>
-                                    <td align = 'center'>" + $"{mesures[i].Largeur}" + @"</td>
-                                    <td align = 'center'>" + $"{mesures[i].Longueur}" + @"</td>
+                                    <td align = 'center'>" + $"{msr.Quantite}" + @"</td>
+                                    <td align = 'center'>" + $"{msr.Largeur}" + @"</td>
+                                    <td align = 'center'>" + $"{msr.Longueur}" + @"</td>
                                     <td align = 'center' colSpan='2'>" + $"{symbole}" + @"</td>
                                  </tr> ";
                             }
@@ -633,21 +691,23 @@ namespace Aiche_Bois
                             {
                                 typeBois +=
                                @"<tr>
-                                    <td align = 'center'>" + $"{mesures[i].Quantite}" + @"</td>
-                                    <td align = 'center'>" + $"{mesures[i].Largeur}" + @"</td>
-                                    <td align = 'center'>" + $"{mesures[i].Longueur}" + @"</td>
-                                    <td align = 'center'>" + $"{mesures[i].Epaisseur}" + @"</td>
+                                    <td align = 'center'>" + $"{msr.Quantite}" + @"</td>
+                                    <td align = 'center'>" + $"{msr.Largeur}" + @"</td>
+                                    <td align = 'center'>" + $"{msr.Longueur}" + @"</td>
+                                    <td align = 'center'>" + $"{msr.Epaisseur}" + @"</td>
                                     <td align = 'center'>" + $"{symbole}" + @"</td>
                                  </tr>";
                             }
                         }
                     }
+                    if (factures[index].TypePVC != "---")
+                        typeBois += @"<tr><td align='center' colSpan='5'>" + $"{factures[index].TypePVC}" + @"</td></tr>";
                 }
                 else
                 {
                     type = "Pvc";
                     if (factures[index].TypePVC != "---")
-                        typeBois += @"<tr><td align='center' colSpan='5'>" + $"{factures[index].TypePVC}" + @"</td></tr>";
+                        typeBois += @"<tr><td align='center' colSpan='5'>" + $"{factures[index].TypeDeBois}" + @"</td></tr>";
                     foreach (Pvc p in pvcs)
                     {
                         if (p.IdFacture == idFacture)
@@ -673,6 +733,7 @@ namespace Aiche_Bois
                             </tr> ";
                         }
                     }
+                    typeBois += @"<tr><td align='center' colSpan='5'>" + $"{factures[index].TypePVC}" + @"</td></tr>";
                 }
 
                 string strHTML = @"<!DOCTYPE html>  
@@ -740,6 +801,7 @@ namespace Aiche_Bois
                 String typeBois = "";
                 String type = "";
                 String symbole = "";
+                String orientation = "";
                 foreach (Facture f in factures)
                 {
                     type = "Mesure";
@@ -750,11 +812,29 @@ namespace Aiche_Bois
                                       </tr>";
                     if (f.TypeMetres != "m" && !f.CheckPVC)
                         typeBois += @"<tr><td align='center' colSpan='5'>" + $"{f.TypeDeBois}" + @"</td></tr>";
-                    for (int i = 0; i < mesures.Count; i++)
+                    foreach (Mesure msr in mesures)
                     {
-                        if (mesures[i].IdFacture == f.IDFacture)
+                        if (msr.IdFacture == f.IDFacture)
                         {
-                            switch (pvcs.Count > 0 ? pvcs[i].Ortn : "0")
+                            if (pvcs.Count > 0)
+                            {
+                                foreach (Pvc pvc in pvcs)
+                                {
+                                    if (pvc.IdFacture == f.IDFacture)
+                                    {
+                                        if (msr.Quantite == pvc.Qte &&
+                                            msr.Largeur == pvc.Largr &&
+                                            msr.Longueur == pvc.Longr)
+                                        {
+                                            orientation = pvc.Ortn;
+                                            break;
+                                        }
+                                    }
+                                    else orientation = "0";
+                                }
+                            }
+                            else orientation = "0";
+                            switch (orientation)
                             {
                                 case "0": symbole = $"0"; break;
                                 case "h*1": symbole = $"___"; break;
@@ -771,9 +851,9 @@ namespace Aiche_Bois
                             {
                                 typeBois +=
                                @"<tr>
-                                    <td align = 'center'>" + $"{mesures[i].Quantite}" + @"</td>
-                                    <td align = 'center'>" + $"{mesures[i].Largeur}" + @"</td>
-                                    <td align = 'center'>" + $"{mesures[i].Longueur}" + @"</td>
+                                    <td align = 'center'>" + $"{msr.Quantite}" + @"</td>
+                                    <td align = 'center'>" + $"{msr.Largeur}" + @"</td>
+                                    <td align = 'center'>" + $"{msr.Longueur}" + @"</td>
                                     <td align = 'center' colSpan='2'>" + $"{symbole}" + @"</td>
                                  </tr> ";
                             }
@@ -781,10 +861,10 @@ namespace Aiche_Bois
                             {
                                 typeBois +=
                                @"<tr>
-                                    <td align = 'center'>" + $"{mesures[i].Quantite}" + @"</td>
-                                    <td align = 'center'>" + $"{mesures[i].Largeur}" + @"</td>
-                                    <td align = 'center'>" + $"{mesures[i].Longueur}" + @"</td>
-                                    <td align = 'center'>" + $"{mesures[i].Epaisseur}" + @"</td>
+                                    <td align = 'center'>" + $"{msr.Quantite}" + @"</td>
+                                    <td align = 'center'>" + $"{msr.Largeur}" + @"</td>
+                                    <td align = 'center'>" + $"{msr.Longueur}" + @"</td>
+                                    <td align = 'center'>" + $"{msr.Epaisseur}" + @"</td>
                                     <td align = 'center'>" + $"{symbole}" + @"</td>
                                  </tr>";
                             }

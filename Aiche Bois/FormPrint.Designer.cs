@@ -29,6 +29,7 @@ namespace Aiche_Bois
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrint));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,6 +39,7 @@ namespace Aiche_Bois
             this.lstMesure = new System.Windows.Forms.ListBox();
             this.t_Print = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.t_Print.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +89,7 @@ namespace Aiche_Bois
             this.lstFacture.Name = "lstFacture";
             this.lstFacture.Size = new System.Drawing.Size(237, 369);
             this.lstFacture.TabIndex = 17;
+            this.toolTip1.SetToolTip(this.lstFacture, "la liste des facture client");
             // 
             // btnPrint
             // 
@@ -103,6 +106,7 @@ namespace Aiche_Bois
             this.btnPrint.Size = new System.Drawing.Size(478, 50);
             this.btnPrint.TabIndex = 19;
             this.btnPrint.Text = "Imprimez";
+            this.toolTip1.SetToolTip(this.btnPrint, "le bouton pour imprimer la selection du facture ou de mesure");
             this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
@@ -136,6 +140,7 @@ namespace Aiche_Bois
             this.lstMesure.Name = "lstMesure";
             this.lstMesure.Size = new System.Drawing.Size(237, 369);
             this.lstMesure.TabIndex = 16;
+            this.toolTip1.SetToolTip(this.lstMesure, "la liste des mesures");
             // 
             // t_Print
             // 
@@ -208,5 +213,6 @@ namespace Aiche_Bois
         private System.Windows.Forms.ListBox lstMesure;
         private System.Windows.Forms.TableLayoutPanel t_Print;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

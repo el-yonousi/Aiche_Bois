@@ -29,12 +29,14 @@ namespace Aiche_Bois
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMessage));
             this.btnOK = new System.Windows.Forms.Button();
             this.btnNo = new System.Windows.Forms.Button();
             this.btnYes = new System.Windows.Forms.Button();
             this.iconCharMessage = new FontAwesome.Sharp.IconPictureBox();
             this.lblShowMessage = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.iconCharMessage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,11 +48,12 @@ namespace Aiche_Bois
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Ubuntu", 14F, System.Drawing.FontStyle.Bold);
             this.btnOK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.btnOK.Location = new System.Drawing.Point(371, 256);
+            this.btnOK.Location = new System.Drawing.Point(365, 256);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(207, 43);
             this.btnOK.TabIndex = 262;
-            this.btnOK.Text = "OK";
+            this.btnOK.Text = "D\'ACCORD";
+            this.toolTip1.SetToolTip(this.btnOK, "click d\'accord pour retour à la page");
             this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Visible = false;
             // 
@@ -62,11 +65,12 @@ namespace Aiche_Bois
             this.btnNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNo.Font = new System.Drawing.Font("Ubuntu", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.btnNo.Location = new System.Drawing.Point(371, 256);
+            this.btnNo.Location = new System.Drawing.Point(365, 256);
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(207, 43);
             this.btnNo.TabIndex = 263;
-            this.btnNo.Text = "No";
+            this.btnNo.Text = "Non";
+            this.toolTip1.SetToolTip(this.btnNo, "Si vous n\'êtes pas d\'accord, cliquez sur Non.");
             this.btnNo.UseVisualStyleBackColor = false;
             this.btnNo.Visible = false;
             // 
@@ -78,11 +82,12 @@ namespace Aiche_Bois
             this.btnYes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYes.Font = new System.Drawing.Font("Ubuntu", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnYes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.btnYes.Location = new System.Drawing.Point(155, 256);
+            this.btnYes.Location = new System.Drawing.Point(149, 256);
             this.btnYes.Name = "btnYes";
             this.btnYes.Size = new System.Drawing.Size(202, 43);
             this.btnYes.TabIndex = 264;
-            this.btnYes.Text = "Yes";
+            this.btnYes.Text = "Oui";
+            this.toolTip1.SetToolTip(this.btnYes, "Si vous acceptez, cliquez sur Oui");
             this.btnYes.UseVisualStyleBackColor = false;
             this.btnYes.Visible = false;
             // 
@@ -131,6 +136,8 @@ namespace Aiche_Bois
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormMessage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detail du facture";
@@ -146,5 +153,6 @@ namespace Aiche_Bois
         private System.Windows.Forms.Button btnYes;
         private FontAwesome.Sharp.IconPictureBox iconCharMessage;
         private System.Windows.Forms.Label lblShowMessage;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

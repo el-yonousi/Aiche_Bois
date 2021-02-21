@@ -97,10 +97,6 @@
             this.btnImportPvc = new FontAwesome.Sharp.IconButton();
             this.btnSavePvc = new FontAwesome.Sharp.IconButton();
             this.dtGridPvc = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmbOrientationPvc = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.txtQtePVC = new System.Windows.Forms.TextBox();
             this.txtLargPVC = new System.Windows.Forms.TextBox();
@@ -167,6 +163,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbOrientationPvc = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.t_home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridClient)).BeginInit();
             this.t_side_bar.SuspendLayout();
@@ -679,6 +679,7 @@
             resources.GetString("cmbTypeDeBois.Items2"),
             resources.GetString("cmbTypeDeBois.Items3")});
             this.cmbTypeDeBois.Name = "cmbTypeDeBois";
+            this.cmbTypeDeBois.TabStop = false;
             this.toolTip.SetToolTip(this.cmbTypeDeBois, resources.GetString("cmbTypeDeBois.ToolTip"));
             this.cmbTypeDeBois.SelectedIndexChanged += new System.EventHandler(this.cmbTypeDeBois_SelectedIndexChanged);
             // 
@@ -690,6 +691,7 @@
             this.txtSearchFacture.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSearchFacture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.txtSearchFacture.Name = "txtSearchFacture";
+            this.txtSearchFacture.TabStop = false;
             this.toolTip.SetToolTip(this.txtSearchFacture, resources.GetString("txtSearchFacture.ToolTip"));
             this.txtSearchFacture.Enter += new System.EventHandler(this.txtNomClient_Enter);
             this.txtSearchFacture.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearchFacture_KeyUp);
@@ -703,6 +705,7 @@
             this.lstTypeBois.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.lstTypeBois.FormattingEnabled = true;
             this.lstTypeBois.Name = "lstTypeBois";
+            this.lstTypeBois.TabStop = false;
             this.toolTip.SetToolTip(this.lstTypeBois, resources.GetString("lstTypeBois.ToolTip"));
             this.lstTypeBois.SelectedIndexChanged += new System.EventHandler(this.lstTypeBois_SelectedIndexChanged);
             // 
@@ -922,6 +925,7 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.cmbOrientationPvc});
+            this.dtGridPvc.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.dtGridPvc, "dtGridPvc");
             this.dtGridPvc.EnableHeadersVisualStyles = false;
             this.dtGridPvc.GridColor = System.Drawing.Color.White;
@@ -946,45 +950,6 @@
             this.dtGridPvc.RowTemplate.Height = 30;
             this.dtGridPvc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtGridPvc.TabStop = false;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            resources.ApplyResources(this.dataGridViewTextBoxColumn4, "dataGridViewTextBoxColumn4");
-            this.dataGridViewTextBoxColumn4.MaxInputLength = 3;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.dataGridViewTextBoxColumn5, "dataGridViewTextBoxColumn5");
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            resources.ApplyResources(this.dataGridViewTextBoxColumn6, "dataGridViewTextBoxColumn6");
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // cmbOrientationPvc
-            // 
-            this.cmbOrientationPvc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cmbOrientationPvc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            resources.ApplyResources(this.cmbOrientationPvc, "cmbOrientationPvc");
-            this.cmbOrientationPvc.Items.AddRange(new object[] {
-            "0",
-            "h*1",
-            "h*2",
-            "v*1",
-            "v*2",
-            "4",
-            "h*1+v*2",
-            "h*2+v*1",
-            "h*1+v*1"});
-            this.cmbOrientationPvc.Name = "cmbOrientationPvc";
-            this.cmbOrientationPvc.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cmbOrientationPvc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // tableLayoutPanel14
             // 
@@ -1106,7 +1071,6 @@
             this.btncmbNbrCanto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btncmbNbrCanto.IconSize = 25;
             this.btncmbNbrCanto.Name = "btncmbNbrCanto";
-            this.btncmbNbrCanto.TabStop = false;
             this.btncmbNbrCanto.UseVisualStyleBackColor = false;
             this.btncmbNbrCanto.Click += new System.EventHandler(this.btncmbNbrCanto_Click);
             // 
@@ -1302,6 +1266,7 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
+            this.dtGMesure.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.dtGMesure, "dtGMesure");
             this.dtGMesure.EnableHeadersVisualStyles = false;
             this.dtGMesure.GridColor = System.Drawing.Color.White;
@@ -1463,6 +1428,7 @@
             resources.GetString("cmbTypeDuMetres.Items2"),
             resources.GetString("cmbTypeDuMetres.Items3")});
             this.cmbTypeDuMetres.Name = "cmbTypeDuMetres";
+            this.cmbTypeDuMetres.TabStop = false;
             this.toolTip.SetToolTip(this.cmbTypeDuMetres, resources.GetString("cmbTypeDuMetres.ToolTip"));
             this.cmbTypeDuMetres.SelectedIndexChanged += new System.EventHandler(this.cmbTypeDuMetres_SelectedIndexChanged);
             // 
@@ -1685,9 +1651,48 @@
             resources.ApplyResources(this.label18, "label18");
             this.label18.Name = "label18";
             // 
+            // dataGridViewTextBoxColumn4
+            // 
+            resources.ApplyResources(this.dataGridViewTextBoxColumn4, "dataGridViewTextBoxColumn4");
+            this.dataGridViewTextBoxColumn4.MaxInputLength = 3;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.dataGridViewTextBoxColumn5, "dataGridViewTextBoxColumn5");
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            resources.ApplyResources(this.dataGridViewTextBoxColumn6, "dataGridViewTextBoxColumn6");
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // cmbOrientationPvc
+            // 
+            this.cmbOrientationPvc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cmbOrientationPvc.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.cmbOrientationPvc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.cmbOrientationPvc, "cmbOrientationPvc");
+            this.cmbOrientationPvc.Items.AddRange(new object[] {
+            "0",
+            "h*1",
+            "h*2",
+            "v*1",
+            "v*2",
+            "4",
+            "h*1+v*2",
+            "h*2+v*1",
+            "h*1+v*1"});
+            this.cmbOrientationPvc.Name = "cmbOrientationPvc";
+            this.cmbOrientationPvc.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cmbOrientationPvc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // FormClient
             // 
-            this.AcceptButton = this.btnAddClient;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             resources.ApplyResources(this, "$this");
@@ -1862,11 +1867,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.TextBox txtNomClient;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewComboBoxColumn cmbOrientationPvc;
-        private System.Windows.Forms.TextBox txtNomClient;
     }
 }
 
