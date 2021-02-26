@@ -195,5 +195,11 @@ namespace Aiche_Bois
                 }
             }
         }
+
+        private void t_type_bois_pvc_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 13)
+                b_add_to_list.PerformClick();
+        }
     }
 }

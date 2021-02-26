@@ -67,6 +67,7 @@
             this.t_type_bois_pvc.TabIndex = 0;
             this.toolTip1.SetToolTip(this.t_type_bois_pvc, "Saisir le type");
             this.t_type_bois_pvc.TextChanged += new System.EventHandler(this.txtCmb_TextChanged);
+            this.t_type_bois_pvc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.t_type_bois_pvc_KeyDown);
             // 
             // b_add_to_list
             // 

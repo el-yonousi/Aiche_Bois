@@ -1493,9 +1493,9 @@ namespace Aiche_Bois
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void txtSearchFacture_KeyUp(object sender, KeyEventArgs e)
+        private void t_search_type_bois_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == 13)
+            if (e.KeyCode == Keys.Enter)
             {
                 /*si le textBox est vide, remplir tous les items*/
                 if (string.IsNullOrEmpty(t_search_type_bois.Text))
@@ -1519,6 +1519,9 @@ namespace Aiche_Bois
                 {
                     lt_type_bois.SelectedIndex = 0;
                 }
+
+                e.Handled = true;
+                e.SuppressKeyPress = true;
             }
         }
 
@@ -1736,12 +1739,14 @@ namespace Aiche_Bois
             {
                 dg_mesure.Rows.Add(t_quantity_mesure.Text, t_largeur_mesure.Text, t_longueur_mesure.Text);
             }
-            // calculate datagride rows
-            RemplirDataMesure();
+
             t_quantity_mesure.Clear();
             t_largeur_mesure.Clear();
             t_longueur_mesure.Clear();
             t_quantity_mesure.Focus();
+
+            // calculate datagride rows
+            RemplirDataMesure();
         }
 
         /// <summary>
@@ -1749,10 +1754,14 @@ namespace Aiche_Bois
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void txtQuantite_KeyUp(object sender, KeyEventArgs e)
+        private void t_quantity_mesure_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == 13)
+            if (e.KeyCode == Keys.Enter)
+            {
                 b_add_mesure.PerformClick();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
         }
 
         /// <summary>
@@ -1760,12 +1769,15 @@ namespace Aiche_Bois
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void txtQtePVC_KeyUp(object sender, KeyEventArgs e)
+        private void t_quantity_pvc_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == 13)
+            if (e.KeyCode == Keys.Enter)
+            {
                 b_add_seul_pvc.PerformClick();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
         }
-
         /// <summary>
         /// button delete mesure by select row from data gride mesure
         /// </summary>
