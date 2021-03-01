@@ -5,13 +5,14 @@ namespace Aiche_Bois
 {
     static class LogFile
     {
+
         /// <summary>
         /// log file method
         /// </summary>
         /// <param name="ex"></param>
         static public void Message(Exception ex)
         {
-            String targetPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\aiche bois\\Journal des Erreurs";
+            String targetPath = Program.generale_path + "\\Journal_des_Erreurs";
 
             if (!Directory.Exists(targetPath))
             {

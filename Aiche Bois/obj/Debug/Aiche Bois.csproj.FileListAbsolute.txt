@@ -78,3 +78,4 @@ C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche
 C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.csproj.CopyComplete
 C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.exe
 C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.pdb
+C:\Users\mohamed\OneDrive - OFPPT\Projects\Aiche-Bois\Aiche Bois\obj\Debug\Aiche Bois.csprojAssemblyReference.cache

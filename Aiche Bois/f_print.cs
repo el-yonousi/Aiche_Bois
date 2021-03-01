@@ -63,7 +63,7 @@ namespace Aiche_Bois
             // set connetion initialise
             connection.ConnectionString = Program.Path;
 
-            path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\aiche bois\\les factures\\";
+            path = Program.generale_path + "\\les factures\\";
             // If directory does not exist, don't even try   
             if (!Directory.Exists(path))
             {

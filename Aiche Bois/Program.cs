@@ -9,7 +9,11 @@ namespace Aiche_Bois
         /// The main entry point for the application.
         /// </summary>
 
-        /*declaration des variables*/
+        /* generalae path for this project */
+        //private string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\aiche bois\\base donnée";
+        public static string generale_path = Environment.GetEnvironmentVariable("OneDriveConsumer") + "\\aiche_bois";
+
+        /* this variable to add type bois into database */
         public static string btnAddTypeClick;
 
         //public password for databse access

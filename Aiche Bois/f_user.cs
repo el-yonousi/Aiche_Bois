@@ -10,7 +10,7 @@ namespace Aiche_Bois
         private string fileName = "aicheBois.accdb";
         private string fileNameType = "type.accdb";
         private string sourcePath = Application.StartupPath + "\\Resources\\";
-        private string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\aiche bois\\base donnée";
+        private string targetPath = Program.generale_path + "\\base_donnee";
         public f_user()
         {
             if (System.Diagnostics.Process.GetProcessesByName("aiche bois").Length > 0)

@@ -72,7 +72,7 @@ namespace Aiche_Bois
                 OleDbCommand command = new OleDbCommand
                 {
                     Connection = connection,
-                    CommandText = "select * from " + typeBois
+                    CommandText = "SELECT Libelle FROM " + typeBois
                 };
                 OleDbDataReader reader = command.ExecuteReader();
                 while (reader.Read())
@@ -107,11 +107,28 @@ namespace Aiche_Bois
                 return;
             }
 
+            // check if item already exists
+            foreach (String s_type in lt_type_bois_pvc.Items)
+            {
+                if (t_type_bois_pvc.Text.ToLower() == s_type.ToLower())
+                {
+                    message = new f_message("Le type saisi existe déjà", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+                    message.ShowDialog();
+                    t_type_bois_pvc.Focus();
+                    return;
+                }
+            }
+
             lt_type_bois_pvc.Items.Add(t_type_bois_pvc.Text.ToUpper());
             t_type_bois_pvc.Clear();
             t_type_bois_pvc.Focus();
         }
 
+        /// <summary>
+        /// buttton for save types on database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
             /*suavgarder les donnees dans dataBase*/

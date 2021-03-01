@@ -1070,7 +1070,7 @@ namespace Aiche_Bois
                 }
 
                 SaveFileDialog save = new SaveFileDialog();
-                String path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\aiche bois\\Information annuelle\\";
+                String path = Program.generale_path + "\\Information annuelle\\";
                 if (!Directory.Exists(path))
                 {
                     Directory.CreateDirectory(path);

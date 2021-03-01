@@ -279,123 +279,6 @@
   <data name="t_side_bar.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;b_statistical_client.Name" xml:space="preserve">
-    <value>b_statistical_client</value>
-  </data>
-  <data name="&gt;&gt;b_statistical_client.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;b_statistical_client.Parent" xml:space="preserve">
-    <value>t_side_bar</value>
-  </data>
-  <data name="&gt;&gt;b_statistical_client.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;b_print_client.Name" xml:space="preserve">
-    <value>b_print_client</value>
-  </data>
-  <data name="&gt;&gt;b_print_client.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;b_print_client.Parent" xml:space="preserve">
-    <value>t_side_bar</value>
-  </data>
-  <data name="&gt;&gt;b_print_client.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;b_home.Name" xml:space="preserve">
-    <value>b_home</value>
-  </data>
-  <data name="&gt;&gt;b_home.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;b_home.Parent" xml:space="preserve">
-    <value>t_side_bar</value>
-  </data>
-  <data name="&gt;&gt;b_home.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;b_delete_client.Name" xml:space="preserve">
-    <value>b_delete_client</value>
-  </data>
-  <data name="&gt;&gt;b_delete_client.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;b_delete_client.Parent" xml:space="preserve">
-    <value>t_side_bar</value>
-  </data>
-  <data name="&gt;&gt;b_delete_client.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;b_add_client.Name" xml:space="preserve">
-    <value>b_add_client</value>
-  </data>
-  <data name="&gt;&gt;b_add_client.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;b_add_client.Parent" xml:space="preserve">
-    <value>t_side_bar</value>
-  </data>
-  <data name="&gt;&gt;b_add_client.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;b_edit_client.Name" xml:space="preserve">
-    <value>b_edit_client</value>
-  </data>
-  <data name="&gt;&gt;b_edit_client.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;b_edit_client.Parent" xml:space="preserve">
-    <value>t_side_bar</value>
-  </data>
-  <data name="&gt;&gt;b_edit_client.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>t_side_bar</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="t_side_bar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="t_side_bar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 36</value>
-  </data>
-  <data name="t_side_bar.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 0, 5, 0</value>
-  </data>
-  <data name="t_side_bar.RowCount" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="t_side_bar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 820</value>
-  </data>
-  <data name="t_side_bar.TabIndex" type="System.Int32, mscorlib">
-    <value>58</value>
-  </data>
-  <data name="&gt;&gt;t_side_bar.Name" xml:space="preserve">
-    <value>t_side_bar</value>
-  </data>
-  <data name="&gt;&gt;t_side_bar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;t_side_bar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;t_side_bar.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="t_side_bar.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="b_statistical_client" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="b_print_client" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="b_home" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="b_delete_client" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="b_add_client" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="b_edit_client" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label4" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Absolute,86,Percent,7.691394,Percent,7.691394,Percent,7.691394,Percent,7.691394,Percent,7.691394,Percent,7.691394,Percent,53.85163" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
   <data name="b_statistical_client.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -708,6 +591,60 @@
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="t_side_bar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="t_side_bar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 36</value>
+  </data>
+  <data name="t_side_bar.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 5, 0</value>
+  </data>
+  <data name="t_side_bar.RowCount" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="t_side_bar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>231, 820</value>
+  </data>
+  <data name="t_side_bar.TabIndex" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
+  <data name="&gt;&gt;t_side_bar.Name" xml:space="preserve">
+    <value>t_side_bar</value>
+  </data>
+  <data name="&gt;&gt;t_side_bar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;t_side_bar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;t_side_bar.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="t_side_bar.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="b_statistical_client" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="b_print_client" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="b_home" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="b_delete_client" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="b_add_client" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="b_edit_client" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label4" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Absolute,86,Percent,7.691394,Percent,7.691394,Percent,7.691394,Percent,7.691394,Percent,7.691394,Percent,7.691394,Percent,53.85163" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="label26.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="label26.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Ubuntu, 14.999999pt, style=Bold</value>
+  </data>
+  <data name="label26.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label26.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 34</value>
+  </data>
+  <data name="label26.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1099, 3</value>
+  </data>
+  <data name="label26.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="label26.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
   <data name="&gt;&gt;label26.Name" xml:space="preserve">
     <value>label26</value>
   </data>
@@ -745,121 +682,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;p_home.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label26.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="label26.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Ubuntu, 14.999999pt, style=Bold</value>
-  </data>
-  <data name="label26.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label26.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 34</value>
-  </data>
-  <data name="label26.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1099, 3</value>
-  </data>
-  <data name="label26.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="label26.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;label26.Name" xml:space="preserve">
-    <value>label26</value>
-  </data>
-  <data name="&gt;&gt;label26.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label26.Parent" xml:space="preserve">
-    <value>p_home</value>
-  </data>
-  <data name="&gt;&gt;label26.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="t_header.ColumnCount" type="System.Int32, mscorlib">
     <value>4</value>
-  </data>
-  <data name="&gt;&gt;b_exit.Name" xml:space="preserve">
-    <value>b_exit</value>
-  </data>
-  <data name="&gt;&gt;b_exit.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;b_exit.Parent" xml:space="preserve">
-    <value>t_header</value>
-  </data>
-  <data name="&gt;&gt;b_exit.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;b_maximize.Name" xml:space="preserve">
-    <value>b_maximize</value>
-  </data>
-  <data name="&gt;&gt;b_maximize.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;b_maximize.Parent" xml:space="preserve">
-    <value>t_header</value>
-  </data>
-  <data name="&gt;&gt;b_maximize.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;b_minimize.Name" xml:space="preserve">
-    <value>b_minimize</value>
-  </data>
-  <data name="&gt;&gt;b_minimize.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;b_minimize.Parent" xml:space="preserve">
-    <value>t_header</value>
-  </data>
-  <data name="&gt;&gt;b_minimize.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>t_header</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="t_header.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="t_header.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="t_header.RowCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="t_header.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1330, 36</value>
-  </data>
-  <data name="t_header.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;t_header.Name" xml:space="preserve">
-    <value>t_header</value>
-  </data>
-  <data name="&gt;&gt;t_header.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;t_header.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;t_header.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="t_header.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="b_exit" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="b_maximize" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="b_minimize" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="pictureBox1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,91,Percent,3,Percent,3,Percent,3" /&gt;&lt;Rows Styles="Percent,100,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="b_exit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -1614,6 +1440,36 @@
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="t_header.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="t_header.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="t_header.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="t_header.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1330, 36</value>
+  </data>
+  <data name="t_header.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;t_header.Name" xml:space="preserve">
+    <value>t_header</value>
+  </data>
+  <data name="&gt;&gt;t_header.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;t_header.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;t_header.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="t_header.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="b_exit" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="b_maximize" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="b_minimize" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="pictureBox1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,91,Percent,3,Percent,3,Percent,3" /&gt;&lt;Rows Styles="Percent,100,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tblp_add_edit.ColumnCount" type="System.Int32, mscorlib">
     <value>10</value>
@@ -4793,7 +4649,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tblp_add_edit.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="tblp_add_edit.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblNumeroFacture" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="b_save_client" Row="20" RowSpan="1" Column="7" ColumnSpan="3" /&gt;&lt;Control Name="b_add_new_facture" Row="20" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="t_prix_rest_client" Row="19" RowSpan="1" Column="7" ColumnSpan="3" /&gt;&lt;Control Name="t_prix_total_client" Row="19" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="label19" Row="18" RowSpan="1" Column="7" ColumnSpan="3" /&gt;&lt;Control Name="label18" Row="18" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="cb_id_facture" Row="1" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label6" Row="18" RowSpan="1" Column="3" ColumnSpan="4" /&gt;&lt;Control Name="lblTypeDuMetres" Row="0" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="label7" Row="0" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="t_prix_metre_mesure" Row="1" RowSpan="1" Column="2" ColumnSpan="3" /&gt;&lt;Control Name="t_nom_client" Row="5" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="cb_type_pvc" Row="1" RowSpan="1" Column="7" ColumnSpan="2" /&gt;&lt;Control Name="b_cmb_pvc" Row="1" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="dp_date_facture" Row="3" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label2" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label10" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="label9" Row="2" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="4" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lblEpaisseur" Row="2" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="label22" Row="2" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="label21" Row="2" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="label23" Row="2" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="label24" Row="2" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="t_quantity_mesure" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="t_largeur_mesure" Row="3" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="t_longueur_mesure" Row="3" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="t_epaisseur_mesure" Row="3" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="t_quantity_pvc" Row="3" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="t_largeur_pvc" Row="3" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="t_longueur_pvc" Row="3" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="cb_orientation_pvc" Row="3" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="t_prix_avance_client" Row="19" RowSpan="1" Column="4" ColumnSpan="3" /&gt;&lt;Control Name="b_add_mesure" Row="4" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="b_add_seul_pvc" Row="4" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="b_delete_seul_pvc" Row="5" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="b_import_pvc" Row="6" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="b_save_pvc" Row="7" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="b_delete_mesure" Row="5" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="b_export_csv" Row="7" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="dg_mesure" Row="4" RowSpan="4" Column="2" ColumnSpan="3" /&gt;&lt;Control Name="dg_pvc" Row="4" RowSpan="4" Column="6" ColumnSpan="3" /&gt;&lt;Control Name="lblMesure" Row="8" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="label12" Row="8" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="t_total_size_pvc" Row="9" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="t_total_size_mesure" Row="9" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="label15" Row="6" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="cb_type_bois" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="b_cmb_categorie" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="8" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="t_search_type_bois" Row="9" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lt_type_bois" Row="10" RowSpan="4" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label16" Row="10" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="label13" Row="10" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="t_categorie" Row="11" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="t_size_pvc" Row="11" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="label14" Row="12" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="t_prix_metre_linear_pvc" Row="13" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="label17" Row="14" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="label20" Row="12" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="t_metrage_feuille" Row="13" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="label11" Row="14" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="t_prix_total_pvc" Row="15" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="txtPrixTotalMesure" Row="15" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="label5" Row="14" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="t_type_Bois" Row="15" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="b_print_facture" Row="16" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="b_add_facture" Row="16" RowSpan="1" Column="6" ColumnSpan="2" /&gt;&lt;Control Name="b_clear" Row="16" RowSpan="1" Column="8" ColumnSpan="2" /&gt;&lt;Control Name="b_delete_facture" Row="16" RowSpan="1" Column="3" ColumnSpan="3" /&gt;&lt;Control Name="label25" Row="17" RowSpan="1" Column="0" ColumnSpan="10" /&gt;&lt;Control Name="cb_type_metres" Row="1" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="ck_avance_client" Row="19" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="ck_seul_pvc" Row="1" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,19.81132,Percent,4.716981,Percent,9.433961,Percent,9.433961,Percent,9.433961,Percent,9.433961,Percent,9.433961,Percent,9.433961,Percent,9.433961,Percent,9.433961" /&gt;&lt;Rows Styles="Percent,3.039589,Percent,5.065982,Percent,3.039589,Percent,5.065982,Percent,5.065982,Percent,5.065982,Percent,5.065982,Percent,5.065982,Percent,5.065982,Percent,4.281373,Percent,5.749271,Percent,5.065982,Percent,5.065982,Percent,4.036723,Percent,3.914398,Percent,5.065982,Percent,5.065982,Percent,5.065982,Percent,5.065982,Percent,5.065982,Percent,5.015322,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
