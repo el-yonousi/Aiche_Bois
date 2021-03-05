@@ -12,7 +12,7 @@ namespace Aiche_Bois
         /// <param name="ex"></param>
         static public void Message(Exception ex)
         {
-            String targetPath = Program.generale_path + "\\Journal_des_Erreurs";
+            String targetPath = Program.generale_path + "\\journal_des_erreurs";
 
             if (!Directory.Exists(targetPath))
             {

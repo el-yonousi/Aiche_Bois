@@ -10,7 +10,7 @@ namespace Aiche_Bois
         /// </summary>
 
         /* generalae path for this project */
-        //private string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\aiche bois\\base donnée";
+        public static string document_path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\aiche_bois";
         public static string generale_path = Environment.GetEnvironmentVariable("OneDriveConsumer") + "\\aiche_bois";
 
         /* this variable to add type bois into database */

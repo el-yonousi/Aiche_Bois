@@ -121,6 +121,11 @@ namespace Aiche_Bois
             t_pass_word.UseSystemPasswordChar = false;
         }
 
+        /// <summary>
+        /// on load event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormUser_Load(object sender, EventArgs e)
         {
             t_user_name.Text = Environment.UserName.ToString().ToUpper();

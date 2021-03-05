@@ -2,11 +2,20 @@
 {
     class Mesure
     {
-        /*les constrecteurs*/
+        /// <summary>
+        /// Constructor:: by default
+        /// </summary>
         public Mesure()
         {
         }
 
+        /// <summary>
+        /// Constructor:: double quantite, double largeur, double longueur, double epaisseur
+        /// </summary>
+        /// <param name="quantite"></param>
+        /// <param name="largeur"></param>
+        /// <param name="longueur"></param>
+        /// <param name="epaisseur"></param>
         public Mesure(double quantite, double largeur, double longueur, double epaisseur)
         {
             Quantite = quantite;

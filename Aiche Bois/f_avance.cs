@@ -238,6 +238,11 @@ namespace Aiche_Bois
             Close();
         }
 
+        /// <summary>
+        /// if button is checked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ckMines_CheckedChanged(object sender, EventArgs e)
         {
             t_mines_price.Enabled = ckMines.Checked;
@@ -248,12 +253,22 @@ namespace Aiche_Bois
                 t_price_add_cLient.Focus();
         }
 
+        /// <summary>
+        /// textBox Style on Enter event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtMines_Enter(object sender, EventArgs e)
         {
             ((TextBox)sender).BackColor = System.Drawing.Color.FromArgb(47, 47, 47);
             ((TextBox)sender).ForeColor = System.Drawing.Color.FromArgb(255, 170, 0);
         }
 
+        /// <summary>
+        /// textBox Style on Leave event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtMines_Leave(object sender, EventArgs e)
         {
             ((TextBox)sender).BackColor = System.Drawing.Color.FromArgb(255, 244, 228);

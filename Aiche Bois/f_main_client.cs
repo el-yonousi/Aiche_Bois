@@ -241,42 +241,6 @@ namespace Aiche_Bois
         }
 
         /// <summary>
-        /// remplir listeBox MDF, LATTE, STD de dataBase
-        /// </summary>
-        /// <param name="typeBois"></param>
-        DataTable tb_Type = new DataTable();
-        private void remplirListe(string typeBois)
-        {
-            lt_type_bois.Items.Clear();
-            tb_Type.Rows.Clear();
-            try
-            {
-                connectionType.Open();
-                OleDbCommand command = new OleDbCommand
-                {
-                    Connection = connectionType,
-                    CommandText = "select Libelle from " + typeBois
-                };
-
-                tb_Type.Load(command.ExecuteReader());
-
-                connectionType.Close();
-
-                for (int i = 0; i < tb_Type.Rows.Count; i++)
-                {
-                    lt_type_bois.Items.Add(tb_Type.Rows[i][0].ToString());
-                }
-                lt_type_bois.SelectedIndex = lt_type_bois.Items.Count - 1;
-
-            }
-            catch (Exception ex)
-            {
-                connectionType.Close();
-                LogFile.Message(ex);
-            }
-        }
-
-        /// <summary>
         /// clear textBox and datagrid
         /// </summary>
         private void ViderTxtBox()
@@ -520,7 +484,7 @@ namespace Aiche_Bois
                 OleDbCommand command = new OleDbCommand
                 {
                     Connection = connectionType,
-                    CommandText = "select * from PVC"
+                    CommandText = "select Libelle from PVC"
                 };
                 OleDbDataReader reader = command.ExecuteReader();
                 while (reader.Read())
@@ -528,6 +492,42 @@ namespace Aiche_Bois
                     cb_type_pvc.Items.Add(reader["Libelle"].ToString());
                 }
                 connectionType.Close();
+            }
+            catch (Exception ex)
+            {
+                connectionType.Close();
+                LogFile.Message(ex);
+            }
+        }
+
+        /// <summary>
+        /// remplir listeBox MDF, LATTE, STD de dataBase
+        /// </summary>
+        /// <param name="typeBois"></param>
+        DataTable tb_Type = new DataTable();
+        private void remplirListe(string typeBois)
+        {
+            lt_type_bois.Items.Clear();
+            tb_Type.Rows.Clear();
+            try
+            {
+                connectionType.Open();
+                OleDbCommand command = new OleDbCommand
+                {
+                    Connection = connectionType,
+                    CommandText = "select Libelle from " + typeBois
+                };
+
+                tb_Type.Load(command.ExecuteReader());
+
+                connectionType.Close();
+
+                for (int i = 0; i < tb_Type.Rows.Count; i++)
+                {
+                    lt_type_bois.Items.Add(tb_Type.Rows[i][0].ToString());
+                }
+                lt_type_bois.SelectedIndex = lt_type_bois.Items.Count - 1;
+
             }
             catch (Exception ex)
             {
@@ -1070,7 +1070,7 @@ namespace Aiche_Bois
                 }
 
                 SaveFileDialog save = new SaveFileDialog();
-                String path = Program.generale_path + "\\Information annuelle\\";
+                String path = Program.document_path + "\\information_annuelle\\";
                 if (!Directory.Exists(path))
                 {
                     Directory.CreateDirectory(path);
@@ -1447,6 +1447,11 @@ namespace Aiche_Bois
         /*
          * ======================== Panel Add ========================
          */
+        /// <summary>
+        /// fill data by id facture
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmbNumeroFacture_SelectedIndexChanged(object sender, EventArgs e)
         {
             // fill data by id facture
@@ -1778,6 +1783,7 @@ namespace Aiche_Bois
                 e.SuppressKeyPress = true;
             }
         }
+        
         /// <summary>
         /// button delete mesure by select row from data gride mesure
         /// </summary>

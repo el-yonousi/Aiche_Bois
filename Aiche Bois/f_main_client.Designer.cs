@@ -356,6 +356,7 @@
             this.b_print_client.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.b_print_client.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.b_print_client, "b_print_client");
+            this.b_print_client.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.b_print_client.FlatAppearance.BorderSize = 0;
             this.b_print_client.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.b_print_client.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
@@ -374,6 +375,7 @@
             this.b_home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             resources.ApplyResources(this.b_home, "b_home");
             this.b_home.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.b_home.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.b_home.FlatAppearance.BorderSize = 0;
             this.b_home.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.b_home.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
@@ -392,6 +394,7 @@
             this.b_delete_client.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.b_delete_client.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.b_delete_client, "b_delete_client");
+            this.b_delete_client.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.b_delete_client.FlatAppearance.BorderSize = 0;
             this.b_delete_client.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.b_delete_client.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
@@ -410,6 +413,7 @@
             this.b_add_client.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             resources.ApplyResources(this.b_add_client, "b_add_client");
             this.b_add_client.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.b_add_client.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.b_add_client.FlatAppearance.BorderSize = 0;
             this.b_add_client.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.b_add_client.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
@@ -428,6 +432,7 @@
             this.b_edit_client.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             this.b_edit_client.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.b_edit_client, "b_edit_client");
+            this.b_edit_client.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.b_edit_client.FlatAppearance.BorderSize = 0;
             this.b_edit_client.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.b_edit_client.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));

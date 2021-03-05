@@ -4589,13 +4589,13 @@
     <value>NoControl</value>
   </data>
   <data name="ck_seul_pvc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>682, 25</value>
+    <value>686, 25</value>
   </data>
   <data name="ck_seul_pvc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 0, 1, 0</value>
+    <value>5, 0, 1, 0</value>
   </data>
   <data name="ck_seul_pvc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 41</value>
+    <value>97, 41</value>
   </data>
   <data name="ck_seul_pvc.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>

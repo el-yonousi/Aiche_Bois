@@ -63,7 +63,7 @@ namespace Aiche_Bois
             // set connetion initialise
             connection.ConnectionString = Program.Path;
 
-            path = Program.generale_path + "\\les factures\\";
+            path = Program.document_path + "\\les_factures\\";
             // If directory does not exist, don't even try   
             if (!Directory.Exists(path))
             {
@@ -956,6 +956,11 @@ namespace Aiche_Bois
         }
 
 
+        /// <summary>
+        /// button to print factures
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         [Obsolete]
         private void btnPrint_Click(object sender, EventArgs e)
         {

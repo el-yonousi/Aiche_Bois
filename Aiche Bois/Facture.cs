@@ -28,6 +28,9 @@ namespace Aiche_Bois
         public DateTime DateFacture { get; set; }
         public String TypeMetres { get; set; }
 
+        /// <summary>
+        /// Constructor:: by default
+        /// </summary>
         public Facture()
         {
         }

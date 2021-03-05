@@ -11,11 +11,20 @@ namespace Aiche_Bois
         bool Yes;
         bool No;
         FontAwesome.Sharp.IconChar icon;
+
+        /// <summary>
+        /// COnstructor:: by default
+        /// </summary>
         public f_message()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Constructor:: String Message, bool OK
+        /// </summary>
+        /// <param name="Message"></param>
+        /// <param name="OK"></param>
         public f_message(String Message, bool OK)
         {
             this.Message = Message;
@@ -23,6 +32,12 @@ namespace Aiche_Bois
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Constructor:: String Message, String Title, bool OK
+        /// </summary>
+        /// <param name="Message"></param>
+        /// <param name="Title"></param>
+        /// <param name="OK"></param>
         public f_message(String Message, String Title, bool OK)
         {
             this.Title = Title;
@@ -31,6 +46,13 @@ namespace Aiche_Bois
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Constructor:: String Message, String Title, bool OK, FontAwesome.Sharp.IconChar icon
+        /// </summary>
+        /// <param name="Message"></param>
+        /// <param name="Title"></param>
+        /// <param name="OK"></param>
+        /// <param name="icon"></param>
         public f_message(String Message, String Title, bool OK, FontAwesome.Sharp.IconChar icon)
         {
             this.Title = Title;
@@ -40,6 +62,14 @@ namespace Aiche_Bois
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Constructor:: String Message, String Title, bool Yes, bool No, FontAwesome.Sharp.IconChar icon
+        /// </summary>
+        /// <param name="Message"></param>
+        /// <param name="Title"></param>
+        /// <param name="Yes"></param>
+        /// <param name="No"></param>
+        /// <param name="icon"></param>
         public f_message(String Message, String Title, bool Yes, bool No, FontAwesome.Sharp.IconChar icon)
         {
             this.Title = Title;
@@ -50,6 +80,11 @@ namespace Aiche_Bois
             InitializeComponent();
         }
 
+        /// <summary>
+        /// on the load event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormShowFacture_Load(object sender, EventArgs e)
         {
             if (icon == FontAwesome.Sharp.IconChar.Ban)

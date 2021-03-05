@@ -16,13 +16,20 @@ namespace Aiche_Bois
         private readonly List<string> getLstCmbList = new List<string>();
         f_message message;
         bool check = false;
+
+        /// <summary>
+        /// form constructor by default
+        /// </summary>
         public frm_ajout()
         {
             connection.ConnectionString = Program.PathType;
             InitializeComponent();
         }
 
-        /*sauvgarder les donnees dans dataBase*/
+        /// <summary>
+        /// save data on database
+        /// </summary>
+        /// <param name="tableDB"></param>
         private void suavgarderDonnees(string tableDB)
         {
             try
@@ -62,7 +69,10 @@ namespace Aiche_Bois
             }
         }
 
-        /*remlir la liste de dataBase*/
+        /// <summary>
+        /// fill list box
+        /// </summary>
+        /// <param name="typeBois"></param>
         private void remplirListe(string typeBois)
         {
             lt_type_bois_pvc.Items.Clear();
@@ -87,6 +97,12 @@ namespace Aiche_Bois
                 LogFile.Message(ex);
             }
         }
+
+        /// <summary>
+        /// on load event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Ajout_Load(object sender, EventArgs e)
         {
             t_type_bois_pvc.Focus();
@@ -96,6 +112,11 @@ namespace Aiche_Bois
             remplirListe(Program.btnAddTypeClick);
         }
 
+        /// <summary>
+        /// add to list box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddLstCmb_Click(object sender, EventArgs e)
         {
             check = true;
@@ -140,7 +161,10 @@ namespace Aiche_Bois
 
         }
 
-        /*supprimer la ligne selectionner de dataBase*/
+        /// <summary>
+        /// delete selected item
+        /// </summary>
+        /// <param name="tableDB"></param>
         private void deleteLigneListe(string tableDB)
         {
             /*supprimer la ligne de dataBase selectionner*/
@@ -166,6 +190,12 @@ namespace Aiche_Bois
                 LogFile.Message(ex);
             }
         }
+
+        /// <summary>
+        /// button delete mesure from datagride mesure
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDeleteMesure_Click(object sender, EventArgs e)
         {
             if (lt_type_bois_pvc.Items.Count <= 0)
@@ -187,11 +217,22 @@ namespace Aiche_Bois
             /*supprimer la ligne de dataBase selectionner*/
             deleteLigneListe(Program.btnAddTypeClick.ToUpper());
         }
+
+        /// <summary>
+        /// button close
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBack_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// on text changed for t_type_bois_pvc
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtCmb_TextChanged(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(t_type_bois_pvc.Text))
@@ -200,6 +241,11 @@ namespace Aiche_Bois
                 this.AcceptButton = b_add_to_list;
         }
 
+        /// <summary>
+        /// on form closing event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormAjout_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (check)
@@ -213,6 +259,11 @@ namespace Aiche_Bois
             }
         }
 
+        /// <summary>
+        /// on keydown event for t_type_bois_pvc
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void t_type_bois_pvc_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyValue == 13)
