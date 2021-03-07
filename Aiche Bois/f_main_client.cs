@@ -39,12 +39,12 @@ namespace Aiche_Bois
         /// <summary>
         /// c'est la list qui stocker les donnes de Mesure
         /// </summary>
-        private readonly List<Mesure> mesures = new List<Mesure>();
+        //private readonly List<Mesure> mesures = new List<Mesure>();
 
         /// <summary>
         /// c'est la list qui stocker les donnes de Pvc
         /// </summary>
-        private readonly List<Pvc> pvcs = new List<Pvc>();
+        //private readonly List<Pvc> pvcs = new List<Pvc>();
 
         /// <summary>
         /// c'est la list qui stocker les donnes de Facture
@@ -152,6 +152,7 @@ namespace Aiche_Bois
                             Connection = connectionClient,
                             CommandText = "SELECT quantite, largeur, longueur, eppaiseur FROM MESURE WHERE IDFACTURE = " + idFacture
                         };
+
                         OleDbDataReader readerMesure = commandMesure.ExecuteReader();
                         // clear data grid mesure
                         dg_mesure.Rows.Clear();
@@ -258,8 +259,8 @@ namespace Aiche_Bois
             cb_type_metres.SelectedItem = "feuille";
             t_size_pvc.Clear();
             t_prix_metre_linear_pvc.Clear();
-            mesures.Clear();
-            pvcs.Clear();
+            //mesures.Clear();
+            //pvcs.Clear();
             dg_mesure.Rows.Clear();
             dg_pvc.Rows.Clear();
             ck_seul_pvc.Checked = false;
@@ -290,7 +291,7 @@ namespace Aiche_Bois
                 }
             }
 
-            pvcs.Clear();
+            //pvcs.Clear();
             double total = 0;
             for (int i = 0; i < dg_pvc.Rows.Count; i++)
             {
@@ -539,7 +540,6 @@ namespace Aiche_Bois
         /// <summary>
         /// method qui calcul data grid view mesure
         /// </summary>
-        /// <param name="mesures"></param>
         private void RemplirDataMesure()
         {
             double totale = 0;
@@ -651,6 +651,9 @@ namespace Aiche_Bois
                         commandMesure.ExecuteNonQuery();
                     }
                 }
+                factures.Clear();
+                //pvcs.Clear();
+                //mesures.Clear();
                 // close connection and desplay message
                 connectionClient.Close();
             }
@@ -660,6 +663,7 @@ namespace Aiche_Bois
                 LogFile.Message(ex);
             }
         }
+
         /*
          * =========================== End Panel Add Edit Method ===========================
          */
@@ -667,6 +671,7 @@ namespace Aiche_Bois
         /// <summary>
         /// c'est le design du formulaire et l'initialisation de connecter a la base de donnees
         /// </summary>
+        [Obsolete]
         public f_main_client()
         {
             connectionClient.ConnectionString = Program.Path;
@@ -781,7 +786,6 @@ namespace Aiche_Bois
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        [Obsolete]
         private void btnPrintFacture_Click(object sender, EventArgs e)
         {
             if (dg_client.Rows.Count <= 0 || idClient == null)
@@ -955,7 +959,7 @@ namespace Aiche_Bois
         /// <param name="sender"></param>
         /// <param name="e"></param>
         [Obsolete]
-        private void btnResult_Click(object sender, EventArgs e)
+        private void BtnResult_Click(object sender, EventArgs e)
         {
             try
             {
@@ -1652,7 +1656,7 @@ namespace Aiche_Bois
             else if (cb_type_metres.SelectedItem.Equals("m3"))
             {
                 dg_mesure.Rows.Clear();
-                mesures.Clear();
+                //mesures.Clear();
                 lblTypeDuMetres.Text = "Prix ​​au mètre cube";
                 lblMesure.Text = "Volume Total de la Mesure de mètre cube";
                 lblEpaisseur.Visible = true;
@@ -2491,6 +2495,16 @@ namespace Aiche_Bois
             //visible panel and bring to frot
             tblp_add_edit.Visible = false;
             p_home.Visible = true;
+
+            // remove event for button save facture
+            b_add_facture.Click -= new EventHandler(this.e_Add_New_Facture_Client_Click);
+            b_add_facture.Click -= new EventHandler(this.e_Edit_Factures_Click);
+            b_add_facture.Click -= new EventHandler(this.e_Add_New_Client_Click);
+
+            // change event for text changed on this texts boxes
+            t_prix_avance_client.TextChanged -= new EventHandler(this.txtPrixAvanceClient_TextChanged);
+            t_prix_total_client.TextChanged -= new EventHandler(this.txtPrixAvanceClient_TextChanged);
+
         }
 
         /// <summary>

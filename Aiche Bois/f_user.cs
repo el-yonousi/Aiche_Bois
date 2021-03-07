@@ -54,6 +54,7 @@ namespace Aiche_Bois
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        [Obsolete]
         private void btnConnect_Click(object sender, EventArgs e)
         {
             // Compose the connect string.

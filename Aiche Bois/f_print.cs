@@ -34,6 +34,13 @@ namespace Aiche_Bois
         bool btnCheck;
 
         /// <summary>
+        /// this color for pdf
+        /// </summary>
+        String color_green = "#92C119";
+        String color_white = "#ffffff";
+        String color_brown = "#8F6E49";
+
+        /// <summary>
         /// this list to stock data reader
         /// </summary>
         List<Client> clients = new List<Client>();
@@ -290,13 +297,6 @@ namespace Aiche_Bois
                     };
                 };
 
-                str += @"
-                        <tr>
-                            <td colSpan='3'>Total De facture</td>
-                            <td align='center'>" + $"{(factures[index].PrixTotalPVC + factures[index].PrixTotalMesure)}" + @"</td>
-                        </tr>
-                        ";
-
                 string strHTML = @"<!DOCTYPE html>  
                 <html xmlns='http://www.w3.org/1999/xhtml'>  
                 <head>  
@@ -306,29 +306,29 @@ namespace Aiche_Bois
                 	<!-- sub header -->
                 	<table width = '100%' height = '100%'>
                 		<!-- Numéro ID -->
-                		<tr style='font-weight: bold;'>  
+                		<tr style='font-weight: bold; color: " + color_white + @";'  bgcolor='" + color_brown + @"'>  
                 			<td align='left'>Numéro Client: </td>
                 			<td>" + String.Format("N{0:D4}", idClient) + @"</td>
                 			<td align='right'>" + "Tanger le: " + DateTime.Today.ToString("dd MMMM yyyy") + @"</td>           
                 		</tr> 
                 		<!-- Nom -->
-                		<tr>  
-                			<td align='left'>Nom du Client</td>  
+                		<tr style='font-weight: bold;'>  
+                			<td align='left' style='font-weight: bold; color: " + color_white + @";' bgcolor='" + color_green + @"'>Nom du Client</td>  
                 			<td colspan=2>" + $"{clients[0].NomClient}" + @"</td>              
                 		</tr>
                 		<!-- Catègorie -->
-                		<tr>  
-                			<td align='left'>Catègorie</td>  
+                		<tr style='font-weight: bold;'>  
+                			<td align='left' style='font-weight: bold; color: " + color_white + @";' bgcolor='" + color_green + @"'>Catègorie</td>  
                 			<td colspan=2>" + $"{factures[index].Categorie}" + @"</td>              
                 		</tr>
                 		<!-- Couleur -->
-                		<tr>  
-                			<td align='left'>Couleur</td>  
+                		<tr style='font-weight: bold;'>  
+                			<td align='left' style='font-weight: bold; color: " + color_white + @";' bgcolor='" + color_green + @"'>Couleur</td>  
                 			<td colspan=2>" + $"{factures[index].TypeDeBois}" + @"</td>              
                 		</tr>
                 		<!-- Couleur -->
-                		<tr>  
-                			<td align='left'>Type Canto</td>  
+                		<tr style='font-weight: bold;'>  
+                			<td align='left' style='font-weight: bold; color: " + color_white + @";' bgcolor='" + color_green + @"'>Type Canto</td>  
                 			<td colspan=2>" + $"{factures[index].TypePVC}" + @"</td>              
                 		</tr>
                 	</table>
@@ -337,7 +337,7 @@ namespace Aiche_Bois
                 	<table border='1' align='center' width ='100%' height ='100%'>
                 		<!-- this is a header for main -->
                 		<thead>
-                			<tr align='center' style='color: #92C119; padding: 5px; text-align: center; font-weight: bold;'>
+                			<tr align='center' style='color: " + color_white + @"; padding: 5px; text-align: center; font-weight: bold;' bgcolor='" + color_green + @"'>
                 				<td>Quantite</td>
                 				<td>Designation</td>
                 				<td>P.U</td>
@@ -352,7 +352,11 @@ namespace Aiche_Bois
                 
                 		<!-- this is footer table -->
                 		<tfoot>
-                			<tr style='font-weight: bold;'>
+                            <tr style='font-weight: bold; color: " + color_white + @";' bgcolor='" + color_brown + @"'>
+                                <td colSpan='3'>La facture totale</td>
+                                <td align='center'>" + $"{(factures[index].PrixTotalPVC + factures[index].PrixTotalMesure)}" + @"</td>
+                            </tr>
+                			<tr style='font-weight: bold; color: " + color_white + @";' bgcolor='" + color_brown + @"'>
                 				<td colSpan='3'>Total</td>
                 				<td align='center'>" + $"{clients[0].PrixTotalClient} dh" + @"</td>
                 			</tr>
@@ -362,7 +366,7 @@ namespace Aiche_Bois
                 	<br>
                 	<!-- sub body -->
                 	<table border='1' align='center' width ='100%' height ='100%'>
-                		<tr align='center' style='font-weight: bold;'>
+                		<tr align='center' style='font-weight: bold; color: " + color_white + @";' bgcolor='" + color_brown + @"'>
                 			<td colSpan='2'>Date</td>
                 			<td>Prix Payé</td>
                 			<td>Rest</td>
@@ -488,29 +492,29 @@ namespace Aiche_Bois
                 	<!-- sub header -->
                 	<table width = '100%' height = '100%'>
                 		<!-- Numéro ID -->
-                		<tr style='font-weight: bold;'>  
+                		<tr style='font-weight: bold; color: " + color_white + @"' bgcolor='" + color_brown + @"'>  
                 			<td align='left'>Numéro Client: </td>
                 			<td>" + String.Format("N{0:D4}", idClient) + @"</td>
                 			<td align='right'>" + "Tanger le: " + DateTime.Today.ToString("dd MMMM yyyy") + @"</td>           
                 		</tr> 
                 		<!-- Nom -->
-                		<tr>  
-                			<td align='left'>Nom du Client</td>  
+                		<tr style='font-weight: bold;'>  
+                			<td align='left' bgcolor='" + color_green + @"' style=' color: " + color_white + @"'>Nom du Client</td>  
                 			<td colspan=2>" + $"{clients[0].NomClient}" + @"</td>              
                 		</tr>
                 		<!-- Catègorie -->
-                		<tr>  
-                			<td align='left'>Catègorie</td>  
+                		<tr style='font-weight: bold;'>  
+                			<td align='left' bgcolor='" + color_green + @"' style=' color: " + color_white + @"'>Catègorie</td>  
                 			<td colspan=2>" + $"{factures[0].Categorie}/.." + @"</td>              
-                		</tr>
+                		</tr style='font-weight: bold;'>
                 		<!-- Couleur -->
-                		<tr>  
-                			<td align='left'>Couleur</td>  
+                		<tr style='font-weight: bold;'>  
+                			<td align='left' bgcolor='" + color_green + @"' style=' color: " + color_white + @"'>Couleur</td>  
                 			<td colspan=2>" + $"{typeBois}" + @"</td>              
-                		</tr>
+                		</tr style='font-weight: bold;'>
                 		<!-- Couleur canto -->
-                		<tr>  
-                			<td align='left'>Type Canto</td>  
+                		<tr style='font-weight: bold;'>  
+                			<td align='left' bgcolor='" + color_green + @"' style=' color: " + color_white + @"'>Type Canto</td>  
                 			<td colspan=2>" + $"{typePvc}" + @"</td>              
                 		</tr>
                 	</table>
@@ -519,7 +523,7 @@ namespace Aiche_Bois
                 	<table border='1' align='center' width ='100%' height ='100%'>
                 		<!-- this is a header for main -->
                 		<thead>
-                			<tr align='center' style='color: #92C119; padding: 5px; text-align: center; font-weight: bold;'>
+                			<tr align='center' style='color: " + color_white + @"; padding: 5px; text-align: center; font-weight: bold;' bgcolor='" + color_green + @"'>
                 				<td>Quantite</td>
                 				<td>Designation</td>
                 				<td>P.U</td>
@@ -534,7 +538,7 @@ namespace Aiche_Bois
                 
                 		<!-- this is footer table -->
                 		<tfoot>
-                			<tr style='font-weight: bold;'>
+                			<tr style='font-weight: bold; color: " + color_white + @";' bgcolor='" + color_brown + @"'>
                 				<td colSpan='3'>Total</td>
                 				<td align='center'>" + $"{clients[0].PrixTotalClient} dh" + @"</td>
                 			</tr>
@@ -544,7 +548,7 @@ namespace Aiche_Bois
                 	<br>
                 	<!-- sub body -->
                 	<table border='1' align='center' width ='100%' height ='100%'>
-                		<tr align='center' style='font-weight: bold;'>
+                		<tr align='center' style='font-weight: bold; color: " + color_white + @";' bgcolor='" + color_brown + @"'>
                 			<td colSpan='2'>Date</td>
                 			<td>Prix Payé</td>
                 			<td>Rest</td>
@@ -735,7 +739,7 @@ namespace Aiche_Bois
                         <body>  
                               
                              <table border='1' width ='100%' height ='100%'>
-                               <tr>  
+                               <tr style='color:" + color_white + @"; font-weight: bold;' bgcolor='" + color_brown + @"'>  
                                     <td align='center'>" + $"{clients[0].NomClient}" + @"</td>  
                                     <td align='center'>" + String.Format("N{0:D4}", idClient) + @"</td>              
                                     <td align='center'>" + DateTime.Today.ToString("dd MMMM yyyy") + @"</td>              
@@ -744,10 +748,10 @@ namespace Aiche_Bois
                         <br>
                         <table border='1' width ='100%' height ='100%'>
                                 <!-- Quantite -->
-                               <tr>  
-                                    <td align='center' style='font-weight: bold; color: #92C119;'>Quantite</td>  
-                                    <td align='center' style='font-weight: bold; color: #92C119;' colSpan='3'>" + $"{type}" + @"</td>
-                                    <td align='center' style='font-weight: bold; color: #92C119;'>Nbr_Canto</td>
+                               <tr bgcolor='" + color_green + @"' style='color: " + color_white + @"; font-weight: bold;'>  
+                                    <td align='center'>Quantite</td>  
+                                    <td align='center' colSpan='3'>" + $"{type}" + @"</td>
+                                    <td align='center'>Nbr_Canto</td>
                                </tr>
                                <!-- this is a query -->
 
@@ -872,7 +876,7 @@ namespace Aiche_Bois
                         <body>  
                               
                              <table border='1' width ='100%' height ='100%'>
-                               <tr>  
+                               <tr style='color:" + color_white + @"; font-weight: bold;' bgcolor='" + color_brown + @"'>  
                                     <td align='center'>" + $"{clients[0].NomClient}" + @"</td>  
                                     <td align='center'>" + String.Format("N{0:D4}", idClient) + @"</td>              
                                     <td align='center'>" + DateTime.Today.ToString("dd MMMM yyyy") + @"</td>              
@@ -881,10 +885,10 @@ namespace Aiche_Bois
                         <br>
                         <table border='1' width ='100%' height ='100%'>
                                 <!-- Quantite -->
-                               <tr>  
-                                    <td align='center' style='font-weight: bold; color: #92C119;'>Quantite</td>  
-                                    <td align='center' style='font-weight: bold; color: #92C119;' colSpan='3'>" + $"{type}" + @"</td>
-                                    <td align='center' style='font-weight: bold; color: #92C119;'>Nbr_Canto</td>
+                               <tr bgcolor='" + color_green + @"' style='color: " + color_white + @"; font-weight: bold;'>  
+                                    <td align='center'>Quantite</td>  
+                                    <td align='center' colSpan='3'>" + $"{type}" + @"</td>
+                                    <td align='center'>Nbr_Canto</td>
                                </tr>
                                <!-- this is a query -->
 
