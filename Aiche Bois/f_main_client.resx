@@ -745,7 +745,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;p_home.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="label26.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -1618,6 +1618,870 @@
   <data name="tblp_add_edit.ColumnCount" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
+  <data name="&gt;&gt;lblNumeroFacture.Name" xml:space="preserve">
+    <value>lblNumeroFacture</value>
+  </data>
+  <data name="&gt;&gt;lblNumeroFacture.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNumeroFacture.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;lblNumeroFacture.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cb_id_facture.Name" xml:space="preserve">
+    <value>cb_id_facture</value>
+  </data>
+  <data name="&gt;&gt;cb_id_facture.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_id_facture.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;cb_id_facture.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblTypeDuMetres.Name" xml:space="preserve">
+    <value>lblTypeDuMetres</value>
+  </data>
+  <data name="&gt;&gt;lblTypeDuMetres.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTypeDuMetres.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;lblTypeDuMetres.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;t_prix_metre_mesure.Name" xml:space="preserve">
+    <value>t_prix_metre_mesure</value>
+  </data>
+  <data name="&gt;&gt;t_prix_metre_mesure.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;t_prix_metre_mesure.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;t_prix_metre_mesure.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;t_nom_client.Name" xml:space="preserve">
+    <value>t_nom_client</value>
+  </data>
+  <data name="&gt;&gt;t_nom_client.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;t_nom_client.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;t_nom_client.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;cb_type_pvc.Name" xml:space="preserve">
+    <value>cb_type_pvc</value>
+  </data>
+  <data name="&gt;&gt;cb_type_pvc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_type_pvc.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;cb_type_pvc.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;b_cmb_pvc.Name" xml:space="preserve">
+    <value>b_cmb_pvc</value>
+  </data>
+  <data name="&gt;&gt;b_cmb_pvc.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;b_cmb_pvc.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;b_cmb_pvc.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;dp_date_facture.Name" xml:space="preserve">
+    <value>dp_date_facture</value>
+  </data>
+  <data name="&gt;&gt;dp_date_facture.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dp_date_facture.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;dp_date_facture.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;label10.Name" xml:space="preserve">
+    <value>label10</value>
+  </data>
+  <data name="&gt;&gt;label10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
+  </data>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;lblEpaisseur.Name" xml:space="preserve">
+    <value>lblEpaisseur</value>
+  </data>
+  <data name="&gt;&gt;lblEpaisseur.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEpaisseur.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;lblEpaisseur.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;label22.Name" xml:space="preserve">
+    <value>label22</value>
+  </data>
+  <data name="&gt;&gt;label22.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label22.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;label22.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;label21.Name" xml:space="preserve">
+    <value>label21</value>
+  </data>
+  <data name="&gt;&gt;label21.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label21.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;label21.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;label23.Name" xml:space="preserve">
+    <value>label23</value>
+  </data>
+  <data name="&gt;&gt;label23.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label23.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;label23.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;label24.Name" xml:space="preserve">
+    <value>label24</value>
+  </data>
+  <data name="&gt;&gt;label24.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label24.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;label24.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;t_quantity_mesure.Name" xml:space="preserve">
+    <value>t_quantity_mesure</value>
+  </data>
+  <data name="&gt;&gt;t_quantity_mesure.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;t_quantity_mesure.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;t_quantity_mesure.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;t_largeur_mesure.Name" xml:space="preserve">
+    <value>t_largeur_mesure</value>
+  </data>
+  <data name="&gt;&gt;t_largeur_mesure.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;t_largeur_mesure.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;t_largeur_mesure.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;t_longueur_mesure.Name" xml:space="preserve">
+    <value>t_longueur_mesure</value>
+  </data>
+  <data name="&gt;&gt;t_longueur_mesure.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;t_longueur_mesure.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;t_longueur_mesure.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;t_epaisseur_mesure.Name" xml:space="preserve">
+    <value>t_epaisseur_mesure</value>
+  </data>
+  <data name="&gt;&gt;t_epaisseur_mesure.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;t_epaisseur_mesure.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;t_epaisseur_mesure.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;t_quantity_pvc.Name" xml:space="preserve">
+    <value>t_quantity_pvc</value>
+  </data>
+  <data name="&gt;&gt;t_quantity_pvc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;t_quantity_pvc.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;t_quantity_pvc.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;t_largeur_pvc.Name" xml:space="preserve">
+    <value>t_largeur_pvc</value>
+  </data>
+  <data name="&gt;&gt;t_largeur_pvc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;t_largeur_pvc.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;t_largeur_pvc.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;t_longueur_pvc.Name" xml:space="preserve">
+    <value>t_longueur_pvc</value>
+  </data>
+  <data name="&gt;&gt;t_longueur_pvc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;t_longueur_pvc.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;t_longueur_pvc.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;cb_orientation_pvc.Name" xml:space="preserve">
+    <value>cb_orientation_pvc</value>
+  </data>
+  <data name="&gt;&gt;cb_orientation_pvc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_orientation_pvc.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;cb_orientation_pvc.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;b_add_mesure.Name" xml:space="preserve">
+    <value>b_add_mesure</value>
+  </data>
+  <data name="&gt;&gt;b_add_mesure.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;b_add_mesure.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;b_add_mesure.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;b_add_seul_pvc.Name" xml:space="preserve">
+    <value>b_add_seul_pvc</value>
+  </data>
+  <data name="&gt;&gt;b_add_seul_pvc.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;b_add_seul_pvc.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;b_add_seul_pvc.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;b_delete_seul_pvc.Name" xml:space="preserve">
+    <value>b_delete_seul_pvc</value>
+  </data>
+  <data name="&gt;&gt;b_delete_seul_pvc.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;b_delete_seul_pvc.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;b_delete_seul_pvc.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;b_import_pvc.Name" xml:space="preserve">
+    <value>b_import_pvc</value>
+  </data>
+  <data name="&gt;&gt;b_import_pvc.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;b_import_pvc.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;b_import_pvc.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;b_save_pvc.Name" xml:space="preserve">
+    <value>b_save_pvc</value>
+  </data>
+  <data name="&gt;&gt;b_save_pvc.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;b_save_pvc.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;b_save_pvc.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;b_delete_mesure.Name" xml:space="preserve">
+    <value>b_delete_mesure</value>
+  </data>
+  <data name="&gt;&gt;b_delete_mesure.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;b_delete_mesure.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;b_delete_mesure.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;b_export_csv.Name" xml:space="preserve">
+    <value>b_export_csv</value>
+  </data>
+  <data name="&gt;&gt;b_export_csv.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;b_export_csv.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;b_export_csv.ZOrder" xml:space="preserve">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;dg_mesure.Name" xml:space="preserve">
+    <value>dg_mesure</value>
+  </data>
+  <data name="&gt;&gt;dg_mesure.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dg_mesure.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;dg_mesure.ZOrder" xml:space="preserve">
+    <value>34</value>
+  </data>
+  <data name="&gt;&gt;dg_pvc.Name" xml:space="preserve">
+    <value>dg_pvc</value>
+  </data>
+  <data name="&gt;&gt;dg_pvc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dg_pvc.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;dg_pvc.ZOrder" xml:space="preserve">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;lblMesure.Name" xml:space="preserve">
+    <value>lblMesure</value>
+  </data>
+  <data name="&gt;&gt;lblMesure.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMesure.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;lblMesure.ZOrder" xml:space="preserve">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;label12.Name" xml:space="preserve">
+    <value>label12</value>
+  </data>
+  <data name="&gt;&gt;label12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;t_total_size_pvc.Name" xml:space="preserve">
+    <value>t_total_size_pvc</value>
+  </data>
+  <data name="&gt;&gt;t_total_size_pvc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;t_total_size_pvc.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;t_total_size_pvc.ZOrder" xml:space="preserve">
+    <value>38</value>
+  </data>
+  <data name="&gt;&gt;t_total_size_mesure.Name" xml:space="preserve">
+    <value>t_total_size_mesure</value>
+  </data>
+  <data name="&gt;&gt;t_total_size_mesure.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;t_total_size_mesure.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;t_total_size_mesure.ZOrder" xml:space="preserve">
+    <value>39</value>
+  </data>
+  <data name="&gt;&gt;label15.Name" xml:space="preserve">
+    <value>label15</value>
+  </data>
+  <data name="&gt;&gt;label15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
+    <value>40</value>
+  </data>
+  <data name="&gt;&gt;cb_type_bois.Name" xml:space="preserve">
+    <value>cb_type_bois</value>
+  </data>
+  <data name="&gt;&gt;cb_type_bois.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_type_bois.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;cb_type_bois.ZOrder" xml:space="preserve">
+    <value>41</value>
+  </data>
+  <data name="&gt;&gt;b_cmb_categorie.Name" xml:space="preserve">
+    <value>b_cmb_categorie</value>
+  </data>
+  <data name="&gt;&gt;b_cmb_categorie.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;b_cmb_categorie.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;b_cmb_categorie.ZOrder" xml:space="preserve">
+    <value>42</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>43</value>
+  </data>
+  <data name="&gt;&gt;t_search_type_bois.Name" xml:space="preserve">
+    <value>t_search_type_bois</value>
+  </data>
+  <data name="&gt;&gt;t_search_type_bois.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;t_search_type_bois.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;t_search_type_bois.ZOrder" xml:space="preserve">
+    <value>44</value>
+  </data>
+  <data name="&gt;&gt;lt_type_bois.Name" xml:space="preserve">
+    <value>lt_type_bois</value>
+  </data>
+  <data name="&gt;&gt;lt_type_bois.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lt_type_bois.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;lt_type_bois.ZOrder" xml:space="preserve">
+    <value>45</value>
+  </data>
+  <data name="&gt;&gt;label16.Name" xml:space="preserve">
+    <value>label16</value>
+  </data>
+  <data name="&gt;&gt;label16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
+    <value>46</value>
+  </data>
+  <data name="&gt;&gt;label13.Name" xml:space="preserve">
+    <value>label13</value>
+  </data>
+  <data name="&gt;&gt;label13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
+    <value>47</value>
+  </data>
+  <data name="&gt;&gt;t_categorie.Name" xml:space="preserve">
+    <value>t_categorie</value>
+  </data>
+  <data name="&gt;&gt;t_categorie.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;t_categorie.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;t_categorie.ZOrder" xml:space="preserve">
+    <value>48</value>
+  </data>
+  <data name="&gt;&gt;t_size_pvc.Name" xml:space="preserve">
+    <value>t_size_pvc</value>
+  </data>
+  <data name="&gt;&gt;t_size_pvc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;t_size_pvc.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;t_size_pvc.ZOrder" xml:space="preserve">
+    <value>49</value>
+  </data>
+  <data name="&gt;&gt;label14.Name" xml:space="preserve">
+    <value>label14</value>
+  </data>
+  <data name="&gt;&gt;label14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="&gt;&gt;t_prix_metre_linear_pvc.Name" xml:space="preserve">
+    <value>t_prix_metre_linear_pvc</value>
+  </data>
+  <data name="&gt;&gt;t_prix_metre_linear_pvc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;t_prix_metre_linear_pvc.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;t_prix_metre_linear_pvc.ZOrder" xml:space="preserve">
+    <value>51</value>
+  </data>
+  <data name="&gt;&gt;label17.Name" xml:space="preserve">
+    <value>label17</value>
+  </data>
+  <data name="&gt;&gt;label17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
+    <value>52</value>
+  </data>
+  <data name="&gt;&gt;label20.Name" xml:space="preserve">
+    <value>label20</value>
+  </data>
+  <data name="&gt;&gt;label20.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
+    <value>53</value>
+  </data>
+  <data name="&gt;&gt;t_metrage_feuille.Name" xml:space="preserve">
+    <value>t_metrage_feuille</value>
+  </data>
+  <data name="&gt;&gt;t_metrage_feuille.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;t_metrage_feuille.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;t_metrage_feuille.ZOrder" xml:space="preserve">
+    <value>54</value>
+  </data>
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
+  </data>
+  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
+    <value>55</value>
+  </data>
+  <data name="&gt;&gt;t_prix_total_pvc.Name" xml:space="preserve">
+    <value>t_prix_total_pvc</value>
+  </data>
+  <data name="&gt;&gt;t_prix_total_pvc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;t_prix_total_pvc.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;t_prix_total_pvc.ZOrder" xml:space="preserve">
+    <value>56</value>
+  </data>
+  <data name="&gt;&gt;txtPrixTotalMesure.Name" xml:space="preserve">
+    <value>txtPrixTotalMesure</value>
+  </data>
+  <data name="&gt;&gt;txtPrixTotalMesure.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPrixTotalMesure.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;txtPrixTotalMesure.ZOrder" xml:space="preserve">
+    <value>57</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>58</value>
+  </data>
+  <data name="&gt;&gt;t_type_Bois.Name" xml:space="preserve">
+    <value>t_type_Bois</value>
+  </data>
+  <data name="&gt;&gt;t_type_Bois.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;t_type_Bois.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;t_type_Bois.ZOrder" xml:space="preserve">
+    <value>59</value>
+  </data>
+  <data name="&gt;&gt;b_print_facture.Name" xml:space="preserve">
+    <value>b_print_facture</value>
+  </data>
+  <data name="&gt;&gt;b_print_facture.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;b_print_facture.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;b_print_facture.ZOrder" xml:space="preserve">
+    <value>60</value>
+  </data>
+  <data name="&gt;&gt;b_add_facture.Name" xml:space="preserve">
+    <value>b_add_facture</value>
+  </data>
+  <data name="&gt;&gt;b_add_facture.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;b_add_facture.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;b_add_facture.ZOrder" xml:space="preserve">
+    <value>61</value>
+  </data>
+  <data name="&gt;&gt;b_clear.Name" xml:space="preserve">
+    <value>b_clear</value>
+  </data>
+  <data name="&gt;&gt;b_clear.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;b_clear.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;b_clear.ZOrder" xml:space="preserve">
+    <value>62</value>
+  </data>
+  <data name="&gt;&gt;b_delete_facture.Name" xml:space="preserve">
+    <value>b_delete_facture</value>
+  </data>
+  <data name="&gt;&gt;b_delete_facture.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;b_delete_facture.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;b_delete_facture.ZOrder" xml:space="preserve">
+    <value>63</value>
+  </data>
+  <data name="&gt;&gt;label25.Name" xml:space="preserve">
+    <value>label25</value>
+  </data>
+  <data name="&gt;&gt;label25.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label25.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;label25.ZOrder" xml:space="preserve">
+    <value>64</value>
+  </data>
+  <data name="&gt;&gt;cb_type_metres.Name" xml:space="preserve">
+    <value>cb_type_metres</value>
+  </data>
+  <data name="&gt;&gt;cb_type_metres.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_type_metres.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;cb_type_metres.ZOrder" xml:space="preserve">
+    <value>65</value>
+  </data>
+  <data name="&gt;&gt;ck_seul_pvc.Name" xml:space="preserve">
+    <value>ck_seul_pvc</value>
+  </data>
+  <data name="&gt;&gt;ck_seul_pvc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ck_seul_pvc.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;ck_seul_pvc.ZOrder" xml:space="preserve">
+    <value>66</value>
+  </data>
+  <data name="&gt;&gt;b_add_new_facture.Name" xml:space="preserve">
+    <value>b_add_new_facture</value>
+  </data>
+  <data name="&gt;&gt;b_add_new_facture.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;b_add_new_facture.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;b_add_new_facture.ZOrder" xml:space="preserve">
+    <value>67</value>
+  </data>
+  <data name="&gt;&gt;b_save_client.Name" xml:space="preserve">
+    <value>b_save_client</value>
+  </data>
+  <data name="&gt;&gt;b_save_client.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;b_save_client.Parent" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;b_save_client.ZOrder" xml:space="preserve">
+    <value>68</value>
+  </data>
+  <data name="tblp_add_edit.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tblp_add_edit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>231, 36</value>
+  </data>
+  <data name="tblp_add_edit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 5</value>
+  </data>
+  <data name="tblp_add_edit.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>1, 1, 1, 1</value>
+  </data>
+  <data name="tblp_add_edit.RowCount" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="tblp_add_edit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1099, 820</value>
+  </data>
+  <data name="tblp_add_edit.TabIndex" type="System.Int32, mscorlib">
+    <value>422</value>
+  </data>
+  <data name="&gt;&gt;tblp_add_edit.Name" xml:space="preserve">
+    <value>tblp_add_edit</value>
+  </data>
+  <data name="&gt;&gt;tblp_add_edit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tblp_add_edit.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tblp_add_edit.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tblp_add_edit.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblNumeroFacture" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="cb_id_facture" Row="1" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lblTypeDuMetres" Row="0" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="label7" Row="0" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="t_prix_metre_mesure" Row="1" RowSpan="1" Column="2" ColumnSpan="3" /&gt;&lt;Control Name="t_nom_client" Row="5" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="cb_type_pvc" Row="1" RowSpan="1" Column="7" ColumnSpan="2" /&gt;&lt;Control Name="b_cmb_pvc" Row="1" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="dp_date_facture" Row="3" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label2" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label10" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="label9" Row="2" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="4" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lblEpaisseur" Row="2" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="label22" Row="2" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="label21" Row="2" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="label23" Row="2" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="label24" Row="2" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="t_quantity_mesure" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="t_largeur_mesure" Row="3" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="t_longueur_mesure" Row="3" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="t_epaisseur_mesure" Row="3" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="t_quantity_pvc" Row="3" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="t_largeur_pvc" Row="3" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="t_longueur_pvc" Row="3" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="cb_orientation_pvc" Row="3" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="b_add_mesure" Row="4" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="b_add_seul_pvc" Row="4" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="b_delete_seul_pvc" Row="5" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="b_import_pvc" Row="6" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="b_save_pvc" Row="7" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="b_delete_mesure" Row="5" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="b_export_csv" Row="7" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="dg_mesure" Row="4" RowSpan="4" Column="2" ColumnSpan="3" /&gt;&lt;Control Name="dg_pvc" Row="4" RowSpan="4" Column="6" ColumnSpan="3" /&gt;&lt;Control Name="lblMesure" Row="8" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="label12" Row="8" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="t_total_size_pvc" Row="9" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="t_total_size_mesure" Row="9" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="label15" Row="6" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="cb_type_bois" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="b_cmb_categorie" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="8" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="t_search_type_bois" Row="9" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lt_type_bois" Row="10" RowSpan="4" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label16" Row="10" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="label13" Row="10" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="t_categorie" Row="11" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="t_size_pvc" Row="11" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="label14" Row="12" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="t_prix_metre_linear_pvc" Row="13" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="label17" Row="14" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="label20" Row="12" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="t_metrage_feuille" Row="13" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="label11" Row="14" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="t_prix_total_pvc" Row="15" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="txtPrixTotalMesure" Row="15" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="label5" Row="14" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="t_type_Bois" Row="15" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="b_print_facture" Row="16" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="b_add_facture" Row="16" RowSpan="1" Column="6" ColumnSpan="2" /&gt;&lt;Control Name="b_clear" Row="16" RowSpan="1" Column="8" ColumnSpan="2" /&gt;&lt;Control Name="b_delete_facture" Row="16" RowSpan="1" Column="3" ColumnSpan="3" /&gt;&lt;Control Name="label25" Row="17" RowSpan="1" Column="0" ColumnSpan="10" /&gt;&lt;Control Name="cb_type_metres" Row="1" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="ck_seul_pvc" Row="1" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="b_add_new_facture" Row="18" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="b_save_client" Row="18" RowSpan="1" Column="7" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,19.81132,Percent,4.716981,Percent,9.433961,Percent,9.433961,Percent,9.433961,Percent,9.433961,Percent,9.433961,Percent,9.433961,Percent,9.433961,Percent,9.433961" /&gt;&lt;Rows Styles="Percent,3.039589,Percent,5.065982,Percent,3.039589,Percent,5.065982,Percent,5.065982,Percent,5.065982,Percent,5.065982,Percent,5.065982,Percent,5.065982,Percent,4.281373,Percent,5.749271,Percent,5.065982,Percent,5.065982,Percent,4.036723,Percent,3.914398,Percent,5.065982,Percent,5.065982,Percent,5.065982,Percent,5.065982,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
   <data name="lblNumeroFacture.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
@@ -1631,7 +2495,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblNumeroFacture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 7</value>
+    <value>1, 10</value>
   </data>
   <data name="lblNumeroFacture.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1679,13 +2543,13 @@
     <value>NoControl</value>
   </data>
   <data name="b_save_client.Location" type="System.Drawing.Point, System.Drawing">
-    <value>785, 771</value>
+    <value>785, 769</value>
   </data>
   <data name="b_save_client.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 0</value>
   </data>
   <data name="b_save_client.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 48</value>
+    <value>312, 50</value>
   </data>
   <data name="b_save_client.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
@@ -1706,7 +2570,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;b_save_client.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>68</value>
   </data>
   <data name="b_add_new_facture.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1724,13 +2588,13 @@
     <value>NoControl</value>
   </data>
   <data name="b_add_new_facture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 771</value>
+    <value>2, 769</value>
   </data>
   <data name="b_add_new_facture.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 0</value>
   </data>
   <data name="b_add_new_facture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 48</value>
+    <value>369, 50</value>
   </data>
   <data name="b_add_new_facture.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -1751,172 +2615,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;b_add_new_facture.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="t_prix_rest_client.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="t_prix_rest_client.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Ubuntu, 11.25pt, style=Bold</value>
-  </data>
-  <data name="t_prix_rest_client.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="t_prix_rest_client.Location" type="System.Drawing.Point, System.Drawing">
-    <value>785, 729</value>
-  </data>
-  <data name="t_prix_rest_client.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 0, 1, 0</value>
-  </data>
-  <data name="t_prix_rest_client.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 41</value>
-  </data>
-  <data name="t_prix_rest_client.TabIndex" type="System.Int32, mscorlib">
-    <value>41</value>
-  </data>
-  <data name="t_prix_rest_client.Text" xml:space="preserve">
-    <value>0.00</value>
-  </data>
-  <data name="t_prix_rest_client.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;t_prix_rest_client.Name" xml:space="preserve">
-    <value>t_prix_rest_client</value>
-  </data>
-  <data name="&gt;&gt;t_prix_rest_client.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;t_prix_rest_client.Parent" xml:space="preserve">
-    <value>tblp_add_edit</value>
-  </data>
-  <data name="&gt;&gt;t_prix_rest_client.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="t_prix_total_client.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="t_prix_total_client.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Ubuntu, 11.25pt, style=Bold</value>
-  </data>
-  <data name="t_prix_total_client.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="t_prix_total_client.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 729</value>
-  </data>
-  <data name="t_prix_total_client.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 0, 1, 0</value>
-  </data>
-  <data name="t_prix_total_client.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 41</value>
-  </data>
-  <data name="t_prix_total_client.TabIndex" type="System.Int32, mscorlib">
-    <value>44</value>
-  </data>
-  <data name="t_prix_total_client.Text" xml:space="preserve">
-    <value>0.00</value>
-  </data>
-  <data name="t_prix_total_client.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="t_prix_total_client.ToolTip" xml:space="preserve">
-    <value>Prix ​​total du client</value>
-  </data>
-  <data name="&gt;&gt;t_prix_total_client.Name" xml:space="preserve">
-    <value>t_prix_total_client</value>
-  </data>
-  <data name="&gt;&gt;t_prix_total_client.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;t_prix_total_client.Parent" xml:space="preserve">
-    <value>tblp_add_edit</value>
-  </data>
-  <data name="&gt;&gt;t_prix_total_client.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="label19.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="label19.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label19.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Ubuntu, 10.2pt, style=Bold</value>
-  </data>
-  <data name="label19.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
-    <value>784, 711</value>
-  </data>
-  <data name="label19.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 18</value>
-  </data>
-  <data name="label19.TabIndex" type="System.Int32, mscorlib">
-    <value>389</value>
-  </data>
-  <data name="label19.Text" xml:space="preserve">
-    <value>Le Montant Restant pour le Client</value>
-  </data>
-  <data name="label19.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;label19.Name" xml:space="preserve">
-    <value>label19</value>
-  </data>
-  <data name="&gt;&gt;label19.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label19.Parent" xml:space="preserve">
-    <value>tblp_add_edit</value>
-  </data>
-  <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="label18.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="label18.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label18.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Ubuntu, 10.2pt, style=Bold</value>
-  </data>
-  <data name="label18.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 711</value>
-  </data>
-  <data name="label18.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 18</value>
-  </data>
-  <data name="label18.TabIndex" type="System.Int32, mscorlib">
-    <value>388</value>
-  </data>
-  <data name="label18.Text" xml:space="preserve">
-    <value>Le Montant Total du Client</value>
-  </data>
-  <data name="label18.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;label18.Name" xml:space="preserve">
-    <value>label18</value>
-  </data>
-  <data name="&gt;&gt;label18.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label18.Parent" xml:space="preserve">
-    <value>tblp_add_edit</value>
-  </data>
-  <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>67</value>
   </data>
   <data name="cb_id_facture.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1928,13 +2627,13 @@
     <value>Ubuntu, 15.75pt, style=Bold</value>
   </data>
   <data name="cb_id_facture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 25</value>
+    <value>2, 28</value>
   </data>
   <data name="cb_id_facture.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
   </data>
   <data name="cb_id_facture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 41</value>
+    <value>266, 46</value>
   </data>
   <data name="cb_id_facture.TabIndex" type="System.Int32, mscorlib">
     <value>82</value>
@@ -1952,49 +2651,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;cb_id_facture.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="label6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Ubuntu, 10.2pt, style=Bold</value>
-  </data>
-  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>372, 711</value>
-  </data>
-  <data name="label6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>412, 18</value>
-  </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>387</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Le Montant Avancé par le Client</value>
-  </data>
-  <data name="label6.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>tblp_add_edit</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>1</value>
   </data>
   <data name="lblTypeDuMetres.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -2009,7 +2666,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblTypeDuMetres.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 7</value>
+    <value>269, 10</value>
   </data>
   <data name="lblTypeDuMetres.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -2036,7 +2693,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;lblTypeDuMetres.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>2</value>
   </data>
   <data name="label7.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -2051,7 +2708,7 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>681, 7</value>
+    <value>681, 10</value>
   </data>
   <data name="label7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -2078,7 +2735,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>3</value>
   </data>
   <data name="t_prix_metre_mesure.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -2087,7 +2744,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="t_prix_metre_mesure.Location" type="System.Drawing.Point, System.Drawing">
-    <value>270, 25</value>
+    <value>270, 28</value>
   </data>
   <data name="t_prix_metre_mesure.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
@@ -2117,7 +2774,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;t_prix_metre_mesure.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>4</value>
   </data>
   <data name="t_nom_client.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -2126,7 +2783,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="t_nom_client.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 172</value>
+    <value>2, 193</value>
   </data>
   <data name="t_nom_client.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
@@ -2153,7 +2810,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;t_nom_client.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>5</value>
   </data>
   <data name="cb_type_pvc.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -2165,7 +2822,7 @@
     <value>Ubuntu, 15.75pt, style=Bold</value>
   </data>
   <data name="cb_type_pvc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>785, 25</value>
+    <value>785, 28</value>
   </data>
   <data name="cb_type_pvc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
@@ -2186,7 +2843,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;cb_type_pvc.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>6</value>
   </data>
   <data name="b_cmb_pvc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -2201,7 +2858,7 @@
     <value>NoControl</value>
   </data>
   <data name="b_cmb_pvc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>991, 25</value>
+    <value>991, 28</value>
   </data>
   <data name="b_cmb_pvc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
@@ -2222,7 +2879,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;b_cmb_pvc.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>7</value>
   </data>
   <data name="dp_date_facture.CalendarFont" type="System.Drawing.Font, System.Drawing">
     <value>Ubuntu, 15.75pt, style=Bold</value>
@@ -2234,7 +2891,7 @@
     <value>Ubuntu, 16pt, style=Bold</value>
   </data>
   <data name="dp_date_facture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 90</value>
+    <value>2, 101</value>
   </data>
   <data name="dp_date_facture.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
@@ -2258,7 +2915,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;dp_date_facture.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>8</value>
   </data>
   <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -2273,7 +2930,7 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 72</value>
+    <value>1, 83</value>
   </data>
   <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -2300,7 +2957,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>9</value>
   </data>
   <data name="label10.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -2315,7 +2972,7 @@
     <value>NoControl</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 72</value>
+    <value>269, 83</value>
   </data>
   <data name="label10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -2342,7 +2999,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>10</value>
   </data>
   <data name="label8.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -2357,7 +3014,7 @@
     <value>NoControl</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>372, 72</value>
+    <value>372, 83</value>
   </data>
   <data name="label8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -2384,7 +3041,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>11</value>
   </data>
   <data name="label9.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -2399,7 +3056,7 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>475, 72</value>
+    <value>475, 83</value>
   </data>
   <data name="label9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -2426,7 +3083,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>12</value>
   </data>
   <data name="label3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -2441,7 +3098,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 154</value>
+    <value>1, 175</value>
   </data>
   <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -2468,7 +3125,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>13</value>
   </data>
   <data name="lblEpaisseur.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -2483,7 +3140,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblEpaisseur.Location" type="System.Drawing.Point, System.Drawing">
-    <value>578, 72</value>
+    <value>578, 83</value>
   </data>
   <data name="lblEpaisseur.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -2510,7 +3167,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;lblEpaisseur.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>14</value>
   </data>
   <data name="label22.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -2525,7 +3182,7 @@
     <value>NoControl</value>
   </data>
   <data name="label22.Location" type="System.Drawing.Point, System.Drawing">
-    <value>681, 72</value>
+    <value>681, 83</value>
   </data>
   <data name="label22.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -2552,7 +3209,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;label22.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>15</value>
   </data>
   <data name="label21.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -2567,7 +3224,7 @@
     <value>NoControl</value>
   </data>
   <data name="label21.Location" type="System.Drawing.Point, System.Drawing">
-    <value>784, 72</value>
+    <value>784, 83</value>
   </data>
   <data name="label21.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -2594,7 +3251,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;label21.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>16</value>
   </data>
   <data name="label23.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -2609,7 +3266,7 @@
     <value>NoControl</value>
   </data>
   <data name="label23.Location" type="System.Drawing.Point, System.Drawing">
-    <value>887, 72</value>
+    <value>887, 83</value>
   </data>
   <data name="label23.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -2636,7 +3293,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;label23.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>17</value>
   </data>
   <data name="label24.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -2651,7 +3308,7 @@
     <value>NoControl</value>
   </data>
   <data name="label24.Location" type="System.Drawing.Point, System.Drawing">
-    <value>990, 72</value>
+    <value>990, 83</value>
   </data>
   <data name="label24.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -2678,7 +3335,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;label24.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>18</value>
   </data>
   <data name="t_quantity_mesure.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -2687,7 +3344,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="t_quantity_mesure.Location" type="System.Drawing.Point, System.Drawing">
-    <value>270, 90</value>
+    <value>270, 101</value>
   </data>
   <data name="t_quantity_mesure.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
@@ -2717,7 +3374,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;t_quantity_mesure.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>19</value>
   </data>
   <data name="t_largeur_mesure.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -2726,7 +3383,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="t_largeur_mesure.Location" type="System.Drawing.Point, System.Drawing">
-    <value>373, 90</value>
+    <value>373, 101</value>
   </data>
   <data name="t_largeur_mesure.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
@@ -2756,7 +3413,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;t_largeur_mesure.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>20</value>
   </data>
   <data name="t_longueur_mesure.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -2765,7 +3422,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="t_longueur_mesure.Location" type="System.Drawing.Point, System.Drawing">
-    <value>476, 90</value>
+    <value>476, 101</value>
   </data>
   <data name="t_longueur_mesure.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
@@ -2795,7 +3452,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;t_longueur_mesure.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>21</value>
   </data>
   <data name="t_epaisseur_mesure.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -2804,7 +3461,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="t_epaisseur_mesure.Location" type="System.Drawing.Point, System.Drawing">
-    <value>579, 90</value>
+    <value>579, 101</value>
   </data>
   <data name="t_epaisseur_mesure.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
@@ -2834,7 +3491,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;t_epaisseur_mesure.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>22</value>
   </data>
   <data name="t_quantity_pvc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -2846,7 +3503,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="t_quantity_pvc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>682, 90</value>
+    <value>682, 101</value>
   </data>
   <data name="t_quantity_pvc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
@@ -2876,7 +3533,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;t_quantity_pvc.ZOrder" xml:space="preserve">
-    <value>30</value>
+    <value>23</value>
   </data>
   <data name="t_largeur_pvc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -2888,7 +3545,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="t_largeur_pvc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>785, 90</value>
+    <value>785, 101</value>
   </data>
   <data name="t_largeur_pvc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
@@ -2918,7 +3575,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;t_largeur_pvc.ZOrder" xml:space="preserve">
-    <value>31</value>
+    <value>24</value>
   </data>
   <data name="t_longueur_pvc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -2930,7 +3587,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="t_longueur_pvc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>888, 90</value>
+    <value>888, 101</value>
   </data>
   <data name="t_longueur_pvc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
@@ -2960,7 +3617,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;t_longueur_pvc.ZOrder" xml:space="preserve">
-    <value>32</value>
+    <value>25</value>
   </data>
   <data name="cb_orientation_pvc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -3002,7 +3659,7 @@
     <value>h*1+v*1</value>
   </data>
   <data name="cb_orientation_pvc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>991, 90</value>
+    <value>991, 101</value>
   </data>
   <data name="cb_orientation_pvc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
@@ -3026,49 +3683,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;cb_orientation_pvc.ZOrder" xml:space="preserve">
-    <value>33</value>
-  </data>
-  <data name="t_prix_avance_client.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="t_prix_avance_client.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="t_prix_avance_client.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Ubuntu, 18pt, style=Bold</value>
-  </data>
-  <data name="t_prix_avance_client.Location" type="System.Drawing.Point, System.Drawing">
-    <value>476, 732</value>
-  </data>
-  <data name="t_prix_avance_client.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 0, 1, 0</value>
-  </data>
-  <data name="t_prix_avance_client.MaxLength" type="System.Int32, mscorlib">
-    <value>255</value>
-  </data>
-  <data name="t_prix_avance_client.Size" type="System.Drawing.Size, System.Drawing">
-    <value>307, 35</value>
-  </data>
-  <data name="t_prix_avance_client.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
-  <data name="t_prix_avance_client.Text" xml:space="preserve">
-    <value>0.00</value>
-  </data>
-  <data name="t_prix_avance_client.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;t_prix_avance_client.Name" xml:space="preserve">
-    <value>t_prix_avance_client</value>
-  </data>
-  <data name="&gt;&gt;t_prix_avance_client.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;t_prix_avance_client.Parent" xml:space="preserve">
-    <value>tblp_add_edit</value>
-  </data>
-  <data name="&gt;&gt;t_prix_avance_client.ZOrder" xml:space="preserve">
-    <value>34</value>
+    <value>26</value>
   </data>
   <data name="b_add_mesure.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -3086,13 +3701,13 @@
     <value>NoControl</value>
   </data>
   <data name="b_add_mesure.Location" type="System.Drawing.Point, System.Drawing">
-    <value>579, 131</value>
+    <value>579, 147</value>
   </data>
   <data name="b_add_mesure.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 1</value>
   </data>
   <data name="b_add_mesure.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 40</value>
+    <value>101, 45</value>
   </data>
   <data name="b_add_mesure.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -3107,7 +3722,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;b_add_mesure.ZOrder" xml:space="preserve">
-    <value>35</value>
+    <value>27</value>
   </data>
   <data name="b_add_seul_pvc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -3128,13 +3743,13 @@
     <value>NoControl</value>
   </data>
   <data name="b_add_seul_pvc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>991, 131</value>
+    <value>991, 147</value>
   </data>
   <data name="b_add_seul_pvc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 1</value>
   </data>
   <data name="b_add_seul_pvc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 40</value>
+    <value>106, 45</value>
   </data>
   <data name="b_add_seul_pvc.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -3149,7 +3764,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;b_add_seul_pvc.ZOrder" xml:space="preserve">
-    <value>36</value>
+    <value>28</value>
   </data>
   <data name="b_delete_seul_pvc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -3170,13 +3785,13 @@
     <value>NoControl</value>
   </data>
   <data name="b_delete_seul_pvc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>991, 173</value>
+    <value>991, 194</value>
   </data>
   <data name="b_delete_seul_pvc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
   </data>
   <data name="b_delete_seul_pvc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 39</value>
+    <value>106, 44</value>
   </data>
   <data name="b_delete_seul_pvc.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -3191,7 +3806,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;b_delete_seul_pvc.ZOrder" xml:space="preserve">
-    <value>37</value>
+    <value>29</value>
   </data>
   <data name="b_import_pvc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -3209,13 +3824,13 @@
     <value>NoControl</value>
   </data>
   <data name="b_import_pvc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>991, 214</value>
+    <value>991, 240</value>
   </data>
   <data name="b_import_pvc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
   </data>
   <data name="b_import_pvc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 39</value>
+    <value>106, 44</value>
   </data>
   <data name="b_import_pvc.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -3230,7 +3845,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;b_import_pvc.ZOrder" xml:space="preserve">
-    <value>38</value>
+    <value>30</value>
   </data>
   <data name="b_save_pvc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -3248,13 +3863,13 @@
     <value>NoControl</value>
   </data>
   <data name="b_save_pvc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>991, 255</value>
+    <value>991, 286</value>
   </data>
   <data name="b_save_pvc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 0</value>
   </data>
   <data name="b_save_pvc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 40</value>
+    <value>106, 45</value>
   </data>
   <data name="b_save_pvc.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -3269,7 +3884,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;b_save_pvc.ZOrder" xml:space="preserve">
-    <value>39</value>
+    <value>31</value>
   </data>
   <data name="b_delete_mesure.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -3287,13 +3902,13 @@
     <value>NoControl</value>
   </data>
   <data name="b_delete_mesure.Location" type="System.Drawing.Point, System.Drawing">
-    <value>579, 173</value>
+    <value>579, 194</value>
   </data>
   <data name="b_delete_mesure.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
   </data>
   <data name="b_delete_mesure.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 39</value>
+    <value>101, 44</value>
   </data>
   <data name="b_delete_mesure.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -3308,7 +3923,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;b_delete_mesure.ZOrder" xml:space="preserve">
-    <value>40</value>
+    <value>32</value>
   </data>
   <data name="b_export_csv.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -3326,13 +3941,13 @@
     <value>NoControl</value>
   </data>
   <data name="b_export_csv.Location" type="System.Drawing.Point, System.Drawing">
-    <value>579, 254</value>
+    <value>579, 285</value>
   </data>
   <data name="b_export_csv.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
   </data>
   <data name="b_export_csv.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 41</value>
+    <value>101, 46</value>
   </data>
   <data name="b_export_csv.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -3347,7 +3962,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;b_export_csv.ZOrder" xml:space="preserve">
-    <value>41</value>
+    <value>33</value>
   </data>
   <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -3383,7 +3998,7 @@
     <value>NoControl</value>
   </data>
   <data name="dg_mesure.Location" type="System.Drawing.Point, System.Drawing">
-    <value>272, 131</value>
+    <value>272, 147</value>
   </data>
   <data name="dg_mesure.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 0, 3, 0</value>
@@ -3392,7 +4007,7 @@
     <value>51</value>
   </data>
   <data name="dg_mesure.Size" type="System.Drawing.Size, System.Drawing">
-    <value>303, 164</value>
+    <value>303, 184</value>
   </data>
   <data name="dg_mesure.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -3407,7 +4022,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;dg_mesure.ZOrder" xml:space="preserve">
-    <value>42</value>
+    <value>34</value>
   </data>
   <metadata name="dataGridViewTextBoxColumn4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -3452,7 +4067,7 @@
     <value>NoControl</value>
   </data>
   <data name="dg_pvc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>682, 131</value>
+    <value>682, 147</value>
   </data>
   <data name="dg_pvc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
@@ -3461,7 +4076,7 @@
     <value>51</value>
   </data>
   <data name="dg_pvc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>307, 164</value>
+    <value>307, 184</value>
   </data>
   <data name="dg_pvc.TabIndex" type="System.Int32, mscorlib">
     <value>408</value>
@@ -3476,7 +4091,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;dg_pvc.ZOrder" xml:space="preserve">
-    <value>43</value>
+    <value>35</value>
   </data>
   <data name="lblMesure.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -3491,7 +4106,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblMesure.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 318</value>
+    <value>269, 359</value>
   </data>
   <data name="lblMesure.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3518,7 +4133,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;lblMesure.ZOrder" xml:space="preserve">
-    <value>44</value>
+    <value>36</value>
   </data>
   <data name="label12.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -3533,7 +4148,7 @@
     <value>NoControl</value>
   </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>681, 318</value>
+    <value>681, 359</value>
   </data>
   <data name="label12.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3560,7 +4175,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>45</value>
+    <value>37</value>
   </data>
   <data name="t_total_size_pvc.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -3572,13 +4187,13 @@
     <value>NoControl</value>
   </data>
   <data name="t_total_size_pvc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>682, 336</value>
+    <value>682, 377</value>
   </data>
   <data name="t_total_size_pvc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
   </data>
   <data name="t_total_size_pvc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>415, 35</value>
+    <value>415, 38</value>
   </data>
   <data name="t_total_size_pvc.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -3599,7 +4214,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;t_total_size_pvc.ZOrder" xml:space="preserve">
-    <value>46</value>
+    <value>38</value>
   </data>
   <data name="t_total_size_mesure.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -3608,7 +4223,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="t_total_size_mesure.Location" type="System.Drawing.Point, System.Drawing">
-    <value>270, 336</value>
+    <value>270, 377</value>
   </data>
   <data name="t_total_size_mesure.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
@@ -3635,7 +4250,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;t_total_size_mesure.ZOrder" xml:space="preserve">
-    <value>47</value>
+    <value>39</value>
   </data>
   <data name="label15.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -3650,7 +4265,7 @@
     <value>NoControl</value>
   </data>
   <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 236</value>
+    <value>1, 267</value>
   </data>
   <data name="label15.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3677,7 +4292,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
-    <value>48</value>
+    <value>40</value>
   </data>
   <data name="cb_type_bois.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -3701,7 +4316,7 @@
     <value>BOIS_DIVERS</value>
   </data>
   <data name="cb_type_bois.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 254</value>
+    <value>2, 285</value>
   </data>
   <data name="cb_type_bois.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
@@ -3725,7 +4340,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;cb_type_bois.ZOrder" xml:space="preserve">
-    <value>49</value>
+    <value>41</value>
   </data>
   <data name="b_cmb_categorie.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -3740,7 +4355,7 @@
     <value>NoControl</value>
   </data>
   <data name="b_cmb_categorie.Location" type="System.Drawing.Point, System.Drawing">
-    <value>219, 254</value>
+    <value>219, 285</value>
   </data>
   <data name="b_cmb_categorie.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
@@ -3764,7 +4379,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;b_cmb_categorie.ZOrder" xml:space="preserve">
-    <value>50</value>
+    <value>42</value>
   </data>
   <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -3779,7 +4394,7 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 318</value>
+    <value>1, 359</value>
   </data>
   <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3806,7 +4421,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>51</value>
+    <value>43</value>
   </data>
   <data name="t_search_type_bois.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -3815,7 +4430,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="t_search_type_bois.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 336</value>
+    <value>2, 377</value>
   </data>
   <data name="t_search_type_bois.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 1</value>
@@ -3842,7 +4457,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;t_search_type_bois.ZOrder" xml:space="preserve">
-    <value>52</value>
+    <value>44</value>
   </data>
   <data name="lt_type_bois.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -3854,13 +4469,13 @@
     <value>25</value>
   </data>
   <data name="lt_type_bois.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 372</value>
+    <value>2, 416</value>
   </data>
   <data name="lt_type_bois.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 0</value>
   </data>
   <data name="lt_type_bois.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 161</value>
+    <value>266, 179</value>
   </data>
   <data name="lt_type_bois.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -3878,7 +4493,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;lt_type_bois.ZOrder" xml:space="preserve">
-    <value>53</value>
+    <value>45</value>
   </data>
   <data name="label16.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -3893,7 +4508,7 @@
     <value>NoControl</value>
   </data>
   <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>681, 400</value>
+    <value>681, 449</value>
   </data>
   <data name="label16.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3920,7 +4535,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
-    <value>54</value>
+    <value>46</value>
   </data>
   <data name="label13.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -3935,7 +4550,7 @@
     <value>NoControl</value>
   </data>
   <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 400</value>
+    <value>269, 449</value>
   </data>
   <data name="label13.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3962,7 +4577,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
-    <value>55</value>
+    <value>47</value>
   </data>
   <data name="t_categorie.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -3971,7 +4586,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="t_categorie.Location" type="System.Drawing.Point, System.Drawing">
-    <value>270, 418</value>
+    <value>270, 467</value>
   </data>
   <data name="t_categorie.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
@@ -3995,7 +4610,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;t_categorie.ZOrder" xml:space="preserve">
-    <value>56</value>
+    <value>48</value>
   </data>
   <data name="t_size_pvc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -4004,7 +4619,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="t_size_pvc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>682, 418</value>
+    <value>682, 467</value>
   </data>
   <data name="t_size_pvc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
@@ -4031,7 +4646,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;t_size_pvc.ZOrder" xml:space="preserve">
-    <value>57</value>
+    <value>49</value>
   </data>
   <data name="label14.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -4046,7 +4661,7 @@
     <value>NoControl</value>
   </data>
   <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>681, 482</value>
+    <value>681, 541</value>
   </data>
   <data name="label14.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -4073,7 +4688,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
-    <value>58</value>
+    <value>50</value>
   </data>
   <data name="t_prix_metre_linear_pvc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -4082,7 +4697,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="t_prix_metre_linear_pvc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>682, 500</value>
+    <value>682, 559</value>
   </data>
   <data name="t_prix_metre_linear_pvc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
@@ -4109,7 +4724,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;t_prix_metre_linear_pvc.ZOrder" xml:space="preserve">
-    <value>59</value>
+    <value>51</value>
   </data>
   <data name="label17.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -4124,7 +4739,7 @@
     <value>NoControl</value>
   </data>
   <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>681, 545</value>
+    <value>681, 610</value>
   </data>
   <data name="label17.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -4151,7 +4766,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
-    <value>60</value>
+    <value>52</value>
   </data>
   <data name="label20.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -4166,7 +4781,7 @@
     <value>NoControl</value>
   </data>
   <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 482</value>
+    <value>269, 541</value>
   </data>
   <data name="label20.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -4193,7 +4808,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
-    <value>61</value>
+    <value>53</value>
   </data>
   <data name="t_metrage_feuille.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -4202,7 +4817,7 @@
     <value>Ubuntu, 18pt, style=Bold</value>
   </data>
   <data name="t_metrage_feuille.Location" type="System.Drawing.Point, System.Drawing">
-    <value>270, 500</value>
+    <value>270, 559</value>
   </data>
   <data name="t_metrage_feuille.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
@@ -4226,7 +4841,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;t_metrage_feuille.ZOrder" xml:space="preserve">
-    <value>62</value>
+    <value>54</value>
   </data>
   <data name="label11.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -4241,7 +4856,7 @@
     <value>NoControl</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 545</value>
+    <value>269, 610</value>
   </data>
   <data name="label11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -4268,7 +4883,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>63</value>
+    <value>55</value>
   </data>
   <data name="t_prix_total_pvc.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -4280,13 +4895,13 @@
     <value>NoControl</value>
   </data>
   <data name="t_prix_total_pvc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>682, 565</value>
+    <value>682, 630</value>
   </data>
   <data name="t_prix_total_pvc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
   </data>
   <data name="t_prix_total_pvc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>415, 41</value>
+    <value>415, 46</value>
   </data>
   <data name="t_prix_total_pvc.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -4307,7 +4922,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;t_prix_total_pvc.ZOrder" xml:space="preserve">
-    <value>64</value>
+    <value>56</value>
   </data>
   <data name="txtPrixTotalMesure.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -4319,13 +4934,13 @@
     <value>NoControl</value>
   </data>
   <data name="txtPrixTotalMesure.Location" type="System.Drawing.Point, System.Drawing">
-    <value>270, 565</value>
+    <value>270, 630</value>
   </data>
   <data name="txtPrixTotalMesure.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
   </data>
   <data name="txtPrixTotalMesure.Size" type="System.Drawing.Size, System.Drawing">
-    <value>410, 41</value>
+    <value>410, 46</value>
   </data>
   <data name="txtPrixTotalMesure.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -4346,7 +4961,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;txtPrixTotalMesure.ZOrder" xml:space="preserve">
-    <value>65</value>
+    <value>57</value>
   </data>
   <data name="label5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -4361,7 +4976,7 @@
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 545</value>
+    <value>1, 610</value>
   </data>
   <data name="label5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -4388,7 +5003,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>66</value>
+    <value>58</value>
   </data>
   <data name="t_type_Bois.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -4400,13 +5015,13 @@
     <value>NoControl</value>
   </data>
   <data name="t_type_Bois.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 565</value>
+    <value>2, 630</value>
   </data>
   <data name="t_type_Bois.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
   </data>
   <data name="t_type_Bois.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 41</value>
+    <value>266, 46</value>
   </data>
   <data name="t_type_Bois.TabIndex" type="System.Int32, mscorlib">
     <value>72</value>
@@ -4427,7 +5042,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;t_type_Bois.ZOrder" xml:space="preserve">
-    <value>67</value>
+    <value>59</value>
   </data>
   <data name="b_print_facture.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -4445,13 +5060,13 @@
     <value>NoControl</value>
   </data>
   <data name="b_print_facture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 607</value>
+    <value>2, 677</value>
   </data>
   <data name="b_print_facture.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 0</value>
   </data>
   <data name="b_print_facture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 40</value>
+    <value>369, 45</value>
   </data>
   <data name="b_print_facture.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -4472,7 +5087,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;b_print_facture.ZOrder" xml:space="preserve">
-    <value>68</value>
+    <value>60</value>
   </data>
   <data name="b_add_facture.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -4490,13 +5105,13 @@
     <value>NoControl</value>
   </data>
   <data name="b_add_facture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>682, 607</value>
+    <value>682, 677</value>
   </data>
   <data name="b_add_facture.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 0</value>
   </data>
   <data name="b_add_facture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 40</value>
+    <value>204, 45</value>
   </data>
   <data name="b_add_facture.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -4514,7 +5129,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;b_add_facture.ZOrder" xml:space="preserve">
-    <value>69</value>
+    <value>61</value>
   </data>
   <data name="b_clear.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -4532,13 +5147,13 @@
     <value>NoControl</value>
   </data>
   <data name="b_clear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>888, 607</value>
+    <value>888, 677</value>
   </data>
   <data name="b_clear.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 0</value>
   </data>
   <data name="b_clear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 40</value>
+    <value>209, 45</value>
   </data>
   <data name="b_clear.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -4556,7 +5171,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;b_clear.ZOrder" xml:space="preserve">
-    <value>70</value>
+    <value>62</value>
   </data>
   <data name="b_delete_facture.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -4574,13 +5189,13 @@
     <value>NoControl</value>
   </data>
   <data name="b_delete_facture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>373, 607</value>
+    <value>373, 677</value>
   </data>
   <data name="b_delete_facture.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 0</value>
   </data>
   <data name="b_delete_facture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>307, 40</value>
+    <value>307, 45</value>
   </data>
   <data name="b_delete_facture.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -4598,13 +5213,13 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;b_delete_facture.ZOrder" xml:space="preserve">
-    <value>71</value>
+    <value>63</value>
   </data>
   <data name="label25.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
   <data name="label25.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 676</value>
+    <value>3, 756</value>
   </data>
   <data name="label25.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -4625,7 +5240,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;label25.ZOrder" xml:space="preserve">
-    <value>72</value>
+    <value>64</value>
   </data>
   <data name="cb_type_metres.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -4649,7 +5264,7 @@
     <value>m3</value>
   </data>
   <data name="cb_type_metres.Location" type="System.Drawing.Point, System.Drawing">
-    <value>579, 25</value>
+    <value>579, 28</value>
   </data>
   <data name="cb_type_metres.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
@@ -4673,49 +5288,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;cb_type_metres.ZOrder" xml:space="preserve">
-    <value>73</value>
-  </data>
-  <data name="ck_avance_client.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="ck_avance_client.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ck_avance_client.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Ubuntu, 10.2pt, style=Bold</value>
-  </data>
-  <data name="ck_avance_client.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ck_avance_client.Location" type="System.Drawing.Point, System.Drawing">
-    <value>382, 729</value>
-  </data>
-  <data name="ck_avance_client.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 0, 1, 0</value>
-  </data>
-  <data name="ck_avance_client.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 41</value>
-  </data>
-  <data name="ck_avance_client.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="ck_avance_client.Text" xml:space="preserve">
-    <value>Avance</value>
-  </data>
-  <data name="ck_avance_client.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;ck_avance_client.Name" xml:space="preserve">
-    <value>ck_avance_client</value>
-  </data>
-  <data name="&gt;&gt;ck_avance_client.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ck_avance_client.Parent" xml:space="preserve">
-    <value>tblp_add_edit</value>
-  </data>
-  <data name="&gt;&gt;ck_avance_client.ZOrder" xml:space="preserve">
-    <value>74</value>
+    <value>65</value>
   </data>
   <data name="ck_seul_pvc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Right</value>
@@ -4733,13 +5306,13 @@
     <value>NoControl</value>
   </data>
   <data name="ck_seul_pvc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>686, 25</value>
+    <value>686, 28</value>
   </data>
   <data name="ck_seul_pvc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 0, 1, 0</value>
   </data>
   <data name="ck_seul_pvc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 41</value>
+    <value>97, 46</value>
   </data>
   <data name="ck_seul_pvc.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -4760,43 +5333,7 @@
     <value>tblp_add_edit</value>
   </data>
   <data name="&gt;&gt;ck_seul_pvc.ZOrder" xml:space="preserve">
-    <value>75</value>
-  </data>
-  <data name="tblp_add_edit.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tblp_add_edit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>231, 36</value>
-  </data>
-  <data name="tblp_add_edit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 5</value>
-  </data>
-  <data name="tblp_add_edit.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 1, 1, 1</value>
-  </data>
-  <data name="tblp_add_edit.RowCount" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="tblp_add_edit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1099, 820</value>
-  </data>
-  <data name="tblp_add_edit.TabIndex" type="System.Int32, mscorlib">
-    <value>422</value>
-  </data>
-  <data name="&gt;&gt;tblp_add_edit.Name" xml:space="preserve">
-    <value>tblp_add_edit</value>
-  </data>
-  <data name="&gt;&gt;tblp_add_edit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tblp_add_edit.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tblp_add_edit.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tblp_add_edit.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblNumeroFacture" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="b_save_client" Row="20" RowSpan="1" Column="7" ColumnSpan="3" /&gt;&lt;Control Name="b_add_new_facture" Row="20" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="t_prix_rest_client" Row="19" RowSpan="1" Column="7" ColumnSpan="3" /&gt;&lt;Control Name="t_prix_total_client" Row="19" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="label19" Row="18" RowSpan="1" Column="7" ColumnSpan="3" /&gt;&lt;Control Name="label18" Row="18" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="cb_id_facture" Row="1" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label6" Row="18" RowSpan="1" Column="3" ColumnSpan="4" /&gt;&lt;Control Name="lblTypeDuMetres" Row="0" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="label7" Row="0" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="t_prix_metre_mesure" Row="1" RowSpan="1" Column="2" ColumnSpan="3" /&gt;&lt;Control Name="t_nom_client" Row="5" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="cb_type_pvc" Row="1" RowSpan="1" Column="7" ColumnSpan="2" /&gt;&lt;Control Name="b_cmb_pvc" Row="1" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="dp_date_facture" Row="3" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label2" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label10" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="label9" Row="2" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="4" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lblEpaisseur" Row="2" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="label22" Row="2" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="label21" Row="2" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="label23" Row="2" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="label24" Row="2" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="t_quantity_mesure" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="t_largeur_mesure" Row="3" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="t_longueur_mesure" Row="3" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="t_epaisseur_mesure" Row="3" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="t_quantity_pvc" Row="3" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="t_largeur_pvc" Row="3" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="t_longueur_pvc" Row="3" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="cb_orientation_pvc" Row="3" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="t_prix_avance_client" Row="19" RowSpan="1" Column="4" ColumnSpan="3" /&gt;&lt;Control Name="b_add_mesure" Row="4" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="b_add_seul_pvc" Row="4" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="b_delete_seul_pvc" Row="5" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="b_import_pvc" Row="6" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="b_save_pvc" Row="7" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="b_delete_mesure" Row="5" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="b_export_csv" Row="7" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="dg_mesure" Row="4" RowSpan="4" Column="2" ColumnSpan="3" /&gt;&lt;Control Name="dg_pvc" Row="4" RowSpan="4" Column="6" ColumnSpan="3" /&gt;&lt;Control Name="lblMesure" Row="8" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="label12" Row="8" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="t_total_size_pvc" Row="9" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="t_total_size_mesure" Row="9" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="label15" Row="6" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="cb_type_bois" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="b_cmb_categorie" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="8" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="t_search_type_bois" Row="9" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lt_type_bois" Row="10" RowSpan="4" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label16" Row="10" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="label13" Row="10" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="t_categorie" Row="11" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="t_size_pvc" Row="11" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="label14" Row="12" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="t_prix_metre_linear_pvc" Row="13" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="label17" Row="14" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="label20" Row="12" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="t_metrage_feuille" Row="13" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="label11" Row="14" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="t_prix_total_pvc" Row="15" RowSpan="1" Column="6" ColumnSpan="4" /&gt;&lt;Control Name="txtPrixTotalMesure" Row="15" RowSpan="1" Column="2" ColumnSpan="4" /&gt;&lt;Control Name="label5" Row="14" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="t_type_Bois" Row="15" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="b_print_facture" Row="16" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="b_add_facture" Row="16" RowSpan="1" Column="6" ColumnSpan="2" /&gt;&lt;Control Name="b_clear" Row="16" RowSpan="1" Column="8" ColumnSpan="2" /&gt;&lt;Control Name="b_delete_facture" Row="16" RowSpan="1" Column="3" ColumnSpan="3" /&gt;&lt;Control Name="label25" Row="17" RowSpan="1" Column="0" ColumnSpan="10" /&gt;&lt;Control Name="cb_type_metres" Row="1" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="ck_avance_client" Row="19" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="ck_seul_pvc" Row="1" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,19.81132,Percent,4.716981,Percent,9.433961,Percent,9.433961,Percent,9.433961,Percent,9.433961,Percent,9.433961,Percent,9.433961,Percent,9.433961,Percent,9.433961" /&gt;&lt;Rows Styles="Percent,3.039589,Percent,5.065982,Percent,3.039589,Percent,5.065982,Percent,5.065982,Percent,5.065982,Percent,5.065982,Percent,5.065982,Percent,5.065982,Percent,4.281373,Percent,5.749271,Percent,5.065982,Percent,5.065982,Percent,4.036723,Percent,3.914398,Percent,5.065982,Percent,5.065982,Percent,5.065982,Percent,5.065982,Percent,5.065982,Percent,5.015322,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>66</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

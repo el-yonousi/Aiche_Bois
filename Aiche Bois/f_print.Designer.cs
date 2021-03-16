@@ -34,11 +34,11 @@ namespace Aiche_Bois
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f_print));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lt_facture = new System.Windows.Forms.ListBox();
             this.b_print = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.lt_mesure = new System.Windows.Forms.ListBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.ck_lt_facture_client = new System.Windows.Forms.CheckedListBox();
+            this.ck_lt_mesure = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -69,23 +69,6 @@ namespace Aiche_Bois
             this.label2.Text = "Mesure/Pvc";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lt_facture
-            // 
-            this.lt_facture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.lt_facture.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lt_facture.Font = new System.Drawing.Font("Ubuntu", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lt_facture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.lt_facture.FormattingEnabled = true;
-            this.lt_facture.ItemHeight = 27;
-            this.lt_facture.Items.AddRange(new object[] {
-            "aucune"});
-            this.lt_facture.Location = new System.Drawing.Point(244, 85);
-            this.lt_facture.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.lt_facture.Name = "lt_facture";
-            this.lt_facture.Size = new System.Drawing.Size(231, 351);
-            this.lt_facture.TabIndex = 17;
-            this.toolTip1.SetToolTip(this.lt_facture, "la liste des facture client");
-            // 
             // b_print
             // 
             this.b_print.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
@@ -94,7 +77,7 @@ namespace Aiche_Bois
             this.b_print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.b_print.Font = new System.Drawing.Font("Ubuntu", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b_print.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.b_print.Location = new System.Drawing.Point(8, 445);
+            this.b_print.Location = new System.Drawing.Point(8, 458);
             this.b_print.Margin = new System.Windows.Forms.Padding(0);
             this.b_print.Name = "b_print";
             this.b_print.Size = new System.Drawing.Size(467, 50);
@@ -117,33 +100,44 @@ namespace Aiche_Bois
             this.label3.Text = "Facture";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lt_mesure
+            // ck_lt_facture_client
             // 
-            this.lt_mesure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.lt_mesure.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lt_mesure.Font = new System.Drawing.Font("Ubuntu", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lt_mesure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.lt_mesure.FormattingEnabled = true;
-            this.lt_mesure.ItemHeight = 27;
-            this.lt_mesure.Items.AddRange(new object[] {
-            "aucune"});
-            this.lt_mesure.Location = new System.Drawing.Point(9, 85);
-            this.lt_mesure.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.lt_mesure.Name = "lt_mesure";
-            this.lt_mesure.Size = new System.Drawing.Size(231, 351);
-            this.lt_mesure.TabIndex = 16;
-            this.toolTip1.SetToolTip(this.lt_mesure, "la liste des mesures");
+            this.ck_lt_facture_client.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.ck_lt_facture_client.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ck_lt_facture_client.CheckOnClick = true;
+            this.ck_lt_facture_client.Font = new System.Drawing.Font("Ubuntu", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ck_lt_facture_client.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.ck_lt_facture_client.FormattingEnabled = true;
+            this.ck_lt_facture_client.Location = new System.Drawing.Point(244, 85);
+            this.ck_lt_facture_client.Name = "ck_lt_facture_client";
+            this.ck_lt_facture_client.Size = new System.Drawing.Size(231, 362);
+            this.ck_lt_facture_client.TabIndex = 22;
+            this.toolTip1.SetToolTip(this.ck_lt_facture_client, "la liste des factures");
+            // 
+            // ck_lt_mesure
+            // 
+            this.ck_lt_mesure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
+            this.ck_lt_mesure.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ck_lt_mesure.CheckOnClick = true;
+            this.ck_lt_mesure.Font = new System.Drawing.Font("Ubuntu", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ck_lt_mesure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.ck_lt_mesure.FormattingEnabled = true;
+            this.ck_lt_mesure.Location = new System.Drawing.Point(8, 85);
+            this.ck_lt_mesure.Name = "ck_lt_mesure";
+            this.ck_lt_mesure.Size = new System.Drawing.Size(231, 362);
+            this.ck_lt_mesure.TabIndex = 23;
+            this.toolTip1.SetToolTip(this.ck_lt_mesure, "la liste des mesures");
             // 
             // f_print
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(484, 501);
+            this.ClientSize = new System.Drawing.Size(484, 517);
+            this.Controls.Add(this.ck_lt_mesure);
+            this.Controls.Add(this.ck_lt_facture_client);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.lt_mesure);
-            this.Controls.Add(this.lt_facture);
             this.Controls.Add(this.b_print);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Ubuntu", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -164,10 +158,10 @@ namespace Aiche_Bois
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox lt_facture;
         private System.Windows.Forms.Button b_print;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListBox lt_mesure;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.CheckedListBox ck_lt_facture_client;
+        private System.Windows.Forms.CheckedListBox ck_lt_mesure;
     }
 }

@@ -24,6 +24,16 @@ namespace Aiche_Bois
         String idFacture;
 
         /// <summary>
+        /// last item on factures
+        /// </summary>
+        String tous_les_factures = "Toutes Les factures";
+
+        /// <summary>
+        /// last item on mesures
+        /// </summary>
+        String tous_les_mesures = "Toutes Les Mesures";
+
+        /// <summary>
         /// Select the push button
         /// </summary>
         String btnClick;
@@ -60,6 +70,7 @@ namespace Aiche_Bois
         /// <param name="idClient"></param>
         /// <param name="idFacture"></param>
         /// <param name="btn"></param>
+        [Obsolete]
         public f_print(String idClient, String idFacture, String btn, bool check)
         {
             this.idClient = idClient;
@@ -95,11 +106,10 @@ namespace Aiche_Bois
                 pvcs.Clear();
                 long idf = 0;
 
-                OleDbCommand commandClient = new OleDbCommand
+                var commandClient = new OleDbCommand
                 {
                     Connection = connection,
-                    CommandText =
-                    "SELECT count(idFacture) AS nbFacture, " +
+                    CommandText = "SELECT count(idFacture) AS nbFacture, " +
                     "(sum(f.prixtotalmesure) + sum(prixtotalpvc)) AS total, " +
                     "IIF((sum(f.prixtotalmesure) + sum(prixtotalpvc)) = prixTotalAvance, 0, (sum(f.prixtotalmesure) + sum(prixtotalpvc)) - prixTotalAvance) AS rest, " +
                     "IIF(ROUND((sum(f.prixtotalmesure) + sum(prixtotalpvc)), 2) = ROUND((prixTotalAvance), 2), 'true', 'false') AS cavance, " +
@@ -108,18 +118,19 @@ namespace Aiche_Bois
                     "c.prixTotalAvance, " +
                     "c.idClient " +
                     "FROM client c INNER JOIN facture f ON f.idClient = c.idClient " +
-                    "WHERE c.idClient = " + long.Parse(idClient) +
-                    " GROUP BY nomClient, " +
+                    "WHERE c.idClient = @idClient " +
+                    "GROUP BY nomClient, " +
                     "dateClient, " +
                     "prixTotalAvance, " +
                     "c.idClient " +
                     "ORDER BY c.idClient DESC;"
                 };
+                commandClient.Parameters.AddWithValue("@idClient", idClient);
 
                 OleDbDataReader readerClient = commandClient.ExecuteReader();
                 while (readerClient.Read())
                 {
-                    Client client = new Client();
+                    var client = new Client();
                     client.IdClient = Convert.ToInt32(readerClient["idClient"]);
                     client.NomClient = readerClient["nomClient"].ToString();
                     client.DateClient = Convert.ToDateTime(readerClient["dateClient"]);
@@ -131,17 +142,22 @@ namespace Aiche_Bois
 
                     /*remplir a la liste client*/
                     clients.Add(client);
+                    client = null;
                 }
+                readerClient = null;
+                commandClient = null;
 
-                OleDbCommand commandFacture = new OleDbCommand
+                var commandFacture = new OleDbCommand
                 {
                     Connection = connection,
-                    CommandText = "SELECT * FROM facture WHERE idClient = " + long.Parse(idClient)
+                    CommandText = "SELECT * FROM facture WHERE idClient = @idClient"
                 };
+                commandFacture.Parameters.AddWithValue("@idClient", idClient);
+
                 OleDbDataReader readerFacture = commandFacture.ExecuteReader();
                 while (readerFacture.Read())
                 {
-                    Facture facture = new Facture();
+                    var facture = new Facture();
                     idf = long.Parse(readerFacture["idFacture"].ToString());
                     facture.IdClient = long.Parse(readerFacture["idClient"].ToString());
                     facture.IDFacture = long.Parse(readerFacture["idFacture"].ToString());
@@ -164,13 +180,14 @@ namespace Aiche_Bois
                     OleDbCommand commandMesure = new OleDbCommand
                     {
                         Connection = connection,
-                        CommandText = "SELECT * FROM Mesure WHERE idFacture = " + idf
+                        CommandText = "SELECT * FROM Mesure WHERE idFacture = @idFacture"
                     };
+                    commandMesure.Parameters.AddWithValue("@idFacture", idf);
 
                     OleDbDataReader readerMesure = commandMesure.ExecuteReader();
                     while (readerMesure.Read())
                     {
-                        Mesure mesure = new Mesure
+                        var mesure = new Mesure
                         {
                             IdFacture = long.Parse(readerMesure["IdFacture"].ToString()),
                             Quantite = double.Parse(readerMesure["quantite"].ToString()),
@@ -179,18 +196,22 @@ namespace Aiche_Bois
                             Epaisseur = double.Parse(readerMesure["eppaiseur"].ToString())
                         };
                         mesures.Add(mesure);
+                        mesure = null;
                     }
+                    readerMesure = null;
+                    commandMesure = null;
 
-                    OleDbCommand commandPvc = new OleDbCommand
+                    var commandPvc = new OleDbCommand
                     {
                         Connection = connection,
-                        CommandText = "SELECT * FROM Pvc WHERE idFacture = " + idf
+                        CommandText = "SELECT * FROM Pvc WHERE idFacture = @idFacture"
                     };
+                    commandPvc.Parameters.AddWithValue("@idFacture", idf);
 
                     OleDbDataReader readerPvc = commandPvc.ExecuteReader();
                     while (readerPvc.Read())
                     {
-                        Pvc pvc = new Pvc
+                        var pvc = new Pvc
                         {
                             IdFacture = long.Parse(readerPvc["IdFacture"].ToString()),
                             Qte = double.Parse(readerPvc["quantite"].ToString()),
@@ -199,10 +220,15 @@ namespace Aiche_Bois
                             Ortn = readerPvc["orientation"].ToString()
                         };
                         pvcs.Add(pvc);
+                        pvc = null;
                     }
-
                     factures.Add(facture);
+                    readerPvc = null;
+                    commandPvc = null;
+                    facture = null;
                 }
+                readerFacture = null;
+                commandFacture = null;
 
                 file = $"{clients[0].NomClient + String.Format("-N{0:D4}", idClient.ToString())}.pdf";
 
@@ -219,7 +245,6 @@ namespace Aiche_Bois
         /// <summary>
         /// print client by id facture with id client
         /// </summary>
-        /// <param name="idClient"></param>
         /// <param name="idFacture"></param>
         [Obsolete]
         private void client(long idFacture)
@@ -923,19 +948,22 @@ namespace Aiche_Bois
             {
                 connection.Open();
 
-                OleDbCommand commandIdFacture = new OleDbCommand
+                var commandIdFacture = new OleDbCommand
                 {
                     Connection = connection,
-                    CommandText = "select idFacture from facture where idClient = " + long.Parse(idClient)
+                    CommandText = "SELECT idFacture FROM facture WHERE idClient = @idClient"
                 };
-
+                commandIdFacture.Parameters.AddWithValue("@idClient", idClient);
                 OleDbDataReader readerIdFacture = commandIdFacture.ExecuteReader();
                 while (readerIdFacture.Read())
                 {
                     //تسجيل المعرفات في القائمة
-                    lt_facture.Items.Add(readerIdFacture["idFacture"].ToString());
-                    lt_mesure.Items.Add(readerIdFacture["idFacture"].ToString());
+                    ck_lt_mesure.Items.Add(readerIdFacture["idFacture"].ToString());
+                    ck_lt_facture_client.Items.Add(readerIdFacture["idFacture"].ToString());
                 }
+
+                readerIdFacture = null;
+                commandIdFacture = null;
                 connection.Close();
             }
             catch (Exception ex)
@@ -946,16 +974,16 @@ namespace Aiche_Bois
             }
 
             //إضافة عنصر في قائمة المعرفات
-            lt_facture.Items.Add("Toutes Les factures");
-            lt_mesure.Items.Add("Toutes Les Mesures");
+            ck_lt_mesure.Items.Add(tous_les_mesures);
+            ck_lt_facture_client.Items.Add(tous_les_factures);
 
             if (btnClick == "btnPrintFacture")
             {
-                lt_facture.SelectedItem = idFacture;
+                ck_lt_facture_client.SetItemChecked(ck_lt_facture_client.Items.IndexOf(idFacture), true);
             }
             else
             {
-                lt_facture.SelectedItem = "Toutes Les factures";
+                ck_lt_facture_client.SetItemChecked(ck_lt_facture_client.Items.IndexOf(tous_les_factures), true);
             }
         }
 
@@ -970,26 +998,28 @@ namespace Aiche_Bois
         {
             try
             {
-                //    //تحديد الطباعة حسب الزر المضغوط
-                if (lt_facture.SelectedIndex > -1 && !lt_facture.SelectedItem.Equals("aucune"))
+                // for client factures check list box
+                for (int i = 0; i < ck_lt_facture_client.CheckedItems.Count; i++)
                 {
-                    if (lt_facture.SelectedItem.Equals("Toutes Les factures"))
+                    if (ck_lt_facture_client.CheckedItems[i].Equals(tous_les_factures))
                     {
-                        ////طباعة صفحة العميل، كل الفواتر
+                        //طباعة صفحة العميل، كل الفواتر
                         file = $"Factures-{clients[0].NomClient + String.Format("-N{0:D4}", idClient)}.pdf";
                         client();
                     }
                     else
                     {
-                        file = $"Facture{clients[0].NomClient + String.Format("-N{0:D4}-Numero-{1}", idClient, lt_facture.SelectedItem)}.pdf";
+                        file = $"Facture{clients[0].NomClient + String.Format("-N{0:D4}-Numero-{1}", idClient, ck_lt_facture_client.CheckedItems[i])}.pdf";
                         //طباعة صفحة العميل، من خلال رقم الفاتورة المحددة
-                        client(long.Parse(lt_facture.SelectedItem.ToString()));
+                        client(long.Parse(ck_lt_facture_client.CheckedItems[i].ToString()));
 
                     }
                 }
-                if (lt_mesure.SelectedIndex > -1 && !lt_mesure.SelectedItem.Equals("aucune"))
+                
+                // for mesure checklistbox
+                for (int i = 0; i < ck_lt_mesure.CheckedItems.Count; i++)
                 {
-                    if (lt_mesure.Text == "Toutes Les Mesures")
+                    if (ck_lt_mesure.CheckedItems[i].Equals(tous_les_mesures))
                     {
                         file = $"Mesures-{clients[0].NomClient + String.Format("-N{0:D4}", idClient)}.pdf";
 
@@ -998,10 +1028,10 @@ namespace Aiche_Bois
                     }
                     else
                     {
-                        file = $"Mesure{clients[0].NomClient + String.Format("-N{0:D4}-Numero-{1}", idClient, lt_mesure.SelectedItem)}.pdf";
+                        file = $"Mesure{clients[0].NomClient + String.Format("-N{0:D4}-Numero-{1}", idClient, ck_lt_mesure.CheckedItems[i])}.pdf";
 
                         // طباعة القياسات من خلال رقم الفاتورة
-                        pvc_mesure(long.Parse(lt_mesure.Text));
+                        pvc_mesure(long.Parse(ck_lt_mesure.CheckedItems[i].ToString()));
                     }
                 }
             }

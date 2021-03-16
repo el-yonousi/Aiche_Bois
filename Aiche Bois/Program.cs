@@ -21,6 +21,7 @@ namespace Aiche_Bois
         public static string PathType;
 
         [STAThread]
+        [Obsolete]
         private static void Main()
         {
             Application.EnableVisualStyles();

@@ -7,10 +7,12 @@ namespace Aiche_Bois
 {
     public partial class f_user : Form
     {
-        private string fileName = "aicheBois.accdb";
-        private string fileNameType = "type.accdb";
-        private string sourcePath = Application.StartupPath + "\\Resources\\";
-        private string targetPath = Program.generale_path + "\\base_donnee";
+        string fileName = "aicheBois.accdb";
+        string fileNameType = "type.accdb";
+        string sourcePath = Application.StartupPath + "\\Resources\\";
+        string targetPath = Program.generale_path + "\\base_donnee";
+
+        [Obsolete]
         public f_user()
         {
             if (System.Diagnostics.Process.GetProcessesByName("aiche bois").Length > 0)
@@ -42,12 +44,9 @@ namespace Aiche_Bois
                     Application.Restart();
                     Environment.Exit(0);
                 }
-
                 InitializeComponent();
             }
         }
-
-
 
         /// <summary>
         /// this is button connect to verify connection to database
@@ -71,16 +70,16 @@ namespace Aiche_Bois
                     ";Jet OLEDB:Database Password=" + t_pass_word.Text + ";";
             try
             {
-                // Try to connect to the database.
-                OleDbConnection conn = new OleDbConnection(Program.Path);
+                // Try to connect the database.
+                var conn = new OleDbConnection(Program.Path);
                 conn.Open();
                 conn.Close();
 
-                OleDbConnection conntype = new OleDbConnection(Program.PathType);
+                var conntype = new OleDbConnection(Program.PathType);
                 conntype.Open();
                 conntype.Close();
 
-                f_main_client formClient = new f_main_client();
+                var formClient = new f_main_client();
                 this.Hide();
                 formClient.ShowDialog();
             }

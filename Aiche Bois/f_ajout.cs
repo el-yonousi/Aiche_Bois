@@ -45,20 +45,25 @@ namespace Aiche_Bois
                  * command.CommandText = "select * from PVC";
                  */
                 connection.Open();
-                OleDbCommand comDelete = new OleDbCommand
+                var comDelete = new OleDbCommand
                 {
                     Connection = connection,
-                    CommandText = "delete * from " + tableDB
+                    CommandText = "DELETE * FROM " + tableDB
                 };
                 comDelete.ExecuteNonQuery();
+                comDelete = null;
+
                 foreach (string st in lt_type_bois_pvc.Items)
                 {
-                    OleDbCommand commandInsert = new OleDbCommand
+                    var commandInsert = new OleDbCommand
                     {
                         Connection = connection,
-                        CommandText = "insert into " + tableDB + " (Libelle) values('" + st.ToString() + "')"
+                        CommandText = "INSERT INTO " + tableDB + " (Libelle) " +
+                        "VALUES(@libelle)"
                     };
+                    commandInsert.Parameters.AddWithValue("@libelle", st.ToString());
                     commandInsert.ExecuteNonQuery();
+                    commandInsert = null;
                 }
                 connection.Close();
             }
@@ -79,7 +84,7 @@ namespace Aiche_Bois
             try
             {
                 connection.Open();
-                OleDbCommand command = new OleDbCommand
+                var command = new OleDbCommand
                 {
                     Connection = connection,
                     CommandText = "SELECT Libelle FROM " + typeBois
@@ -89,6 +94,8 @@ namespace Aiche_Bois
                 {
                     lt_type_bois_pvc.Items.Add(reader["Libelle"].ToString());
                 }
+                reader = null;
+                command = null;
                 connection.Close();
             }
             catch (Exception ex)
@@ -172,15 +179,17 @@ namespace Aiche_Bois
             {
                 /*ouvrier la connection a database*/
                 connection.Open();
-                OleDbCommand command = new OleDbCommand
+                var command = new OleDbCommand
                 {
                     Connection = connection,
 
                     /*query pour supprimer la ligne selectionner*/
-                    CommandText = "delete from " + tableDB + " where Libelle='" + lt_type_bois_pvc.SelectedItem + "'"
+                    CommandText = "DELETE FROM @tableDB WHERE Libelle = @Libelle"
                 };
+                command.Parameters.AddWithValue("@tableDB", tableDB);
+                command.Parameters.AddWithValue("@Libelle", lt_type_bois_pvc.SelectedItem);
                 command.ExecuteNonQuery();
-
+                command = null;
                 /*fermer la connection a database*/
                 connection.Close();
             }

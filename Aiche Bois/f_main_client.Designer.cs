@@ -72,12 +72,7 @@
             this.lblNumeroFacture = new System.Windows.Forms.Label();
             this.b_save_client = new FontAwesome.Sharp.IconButton();
             this.b_add_new_facture = new FontAwesome.Sharp.IconButton();
-            this.t_prix_rest_client = new System.Windows.Forms.Label();
-            this.t_prix_total_client = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.cb_id_facture = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.lblTypeDuMetres = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.t_prix_metre_mesure = new System.Windows.Forms.TextBox();
@@ -103,7 +98,6 @@
             this.t_largeur_pvc = new System.Windows.Forms.TextBox();
             this.t_longueur_pvc = new System.Windows.Forms.TextBox();
             this.cb_orientation_pvc = new System.Windows.Forms.ComboBox();
-            this.t_prix_avance_client = new System.Windows.Forms.TextBox();
             this.b_add_mesure = new FontAwesome.Sharp.IconButton();
             this.b_add_seul_pvc = new FontAwesome.Sharp.IconButton();
             this.b_delete_seul_pvc = new FontAwesome.Sharp.IconButton();
@@ -150,7 +144,6 @@
             this.b_delete_facture = new FontAwesome.Sharp.IconButton();
             this.label25 = new System.Windows.Forms.Label();
             this.cb_type_metres = new System.Windows.Forms.ComboBox();
-            this.ck_avance_client = new System.Windows.Forms.CheckBox();
             this.ck_seul_pvc = new System.Windows.Forms.CheckBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dg_client)).BeginInit();
@@ -546,14 +539,7 @@
             // 
             resources.ApplyResources(this.tblp_add_edit, "tblp_add_edit");
             this.tblp_add_edit.Controls.Add(this.lblNumeroFacture, 0, 0);
-            this.tblp_add_edit.Controls.Add(this.b_save_client, 7, 20);
-            this.tblp_add_edit.Controls.Add(this.b_add_new_facture, 0, 20);
-            this.tblp_add_edit.Controls.Add(this.t_prix_rest_client, 7, 19);
-            this.tblp_add_edit.Controls.Add(this.t_prix_total_client, 0, 19);
-            this.tblp_add_edit.Controls.Add(this.label19, 7, 18);
-            this.tblp_add_edit.Controls.Add(this.label18, 0, 18);
             this.tblp_add_edit.Controls.Add(this.cb_id_facture, 0, 1);
-            this.tblp_add_edit.Controls.Add(this.label6, 3, 18);
             this.tblp_add_edit.Controls.Add(this.lblTypeDuMetres, 2, 0);
             this.tblp_add_edit.Controls.Add(this.label7, 6, 0);
             this.tblp_add_edit.Controls.Add(this.t_prix_metre_mesure, 2, 1);
@@ -579,7 +565,6 @@
             this.tblp_add_edit.Controls.Add(this.t_largeur_pvc, 7, 3);
             this.tblp_add_edit.Controls.Add(this.t_longueur_pvc, 8, 3);
             this.tblp_add_edit.Controls.Add(this.cb_orientation_pvc, 9, 3);
-            this.tblp_add_edit.Controls.Add(this.t_prix_avance_client, 4, 19);
             this.tblp_add_edit.Controls.Add(this.b_add_mesure, 5, 4);
             this.tblp_add_edit.Controls.Add(this.b_add_seul_pvc, 9, 4);
             this.tblp_add_edit.Controls.Add(this.b_delete_seul_pvc, 9, 5);
@@ -619,8 +604,9 @@
             this.tblp_add_edit.Controls.Add(this.b_delete_facture, 3, 16);
             this.tblp_add_edit.Controls.Add(this.label25, 0, 17);
             this.tblp_add_edit.Controls.Add(this.cb_type_metres, 5, 1);
-            this.tblp_add_edit.Controls.Add(this.ck_avance_client, 3, 19);
             this.tblp_add_edit.Controls.Add(this.ck_seul_pvc, 6, 1);
+            this.tblp_add_edit.Controls.Add(this.b_add_new_facture, 0, 18);
+            this.tblp_add_edit.Controls.Add(this.b_save_client, 7, 18);
             this.tblp_add_edit.Name = "tblp_add_edit";
             // 
             // lblNumeroFacture
@@ -666,39 +652,6 @@
             this.b_add_new_facture.UseVisualStyleBackColor = false;
             this.b_add_new_facture.Click += new System.EventHandler(this.btnAddNewFacture_Click);
             // 
-            // t_prix_rest_client
-            // 
-            this.t_prix_rest_client.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.tblp_add_edit.SetColumnSpan(this.t_prix_rest_client, 3);
-            resources.ApplyResources(this.t_prix_rest_client, "t_prix_rest_client");
-            this.t_prix_rest_client.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.t_prix_rest_client.Name = "t_prix_rest_client";
-            this.t_prix_rest_client.Tag = "Montant Restant";
-            // 
-            // t_prix_total_client
-            // 
-            this.t_prix_total_client.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.tblp_add_edit.SetColumnSpan(this.t_prix_total_client, 3);
-            resources.ApplyResources(this.t_prix_total_client, "t_prix_total_client");
-            this.t_prix_total_client.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.t_prix_total_client.Name = "t_prix_total_client";
-            this.t_prix_total_client.Tag = "Montant Total";
-            this.toolTip.SetToolTip(this.t_prix_total_client, resources.GetString("t_prix_total_client.ToolTip"));
-            // 
-            // label19
-            // 
-            resources.ApplyResources(this.label19, "label19");
-            this.tblp_add_edit.SetColumnSpan(this.label19, 3);
-            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.label19.Name = "label19";
-            // 
-            // label18
-            // 
-            resources.ApplyResources(this.label18, "label18");
-            this.tblp_add_edit.SetColumnSpan(this.label18, 3);
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.label18.Name = "label18";
-            // 
             // cb_id_facture
             // 
             this.cb_id_facture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
@@ -712,13 +665,6 @@
             this.cb_id_facture.TabStop = false;
             this.toolTip.SetToolTip(this.cb_id_facture, resources.GetString("cb_id_facture.ToolTip"));
             this.cb_id_facture.SelectedIndexChanged += new System.EventHandler(this.cmbNumeroFacture_SelectedIndexChanged);
-            // 
-            // label6
-            // 
-            resources.ApplyResources(this.label6, "label6");
-            this.tblp_add_edit.SetColumnSpan(this.label6, 4);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.label6.Name = "label6";
             // 
             // lblTypeDuMetres
             // 
@@ -994,21 +940,6 @@
             this.cb_orientation_pvc.Tag = "Orientation PVC";
             this.toolTip.SetToolTip(this.cb_orientation_pvc, resources.GetString("cb_orientation_pvc.ToolTip"));
             this.cb_orientation_pvc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.t_quantity_pvc_KeyDown);
-            // 
-            // t_prix_avance_client
-            // 
-            resources.ApplyResources(this.t_prix_avance_client, "t_prix_avance_client");
-            this.t_prix_avance_client.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.t_prix_avance_client.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tblp_add_edit.SetColumnSpan(this.t_prix_avance_client, 3);
-            this.t_prix_avance_client.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
-            this.t_prix_avance_client.Name = "t_prix_avance_client";
-            this.t_prix_avance_client.ShortcutsEnabled = false;
-            this.t_prix_avance_client.Tag = "Montant de l\'Avance";
-            this.t_prix_avance_client.TextChanged += new System.EventHandler(this.txtPrixAvanceClient_TextChanged);
-            this.t_prix_avance_client.Enter += new System.EventHandler(this.txtNomClient_Enter);
-            this.t_prix_avance_client.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrixMetreMesure_KeyPress);
-            this.t_prix_avance_client.Leave += new System.EventHandler(this.txtNomClient_Leave);
             // 
             // b_add_mesure
             // 
@@ -1630,18 +1561,6 @@
             this.toolTip.SetToolTip(this.cb_type_metres, resources.GetString("cb_type_metres.ToolTip"));
             this.cb_type_metres.SelectedIndexChanged += new System.EventHandler(this.cmbTypeDuMetres_SelectedIndexChanged);
             // 
-            // ck_avance_client
-            // 
-            resources.ApplyResources(this.ck_avance_client, "ck_avance_client");
-            this.ck_avance_client.BackColor = System.Drawing.Color.Transparent;
-            this.ck_avance_client.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ck_avance_client.FlatAppearance.BorderSize = 2;
-            this.ck_avance_client.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.ck_avance_client.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.ck_avance_client.Name = "ck_avance_client";
-            this.ck_avance_client.UseVisualStyleBackColor = false;
-            this.ck_avance_client.CheckedChanged += new System.EventHandler(this.checkAvance_CheckedChanged);
-            // 
             // ck_seul_pvc
             // 
             resources.ApplyResources(this.ck_seul_pvc, "ck_seul_pvc");
@@ -1657,8 +1576,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(228)))));
             resources.ApplyResources(this, "$this");
-            this.Controls.Add(this.tblp_add_edit);
             this.Controls.Add(this.p_home);
+            this.Controls.Add(this.tblp_add_edit);
             this.Controls.Add(this.t_side_bar);
             this.Controls.Add(this.t_header);
             this.ForeColor = System.Drawing.Color.White;
@@ -1766,14 +1685,7 @@
         private System.Windows.Forms.Label txtPrixTotalMesure;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label t_prix_rest_client;
         private FontAwesome.Sharp.IconButton b_save_client;
-        private System.Windows.Forms.CheckBox ck_avance_client;
-        private System.Windows.Forms.TextBox t_prix_avance_client;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label t_prix_total_client;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ToolTip toolTip;
         private FontAwesome.Sharp.IconButton b_add_new_facture;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

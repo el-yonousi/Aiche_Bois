@@ -59,13 +59,12 @@ namespace Aiche_Bois
             try
             {
                 connection.Open();
-                OleDbCommand command = new OleDbCommand
+                var command = new OleDbCommand
                 {
                     Connection = connection,
-                    CommandText =
-                    "select * from query where idClient = " + idClient
+                    CommandText = "SELECT * FROM query WHERE idClient = @idClient"
                 };
-
+                command.Parameters.AddWithValue("@idClient", idClient);
                 OleDbDataReader readerClient = command.ExecuteReader();
                 while (readerClient.Read())
                 {
@@ -77,7 +76,8 @@ namespace Aiche_Bois
                     l_price_rest_client.Text = Convert.ToDouble(readerClient["rest"]).ToString("F2");
                     l_price_total_client.Text = Convert.ToDouble(readerClient["total"]).ToString("F2");
                 }
-
+                readerClient = null;
+                command = null;
                 connection.Close();
             }
             catch (Exception ex)
@@ -126,12 +126,16 @@ namespace Aiche_Bois
                         connection.Close();
                         return;
                     }
-                    OleDbCommand command = new OleDbCommand
+                    var command = new OleDbCommand
                     {
                         Connection = connection,
-                        CommandText = "UPDATE client SET prixTotalAvance = prixTotalAvance - " + double.Parse(t_mines_price.Text) + " where idClient = " + idClient
+                        CommandText = "UPDATE client SET " +
+                        "prixTotalAvance = prixTotalAvance - @prix where idClient = @idClient" + idClient
                     };
+                    command.Parameters.AddWithValue("@prix", t_mines_price.Text);
+                    command.Parameters.AddWithValue("@idClient", idClient);
                     command.ExecuteNonQuery();
+                    command = null;
                     t_mines_price.Clear();
                     t_mines_price.Focus();
 
@@ -149,12 +153,16 @@ namespace Aiche_Bois
                         return;
                     }
 
-                    OleDbCommand command = new OleDbCommand
+                    var command = new OleDbCommand
                     {
                         Connection = connection,
-                        CommandText = "UPDATE client SET prixTotalAvance = prixTotalAvance + " + double.Parse(t_price_add_cLient.Text) + " where idClient = " + idClient
+                        CommandText = "UPDATE client SET " +
+                        "prixTotalAvance = prixTotalAvance + @prix where idClient = @idClient" + idClient
                     };
+                    command.Parameters.AddWithValue("@prix", t_price_add_cLient.Text);
+                    command.Parameters.AddWithValue("@idClient", idClient);
                     command.ExecuteNonQuery();
+                    command = null;
                     t_price_add_cLient.Clear();
                     t_price_add_cLient.Focus();
 

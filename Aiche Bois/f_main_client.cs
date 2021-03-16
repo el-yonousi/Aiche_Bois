@@ -93,17 +93,18 @@ namespace Aiche_Bois
                     "IIF((sum(f.prixtotalmesure) + sum(prixtotalpvc)) = prixTotalAvance, 0, (sum(f.prixtotalmesure) + sum(prixtotalpvc)) - prixTotalAvance) AS rest, " +
                     "c.nomClient, c.prixTotalAvance, c.idClient " +
                     "FROM client AS c INNER JOIN facture AS f ON f.idClient = c.idClient " +
-                    "WHERE c.idClient = " + long.Parse(idClient[1]) +
-                    " GROUP BY nomClient, prixTotalAvance, c.idClient"
+                    "WHERE c.idClient = @idClient " +
+                    "GROUP BY nomClient, prixTotalAvance, c.idClient"
                 };
+                commandClient.Parameters.AddWithValue("@idClient", idClient[1]);
+
                 OleDbDataReader readerClient = commandClient.ExecuteReader();
                 while (readerClient.Read())
                 {
                     t_nom_client.Text = readerClient["nomClient"].ToString();
-                    t_prix_total_client.Text = readerClient["total"].ToString();
-                    t_prix_avance_client.Text = readerClient["prixTotalAvance"].ToString();
-                    t_prix_rest_client.Text = readerClient["rest"].ToString();
                 }
+                readerClient = null;
+                commandClient = null;
 
                 String pvc = "";
 
@@ -111,8 +112,10 @@ namespace Aiche_Bois
                 var commandFacture = new OleDbCommand
                 {
                     Connection = connectionClient,
-                    CommandText = "SELECT * FROM FACTURE WHERE idFacture = " + idFacture
+                    CommandText = "SELECT * FROM FACTURE WHERE idFacture = @idFacture"
                 };
+                commandFacture.Parameters.AddWithValue("@idFacture", idFacture);
+
                 OleDbDataReader readerFacture = commandFacture.ExecuteReader();
                 while (readerFacture.Read())
                 {
@@ -141,6 +144,8 @@ namespace Aiche_Bois
                     t_prix_metre_linear_pvc.Text = readerFacture["prixMitresLinear"].ToString();
                     t_prix_total_pvc.Text = readerFacture["prixTotalPVC"].ToString();
                 }
+                readerFacture = null;
+                commandFacture = null;
 
                 if (!cb_type_metres.SelectedItem.Equals("m"))
                 {
@@ -150,8 +155,9 @@ namespace Aiche_Bois
                         var commandMesure = new OleDbCommand
                         {
                             Connection = connectionClient,
-                            CommandText = "SELECT quantite, largeur, longueur, eppaiseur FROM MESURE WHERE IDFACTURE = " + idFacture
+                            CommandText = "SELECT quantite, largeur, longueur, eppaiseur FROM MESURE WHERE idFacture = @idFacture"
                         };
+                        commandMesure.Parameters.AddWithValue("@idFacture", idFacture);
 
                         OleDbDataReader readerMesure = commandMesure.ExecuteReader();
                         // clear data grid mesure
@@ -174,6 +180,8 @@ namespace Aiche_Bois
                                 readerMesure["longueur"].ToString());
                             }
                         }
+                        readerMesure = null;
+                        commandMesure = null;
                     }
 
                     // pvc
@@ -182,8 +190,10 @@ namespace Aiche_Bois
                         var commandPVC = new OleDbCommand
                         {
                             Connection = connectionClient,
-                            CommandText = "SELECT quantite, largeur, longueur, orientation FROM PVC WHERE IDFACTURE = " + idFacture
+                            CommandText = "SELECT quantite, largeur, longueur, orientation FROM PVC WHERE idFacture = @idFacture"
                         };
+                        commandPVC.Parameters.AddWithValue("@idFacture", idFacture);
+
                         OleDbDataReader readerPVC = commandPVC.ExecuteReader();
                         dg_pvc.Rows.Clear();
                         while (readerPVC.Read())
@@ -194,6 +204,8 @@ namespace Aiche_Bois
                                 readerPVC["longueur"].ToString(),
                                 readerPVC["orientation"].ToString());
                         }
+                        readerPVC = null;
+                        commandPVC = null;
                     }
                     else
                     {
@@ -409,21 +421,7 @@ namespace Aiche_Bois
                 t_categorie.Focus();
                 return false;
             }
-            if (string.IsNullOrEmpty(t_prix_total_client.Text))
-            {
-                message = new f_message(t_prix_total_client.Tag + " est vide", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
-                message.ShowDialog();
-                t_prix_total_client.Focus();
-                return false;
-            }
-            if (ck_avance_client.Checked)
-                if (string.IsNullOrEmpty(t_prix_avance_client.Text))
-                {
-                    message = new f_message(t_prix_avance_client.Tag + " est vide", "Attention", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
-                    message.ShowDialog();
-                    t_prix_avance_client.Focus();
-                    return false;
-                }
+            
             if (!string.IsNullOrEmpty(cb_type_pvc.Text))
             {
                 if (string.IsNullOrEmpty(t_total_size_pvc.Text))
@@ -482,16 +480,19 @@ namespace Aiche_Bois
             try
             {
                 connectionType.Open();
-                OleDbCommand command = new OleDbCommand
+                var command = new OleDbCommand
                 {
                     Connection = connectionType,
                     CommandText = "select Libelle from PVC"
                 };
+
                 OleDbDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
                     cb_type_pvc.Items.Add(reader["Libelle"].ToString());
                 }
+                reader = null;
+                command = null;
                 connectionType.Close();
             }
             catch (Exception ex)
@@ -513,14 +514,14 @@ namespace Aiche_Bois
             try
             {
                 connectionType.Open();
-                OleDbCommand command = new OleDbCommand
+                var command = new OleDbCommand
                 {
                     Connection = connectionType,
-                    CommandText = "select Libelle from " + typeBois
+                    CommandText = "SELECT Libelle FROM " + typeBois
                 };
-
                 tb_Type.Load(command.ExecuteReader());
 
+                command = null;
                 connectionType.Close();
 
                 for (int i = 0; i < tb_Type.Rows.Count; i++)
@@ -578,77 +579,116 @@ namespace Aiche_Bois
                 connectionClient.Open();
                 int idCLIENT = 0;
                 int idFACTURE = 0;
-                OleDbCommand commandClient = new OleDbCommand
+                var commandClient = new OleDbCommand
                 {
                     Connection = connectionClient,
-                    CommandText = "insert into client (nomClient, dateClient, prixTotalAvance) " +
-                    "values('" + t_nom_client.Text + "', '" + DateTime.Now + "', '" +
-                    Convert.ToDouble(t_prix_avance_client.Text) + "')"
+                    CommandText = "INSERT INTO " +
+                    "client(nomClient, dateClient, prixTotalAvance) " +
+                    "VALUES(@nomClient, @dateClient, @prixTotalAvance)"
                 };
+                commandClient.Parameters.AddWithValue("@nomClient", t_nom_client.Text);
+                commandClient.Parameters.AddWithValue("@dateClient", DateTime.Now.ToString());
+                commandClient.Parameters.AddWithValue("@prixTotalAvance", 0.0);
                 commandClient.ExecuteNonQuery();
+                commandClient = null;
 
                 /*get idClient from database*/
-                OleDbCommand commandIdClient = new OleDbCommand
+                var commandIdClient = new OleDbCommand
                 {
                     Connection = connectionClient,
-                    CommandText = "select top 1 idClient from client order by idClient desc"
+                    CommandText = "SELECT TOP 1 idClient FROM client ORDER BY idClient DESC"
                 };
                 OleDbDataReader readerIdClient = commandIdClient.ExecuteReader();
                 while (readerIdClient.Read())
                 {
                     idCLIENT = Convert.ToInt32(readerIdClient["idClient"]);
                 }
+                readerIdClient = null;
+                commandIdClient = null;
 
                 /*facture*/
-                foreach (Facture fct in factures)
+                foreach (var fct in factures)
                 {
-                    OleDbCommand commandFacture = new OleDbCommand
+                    var commandFacture = new OleDbCommand
                     {
                         Connection = connectionClient,
-                        CommandText = "insert into facture (idClient, dtDateFacture, typeDeBois, " +
+                        CommandText = "INSERT INTO " +
+                        "facture(idClient, dtDateFacture, typeDeBois, " +
                         "metrage, categorie, totalMesure, typeMetres, prixMetres, typePVC, checkPVC, tailleCanto, " +
                         "totalTaillPVC, prixMitresLinear, prixTotalPVC, prixTotalMesure) " +
-                                      "values ('" + (idCLIENT) + "', '" + fct.DateFacture + "', '" +
-                                      fct.TypeDeBois + "', '" + fct.Metrage + "','" + fct.Categorie + "', '" +
-                                      fct.TotalMesure + "', '" + fct.TypeMetres + "', '" + fct.PrixMetres + "', '" + fct.TypePVC + "', " +
-                                      fct.CheckPVC.ToString() + ", '" + fct.TailleCanto + "', '" +
-                                      fct.TotalTaillPVC + "', '" + fct.PrixMitresLinear + "', '" +
-                                      fct.PrixTotalPVC + "', '" + fct.PrixTotalMesure + "')"
+                        "VALUES(@idClient, @dtDateFacture, @typeDeBois, " +
+                        "@metrage, @categorie, @totalMesure, @typeMetres, @prixMetres, @typePVC, @checkPVC, " +
+                        "@tailleCanto, @totalTaillPVC, @prixMitresLinear, @prixTotalPVC, @prixTotalMesure)"
                     };
+                    commandFacture.Parameters.AddWithValue("@idClient", idCLIENT);
+                    commandFacture.Parameters.AddWithValue("@dtDateFacture", fct.DateFacture.ToString());
+                    commandFacture.Parameters.AddWithValue("@typeDeBois", fct.TypeDeBois);
+                    commandFacture.Parameters.AddWithValue("@metrage", fct.Metrage);
+                    commandFacture.Parameters.AddWithValue("@categorie", fct.Categorie);
+                    commandFacture.Parameters.AddWithValue("@totalMesure", fct.TotalMesure);
+                    commandFacture.Parameters.AddWithValue("@typeMetres", fct.TypeMetres);
+                    commandFacture.Parameters.AddWithValue("@prixMetres", fct.PrixMetres);
+                    commandFacture.Parameters.AddWithValue("@typePVC", fct.TypePVC);
+                    commandFacture.Parameters.AddWithValue("@checkPVC", fct.CheckPVC);
+                    commandFacture.Parameters.AddWithValue("@tailleCanto", fct.TailleCanto);
+                    commandFacture.Parameters.AddWithValue("@totalTaillPVC", fct.TotalTaillPVC);
+                    commandFacture.Parameters.AddWithValue("@prixMitresLinear", fct.PrixMitresLinear);
+                    commandFacture.Parameters.AddWithValue("@prixTotalPVC", fct.PrixTotalPVC);
+                    commandFacture.Parameters.AddWithValue("@prixTotalMesure", fct.PrixTotalMesure);
                     commandFacture.ExecuteNonQuery();
+                    commandFacture = null;
 
                     /*get idClient from database*/
-                    OleDbCommand commandIdFacture = new OleDbCommand
+                    var commandIdFacture = new OleDbCommand
                     {
                         Connection = connectionClient,
-                        CommandText = "select top 1 idFacture from facture order by idFacture desc"
+                        CommandText = "SELECT TOP 1 idFacture FROM facture ORDER BY idFacture DESC"
                     };
+
                     OleDbDataReader readerIdFacture = commandIdFacture.ExecuteReader();
                     while (readerIdFacture.Read())
                     {
                         idFACTURE = Convert.ToInt32(readerIdFacture["idFacture"]);
                     }
+                    readerIdFacture = null;
+                    commandIdFacture = null;
 
                     // insert datagride pvc
-                    foreach (Pvc pvc in fct.Pvcs)
+                    foreach (var pvc in fct.Pvcs)
                     {
                         var commandPvc = new OleDbCommand
                         {
                             Connection = connectionClient,
-                            CommandText = "insert into pvc (idFacture, quantite, largeur, longueur, orientation) values('" + idFACTURE + "','" + pvc.Qte + "','" + pvc.Largr + "','" + pvc.Longr + "','" + pvc.Ortn + "')"
+                            CommandText = "INSERT INTO " +
+                            "pvc(idFacture, quantite, largeur, longueur, orientation) " +
+                            "VALUES(@idFacture, @quantite, @largeur, @longueur, @orientation)"
                         };
+                        commandPvc.Parameters.AddWithValue("@idFacture", idFACTURE);
+                        commandPvc.Parameters.AddWithValue("@quantite", pvc.Qte);
+                        commandPvc.Parameters.AddWithValue("@largeur", pvc.Largr);
+                        commandPvc.Parameters.AddWithValue("@longueur", pvc.Longr);
+                        commandPvc.Parameters.AddWithValue("@orientation", pvc.Ortn);
                         commandPvc.ExecuteNonQuery();
+                        commandPvc = null;
                     }
 
                     // insert datagride mesure
-                    foreach (Mesure msr in fct.Mesures)
+                    foreach (var msr in fct.Mesures)
                     {
-                        OleDbCommand commandMesure = new OleDbCommand
+                        var commandMesure = new OleDbCommand
                         {
                             Connection = connectionClient,
-                            CommandText = "insert into mesure (idFacture, quantite, largeur, longueur, eppaiseur) values('" + idFACTURE + "','" + msr.Quantite + "','" + msr.Largeur + "','" + msr.Longueur + "','" + msr.Epaisseur + "')"
+                            CommandText = "INSERT INTO " +
+                            "mesure(idFacture, quantite, largeur, longueur, eppaiseur) " +
+                            "VALUES(@idFacture, @quantite, @largeur, @longueur, @eppaiseu)"
                         };
+                        commandMesure.Parameters.AddWithValue("@idFacture", idFACTURE);
+                        commandMesure.Parameters.AddWithValue("@quantite", msr.Quantite);
+                        commandMesure.Parameters.AddWithValue("@largeur", msr.Largeur);
+                        commandMesure.Parameters.AddWithValue("@longueur", msr.Longueur);
+                        commandMesure.Parameters.AddWithValue("@eppaiseu", msr.Epaisseur);
                         commandMesure.ExecuteNonQuery();
+                        commandMesure = null;
                     }
                 }
                 factures.Clear();
@@ -714,7 +754,7 @@ namespace Aiche_Bois
                 dg_client.Rows.Clear();
                 //clients.Clear();
 
-                OleDbCommand commandClient = new OleDbCommand
+                var commandClient = new OleDbCommand
                 {
                     Connection = connectionClient,
                     CommandText =
@@ -729,7 +769,7 @@ namespace Aiche_Bois
                 };
 
                 dtb_client.Load(commandClient.ExecuteReader());
-
+                commandClient = null;
                 connectionClient.Close();
 
                 // fill datagride
@@ -786,6 +826,7 @@ namespace Aiche_Bois
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        [Obsolete]
         private void btnPrintFacture_Click(object sender, EventArgs e)
         {
             if (dg_client.Rows.Count <= 0 || idClient == null)
@@ -860,61 +901,94 @@ namespace Aiche_Bois
                     {
                         Connection = connectionClient,
                         CommandText = "UPDATE facture SET " +
-                            " typeDeBois = '" + t_type_Bois.Text + "'" +
-                            ", metrage = '" + t_metrage_feuille.Text + "'" +
-                            ", categorie = '" + t_categorie.Text + "'" +
-                            ", totalMesure = " + (string.IsNullOrEmpty(t_total_size_mesure.Text) ? 0 : double.Parse(t_total_size_mesure.Text)) +
-                            ", typeMetres = '" + cb_type_metres.SelectedItem.ToString() + "'" +
-                            ", prixMetres = " + (string.IsNullOrEmpty(t_prix_metre_mesure.Text) ? 0 : double.Parse(t_prix_metre_mesure.Text)) +
-                            ", typePVC = '" + (cb_type_pvc.SelectedItem == null ? "---" : cb_type_pvc.SelectedItem) + "'" +
-                            ", checkPVC = " + ck_seul_pvc.Checked +
-                            ", tailleCanto = " + (string.IsNullOrEmpty(t_size_pvc.Text) ? 0 : double.Parse(t_size_pvc.Text)) +
-                            ", totalTaillPVC = " + (string.IsNullOrEmpty(t_total_size_pvc.Text) ? 0 : double.Parse(t_total_size_pvc.Text)) +
-                            ", prixMitresLinear = " + (string.IsNullOrEmpty(t_prix_metre_linear_pvc.Text) ? 0 : double.Parse(t_prix_metre_linear_pvc.Text)) +
-                            ", prixTotalPVC = " + (string.IsNullOrEmpty(t_prix_total_pvc.Text) ? 0 : double.Parse(t_prix_total_pvc.Text)) +
-                            ", prixTotalMesure = " + (string.IsNullOrEmpty(txtPrixTotalMesure.Text) ? 0 : double.Parse(txtPrixTotalMesure.Text)) +
-                            " WHERE idFacture = " + long.Parse(cb_id_facture.Text)
+                            " typeDeBois = @typeDeBois" +
+                            ", metrage = @metrage" +
+                            ", categorie = @categorie" +
+                            ", totalMesure = @totalMesure" +
+                            ", typeMetres = @typeMetres" +
+                            ", prixMetres = @prixMetres" +
+                            ", typePVC = @typePVC" +
+                            ", checkPVC = @checkPVC" +
+                            ", tailleCanto = @tailleCanto" +
+                            ", totalTaillPVC = @totalTaillPVC" +
+                            ", prixMitresLinear = @prixMitresLinear" +
+                            ", prixTotalPVC = @prixTotalPVC" +
+                            ", prixTotalMesure = @prixTotalMesure" +
+                            " WHERE idFacture = @idFacture"
                     };
+                    commandF.Parameters.AddWithValue("@typeDeBois", t_type_Bois.Text);
+                    commandF.Parameters.AddWithValue("@metrage", t_metrage_feuille.Text);
+                    commandF.Parameters.AddWithValue("@categorie", t_categorie.Text);
+                    commandF.Parameters.AddWithValue("@totalMesure", (string.IsNullOrEmpty(t_total_size_mesure.Text) ? 0 : double.Parse(t_total_size_mesure.Text)));
+                    commandF.Parameters.AddWithValue("@typeMetres", cb_type_metres.SelectedItem.ToString());
+                    commandF.Parameters.AddWithValue("@prixMetres", (string.IsNullOrEmpty(t_prix_metre_mesure.Text) ? 0 : double.Parse(t_prix_metre_mesure.Text)));
+                    commandF.Parameters.AddWithValue("@typePVC", (cb_type_pvc.SelectedItem == null ? "---" : cb_type_pvc.SelectedItem));
+                    commandF.Parameters.AddWithValue("@checkPVC", ck_seul_pvc.Checked);
+                    commandF.Parameters.AddWithValue("@tailleCanto", (string.IsNullOrEmpty(t_size_pvc.Text) ? 0 : double.Parse(t_size_pvc.Text)));
+                    commandF.Parameters.AddWithValue("@totalTaillPVC", (string.IsNullOrEmpty(t_total_size_pvc.Text) ? 0 : double.Parse(t_total_size_pvc.Text)));
+                    commandF.Parameters.AddWithValue("@prixMitresLinear", (string.IsNullOrEmpty(t_prix_metre_linear_pvc.Text) ? 0 : double.Parse(t_prix_metre_linear_pvc.Text)));
+                    commandF.Parameters.AddWithValue("@prixTotalPVC", (string.IsNullOrEmpty(t_prix_total_pvc.Text) ? 0 : double.Parse(t_prix_total_pvc.Text)));
+                    commandF.Parameters.AddWithValue("@prixTotalMesure", (string.IsNullOrEmpty(txtPrixTotalMesure.Text) ? 0 : double.Parse(txtPrixTotalMesure.Text)));
+                    commandF.Parameters.AddWithValue("@idFacture", cb_id_facture.Text);
                     commandF.ExecuteNonQuery();
 
                     if (!ck_seul_pvc.Checked && dg_mesure.Rows.Count > 0)
                     {
-                        OleDbCommand commandMD = new OleDbCommand();
-                        commandMD.Connection = connectionClient;
-                        commandMD.CommandText = "DELETE * from mesure WHERE idFacture = " + long.Parse(cb_id_facture.Text);
+                        var commandMD = new OleDbCommand
+                        {
+                            Connection = connectionClient,
+                            CommandText = "DELETE * FROM mesure WHERE idFacture = @idFacture"
+                        };
+                        commandMD.Parameters.AddWithValue("@idFacture", cb_id_facture.Text);
                         commandMD.ExecuteNonQuery();
+                        commandMD = null;
 
                         for (int i = 0; i < dg_mesure.Rows.Count; i++)
                         {
-                            OleDbCommand commandM = new OleDbCommand();
-                            commandM.Connection = connectionClient;
-                            commandM.CommandText = "INSERT INTO mesure(idFacture, quantite, largeur, longueur, eppaiseur) " +
-                                "VALUES('" + long.Parse(cb_id_facture.Text) + "','" +
-                                double.Parse(dg_mesure.Rows[i].Cells[0].Value.ToString()) + "','" +
-                                double.Parse(dg_mesure.Rows[i].Cells[1].Value.ToString()) + "','" +
-                                double.Parse(dg_mesure.Rows[i].Cells[2].Value.ToString()) + "','" +
-                                (cb_type_metres.SelectedItem.Equals("m3") ? double.Parse(dg_mesure.Rows[i].Cells[3].Value.ToString()) : 0) + "')";
+                            var commandM = new OleDbCommand
+                            {
+                                Connection = connectionClient,
+                                CommandText = "INSERT INTO " +
+                                "mesure(idFacture, quantite, largeur, longueur, eppaiseur) " +
+                                "VALUES(@idFacture, @quantite, @largeur, @longueur, @eppaiseur)"
+                            };
+                            commandM.Parameters.AddWithValue("@idFacture", cb_id_facture.Text);
+                            commandM.Parameters.AddWithValue("@quantite", dg_mesure.Rows[i].Cells[0].Value.ToString());
+                            commandM.Parameters.AddWithValue("@largeur", dg_mesure.Rows[i].Cells[1].Value.ToString());
+                            commandM.Parameters.AddWithValue("@longueur", dg_mesure.Rows[i].Cells[2].Value.ToString());
+                            commandM.Parameters.AddWithValue("@eppaiseur", cb_type_metres.SelectedItem.Equals("m3") ? dg_mesure.Rows[i].Cells[3].Value.ToString() : 0.ToString());
                             commandM.ExecuteNonQuery();
+                            commandM = null;
                         }
                     }
 
                     if (!String.IsNullOrEmpty(cb_type_pvc.Text))
                     {
-                        OleDbCommand commandPD = new OleDbCommand();
-                        commandPD.Connection = connectionClient;
-                        commandPD.CommandText = "DELETE * from pvc WHERE idFacture = " + long.Parse(cb_id_facture.Text);
+                        var commandPD = new OleDbCommand
+                        {
+                            Connection = connectionClient,
+                            CommandText = "DELETE * FROM pvc WHERE idFacture = @idFacture"
+                        };
+                        commandPD.Parameters.AddWithValue("@idFacture", cb_id_facture.Text);
                         commandPD.ExecuteNonQuery();
+                        commandPD = null;
+
                         for (int i = 0; i < dg_pvc.Rows.Count; i++)
                         {
-                            OleDbCommand commandP = new OleDbCommand();
-                            commandP.Connection = connectionClient;
-                            commandP.CommandText = "INSERT INTO pvc (idFacture, quantite, largeur, longueur, orientation) " +
-                                "values('" + long.Parse(cb_id_facture.Text) + "','" +
-                                double.Parse(dg_pvc.Rows[i].Cells[0].Value.ToString()) + "','" +
-                                double.Parse(dg_pvc.Rows[i].Cells[1].Value.ToString()) + "','" +
-                                double.Parse(dg_pvc.Rows[i].Cells[2].Value.ToString()) + "','" +
-                                dg_pvc.Rows[i].Cells[3].Value.ToString() + "')";
+                            var commandP = new OleDbCommand
+                            {
+                                Connection = connectionClient,
+                                CommandText = "INSERT INTO " +
+                                "pvc(idFacture, quantite, largeur, longueur, orientation) " +
+                                "VALUES(@idFacture, @quantite, @largeur, @longueur, @orientation)"
+                            };
+                            commandP.Parameters.AddWithValue("@idFacture", cb_id_facture.Text);
+                            commandP.Parameters.AddWithValue("@quantite", dg_pvc.Rows[i].Cells[0].Value.ToString());
+                            commandP.Parameters.AddWithValue("@largeur", dg_pvc.Rows[i].Cells[1].Value.ToString());
+                            commandP.Parameters.AddWithValue("@longueur", dg_pvc.Rows[i].Cells[2].Value.ToString());
+                            commandP.Parameters.AddWithValue("@orientation", dg_pvc.Rows[i].Cells[3].Value.ToString());
                             commandP.ExecuteNonQuery();
+                            commandP = null;
                         }
                     }
 
@@ -965,14 +1039,15 @@ namespace Aiche_Bois
             {
                 // get data from database access
                 connectionClient.Open();
-                OleDbCommand fctr = new OleDbCommand
+                var fctr = new OleDbCommand
                 {
                     Connection = connectionClient,
-                    CommandText = "SELECT typeDeBois, dtDateFacture FROM facture order by typeDeBois"
+                    CommandText = "SELECT typeDeBois, dtDateFacture FROM facture ORDER BY typeDeBois"
                 };
                 // table to store select item from database
-                DataTable tbf = new DataTable();
+                var tbf = new DataTable();
                 tbf.Load(fctr.ExecuteReader());
+                fctr = null;
                 connectionClient.Close();
 
                 String s_mdf = "";
@@ -1294,10 +1369,6 @@ namespace Aiche_Bois
             b_add_facture.Click -= new EventHandler(this.e_Edit_Factures_Click);
             b_add_facture.Click -= new EventHandler(this.e_Add_New_Client_Click);
 
-            // change event for text changed on this texts boxes
-            t_prix_avance_client.TextChanged -= new EventHandler(this.txtPrixAvanceClient_TextChanged);
-            t_prix_total_client.TextChanged -= new EventHandler(this.txtPrixAvanceClient_TextChanged);
-
             // bring home panel
             tblp_add_edit.Visible = false;
             p_home.Visible = true;
@@ -1333,8 +1404,6 @@ namespace Aiche_Bois
                 cb_type_metres.SelectedItem = "m2";
                 cb_type_bois.SelectedIndex = 0;
                 dp_date_facture.Value = DateTime.Today;
-                ck_avance_client.Checked = t_prix_avance_client.Enabled = false;
-                t_prix_avance_client.Text = "0.00";
                 cb_orientation_pvc.SelectedIndex = 0;
 
                 cb_id_facture.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -1342,20 +1411,13 @@ namespace Aiche_Bois
                 b_add_facture.IconChar = FontAwesome.Sharp.IconChar.Edit;
                 b_add_facture.Text = "Modifier";
 
-                t_nom_client.Enabled = dp_date_facture.Enabled = ck_avance_client.Enabled = false;
+                t_nom_client.Enabled = dp_date_facture.Enabled = false;
                 lt_type_bois.SelectedItem = null;
-
-                //desactiver le champ de pre avance
-                t_prix_avance_client.Enabled = false;
 
                 // change event for btn save
                 b_add_facture.Click -= new EventHandler(this.e_Add_New_Facture_Client_Click);
                 b_add_facture.Click -= new EventHandler(this.e_Add_New_Client_Click);
                 b_add_facture.Click += new EventHandler(this.e_Edit_Factures_Click);
-
-                // change event for text changed on this texts boxes
-                t_prix_avance_client.TextChanged -= new EventHandler(this.txtPrixAvanceClient_TextChanged);
-                t_prix_total_client.TextChanged -= new EventHandler(this.txtPrixAvanceClient_TextChanged);
 
                 // reset facture count
                 cb_id_facture.Items.Clear();
@@ -1367,25 +1429,29 @@ namespace Aiche_Bois
                 var commandFacture = new OleDbCommand
                 {
                     Connection = connectionClient,
-                    CommandText = "SELECT idFacture FROM FACTURE WHERE IDCLIENT = " + long.Parse(idClient[1])
+                    CommandText = "SELECT idFacture FROM FACTURE WHERE idClient = @idClient"
                 };
+                commandFacture.Parameters.AddWithValue("@idClient", idClient[1]);
+
                 OleDbDataReader readerFacture = commandFacture.ExecuteReader();
                 while (readerFacture.Read())
                 {
                     // get list of factures
-                    cb_id_facture.Items.Add(long.Parse(readerFacture["IDFACTURE"].ToString()));
+                    cb_id_facture.Items.Add(long.Parse(readerFacture["idFacture"].ToString()));
                 }
+                readerFacture = null;
+                commandFacture = null;
                 connectionClient.Close();
+
+                // select the first item on list
+                if (cb_id_facture.Items.Count > 0)
+                    cb_id_facture.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
                 connectionClient.Close();
                 LogFile.Message(ex);
             }
-
-            // select the first item on list
-            if (cb_id_facture.Items.Count > 0)
-                cb_id_facture.SelectedIndex = 0;
 
             //visible panel and bring to front
             p_home.Visible = false;
@@ -1402,19 +1468,18 @@ namespace Aiche_Bois
             /*remple comboBox PVC*/
             RemplirComboBxPvc();
             ViderTxtBox();
-            t_prix_avance_client.Text = t_total_size_pvc.Text = t_prix_total_pvc.Text =
-            txtPrixTotalMesure.Text = t_prix_total_client.Text = t_prix_rest_client.Text = "0.00";
+            t_total_size_pvc.Text = t_prix_total_pvc.Text =
+            txtPrixTotalMesure.Text = "0.00";
             t_prix_metre_mesure.Clear();
             t_categorie.Clear();
             t_metrage_feuille.Clear();
 
             t_nom_client.Clear();
-            t_nom_client.Enabled = ck_avance_client.Enabled = true;
+            t_nom_client.Enabled = true;
             cb_type_metres.SelectedItem = "m2";
             cb_type_bois.SelectedIndex = 0;
             dp_date_facture.Value = DateTime.Today;
 
-            t_prix_avance_client.Enabled = ck_avance_client.Checked = false;
             cb_orientation_pvc.SelectedIndex = 0;
             lt_type_bois.SelectedIndex = lt_type_bois.Items.Count > 0 ? lt_type_bois.SelectedIndex = 0 : lt_type_bois.SelectedIndex = -1;
 
@@ -1436,10 +1501,6 @@ namespace Aiche_Bois
             b_add_facture.Click -= new EventHandler(this.e_Add_New_Facture_Client_Click);
             b_add_facture.Click -= new EventHandler(this.e_Edit_Factures_Click);
             b_add_facture.Click += new EventHandler(this.e_Add_New_Client_Click);
-
-            // change event for text changed on this texts boxes
-            t_prix_avance_client.TextChanged += new EventHandler(this.txtPrixAvanceClient_TextChanged);
-            t_prix_total_client.TextChanged += new EventHandler(this.txtPrixAvanceClient_TextChanged);
 
             //visible panel and bring to frot
             p_home.Visible = false;
@@ -1787,7 +1848,7 @@ namespace Aiche_Bois
                 e.SuppressKeyPress = true;
             }
         }
-        
+
         /// <summary>
         /// button delete mesure by select row from data gride mesure
         /// </summary>
@@ -2109,11 +2170,6 @@ namespace Aiche_Bois
                 else
                     prix_total_client += double.Parse(txtPrixTotalMesure.Text);
 
-                t_prix_total_client.Text = prix_total_client.ToString("F2");
-
-                if (double.Parse(t_prix_total_client.Text) == double.Parse(t_prix_rest_client.Text))
-                    t_prix_rest_client.Text = "0.00";
-
                 // vider les champs
                 ViderTxtBox();
 
@@ -2140,10 +2196,6 @@ namespace Aiche_Bois
             b_add_facture.Click -= new EventHandler(this.e_Add_New_Client_Click);
             b_add_facture.Click -= new EventHandler(this.e_Edit_Factures_Click);
             b_add_facture.Click += new EventHandler(this.e_Add_New_Facture_Client_Click);
-
-            // change event for text changed on this texts boxes
-            t_prix_avance_client.TextChanged += new EventHandler(this.txtPrixAvanceClient_TextChanged);
-            t_prix_total_client.TextChanged += new EventHandler(this.txtPrixAvanceClient_TextChanged);
         }
 
         /// <summary>
@@ -2166,43 +2218,66 @@ namespace Aiche_Bois
                         var mnd1 = new OleDbCommand
                         {
                             Connection = connectionClient,
-                            CommandText = "INSERT INTO facture (idClient, dtDateFacture, typeDeBois, " +
-                            "metrage, categorie, totalMesure, typeMetres, prixMetres, typePVC, checkPVC, tailleCanto, " +
+                            CommandText = "INSERT INTO " +
+                            "facture(idClient, dtDateFacture, typeDeBois, metrage, categorie, " +
+                            "totalMesure, typeMetres, prixMetres, typePVC, checkPVC, tailleCanto, " +
                             "totalTaillPVC, prixMitresLinear, prixTotalPVC, prixTotalMesure) " +
-                                          "values ('" + long.Parse(idClient[1]) + "', '" + DateTime.Today + "', '" +
-                                          t_type_Bois.Text + "', '" + "---" + "','" + "---" + "', '" +
-                                          0.0 + "', '" + cb_type_metres.SelectedItem.ToString() + "','" + 0.0 + "', '" +
-                                          cb_type_pvc.Text + "', " + ck_seul_pvc.Checked + ", '" + double.Parse(t_size_pvc.Text) + "', '" +
-                                          double.Parse(t_total_size_pvc.Text) + "', '" + double.Parse(t_prix_metre_linear_pvc.Text) + "', '" +
-                                          double.Parse(t_prix_total_pvc.Text) + "', '" + 0.0 + "')"
+                            "VALUES(@idClient, @dtDateFacture, @typeDeBois, @metrage, @categorie, " +
+                            "@totalMesure, @typeMetres, @prixMetres, @typePVC, @checkPVC, @tailleCanto, " +
+                            "@totalTaillPVC, @prixMitresLinear, @prixTotalPVC, @prixTotalMesure)"
                         };
+                        mnd1.Parameters.AddWithValue("@idClient", idClient[1]);
+                        mnd1.Parameters.AddWithValue("@dtDateFacture", DateTime.Today.ToString());
+                        mnd1.Parameters.AddWithValue("@typeDeBois", t_type_Bois.Text);
+                        mnd1.Parameters.AddWithValue("@metrage", "---");
+                        mnd1.Parameters.AddWithValue("@categorie", "---");
+                        mnd1.Parameters.AddWithValue("@totalMesure", 0.0);
+                        mnd1.Parameters.AddWithValue("@typeMetres", cb_type_metres.SelectedItem.ToString());
+                        mnd1.Parameters.AddWithValue("@prixMetres", 0.0);
+                        mnd1.Parameters.AddWithValue("@typePVC", cb_type_pvc.Text);
+                        mnd1.Parameters.AddWithValue("@checkPVC,", ck_seul_pvc.Checked);
+                        mnd1.Parameters.AddWithValue("@tailleCanto,", t_size_pvc.Text);
+                        mnd1.Parameters.AddWithValue("@totalTaillPVC,", t_total_size_pvc.Text);
+                        mnd1.Parameters.AddWithValue("@prixMitresLinear,", t_prix_metre_linear_pvc.Text);
+                        mnd1.Parameters.AddWithValue("@prixTotalPVC,", t_prix_total_pvc.Text);
+                        mnd1.Parameters.AddWithValue("@prixTotalMesure,", 0.0);
                         mnd1.ExecuteNonQuery();
+                        mnd1 = null;
 
                         long idFS = 0;
                         /*get last idFacture from database*/
-                        OleDbCommand commF = new OleDbCommand
+                        var commF = new OleDbCommand
                         {
                             Connection = connectionClient,
-                            CommandText = "SELECT TOP 1 idFacture FROM facture WHERE idClient = " + long.Parse(idClient[1]) + " ORDER BY idFacture DESC"
+                            CommandText = "SELECT TOP 1 idFacture FROM facture WHERE idClient = @idClient ORDER BY idFacture DESC"
                         };
+                        commF.Parameters.AddWithValue("@idClient", idClient[1]);
 
                         OleDbDataReader readF = commF.ExecuteReader();
                         while (readF.Read())
                         {
-                            idFS = Convert.ToInt64(readF["idFacture"]);
+                            idFS = long.Parse(readF["idFacture"].ToString());
                         }
+                        commF = null;
+                        readF = null;
+
                         // insert facture where idFacture
                         for (int i = 0; i < dg_pvc.Rows.Count; i++)
                         {
-                            OleDbCommand commandP = new OleDbCommand();
-                            commandP.Connection = connectionClient;
-                            commandP.CommandText = "INSERT INTO pvc (idFacture, quantite, largeur, longueur, orientation) " +
-                                "values('" + idFS + "','" +
-                                double.Parse(dg_pvc.Rows[i].Cells[0].Value.ToString()) + "','" +
-                                double.Parse(dg_pvc.Rows[i].Cells[1].Value.ToString()) + "','" +
-                                double.Parse(dg_pvc.Rows[i].Cells[2].Value.ToString()) + "','" +
-                                dg_pvc.Rows[i].Cells[3].Value.ToString() + "')";
+                            var commandP = new OleDbCommand
+                            {
+                                Connection = connectionClient,
+                                CommandText = "INSERT INTO " +
+                                "pvc(idFacture, quantite, largeur, longueur, orientation) " +
+                                "VALUES(@idFacture, @quantite, @largeur, @longueur, @orientation)"
+                            };
+                            commandP.Parameters.AddWithValue("@idFacture", idFS);
+                            commandP.Parameters.AddWithValue("@quantite", dg_pvc.Rows[i].Cells[0].Value.ToString());
+                            commandP.Parameters.AddWithValue("@largeur", dg_pvc.Rows[i].Cells[1].Value.ToString());
+                            commandP.Parameters.AddWithValue("@longueur", dg_pvc.Rows[i].Cells[2].Value.ToString());
+                            commandP.Parameters.AddWithValue("@orientation", dg_pvc.Rows[i].Cells[3].Value.ToString());
                             commandP.ExecuteNonQuery();
+                            commandP = null;
                         }
                     }
                     // when facture has just mesure
@@ -2211,18 +2286,31 @@ namespace Aiche_Bois
                         var mnd = new OleDbCommand
                         {
                             Connection = connectionClient,
-                            CommandText = "INSERT INTO facture (idClient, dtDateFacture, typeDeBois, " +
+                            CommandText = "INSERT INTO " +
+                            "facture(idClient, dtDateFacture, typeDeBois, " +
                             "metrage, categorie, totalMesure, typeMetres, prixMetres, typePVC, checkPVC, tailleCanto, " +
                             "totalTaillPVC, prixMitresLinear, prixTotalPVC, prixTotalMesure) " +
-                                          "values ('" + long.Parse(idClient[1]) + "', '" + DateTime.Today + "', '" +
-                                          t_type_Bois.Text + "', '" + t_metrage_feuille.Text + "','" + t_categorie.Text + "', '" +
-                                          double.Parse(t_total_size_mesure.Text) + "','" + cb_type_metres.SelectedItem.ToString() + "', '" +
-                                          double.Parse(t_prix_metre_mesure.Text) + "', '" +
-                                          "---" + "', " + ck_seul_pvc.Checked + ", '" + 0.0 + "', '" +
-                                          0.0 + "', '" + 0.0 + "', '" +
-                                          0.0 + "', '" + double.Parse(txtPrixTotalMesure.Text) + "')"
+                            "VALUES(@idClient, @dtDateFacture, @typeDeBois, " +
+                            "@metrage, @categorie, @totalMesure, @typeMetres, @prixMetres, @typePVC, @checkPVC, @tailleCanto, " +
+                            "@totalTaillPVC, @prixMitresLinear, @prixTotalPVC, @prixTotalMesure)"
                         };
+                        mnd.Parameters.AddWithValue("@idClient", idClient[1]);
+                        mnd.Parameters.AddWithValue("@dtDateFacture", DateTime.Today.ToString());
+                        mnd.Parameters.AddWithValue("@typeDeBois", t_type_Bois.Text);
+                        mnd.Parameters.AddWithValue("@metrage", t_metrage_feuille.Text);
+                        mnd.Parameters.AddWithValue("@categorie", t_categorie.Text);
+                        mnd.Parameters.AddWithValue("@totalMesure", t_total_size_mesure.Text);
+                        mnd.Parameters.AddWithValue("@typeMetres", cb_type_metres.SelectedItem.ToString());
+                        mnd.Parameters.AddWithValue("@prixMetres", t_prix_metre_mesure.Text);
+                        mnd.Parameters.AddWithValue("@typePVC", "---");
+                        mnd.Parameters.AddWithValue("@checkPVC", ck_seul_pvc.Checked);
+                        mnd.Parameters.AddWithValue("@tailleCanto", 0.0);
+                        mnd.Parameters.AddWithValue("@totalTaillPVC", 0.0);
+                        mnd.Parameters.AddWithValue("@prixMitresLinear", 0.0);
+                        mnd.Parameters.AddWithValue("@prixTotalPVC", 0.0);
+                        mnd.Parameters.AddWithValue("@prixTotalMesure", txtPrixTotalMesure.Text);
                         mnd.ExecuteNonQuery();
+                        mnd = null;
 
 
                         // mesure
@@ -2230,89 +2318,126 @@ namespace Aiche_Bois
                         {
                             long idFM = 0;
                             /*get idFacture from database*/
-                            OleDbCommand commandIdFacture = new OleDbCommand
+                            var commandIdFacture = new OleDbCommand
                             {
                                 Connection = connectionClient,
-                                CommandText = "SELECT TOP 1 idFacture FROM facture WHERE idClient = " + long.Parse(idClient[1]) + " ORDER BY idFacture DESC"
+                                CommandText = "SELECT TOP 1 idFacture FROM facture WHERE idClient = @idClient ORDER BY idFacture DESC"
                             };
+                            commandIdFacture.Parameters.AddWithValue("@idClient", idClient[1]);
+
                             OleDbDataReader readerIdFacture = commandIdFacture.ExecuteReader();
                             while (readerIdFacture.Read())
                             {
-                                idFM = Convert.ToInt64(readerIdFacture["idFacture"]);
+                                idFM = long.Parse(readerIdFacture["idFacture"].ToString());
                             }
+                            commandIdFacture = null;
+                            readerIdFacture = null;
 
                             for (int i = 0; i < dg_mesure.Rows.Count; i++)
                             {
-                                OleDbCommand commandM = new OleDbCommand();
-                                commandM.Connection = connectionClient;
-                                commandM.CommandText = "INSERT INTO mesure(idFacture, quantite, largeur, longueur, eppaiseur)  " +
-                                    "VALUES('" + idFM + "', '" +
-                                    double.Parse(dg_mesure.Rows[i].Cells[0].Value.ToString()) + "', '" +
-                                    double.Parse(dg_mesure.Rows[i].Cells[1].Value.ToString()) + "', '" +
-                                    double.Parse(dg_mesure.Rows[i].Cells[2].Value.ToString()) + "', '" +
-                                    (cb_type_metres.SelectedItem.Equals("m3") ? double.Parse(dg_mesure.Rows[i].Cells[3].Value.ToString()) : 0) + "')";
+                                var commandM = new OleDbCommand
+                                {
+                                    Connection = connectionClient,
+                                    CommandText = "INSERT INTO " +
+                                    "mesure(idFacture, quantite, largeur, longueur, eppaiseur) " +
+                                    "VALUES(@idFacture, @quantite, @largeur, @longueur, @eppaiseur)"
+                                };
+                                commandM.Parameters.AddWithValue("@idFacture", idFM);
+                                commandM.Parameters.AddWithValue("@quantite", dg_mesure.Rows[i].Cells[0].Value.ToString());
+                                commandM.Parameters.AddWithValue("@largeur", dg_mesure.Rows[i].Cells[1].Value.ToString());
+                                commandM.Parameters.AddWithValue("@longueur", dg_mesure.Rows[i].Cells[2].Value.ToString());
+                                commandM.Parameters.AddWithValue("@eppaiseur", cb_type_metres.SelectedItem.Equals("m3") ? double.Parse(dg_mesure.Rows[i].Cells[3].Value.ToString()) : 0);
                                 commandM.ExecuteNonQuery();
+                                commandM = null;
                             }
                         }
                     }
                     else
                     {
-                        var mnd = new OleDbCommand
+                        var cmnd = new OleDbCommand
                         {
                             Connection = connectionClient,
-                            CommandText = "insert into facture (idClient, dtDateFacture, typeDeBois, " +
+                            CommandText = "INSERT INTO " +
+                            "facture(idClient, dtDateFacture, typeDeBois, " +
                             "metrage, categorie, totalMesure, typeMetres, prixMetres, typePVC, checkPVC, tailleCanto, " +
                             "totalTaillPVC, prixMitresLinear, prixTotalPVC, prixTotalMesure) " +
-                                          "values ('" + long.Parse(idClient[1]) + "', '" + DateTime.Today + "', '" +
-                                          t_type_Bois.Text + "', '" + t_metrage_feuille.Text + "','" + t_categorie.Text + "', '" +
-                                          double.Parse(t_total_size_mesure.Text) + "','" + cb_type_metres.SelectedItem.ToString() + "', '" + double.Parse(t_prix_metre_mesure.Text) + "', '" +
-                                          cb_type_pvc.Text + "', " + ck_seul_pvc.Checked + ", '" + double.Parse(t_size_pvc.Text) + "', '" +
-                                          double.Parse(t_total_size_pvc.Text) + "', '" + double.Parse(t_prix_metre_linear_pvc.Text) + "', '" +
-                                          double.Parse(t_prix_total_pvc.Text) + "', '" + double.Parse(txtPrixTotalMesure.Text) + "')"
+                            "VALUES(@idClient, @dtDateFacture, @typeDeBois, " +
+                            "@metrage, @categorie, @totalMesure, @typeMetres, @prixMetres, @typePVC, @checkPVC, @tailleCanto, " +
+                            "@totalTaillPVC, @prixMitresLinear, @prixTotalPVC, @prixTotalMesure)"
                         };
-                        mnd.ExecuteNonQuery();
+                        cmnd.Parameters.AddWithValue("@idClient", idClient[1]);
+                        cmnd.Parameters.AddWithValue("@dtDateFacture", DateTime.Today.ToString());
+                        cmnd.Parameters.AddWithValue("@typeDeBois", t_type_Bois.Text);
+                        cmnd.Parameters.AddWithValue("@metrage", t_metrage_feuille.Text);
+                        cmnd.Parameters.AddWithValue("@categorie", t_categorie.Text);
+                        cmnd.Parameters.AddWithValue("@totalMesure", t_total_size_mesure.Text);
+                        cmnd.Parameters.AddWithValue("@typeMetres", cb_type_metres.SelectedItem.ToString());
+                        cmnd.Parameters.AddWithValue("@prixMetres", t_prix_metre_mesure.Text);
+                        cmnd.Parameters.AddWithValue("@typePVC", cb_type_pvc.Text);
+                        cmnd.Parameters.AddWithValue("@checkPVC", ck_seul_pvc.Checked);
+                        cmnd.Parameters.AddWithValue("@tailleCanto", t_size_pvc.Text);
+                        cmnd.Parameters.AddWithValue("@totalTaillPVC", t_total_size_pvc.Text);
+                        cmnd.Parameters.AddWithValue("@prixMitresLinear", t_prix_metre_linear_pvc.Text);
+                        cmnd.Parameters.AddWithValue("@prixTotalPVC", t_prix_total_pvc.Text);
+                        cmnd.Parameters.AddWithValue("@prixTotalMesure", txtPrixTotalMesure.Text);
+                        cmnd.ExecuteNonQuery();
+                        cmnd = null;
 
                         long idFMS = 0;
                         /*get idFacture from database*/
-                        OleDbCommand commandIdFacture = new OleDbCommand
+                        var commandIdFacture = new OleDbCommand
                         {
                             Connection = connectionClient,
-                            CommandText = "SELECT TOP 1 idFacture FROM facture WHERE idClient = " + long.Parse(idClient[1]) + " ORDER BY idFacture DESC"
+                            CommandText = "SELECT TOP 1 idFacture FROM facture WHERE idClient = @idClient ORDER BY idFacture DESC"
                         };
+                        commandIdFacture.Parameters.AddWithValue("@idClient", idClient[1]);
+
                         OleDbDataReader readerIdFacture = commandIdFacture.ExecuteReader();
                         while (readerIdFacture.Read())
                         {
-                            idFMS = Convert.ToInt64(readerIdFacture["idFacture"]);
+                            idFMS = long.Parse(readerIdFacture["idFacture"].ToString());
                         }
+                        readerIdFacture = null;
+                        commandIdFacture = null;
 
                         // mesure
                         if (!ck_seul_pvc.Checked && dg_mesure.Rows.Count > 0 && !cb_type_metres.SelectedItem.Equals("m"))
                         {
                             for (int i = 0; i < dg_mesure.Rows.Count; i++)
                             {
-                                OleDbCommand commandM = new OleDbCommand();
-                                commandM.Connection = connectionClient;
-                                commandM.CommandText = "INSERT INTO mesure(idFacture, quantite, largeur, longueur, eppaiseur)  " +
-                                    "VALUES('" + idFMS + "','" +
-                                    double.Parse(dg_mesure.Rows[i].Cells[0].Value.ToString()) + "','" +
-                                    double.Parse(dg_mesure.Rows[i].Cells[1].Value.ToString()) + "','" +
-                                    double.Parse(dg_mesure.Rows[i].Cells[2].Value.ToString()) + "','" +
-                                    (cb_type_metres.Text == "m3" ? double.Parse(dg_mesure.Rows[i].Cells[3].Value.ToString()) : 0) + "')";
+                                var commandM = new OleDbCommand
+                                {
+                                    Connection = connectionClient,
+                                    CommandText = "INSERT INTO " +
+                                    "mesure(idFacture, quantite, largeur, longueur, eppaiseur) " +
+                                    "VALUES(@idFacture, @quantite, @largeur, @longueur, @eppaiseur)"
+                                };
+                                commandM.Parameters.AddWithValue("@idFacture", idFMS);
+                                commandM.Parameters.AddWithValue("@quantite", dg_mesure.Rows[i].Cells[0].Value.ToString());
+                                commandM.Parameters.AddWithValue("@largeur", dg_mesure.Rows[i].Cells[1].Value.ToString());
+                                commandM.Parameters.AddWithValue("@longueur", dg_mesure.Rows[i].Cells[2].Value.ToString());
+                                commandM.Parameters.AddWithValue("@eppaiseur", cb_type_metres.Text == "m3" ? double.Parse(dg_mesure.Rows[i].Cells[3].Value.ToString()) : 0);
                                 commandM.ExecuteNonQuery();
+                                commandM = null;
                             }
                         }
 
                         for (int i = 0; i < dg_pvc.Rows.Count; i++)
                         {
-                            OleDbCommand commandP = new OleDbCommand();
-                            commandP.Connection = connectionClient;
-                            commandP.CommandText = "INSERT INTO pvc (idFacture, quantite, largeur, longueur, orientation) " +
-                                "values('" + idFMS + "','" +
-                                double.Parse(dg_pvc.Rows[i].Cells[0].Value.ToString()) + "','" +
-                                double.Parse(dg_pvc.Rows[i].Cells[1].Value.ToString()) + "','" +
-                                double.Parse(dg_pvc.Rows[i].Cells[2].Value.ToString()) + "','" +
-                                dg_pvc.Rows[i].Cells[3].Value.ToString() + "')";
+                            var commandP = new OleDbCommand
+                            {
+                                Connection = connectionClient,
+                                CommandText = "INSERT INTO " +
+                                "pvc(idFacture, quantite, largeur, longueur, orientation) " +
+                                "VALUES(@idFacture, @quantite, @largeur, @longueur, @orientation)"
+                            };
+                            commandP.Parameters.AddWithValue("@idFacture", idFMS);
+                            commandP.Parameters.AddWithValue("@quantite", dg_pvc.Rows[i].Cells[0].Value.ToString());
+                            commandP.Parameters.AddWithValue("@largeur", dg_pvc.Rows[i].Cells[1].Value.ToString());
+                            commandP.Parameters.AddWithValue("@longueur", dg_pvc.Rows[i].Cells[2].Value.ToString());
+                            commandP.Parameters.AddWithValue("@orientation", dg_pvc.Rows[i].Cells[3].Value.ToString());
                             commandP.ExecuteNonQuery();
+                            commandP = null;
                         }
                     }
 
@@ -2320,8 +2445,10 @@ namespace Aiche_Bois
                     var commandFe = new OleDbCommand
                     {
                         Connection = connectionClient,
-                        CommandText = "SELECT idFacture FROM FACTURE WHERE IDCLIENT = " + long.Parse(idClient[1])
+                        CommandText = "SELECT idFacture FROM FACTURE WHERE idClient = @idClient"
                     };
+                    commandFe.Parameters.AddWithValue("@idClient", idClient[1]);
+
                     OleDbDataReader readerFe = commandFe.ExecuteReader();
                     cb_id_facture.Enabled = true;
                     cb_id_facture.Items.Clear();
@@ -2330,6 +2457,8 @@ namespace Aiche_Bois
                         // get list of factures
                         cb_id_facture.Items.Add(long.Parse(readerFe["IDFACTURE"].ToString()));
                     }
+                    readerFe = null;
+                    commandFe = null;
 
                     connectionClient.Close();
 
@@ -2341,10 +2470,6 @@ namespace Aiche_Bois
                     b_add_facture.Click -= new EventHandler(this.e_Add_New_Facture_Client_Click);
                     b_add_facture.Click -= new EventHandler(this.e_Add_New_Client_Click);
                     b_add_facture.Click += new EventHandler(this.e_Edit_Factures_Click);
-
-                    // change event for text changed on this texts boxes
-                    t_prix_avance_client.TextChanged += new EventHandler(this.txtPrixAvanceClient_TextChanged);
-                    t_prix_total_client.TextChanged += new EventHandler(this.txtPrixAvanceClient_TextChanged);
                 }
             }
             catch (Exception ex)
@@ -2395,12 +2520,15 @@ namespace Aiche_Bois
 
                 connectionClient.Open();
 
-                OleDbCommand commandFacture = new OleDbCommand
+                var commandFacture = new OleDbCommand
                 {
                     Connection = connectionClient,
-                    CommandText = "DELETE * FROM FACTURE WHERE idFacture = " + cb_id_facture.SelectedItem + "and idClient = " + long.Parse(idClient[1])
+                    CommandText = "DELETE * FROM FACTURE WHERE idFacture = @idFacture and idClient = @idClient"
                 };
+                commandFacture.Parameters.AddWithValue("@idFacture", cb_id_facture.SelectedItem);
+                commandFacture.Parameters.AddWithValue("@idClient", idClient[1]);
                 commandFacture.ExecuteNonQuery();
+                commandFacture = null;
 
                 connectionClient.Close();
 
@@ -2424,56 +2552,13 @@ namespace Aiche_Bois
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        [Obsolete]
         private void btnImprimerFacture_Click(object sender, EventArgs e)
         {
             if (cb_id_facture.Items.Count == 0)
                 return;
             f_print printPdf = new f_print(idClient[1], cb_id_facture.SelectedItem.ToString(), "btnPrintFacture", ck_seul_pvc.Checked);
             printPdf.ShowDialog();
-        }
-
-        /// <summary>
-        /// check price paying less than price total
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void txtPrixAvanceClient_TextChanged(object sender, EventArgs e)
-        {
-            double total = 0;
-            double avance = 0;
-
-            if (String.IsNullOrEmpty(t_prix_total_client.Text) || String.IsNullOrEmpty(t_prix_avance_client.Text))
-                return;
-
-            total = double.Parse(t_prix_total_client.Text);
-
-            avance = double.Parse(t_prix_avance_client.Text);
-
-
-            if (avance > total)
-            {
-                message = new f_message("le prix d'avance est grand que le prix total", "Attension", true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
-                message.ShowDialog();
-                t_prix_avance_client.Text = "0.00";
-                t_prix_rest_client.Text = "0.00";
-                ck_avance_client.Checked = false;
-            }
-            else
-                t_prix_rest_client.Text = (total - avance).ToString("F2");
-
-        }
-
-        /// <summary>
-        /// enabled field text price paying
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void checkAvance_CheckedChanged(object sender, EventArgs e)
-        {
-            t_prix_avance_client.Enabled = ck_avance_client.Checked;
-            t_prix_avance_client.Text = "0.00";
-            t_prix_avance_client.Focus();
-
         }
 
         /// <summary>
@@ -2500,11 +2585,6 @@ namespace Aiche_Bois
             b_add_facture.Click -= new EventHandler(this.e_Add_New_Facture_Client_Click);
             b_add_facture.Click -= new EventHandler(this.e_Edit_Factures_Click);
             b_add_facture.Click -= new EventHandler(this.e_Add_New_Client_Click);
-
-            // change event for text changed on this texts boxes
-            t_prix_avance_client.TextChanged -= new EventHandler(this.txtPrixAvanceClient_TextChanged);
-            t_prix_total_client.TextChanged -= new EventHandler(this.txtPrixAvanceClient_TextChanged);
-
         }
 
         /// <summary>
@@ -2543,19 +2623,21 @@ namespace Aiche_Bois
                 return;
             }
 
-            message = new f_message("Voulez-vous vraiment supprimer définitivement " + $"{dg_client.CurrentRow.Cells[1].Value}" + " de la liste?", "Attention", true, true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
+            message = new f_message($"Voulez-vous vraiment supprimer définitivement {dg_client.CurrentRow.Cells[1].Value} de la liste?", "Attention", true, true, FontAwesome.Sharp.IconChar.ExclamationTriangle);
 
             if (DialogResult.Yes == message.ShowDialog())
             {
                 try
                 {
                     connectionClient.Open();
-                    OleDbCommand commandDelete = new OleDbCommand
+                    var commandDelete = new OleDbCommand
                     {
                         Connection = connectionClient,
-                        CommandText = "delete * from client where idClient = " + long.Parse(idClient[1])
+                        CommandText = "DELETE * FROM client WHERE idClient = @idClient"
                     };
+                    commandDelete.Parameters.AddWithValue("@idClient", idClient[1]);
                     commandDelete.ExecuteNonQuery();
+                    commandDelete = null;
                     connectionClient.Close();
                 }
                 catch (Exception ex)
