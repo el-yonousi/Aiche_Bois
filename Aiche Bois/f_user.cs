@@ -8,7 +8,6 @@ namespace Aiche_Bois
     public partial class f_user : Form
     {
         string fileName = "aicheBois.accdb";
-        string fileNameType = "type.accdb";
         string sourcePath = Application.StartupPath + "\\Resources\\";
         string targetPath = Program.generale_path + "\\base_donnee";
 
@@ -35,11 +34,6 @@ namespace Aiche_Bois
                             destFile = Path.Combine(targetPath, fileName);
                             File.Copy(s, destFile, true);
                         }
-                        if (fileName == fileNameType)
-                        {
-                            destFile = Path.Combine(targetPath, fileNameType);
-                            File.Copy(s, destFile, true);
-                        }
                     }
                     Application.Restart();
                     Environment.Exit(0);
@@ -63,21 +57,12 @@ namespace Aiche_Bois
                     ";Mode=Share Deny None" +
                     ";Jet OLEDB:Database Password=" + t_pass_word.Text + ";";
 
-            Program.PathType =
-                    "Provider=Microsoft.ACE.OLEDB.12.0;" +
-                    "Data Source=" + Path.Combine(targetPath, fileNameType) +
-                    ";Mode=Share Deny None" +
-                    ";Jet OLEDB:Database Password=" + t_pass_word.Text + ";";
             try
             {
                 // Try to connect the database.
                 var conn = new OleDbConnection(Program.Path);
                 conn.Open();
                 conn.Close();
-
-                var conntype = new OleDbConnection(Program.PathType);
-                conntype.Open();
-                conntype.Close();
 
                 var formClient = new f_main_client();
                 this.Hide();

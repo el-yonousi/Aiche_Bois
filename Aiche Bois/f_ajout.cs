@@ -22,7 +22,7 @@ namespace Aiche_Bois
         /// </summary>
         public frm_ajout()
         {
-            connection.ConnectionString = Program.PathType;
+            connection.ConnectionString = Program.Path;
             InitializeComponent();
         }
 

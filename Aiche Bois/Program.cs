@@ -18,7 +18,6 @@ namespace Aiche_Bois
 
         //public password for databse access
         public static string Path;
-        public static string PathType;
 
         [STAThread]
         [Obsolete]

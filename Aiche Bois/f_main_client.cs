@@ -32,21 +32,6 @@ namespace Aiche_Bois
         private readonly OleDbConnection connectionClient = new OleDbConnection();
 
         /// <summary>
-        /// c'est l'access a extereiur type data base
-        /// </summary>
-        private readonly OleDbConnection connectionType = new OleDbConnection();
-
-        /// <summary>
-        /// c'est la list qui stocker les donnes de Mesure
-        /// </summary>
-        //private readonly List<Mesure> mesures = new List<Mesure>();
-
-        /// <summary>
-        /// c'est la list qui stocker les donnes de Pvc
-        /// </summary>
-        //private readonly List<Pvc> pvcs = new List<Pvc>();
-
-        /// <summary>
         /// c'est la list qui stocker les donnes de Facture
         /// </summary>
         private readonly List<Facture> factures = new List<Facture>();
@@ -479,11 +464,11 @@ namespace Aiche_Bois
             cb_type_pvc.Items.Clear();
             try
             {
-                connectionType.Open();
+                connectionClient.Open();
                 var command = new OleDbCommand
                 {
-                    Connection = connectionType,
-                    CommandText = "select Libelle from PVC"
+                    Connection = connectionClient,
+                    CommandText = "select Libelle from PVC_C"
                 };
 
                 OleDbDataReader reader = command.ExecuteReader();
@@ -493,11 +478,11 @@ namespace Aiche_Bois
                 }
                 reader = null;
                 command = null;
-                connectionType.Close();
+                connectionClient.Close();
             }
             catch (Exception ex)
             {
-                connectionType.Close();
+                connectionClient.Close();
                 LogFile.Message(ex);
             }
         }
@@ -513,16 +498,16 @@ namespace Aiche_Bois
             tb_Type.Rows.Clear();
             try
             {
-                connectionType.Open();
+                connectionClient.Open();
                 var command = new OleDbCommand
                 {
-                    Connection = connectionType,
+                    Connection = connectionClient,
                     CommandText = "SELECT Libelle FROM " + typeBois
                 };
                 tb_Type.Load(command.ExecuteReader());
 
                 command = null;
-                connectionType.Close();
+                connectionClient.Close();
 
                 for (int i = 0; i < tb_Type.Rows.Count; i++)
                 {
@@ -533,7 +518,7 @@ namespace Aiche_Bois
             }
             catch (Exception ex)
             {
-                connectionType.Close();
+                connectionClient.Close();
                 LogFile.Message(ex);
             }
         }
@@ -715,7 +700,6 @@ namespace Aiche_Bois
         public f_main_client()
         {
             connectionClient.ConnectionString = Program.Path;
-            connectionType.ConnectionString = Program.PathType;
 
             InitializeComponent();
         }
@@ -1530,9 +1514,9 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void cmbTypeDeBois_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Program.btnAddTypeClick = cb_type_bois.Text;
+            Program.btnAddTypeClick = $"{cb_type_bois.Text.ToUpper()}_C";
             // fill list type bois by combobox select
-            remplirListe(cb_type_bois.Text);
+            remplirListe(Program.btnAddTypeClick);
             if (lt_type_bois.Items.Count <= 0)
             {
                 t_type_Bois.Text = "";
@@ -1549,7 +1533,7 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void btnCmbCategorie_Click(object sender, EventArgs e)
         {
-            Program.btnAddTypeClick = cb_type_bois.Text.ToUpper();
+            Program.btnAddTypeClick = $"{cb_type_bois.Text.ToUpper()}_C";
 
             frm_ajout ajout = new frm_ajout();
             ajout.ShowDialog();
@@ -1570,7 +1554,7 @@ namespace Aiche_Bois
                 /*si le textBox est vide, remplir tous les items*/
                 if (string.IsNullOrEmpty(t_search_type_bois.Text))
                 {
-                    remplirListe(cb_type_bois.Text);
+                    remplirListe(cb_type_bois.Text+"_C");
                 }
                 else
                 {
@@ -1953,7 +1937,7 @@ namespace Aiche_Bois
         /// <param name="e"></param>
         private void btncmbNbrCanto_Click(object sender, EventArgs e)
         {
-            Program.btnAddTypeClick = "PVC";
+            Program.btnAddTypeClick = "PVC_C";
 
             /*ouvrier de fenétre*/
             frm_ajout ajout = new frm_ajout();
