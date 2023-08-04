@@ -8,7 +8,7 @@
         <beforeApplicationStartup />
       </update>
     </subscription>
-    <deploymentProvider codebase="http://desktop-8jm0rq8/Aiche%20Bois/Aiche%20Bois.application" />
+    <deploymentProvider codebase="http://melyonousi/Aiche%20Bois/Aiche%20Bois.application" />
   </deployment>
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
@@ -21,7 +21,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6wJSBevgACxZ5UiJZACf6UwC3NBbjbi0zCc3UAgmBPM=</dsig:DigestValue>
+        <dsig:DigestValue>5QdTK118iVdPMxG6AT/pc9ViyVzdAfwqBTa0z6OQ6iI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

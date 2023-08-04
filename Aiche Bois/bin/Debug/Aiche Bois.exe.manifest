@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Aiche Bois.exe" size="1285120">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Aiche Bois.exe" size="1269248">
       <assemblyIdentity name="Aiche Bois" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bRqUH7TeUu+RzaWbqqxZW2OGbVMuas/YVQV61j5aoGE=</dsig:DigestValue>
+        <dsig:DigestValue>b+jWhs1CYmV2uNYV2LST+0sFEXyHhWjtvwK5lGoyY+4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
