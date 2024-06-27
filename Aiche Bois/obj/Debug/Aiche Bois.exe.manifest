@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Aiche Bois.exe" size="1269248">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Aiche Bois.exe" size="1272832">
       <assemblyIdentity name="Aiche Bois" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>b+jWhs1CYmV2uNYV2LST+0sFEXyHhWjtvwK5lGoyY+4=</dsig:DigestValue>
+        <dsig:DigestValue>y0rVC4yEy1RSQ6D395fVpxlZHes5K4uj2ip6UaWsvTM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -119,6 +119,11 @@
       <dsig:DigestValue>Me685H6HorxLV9PY7pK4s6LH1tu0z2rrL+hmqZmHcOU=</dsig:DigestValue>
     </hash>
   </file>
+  <asmv3:application xmlns="urn:schemas-microsoft-com:asm.v1">
+    <asmv3:windowsSettings xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">
+      <dpiAware>true</dpiAware>
+    </asmv3:windowsSettings>
+  </asmv3:application>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
     <application>
       <!-- A list of the Windows versions that this application has been tested on
